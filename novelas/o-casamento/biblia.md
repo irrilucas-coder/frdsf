@@ -32,10 +32,11 @@ que o noivo é irmão da noiva. O pai de Isabela, o poderoso Henrique Monteiro, 
   > Photorealistic portrait of a 55-year-old Brazilian woman, gray-streaked black hair soaked by rain, wearing a wet simple black dress, intense tearful eyes, mature face with expression lines, front-facing, dramatic low-key lighting, sharp focus on face, cinematic.
 
 ### 🎩 Henrique Monteiro — o pai da noiva (62)
-- **Aparência:** brasileiro, cabelo grisalho penteado para trás, bigode grisalho, smoking preto, abotoaduras de ouro, anel de ouro.
+- **Aparência:** brasileiro, cabelo grisalho curto, sem barba nem bigode, óculos retangulares finos, terno cinza-escuro.
+- ⚠️ O visual antigo (bigode + cabelo para trás + smoking) foi bloqueado no Flow por parecer alguém famoso. Use só o visual novo.
 - **Jeito:** poderoso, elegante, frio por dentro. Faria tudo para o segredo não aparecer.
 - **Prompt da foto:**
-  > Photorealistic portrait of a 62-year-old wealthy Brazilian man, gray hair slicked back, gray mustache, black tuxedo with gold cufflinks, stern piercing eyes, front-facing, warm elegant lighting, sharp focus on face, cinematic.
+  > Photorealistic portrait of an ordinary 62-year-old Brazilian man, short salt-and-pepper hair, clean-shaven, thin rectangular glasses, charcoal gray suit with a dark tie, serious eyes, front-facing, warm elegant lighting, sharp focus on face, cinematic.
 
 ## Regras de estilo (usar em todas as cenas)
 - Sempre começar com: `Cinematic Brazilian telenovela scene` e terminar com `Photorealistic. Vertical 9:16.`
