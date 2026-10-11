@@ -43,7 +43,13 @@ que o noivo é irmão da noiva. O pai de Isabela, o poderoso Henrique Monteiro, 
 - Falas em português: `says in Brazilian Portuguese: "..."` — no máximo 1 frase curta por cena.
 - Clima: igreja à luz de velas por dentro, tempestade lá fora.
 
+## Fatos que já aconteceram (continuidade)
+- **Ep. 1:** Rosa invade o casamento e grita que Rafael é irmão de Isabela. Henrique: "Rosa… você devia estar morta."
+- **Ep. 2:** Rafael tem uma **marca de nascença em forma de estrela no pescoço** — a mesma do bebê na foto antiga de Rosa.
+  Rosa é arrastada pelos seguranças gritando "Rafael! Você é meu filho!". Isabela larga a aliança no chão da igreja e foge na chuva.
+
 ## Episódios
 | Ep. | Título | Status |
 |---|---|---|
 | 1 | A Revelação | ✍️ escrito |
+| 2 | A Marca | ✍️ escrito |
