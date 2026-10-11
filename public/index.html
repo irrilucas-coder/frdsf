@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estúdio Kie</title>
+<style>
+  :root {
+    --bg: #0f1115; --panel: #171a21; --panel2: #1e222b; --line: #2a2f3a;
+    --text: #e8eaf0; --muted: #9aa1b2; --accent: #7c5cff; --accent2: #5b3fe0;
+    --ok: #2ecc71; --bad: #ff5c5c; --warn: #f5b942;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); }
+  header { display: flex; align-items: center; gap: 16px; padding: 16px 24px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0 auto 0 0; }
+  .key { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .key input { width: 320px; max-width: 70vw; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--muted); display: inline-block; }
+  .dot.ok { background: var(--ok); } .dot.bad { background: var(--bad); }
+  main { display: grid; grid-template-columns: 420px 1fr; gap: 24px; padding: 24px; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; padding: 16px; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .tabs { display: flex; gap: 6px; margin-bottom: 16px; }
+  .tab { flex: 1; padding: 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel2); color: var(--muted); cursor: pointer; font-weight: 600; }
+  .tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  label { display: block; font-size: 13px; color: var(--muted); margin: 12px 0 6px; }
+  input, select, textarea { width: 100%; background: var(--panel2); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px; font: inherit; }
+  textarea { min-height: 110px; resize: vertical; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .check { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 14px; color: var(--text); }
+  .check input { width: auto; }
+  button.primary { width: 100%; margin-top: 18px; padding: 12px; border: 0; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 700; font-size: 15px; cursor: pointer; }
+  button.primary:hover { background: var(--accent2); }
+  button.primary:disabled { opacity: .5; cursor: not-allowed; }
+  button.small { padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel2); color: var(--text); cursor: pointer; white-space: nowrap; }
+  .hint { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .thumbs { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+  .thumbs img { width: 56px; height: 56px; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); }
+  .hidden { display: none; }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .card .media { aspect-ratio: 1; background: #0b0d11; display: flex; align-items: center; justify-content: center; }
+  .card .media img, .card .media video { width: 100%; height: 100%; object-fit: contain; }
+  .card .info { padding: 10px; font-size: 13px; }
+  .card .info p { margin: 0 0 6px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 99px; background: var(--line); color: var(--text); margin-right: 6px; }
+  .badge.ok { background: rgba(46,204,113,.2); color: var(--ok); }
+  .badge.bad { background: rgba(255,92,92,.2); color: var(--bad); }
+  .badge.run { background: rgba(245,185,66,.2); color: var(--warn); }
+  .spinner { width: 36px; height: 36px; border: 3px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .gallery-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .gallery-head h2 { font-size: 16px; margin: 0; }
+  .empty { color: var(--muted); text-align: center; padding: 60px 0; }
+  a { color: var(--accent); }
+  .err { color: var(--bad); font-size: 12px; word-break: break-word; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎨 Estúdio Kie — GPT Image 2 + Seedance 2.0</h1>
+  <div class="key">
+    <span class="dot" id="keyDot" title="status da chave"></span>
+    <input id="apiKey" type="password" placeholder="Cole sua KIE API key aqui" autocomplete="off">
+    <button class="small" id="toggleKey">👁</button>
+    <button class="small" id="testKey">Testar conexão</button>
+  </div>
+</header>
+
+<main>
+  <section class="panel">
+    <div class="tabs">
+      <button class="tab active" data-tab="image">🖼️ Imagem</button>
+      <button class="tab" data-tab="video">🎬 Vídeo</button>
+    </div>
+
+    <!-- IMAGE -->
+    <div id="tab-image">
+      <label>Prompt (o que você quer ver)</label>
+      <textarea id="imgPrompt" placeholder="Ex.: Foto de produto de um tênis branco em fundo pastel, luz suave de estúdio"></textarea>
+
+      <label>Imagens de referência (opcional, até 16)</label>
+      <input id="imgFiles" type="file" accept="image/*" multiple>
+      <div class="hint">Sem imagens = cria do zero (texto → imagem). Com imagens = edita/usa como base (imagem → imagem).</div>
+      <div class="thumbs" id="imgThumbs"></div>
+
+      <div class="row">
+        <div>
+          <label>Formato</label>
+          <select id="imgAspect">
+            <option value="auto">auto</option>
+            <option value="1:1">1:1 (quadrado)</option>
+            <option value="16:9">16:9 (paisagem)</option>
+            <option value="9:16">9:16 (stories)</option>
+            <option value="4:3">4:3</option>
+            <option value="3:4">3:4</option>
+          </select>
+        </div>
+        <div>
+          <label>Resolução</label>
+          <select id="imgRes">
+            <option value="1K">1K</option>
+            <option value="2K">2K</option>
+            <option value="4K">4K</option>
+          </select>
+        </div>
+      </div>
+      <div class="hint" id="imgResHint"></div>
+
+      <button class="primary" id="imgGo">Gerar imagem</button>
+    </div>
+
+    <!-- VIDEO -->
+    <div id="tab-video" class="hidden">
+      <label>Modelo</label>
+      <select id="vidModel">
+        <option value="bytedance/seedance-2">Seedance 2.0 (melhor qualidade)</option>
+        <option value="bytedance/seedance-2-fast">Seedance 2.0 Fast (mais rápido/barato, até 720p)</option>
+      </select>
+
+      <label>Prompt (o que acontece no vídeo)</label>
+      <textarea id="vidPrompt" placeholder="Ex.: Câmera gira lentamente ao redor do tênis enquanto pétalas caem. Use @Image1 para citar a 1ª imagem de referência."></textarea>
+
+      <div class="row">
+        <div>
+          <label>Primeiro quadro (opcional)</label>
+          <input id="vidFirst" type="file" accept="image/*">
+        </div>
+        <div>
+          <label>Último quadro (opcional)</label>
+          <input id="vidLast" type="file" accept="image/*">
+        </div>
+      </div>
+      <div class="hint">O último quadro só funciona se tiver o primeiro.</div>
+
+      <label>Imagens de referência (opcional)</label>
+      <input id="vidRefs" type="file" accept="image/*" multiple>
+      <div class="thumbs" id="vidThumbs"></div>
+
+      <div class="row3">
+        <div>
+          <label>Formato</label>
+          <select id="vidAspect">
+            <option value="16:9">16:9</option>
+            <option value="9:16">9:16</option>
+            <option value="1:1">1:1</option>
+          </select>
+        </div>
+        <div>
+          <label>Resolução</label>
+          <select id="vidRes">
+            <option value="480p">480p</option>
+            <option value="720p" selected>720p</option>
+            <option value="1080p">1080p</option>
+          </select>
+        </div>
+        <div>
+          <label>Duração</label>
+          <select id="vidDur">
+            <option value="5">5 s</option>
+            <option value="10">10 s</option>
+            <option value="15">15 s</option>
+          </select>
+        </div>
+      </div>
+      <label class="check"><input type="checkbox" id="vidAudio" checked> Gerar áudio</label>
+      <label class="check"><input type="checkbox" id="vidWeb"> Pesquisa na web (web search)</label>
+
+      <button class="primary" id="vidGo">Gerar vídeo</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="gallery-head">
+      <h2>Resultados</h2>
+      <button class="small" id="clearHist">Limpar histórico</button>
+    </div>
+    <div class="gallery" id="gallery"></div>
+    <div class="empty" id="empty">Nada por aqui ainda. Cole sua chave, escreva um prompt e clique em gerar ✨</div>
+  </section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const store = {
+  get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+
+// ---------- API key ----------
+$("apiKey").value = store.get("kieKey", "");
+$("apiKey").addEventListener("input", () => { store.set("kieKey", $("apiKey").value.trim()); $("keyDot").className = "dot"; });
+$("toggleKey").onclick = () => { $("apiKey").type = $("apiKey").type === "password" ? "text" : "password"; };
+const key = () => $("apiKey").value.trim();
+
+async function api(path, opts = {}) {
+  const r = await fetch(path, { ...opts, headers: { "Content-Type": "application/json", "x-kie-key": key(), ...(opts.headers || {}) } });
+  let body; try { body = await r.json(); } catch { body = { code: r.status, msg: "Resposta inválida" }; }
+  return body;
+}
+
+$("testKey").onclick = async () => {
+  if (!key()) return alert("Cole sua API key primeiro.");
+  $("testKey").textContent = "Testando...";
+  // Ask about a fake task: a bad key answers 401; a good key answers "not found"-style.
+  const r = await api("/api/status?taskId=connection-test");
+  $("testKey").textContent = "Testar conexão";
+  const badKey = r.code === 401 || /unauthor|invalid.*key|api key/i.test(r.msg || "");
+  if (r.code === 502) { $("keyDot").className = "dot bad"; alert("Não consegui falar com a Kie.ai: " + r.msg); }
+  else if (badKey) { $("keyDot").className = "dot bad"; alert("Chave recusada: " + (r.msg || r.code)); }
+  else { $("keyDot").className = "dot ok"; alert("Conectado! A Kie.ai aceitou sua chave ✅"); }
+};
+
+// ---------- Tabs ----------
+document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
+  document.querySelectorAll(".tab").forEach((x) => x.classList.toggle("active", x === t));
+  $("tab-image").classList.toggle("hidden", t.dataset.tab !== "image");
+  $("tab-video").classList.toggle("hidden", t.dataset.tab !== "video");
+});
+
+// ---------- Image rules (GPT Image 2: auto → só 1K; 1:1 → até 2K) ----------
+function syncImgRes() {
+  const a = $("imgAspect").value;
+  const allowed = a === "auto" ? ["1K"] : a === "1:1" ? ["1K", "2K"] : ["1K", "2K", "4K"];
+  [...$("imgRes").options].forEach((o) => o.disabled = !allowed.includes(o.value));
+  if (!allowed.includes($("imgRes").value)) $("imgRes").value = "1K";
+  $("imgResHint").textContent = a === "auto" ? "Formato 'auto' só aceita 1K." : a === "1:1" ? "Quadrado vai até 2K." : "";
+}
+$("imgAspect").onchange = syncImgRes; syncImgRes();
+
+// Fast model caps at 720p
+$("vidModel").onchange = () => {
+  const fast = $("vidModel").value.endsWith("fast");
+  $("vidRes").querySelector('[value="1080p"]').disabled = fast;
+  if (fast && $("vidRes").value === "1080p") $("vidRes").value = "720p";
+};
+
+// ---------- Files ----------
+function showThumbs(input, box) {
+  input.onchange = () => {
+    $(box).innerHTML = "";
+    [...input.files].forEach((f) => { const i = document.createElement("img"); i.src = URL.createObjectURL(f); $(box).appendChild(i); });
+  };
+}
+showThumbs($("imgFiles"), "imgThumbs");
+showThumbs($("vidRefs"), "vidThumbs");
+
+const toDataUrl = (file) => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(file); });
+
+async function upload(file) {
+  const ext = (file.name.split(".").pop() || "png").toLowerCase();
+  const r = await api("/api/upload", {
+    method: "POST",
+    body: JSON.stringify({ base64Data: await toDataUrl(file), uploadPath: "images/dashboard", fileName: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}` }),
+  });
+  const url = r?.data?.downloadUrl || r?.data?.fileUrl;
+  if (!url) throw new Error("Falha no upload: " + (r.msg || JSON.stringify(r)));
+  return url;
+}
+
+// ---------- Jobs / gallery ----------
+let jobs = store.get("kieJobs", []);
+const save = () => store.set("kieJobs", jobs);
+
+function render() {
+  $("empty").classList.toggle("hidden", jobs.length > 0);
+  $("gallery").innerHTML = "";
+  jobs.forEach((j) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    let media;
+    if (j.status === "success" && j.urls?.length) {
+      const u = j.urls[0];
+      media = j.kind === "video" ? `<video src="${u}" controls loop playsinline></video>` : `<img src="${u}" alt="">`;
+    } else if (j.status === "fail") {
+      media = `<div class="err" style="padding:16px">❌ ${escapeHtml(j.error || "Falhou")}</div>`;
+    } else {
+      media = `<div class="spinner"></div>`;
+    }
+    const badge = j.status === "success" ? "ok" : j.status === "fail" ? "bad" : "run";
+    const label = { success: "pronto", fail: "erro", running: j.state || "gerando" }[j.status] || j.status;
+    card.innerHTML = `
+      <div class="media">${media}</div>
+      <div class="info">
+        <p title="${escapeHtml(j.prompt)}">${escapeHtml(j.prompt)}</p>
+        <span class="badge">${j.kind === "video" ? "🎬 vídeo" : "🖼️ imagem"}</span>
+        <span class="badge ${badge}">${label}</span>
+        ${(j.urls || []).map((u, i) => `<a href="${u}" target="_blank" download>baixar${j.urls.length > 1 ? " " + (i + 1) : ""}</a>`).join(" ")}
+      </div>`;
+    $("gallery").appendChild(card);
+  });
+}
+const escapeHtml = (s = "") => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+function parseUrls(data) {
+  let rj = data.resultJson;
+  try { if (typeof rj === "string") rj = JSON.parse(rj); } catch {}
+  const urls = rj?.resultUrls || rj?.result_urls || rj?.urls || [];
+  return Array.isArray(urls) ? urls : [urls];
+}
+
+async function poll(job) {
+  while (job.status === "running") {
+    await new Promise((r) => setTimeout(r, job.kind === "video" ? 8000 : 4000));
+    try {
+      const r = await api(`/api/status?taskId=${encodeURIComponent(job.taskId)}`);
+      const d = r.data || {};
+      job.state = d.state;
+      if (d.state === "success") { job.status = "success"; job.urls = parseUrls(d); }
+      else if (d.state === "fail") { job.status = "fail"; job.error = d.failMsg || d.failCode || "Falhou"; }
+    } catch (e) { /* rede instável: tenta de novo */ }
+    save(); render();
+  }
+}
+
+async function startJob(kind, prompt, payload, btn) {
+  if (!key()) return alert("Cole sua KIE API key no topo da página primeiro.");
+  if (!prompt.trim()) return alert("Escreva um prompt.");
+  if (!confirm(`Isso vai gastar créditos da sua conta Kie.\n\nModelo: ${payload.model}\nConfirmar?`)) return;
+  btn.disabled = true;
+  const job = { id: Date.now(), kind, prompt, status: "running", state: "enviando" };
+  jobs.unshift(job); save(); render();
+  try {
+    payload.input = await payload.buildInput();
+    delete payload.buildInput;
+    const r = await api("/api/create", { method: "POST", body: JSON.stringify(payload) });
+    const taskId = r?.data?.taskId;
+    if (!taskId) throw new Error(r.msg || JSON.stringify(r));
+    job.taskId = taskId; job.state = "na fila";
+    save(); render();
+    poll(job);
+  } catch (e) {
+    job.status = "fail"; job.error = e.message; save(); render();
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+$("imgGo").onclick = () => {
+  const files = [...$("imgFiles").files].slice(0, 16);
+  const prompt = $("imgPrompt").value;
+  startJob("image", prompt, {
+    model: files.length ? "gpt-image-2-image-to-image" : "gpt-image-2-text-to-image",
+    buildInput: async () => {
+      const input = { prompt, aspect_ratio: $("imgAspect").value, resolution: $("imgRes").value };
+      if (files.length) input.input_urls = await Promise.all(files.map(upload));
+      return input;
+    },
+  }, $("imgGo"));
+};
+
+$("vidGo").onclick = () => {
+  const prompt = $("vidPrompt").value;
+  const first = $("vidFirst").files[0], last = $("vidLast").files[0], refs = [...$("vidRefs").files];
+  if (last && !first) return alert("Para usar o último quadro, coloque também o primeiro quadro.");
+  startJob("video", prompt, {
+    model: $("vidModel").value,
+    buildInput: async () => {
+      const input = {
+        prompt,
+        aspect_ratio: $("vidAspect").value,
+        resolution: $("vidRes").value,
+        duration: Number($("vidDur").value),
+        generate_audio: $("vidAudio").checked,
+        web_search: $("vidWeb").checked,
+      };
+      if (first) input.first_frame_url = await upload(first);
+      if (last) input.last_frame_url = await upload(last);
+      if (refs.length) input.reference_image_urls = await Promise.all(refs.map(upload));
+      return input;
+    },
+  }, $("vidGo"));
+};
+
+$("clearHist").onclick = () => { if (confirm("Apagar o histórico desta página? (os arquivos na Kie continuam lá)")) { jobs = jobs.filter((j) => j.status === "running"); save(); render(); } };
+
+// Resume jobs that were still running when the page was closed
+render();
+jobs.filter((j) => j.status === "running" && j.taskId).forEach(poll);
+jobs.filter((j) => j.status === "running" && !j.taskId).forEach((j) => { j.status = "fail"; j.error = "Interrompido antes de enviar"; });
+save(); render();
+</script>
+</body>
+</html>

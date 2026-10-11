@@ -1,0 +1,8 @@
+{
+  "name": "kie-studio",
+  "version": "1.0.0",
+  "description": "Dashboard local para gerar imagens (GPT Image 2) e vídeos (Seedance 2.0) via Kie.ai",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
