@@ -45,9 +45,11 @@ que o noivo é irmão da noiva. O pai de Isabela, o poderoso Henrique Monteiro, 
 - Clima: igreja à luz de velas por dentro, tempestade lá fora.
 
 ## Fatos que já aconteceram (continuidade)
-- **Ep. 1:** Rosa invade o casamento e grita que Rafael é irmão de Isabela. Henrique: "Rosa… você devia estar morta."
-- **Ep. 2:** Rafael tem uma **marca de nascença em forma de estrela no pescoço** — a mesma do bebê na foto antiga de Rosa.
-  Rosa é arrastada pelos seguranças gritando "Rafael! Você é meu filho!". Isabela larga a aliança no chão da igreja e foge na chuva.
+- **Ep. 1:** Abre com o buquê caindo ("3 horas antes…"). Rosa invade o casamento e grita que Rafael é irmão de Isabela. Henrique: "Rosa… você devia estar morta."
+- **Ep. 2:** Rosa diz que Henrique pagou para todos acharem que ela morreu. Rafael tem uma **marca de nascença em forma de estrela no pescoço** — a mesma do bebê na foto antiga de Rosa.
+  Rosa é levada para fora gritando "Rafael! Você é meu filho!". Isabela deixa a aliança no altar e foge na chuva.
+  Henrique, sozinho na sacristia, liga para alguém: "Ela voltou. Ninguém pode descobrir a verdade sobre a Isabela." (primeira pista de que Isabela não é filha biológica dele)
+- **Regra:** nada de agressão física nas cenas — seguranças "acompanham", não agarram.
 
 ## Episódios
 | Ep. | Título | Status |
