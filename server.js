@@ -6,6 +6,7 @@ const path = require("path");
 
 const PORT = process.env.PORT || 3000;
 const KIE_API = "https://api.kie.ai/api/v1/jobs";
+const KIE_CREDIT = "https://api.kie.ai/api/v1/chat/credit";
 const KIE_UPLOAD = "https://kieai.redpandaai.co/api/file-base64-upload";
 
 function readBody(req) {
@@ -50,6 +51,9 @@ const server = http.createServer(async (req, res) => {
     if (url.pathname === "/api/status" && req.method === "GET") {
       const taskId = encodeURIComponent(url.searchParams.get("taskId") || "");
       return forward(res, `${KIE_API}/recordInfo?taskId=${taskId}`, apiKey);
+    }
+    if (url.pathname === "/api/credit" && req.method === "GET") {
+      return forward(res, KIE_CREDIT, apiKey);
     }
     if (url.pathname === "/api/upload" && req.method === "POST") {
       return forward(res, KIE_UPLOAD, apiKey, { method: "POST", body: await readBody(req) });

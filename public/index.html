@@ -56,11 +56,22 @@
   .empty { color: var(--muted); text-align: center; padding: 60px 0; }
   a { color: var(--accent); }
   .err { color: var(--bad); font-size: 12px; word-break: break-word; }
+  .balance { font-size: 14px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .balance b { color: var(--text); }
+  .cost { margin-top: 16px; padding: 10px 12px; border-radius: 8px; background: rgba(124,92,255,.12); border: 1px solid rgba(124,92,255,.35); font-size: 14px; }
+  .cost b { font-size: 16px; }
+  .cost .hint { margin-top: 2px; }
+  details.prices { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 12px; }
+  details.prices summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+  .ptable { display: grid; grid-template-columns: 1fr 90px; gap: 6px 10px; align-items: center; font-size: 13px; margin-top: 10px; }
+  .ptable h4 { grid-column: 1 / -1; margin: 10px 0 0; font-size: 13px; }
+  .ptable input { padding: 6px 8px; }
 </style>
 </head>
 <body>
 <header>
   <h1>🎨 Estúdio Kie — GPT Image 2 + Seedance 2.0</h1>
+  <div class="balance">💰 Saldo: <b id="balance">—</b> <button class="small" id="refreshBal" title="Atualizar saldo">↻</button></div>
   <div class="key">
     <span class="dot" id="keyDot" title="status da chave"></span>
     <input id="apiKey" type="password" placeholder="Cole sua KIE API key aqui" autocomplete="off">
@@ -109,6 +120,7 @@
       </div>
       <div class="hint" id="imgResHint"></div>
 
+      <div class="cost" id="imgCost"></div>
       <button class="primary" id="imgGo">Gerar imagem</button>
     </div>
 
@@ -168,8 +180,16 @@
       <label class="check"><input type="checkbox" id="vidAudio" checked> Gerar áudio</label>
       <label class="check"><input type="checkbox" id="vidWeb"> Pesquisa na web (web search)</label>
 
+      <div class="cost" id="vidCost"></div>
       <button class="primary" id="vidGo">Gerar vídeo</button>
     </div>
+
+    <details class="prices">
+      <summary>⚙️ Tabela de preços (ajuste se a Kie mudar os valores)</summary>
+      <div class="ptable" id="ptable"></div>
+      <div class="hint">Valores em créditos. 200 créditos = US$ 1. Confira os preços atuais em <a href="https://kie.ai/pricing" target="_blank">kie.ai/pricing</a>.</div>
+      <button class="small" id="resetPrices" style="margin-top:8px">Voltar ao padrão</button>
+    </details>
   </section>
 
   <section>
@@ -204,14 +224,71 @@ async function api(path, opts = {}) {
 $("testKey").onclick = async () => {
   if (!key()) return alert("Cole sua API key primeiro.");
   $("testKey").textContent = "Testando...";
-  // Ask about a fake task: a bad key answers 401; a good key answers "not found"-style.
-  const r = await api("/api/status?taskId=connection-test");
+  const r = await api("/api/credit");
   $("testKey").textContent = "Testar conexão";
-  const badKey = r.code === 401 || /unauthor|invalid.*key|api key/i.test(r.msg || "");
-  if (r.code === 502) { $("keyDot").className = "dot bad"; alert("Não consegui falar com a Kie.ai: " + r.msg); }
-  else if (badKey) { $("keyDot").className = "dot bad"; alert("Chave recusada: " + (r.msg || r.code)); }
-  else { $("keyDot").className = "dot ok"; alert("Conectado! A Kie.ai aceitou sua chave ✅"); }
+  if (r.code === 200) { showBalance(r.data); $("keyDot").className = "dot ok"; alert(`Conectado! A Kie.ai aceitou sua chave ✅\nSaldo: ${fmtCredits(r.data)}`); }
+  else if (r.code === 502) { $("keyDot").className = "dot bad"; alert("Não consegui falar com a Kie.ai: " + r.msg); }
+  else { $("keyDot").className = "dot bad"; alert("Chave recusada: " + (r.msg || r.code)); }
 };
+
+// ---------- Credits / prices ----------
+// Estimates from Kie's public pages (Oct 2026). Editable in the page, since Kie changes prices.
+const DEFAULT_PRICES = {
+  "img-1K": 6, "img-2K": 10, "img-4K": 16,                 // credits per image
+  "sd2-480p": 19, "sd2-720p": 41, "sd2-1080p": 102,         // Seedance 2.0, credits per second
+  "sdf-480p": 11.7, "sdf-720p": 24.8,                       // Seedance 2.0 Fast, credits per second
+};
+const PRICE_LABELS = {
+  "img-1K": ["🖼️ GPT Image 2 (por imagem)", "1K"], "img-2K": [null, "2K"], "img-4K": [null, "4K"],
+  "sd2-480p": ["🎬 Seedance 2.0 (por segundo)", "480p"], "sd2-720p": [null, "720p"], "sd2-1080p": [null, "1080p"],
+  "sdf-480p": ["⚡ Seedance 2.0 Fast (por segundo)", "480p"], "sdf-720p": [null, "720p"],
+};
+let prices = { ...DEFAULT_PRICES, ...store.get("kiePrices", {}) };
+const fmtCredits = (c) => `${Math.round(c * 10) / 10} créditos (~US$ ${(c / 200).toFixed(2)})`;
+let balance = null;
+function showBalance(v) {
+  if (typeof v !== "number") return;
+  balance = v;
+  $("balance").textContent = fmtCredits(v);
+}
+async function refreshBalance() {
+  if (!key()) return null;
+  const r = await api("/api/credit");
+  if (r.code === 200) { showBalance(r.data); return r.data; }
+  return null;
+}
+$("refreshBal").onclick = refreshBalance;
+
+function renderPriceTable() {
+  $("ptable").innerHTML = "";
+  Object.keys(DEFAULT_PRICES).forEach((k) => {
+    const [title, label] = PRICE_LABELS[k];
+    if (title) $("ptable").insertAdjacentHTML("beforeend", `<h4>${title}</h4>`);
+    $("ptable").insertAdjacentHTML("beforeend", `<span>${label}</span><input type="number" step="0.1" min="0" data-k="${k}" value="${prices[k]}">`);
+  });
+  $("ptable").querySelectorAll("input").forEach((i) => i.oninput = () => {
+    prices[i.dataset.k] = parseFloat(i.value) || 0;
+    store.set("kiePrices", prices);
+    updateCosts();
+  });
+}
+$("resetPrices").onclick = () => { prices = { ...DEFAULT_PRICES }; store.set("kiePrices", {}); renderPriceTable(); updateCosts(); };
+
+const imgEstimate = () => prices["img-" + $("imgRes").value] || 0;
+function vidEstimate() {
+  const tier = $("vidModel").value.endsWith("fast") ? "sdf" : "sd2";
+  return (prices[`${tier}-${$("vidRes").value}`] || 0) * Number($("vidDur").value);
+}
+function costBox(el, credits, extra) {
+  const low = balance !== null && credits > balance;
+  el.innerHTML = `Custo estimado: <b>${fmtCredits(credits)}</b>
+    <div class="hint">${extra}${low ? ' <span style="color:var(--bad)">⚠️ Seu saldo não é suficiente.</span>' : ""}</div>`;
+}
+function updateCosts() {
+  costBox($("imgCost"), imgEstimate(), "Estimativa. O valor real aparece no card depois que terminar.");
+  costBox($("vidCost"), vidEstimate(), `${$("vidDur").value} s × ${prices[($("vidModel").value.endsWith("fast") ? "sdf-" : "sd2-") + $("vidRes").value] || 0} créditos/s. Usar vídeo de referência pode mudar o preço.`);
+}
+["imgRes", "imgAspect", "vidModel", "vidRes", "vidDur"].forEach((id) => $(id).addEventListener("change", updateCosts));
 
 // ---------- Tabs ----------
 document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
@@ -235,6 +312,7 @@ $("vidModel").onchange = () => {
   const fast = $("vidModel").value.endsWith("fast");
   $("vidRes").querySelector('[value="1080p"]').disabled = fast;
   if (fast && $("vidRes").value === "1080p") $("vidRes").value = "720p";
+  updateCosts();
 };
 
 // ---------- Files ----------
@@ -287,6 +365,7 @@ function render() {
         <p title="${escapeHtml(j.prompt)}">${escapeHtml(j.prompt)}</p>
         <span class="badge">${j.kind === "video" ? "🎬 vídeo" : "🖼️ imagem"}</span>
         <span class="badge ${badge}">${label}</span>
+        ${j.estimate != null ? `<div class="hint" style="margin:6px 0">💰 Estimado: ${fmtCredits(j.estimate)}${j.actual != null ? `<br>✅ Real: <b style="color:var(--text)">${fmtCredits(j.actual)}</b>` : ""}</div>` : ""}
         ${(j.urls || []).map((u, i) => `<a href="${u}" target="_blank" download>baixar${j.urls.length > 1 ? " " + (i + 1) : ""}</a>`).join(" ")}
       </div>`;
     $("gallery").appendChild(card);
@@ -313,14 +392,23 @@ async function poll(job) {
     } catch (e) { /* rede instável: tenta de novo */ }
     save(); render();
   }
+  // Real cost = balance before − balance after (only exact when this was the only job running).
+  const after = await refreshBalance();
+  const alone = !jobs.some((j) => j !== job && j.status === "running");
+  if (after !== null && job.balanceBefore != null && alone && job.soloRun) {
+    job.actual = Math.max(0, job.balanceBefore - after);
+    save(); render();
+  }
 }
 
-async function startJob(kind, prompt, payload, btn) {
+async function startJob(kind, prompt, payload, btn, estimate) {
   if (!key()) return alert("Cole sua KIE API key no topo da página primeiro.");
   if (!prompt.trim()) return alert("Escreva um prompt.");
-  if (!confirm(`Isso vai gastar créditos da sua conta Kie.\n\nModelo: ${payload.model}\nConfirmar?`)) return;
+  const before = await refreshBalance();
+  if (!confirm(`Isso vai gastar créditos da sua conta Kie.\n\nModelo: ${payload.model}\nCusto estimado: ${fmtCredits(estimate)}${before !== null ? `\nSeu saldo: ${fmtCredits(before)}` : ""}\n\nConfirmar?`)) return;
   btn.disabled = true;
-  const job = { id: Date.now(), kind, prompt, status: "running", state: "enviando" };
+  const soloRun = !jobs.some((j) => j.status === "running");
+  const job = { id: Date.now(), kind, prompt, status: "running", state: "enviando", estimate, balanceBefore: before, soloRun };
   jobs.unshift(job); save(); render();
   try {
     payload.input = await payload.buildInput();
@@ -348,7 +436,7 @@ $("imgGo").onclick = () => {
       if (files.length) input.input_urls = await Promise.all(files.map(upload));
       return input;
     },
-  }, $("imgGo"));
+  }, $("imgGo"), imgEstimate());
 };
 
 $("vidGo").onclick = () => {
@@ -371,12 +459,13 @@ $("vidGo").onclick = () => {
       if (refs.length) input.reference_image_urls = await Promise.all(refs.map(upload));
       return input;
     },
-  }, $("vidGo"));
+  }, $("vidGo"), vidEstimate());
 };
 
 $("clearHist").onclick = () => { if (confirm("Apagar o histórico desta página? (os arquivos na Kie continuam lá)")) { jobs = jobs.filter((j) => j.status === "running"); save(); render(); } };
 
 // Resume jobs that were still running when the page was closed
+renderPriceTable(); updateCosts(); refreshBalance().then(updateCosts);
 render();
 jobs.filter((j) => j.status === "running" && j.taskId).forEach(poll);
 jobs.filter((j) => j.status === "running" && !j.taskId).forEach((j) => { j.status = "fail"; j.error = "Interrompido antes de enviar"; });
