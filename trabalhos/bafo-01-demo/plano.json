@@ -1,0 +1,360 @@
+{
+ "bruto": "bruto.mp4",
+ "legendas": "bruto.srt",
+ "legendas_na_tela": false,
+ "abertura": true,
+ "final_preto": 1.0,
+ "cenas": [
+  {
+   "id": "c01",
+   "tipo": "cheia",
+   "inicio": 4.0,
+   "fim": 5.6,
+   "arquivo": "c01.mp4",
+   "fala": "falta de escovação"
+  },
+  {
+   "id": "c02",
+   "tipo": "dividida",
+   "inicio": 7.6,
+   "fim": 10.4,
+   "arquivo": "c02.mp4",
+   "fala": "ex folgado e cara de pau"
+  },
+  {
+   "id": "c03",
+   "tipo": "cheia",
+   "inicio": 11.9,
+   "fim": 12.9,
+   "arquivo": "c03.mp4",
+   "fala": "escova os dentes"
+  },
+  {
+   "id": "c04",
+   "tipo": "cheia",
+   "inicio": 12.9,
+   "fim": 13.7,
+   "arquivo": "c04.mp4",
+   "fala": "listerina"
+  },
+  {
+   "id": "c05",
+   "tipo": "cheia",
+   "inicio": 13.7,
+   "fim": 14.9,
+   "arquivo": "c05.mp4",
+   "fala": "chupa bala"
+  },
+  {
+   "id": "c06",
+   "tipo": "cheia",
+   "inicio": 15.0,
+   "fim": 16.6,
+   "arquivo": "c06.mp4",
+   "fala": "ele está de volta"
+  },
+  {
+   "id": "c07",
+   "tipo": "cheia",
+   "inicio": 17.1,
+   "fim": 20.5,
+   "arquivo": "c07.mp4",
+   "fala": "tragédia... bala de hortelã"
+  },
+  {
+   "id": "c08",
+   "tipo": "dividida",
+   "inicio": 20.5,
+   "fim": 24.4,
+   "arquivo": "c08.mp4",
+   "fala": "essa vergonha"
+  },
+  {
+   "id": "c09",
+   "tipo": "dividida",
+   "inicio": 24.4,
+   "fim": 29.7,
+   "arquivo": "c09.mp4",
+   "fala": "produtos fora do Brasil"
+  },
+  {
+   "id": "c10",
+   "tipo": "dividida",
+   "inicio": 29.7,
+   "fim": 31.3,
+   "arquivo": "c10.mp4",
+   "fala": "pesquisando"
+  },
+  {
+   "id": "c11",
+   "tipo": "dividida",
+   "inicio": 31.3,
+   "fim": 33.0,
+   "arquivo": "c11.mp4",
+   "fala": "empresa aqui no Brasil"
+  },
+  {
+   "id": "c12",
+   "tipo": "dividida",
+   "inicio": 36.7,
+   "fim": 38.7,
+   "arquivo": "c12.mp4",
+   "fala": "clorofila, salsa e hortelã"
+  },
+  {
+   "id": "c13",
+   "tipo": "cheia",
+   "inicio": 40.4,
+   "fim": 42.5,
+   "arquivo": "c13.mp4",
+   "fala": "sensação de fresco"
+  },
+  {
+   "id": "c14",
+   "tipo": "pip",
+   "inicio": 42.5,
+   "fim": 47.2,
+   "arquivo": "c14.mp4",
+   "fala": "começa lá no intestino"
+  },
+  {
+   "id": "c15",
+   "tipo": "cheia",
+   "inicio": 47.2,
+   "fim": 49.1,
+   "arquivo": "c15.mp4",
+   "fala": "uma dose por dia"
+  },
+  {
+   "id": "c16",
+   "tipo": "pip",
+   "inicio": 53.7,
+   "fim": 54.9,
+   "arquivo": "c16.mp4",
+   "fala": "axila"
+  },
+  {
+   "id": "c17",
+   "tipo": "pip",
+   "inicio": 54.9,
+   "fim": 55.8,
+   "arquivo": "c17.mp4",
+   "fala": "nos pés"
+  },
+  {
+   "id": "c18",
+   "tipo": "pip",
+   "inicio": 55.8,
+   "fim": 56.6,
+   "arquivo": "c18.mp4",
+   "fala": "perereca"
+  },
+  {
+   "id": "c19",
+   "tipo": "pip",
+   "inicio": 56.6,
+   "fim": 58.4,
+   "arquivo": "c19.mp4",
+   "fala": "todos os lugares"
+  },
+  {
+   "id": "c20",
+   "tipo": "cheia",
+   "inicio": 59.9,
+   "fim": 61.4,
+   "arquivo": "c20.mp4",
+   "fala": "acabar com a sua dignidade"
+  },
+  {
+   "id": "c21",
+   "tipo": "dividida",
+   "inicio": 65.0,
+   "fim": 68.8,
+   "arquivo": "c21.mp4",
+   "fala": "cuidado com a rotina"
+  },
+  {
+   "id": "c22",
+   "tipo": "cheia",
+   "inicio": 68.8,
+   "fim": 71.4,
+   "arquivo": "c22.mp4",
+   "fala": "resolver o fedor"
+  },
+  {
+   "id": "c23",
+   "tipo": "cheia",
+   "inicio": 76.1,
+   "fim": 77.7,
+   "arquivo": "c23.mp4",
+   "fala": "bafo de urubu"
+  },
+  {
+   "id": "c24",
+   "tipo": "dividida",
+   "inicio": 77.7,
+   "fim": 80.7,
+   "arquivo": "c24.mp4",
+   "fala": "mais barato que a balinha"
+  }
+ ],
+ "seta": [
+  {
+   "inicio": 71.4,
+   "fim": 75.0,
+   "posicao": "esquerda"
+  },
+  {
+   "inicio": 79.0,
+   "fim": 81.5,
+   "posicao": "esquerda"
+  }
+ ],
+ "sfx": [
+  {
+   "t": 1.5,
+   "som": "pop",
+   "volume": 0.6
+  },
+  {
+   "t": 4.0,
+   "som": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 7.6,
+   "som": "pop",
+   "volume": 0.55
+  },
+  {
+   "t": 11.9,
+   "som": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 12.9,
+   "som": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 13.7,
+   "som": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 15.0,
+   "som": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 17.1,
+   "som": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 18.9,
+   "som": "erro",
+   "volume": 0.5
+  },
+  {
+   "t": 20.5,
+   "som": "pop",
+   "volume": 0.55
+  },
+  {
+   "t": 24.4,
+   "som": "pop",
+   "volume": 0.55
+  },
+  {
+   "t": 29.7,
+   "som": "pop",
+   "volume": 0.55
+  },
+  {
+   "t": 31.3,
+   "som": "ding",
+   "volume": 0.55
+  },
+  {
+   "t": 33.1,
+   "som": "ding",
+   "volume": 0.5
+  },
+  {
+   "t": 36.7,
+   "som": "pop",
+   "volume": 0.55
+  },
+  {
+   "t": 40.4,
+   "som": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 42.5,
+   "som": "subida",
+   "volume": 0.45
+  },
+  {
+   "t": 47.2,
+   "som": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 53.7,
+   "som": "pop",
+   "volume": 0.55
+  },
+  {
+   "t": 54.9,
+   "som": "pop",
+   "volume": 0.55
+  },
+  {
+   "t": 55.8,
+   "som": "pop",
+   "volume": 0.55
+  },
+  {
+   "t": 56.6,
+   "som": "pop",
+   "volume": 0.55
+  },
+  {
+   "t": 59.9,
+   "som": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 65.0,
+   "som": "pop",
+   "volume": 0.55
+  },
+  {
+   "t": 68.8,
+   "som": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 71.4,
+   "som": "clique",
+   "volume": 0.6
+  },
+  {
+   "t": 74.5,
+   "som": "moeda",
+   "volume": 0.7
+  },
+  {
+   "t": 76.1,
+   "som": "impacto",
+   "volume": 0.7
+  },
+  {
+   "t": 77.7,
+   "som": "pop",
+   "volume": 0.55
+  }
+ ]
+}

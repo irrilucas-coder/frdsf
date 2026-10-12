@@ -8,3 +8,4 @@ trabalhos/**/*.png
 trabalhos/**/*.jpg
 trabalhos/**/*.wav
 __pycache__/
+editor-ia/modelos/

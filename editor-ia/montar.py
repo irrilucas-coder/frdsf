@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """Monta o vídeo final a partir de um plano.json (estilo Aura Fresh: a fala fica intacta, tudo entra em camadas).
 
-Uso:  python3 editor-ia/montar.py pasta-do-trabalho/plano.json [--saida final.mp4] [--previa]
+Uso:  python3 editor-ia/montar.py pasta-do-trabalho/plano.json [--saida final.mp4] [--previa] [--marcadores]
+      --marcadores: cenas ainda não geradas viram cartões (para conferir o encaixe antes de gerar)
 Precisa: ffmpeg/ffprobe e Pillow (pip install pillow).
 
 Os caminhos dentro do plano são relativos à pasta do plano.json. Tipos de cena:
   cheia     → cena 9:16 cobrindo a tela toda
   dividida  → criadora em cima, cena 16:9 embaixo, com linha verde separando
   pip       → cena 9:16 de fundo, criadora num quadro no canto inferior esquerdo
+Legendas na tela só com "legendas_na_tela": true (por padrão ficam de fora, para serem feitas no CapCut).
 Uma cena pode ser vídeo (.mp4/.mov) ou imagem (.png/.jpg — ganha zoom lento).
 Efeitos sonoros: whoosh, pop, ding, impacto, erro, moeda, clique, subida.
 Para usar o seu próprio som, coloque sfx/<nome>.wav (ou .mp3) na pasta do plano.
@@ -167,6 +169,21 @@ def arquivo_de_som(nome, pasta_plano, tmp):
     return destino
 
 
+def cartao(c, destino, W, H, painel):
+    """Cartão no lugar de uma cena ainda não gerada — para conferir o encaixe antes de gerar."""
+    w, h = (W, painel) if c["tipo"] == "dividida" else (W, H)
+    cores = {"cheia": (31, 77, 58), "dividida": (40, 70, 120), "pip": (20, 30, 70)}
+    img = Image.new("RGB", (w, h), cores.get(c["tipo"], (60, 60, 60)))
+    d = ImageDraw.Draw(img)
+    f1, f2 = carregar_fonte(int(W * 0.12)), carregar_fonte(int(W * 0.045))
+    d.text((w / 2, h * 0.4), c.get("id", "?").upper(), font=f1, fill="white", anchor="mm")
+    d.text((w / 2, h * 0.4 + W * 0.11), f'{c["tipo"]} · {c["inicio"]}–{c["fim"]}s', font=f2, fill=(200, 230, 160), anchor="mm")
+    if c.get("fala"):
+        d.text((w / 2, h * 0.4 + W * 0.18), f'"{c["fala"]}"', font=f2, fill="white", anchor="mm")
+    img.save(destino)
+    return destino
+
+
 # ---------- montagem ----------
 def cobrir(w, h):
     return f"scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},setsar=1"
@@ -177,6 +194,7 @@ def main():
     if not args:
         sys.exit(__doc__)
     previa = "--previa" in args
+    marcadores = "--marcadores" in args  # cena que ainda não existe vira um cartão com número e tipo
     saida = args[args.index("--saida") + 1] if "--saida" in args else None
     plano_path = os.path.abspath(args[0])
     base = os.path.dirname(plano_path)
@@ -212,6 +230,8 @@ def main():
 
     for i, c in enumerate(cenas):
         arq = cam(c["arquivo"])
+        if not os.path.exists(arq) and marcadores:
+            arq = cartao(c, os.path.join(tmp, f"marcador-{i}.png"), W, H, painel)
         if not os.path.exists(arq):
             sys.exit(f"Cena {c.get('id', i + 1)}: arquivo não encontrado: {arq}")
         a, b = float(c["inicio"]), float(c["fim"])
@@ -260,7 +280,7 @@ def main():
         atual = f"s{j}"
         n += 1
 
-    if palavras:
+    if palavras and plano.get("legendas_na_tela", False):
         lista = faixa_de_legendas(palavras, plano.get("destaques", []), tmp, W, dur_bruto)
         entradas += ["-f", "concat", "-safe", "0", "-i", lista]
         filtros.append(f"[{n}:v]fps={FPS},format=rgba[leg]")
@@ -292,7 +312,7 @@ def main():
            "-map", "[vout]", "-map", "[aout]", "-t", f"{total:.3f}", "-r", str(FPS),
            "-c:v", "libx264", "-preset", "ultrafast" if previa else "medium", "-crf", "28" if previa else "19",
            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", saida]
-    print(f"Montando {len(cenas)} cenas, {len(palavras)} palavras de legenda, {len(sfx)} efeitos → {saida}")
+    print(f"Montando {len(cenas)} cenas, legendas {'ligadas' if plano.get('legendas_na_tela') else 'desligadas'}, {len(sfx)} efeitos → {saida}")
     rodar(cmd)
     shutil.rmtree(tmp, ignore_errors=True)
     print("Pronto:", saida)
