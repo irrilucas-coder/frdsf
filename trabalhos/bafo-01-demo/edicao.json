@@ -1,0 +1,671 @@
+{
+ "bruto": "bruto.mp4",
+ "camera": [
+  {
+   "t": 0,
+   "z": 1.3,
+   "cx": 0.55,
+   "cy": 0.45
+  },
+  {
+   "t": 2.4,
+   "z": 1.0,
+   "suave": 0.5
+  },
+  {
+   "t": 3.1,
+   "z": 1.15,
+   "cy": 0.35
+  },
+  {
+   "t": 5.5,
+   "z": 1.0
+  },
+  {
+   "t": 7.6,
+   "z": 1.22,
+   "cy": 0.33
+  },
+  {
+   "t": 9.0,
+   "z": 1.05
+  },
+  {
+   "t": 12.5,
+   "z": 1.0
+  },
+  {
+   "t": 15.8,
+   "z": 1.32,
+   "cy": 0.32
+  },
+  {
+   "t": 16.8,
+   "z": 1.0
+  },
+  {
+   "t": 18.3,
+   "z": 1.25,
+   "cy": 0.35
+  },
+  {
+   "t": 19.9,
+   "z": 1.0
+  },
+  {
+   "t": 21.9,
+   "z": 1.18,
+   "cy": 0.33,
+   "suave": 0.8
+  },
+  {
+   "t": 24.8,
+   "z": 1.0
+  },
+  {
+   "t": 29.7,
+   "z": 1.1
+  },
+  {
+   "t": 31.3,
+   "z": 1.0
+  },
+  {
+   "t": 33.1,
+   "z": 1.45,
+   "suave": 0.35,
+   "cx": 0.7,
+   "cy": 0.58
+  },
+  {
+   "t": 35.0,
+   "z": 1.0,
+   "suave": 0.4
+  },
+  {
+   "t": 36.7,
+   "z": 1.12
+  },
+  {
+   "t": 39.3,
+   "z": 1.0
+  },
+  {
+   "t": 45.9,
+   "z": 1.25,
+   "cy": 0.35
+  },
+  {
+   "t": 47.0,
+   "z": 1.0
+  },
+  {
+   "t": 48.1,
+   "z": 1.35,
+   "suave": 0.3,
+   "cx": 0.7,
+   "cy": 0.58
+  },
+  {
+   "t": 49.1,
+   "z": 1.0
+  },
+  {
+   "t": 51.5,
+   "z": 1.15
+  },
+  {
+   "t": 52.2,
+   "z": 1.0
+  },
+  {
+   "t": 57.2,
+   "z": 1.2,
+   "cy": 0.35
+  },
+  {
+   "t": 57.7,
+   "z": 1.0
+  },
+  {
+   "t": 60.0,
+   "z": 1.25,
+   "cy": 0.35
+  },
+  {
+   "t": 61.7,
+   "z": 1.38,
+   "cy": 0.33
+  },
+  {
+   "t": 62.2,
+   "z": 1.0
+  },
+  {
+   "t": 65.5,
+   "z": 1.1,
+   "suave": 1.5
+  },
+  {
+   "t": 68.8,
+   "z": 1.0
+  },
+  {
+   "t": 71.5,
+   "z": 1.12
+  },
+  {
+   "t": 73.3,
+   "z": 1.0
+  },
+  {
+   "t": 75.5,
+   "z": 1.3,
+   "cx": 0.6,
+   "cy": 0.45
+  },
+  {
+   "t": 76.4,
+   "z": 1.0
+  },
+  {
+   "t": 77.4,
+   "z": 1.3,
+   "cy": 0.35
+  },
+  {
+   "t": 78.9,
+   "z": 1.0
+  },
+  {
+   "t": 79.9,
+   "z": 1.4,
+   "suave": 0.4,
+   "cx": 0.7,
+   "cy": 0.58
+  }
+ ],
+ "flash": [
+  {
+   "t": 0
+  },
+  {
+   "t": 33.1
+  },
+  {
+   "t": 75.5
+  }
+ ],
+ "tremor": [
+  {
+   "inicio": 15.8,
+   "fim": 16.3,
+   "forca": 16
+  },
+  {
+   "inicio": 18.3,
+   "fim": 18.9,
+   "forca": 22
+  },
+  {
+   "inicio": 60.0,
+   "fim": 60.5,
+   "forca": 16
+  },
+  {
+   "inicio": 77.4,
+   "fim": 78.0,
+   "forca": 22
+  }
+ ],
+ "cartao": [
+  {
+   "inicio": 0.2,
+   "fim": 2.9,
+   "texto": "Seu bafo tá assim?",
+   "emoji": "🤢",
+   "estilo": "branco",
+   "tam": 84
+  },
+  {
+   "inicio": 3.1,
+   "fim": 5.5,
+   "texto": "Não é falta de\nescovação",
+   "emoji": "🪥",
+   "estilo": "verde"
+  },
+  {
+   "inicio": 7.6,
+   "fim": 10.6,
+   "texto": "Igual ex folgado",
+   "emoji": "😒",
+   "estilo": "branco"
+  },
+  {
+   "inicio": 21.9,
+   "fim": 24.6,
+   "texto": "Chega de vergonha",
+   "emoji": "😳",
+   "estilo": "escuro"
+  },
+  {
+   "inicio": 25.5,
+   "fim": 29.6,
+   "texto": "Importado?\nCaro e demorado",
+   "emoji": "🇺🇸",
+   "estilo": "escuro"
+  },
+  {
+   "inicio": 29.9,
+   "fim": 33.0,
+   "texto": "Feito no Brasil",
+   "emoji": "🇧🇷",
+   "estilo": "verde"
+  },
+  {
+   "inicio": 42.5,
+   "fim": 45.0,
+   "texto": "Frescor de dentro\npra fora",
+   "emoji": "🍃",
+   "estilo": "verde"
+  },
+  {
+   "inicio": 45.9,
+   "fim": 47.6,
+   "texto": "Tchau, fedor",
+   "emoji": "👋",
+   "estilo": "branco"
+  }
+ ],
+ "lista": [
+  {
+   "inicio": 12.5,
+   "fim": 17.0,
+   "y": 0.11,
+   "estilo": "branco",
+   "riscar": 15.8,
+   "itens": [
+    {
+     "t": 12.6,
+     "emoji": "🪥",
+     "texto": "Escova"
+    },
+    {
+     "t": 13.4,
+     "emoji": "🧴",
+     "texto": "Enxaguante"
+    },
+    {
+     "t": 14.2,
+     "emoji": "🍬",
+     "texto": "Bala"
+    }
+   ]
+  },
+  {
+   "inicio": 36.8,
+   "fim": 40.6,
+   "y": 0.11,
+   "estilo": "verde",
+   "check": true,
+   "itens": [
+    {
+     "t": 37.0,
+     "emoji": "🌿",
+     "texto": "Clorofila"
+    },
+    {
+     "t": 37.9,
+     "emoji": "🌱",
+     "texto": "Salsa"
+    },
+    {
+     "t": 38.3,
+     "emoji": "🍃",
+     "texto": "Hortelã"
+    }
+   ]
+  },
+  {
+   "inicio": 51.4,
+   "fim": 59.2,
+   "y": 0.1,
+   "estilo": "branco",
+   "check": true,
+   "itens": [
+    {
+     "t": 51.5,
+     "emoji": "👄",
+     "texto": "Hálito"
+    },
+    {
+     "t": 55.1,
+     "emoji": "💪",
+     "texto": "Axilas"
+    },
+    {
+     "t": 55.6,
+     "emoji": "🦶",
+     "texto": "Pés"
+    },
+    {
+     "t": 56.1,
+     "emoji": "🌸",
+     "texto": "Íntimo"
+    }
+   ]
+  },
+  {
+   "inicio": 65.8,
+   "fim": 71.3,
+   "y": 0.12,
+   "estilo": "branco",
+   "itens": [
+    {
+     "t": 66.0,
+     "emoji": "✅",
+     "texto": "Cuidado diário"
+    },
+    {
+     "t": 68.8,
+     "emoji": "❌",
+     "texto": "Só quando aparece"
+    }
+   ]
+  },
+  {
+   "inicio": 79.2,
+   "fim": 81.6,
+   "y": 0.12,
+   "estilo": "branco",
+   "itens": [
+    {
+     "t": 79.4,
+     "emoji": "🍬",
+     "texto": "Balinha toda hora"
+    },
+    {
+     "t": 80.3,
+     "emoji": "💚",
+     "texto": "Aura Fresh"
+    }
+   ]
+  }
+ ],
+ "carimbo": [
+  {
+   "inicio": 15.8,
+   "fim": 17.0,
+   "texto": "Voltou!",
+   "y": 0.3
+  },
+  {
+   "inicio": 18.3,
+   "fim": 19.9,
+   "texto": "Tragédia",
+   "y": 0.2
+  },
+  {
+   "inicio": 61.5,
+   "fim": 62.5,
+   "texto": "SOS dignidade",
+   "y": 0.2,
+   "rot": 6
+  },
+  {
+   "inicio": 77.4,
+   "fim": 78.9,
+   "texto": "Bafo de urubu",
+   "y": 0.2
+  }
+ ],
+ "produto": [
+  {
+   "inicio": 33.2,
+   "fim": 35.0,
+   "texto": "Aura Fresh",
+   "x": 0.5,
+   "y": 0.3
+  },
+  {
+   "inicio": 48.1,
+   "fim": 49.1,
+   "texto": "1x ao dia",
+   "x": 0.5,
+   "y": 0.3
+  }
+ ],
+ "selo": [
+  {
+   "inicio": 47.9,
+   "fim": 49.6,
+   "linhas": [
+    "1 dose",
+    "por dia"
+   ],
+   "x": 0.22,
+   "y": 0.13
+  }
+ ],
+ "particulas": [
+  {
+   "inicio": 42.3,
+   "fim": 45.2
+  },
+  {
+   "inicio": 33.1,
+   "fim": 34.6
+  }
+ ],
+ "preco": [
+  {
+   "inicio": 75.1,
+   "fim": 77.3,
+   "valor": "R$ 3",
+   "sub": "por dia",
+   "y": 0.17
+  }
+ ],
+ "botao": [
+  {
+   "inicio": 71.6,
+   "fim": 75.0,
+   "texto": "Adquira já",
+   "y": 0.79
+  },
+  {
+   "inicio": 80.4,
+   "fim": 81.6,
+   "texto": "Link aqui",
+   "y": 0.79
+  }
+ ],
+ "final": {
+  "duracao": 2.2,
+  "linhas": [
+   "Adquira pelo link"
+  ]
+ },
+ "sfx": [
+  {
+   "t": 0,
+   "som": "whoosh",
+   "volume": 0.55
+  },
+  {
+   "t": 0.2,
+   "som": "pop",
+   "volume": 0.5
+  },
+  {
+   "t": 3.1,
+   "som": "pop",
+   "volume": 0.5
+  },
+  {
+   "t": 7.6,
+   "som": "pop",
+   "volume": 0.5
+  },
+  {
+   "t": 12.6,
+   "som": "clique",
+   "volume": 0.6
+  },
+  {
+   "t": 13.4,
+   "som": "clique",
+   "volume": 0.6
+  },
+  {
+   "t": 14.2,
+   "som": "clique",
+   "volume": 0.6
+  },
+  {
+   "t": 15.8,
+   "som": "erro",
+   "volume": 0.55
+  },
+  {
+   "t": 15.8,
+   "som": "impacto",
+   "volume": 0.5
+  },
+  {
+   "t": 18.3,
+   "som": "impacto",
+   "volume": 0.65
+  },
+  {
+   "t": 21.9,
+   "som": "whoosh",
+   "volume": 0.35
+  },
+  {
+   "t": 25.5,
+   "som": "pop",
+   "volume": 0.5
+  },
+  {
+   "t": 29.9,
+   "som": "ding",
+   "volume": 0.45
+  },
+  {
+   "t": 33.1,
+   "som": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 33.2,
+   "som": "ding",
+   "volume": 0.5
+  },
+  {
+   "t": 37.0,
+   "som": "pop",
+   "volume": 0.5
+  },
+  {
+   "t": 37.9,
+   "som": "pop",
+   "volume": 0.5
+  },
+  {
+   "t": 38.3,
+   "som": "pop",
+   "volume": 0.5
+  },
+  {
+   "t": 42.3,
+   "som": "subida",
+   "volume": 0.4
+  },
+  {
+   "t": 45.9,
+   "som": "pop",
+   "volume": 0.5
+  },
+  {
+   "t": 47.9,
+   "som": "ding",
+   "volume": 0.45
+  },
+  {
+   "t": 51.5,
+   "som": "pop",
+   "volume": 0.5
+  },
+  {
+   "t": 55.1,
+   "som": "pop",
+   "volume": 0.5
+  },
+  {
+   "t": 55.6,
+   "som": "pop",
+   "volume": 0.5
+  },
+  {
+   "t": 56.1,
+   "som": "pop",
+   "volume": 0.5
+  },
+  {
+   "t": 60.0,
+   "som": "impacto",
+   "volume": 0.45
+  },
+  {
+   "t": 61.5,
+   "som": "impacto",
+   "volume": 0.55
+  },
+  {
+   "t": 66.0,
+   "som": "ding",
+   "volume": 0.45
+  },
+  {
+   "t": 68.8,
+   "som": "erro",
+   "volume": 0.45
+  },
+  {
+   "t": 71.6,
+   "som": "whoosh",
+   "volume": 0.45
+  },
+  {
+   "t": 75.1,
+   "som": "moeda",
+   "volume": 0.7
+  },
+  {
+   "t": 75.5,
+   "som": "impacto",
+   "volume": 0.35
+  },
+  {
+   "t": 77.4,
+   "som": "impacto",
+   "volume": 0.65
+  },
+  {
+   "t": 79.4,
+   "som": "clique",
+   "volume": 0.6
+  },
+  {
+   "t": 80.3,
+   "som": "ding",
+   "volume": 0.5
+  },
+  {
+   "t": 81.6,
+   "som": "whoosh",
+   "volume": 0.5
+  }
+ ]
+}

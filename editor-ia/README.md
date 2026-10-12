@@ -22,5 +22,6 @@ Objetivo: receber um UGC bruto e devolver o vídeo editado do mesmo jeito que é
 - `estilo/aura-fresh.md` — guia de estilo aprendido dos exemplos (regras + mapa do vídeo 01-bafo)
 - `analisar.js` — análise dos pares antes/depois (precisa de ffmpeg)
 - `transcrever.py` — transcreve a fala do vídeo liso em `.srt` com tempos (offline)
+- `efeitos.py` — edição "premium" só com efeitos próprios (câmera, gráficos animados, sons) a partir de um `edicao.json`
 - `montar.py` — monta o vídeo final a partir de um `plano.json` (ver `COMO-USAR.md`)
 - `fontes/` — Montserrat (licença OFL) usada nas legendas
