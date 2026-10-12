@@ -2,3 +2,9 @@ node_modules/
 .DS_Store
 data/
 editor-ia/analise/
+trabalhos/**/*.mp4
+trabalhos/**/*.mov
+trabalhos/**/*.png
+trabalhos/**/*.jpg
+trabalhos/**/*.wav
+__pycache__/

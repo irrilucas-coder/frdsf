@@ -21,3 +21,5 @@ Objetivo: receber um UGC bruto e devolver o vídeo editado do mesmo jeito que é
 - `produtos/aura-fresh.md` — o que é o produto, ângulos, ganchos, cuidados com promessas e prompts de B-roll
 - `estilo/aura-fresh.md` — guia de estilo aprendido dos exemplos (regras + mapa do vídeo 01-bafo)
 - `analisar.js` — análise dos pares antes/depois (precisa de ffmpeg)
+- `montar.py` — monta o vídeo final a partir de um `plano.json` (ver `COMO-USAR.md`)
+- `fontes/` — Montserrat (licença OFL) usada nas legendas
