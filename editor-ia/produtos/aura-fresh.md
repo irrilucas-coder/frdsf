@@ -2,9 +2,11 @@
 
 ## O que é
 Produto feito de **clorofila, salsa e hortelã**. Age de dentro para fora contra o mau cheiro do corpo:
-mau hálito (bafo), cecê (axila), chulé e outros odores corporais.
+mau hálito (bafo), cecê (axila), chulé, odor íntimo e outros odores corporais.
 
-> A confirmar com o dono: formato (cápsula? gota? sachê?), dose por dia, preço, oferta e link/CTA.
+Formato (visto no vídeo 01-bafo): **pó verde em pote** ("aura FRESH", pote verde-escuro), dissolvido num copo de água.
+
+> A confirmar com o dono: dose por dia, preço, oferta e texto do CTA.
 
 ## Ângulos de vídeo
 Cada UGC fala de **uma dor**. O agente precisa saber qual é antes de editar, porque muda o gancho,
@@ -15,6 +17,7 @@ o B-roll e as legendas de destaque.
 | **Bafo** | falar perto das pessoas, beijo, reunião, acordar | "Ninguém te conta que você tem bafo." / "Escovar o dente não resolve, e eu vou te mostrar por quê." | pessoa se afastando na conversa, mão na frente da boca, teste do hálito na mão, close de hortelã fresca |
 | **Cecê** | calor, academia, camisa marcada, fim do dia | "Desodorante não resolve cecê, e eu descobri o motivo." | mancha na camisa, braço levantado no ônibus, pessoa cheirando a própria axila, academia |
 | **Chulé** | tirar o tênis na casa dos outros, sapato fechado | "Tirar o tênis na casa dos outros era meu pesadelo." | tênis sendo tirado, pé no tapete, cara de nojo, meia limpa e seca |
+| **Íntimo** | odor na região íntima, insegurança na intimidade | (usar linguagem leve; no 01-bafo aparece só na parte 3D) | corpo 3D azul com partículas verdes saindo da região, sem nada explícito |
 | **Geral** | mau cheiro de dentro para fora | "Se o cheiro vem de dentro, não adianta tentar resolver por fora." | clorofila verde em copo d'água, salsa e hortelã frescas, pessoa confiante de perto |
 
 ## Elementos fixos (todo vídeo)
@@ -26,6 +29,9 @@ o B-roll e as legendas de destaque.
 Para o anúncio não ser derrubado nem dar problema legal, o agente **não** coloca em legenda ou narração:
 - "cura", "trata", "elimina 100%", "resultado garantido", "aprovado por médicos" (sem prova)
 - promessa de prazo exato ("em 24h nunca mais...") se não houver como comprovar
+
+Citar marca concorrente (Halls, Listerine...) com X por cima também tem risco: comparação depreciativa pode gerar
+reclamação no CONAR. O agente só faz isso se o dono pedir.
 
 Usar em vez disso: "ajuda a combater", "hálito mais fresco", "mais confiança de perto", "ação de dentro para fora".
 
