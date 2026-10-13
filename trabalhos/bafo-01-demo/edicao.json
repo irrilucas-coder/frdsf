@@ -3,9 +3,14 @@
  "camera": [
   {
    "t": 0,
-   "z": 1.3,
+   "z": 1.0,
+   "cy": 0.42
+  },
+  {
+   "t": 1.4,
+   "z": 1.2,
    "cx": 0.55,
-   "cy": 0.45
+   "cy": 0.5
   },
   {
    "t": 2.4,
@@ -45,8 +50,8 @@
   },
   {
    "t": 18.3,
-   "z": 1.25,
-   "cy": 0.35
+   "z": 1.06,
+   "cy": 0.42
   },
   {
    "t": 19.9,
@@ -72,10 +77,9 @@
   },
   {
    "t": 33.1,
-   "z": 1.45,
+   "z": 1.15,
    "suave": 0.35,
-   "cx": 0.7,
-   "cy": 0.58
+   "alvo": "produto"
   },
   {
    "t": 35.0,
@@ -103,8 +107,7 @@
    "t": 48.1,
    "z": 1.35,
    "suave": 0.3,
-   "cx": 0.7,
-   "cy": 0.58
+   "alvo": "produto"
   },
   {
    "t": 49.1,
@@ -160,8 +163,8 @@
   },
   {
    "t": 75.5,
-   "z": 1.3,
-   "cx": 0.6,
+   "z": 1.08,
+   "cx": 0.5,
    "cy": 0.45
   },
   {
@@ -181,8 +184,7 @@
    "t": 79.9,
    "z": 1.4,
    "suave": 0.4,
-   "cx": 0.7,
-   "cy": 0.58
+   "alvo": "produto"
   }
  ],
  "flash": [
@@ -225,7 +227,8 @@
    "texto": "Seu bafo tá assim?",
    "emoji": "🤢",
    "estilo": "branco",
-   "tam": 84
+   "tam": 78,
+   "y": 0.8
   },
   {
    "inicio": 3.1,
@@ -239,21 +242,21 @@
    "fim": 10.6,
    "texto": "Igual ex folgado",
    "emoji": "😒",
-   "estilo": "branco"
+   "estilo": "vidro"
   },
   {
    "inicio": 21.9,
    "fim": 24.6,
    "texto": "Chega de vergonha",
    "emoji": "😳",
-   "estilo": "escuro"
+   "estilo": "vidro"
   },
   {
    "inicio": 25.5,
    "fim": 29.6,
    "texto": "Importado?\nCaro e demorado",
    "emoji": "🇺🇸",
-   "estilo": "escuro"
+   "estilo": "vidro"
   },
   {
    "inicio": 29.9,
@@ -263,18 +266,19 @@
    "estilo": "verde"
   },
   {
-   "inicio": 42.5,
-   "fim": 45.0,
-   "texto": "Frescor de dentro\npra fora",
-   "emoji": "🍃",
-   "estilo": "verde"
-  },
-  {
    "inicio": 45.9,
    "fim": 47.6,
    "texto": "Tchau, fedor",
    "emoji": "👋",
-   "estilo": "branco"
+   "estilo": "vidro"
+  },
+  {
+   "inicio": 42.6,
+   "fim": 45.0,
+   "texto": "De dentro pra fora",
+   "emoji": "🍃",
+   "estilo": "verde",
+   "y": 0.8
   }
  ],
  "lista": [
@@ -282,7 +286,7 @@
    "inicio": 12.5,
    "fim": 17.0,
    "y": 0.11,
-   "estilo": "branco",
+   "estilo": "vidro",
    "riscar": 15.8,
    "itens": [
     {
@@ -330,7 +334,7 @@
    "inicio": 51.4,
    "fim": 59.2,
    "y": 0.1,
-   "estilo": "branco",
+   "estilo": "vidro",
    "check": true,
    "itens": [
     {
@@ -359,7 +363,7 @@
    "inicio": 65.8,
    "fim": 71.3,
    "y": 0.12,
-   "estilo": "branco",
+   "estilo": "vidro",
    "itens": [
     {
      "t": 66.0,
@@ -377,7 +381,7 @@
    "inicio": 79.2,
    "fim": 81.6,
    "y": 0.12,
-   "estilo": "branco",
+   "estilo": "vidro",
    "itens": [
     {
      "t": 79.4,
@@ -400,12 +404,6 @@
    "y": 0.3
   },
   {
-   "inicio": 18.3,
-   "fim": 19.9,
-   "texto": "Tragédia",
-   "y": 0.2
-  },
-  {
    "inicio": 61.5,
    "fim": 62.5,
    "texto": "SOS dignidade",
@@ -419,42 +417,11 @@
    "y": 0.2
   }
  ],
- "produto": [
-  {
-   "inicio": 33.2,
-   "fim": 35.0,
-   "texto": "Aura Fresh",
-   "x": 0.5,
-   "y": 0.3
-  },
-  {
-   "inicio": 48.1,
-   "fim": 49.1,
-   "texto": "1x ao dia",
-   "x": 0.5,
-   "y": 0.3
-  }
- ],
- "selo": [
-  {
-   "inicio": 47.9,
-   "fim": 49.6,
-   "linhas": [
-    "1 dose",
-    "por dia"
-   ],
-   "x": 0.22,
-   "y": 0.13
-  }
- ],
+ "selo": [],
  "particulas": [
   {
    "inicio": 42.3,
    "fim": 45.2
-  },
-  {
-   "inicio": 33.1,
-   "fim": 34.6
   }
  ],
  "preco": [
@@ -481,16 +448,20 @@
   }
  ],
  "final": {
-  "duracao": 2.2,
-  "linhas": [
-   "Adquira pelo link"
-  ]
+  "duracao": 2.6,
+  "produto_t": 37.5,
+  "botao": "Adquira pelo link"
  },
  "sfx": [
   {
    "t": 0,
    "som": "whoosh",
    "volume": 0.55
+  },
+  {
+   "t": 0.15,
+   "som": "impacto",
+   "volume": 0.5
   },
   {
    "t": 0.2,
@@ -508,18 +479,23 @@
    "volume": 0.5
   },
   {
+   "t": 12.4,
+   "som": "whoosh",
+   "volume": 0.35
+  },
+  {
    "t": 12.6,
-   "som": "clique",
+   "som": "bolha",
    "volume": 0.6
   },
   {
    "t": 13.4,
-   "som": "clique",
+   "som": "bolha",
    "volume": 0.6
   },
   {
    "t": 14.2,
-   "som": "clique",
+   "som": "bolha",
    "volume": 0.6
   },
   {
@@ -533,9 +509,24 @@
    "volume": 0.5
   },
   {
+   "t": 15.8,
+   "som": "glitch",
+   "volume": 0.4
+  },
+  {
    "t": 18.3,
    "som": "impacto",
    "volume": 0.65
+  },
+  {
+   "t": 18.3,
+   "som": "glitch",
+   "volume": 0.35
+  },
+  {
+   "t": 18.3,
+   "som": "impacto",
+   "volume": 0.5
   },
   {
    "t": 21.9,
@@ -548,8 +539,18 @@
    "volume": 0.5
   },
   {
+   "t": 29.6,
+   "som": "whoosh",
+   "volume": 0.35
+  },
+  {
    "t": 29.9,
    "som": "ding",
+   "volume": 0.45
+  },
+  {
+   "t": 32.4,
+   "som": "whoosh_rev",
    "volume": 0.45
   },
   {
@@ -563,24 +564,39 @@
    "volume": 0.5
   },
   {
+   "t": 33.3,
+   "som": "brilho",
+   "volume": 0.45
+  },
+  {
+   "t": 36.6,
+   "som": "whoosh",
+   "volume": 0.35
+  },
+  {
    "t": 37.0,
-   "som": "pop",
+   "som": "bolha",
    "volume": 0.5
   },
   {
    "t": 37.9,
-   "som": "pop",
+   "som": "bolha",
    "volume": 0.5
   },
   {
    "t": 38.3,
-   "som": "pop",
+   "som": "bolha",
    "volume": 0.5
   },
   {
    "t": 42.3,
    "som": "subida",
    "volume": 0.4
+  },
+  {
+   "t": 42.4,
+   "som": "subida",
+   "volume": 0.35
   },
   {
    "t": 45.9,
@@ -593,23 +609,33 @@
    "volume": 0.45
   },
   {
+   "t": 48.1,
+   "som": "brilho",
+   "volume": 0.4
+  },
+  {
+   "t": 51.3,
+   "som": "whoosh",
+   "volume": 0.35
+  },
+  {
    "t": 51.5,
-   "som": "pop",
+   "som": "bolha",
    "volume": 0.5
   },
   {
    "t": 55.1,
-   "som": "pop",
+   "som": "bolha",
    "volume": 0.5
   },
   {
    "t": 55.6,
-   "som": "pop",
+   "som": "bolha",
    "volume": 0.5
   },
   {
    "t": 56.1,
-   "som": "pop",
+   "som": "bolha",
    "volume": 0.5
   },
   {
@@ -623,6 +649,11 @@
    "volume": 0.55
   },
   {
+   "t": 61.5,
+   "som": "glitch",
+   "volume": 0.35
+  },
+  {
    "t": 66.0,
    "som": "ding",
    "volume": 0.45
@@ -633,9 +664,19 @@
    "volume": 0.45
   },
   {
+   "t": 71.4,
+   "som": "whoosh",
+   "volume": 0.35
+  },
+  {
    "t": 71.6,
    "som": "whoosh",
    "volume": 0.45
+  },
+  {
+   "t": 74.6,
+   "som": "whoosh_rev",
+   "volume": 0.4
   },
   {
    "t": 75.1,
@@ -653,9 +694,19 @@
    "volume": 0.65
   },
   {
+   "t": 77.4,
+   "som": "glitch",
+   "volume": 0.35
+  },
+  {
    "t": 79.4,
-   "som": "clique",
+   "som": "bolha",
    "volume": 0.6
+  },
+  {
+   "t": 79.9,
+   "som": "brilho",
+   "volume": 0.4
   },
   {
    "t": 80.3,
@@ -664,8 +715,115 @@
   },
   {
    "t": 81.6,
-   "som": "whoosh",
-   "volume": 0.5
+   "som": "brilho",
+   "volume": 0.45
   }
- ]
+ ],
+ "titulo_atras": [
+  {
+   "inicio": 0.15,
+   "fim": 2.9,
+   "texto": "BAFO?",
+   "y": 0.1,
+   "cor": [
+    182,
+    227,
+    90
+   ],
+   "tam": 270
+  },
+  {
+   "inicio": 18.3,
+   "fim": 19.9,
+   "texto": "TRAGÉDIA",
+   "y": 0.11,
+   "cor": [
+    229,
+    57,
+    53
+   ],
+   "tam": 230
+  },
+  {
+   "inicio": 42.4,
+   "fim": 45.0,
+   "texto": "FRESH",
+   "y": 0.16,
+   "cor": [
+    182,
+    227,
+    90
+   ]
+  }
+ ],
+ "foco": [
+  {
+   "inicio": 33.1,
+   "fim": 35.0,
+   "fundo": "verde",
+   "raios": true
+  },
+  {
+   "inicio": 75.1,
+   "fim": 77.3,
+   "fundo": "escuro",
+   "raios": true
+  }
+ ],
+ "anel_produto": [
+  {
+   "inicio": 33.3,
+   "fim": 35.0,
+   "texto": "Aura Fresh"
+  },
+  {
+   "inicio": 48.1,
+   "fim": 49.4,
+   "texto": "1 dose por dia"
+  },
+  {
+   "inicio": 79.9,
+   "fim": 81.6,
+   "texto": "R$ 3 por dia"
+  }
+ ],
+ "glitch": [
+  {
+   "inicio": 15.8,
+   "fim": 16.05
+  },
+  {
+   "inicio": 18.3,
+   "fim": 18.5
+  },
+  {
+   "inicio": 61.5,
+   "fim": 61.7
+  },
+  {
+   "inicio": 77.4,
+   "fim": 77.6
+  }
+ ],
+ "luz": [
+  {
+   "t": 12.4
+  },
+  {
+   "t": 29.6
+  },
+  {
+   "t": 36.6
+  },
+  {
+   "t": 51.3
+  },
+  {
+   "t": 71.4
+  }
+ ],
+ "musica": {
+  "volume": 0.2,
+  "bpm": 100
+ }
 }
