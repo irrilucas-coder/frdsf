@@ -69,6 +69,11 @@ Formato pensado para o Google Flow (Veo 3.1): cenas de 8 s, vertical 9:16, falas
 
 ---
 
+## 11. 🍲 A Carne de Panela (ideia do usuário) — em produção em `a-carne-de-panela/`
+**História:** O chefe temido da mansão desaba quando a empregada serve a carne de panela da mãe falecida.
+
+---
+
 ### Dica para escolher
 - **Mais fáceis de gravar (poucos cenários):** 2, 5, 8
 - **Mais impactantes visualmente:** 1, 3, 4
