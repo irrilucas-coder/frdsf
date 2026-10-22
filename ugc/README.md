@@ -37,7 +37,10 @@ produto na mão, serviço local, depoimento etc.
 |---|---|---|---|
 | Veo 3.1 Fast / Lite | 4, 6 ou **8 s** | Sim (até 3 imagens) | Só clipe de 8 s pode usar **Extend** |
 | Veo 3.1 Quality | 8 s | **Não** aceita ingredientes | Use só para cena sem personagem |
-| Gemini Omni Flash | até **10 s**, 720p | Sim (imagens e vídeos curtos) | Extend pode não estar liberado ainda |
+| Gemini Omni Flash | até **10 s**, 720p | **Sim** (imagem da UGC + imagem do produto) | Extend pode não estar liberado ainda |
+
+**Padrão recomendado para UGC: Gemini Omni Flash** — 10 s por cena e aceita as imagens da personagem e do produto como ingredientes.
+O Veo 3.1 Fast (8 s) fica como alternativa; o Veo 3.1 Quality é o único que não aceita ingredientes.
 
 | Vídeo final | Clipes de 10 s | Clipes de 8 s |
 |---|---|---|
