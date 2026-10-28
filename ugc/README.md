@@ -10,6 +10,7 @@ produto na mão, serviço local, depoimento etc.
   - `02-iptv.md` — serviço de IPTV (28 s)
   - `03-produto-na-mao.md` — produto físico com foto do produto como ingrediente (36 s)
   - `04-padaria-cliente.md` — vídeo entregue para um cliente local (26 s)
+  - `05-app-novelinhas-luana.md` — trecho de novelinha + Luana apresentando o app (38 s)
 
 ---
 
