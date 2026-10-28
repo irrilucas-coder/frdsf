@@ -13,3 +13,19 @@ Personagem principal para todos os vídeos. Gere a imagem uma vez no Nano Banana
 ## Trocar roupa/local mantendo o rosto — Nano Banana (anexe a imagem dela)
 
 > Keep the exact same person from the reference image: same face, same skin texture and tone, same freckles, same hair color, highlights, roots and waves, same features. Change only: [O QUE MUDA]. Same candid smartphone selfie style, natural daylight, unretouched, vertical 9:16.
+
+## Mais ângulos da Luana — Nano Banana (anexe sempre a imagem principal dela)
+
+Gere um por vez, cada um com a imagem principal anexada. No Flow, use até 3: **frente + 3/4 + corpo inteiro** (ou + produto).
+
+**Base (cole antes de cada ângulo):**
+> Keep the exact same person from the reference image: same face, same skin texture with pores, freckles and peach fuzz, same skin tone, same long wavy dark brown hair with honey highlights and grown-out roots, same white t-shirt, gold studs and thin gold necklace. Same living room, same soft late-afternoon window light. Candid smartphone photo, unretouched, no beauty filter, vertical 9:16.
+
+1. **3/4 esquerdo:** Now her head and body are turned about 45 degrees to her left, eyes still looking into the lens, relaxed smile, front camera selfie at arm's length.
+2. **3/4 direito:** Now her head and body are turned about 45 degrees to her right, window light now hitting the front of her face, eyes looking into the lens, soft smile.
+3. **Perfil:** Now a side profile view of her face looking to the left, as if someone else took the photo with a phone, natural expression, hair tucked behind the visible ear, showing nose and jaw shape clearly.
+4. **Close do rosto:** Now an extreme close-up of her face from forehead to chin, phone held close, showing detailed skin texture, pores, freckles, fine baby hairs and eye detail, neutral relaxed expression.
+5. **Meio corpo:** Now a waist-up photo taken by a friend with the phone's rear camera at chest height, she stands in the living room with one hand in the back pocket of light-wash blue jeans, natural relaxed posture.
+6. **Corpo inteiro:** Now a full-body photo taken by a friend with the phone's rear camera, she stands barefoot in the living room wearing the same white t-shirt and light-wash high-waisted blue jeans, natural relaxed pose, realistic proportions, head to feet visible.
+7. **Falando (boca aberta):** Now mid-sentence, mouth open naturally in the middle of a word, eyebrows slightly raised, one hand gesturing near her chest, front camera selfie.
+8. **Folha de referência (opcional):** Now a character reference sheet on a plain light-gray background, the same woman shown four times side by side at the same scale: front view, three-quarter view, side profile, and back view, full body, neutral standing pose, same outfit with light-wash blue jeans, soft even daylight, realistic photo, no text, horizontal 16:9.
