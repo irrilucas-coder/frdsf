@@ -10,6 +10,9 @@ Personagem principal para todos os vídeos. Gere a imagem uma vez no Nano Banana
 
 > the woman from the reference image (28-year-old woman, long wavy dark brown hair with honey highlights, white t-shirt, thin gold necklace)
 
+**Âncora fiel à imagem aprovada (`luana-folha-referencia.jpg`):**
+> 28-year-old Brazilian woman, light olive-tan skin, slim oval face, straight nose, thick dark straight eyebrows, dark brown eyes, small mole on her right cheek near the nose, long wavy hair with a middle part, nearly black at the roots fading into caramel-brown ombré lengths, tiny gold stud earrings, thin gold chain necklace, plain white crew-neck t-shirt
+
 ## Trocar roupa/local mantendo o rosto — Nano Banana (anexe a imagem dela)
 
 > Keep the exact same person from the reference image: same face, same skin texture and tone, same freckles, same hair color, highlights, roots and waves, same features. Change only: [O QUE MUDA]. Same candid smartphone selfie style, natural daylight, unretouched, vertical 9:16.
