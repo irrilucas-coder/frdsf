@@ -11,6 +11,7 @@ produto na mão, serviço local, depoimento etc.
   - `03-produto-na-mao.md` — produto físico com foto do produto como ingrediente (36 s)
   - `04-padaria-cliente.md` — vídeo entregue para um cliente local (26 s)
   - `05-app-novelinhas-luana.md` — trecho de novelinha + Luana apresentando o app (38 s)
+  - `06-luana-oferta-video-jonathan.md` — Luana prova que parece real e oferece o serviço de vídeo (40 s)
 
 ---
 
