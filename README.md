@@ -11,7 +11,9 @@ Dashboard local para gerar **imagens** (GPT Image 2) e **vídeos** (Seedance 2.0
 Conversa com o Claude usando a **sua chave da API da Anthropic** (gasta os seus créditos, não precisa de plano Pro).
 1. Cole a chave no campo lá em cima (fica salva só neste navegador; o servidor local só repassa para a Anthropic)
    e clique em **Testar chave**: confere se ela funciona e quais modelos libera, sem gastar tokens.
-   O saldo de créditos aparece só no site da Anthropic: console.anthropic.com → Settings → Billing.
+   O saldo oficial aparece só no site da Anthropic (console.anthropic.com → Settings → Billing), para quem tem a conta.
+   Se você só tem a chave, preencha **Créditos que recebi** na lateral: o topo mostra quanto resta (estimativa,
+   conta só o que foi gasto neste chat e neste navegador).
 2. Escreva e aperte Enter. A resposta aparece enquanto o Claude escreve; o botão vira **Parar**.
 3. Embaixo de cada resposta: quantos tokens gastou e o custo aproximado em dólar.
 - **Modelo:** Opus 5.5 (mais inteligente), Sonnet 5.5 (metade do preço), Haiku 5.5 (rápido e bem barato).

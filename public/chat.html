@@ -103,6 +103,9 @@
           <option value="high">Caprichado (gasta mais)</option>
         </select>
       </label>
+      <label>Créditos que recebi (tokens)
+        <input id="inicial" type="text" inputmode="numeric" placeholder="Ex.: 10.000.000">
+      </label>
       <label>Instruções fixas (opcional)
         <textarea id="instrucoes" placeholder="Ex.: Você é roteirista de novelas brasileiras e escreve prompts para o Google Flow."></textarea>
       </label>
@@ -137,6 +140,15 @@ $("chave").value = ler("chat.chave", "");
 $("modelo").value = ler("chat.modelo", "claude-opus-5-5");
 $("esforco").value = ler("chat.esforco", "medium");
 $("instrucoes").value = ler("chat.instrucoes", "");
+let inicial = ler("chat.inicial", 0);
+$("inicial").value = inicial ? inicial.toLocaleString("pt-BR") : "";
+$("inicial").addEventListener("change", () => {
+  inicial = parseInt($("inicial").value.replace(/\D/g, ""), 10) || 0;
+  if (inicial && totalTokens && confirm("Começar a contar do zero agora? (OK = zera o que já foi gasto; Cancelar = mantém)")) { totalTokens = 0; gravar("chat.totalTokens", 0); }
+  gravar("chat.inicial", inicial);
+  $("inicial").value = inicial ? inicial.toLocaleString("pt-BR") : "";
+  desenhar();
+});
 const atualizarDot = () => $("dot").classList.toggle("ok", $("chave").value.trim().length > 20);
 atualizarDot();
 $("chave").addEventListener("input", () => { gravar("chat.chave", $("chave").value.trim()); atualizarDot(); });
@@ -212,7 +224,13 @@ function desenhar() {
     b.onclick = () => { atual = c.id; salvar(); desenhar(); $("lateral").classList.remove("aberto"); };
     lista.appendChild(b);
   }
-  $("total").textContent = totalTokens ? `Usado aqui: ${totalTokens.toLocaleString("pt-BR")} tokens` : "";
+  if (inicial) {
+    const resta = Math.max(0, inicial - totalTokens);
+    $("total").textContent = `Restam ~${resta.toLocaleString("pt-BR")} tokens (${Math.round((resta / inicial) * 100)}%)`;
+    $("total").title = "Estimativa: conta só o que foi gasto neste chat, neste navegador";
+  } else {
+    $("total").textContent = totalTokens ? `Usado aqui: ${totalTokens.toLocaleString("pt-BR")} tokens` : "";
+  }
   const box = $("msgs");
   box.innerHTML = "";
   const c = conversaAtual();
