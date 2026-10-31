@@ -54,6 +54,9 @@
   .caixa textarea { flex: 1; min-height: 48px; max-height: 220px; resize: none; }
   .total { font-size: 13px; color: var(--muted); }
   #menu { display: none; }
+  .aviso { padding: 10px 16px; font-size: 14px; border-bottom: 1px solid var(--line); line-height: 1.5; }
+  .aviso.ok { background: rgba(46, 204, 113, .12); } .aviso.bad { background: rgba(255, 92, 92, .12); }
+  .aviso a { color: var(--accent); }
   @media (max-width: 760px) {
     .layout { grid-template-columns: 1fr; }
     aside { display: none; position: fixed; inset: 0; top: 0; z-index: 5; background: var(--bg); }
@@ -76,8 +79,10 @@
     <span class="dot" id="dot" title="chave"></span>
     <input id="chave" type="password" placeholder="Cole sua chave da API do Claude" autocomplete="off">
     <button id="verChave" title="Mostrar/ocultar">👁</button>
+    <button id="testar" title="Confere a chave sem gastar tokens">Testar chave</button>
   </div>
 </header>
+<div id="aviso" class="aviso" hidden></div>
 
 <div class="layout">
   <aside id="lateral">
@@ -137,6 +142,26 @@ atualizarDot();
 $("chave").addEventListener("input", () => { gravar("chat.chave", $("chave").value.trim()); atualizarDot(); });
 $("verChave").onclick = () => { $("chave").type = $("chave").type === "password" ? "text" : "password"; };
 for (const id of ["modelo", "esforco", "instrucoes"]) $(id).addEventListener("change", () => gravar("chat." + id, $(id).value));
+function avisar(html, tipo) { const a = $("aviso"); a.innerHTML = html; a.className = "aviso " + tipo; a.hidden = false; }
+$("testar").onclick = async () => {
+  const chave = $("chave").value.trim();
+  if (!chave) { avisar("Cole a chave no campo primeiro.", "bad"); return; }
+  $("testar").textContent = "Testando…";
+  try {
+    const r = await fetch("/api/claude/testar", { headers: { "x-claude-key": chave } });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.msg || `Erro ${r.status}`);
+    const nomes = { "claude-opus-5-5": "Opus 5.5", "claude-sonnet-5-5": "Sonnet 5.5", "claude-haiku-5-5": "Haiku 5.5" };
+    const lib = j.nossos.map((id) => nomes[id]).join(", ") || "nenhum dos modelos deste chat";
+    avisar(`✅ <b>Chave válida!</b> Modelos liberados: ${lib}. ` +
+      `Para ver o <b>saldo de créditos</b>, abra <a href="https://console.anthropic.com/settings/billing" target="_blank" rel="noopener">console.anthropic.com → Settings → Billing</a> ` +
+      `(a Anthropic não mostra o saldo pela chave).`, "ok");
+  } catch (err) {
+    avisar(`❌ ${escapar(err.message)}`, "bad");
+  } finally {
+    $("testar").textContent = "Testar chave";
+  }
+};
 $("menu").onclick = () => { $("lateral").classList.add("aberto"); $("fecharMenu").style.display = "block"; };
 $("fecharMenu").onclick = () => { $("lateral").classList.remove("aberto"); };
 

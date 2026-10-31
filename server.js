@@ -19,7 +19,10 @@ function claudeErro(err) {
   if (Anthropic && err instanceof Anthropic.AuthenticationError) return "Chave inválida. Confira se colou a chave inteira.";
   if (Anthropic && err instanceof Anthropic.PermissionDeniedError) return "Essa chave não tem permissão para esse modelo.";
   if (Anthropic && err instanceof Anthropic.RateLimitError) return "Muitos pedidos seguidos. Espere um pouco e tente de novo.";
-  if (Anthropic && err instanceof Anthropic.BadRequestError) return `Pedido recusado pela Anthropic: ${err.message}`;
+  if (Anthropic && err instanceof Anthropic.BadRequestError) {
+    if (/credit balance/i.test(err.message)) return "Seus créditos acabaram. Coloque mais em console.anthropic.com → Settings → Billing.";
+    return `Pedido recusado pela Anthropic: ${err.message}`;
+  }
   if (Anthropic && err instanceof Anthropic.APIConnectionError) return "Sem conexão com a Anthropic. Confira sua internet.";
   if (Anthropic && err instanceof Anthropic.APIError) return `Erro da Anthropic (${err.status}): ${err.message}`;
   return err.message || String(err);
@@ -116,6 +119,19 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
+  if (url.pathname === "/api/claude/testar" && req.method === "GET") {
+    // Lista os modelos que a chave libera: é gratuito e não gasta tokens
+    if (!Anthropic) return sendJson(res, 500, { msg: "Falta instalar o chat: rode `npm install` nesta pasta (o Abrir Estudio.bat faz isso sozinho)." });
+    const apiKey = req.headers["x-claude-key"];
+    if (!apiKey) return sendJson(res, 401, { msg: "Cole sua chave da API do Claude primeiro." });
+    try {
+      const modelos = [];
+      for await (const m of new Anthropic({ apiKey }).models.list()) modelos.push(m.id);
+      return sendJson(res, 200, { ok: true, modelos, nossos: CLAUDE_MODELS.filter((id) => modelos.includes(id)) });
+    } catch (err) {
+      return sendJson(res, err.status && err.status < 600 ? err.status : 502, { msg: claudeErro(err) });
+    }
+  }
   if (url.pathname === "/api/claude/chat" && req.method === "POST") {
     if (!Anthropic) return sendJson(res, 500, { msg: "Falta instalar o chat: rode `npm install` nesta pasta (o Abrir Estudio.bat faz isso sozinho)." });
     const apiKey = req.headers["x-claude-key"];
