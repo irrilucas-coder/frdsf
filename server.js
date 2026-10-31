@@ -9,6 +9,22 @@ const KIE_API = "https://api.kie.ai/api/v1/jobs";
 const KIE_CREDIT = "https://api.kie.ai/api/v1/chat/credit";
 const KIE_UPLOAD = "https://kieai.redpandaai.co/api/file-base64-upload";
 
+// Chat Claude: usa a biblioteca oficial da Anthropic (instalada com `npm install`; o Abrir Estudio.bat faz isso sozinho)
+let Anthropic = null;
+try { const sdk = require("@anthropic-ai/sdk"); Anthropic = sdk.default || sdk; } catch { /* chat fica desligado até instalar */ }
+const CLAUDE_MODELS = ["claude-opus-5-5", "claude-sonnet-5-5", "claude-haiku-5-5"];
+const CLAUDE_SYSTEM = "Você é um assistente prestativo. Responda sempre em português do Brasil, de forma clara e direta.";
+
+function claudeErro(err) {
+  if (Anthropic && err instanceof Anthropic.AuthenticationError) return "Chave inválida. Confira se colou a chave inteira.";
+  if (Anthropic && err instanceof Anthropic.PermissionDeniedError) return "Essa chave não tem permissão para esse modelo.";
+  if (Anthropic && err instanceof Anthropic.RateLimitError) return "Muitos pedidos seguidos. Espere um pouco e tente de novo.";
+  if (Anthropic && err instanceof Anthropic.BadRequestError) return `Pedido recusado pela Anthropic: ${err.message}`;
+  if (Anthropic && err instanceof Anthropic.APIConnectionError) return "Sem conexão com a Anthropic. Confira sua internet.";
+  if (Anthropic && err instanceof Anthropic.APIError) return `Erro da Anthropic (${err.status}): ${err.message}`;
+  return err.message || String(err);
+}
+
 // Character photos for "Modo Novela" live on this computer, in data/characters/
 const CAST_DIR = path.join(__dirname, "data", "characters");
 const CAST_INDEX = path.join(CAST_DIR, "index.json");
@@ -100,6 +116,56 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
+  if (url.pathname === "/api/claude/chat" && req.method === "POST") {
+    if (!Anthropic) return sendJson(res, 500, { msg: "Falta instalar o chat: rode `npm install` nesta pasta (o Abrir Estudio.bat faz isso sozinho)." });
+    const apiKey = req.headers["x-claude-key"];
+    if (!apiKey) return sendJson(res, 401, { msg: "Cole sua chave da API do Claude primeiro." });
+    let body;
+    try { body = JSON.parse(await readBody(req)); } catch { return sendJson(res, 400, { msg: "JSON inválido" }); }
+    const messages = Array.isArray(body.messages) ? body.messages : [];
+    if (!messages.length) return sendJson(res, 400, { msg: "Escreva uma mensagem." });
+    const model = CLAUDE_MODELS.includes(body.model) ? body.model : CLAUDE_MODELS[0];
+    const params = {
+      model,
+      max_tokens: 64000,
+      system: body.instrucoes ? `${CLAUDE_SYSTEM}\n\n${String(body.instrucoes)}` : CLAUDE_SYSTEM,
+      messages,
+      output_config: { effort: ["low", "medium", "high"].includes(body.esforco) ? body.esforco : "medium" },
+    };
+    if (model !== "claude-haiku-5-5") {
+      // se um filtro de segurança recusar por engano, a Anthropic refaz o pedido num modelo reserva
+      params.betas = ["server-side-fallback-2026-07-01"];
+      params.fallbacks = "default";
+    }
+    const client = new Anthropic({ apiKey });
+    const stream = client.beta.messages.stream(params);
+    res.on("close", () => { if (!res.writableEnded) stream.abort(); });
+    let comecou = false;
+    const comecar = () => {
+      if (!comecou) res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-cache" });
+      comecou = true;
+    };
+    try {
+      for await (const ev of stream) {
+        if (ev.type === "content_block_delta" && ev.delta.type === "text_delta") {
+          comecar();
+          res.write(ev.delta.text);
+        }
+      }
+      const final = await stream.finalMessage();
+      comecar();
+      if (final.stop_reason === "refusal") res.write("\n\n_(O Claude não pode ajudar com esse pedido.)_");
+      if (final.stop_reason === "max_tokens") res.write("\n\n_(A resposta foi cortada no limite de tamanho.)_");
+      // depois do caractere \u0000 vai o consumo de tokens, que a página usa para mostrar o gasto
+      res.write(`\u0000${JSON.stringify({ usage: final.usage, model: final.model })}`);
+      return res.end();
+    } catch (err) {
+      if (!comecou) return sendJson(res, err.status && err.status < 600 ? err.status : 502, { msg: claudeErro(err) });
+      res.write(`\n\n[erro: ${claudeErro(err)}]`);
+      return res.end();
+    }
+  }
+
   if (url.pathname.startsWith("/api/")) {
     // The key comes from the browser (pasted on the page); it is never saved on disk.
     const apiKey = req.headers["x-kie-key"];
@@ -121,6 +187,10 @@ const server = http.createServer(async (req, res) => {
     return sendJson(res, 404, { code: 404, msg: "Unknown endpoint" });
   }
 
+  if (url.pathname === "/chat" || url.pathname === "/chat.html") {
+    res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+    return fs.createReadStream(path.join(__dirname, "public", "chat.html")).pipe(res);
+  }
   if (url.pathname === "/" || url.pathname === "/index.html") {
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
     return fs.createReadStream(path.join(__dirname, "public", "index.html")).pipe(res);
