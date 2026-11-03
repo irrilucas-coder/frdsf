@@ -1,7 +1,7 @@
 # Anúncio Papai Noel — Vídeo personalizado para crianças
 
-**Ferramentas:** Nano Banana (imagem de referência) → Flow / Gemini Omni Flash (vídeo, usando a imagem como *ingrediente*)
-**Formato:** 9:16 vertical (Reels/Stories/Feed Meta) · 4 cenas de ~8 s · total ≈ 32 s
+**Ferramentas:** Nano Banana (imagem de referência) → Flow / Gemini Omni Flash (vídeo, usando a imagem como *ingrediente*)\
+**Formato:** 9:16 vertical (Reels/Stories/Feed Meta) · 4 cenas de ~8 s · total ≈ 32 s\
 **Idioma da fala:** português do Brasil
 
 > Os prompts estão em inglês porque o modelo segue melhor as instruções visuais assim. As falas ficam em português, entre aspas, e o modelo vai falar exatamente aquele texto.
