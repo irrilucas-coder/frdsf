@@ -1,67 +1,193 @@
-# Novelinha IA: "O Sangue Não Mente"
-Vertical 9:16 · 8 cenas × 8s (~64s) · Flow (Veo) + Nano Banana · Público 30–70 anos
+# O SANGUE NÃO MENTE — Parte 1
+Facebook · Vertical 9:16 · 8 cenas × 8s · Flow (Veo, Ingredients to Video) + Nano Banana
 
-## 1. Prompt reconstruído do vídeo original
-> Cinematic vertical 9:16 shot, bright modern hospital corridor with white walls and fluorescent ceiling lights. A distressed family waits: a grey-haired man in his 50s with a salt-and-pepper beard, dark suit, white shirt and teal tie; a woman in her 50s in a burgundy dress, hands clasped, worried; a young woman in her 20s with long wavy brown hair, crying. A handsome doctor in his late 30s with a dark beard, white coat, navy scrubs and a stethoscope around his neck walks toward them with a serious face and delivers bad news. Close-ups on the father's shocked face. Telenovela drama style, realistic, soft hospital lighting, shallow depth of field.
+## 0. Regras para o agente do Flow (colar uma vez, antes das cenas)
+```
+You are generating a Brazilian telenovela series, one 8-second vertical 9:16 clip per prompt. Rules for EVERY clip:
+- Use ONLY the character ingredients listed for that scene. Keep each character's face, hair, age, body and wardrobe 100% identical to their reference image. Never invent new outfits.
+- Ultra-realistic live-action footage, never animated, never CGI-looking.
+- All dialogue is spoken in Brazilian Portuguese (pt-BR) with a natural Brazilian accent. Never European Portuguese, never Spanish.
+- Perfect lip-sync: mouth movements match every syllable of the dialogue. Only the character named as speaking moves their lips.
+- No subtitles, no captions, no on-screen text, no watermark, no background music. Only dialogue, natural ambience and the sound effects described.
+- Same location in all scenes: bright modern Brazilian private hospital corridor.
+```
 
-## 2. Personagens fixos (gerar 1 imagem de cada no Nano Banana e usar como referência em TODAS as cenas)
-Prompt base: *"Photorealistic portrait, vertical 9:16, hospital corridor background, soft fluorescent light, telenovela style, neutral expression, same character reference sheet: front view, 3/4 view."*
+## 1. Personagens — prompts de referência (Nano Banana, 9:16)
+Gere cada um separado. Escolha a imagem mais natural e use SEMPRE a mesma em todas as cenas.
 
-| Nome | Descrição (colar no prompt) |
+### ROBERTO (o pai)
+```
+Ultra-realistic photograph for a film character reference. Vertical 9:16. One Brazilian man, 56 years old, standing centered, framed from mid-thigh up, facing the camera directly, serious neutral expression, arms relaxed at his sides. Light olive skin, thick wavy salt-and-pepper hair swept back, full well-trimmed grey-and-black beard, deep forehead lines, crow's feet, dark brown eyes, strong jawline. Wearing a dark navy two-piece tailored suit, crisp white dress shirt, dark teal silk tie, simple gold wedding ring on his left hand. Plain seamless light grey studio background, soft even diffused lighting, no harsh shadows. Shot on Canon EOS R5, 85mm lens, f/2.8, sharp focus on the face. Real natural skin texture with visible pores, fine wrinkles and small imperfections, no retouching, no beauty filter. Photorealistic, not CGI, not illustration. No text, no watermark, no props, no other people.
+```
+
+### HELENA (a mãe)
+```
+Ultra-realistic photograph for a film character reference. Vertical 9:16. One Brazilian woman, 52 years old, standing centered, framed from mid-thigh up, facing the camera directly, worried serious expression, hands loosely clasped in front of her waist. Light brown skin, straight shoulder-length dark brown hair tucked behind her ears, warm brown eyes, subtle laugh lines and fine wrinkles, natural minimal makeup. Wearing a fitted burgundy wine-red knee-length dress with short sleeves and a round neckline, a thin gold chain necklace with a small gold cross pendant, small gold stud earrings, gold wedding ring. Plain seamless light grey studio background, soft even diffused lighting, no harsh shadows. Shot on Canon EOS R5, 85mm lens, f/2.8, sharp focus on the face. Real natural skin texture with visible pores and small imperfections, no retouching, no beauty filter. Photorealistic, not CGI, not illustration. No text, no watermark, no props, no other people.
+```
+
+### CAMILA (a filha)
+```
+Ultra-realistic photograph for a film character reference. Vertical 9:16. One Brazilian young woman, 24 years old, standing centered, framed from mid-thigh up, facing the camera directly, sad fragile expression, slightly reddened eyes as if she had been crying. Light olive skin, long voluminous wavy brown hair falling past her shoulders, brown eyes, thick natural eyebrows, natural minimal makeup. Wearing a cream silk long-sleeve blouse tucked into light blue straight jeans, small gold hoop earrings. Plain seamless light grey studio background, soft even diffused lighting, no harsh shadows. Shot on Canon EOS R5, 85mm lens, f/2.8, sharp focus on the face. Real natural skin texture with visible pores and small imperfections, no retouching, no beauty filter. Photorealistic, not CGI, not illustration. No text, no watermark, no props, no other people.
+```
+
+### DR. RAFAEL (o médico)
+```
+Ultra-realistic photograph for a film character reference. Vertical 9:16. One Brazilian man, 38 years old, standing centered, framed from mid-thigh up, facing the camera directly, serious professional expression. Light olive skin, short dark brown hair slightly swept up with a few grey strands at the temples, well-trimmed full dark beard, thick eyebrows, brown eyes. Wearing an open white long-sleeve doctor's lab coat over navy blue V-neck surgical scrubs, a silver stethoscope hanging around his neck, a blank hospital ID badge clipped to the coat pocket with no readable text. Plain seamless light grey studio background, soft even diffused lighting, no harsh shadows. Shot on Canon EOS R5, 85mm lens, f/2.8, sharp focus on the face. Real natural skin texture with visible pores and small imperfections, no retouching, no beauty filter. Photorealistic, not CGI, not illustration. No text, no watermark, no other people.
+```
+
+### MARCOS (irmão do Roberto, o verdadeiro pai)
+```
+Ultra-realistic photograph for a film character reference. Vertical 9:16. One Brazilian man, 52 years old, standing centered, framed from mid-thigh up, facing the camera directly, tense guilty expression. Strong family resemblance to an older brother: same nose and jawline. Tanned light olive skin, short dark brown hair with only light grey at the sides, short stubble beard, brown eyes, forehead lines. Wearing a beige linen blazer over a light blue open-collar button-up shirt, no tie, a brown leather-strap wristwatch. Plain seamless light grey studio background, soft even diffused lighting, no harsh shadows. Shot on Canon EOS R5, 85mm lens, f/2.8, sharp focus on the face. Real natural skin texture with visible pores, wrinkles and small imperfections, no retouching, no beauty filter. Photorealistic, not CGI, not illustration. No text, no watermark, no props, no other people.
+```
+
+## 2. Ingredientes por cena (o Flow aceita até 3 por geração)
+| Cena | Ingredientes |
 |---|---|
-| **Roberto** (pai) | Brazilian man, 55, grey wavy hair, salt-and-pepper beard, dark navy suit, white shirt, teal tie |
-| **Helena** (mãe) | Brazilian woman, 52, shoulder-length dark brown hair, burgundy wine-colored dress, small gold necklace |
-| **Camila** (filha) | Brazilian woman, 25, long wavy brown hair, cream blouse, teary eyes |
-| **Dr. Rafael** (médico) | Brazilian man, 38, short dark hair, trimmed dark beard, white lab coat, navy scrubs, stethoscope |
-| **Marcos** (tio, aparece na cena 7) | Brazilian man, 50, resembles Roberto but darker hair, beige linen jacket, open collar, guilty look |
+| 1 | Dr. Rafael + Roberto + Helena (Camila aparece de costas, sem rosto) |
+| 2 | Roberto + Dr. Rafael + Helena |
+| 3 | Helena + Camila |
+| 4 | Roberto + Helena |
+| 5 | Dr. Rafael + Camila + Helena |
+| 6 | Helena + Roberto |
+| 7 | Marcos + Roberto + Helena |
+| 8 | Roberto + Marcos + Helena |
 
-**História:** Lucas (filho de 22 anos) sofreu um acidente e precisa de sangue. O médico revela que Roberto **não é compatível e não pode ser o pai biológico**. Helena esconde um segredo de 22 anos, e o verdadeiro pai é o irmão de Roberto.
+## 3. Prompts das cenas (8s cada, 1 cena por prompt)
 
-> Dica no Flow: use **"Ingredients to Video"** com as imagens dos personagens e mantenha sempre o mesmo final de prompt (o "estilo fixo"), para não variar rosto, roupa nem luz.
+### CENA 1 — O GANCHO (versão regenerada do vídeo original)
+```
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: bright modern Brazilian private hospital corridor, white walls, glossy light floor, rows of fluorescent ceiling panels fading into the distance, soft out-of-focus nurses far in the background.
+Characters (use ingredients): the FATHER (Roberto, navy suit, teal tie) stands on the left holding his crying adult daughter against his chest; the daughter's face is completely buried in his shoulder, only her long wavy brown hair and cream blouse are visible. The MOTHER (Helena, burgundy dress, gold cross necklace) stands right behind them, hands clasped at her chest. The DOCTOR (Dr. Rafael, white coat, navy scrubs, stethoscope) has just stopped in front of the father, grave expression.
+Timeline:
+0.0–3.0s: The doctor looks straight into the father's eyes and immediately says, firm and low, in Brazilian Portuguese: "Seu Roberto... o senhor não é o pai biológico do Lucas."
+3.0–5.0s: Fast dramatic telenovela crash zoom onto the father's face: his eyes widen, his jaw drops, he stops breathing, his hand loosens on his daughter's back.
+5.0–8.0s: The father, voice cracking, almost a whisper, in Brazilian Portuguese: "O quê?... O que o senhor disse?" Behind him, the mother turns pale, swallows hard and lowers her eyes in guilt.
+Only the doctor and the father speak. The mother and daughter stay silent.
+Camera: starts as a stable medium shot at eye level, then a sudden punch-in to a tight close-up of the father. 35mm anamorphic look, shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, slightly desaturated teal-white grade, dramatic but realistic.
+Acting: restrained, naturalistic, deeply emotional, real micro-expressions, glossy eyes, visible tension in the jaw.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: quiet hospital room tone, distant heart-monitor beeps, the daughter's soft muffled sobbing. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra speaking characters, face morphing, distorted hands, daughter's face visible.
+```
+Texto da edição (0–3s): **"ELE DESCOBRIU NO HOSPITAL… DEPOIS DE 22 ANOS 😱"**
 
-**Estilo fixo (colar no fim de toda cena):**
-`Vertical 9:16, photorealistic, Brazilian telenovela drama style, bright hospital corridor, soft fluorescent lighting, shallow depth of field, emotional, dialogue spoken in Brazilian Portuguese, no subtitles, no music.`
+### CENA 2 — A NEGAÇÃO
+```
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor, white walls, fluorescent ceiling panels.
+Characters (use ingredients): the FATHER (Roberto, navy suit, teal tie), the DOCTOR (Dr. Rafael, white coat, navy scrubs, stethoscope), and the MOTHER (Helena, burgundy dress) standing two steps behind the father.
+Timeline:
+0.0–4.0s: Medium two-shot. The father steps toward the doctor, furious and in denial, pointing at his own chest, voice rising, in Brazilian Portuguese: "Isso é um absurdo! Eu vi esse menino nascer, doutor!"
+4.0–6.5s: Reverse over-the-shoulder shot on the doctor, calm, compassionate but firm, in Brazilian Portuguese: "O exame de sangue não mente, seu Roberto. Eu sinto muito."
+6.5–8.0s: Rack focus from the doctor to the mother in the background: she flinches, presses her hand to the gold cross on her necklace and looks away in guilt.
+Only the father and the doctor speak. The mother stays silent.
+Camera: handheld-stable, eye level, over-the-shoulder coverage, rack focus at the end. 35mm anamorphic look, shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, slightly desaturated teal-white grade.
+Acting: naturalistic, intense, veins visible on the father's neck, the doctor keeps eye contact.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: hospital room tone, distant heart-monitor beeps, faint footsteps. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra speaking characters, face morphing, distorted hands.
+```
 
----
+### CENA 3 — O SILÊNCIO DA MÃE
+```
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor, softly blurred background.
+Characters (use ingredients): the MOTHER (Helena, burgundy dress, gold cross necklace) and the DAUGHTER (Camila, long wavy brown hair, cream blouse, eyes red from crying).
+Timeline:
+0.0–2.0s: Close two-shot. The mother trembles, gripping the small gold cross pendant with her fingers, a tear running down her cheek.
+2.0–5.0s: The daughter turns to her, wiping her own tears, voice breaking, in Brazilian Portuguese: "Mãe... a senhora sabia disso?"
+5.0–8.0s: Slow push-in to an extreme close-up of the mother's face. She opens her mouth to answer but no words come out. A single tear falls. She closes her eyes.
+Only the daughter speaks. The mother stays completely silent.
+Camera: slow, smooth dolly push-in, eye level. 50mm look, very shallow depth of field, subtle film grain.
+Lighting and grade: soft cool fluorescent light with a gentle warm bounce on the faces, natural skin tones, teal-white grade.
+Acting: deeply emotional, realistic tears, trembling lips, quiet devastation.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: hospital room tone, the mother's shaky breathing, distant heart-monitor beeps. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands.
+```
 
-## 3. As 8 cenas (8s cada)
+### CENA 4 — O CONFRONTO
+```
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor.
+Characters (use ingredients): the FATHER (Roberto, navy suit, teal tie) and the MOTHER (Helena, burgundy dress, gold cross necklace).
+Timeline:
+0.0–1.0s: The father turns sharply and holds the mother by her upper arms, firm but not violent, faces very close.
+1.0–6.0s: Tight two-shot in profile. The father, eyes full of tears, voice low and broken, in Brazilian Portuguese: "Olha pra mim, Helena. Vinte e dois anos... Quem é o pai do meu filho?"
+6.0–8.0s: The mother sobs and shakes her head, in Brazilian Portuguese, barely audible: "Me perdoa, Roberto..."
+The father speaks first, then only the mother speaks.
+Camera: tight profile two-shot, then a slow arc around them, eye level. 50mm look, shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, teal-white grade, slight shadow over the father's eyes.
+Acting: heartbreaking, naturalistic, real tears, trembling chin, heavy breathing.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: hospital room tone, distant heart-monitor beeps. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands, aggressive violence.
+```
 
-### CENA 1: O GANCHO (0–8s)
-O público precisa ser fisgado no 1º segundo, então a cena abre já no choque.
-> Extreme close-up of Dr. Rafael's serious face, he looks straight at Roberto and says firmly: **"Senhor Roberto… o senhor não pode doar. O seu sangue não é compatível… o senhor não é o pai biológico do Lucas."** Quick cut to Roberto's face freezing in shock. [estilo fixo]
+### CENA 5 — A URGÊNCIA
+```
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor, a red emergency light blinking softly far in the background.
+Characters (use ingredients): the DOCTOR (Dr. Rafael, white coat, navy scrubs, stethoscope), the DAUGHTER (Camila, long wavy brown hair, cream blouse), and the MOTHER (Helena, burgundy dress).
+Timeline:
+0.0–4.0s: The doctor steps quickly into frame between the women, urgent and serious, in Brazilian Portuguese: "O Lucas não tem tempo. Eu preciso de um doador compatível agora."
+4.0–7.0s: The daughter grabs both of her mother's hands, desperate, crying, in Brazilian Portuguese: "Pelo amor de Deus, mãe, fala!"
+7.0–8.0s: Quick dramatic push-in onto the mother's face as she lifts her eyes, about to reveal something.
+Only the doctor and the daughter speak. The mother stays silent.
+Camera: dynamic handheld, eye level, ending in a fast push-in close-up. 35mm anamorphic look, shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, teal-white grade.
+Acting: urgent, high tension, realistic panic, real tears.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: hospital room tone, a faster heart-monitor beep in the distance, a distant hospital PA chime. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra speaking characters, face morphing, distorted hands.
+```
 
-**Texto na tela:** *"Ele descobriu no hospital… depois de 22 anos 😱"*
+### CENA 6 — A REVELAÇÃO PELA METADE
+```
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor, elevator doors visible far at the end of the corridor, out of focus.
+Characters (use ingredients): the MOTHER (Helena, burgundy dress, gold cross necklace) and the FATHER (Roberto, navy suit, teal tie).
+Timeline:
+0.0–4.5s: Close-up of the mother. She lifts her face, determined through her tears, in Brazilian Portuguese: "Tem uma pessoa que é compatível... Eu já liguei pra ele."
+4.5–6.5s: Cut to the father, shocked and furious, in Brazilian Portuguese: "Ele quem, Helena?!"
+6.5–8.0s: An elevator "ding" is heard off-screen. Both of them slowly turn their heads toward the end of the corridor.
+The mother speaks first, then only the father speaks.
+Camera: shot / reverse-shot close-ups, eye level, ending with both turning their heads. 50mm look, shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, teal-white grade.
+Acting: suspenseful, realistic, the mother's fear and guilt, the father's rage.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. SFX: clear elevator ding at 6.5s. Ambience: hospital room tone, distant heart-monitor beeps. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands.
+```
 
-### CENA 2: A NEGAÇÃO (8–16s)
-> Medium shot, Roberto steps toward the doctor, angry and disbelieving, voice trembling: **"Isso é um erro, doutor! Eu criei esse menino! Faz o exame de novo!"** Helena behind him lowers her eyes, Camila covers her mouth. [estilo fixo]
+### CENA 7 — A CHEGADA
+```
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor, elevator at the far end.
+Characters (use ingredients): MARCOS (beige linen blazer, light blue open-collar shirt, short stubble beard), the FATHER (Roberto, navy suit, teal tie) and the MOTHER (Helena, burgundy dress).
+Timeline:
+0.0–2.5s: Deep-focus shot from behind the father and mother in the foreground, slightly out of focus. At the end of the corridor the elevator doors open and Marcos rushes out, walking fast toward them, out of breath.
+2.5–6.5s: Marcos reaches them, looking only at the mother, not noticing the father, worried, in Brazilian Portuguese: "Helena! Vim o mais rápido que pude... Como está o nosso menino?"
+6.5–8.0s: Marcos freezes as he realizes the father is right there. The father slowly turns his head toward him, his face changing.
+Only Marcos speaks.
+Camera: starts as a deep-focus wide shot, then a smooth focus pull to Marcos as he arrives, then a quick punch-in on the father's face. 35mm anamorphic look, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, teal-white grade.
+Acting: Marcos anxious and breathless, then frozen in panic; the father in silent shock.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. SFX: fast footsteps on the hospital floor, Marcos's heavy breathing. Ambience: hospital room tone. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra speaking characters, face morphing, distorted hands.
+```
 
-### CENA 3: O OLHAR DA MÃE (16–24s)
-> Slow push-in on Helena in the burgundy dress, hands shaking, tears falling, she avoids eye contact. Camila turns to her and whispers: **"Mãe… por que a senhora não fala nada?"** Helena closes her eyes. [estilo fixo]
+### CENA 8 — O CLIFFHANGER
+```
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with classic Mexican telenovela melodrama. Location: the same bright modern Brazilian private hospital corridor.
+Characters (use ingredients): the FATHER (Roberto, navy suit, teal tie), MARCOS (beige linen blazer, light blue shirt) and the MOTHER (Helena, burgundy dress, gold cross necklace).
+Timeline:
+0.0–2.0s: Close-up of the father, his eyes moving slowly from Marcos to the mother and back, realizing the truth.
+2.0–5.0s: The father, devastated, voice almost a whisper, in Brazilian Portuguese: "Nosso?... Marcos... você é meu irmão."
+5.0–6.5s: Quick cut: Marcos lowers his head in shame; the mother covers her mouth with both hands, sobbing.
+6.5–8.0s: Classic telenovela triple zoom: three fast successive zoom-ins onto the father's eyes. A single tear falls. Hold on his face.
+Only the father speaks. Marcos and the mother stay silent.
+Camera: tight close-ups, quick reaction cut, ending in the triple crash zoom. 50mm look, very shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, a slightly darker, contrasty grade on the final close-up, natural skin tones.
+Acting: devastating, restrained, real tears, total betrayal in the father's eyes.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: the hospital sound fades almost to silence on the final zoom, only a distant heart-monitor beep. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands.
+```
+Texto da edição (final): **"PARTE 2 AMANHÃ… VOCÊ PERDOARIA? 👇"**
 
-### CENA 4: O CONFRONTO (24–32s)
-> Roberto turns slowly to Helena, close two-shot, his voice low and broken: **"Helena… olha pra mim. Quem é o pai do meu filho?"** Helena sobs silently, shaking her head. Doctor stands uncomfortable in background. [estilo fixo]
-
-### CENA 5: A URGÊNCIA (32–40s)
-> Dr. Rafael steps in, urgent tone: **"Desculpa interromper, mas o Lucas perdeu muito sangue. Eu preciso de um doador compatível agora. Alguém da família?"** Camila grabs her mother's arm desperately. [estilo fixo]
-
-### CENA 6: A CONFISSÃO PELA METADE (40–48s)
-> Close-up of Helena, crying, finally speaks: **"Tem uma pessoa… que é compatível. Eu sei que é."** Roberto, shocked: **"Quem, Helena?!"** Helena looks past him toward the end of the corridor. [estilo fixo]
-
-### CENA 7: A CHEGADA (48–56s)
-> Wide shot down the hospital corridor, Marcos (Roberto's brother) walks fast toward the family, out of breath: **"Eu vim assim que soube… cadê o Lucas?"** Helena and Marcos exchange a long guilty look. Roberto notices it, his face changes. [estilo fixo]
-
-### CENA 8: O CLIFFHANGER (56–64s)
-> Close-up of Roberto, eyes moving from Helena to Marcos, voice almost a whisper: **"Não… o meu próprio irmão?"** Marcos lowers his head. Final slow zoom on Roberto's devastated face, freeze. [estilo fixo]
-
-**Texto na tela:** *"Parte 2 amanhã… você perdoaria? 👇"*
-
----
-
-## 4. Dicas para prender o público de 30 a 70 anos
-- **Os 3 primeiros segundos decidem tudo.** Não comece com "abertura": comece no meio da revelação (cena 1).
-- **Temas que esse público ama:** traição em família, segredo de paternidade, herança, sogra/irmão traidor e perdão. Isso é novela das 9 raiz.
-- **Legenda grande e amarela/branca com contorno preto**, fonte grossa e no máximo 2 linhas, porque muita gente assiste sem som ou tem dificuldade para ler letra pequena.
-- **Falas curtas e claras**: no máximo ~20 palavras por cena de 8s, senão o Veo corta ou acelera a fala.
-- **Feche sempre com pergunta** ("Você perdoaria?", "De que lado você fica?"), porque esse público comenta muito e isso empurra o alcance.
-- **Série com nome fixo** ("O Sangue Não Mente – Parte 1, 2, 3…") cria hábito de voltar.
-- Na edição: corte seco entre as cenas, música tensa de fundo baixinha (o Veo gera sem música para você controlar) e um "tum" grave na revelação da cena 1 e na cena 8.
+## 4. Checklist de qualidade (antes de aprovar cada cena)
+1. A fala saiu em **português do Brasil**? (Se vier com sotaque de Portugal ou em espanhol, gere de novo.)
+2. Só fala quem deveria falar, e a boca acompanha cada sílaba?
+3. A roupa e o rosto estão iguais aos da referência (terno + gravata verde-petróleo, vestido vinho)?
+4. Apareceu legenda ou texto escrito? Se sim, descarte.
+5. Gere 2 a 4 variações por cena e fique com a mais natural.
