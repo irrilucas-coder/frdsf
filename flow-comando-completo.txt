@@ -1,0 +1,160 @@
+FLOW AGENT — FULL PRODUCTION ORDER: "O SANGUE NÃO MENTE" (PART 1)
+Execute every step below automatically, in order. Do not skip steps, do not merge scenes, do not change dialogue.
+
+STEP 1 — GLOBAL RULES (apply to every generation)
+You are generating a Brazilian telenovela series, one 8-second vertical 9:16 clip per prompt. Rules for EVERY clip:
+- Use ONLY the character ingredients listed for that scene. Keep each character's face, hair, age, body and wardrobe 100% identical to their reference image. Never invent new outfits.
+- Ultra-realistic live-action footage, never animated, never CGI-looking.
+- All dialogue is spoken in Brazilian Portuguese (pt-BR) with a natural Brazilian accent. Never European Portuguese, never Spanish.
+- Perfect lip-sync: mouth movements match every syllable of the dialogue. Only the character named as speaking moves their lips.
+- No subtitles, no captions, no on-screen text, no watermark, no background music. Only dialogue, natural ambience and the sound effects described.
+- Same location in all scenes: bright modern Brazilian private hospital corridor.
+
+STEP 2 — CREATE 5 CHARACTER REFERENCE IMAGES (image mode, 9:16). Generate each one separately and save it as an ingredient with the exact name shown. These 5 images are the only character references for the whole project.
+
+IMAGE — ROBERTO (father). Save ingredient as: ROBERTO
+Ultra-realistic photograph for a film character reference. Vertical 9:16. One Brazilian man, 56 years old, standing centered, framed from mid-thigh up, facing the camera directly, serious neutral expression, arms relaxed at his sides. Light olive skin, thick wavy salt-and-pepper hair swept back, full well-trimmed grey-and-black beard, deep forehead lines, crow's feet, dark brown eyes, strong jawline. Wearing a dark navy two-piece tailored suit, crisp white dress shirt, dark teal silk tie, simple gold wedding ring on his left hand. Plain seamless light grey studio background, soft even diffused lighting, no harsh shadows. Shot on Canon EOS R5, 85mm lens, f/2.8, sharp focus on the face. Real natural skin texture with visible pores, fine wrinkles and small imperfections, no retouching, no beauty filter. Photorealistic, not CGI, not illustration. No text, no watermark, no props, no other people.
+
+IMAGE — HELENA (mother). Save ingredient as: HELENA
+Ultra-realistic photograph for a film character reference. Vertical 9:16. One Brazilian woman, 52 years old, standing centered, framed from mid-thigh up, facing the camera directly, worried serious expression, hands loosely clasped in front of her waist. Light brown skin, straight shoulder-length dark brown hair tucked behind her ears, warm brown eyes, subtle laugh lines and fine wrinkles, natural minimal makeup. Wearing a fitted burgundy wine-red knee-length dress with short sleeves and a round neckline, a thin gold chain necklace with a small gold cross pendant, small gold stud earrings, gold wedding ring. Plain seamless light grey studio background, soft even diffused lighting, no harsh shadows. Shot on Canon EOS R5, 85mm lens, f/2.8, sharp focus on the face. Real natural skin texture with visible pores and small imperfections, no retouching, no beauty filter. Photorealistic, not CGI, not illustration. No text, no watermark, no props, no other people.
+
+IMAGE — CAMILA (daughter). Save ingredient as: CAMILA
+Ultra-realistic photograph for a film character reference. Vertical 9:16. One Brazilian young woman, 24 years old, standing centered, framed from mid-thigh up, facing the camera directly, sad fragile expression, slightly reddened eyes as if she had been crying. Light olive skin, long voluminous wavy brown hair falling past her shoulders, brown eyes, thick natural eyebrows, natural minimal makeup. Wearing a cream silk long-sleeve blouse tucked into light blue straight jeans, small gold hoop earrings. Plain seamless light grey studio background, soft even diffused lighting, no harsh shadows. Shot on Canon EOS R5, 85mm lens, f/2.8, sharp focus on the face. Real natural skin texture with visible pores and small imperfections, no retouching, no beauty filter. Photorealistic, not CGI, not illustration. No text, no watermark, no props, no other people.
+
+IMAGE — DR. RAFAEL (doctor). Save ingredient as: DR. RAFAEL
+Ultra-realistic photograph for a film character reference. Vertical 9:16. One Brazilian man, 38 years old, standing centered, framed from mid-thigh up, facing the camera directly, serious professional expression. Light olive skin, short dark brown hair slightly swept up with a few grey strands at the temples, well-trimmed full dark beard, thick eyebrows, brown eyes. Wearing an open white long-sleeve doctor's lab coat over navy blue V-neck surgical scrubs, a silver stethoscope hanging around his neck, a blank hospital ID badge clipped to the coat pocket with no readable text. Plain seamless light grey studio background, soft even diffused lighting, no harsh shadows. Shot on Canon EOS R5, 85mm lens, f/2.8, sharp focus on the face. Real natural skin texture with visible pores and small imperfections, no retouching, no beauty filter. Photorealistic, not CGI, not illustration. No text, no watermark, no other people.
+
+IMAGE — MARCOS (Roberto's brother). Save ingredient as: MARCOS
+Ultra-realistic photograph for a film character reference. Vertical 9:16. One Brazilian man, 52 years old, standing centered, framed from mid-thigh up, facing the camera directly, tense guilty expression. Strong family resemblance to an older brother: same nose and jawline. Tanned light olive skin, short dark brown hair with only light grey at the sides, short stubble beard, brown eyes, forehead lines. Wearing a beige linen blazer over a light blue open-collar button-up shirt, no tie, a brown leather-strap wristwatch. Plain seamless light grey studio background, soft even diffused lighting, no harsh shadows. Shot on Canon EOS R5, 85mm lens, f/2.8, sharp focus on the face. Real natural skin texture with visible pores, wrinkles and small imperfections, no retouching, no beauty filter. Photorealistic, not CGI, not illustration. No text, no watermark, no props, no other people.
+
+STEP 3 — CREATE 8 VIDEO SCENES (video mode, 9:16, 8 seconds each). Generate ONE scene per prompt, in order 1 to 8. For each scene, attach ONLY the listed ingredients (maximum 3). Dialogue must stay exactly as written, in Brazilian Portuguese (pt-BR), with perfect lip-sync.
+
+SCENE 1 — THE HOOK
+Ingredients: DR. RAFAEL + ROBERTO + HELENA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: bright modern Brazilian private hospital corridor, white walls, glossy light floor, rows of fluorescent ceiling panels fading into the distance, soft out-of-focus nurses far in the background.
+Characters (use ingredients): the FATHER (Roberto, navy suit, teal tie) stands on the left holding his crying adult daughter against his chest; the daughter's face is completely buried in his shoulder, only her long wavy brown hair and cream blouse are visible. The MOTHER (Helena, burgundy dress, gold cross necklace) stands right behind them, hands clasped at her chest. The DOCTOR (Dr. Rafael, white coat, navy scrubs, stethoscope) has just stopped in front of the father, grave expression.
+Timeline:
+0.0–3.0s: The doctor looks straight into the father's eyes and immediately says, firm and low, in Brazilian Portuguese: "Seu Roberto... o senhor não é o pai biológico do Lucas."
+3.0–5.0s: Fast dramatic telenovela crash zoom onto the father's face: his eyes widen, his jaw drops, he stops breathing, his hand loosens on his daughter's back.
+5.0–8.0s: The father, voice cracking, almost a whisper, in Brazilian Portuguese: "O quê?... O que o senhor disse?" Behind him, the mother turns pale, swallows hard and lowers her eyes in guilt.
+Only the doctor and the father speak. The mother and daughter stay silent.
+Camera: starts as a stable medium shot at eye level, then a sudden punch-in to a tight close-up of the father. 35mm anamorphic look, shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, slightly desaturated teal-white grade, dramatic but realistic.
+Acting: restrained, naturalistic, deeply emotional, real micro-expressions, glossy eyes, visible tension in the jaw.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: quiet hospital room tone, distant heart-monitor beeps, the daughter's soft muffled sobbing. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra speaking characters, face morphing, distorted hands, daughter's face visible.
+
+SCENE 2 — DENIAL
+Ingredients: ROBERTO + DR. RAFAEL + HELENA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor, white walls, fluorescent ceiling panels.
+Characters (use ingredients): the FATHER (Roberto, navy suit, teal tie), the DOCTOR (Dr. Rafael, white coat, navy scrubs, stethoscope), and the MOTHER (Helena, burgundy dress) standing two steps behind the father.
+Timeline:
+0.0–4.0s: Medium two-shot. The father steps toward the doctor, furious and in denial, pointing at his own chest, voice rising, in Brazilian Portuguese: "Isso é um absurdo! Eu vi esse menino nascer, doutor!"
+4.0–6.5s: Reverse over-the-shoulder shot on the doctor, calm, compassionate but firm, in Brazilian Portuguese: "O exame de sangue não mente, seu Roberto. Eu sinto muito."
+6.5–8.0s: Rack focus from the doctor to the mother in the background: she flinches, presses her hand to the gold cross on her necklace and looks away in guilt.
+Only the father and the doctor speak. The mother stays silent.
+Camera: handheld-stable, eye level, over-the-shoulder coverage, rack focus at the end. 35mm anamorphic look, shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, slightly desaturated teal-white grade.
+Acting: naturalistic, intense, veins visible on the father's neck, the doctor keeps eye contact.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: hospital room tone, distant heart-monitor beeps, faint footsteps. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra speaking characters, face morphing, distorted hands.
+
+SCENE 3 — THE MOTHER'S SILENCE
+Ingredients: HELENA + CAMILA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor, softly blurred background.
+Characters (use ingredients): the MOTHER (Helena, burgundy dress, gold cross necklace) and the DAUGHTER (Camila, long wavy brown hair, cream blouse, eyes red from crying).
+Timeline:
+0.0–2.0s: Close two-shot. The mother trembles, gripping the small gold cross pendant with her fingers, a tear running down her cheek.
+2.0–5.0s: The daughter turns to her, wiping her own tears, voice breaking, in Brazilian Portuguese: "Mãe... a senhora sabia disso?"
+5.0–8.0s: Slow push-in to an extreme close-up of the mother's face. She opens her mouth to answer but no words come out. A single tear falls. She closes her eyes.
+Only the daughter speaks. The mother stays completely silent.
+Camera: slow, smooth dolly push-in, eye level. 50mm look, very shallow depth of field, subtle film grain.
+Lighting and grade: soft cool fluorescent light with a gentle warm bounce on the faces, natural skin tones, teal-white grade.
+Acting: deeply emotional, realistic tears, trembling lips, quiet devastation.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: hospital room tone, the mother's shaky breathing, distant heart-monitor beeps. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands.
+
+SCENE 4 — CONFRONTATION
+Ingredients: ROBERTO + HELENA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor.
+Characters (use ingredients): the FATHER (Roberto, navy suit, teal tie) and the MOTHER (Helena, burgundy dress, gold cross necklace).
+Timeline:
+0.0–1.0s: The father turns sharply and holds the mother by her upper arms, firm but not violent, faces very close.
+1.0–6.0s: Tight two-shot in profile. The father, eyes full of tears, voice low and broken, in Brazilian Portuguese: "Olha pra mim, Helena. Vinte e dois anos... Quem é o pai do meu filho?"
+6.0–8.0s: The mother sobs and shakes her head, in Brazilian Portuguese, barely audible: "Me perdoa, Roberto..."
+The father speaks first, then only the mother speaks.
+Camera: tight profile two-shot, then a slow arc around them, eye level. 50mm look, shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, teal-white grade, slight shadow over the father's eyes.
+Acting: heartbreaking, naturalistic, real tears, trembling chin, heavy breathing.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: hospital room tone, distant heart-monitor beeps. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands, aggressive violence.
+
+SCENE 5 — URGENCY
+Ingredients: DR. RAFAEL + CAMILA + HELENA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor, a red emergency light blinking softly far in the background.
+Characters (use ingredients): the DOCTOR (Dr. Rafael, white coat, navy scrubs, stethoscope), the DAUGHTER (Camila, long wavy brown hair, cream blouse), and the MOTHER (Helena, burgundy dress).
+Timeline:
+0.0–4.0s: The doctor steps quickly into frame between the women, urgent and serious, in Brazilian Portuguese: "O Lucas não tem tempo. Eu preciso de um doador compatível agora."
+4.0–7.0s: The daughter grabs both of her mother's hands, desperate, crying, in Brazilian Portuguese: "Pelo amor de Deus, mãe, fala!"
+7.0–8.0s: Quick dramatic push-in onto the mother's face as she lifts her eyes, about to reveal something.
+Only the doctor and the daughter speak. The mother stays silent.
+Camera: dynamic handheld, eye level, ending in a fast push-in close-up. 35mm anamorphic look, shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, teal-white grade.
+Acting: urgent, high tension, realistic panic, real tears.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: hospital room tone, a faster heart-monitor beep in the distance, a distant hospital PA chime. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra speaking characters, face morphing, distorted hands.
+
+SCENE 6 — HALF REVEAL
+Ingredients: HELENA + ROBERTO
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor, elevator doors visible far at the end of the corridor, out of focus.
+Characters (use ingredients): the MOTHER (Helena, burgundy dress, gold cross necklace) and the FATHER (Roberto, navy suit, teal tie).
+Timeline:
+0.0–4.5s: Close-up of the mother. She lifts her face, determined through her tears, in Brazilian Portuguese: "Tem uma pessoa que é compatível... Eu já liguei pra ele."
+4.5–6.5s: Cut to the father, shocked and furious, in Brazilian Portuguese: "Ele quem, Helena?!"
+6.5–8.0s: An elevator "ding" is heard off-screen. Both of them slowly turn their heads toward the end of the corridor.
+The mother speaks first, then only the father speaks.
+Camera: shot / reverse-shot close-ups, eye level, ending with both turning their heads. 50mm look, shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, teal-white grade.
+Acting: suspenseful, realistic, the mother's fear and guilt, the father's rage.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. SFX: clear elevator ding at 6.5s. Ambience: hospital room tone, distant heart-monitor beeps. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands.
+
+SCENE 7 — THE ARRIVAL
+Ingredients: MARCOS + ROBERTO + HELENA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor, elevator at the far end.
+Characters (use ingredients): MARCOS (beige linen blazer, light blue open-collar shirt, short stubble beard), the FATHER (Roberto, navy suit, teal tie) and the MOTHER (Helena, burgundy dress).
+Timeline:
+0.0–2.5s: Deep-focus shot from behind the father and mother in the foreground, slightly out of focus. At the end of the corridor the elevator doors open and Marcos rushes out, walking fast toward them, out of breath.
+2.5–6.5s: Marcos reaches them, looking only at the mother, not noticing the father, worried, in Brazilian Portuguese: "Helena! Vim o mais rápido que pude... Como está o nosso menino?"
+6.5–8.0s: Marcos freezes as he realizes the father is right there. The father slowly turns his head toward him, his face changing.
+Only Marcos speaks.
+Camera: starts as a deep-focus wide shot, then a smooth focus pull to Marcos as he arrives, then a quick punch-in on the father's face. 35mm anamorphic look, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, teal-white grade.
+Acting: Marcos anxious and breathless, then frozen in panic; the father in silent shock.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. SFX: fast footsteps on the hospital floor, Marcos's heavy breathing. Ambience: hospital room tone. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra speaking characters, face morphing, distorted hands.
+
+SCENE 8 — CLIFFHANGER
+Ingredients: ROBERTO + MARCOS + HELENA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with classic Mexican telenovela melodrama. Location: the same bright modern Brazilian private hospital corridor.
+Characters (use ingredients): the FATHER (Roberto, navy suit, teal tie), MARCOS (beige linen blazer, light blue shirt) and the MOTHER (Helena, burgundy dress, gold cross necklace).
+Timeline:
+0.0–2.0s: Close-up of the father, his eyes moving slowly from Marcos to the mother and back, realizing the truth.
+2.0–5.0s: The father, devastated, voice almost a whisper, in Brazilian Portuguese: "Nosso?... Marcos... você é meu irmão."
+5.0–6.5s: Quick cut: Marcos lowers his head in shame; the mother covers her mouth with both hands, sobbing.
+6.5–8.0s: Classic telenovela triple zoom: three fast successive zoom-ins onto the father's eyes. A single tear falls. Hold on his face.
+Only the father speaks. Marcos and the mother stay silent.
+Camera: tight close-ups, quick reaction cut, ending in the triple crash zoom. 50mm look, very shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, a slightly darker, contrasty grade on the final close-up, natural skin tones.
+Acting: devastating, restrained, real tears, total betrayal in the father's eyes.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: the hospital sound fades almost to silence on the final zoom, only a distant heart-monitor beep. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands.
+
+STEP 4 — QUALITY CHECK (regenerate the scene if any item fails)
+1. Dialogue is in Brazilian Portuguese (not European Portuguese, not Spanish).
+2. Only the scripted character speaks, lips perfectly synced.
+3. Faces and wardrobe match the reference images exactly.
+4. No subtitles, captions, text or watermark on screen.
+5. Generate 2 variations per scene and keep the most realistic one.
+
+END OF ORDER.
