@@ -1,0 +1,69 @@
+FLOW AGENT — CONTINUATION ORDER: "O SANGUE NÃO MENTE" (PART 1 — SCENES 9, 10, 11)
+This is a direct continuation of scenes 1–8 already generated in this project. Execute every step below automatically, in order. Do not skip steps, do not merge scenes, do not change dialogue.
+
+STEP 1 — GLOBAL RULES (same as before, apply to every generation)
+You are generating a Brazilian telenovela series, one 8-second vertical 9:16 clip per prompt. Rules for EVERY clip:
+- Do NOT create new character images. Reuse the 5 character ingredients already saved in this project: ROBERTO, HELENA, CAMILA, DR. RAFAEL, MARCOS.
+- Use ONLY the character ingredients listed for that scene (maximum 3). Keep each character's face, hair, age, body and wardrobe 100% identical to their reference image and to scenes 1–8. Never invent new outfits.
+- Same location as scenes 1–8: bright modern Brazilian private hospital corridor, white walls, glossy light floor, fluorescent ceiling panels. Same lighting and color grade.
+- Ultra-realistic live-action footage, never animated, never CGI-looking.
+- All dialogue is spoken in Brazilian Portuguese (pt-BR) with a natural Brazilian accent. Never European Portuguese, never Spanish.
+- Perfect lip-sync: mouth movements match every syllable of the dialogue. Only the character named as speaking moves their lips.
+- No subtitles, no captions, no on-screen text, no watermark, no background music. Only dialogue, natural ambience and the sound effects described.
+
+STEP 2 — CREATE 3 VIDEO SCENES (video mode, 9:16, 8 seconds each). Generate ONE scene per prompt, in order 9, 10, 11. Attach ONLY the listed ingredients. Dialogue must stay exactly as written, in Brazilian Portuguese (pt-BR), with perfect lip-sync.
+
+SCENE 9 — BROTHER AGAINST BROTHER
+Ingredients: ROBERTO + MARCOS + HELENA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor.
+Characters (use ingredients): the FATHER (Roberto, navy suit, teal tie), MARCOS (beige linen blazer, light blue open-collar shirt, short stubble beard) and the MOTHER (Helena, burgundy dress, gold cross necklace) one step behind them.
+Timeline:
+0.0–1.0s: The father lunges forward and grabs Marcos by the lapels of his beige blazer, pushing him back against the white corridor wall. No punching.
+1.0–5.0s: Tight two-shot, faces inches apart. The father, furious, eyes full of tears, voice trembling, in Brazilian Portuguese: "Você é meu irmão, Marcos! Meu sangue!"
+5.0–8.0s: Marcos, ashamed, not fighting back, voice breaking, in Brazilian Portuguese: "Me escuta, Roberto... foi um erro. Um só." In the background, the mother covers her mouth, crying.
+The father speaks first, then only Marcos speaks. The mother stays silent.
+Camera: sudden handheld movement on the grab, then a tight two-shot in profile with a slow push-in. 35mm anamorphic look, shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, slightly desaturated teal-white grade.
+Acting: explosive but realistic, veins on the father's neck, heavy breathing, real tears, Marcos's guilty lowered gaze.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. SFX: muffled thud of Marcos's back hitting the wall, fabric rustle of the blazer. Ambience: hospital room tone, distant heart-monitor beeps. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, punching, blood, extra speaking characters, face morphing, distorted hands.
+
+SCENE 10 — THE FATHER'S CHOICE
+Ingredients: DR. RAFAEL + MARCOS + ROBERTO
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor.
+Characters (use ingredients): the DOCTOR (Dr. Rafael, white coat, navy scrubs, stethoscope), MARCOS (beige linen blazer, light blue shirt) still pinned against the wall, and the FATHER (Roberto, navy suit, teal tie) still holding him by the lapels.
+Timeline:
+0.0–3.5s: The doctor steps in quickly beside them, urgent and firm, in Brazilian Portuguese: "Seu Marcos? O senhor precisa vir comigo agora."
+3.5–5.0s: Marcos looks at the father, pleading silently. Close-up on the father's hands slowly letting go of the blazer.
+5.0–8.0s: Close-up of the father, cold and broken at the same time, voice low, in Brazilian Portuguese: "Vai. Salva o meu filho." Marcos nods and walks away with the doctor, out of focus.
+The doctor speaks first, then only the father speaks. Marcos stays silent.
+Camera: medium three-shot, then an insert close-up of the hands, then a slow push-in on the father's face. 50mm look, shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, teal-white grade.
+Acting: restrained and noble, the father swallows his pride, a tear rolls down, jaw tight.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. SFX: footsteps walking away. Ambience: hospital room tone, distant heart-monitor beeps. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra speaking characters, face morphing, distorted hands.
+
+SCENE 11 — THE NEW SECRET (FINAL CLIFFHANGER)
+Ingredients: CAMILA + ROBERTO + HELENA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with classic Mexican telenovela melodrama. Location: the same bright modern Brazilian private hospital corridor, now emptier and quieter.
+Characters (use ingredients): the DAUGHTER (Camila, long wavy brown hair, cream blouse, eyes red from crying), the FATHER (Roberto, navy suit, teal tie) and the MOTHER (Helena, burgundy dress, gold cross necklace).
+Timeline:
+0.0–1.5s: The father stands alone, exhausted, staring at the floor. The daughter walks up slowly and touches his arm.
+1.5–5.5s: The daughter, serious and trembling, looking straight at her father, in Brazilian Portuguese: "Pai... tem mais uma coisa que a mãe nunca te contou."
+5.5–6.5s: The father slowly raises his head and turns to look at the mother.
+6.5–8.0s: Classic telenovela triple zoom: three fast successive zoom-ins onto the mother's terrified face, her hand gripping the gold cross. Hold on her face.
+Only the daughter speaks. The father and the mother stay silent.
+Camera: medium two-shot, then a whip-pan to the mother, ending in the triple crash zoom. 50mm look, very shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, a slightly darker, contrasty grade on the final close-up, natural skin tones.
+Acting: suspenseful, realistic, the daughter's courage, the father's exhaustion, the mother's panic.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: hospital sound fades almost to silence on the final zoom, only a single distant heart-monitor beep. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands.
+
+STEP 3 — QUALITY CHECK (regenerate the scene if any item fails)
+1. Dialogue is in Brazilian Portuguese (not European Portuguese, not Spanish).
+2. Only the scripted character speaks, lips perfectly synced.
+3. Faces and wardrobe match the reference images and scenes 1–8 exactly.
+4. No subtitles, captions, text or watermark on screen.
+5. Generate 2 variations per scene and keep the most realistic one.
+
+END OF ORDER.
