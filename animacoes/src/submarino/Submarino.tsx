@@ -49,7 +49,7 @@ const fimL6 = T('turtle', fimFala('turtle', 'L6'));
 const impactoHunley = Q('hunley', 'L7', 'guerra');
 // som do impacto entra só depois da palavra "guerra" terminar, pra não abafar a voz
 const somImpactoHunley = Q('hunley', 'L7', 'mas') - 0.15;
-const SONS: [string, number, number][] = [
+const SONS: [string, number, number, number?][] = [
   ['alarme', 0.05, 0.5],
   ['bolhas', 0.2, 0.6],
   ['pop', 0.15, 0.6],
@@ -71,7 +71,7 @@ const SONS: [string, number, number][] = [
   ['manivela', T('turtle', quandoDiz('turtle', 'L4', 'submarino')), 0.7],
   ['manivela', T('turtle', inicioFala('turtle', 'L5') - 0.1), 0.9],
   ['pop', Q('turtle', 'L6', 'bomba'), 0.6],
-  ['broca', Q('turtle', 'L6', 'broca') + 0.2, 0.35],
+  ['broca', Q('turtle', 'L6', 'broca') + 0.1, 0.35, Q('turtle', 'L6', 'casco') - Q('turtle', 'L6', 'broca') - 0.25],
   ['buzzer', fimL6 + 0.35, 0.45],
   ['boom', fimL6 + 0.7, 0.9],
   // Hunley
@@ -97,11 +97,16 @@ const SONS: [string, number, number][] = [
   ['pop', Q('final', 'L11', 'Comenta') - 0.3, 0.8],
   ['ding', Q('final', 'L11', 'Comenta'), 0.6],
   // Whoosh em cada troca de cena
-  ...CENAS.slice(1).map((c) => ['whoosh', c.inicio - 0.2, 0.6] as [string, number, number]),
+  ...CENAS.slice(1).map((c) => ['whoosh', c.inicio - 0.2, 0.6] as [string, number, number, number?]),
 ];
 
-const Som = ({arquivo, em, volume}: {arquivo: string; em: number; volume: number}) => (
-  <Sequence from={Math.max(0, segFrame(em))} layout="none" name={`som: ${arquivo}`}>
+const Som = ({arquivo, em, volume, dur}: {arquivo: string; em: number; volume: number; dur?: number}) => (
+  <Sequence
+    from={Math.max(0, segFrame(em))}
+    durationInFrames={dur ? Math.max(1, segFrame(dur)) : undefined}
+    layout="none"
+    name={`som: ${arquivo}`}
+  >
     <Audio src={staticFile(`submarino/sfx/${arquivo}.wav`)} volume={volume} />
   </Sequence>
 );
@@ -199,8 +204,8 @@ export const Submarino = () => {
           <Audio src={staticFile(`submarino/${f.id}.mp3`)} volume={1} />
         </Sequence>
       ))}
-      {SONS.map(([arquivo, em, volume], i) => (
-        <Som key={i} arquivo={arquivo} em={em} volume={volume * 0.7} />
+      {SONS.map(([arquivo, em, volume, dur], i) => (
+        <Som key={i} arquivo={arquivo} em={em} volume={volume * 0.7} dur={dur} />
       ))}
     </AbsoluteFill>
   );
