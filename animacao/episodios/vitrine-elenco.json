@@ -1,0 +1,176 @@
+{
+ "titulo": "Vitrine do elenco",
+ "fps": 30,
+ "cenas": [
+  {
+   "cenario": "estudio",
+   "duracao": 2,
+   "atores": {
+    "ze": {
+     "em": [
+      -19.8,
+      0.6,
+      1.0
+     ],
+     "olhar": 0,
+     "expr": "feliz"
+    },
+    "pai": {
+     "em": [
+      -16.2,
+      0.6,
+      2
+     ],
+     "olhar": 0,
+     "expr": "convencido"
+    },
+    "mae": {
+     "em": [
+      -12.6,
+      0.6,
+      1.0
+     ],
+     "olhar": 0,
+     "expr": "feliz"
+    },
+    "caio": {
+     "em": [
+      -9.0,
+      0.6,
+      2
+     ],
+     "olhar": 0,
+     "expr": "neutro"
+    },
+    "nina": {
+     "em": [
+      -5.4,
+      0.6,
+      1.0
+     ],
+     "olhar": 0,
+     "expr": "feliz"
+    },
+    "tito": {
+     "em": [
+      -1.8,
+      0.6,
+      2
+     ],
+     "olhar": 0,
+     "expr": "rindo"
+    },
+    "duda": {
+     "em": [
+      1.8,
+      0.6,
+      1.0
+     ],
+     "olhar": 0,
+     "expr": "desconfiado"
+    },
+    "lia": {
+     "em": [
+      5.4,
+      0.6,
+      2
+     ],
+     "olhar": 0,
+     "expr": "surpreso"
+    },
+    "bit": {
+     "em": [
+      9.0,
+      0.6,
+      1.0
+     ],
+     "olhar": 0,
+     "expr": "feliz"
+    },
+    "jorge": {
+     "em": [
+      12.6,
+      0.6,
+      2
+     ],
+     "olhar": 0,
+     "expr": "neutro"
+    },
+    "rei": {
+     "em": [
+      16.2,
+      0.6,
+      1.0
+     ],
+     "olhar": 0,
+     "expr": "convencido"
+    },
+    "pipoca": {
+     "em": [
+      19.8,
+      0.6,
+      2
+     ],
+     "olhar": 0,
+     "expr": "neutro"
+    }
+   },
+   "eventos": [
+    {
+     "t": 0,
+     "quem": "tito",
+     "faz": "gesto",
+     "valor": "acenar",
+     "dur": 2
+    },
+    {
+     "t": 0,
+     "quem": "nina",
+     "faz": "gesto",
+     "valor": "explicar",
+     "dur": 2
+    },
+    {
+     "t": 0,
+     "quem": "jorge",
+     "faz": "gesto",
+     "valor": "mao_cintura",
+     "dur": 2
+    },
+    {
+     "t": 0,
+     "quem": "duda",
+     "faz": "gesto",
+     "valor": "mao_cintura",
+     "dur": 2
+    }
+   ],
+   "camera": [
+    {
+     "t": 0,
+     "pos": [
+      0,
+      5.5,
+      34
+     ],
+     "olhar": [
+      0,
+      3.6,
+      0
+     ],
+     "fov": 40
+    }
+   ],
+   "tela": [
+    {
+     "t": 0,
+     "grande": "ELENCO",
+     "cor": "#ffd23f",
+     "tamanho": 200
+    }
+   ]
+  }
+ ],
+ "largura": 1920,
+ "altura": 1080
+}

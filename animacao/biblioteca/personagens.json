@@ -1,0 +1,71 @@
+[
+  {
+    "id": "tito", "nome": "Tito", "papel": "Protagonista. Menino curioso de 12 anos que vive descobrindo coisas.",
+    "pele": "#f2c9a0", "escala": 0.92,
+    "cabelo": { "estilo": "espetado", "cor": "#ff8a1f" },
+    "roupa": { "camisa": "#18b6c9", "estampa": "moletom", "cor2": "#ffd23f", "calca": "#1d2b53", "sapato": "#e23b3b" }
+  },
+  {
+    "id": "nina", "nome": "Dra. Nina", "papel": "Cientista que explica as curiosidades.",
+    "pele": "#8d5a3b", "escala": 1.0, "oculos": "#1b1b22",
+    "cabelo": { "estilo": "coque", "cor": "#7b3fe4" },
+    "roupa": { "camisa": "#f4f6f8", "estampa": "jaleco", "cor2": "#ff6fae", "calca": "#37474f", "sapato": "#1b1b22" }
+  },
+  {
+    "id": "duda", "nome": "Duda", "papel": "Melhor amiga do Tito. Corajosa e sempre duvida de tudo.",
+    "pele": "#ffd8b8", "escala": 0.9,
+    "cabelo": { "estilo": "longo", "cor": "#ff6fae" },
+    "roupa": { "camisa": "#43a047", "estampa": "listrada", "cor2": "#c8f7c5", "calca": "#4f7cc9", "sapato": "#ffffff", "manga": "curta" }
+  },
+  {
+    "id": "ze", "nome": "Vô Zeca", "papel": "Avô do Tito. Conta histórias de antigamente.",
+    "pele": "#e8b98f", "escala": 1.0, "oculos": "#6d4c41", "bigode": "#f0f0f0", "barriga": true, "corSobrancelha": "#e0e0e0",
+    "cabelo": { "estilo": "calvo", "cor": "#e8e8e8" },
+    "roupa": { "camisa": "#8d6e63", "estampa": "lisa", "calca": "#5d4037", "sapato": "#3e2723" }
+  },
+  {
+    "id": "bit", "nome": "Bit", "papel": "Robô assistente que mostra dados e números.",
+    "tipo": "robo", "pele": "#c9d1dc", "corOlhos": "#38e8ff", "escala": 0.85, "acessorios": ["antena"],
+    "roupa": { "camisa": "#aab6c6", "estampa": "interrogacao", "cor2": "#38e8ff", "calca": "#8a94a3", "sapato": "#5c6b7a" }
+  },
+  {
+    "id": "pipoca", "nome": "Pipoca", "papel": "Cachorro do Tito.",
+    "tipo": "cachorro", "pele": "#d9a066", "cor2": "#fff3e0", "corOrelha": "#8a5a2b", "escala": 1.0
+  },
+  {
+    "id": "mae", "nome": "Mãe (Sandra)", "papel": "Mãe do Tito.",
+    "pele": "#c68b5e", "escala": 1.0,
+    "cabelo": { "estilo": "rabo", "cor": "#3b2414" },
+    "roupa": { "camisa": "#e23b3b", "estampa": "lisa", "calca": "#2b3a55", "sapato": "#ffffff", "manga": "curta" }
+  },
+  {
+    "id": "pai", "nome": "Pai (Rogério)", "papel": "Pai do Tito.",
+    "pele": "#c68b5e", "escala": 1.05, "bigode": "#2b1d12", "barriga": true,
+    "cabelo": { "estilo": "curto", "cor": "#1b1b1b" },
+    "roupa": { "camisa": "#3d7bff", "estampa": "listrada", "cor2": "#ffffff", "calca": "#3e3e3e", "sapato": "#3e2723", "manga": "curta" }
+  },
+  {
+    "id": "caio", "nome": "Professor Caio", "papel": "Professor da escola.",
+    "pele": "#f2c9a0", "escala": 1.05, "oculos": "#1b1b22",
+    "cabelo": { "estilo": "franja", "cor": "#5a3a1e" },
+    "roupa": { "camisa": "#2b3a55", "estampa": "terno", "cor2": "#e23b3b", "corManga": "#2b3a55", "calca": "#2b3a55", "sapato": "#1b1b1b" }
+  },
+  {
+    "id": "jorge", "nome": "Seu Jorge", "papel": "Mestre de obras.",
+    "pele": "#a8714c", "escala": 1.05, "bigode": "#1b1b1b", "acessorios": ["capacete"], "largo": true,
+    "cabelo": { "estilo": "careca" },
+    "roupa": { "camisa": "#5d6d7e", "estampa": "colete", "calca": "#3e4a59", "sapato": "#5d4037", "manga": "curta" }
+  },
+  {
+    "id": "lia", "nome": "Lia", "papel": "Irmã mais nova do Tito. Pergunta tudo.",
+    "pele": "#f2c9a0", "escala": 0.78,
+    "cabelo": { "estilo": "black", "cor": "#2b1d12" },
+    "roupa": { "camisa": "#ffb300", "estampa": "estrela", "cor2": "#ffffff", "calca": "#ec407a", "sapato": "#ffffff", "manga": "curta" }
+  },
+  {
+    "id": "rei", "nome": "Rei Otávio", "papel": "Personagem para histórias do passado.",
+    "pele": "#e0ac7e", "escala": 1.05, "bigode": "#8a3b12", "barriga": true, "acessorios": ["coroa"],
+    "cabelo": { "estilo": "curto", "cor": "#8a3b12" },
+    "roupa": { "camisa": "#8e24aa", "estampa": "estrela", "cor2": "#ffd23f", "calca": "#4a148c", "sapato": "#ffd23f" }
+  }
+]

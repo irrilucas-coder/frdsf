@@ -1,0 +1,256 @@
+{
+ "titulo": "Vitrine cidade",
+ "largura": 1920,
+ "altura": 1080,
+ "fps": 30,
+ "cenas": [
+  {
+   "cenario": "rua_trecho",
+   "hora": "manha",
+   "duracao": 1,
+   "atores": {},
+   "camera": [
+    {
+     "pos": [
+      18,
+      9,
+      22
+     ],
+     "olhar": [
+      0,
+      4,
+      -12
+     ],
+     "t": 0,
+     "fov": 50
+    }
+   ],
+   "hud": [
+    {
+     "tipo": "titulo",
+     "texto": "RUA TRECHO · manha",
+     "y": 0.08,
+     "tamanho": 64,
+     "t": 0
+    }
+   ]
+  },
+  {
+   "cenario": "cruzamento",
+   "hora": "tarde",
+   "duracao": 1,
+   "atores": {},
+   "camera": [
+    {
+     "pos": [
+      34,
+      26,
+      40
+     ],
+     "olhar": [
+      0,
+      2,
+      0
+     ],
+     "t": 0,
+     "fov": 50
+    }
+   ],
+   "hud": [
+    {
+     "tipo": "titulo",
+     "texto": "CRUZAMENTO · tarde",
+     "y": 0.08,
+     "tamanho": 64,
+     "t": 0
+    }
+   ]
+  },
+  {
+   "cenario": "faixa_pedestre",
+   "hora": "amanhecer",
+   "duracao": 1,
+   "atores": {},
+   "camera": [
+    {
+     "pos": [
+      14,
+      7,
+      20
+     ],
+     "olhar": [
+      0,
+      3,
+      -4
+     ],
+     "t": 0,
+     "fov": 50
+    }
+   ],
+   "hud": [
+    {
+     "tipo": "titulo",
+     "texto": "FAIXA PEDESTRE · amanhecer",
+     "y": 0.08,
+     "tamanho": 64,
+     "t": 0
+    }
+   ]
+  },
+  {
+   "cenario": "avenida",
+   "hora": "por_do_sol",
+   "duracao": 1,
+   "atores": {},
+   "camera": [
+    {
+     "pos": [
+      40,
+      18,
+      30
+     ],
+     "olhar": [
+      0,
+      14,
+      -20
+     ],
+     "t": 0,
+     "fov": 50
+    }
+   ],
+   "hud": [
+    {
+     "tipo": "titulo",
+     "texto": "AVENIDA · por do sol",
+     "y": 0.08,
+     "tamanho": 64,
+     "t": 0
+    }
+   ]
+  },
+  {
+   "cenario": "posto_gasolina",
+   "hora": "noite",
+   "duracao": 1,
+   "atores": {},
+   "camera": [
+    {
+     "pos": [
+      30,
+      14,
+      40
+     ],
+     "olhar": [
+      0,
+      4,
+      0
+     ],
+     "t": 0,
+     "fov": 50
+    }
+   ],
+   "hud": [
+    {
+     "tipo": "titulo",
+     "texto": "POSTO GASOLINA · noite",
+     "y": 0.08,
+     "tamanho": 64,
+     "t": 0
+    }
+   ]
+  },
+  {
+   "cenario": "garagem_veiculos",
+   "hora": "meio_dia",
+   "duracao": 1,
+   "atores": {},
+   "camera": [
+    {
+     "pos": [
+      0,
+      48,
+      62
+     ],
+     "olhar": [
+      0,
+      0,
+      -2
+     ],
+     "t": 0,
+     "fov": 50
+    }
+   ],
+   "hud": [
+    {
+     "tipo": "titulo",
+     "texto": "GARAGEM VEICULOS · meio dia",
+     "y": 0.08,
+     "tamanho": 64,
+     "t": 0
+    }
+   ]
+  },
+  {
+   "cenario": "cidade",
+   "hora": "tarde",
+   "duracao": 1,
+   "atores": {},
+   "camera": [
+    {
+     "pos": [
+      230,
+      170,
+      230
+     ],
+     "olhar": [
+      0,
+      0,
+      0
+     ],
+     "t": 0,
+     "fov": 50
+    }
+   ],
+   "hud": [
+    {
+     "tipo": "titulo",
+     "texto": "CIDADE · tarde",
+     "y": 0.08,
+     "tamanho": 64,
+     "t": 0
+    }
+   ]
+  },
+  {
+   "cenario": "cidade",
+   "hora": "noite",
+   "duracao": 1,
+   "atores": {},
+   "camera": [
+    {
+     "pos": [
+      60,
+      30,
+      80
+     ],
+     "olhar": [
+      0,
+      20,
+      0
+     ],
+     "t": 0,
+     "fov": 50
+    }
+   ],
+   "hud": [
+    {
+     "tipo": "titulo",
+     "texto": "CIDADE · noite",
+     "y": 0.08,
+     "tamanho": 64,
+     "t": 0
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "animacao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0",
+    "@fontsource/lilita-one": "^5.1.0",
+    "@fontsource/nunito": "^5.1.0",
+    "three": "^0.170.0",
+    "zod": "^4.6.7"
+  }
+}

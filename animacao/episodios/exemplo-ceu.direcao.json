@@ -1,0 +1,39 @@
+{
+  "titulo": "POR QUE O CÉU É AZUL? 🤯",
+  "protagonista": "tito",
+  "cenas": [
+    { "cenario": "rua_trecho", "hora": "manha",
+      "personagens": [{ "id": "tito", "lugar": "centro", "entrada": "entra_esquerda", "expr": "neutro" }],
+      "falas": [
+        { "quem": "narrador", "texto": "Eu tava andando na rua quando percebi uma coisa que ninguém me explicou.", "destaques": ["ninguém"], "camera": "corpo", "foco": "tito", "movimento": "pan",
+          "acoes": [], "grafico": { "tipo": "nenhum", "texto": "", "numero_de": 0, "numero_ate": 0, "sufixo": "", "icone": "sol", "em": "tito" } },
+        { "quem": "tito", "texto": "Por que o céu é azul?", "destaques": ["azul"], "camera": "close", "foco": "tito", "movimento": "zoom_rapido",
+          "acoes": [{ "quem": "tito", "gesto": "apontar_cima", "expr": "surpreso" }], "grafico": { "tipo": "titulo", "texto": "Por que o céu é azul?", "numero_de": 0, "numero_ate": 0, "sufixo": "", "icone": "sol", "em": "tito" } }
+      ] },
+    { "cenario": "laboratorio", "hora": "manha",
+      "personagens": [{ "id": "nina", "lugar": "esquerda", "entrada": "parado", "expr": "feliz" }, { "id": "tito", "lugar": "direita", "entrada": "entra_direita", "expr": "pensativo" }],
+      "falas": [
+        { "quem": "nina", "texto": "A luz do sol parece branca, mas ela é uma mistura de todas as cores.", "destaques": ["todas"], "camera": "medio", "foco": "nina", "movimento": "zoom_in",
+          "acoes": [{ "quem": "nina", "gesto": "explicar", "expr": "feliz" }], "grafico": { "tipo": "icone", "texto": "", "numero_de": 0, "numero_ate": 0, "sufixo": "", "icone": "sol", "em": "nina" } },
+        { "quem": "tito", "texto": "Tipo um arco-íris escondido?", "destaques": ["arco-íris"], "camera": "close", "foco": "tito", "movimento": "nenhum",
+          "acoes": [{ "quem": "tito", "gesto": "pensar", "expr": "pensativo" }], "grafico": { "tipo": "nenhum", "texto": "", "numero_de": 0, "numero_ate": 0, "sufixo": "", "icone": "sol", "em": "tito" } }
+      ] },
+    { "cenario": "estudio", "hora": "noite",
+      "personagens": [{ "id": "nina", "lugar": "esquerda", "entrada": "parado", "expr": "convencido" }, { "id": "tito", "lugar": "direita", "entrada": "parado", "expr": "surpreso" }],
+      "falas": [
+        { "quem": "nina", "texto": "Quando essa luz bate no ar, o azul se espalha muito mais que o vermelho. Umas cinco vezes mais!", "destaques": ["espalha"], "camera": "geral", "foco": "grupo", "movimento": "zoom_in",
+          "acoes": [{ "quem": "nina", "gesto": "apontar_cima", "expr": "convencido" }, { "quem": "tito", "gesto": "nenhum", "expr": "surpreso" }], "grafico": { "tipo": "tela", "texto": "mais espalhado que o vermelho", "numero_de": 0, "numero_ate": 5, "sufixo": "x", "icone": "sol", "em": "tela" } },
+        { "quem": "tito", "texto": "Cinco vezes?!", "destaques": ["Cinco"], "camera": "close", "foco": "tito", "movimento": "tremor",
+          "acoes": [{ "quem": "tito", "gesto": "maos_cabeca", "expr": "assustado" }], "grafico": { "tipo": "fato", "texto": "mais espalhamento do azul", "numero_de": 0, "numero_ate": 5, "sufixo": "x", "icone": "sol", "em": "tito" } }
+      ] },
+    { "cenario": "avenida", "hora": "por_do_sol",
+      "personagens": [{ "id": "tito", "lugar": "centro", "entrada": "parado", "expr": "feliz" }, { "id": "duda", "lugar": "esquerda", "entrada": "entra_esquerda", "expr": "desconfiado" }],
+      "falas": [
+        { "quem": "duda", "texto": "Então por que no fim da tarde ele fica laranja?", "destaques": ["laranja"], "camera": "medio", "foco": "duda", "movimento": "orbita",
+          "acoes": [{ "quem": "duda", "gesto": "mao_cintura", "expr": "desconfiado" }], "grafico": { "tipo": "balao", "texto": "E o pôr do sol?", "numero_de": 0, "numero_ate": 0, "sufixo": "", "icone": "sol", "em": "duda" } },
+        { "quem": "narrador", "texto": "Porque a luz atravessa muito mais ar. O azul se perde no caminho e sobram o laranja e o vermelho.", "destaques": ["vermelho"], "camera": "aberto", "foco": "grupo", "movimento": "subir",
+          "acoes": [{ "quem": "tito", "gesto": "explicar", "expr": "convencido" }], "grafico": { "tipo": "icone", "texto": "", "numero_de": 0, "numero_ate": 0, "sufixo": "", "icone": "lampada", "em": "tito" } }
+      ] }
+  ],
+  "pergunta_final": "Você já sabia disso? Comenta aí!"
+}

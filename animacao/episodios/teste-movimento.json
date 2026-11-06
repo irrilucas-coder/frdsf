@@ -1,0 +1,69 @@
+{
+  "titulo": "Teste de movimento",
+  "fps": 30,
+  "legendaY": 0.62,
+  "cenas": [
+    {
+      "cenario": "rua_bairro", "duracao": 4.0, "transicao": "preto",
+      "atores": {
+        "tito": { "em": [-14, 0.5, -11], "olhar": 90 },
+        "pipoca": { "em": [-17, 0.5, -10.5], "olhar": 90 }
+      },
+      "eventos": [
+        { "t": 0.0, "quem": "tito", "faz": "andar", "para": [2, 0.5, -11], "dur": 2.6 },
+        { "t": 0.2, "quem": "pipoca", "faz": "andar", "para": [-1, 0.5, -10.2], "dur": 2.5 },
+        { "t": 2.7, "quem": "tito", "faz": "virar", "para": "camera", "dur": 0.4 },
+        { "t": 3.0, "quem": "tito", "faz": "susto", "dur": 1.0 },
+        { "t": 3.0, "quem": "pipoca", "faz": "pular", "dur": 0.5 }
+      ],
+      "falas": [{ "quem": "tito", "t": 0.3, "dur": 2.2 }],
+      "camera": [
+        { "t": 0, "enq": "corpo", "alvo": "tito", "angulo": 25, "mov": "pan" },
+        { "t": 2.9, "enq": "close", "alvo": "tito", "angulo": 0, "mov": "zoom_rapido", "tremor": 0.12 }
+      ],
+      "hud": [ { "tipo": "placa", "em": "tito", "t": 3.1, "ate": 4.0, "texto": "?!", "cor": "#ff3b5c" } ]
+    },
+    {
+      "cenario": "estudio", "duracao": 4.5, "transicao": "flash",
+      "atores": {
+        "nina": { "em": "palco", "dx": -2.5, "olhar": 15, "expr": "feliz" },
+        "tito": { "em": "palco", "dx": 3, "olhar": -30, "expr": "surpreso" }
+      },
+      "eventos": [
+        { "t": 0.2, "quem": "nina", "faz": "gesto", "valor": "explicar", "dur": 2.6 },
+        { "t": 2.9, "quem": "nina", "faz": "gesto", "valor": "apontar_cima", "dur": 1.4 },
+        { "t": 3.0, "quem": "tito", "faz": "gesto", "valor": "maos_cabeca", "dur": 1.4 }
+      ],
+      "falas": [{ "quem": "nina", "t": 0.2, "dur": 3.8 }],
+      "tela": [
+        { "t": 0, "icone": "cerebro", "texto": "Seu cérebro" },
+        { "t": 2.2, "grande": "20%", "texto": "da energia do corpo", "cor": "#ffd23f" }
+      ],
+      "camera": [
+        { "t": 0, "enq": "geral", "alvo": ["nina", "tito"], "angulo": 0, "mov": "zoom_in" },
+        { "t": 2.2, "enq": "medio", "alvo": "nina", "angulo": 20, "transicao": "suave" },
+        { "t": 3.0, "enq": "close", "alvo": "tito", "angulo": -15 }
+      ],
+      "hud": [
+        { "tipo": "titulo", "texto": "VOCÊ SABIA?", "t": 0.1, "ate": 2.0 },
+        { "tipo": "fato", "contar": [0, 20], "sufixo": "%", "sub": "da energia vai pro cérebro", "t": 3.0, "ate": 4.5, "dur": 1.0, "y": 0.27 }
+      ]
+    },
+    {
+      "cenario": "estudio", "duracao": 2.5,
+      "atores": { "tito": { "em": "palco", "expr": "feliz" } },
+      "eventos": [ { "t": 0, "quem": "tito", "faz": "gesto", "valor": "acenar", "dur": 2.5 } ],
+      "camera": [ { "t": 0, "enq": "corpo", "alvo": "tito" } ],
+      "hud": [
+        { "tipo": "pergunta", "texto": "Você já sabia disso? Comenta aí!", "t": 0.1 },
+        { "tipo": "inscrevase", "t": 0.6, "y": 0.84 }
+      ]
+    }
+  ],
+  "legendas": [
+    { "palavra": "Eu", "t0": 0.3, "t1": 0.5 }, { "palavra": "estava", "t0": 0.5, "t1": 0.9 }, { "palavra": "andando", "t0": 0.9, "t1": 1.4 },
+    { "palavra": "quando", "t0": 1.4, "t1": 1.8 }, { "palavra": "descobri", "t0": 1.8, "t1": 2.4, "destaque": true }, { "palavra": "isso!", "t0": 3.0, "t1": 3.8, "destaque": true },
+    { "palavra": "Seu", "t0": 4.2, "t1": 4.5 }, { "palavra": "cérebro", "t0": 4.5, "t1": 5.0, "destaque": true }, { "palavra": "gasta", "t0": 5.0, "t1": 5.4 },
+    { "palavra": "vinte", "t0": 6.2, "t1": 6.6 }, { "palavra": "por", "t0": 6.6, "t1": 6.8 }, { "palavra": "cento", "t0": 6.8, "t1": 7.2 }, { "palavra": "da", "t0": 7.2, "t1": 7.4 }, { "palavra": "energia!", "t0": 7.4, "t1": 8.2, "destaque": true, "cor": "#ffd23f" }
+  ]
+}
