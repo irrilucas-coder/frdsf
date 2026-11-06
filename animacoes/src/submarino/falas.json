@@ -1,0 +1,966 @@
+[
+ {
+  "id": "L0",
+  "quem": "narrador",
+  "duracao": 3.527,
+  "palavras": [
+   {
+    "texto": "Imagina",
+    "inicio": 0.132,
+    "fim": 0.54
+   },
+   {
+    "texto": "entrar",
+    "inicio": 0.54,
+    "fim": 0.9
+   },
+   {
+    "texto": "num",
+    "inicio": 0.9,
+    "fim": 1.116
+   },
+   {
+    "texto": "barco",
+    "inicio": 1.116,
+    "fim": 1.429
+   },
+   {
+    "texto": "que",
+    "inicio": 1.429,
+    "fim": 1.645
+   },
+   {
+    "texto": "afunda…",
+    "inicio": 1.645,
+    "fim": 2.293
+   },
+   {
+    "texto": "de",
+    "inicio": 2.293,
+    "fim": 2.477
+   },
+   {
+    "texto": "propósito.",
+    "inicio": 2.477,
+    "fim": 3.34
+   }
+  ]
+ },
+ {
+  "id": "L1",
+  "quem": "narrador",
+  "duracao": 9.613,
+  "palavras": [
+   {
+    "texto": "Em",
+    "inicio": 0.0,
+    "fim": 0.208
+   },
+   {
+    "texto": "1620,",
+    "inicio": 0.208,
+    "fim": 1.606
+   },
+   {
+    "texto": "o",
+    "inicio": 1.606,
+    "fim": 1.755
+   },
+   {
+    "texto": "inventor",
+    "inicio": 1.755,
+    "fim": 2.32
+   },
+   {
+    "texto": "holandês",
+    "inicio": 2.32,
+    "fim": 2.885
+   },
+   {
+    "texto": "Cornelis",
+    "inicio": 2.885,
+    "fim": 3.45
+   },
+   {
+    "texto": "Drebbel",
+    "inicio": 3.45,
+    "fim": 3.956
+   },
+   {
+    "texto": "cobriu",
+    "inicio": 3.956,
+    "fim": 4.402
+   },
+   {
+    "texto": "um",
+    "inicio": 4.402,
+    "fim": 4.61
+   },
+   {
+    "texto": "barco",
+    "inicio": 4.61,
+    "fim": 4.997
+   },
+   {
+    "texto": "a",
+    "inicio": 4.997,
+    "fim": 5.146
+   },
+   {
+    "texto": "remo",
+    "inicio": 5.146,
+    "fim": 5.473
+   },
+   {
+    "texto": "com",
+    "inicio": 5.473,
+    "fim": 5.741
+   },
+   {
+    "texto": "couro",
+    "inicio": 5.741,
+    "fim": 6.127
+   },
+   {
+    "texto": "engraxado",
+    "inicio": 6.127,
+    "fim": 6.752
+   },
+   {
+    "texto": "e",
+    "inicio": 6.752,
+    "fim": 6.901
+   },
+   {
+    "texto": "mergulhou",
+    "inicio": 6.901,
+    "fim": 7.525
+   },
+   {
+    "texto": "no",
+    "inicio": 7.525,
+    "fim": 7.734
+   },
+   {
+    "texto": "rio",
+    "inicio": 7.734,
+    "fim": 8.001
+   },
+   {
+    "texto": "Tâmisa,",
+    "inicio": 8.001,
+    "fim": 8.626
+   },
+   {
+    "texto": "em",
+    "inicio": 8.626,
+    "fim": 8.784
+   },
+   {
+    "texto": "Londres.",
+    "inicio": 8.784,
+    "fim": 9.441
+   }
+  ]
+ },
+ {
+  "id": "L2",
+  "quem": "drebbel",
+  "duracao": 2.482,
+  "palavras": [
+   {
+    "texto": "Remem,",
+    "inicio": 0.0,
+    "fim": 0.432
+   },
+   {
+    "texto": "pessoal!",
+    "inicio": 0.432,
+    "fim": 1.091
+   },
+   {
+    "texto": "E",
+    "inicio": 1.091,
+    "fim": 1.198
+   },
+   {
+    "texto": "ninguém",
+    "inicio": 1.198,
+    "fim": 1.561
+   },
+   {
+    "texto": "abre",
+    "inicio": 1.561,
+    "fim": 1.797
+   },
+   {
+    "texto": "a",
+    "inicio": 1.797,
+    "fim": 1.904
+   },
+   {
+    "texto": "janela!",
+    "inicio": 1.904,
+    "fim": 2.482
+   }
+  ]
+ },
+ {
+  "id": "L3",
+  "quem": "narrador",
+  "duracao": 3.03,
+  "palavras": [
+   {
+    "texto": "Funcionou!",
+    "inicio": 0.135,
+    "fim": 0.982
+   },
+   {
+    "texto": "Eles",
+    "inicio": 0.982,
+    "fim": 1.254
+   },
+   {
+    "texto": "ficaram",
+    "inicio": 1.254,
+    "fim": 1.673
+   },
+   {
+    "texto": "horas",
+    "inicio": 1.673,
+    "fim": 1.994
+   },
+   {
+    "texto": "debaixo",
+    "inicio": 1.994,
+    "fim": 2.413
+   },
+   {
+    "texto": "d'água.",
+    "inicio": 2.413,
+    "fim": 3.03
+   }
+  ]
+ },
+ {
+  "id": "L4",
+  "quem": "narrador",
+  "duracao": 11.154,
+  "palavras": [
+   {
+    "texto": "Em",
+    "inicio": 0.0,
+    "fim": 0.255
+   },
+   {
+    "texto": "1776,",
+    "inicio": 0.255,
+    "fim": 2.473
+   },
+   {
+    "texto": "na",
+    "inicio": 2.473,
+    "fim": 2.727
+   },
+   {
+    "texto": "guerra",
+    "inicio": 2.727,
+    "fim": 3.273
+   },
+   {
+    "texto": "de",
+    "inicio": 3.273,
+    "fim": 3.527
+   },
+   {
+    "texto": "independência",
+    "inicio": 3.527,
+    "fim": 4.582
+   },
+   {
+    "texto": "dos",
+    "inicio": 4.582,
+    "fim": 4.909
+   },
+   {
+    "texto": "Estados",
+    "inicio": 4.909,
+    "fim": 5.527
+   },
+   {
+    "texto": "Unidos,",
+    "inicio": 5.527,
+    "fim": 6.291
+   },
+   {
+    "texto": "David",
+    "inicio": 6.291,
+    "fim": 6.64
+   },
+   {
+    "texto": "Bushnell",
+    "inicio": 6.64,
+    "fim": 7.15
+   },
+   {
+    "texto": "criou",
+    "inicio": 7.15,
+    "fim": 7.5
+   },
+   {
+    "texto": "o",
+    "inicio": 7.5,
+    "fim": 7.634
+   },
+   {
+    "texto": "Turtle:",
+    "inicio": 7.634,
+    "fim": 8.198
+   },
+   {
+    "texto": "um",
+    "inicio": 8.198,
+    "fim": 8.38
+   },
+   {
+    "texto": "submarino",
+    "inicio": 8.38,
+    "fim": 8.924
+   },
+   {
+    "texto": "pra",
+    "inicio": 8.924,
+    "fim": 9.157
+   },
+   {
+    "texto": "uma",
+    "inicio": 9.157,
+    "fim": 9.391
+   },
+   {
+    "texto": "pessoa,",
+    "inicio": 9.391,
+    "fim": 9.935
+   },
+   {
+    "texto": "movido",
+    "inicio": 9.935,
+    "fim": 10.294
+   },
+   {
+    "texto": "a",
+    "inicio": 10.294,
+    "fim": 10.413
+   },
+   {
+    "texto": "manivela.",
+    "inicio": 10.413,
+    "fim": 11.154
+   }
+  ]
+ },
+ {
+  "id": "L5",
+  "quem": "ezra",
+  "duracao": 2.873,
+  "palavras": [
+   {
+    "texto": "Minhas",
+    "inicio": 0.0,
+    "fim": 0.231
+   },
+   {
+    "texto": "pernas!",
+    "inicio": 0.231,
+    "fim": 0.647
+   },
+   {
+    "texto": "Isso",
+    "inicio": 0.647,
+    "fim": 0.981
+   },
+   {
+    "texto": "é",
+    "inicio": 0.981,
+    "fim": 1.133
+   },
+   {
+    "texto": "pior",
+    "inicio": 1.133,
+    "fim": 1.468
+   },
+   {
+    "texto": "que",
+    "inicio": 1.468,
+    "fim": 1.742
+   },
+   {
+    "texto": "academia!",
+    "inicio": 1.742,
+    "fim": 2.685
+   }
+  ]
+ },
+ {
+  "id": "L6",
+  "quem": "narrador",
+  "duracao": 4.728,
+  "palavras": [
+   {
+    "texto": "A",
+    "inicio": 0.0,
+    "fim": 0.119
+   },
+   {
+    "texto": "missão",
+    "inicio": 0.119,
+    "fim": 0.476
+   },
+   {
+    "texto": "era",
+    "inicio": 0.476,
+    "fim": 0.69
+   },
+   {
+    "texto": "prender",
+    "inicio": 0.69,
+    "fim": 1.094
+   },
+   {
+    "texto": "uma",
+    "inicio": 1.094,
+    "fim": 1.309
+   },
+   {
+    "texto": "bomba",
+    "inicio": 1.309,
+    "fim": 1.618
+   },
+   {
+    "texto": "no",
+    "inicio": 1.618,
+    "fim": 1.784
+   },
+   {
+    "texto": "navio",
+    "inicio": 1.784,
+    "fim": 2.094
+   },
+   {
+    "texto": "inimigo…",
+    "inicio": 2.094,
+    "fim": 2.784
+   },
+   {
+    "texto": "mas",
+    "inicio": 2.784,
+    "fim": 3.005
+   },
+   {
+    "texto": "a",
+    "inicio": 3.005,
+    "fim": 3.128
+   },
+   {
+    "texto": "broca",
+    "inicio": 3.128,
+    "fim": 3.448
+   },
+   {
+    "texto": "não",
+    "inicio": 3.448,
+    "fim": 3.67
+   },
+   {
+    "texto": "furou",
+    "inicio": 3.67,
+    "fim": 3.99
+   },
+   {
+    "texto": "o",
+    "inicio": 3.99,
+    "fim": 4.113
+   },
+   {
+    "texto": "casco.",
+    "inicio": 4.113,
+    "fim": 4.728
+   }
+  ]
+ },
+ {
+  "id": "L7",
+  "quem": "narrador",
+  "duracao": 9.143,
+  "palavras": [
+   {
+    "texto": "Em",
+    "inicio": 0.218,
+    "fim": 0.433
+   },
+   {
+    "texto": "1864,",
+    "inicio": 0.433,
+    "fim": 2.485
+   },
+   {
+    "texto": "o",
+    "inicio": 2.485,
+    "fim": 2.638
+   },
+   {
+    "texto": "Hunley",
+    "inicio": 2.638,
+    "fim": 3.098
+   },
+   {
+    "texto": "virou",
+    "inicio": 3.098,
+    "fim": 3.496
+   },
+   {
+    "texto": "o",
+    "inicio": 3.496,
+    "fim": 3.649
+   },
+   {
+    "texto": "primeiro",
+    "inicio": 3.649,
+    "fim": 4.231
+   },
+   {
+    "texto": "submarino",
+    "inicio": 4.231,
+    "fim": 4.874
+   },
+   {
+    "texto": "a",
+    "inicio": 4.874,
+    "fim": 5.027
+   },
+   {
+    "texto": "afundar",
+    "inicio": 5.027,
+    "fim": 5.548
+   },
+   {
+    "texto": "um",
+    "inicio": 5.548,
+    "fim": 5.762
+   },
+   {
+    "texto": "navio",
+    "inicio": 5.762,
+    "fim": 6.161
+   },
+   {
+    "texto": "de",
+    "inicio": 6.161,
+    "fim": 6.375
+   },
+   {
+    "texto": "guerra…",
+    "inicio": 6.375,
+    "fim": 7.202
+   },
+   {
+    "texto": "mas",
+    "inicio": 7.202,
+    "fim": 7.423
+   },
+   {
+    "texto": "também",
+    "inicio": 7.423,
+    "fim": 7.792
+   },
+   {
+    "texto": "afundou",
+    "inicio": 7.792,
+    "fim": 8.209
+   },
+   {
+    "texto": "logo",
+    "inicio": 8.209,
+    "fim": 8.48
+   },
+   {
+    "texto": "depois.",
+    "inicio": 8.48,
+    "fim": 9.143
+   }
+  ]
+ },
+ {
+  "id": "L8",
+  "quem": "narrador",
+  "duracao": 10.397,
+  "palavras": [
+   {
+    "texto": "Até",
+    "inicio": 0.133,
+    "fim": 0.385
+   },
+   {
+    "texto": "que,",
+    "inicio": 0.385,
+    "fim": 0.806
+   },
+   {
+    "texto": "em",
+    "inicio": 0.806,
+    "fim": 0.938
+   },
+   {
+    "texto": "1900,",
+    "inicio": 0.938,
+    "fim": 1.634
+   },
+   {
+    "texto": "John",
+    "inicio": 1.634,
+    "fim": 1.841
+   },
+   {
+    "texto": "Philip",
+    "inicio": 1.841,
+    "fim": 2.124
+   },
+   {
+    "texto": "Holland",
+    "inicio": 2.124,
+    "fim": 2.443
+   },
+   {
+    "texto": "juntou",
+    "inicio": 2.443,
+    "fim": 2.726
+   },
+   {
+    "texto": "tudo:",
+    "inicio": 2.726,
+    "fim": 3.046
+   },
+   {
+    "texto": "motor",
+    "inicio": 3.046,
+    "fim": 3.536
+   },
+   {
+    "texto": "a",
+    "inicio": 3.536,
+    "fim": 3.725
+   },
+   {
+    "texto": "gasolina",
+    "inicio": 3.725,
+    "fim": 4.442
+   },
+   {
+    "texto": "na",
+    "inicio": 4.442,
+    "fim": 4.706
+   },
+   {
+    "texto": "superfície",
+    "inicio": 4.706,
+    "fim": 5.574
+   },
+   {
+    "texto": "e",
+    "inicio": 5.574,
+    "fim": 5.762
+   },
+   {
+    "texto": "baterias",
+    "inicio": 5.762,
+    "fim": 6.479
+   },
+   {
+    "texto": "elétricas",
+    "inicio": 6.479,
+    "fim": 7.272
+   },
+   {
+    "texto": "debaixo",
+    "inicio": 7.272,
+    "fim": 7.913
+   },
+   {
+    "texto": "d'água.",
+    "inicio": 7.913,
+    "fim": 8.857
+   },
+   {
+    "texto": "A",
+    "inicio": 8.857,
+    "fim": 8.952
+   },
+   {
+    "texto": "Marinha",
+    "inicio": 8.952,
+    "fim": 9.275
+   },
+   {
+    "texto": "americana",
+    "inicio": 9.275,
+    "fim": 9.675
+   },
+   {
+    "texto": "comprou!",
+    "inicio": 9.675,
+    "fim": 10.227
+   }
+  ]
+ },
+ {
+  "id": "L9",
+  "quem": "holland",
+  "duracao": 2.534,
+  "palavras": [
+   {
+    "texto": "Agora",
+    "inicio": 0.0,
+    "fim": 0.383
+   },
+   {
+    "texto": "sim:",
+    "inicio": 0.383,
+    "fim": 0.825
+   },
+   {
+    "texto": "ele",
+    "inicio": 0.825,
+    "fim": 1.09
+   },
+   {
+    "texto": "mergulha",
+    "inicio": 1.09,
+    "fim": 1.65
+   },
+   {
+    "texto": "e",
+    "inicio": 1.65,
+    "fim": 1.797
+   },
+   {
+    "texto": "volta!",
+    "inicio": 1.797,
+    "fim": 2.534
+   }
+  ]
+ },
+ {
+  "id": "L10",
+  "quem": "narrador",
+  "duracao": 12.356,
+  "palavras": [
+   {
+    "texto": "Em",
+    "inicio": 0.0,
+    "fim": 0.238
+   },
+   {
+    "texto": "1954",
+    "inicio": 0.238,
+    "fim": 2.382
+   },
+   {
+    "texto": "veio",
+    "inicio": 2.382,
+    "fim": 2.756
+   },
+   {
+    "texto": "o",
+    "inicio": 2.756,
+    "fim": 2.926
+   },
+   {
+    "texto": "Nautilus,",
+    "inicio": 2.926,
+    "fim": 3.777
+   },
+   {
+    "texto": "o",
+    "inicio": 3.777,
+    "fim": 3.978
+   },
+   {
+    "texto": "primeiro",
+    "inicio": 3.978,
+    "fim": 4.741
+   },
+   {
+    "texto": "submarino",
+    "inicio": 4.741,
+    "fim": 5.586
+   },
+   {
+    "texto": "nuclear.",
+    "inicio": 5.586,
+    "fim": 6.751
+   },
+   {
+    "texto": "E",
+    "inicio": 6.751,
+    "fim": 6.921
+   },
+   {
+    "texto": "em",
+    "inicio": 6.921,
+    "fim": 7.158
+   },
+   {
+    "texto": "1958",
+    "inicio": 7.158,
+    "fim": 9.16
+   },
+   {
+    "texto": "ele",
+    "inicio": 9.16,
+    "fim": 9.465
+   },
+   {
+    "texto": "passou",
+    "inicio": 9.465,
+    "fim": 9.974
+   },
+   {
+    "texto": "por",
+    "inicio": 9.974,
+    "fim": 10.279
+   },
+   {
+    "texto": "baixo",
+    "inicio": 10.279,
+    "fim": 10.72
+   },
+   {
+    "texto": "do",
+    "inicio": 10.72,
+    "fim": 10.958
+   },
+   {
+    "texto": "Polo",
+    "inicio": 10.958,
+    "fim": 11.331
+   },
+   {
+    "texto": "Norte!",
+    "inicio": 11.331,
+    "fim": 12.179
+   }
+  ]
+ },
+ {
+  "id": "L11",
+  "quem": "narrador",
+  "duracao": 6.975,
+  "palavras": [
+   {
+    "texto": "De",
+    "inicio": 0.145,
+    "fim": 0.309
+   },
+   {
+    "texto": "um",
+    "inicio": 0.309,
+    "fim": 0.473
+   },
+   {
+    "texto": "barco",
+    "inicio": 0.473,
+    "fim": 0.778
+   },
+   {
+    "texto": "de",
+    "inicio": 0.778,
+    "fim": 0.942
+   },
+   {
+    "texto": "couro",
+    "inicio": 0.942,
+    "fim": 1.247
+   },
+   {
+    "texto": "até",
+    "inicio": 1.247,
+    "fim": 1.458
+   },
+   {
+    "texto": "um",
+    "inicio": 1.458,
+    "fim": 1.622
+   },
+   {
+    "texto": "gigante",
+    "inicio": 1.622,
+    "fim": 2.02
+   },
+   {
+    "texto": "que",
+    "inicio": 2.02,
+    "fim": 2.231
+   },
+   {
+    "texto": "atravessa",
+    "inicio": 2.231,
+    "fim": 2.724
+   },
+   {
+    "texto": "o",
+    "inicio": 2.724,
+    "fim": 2.841
+   },
+   {
+    "texto": "oceano",
+    "inicio": 2.841,
+    "fim": 3.193
+   },
+   {
+    "texto": "escondido.",
+    "inicio": 3.193,
+    "fim": 3.966
+   },
+   {
+    "texto": "Qual",
+    "inicio": 3.966,
+    "fim": 4.233
+   },
+   {
+    "texto": "invenção",
+    "inicio": 4.233,
+    "fim": 4.695
+   },
+   {
+    "texto": "você",
+    "inicio": 4.695,
+    "fim": 4.962
+   },
+   {
+    "texto": "quer",
+    "inicio": 4.962,
+    "fim": 5.229
+   },
+   {
+    "texto": "ver",
+    "inicio": 5.229,
+    "fim": 5.447
+   },
+   {
+    "texto": "agora?",
+    "inicio": 5.447,
+    "fim": 6.054
+   },
+   {
+    "texto": "Comenta",
+    "inicio": 6.054,
+    "fim": 6.489
+   },
+   {
+    "texto": "aí!",
+    "inicio": 6.489,
+    "fim": 6.975
+   }
+  ]
+ }
+]

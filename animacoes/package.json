@@ -8,6 +8,8 @@
     "render": "remotion render BipEAEstrela out/bip-e-a-estrela.mp4"
   },
   "dependencies": {
+    "@fontsource/lilita-one": "5.2.8",
+    "@fontsource/nunito": "5.2.7",
     "@react-three/fiber": "^9.4.0",
     "@remotion/cli": "4.0.541",
     "@remotion/media": "4.0.541",
