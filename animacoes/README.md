@@ -28,3 +28,11 @@ npm install
 npm run studio   # pré-visualização interativa no navegador
 npm run render   # gera out/bip-e-a-estrela.mp4
 ```
+
+## Biblioteca de efeitos sonoros (grátis, CC0)
+
+`python3 scripts/biblioteca-sfx.py` baixa e prepara `public/sfx/` com 16 categorias (whoosh, pop, impacto,
+explosão, erro, acerto, conquista, água, bolhas, alarme, sonar, mecânico, motor, tique, tensão, subida),
+de 3 a 4 versões cada. Fontes: Kenney.nl e OpenGameArt (via Open Game SFX Index no GitHub) e o pacote
+`uisfx` do npm, todas CC0, sem chave e sem custo. Origem de cada arquivo em `public/sfx/creditos.json`.
+Nos vídeos, use `sfx('whoosh', n)` de `src/sfx.ts`, variando `n`.

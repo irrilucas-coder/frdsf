@@ -1,0 +1,334 @@
+{
+ "whoosh": [
+  {
+   "arquivo": "whoosh/1.mp3",
+   "fonte": "uisfx/cinematic",
+   "licenca": "CC0-1.0",
+   "titulo": "swipe"
+  },
+  {
+   "arquivo": "whoosh/2.mp3",
+   "fonte": "oga-battle (https://opengameart.org/content/battle-sound-effects)",
+   "licenca": "CC0-1.0",
+   "titulo": "swish 3"
+  },
+  {
+   "arquivo": "whoosh/3.mp3",
+   "fonte": "uisfx/dreamy",
+   "licenca": "CC0-1.0",
+   "titulo": "swipe"
+  },
+  {
+   "arquivo": "whoosh/4.mp3",
+   "fonte": "oga-battle (https://opengameart.org/content/battle-sound-effects)",
+   "licenca": "CC0-1.0",
+   "titulo": "swish 2"
+  }
+ ],
+ "pop": [
+  {
+   "arquivo": "pop/1.mp3",
+   "fonte": "interface-sounds (https://kenney.nl/assets/interface-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "drop 002"
+  },
+  {
+   "arquivo": "pop/2.mp3",
+   "fonte": "interface-sounds (https://kenney.nl/assets/interface-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "pluck 001"
+  },
+  {
+   "arquivo": "pop/3.mp3",
+   "fonte": "uisfx/rubber",
+   "licenca": "CC0-1.0",
+   "titulo": "select"
+  },
+  {
+   "arquivo": "pop/4.mp3",
+   "fonte": "interface-sounds (https://kenney.nl/assets/interface-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "drop 003"
+  }
+ ],
+ "impacto": [
+  {
+   "arquivo": "impacto/1.mp3",
+   "fonte": "oga-hits-punches (https://opengameart.org/content/37-hitspunches)",
+   "licenca": "CC0-1.0",
+   "titulo": "hit05.mp3"
+  },
+  {
+   "arquivo": "impacto/2.mp3",
+   "fonte": "oga-hits-punches (https://opengameart.org/content/37-hitspunches)",
+   "licenca": "CC0-1.0",
+   "titulo": "hit12.mp3"
+  },
+  {
+   "arquivo": "impacto/3.mp3",
+   "fonte": "oga-hits-punches (https://opengameart.org/content/37-hitspunches)",
+   "licenca": "CC0-1.0",
+   "titulo": "hit20.mp3"
+  }
+ ],
+ "explosao": [
+  {
+   "arquivo": "explosao/1.mp3",
+   "fonte": "sci-fi-sounds (https://kenney.nl/assets/sci-fi-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "lowFrequency explosion 000"
+  },
+  {
+   "arquivo": "explosao/2.mp3",
+   "fonte": "sci-fi-sounds (https://kenney.nl/assets/sci-fi-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "explosionCrunch 000"
+  },
+  {
+   "arquivo": "explosao/3.mp3",
+   "fonte": "sci-fi-sounds (https://kenney.nl/assets/sci-fi-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "lowFrequency explosion 001"
+  }
+ ],
+ "erro": [
+  {
+   "arquivo": "erro/1.mp3",
+   "fonte": "uisfx/cinematic",
+   "licenca": "CC0-1.0",
+   "titulo": "error"
+  },
+  {
+   "arquivo": "erro/2.mp3",
+   "fonte": "interface-sounds (https://kenney.nl/assets/interface-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "error 006"
+  },
+  {
+   "arquivo": "erro/3.mp3",
+   "fonte": "interface-sounds (https://kenney.nl/assets/interface-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "error 004"
+  }
+ ],
+ "acerto": [
+  {
+   "arquivo": "acerto/1.mp3",
+   "fonte": "music-jingles (https://kenney.nl/assets/music-jingles)",
+   "licenca": "CC0-1.0",
+   "titulo": "jingles PIZZI00"
+  },
+  {
+   "arquivo": "acerto/2.mp3",
+   "fonte": "uisfx/cinematic",
+   "licenca": "CC0-1.0",
+   "titulo": "success"
+  },
+  {
+   "arquivo": "acerto/3.mp3",
+   "fonte": "music-jingles (https://kenney.nl/assets/music-jingles)",
+   "licenca": "CC0-1.0",
+   "titulo": "jingles HIT04"
+  }
+ ],
+ "conquista": [
+  {
+   "arquivo": "conquista/1.mp3",
+   "fonte": "uisfx/arcade",
+   "licenca": "CC0-1.0",
+   "titulo": "level-up"
+  },
+  {
+   "arquivo": "conquista/2.mp3",
+   "fonte": "uisfx/cinematic",
+   "licenca": "CC0-1.0",
+   "titulo": "achievement"
+  },
+  {
+   "arquivo": "conquista/3.mp3",
+   "fonte": "oga-levelup-powerup (https://opengameart.org/content/level-up-power-up-coin-get-13-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "Upper01"
+  }
+ ],
+ "agua": [
+  {
+   "arquivo": "agua/1.mp3",
+   "fonte": "sci-fi-sounds (https://kenney.nl/assets/sci-fi-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "slime 000"
+  },
+  {
+   "arquivo": "agua/2.mp3",
+   "fonte": "sci-fi-sounds (https://kenney.nl/assets/sci-fi-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "slime 001"
+  },
+  {
+   "arquivo": "agua/3.mp3",
+   "fonte": "oga-rpg-pack (https://opengameart.org/content/rpg-sound-pack)",
+   "licenca": "CC0-1.0",
+   "titulo": "slime3"
+  }
+ ],
+ "bolhas": [
+  {
+   "arquivo": "bolhas/1.mp3",
+   "fonte": "oga-rpg-pack (https://opengameart.org/content/rpg-sound-pack)",
+   "licenca": "CC0-1.0",
+   "titulo": "bubble"
+  },
+  {
+   "arquivo": "bolhas/2.mp3",
+   "fonte": "oga-rpg-pack (https://opengameart.org/content/rpg-sound-pack)",
+   "licenca": "CC0-1.0",
+   "titulo": "bubble2"
+  },
+  {
+   "arquivo": "bolhas/3.mp3",
+   "fonte": "oga-rpg-pack (https://opengameart.org/content/rpg-sound-pack)",
+   "licenca": "CC0-1.0",
+   "titulo": "bubble3"
+  }
+ ],
+ "alarme": [
+  {
+   "arquivo": "alarme/1.mp3",
+   "fonte": "oga-levelup-powerup (https://opengameart.org/content/level-up-power-up-coin-get-13-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "Alarm"
+  },
+  {
+   "arquivo": "alarme/2.mp3",
+   "fonte": "uisfx/cinematic",
+   "licenca": "CC0-1.0",
+   "titulo": "warning"
+  },
+  {
+   "arquivo": "alarme/3.mp3",
+   "fonte": "uisfx/scifi",
+   "licenca": "CC0-1.0",
+   "titulo": "warning"
+  }
+ ],
+ "sonar": [
+  {
+   "arquivo": "sonar/1.mp3",
+   "fonte": "uisfx/cinematic",
+   "licenca": "CC0-1.0",
+   "titulo": "scanning"
+  },
+  {
+   "arquivo": "sonar/2.mp3",
+   "fonte": "uisfx/scifi",
+   "licenca": "CC0-1.0",
+   "titulo": "scanning"
+  },
+  {
+   "arquivo": "sonar/3.mp3",
+   "fonte": "uisfx/glass",
+   "licenca": "CC0-1.0",
+   "titulo": "scanning"
+  }
+ ],
+ "mecanico": [
+  {
+   "arquivo": "mecanico/1.mp3",
+   "fonte": "rpg-audio (https://kenney.nl/assets/rpg-audio)",
+   "licenca": "CC0-1.0",
+   "titulo": "creak1"
+  },
+  {
+   "arquivo": "mecanico/2.mp3",
+   "fonte": "rpg-audio (https://kenney.nl/assets/rpg-audio)",
+   "licenca": "CC0-1.0",
+   "titulo": "metalLatch"
+  },
+  {
+   "arquivo": "mecanico/3.mp3",
+   "fonte": "uisfx/mechanical",
+   "licenca": "CC0-1.0",
+   "titulo": "processing"
+  }
+ ],
+ "motor": [
+  {
+   "arquivo": "motor/1.mp3",
+   "fonte": "sci-fi-sounds (https://kenney.nl/assets/sci-fi-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "engineCircular 000"
+  },
+  {
+   "arquivo": "motor/2.mp3",
+   "fonte": "sci-fi-sounds (https://kenney.nl/assets/sci-fi-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "forceField 000"
+  },
+  {
+   "arquivo": "motor/3.mp3",
+   "fonte": "sci-fi-sounds (https://kenney.nl/assets/sci-fi-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "engineCircular 002"
+  }
+ ],
+ "tique": [
+  {
+   "arquivo": "tique/1.mp3",
+   "fonte": "uisfx/minimal",
+   "licenca": "CC0-1.0",
+   "titulo": "progress-step"
+  },
+  {
+   "arquivo": "tique/2.mp3",
+   "fonte": "interface-sounds (https://kenney.nl/assets/interface-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "click 002"
+  },
+  {
+   "arquivo": "tique/3.mp3",
+   "fonte": "uisfx/glass",
+   "licenca": "CC0-1.0",
+   "titulo": "progress-step"
+  }
+ ],
+ "tensao": [
+  {
+   "arquivo": "tensao/1.mp3",
+   "fonte": "sci-fi-sounds (https://kenney.nl/assets/sci-fi-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "spaceEngineLarge 000"
+  },
+  {
+   "arquivo": "tensao/2.mp3",
+   "fonte": "sci-fi-sounds (https://kenney.nl/assets/sci-fi-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "forceField 002"
+  },
+  {
+   "arquivo": "tensao/3.mp3",
+   "fonte": "sci-fi-sounds (https://kenney.nl/assets/sci-fi-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "spaceEngineLarge 001"
+  }
+ ],
+ "subida": [
+  {
+   "arquivo": "subida/1.mp3",
+   "fonte": "oga-levelup-powerup (https://opengameart.org/content/level-up-power-up-coin-get-13-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "Rise02"
+  },
+  {
+   "arquivo": "subida/2.mp3",
+   "fonte": "oga-levelup-powerup (https://opengameart.org/content/level-up-power-up-coin-get-13-sounds)",
+   "licenca": "CC0-1.0",
+   "titulo": "Rise04"
+  },
+  {
+   "arquivo": "subida/3.mp3",
+   "fonte": "digital-audio (https://kenney.nl/assets/digital-audio)",
+   "licenca": "CC0-1.0",
+   "titulo": "phaserUp3"
+  }
+ ]
+}
