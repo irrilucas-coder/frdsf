@@ -47,6 +47,8 @@ const COMPONENTE: Record<CenaId, React.FC> = {
 // ---------- Efeitos sonoros: [arquivo, segundo absoluto, volume] ----------
 const fimL6 = T('turtle', fimFala('turtle', 'L6'));
 const impactoHunley = Q('hunley', 'L7', 'guerra');
+// som do impacto entra só depois da palavra "guerra" terminar, pra não abafar a voz
+const somImpactoHunley = Q('hunley', 'L7', 'mas') - 0.15;
 const SONS: [string, number, number][] = [
   ['alarme', 0.05, 0.5],
   ['bolhas', 0.2, 0.6],
@@ -69,13 +71,13 @@ const SONS: [string, number, number][] = [
   ['manivela', T('turtle', quandoDiz('turtle', 'L4', 'submarino')), 0.7],
   ['manivela', T('turtle', inicioFala('turtle', 'L5') - 0.1), 0.9],
   ['pop', Q('turtle', 'L6', 'bomba'), 0.6],
-  ['broca', Q('turtle', 'L6', 'broca') + 0.2, 0.7],
-  ['buzzer', Q('turtle', 'L6', 'casco'), 0.8],
-  ['boom', fimL6 + 0.4, 0.9],
+  ['broca', Q('turtle', 'L6', 'broca') + 0.2, 0.35],
+  ['buzzer', fimL6 + 0.35, 0.45],
+  ['boom', fimL6 + 0.7, 0.9],
   // Hunley
-  ['suspense', T('hunley', 0.05), 0.8],
+  ['suspense', T('hunley', 0.05), 0.45],
   ['carimbo', T('hunley', 0.25), 0.7],
-  ['boom', impactoHunley, 1],
+  ['boom', somImpactoHunley, 0.75],
   ['bolhas', Q('hunley', 'L7', 'mas'), 0.6],
   // Holland
   ['carimbo', T('holland', 0.25), 0.8],
@@ -125,7 +127,7 @@ export const Submarino = () => {
           Q('drebbel', 'L1', 'mergulhou') + 0.3,
           T('drebbel', inicioFala('drebbel', 'L2')),
           Q('turtle', 'L6', 'casco'),
-          fimL6 + 0.4,
+          fimL6 + 0.7,
           impactoHunley,
           Q('holland', 'L8', 'comprou'),
           Q('nautilus', 'L10', '1958'),
@@ -135,7 +137,7 @@ export const Submarino = () => {
           {inicio: Q('gancho', 'L0', 'de'), dur: 0.8, forca: 10},
           {inicio: T('turtle', inicioFala('turtle', 'L5')), dur: 2.6, forca: 8},
           {inicio: Q('turtle', 'L6', 'casco'), dur: 0.6, forca: 22},
-          {inicio: fimL6 + 0.4, dur: 0.7, forca: 16},
+          {inicio: fimL6 + 0.7, dur: 0.7, forca: 16},
           {inicio: impactoHunley, dur: 1.2, forca: 28},
         ]}
       >
@@ -167,7 +169,7 @@ export const Submarino = () => {
       <Emoji inicio={T('turtle', inicioFala('turtle', 'L5') + 0.6)} dur={1.8} emoji="😫" x={90} y={420} />
       <Emoji inicio={Q('turtle', 'L6', 'bomba')} dur={1.6} emoji="💣" x={760} y={300} />
       <Selo inicio={Q('turtle', 'L6', 'casco')} dur={1.6} texto="FALHOU ❌" cor="#ff3b30" topo={300} tamanho={140} rot={-6} />
-      <Emoji inicio={fimL6 + 0.45} dur={1.0} emoji="💥" x={120} y={380} tam={220} />
+      <Emoji inicio={fimL6 + 0.75} dur={1.0} emoji="💥" x={120} y={380} tam={220} />
 
       <Selo inicio={T('hunley', 0.2)} dur={2.6} texto="1864" sub="📍 CAROLINA DO SUL" />
       <Selo inicio={impactoHunley + 0.25} dur={2.6} texto="1º NAVIO AFUNDADO" sub="POR UM SUBMARINO 💥" cor="#ff9f1c" topo={300} tamanho={92} />

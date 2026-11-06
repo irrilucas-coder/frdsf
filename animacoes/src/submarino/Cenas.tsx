@@ -331,7 +331,7 @@ export const CenaTurtle = () => {
             <meshBasicMaterial color="#fff2a0" />
           </mesh>
         ))}
-      <Explosao posicao={[-6, -2.5, -4]} inicio={tFimL6 + 0.4} s={s} escala={1.2} />
+      <Explosao posicao={[-6, -2.5, -4]} inicio={tFimL6 + 0.7} s={s} escala={1.2} />
       <Fundo y={-7} cor="#1d2a2a" />
     </Palco>
   );
