@@ -6,160 +6,160 @@
   "palavras": [
    {
     "texto": "Imagina",
-    "inicio": 0.132,
-    "fim": 0.54
+    "inicio": 0.06,
+    "fim": 0.52
    },
    {
     "texto": "entrar",
-    "inicio": 0.54,
-    "fim": 0.9
+    "inicio": 0.52,
+    "fim": 0.8
    },
    {
     "texto": "num",
-    "inicio": 0.9,
-    "fim": 1.116
+    "inicio": 0.8,
+    "fim": 0.96
    },
    {
     "texto": "barco",
-    "inicio": 1.116,
-    "fim": 1.429
+    "inicio": 0.96,
+    "fim": 1.34
    },
    {
     "texto": "que",
-    "inicio": 1.429,
-    "fim": 1.645
+    "inicio": 1.34,
+    "fim": 1.48
    },
    {
     "texto": "afunda…",
-    "inicio": 1.645,
-    "fim": 2.293
+    "inicio": 1.48,
+    "fim": 2.16
    },
    {
     "texto": "de",
-    "inicio": 2.293,
-    "fim": 2.477
+    "inicio": 2.16,
+    "fim": 2.62
    },
    {
     "texto": "propósito.",
-    "inicio": 2.477,
-    "fim": 3.34
+    "inicio": 2.62,
+    "fim": 2.98
    }
   ]
  },
  {
   "id": "L1",
   "quem": "narrador",
-  "duracao": 9.613,
+  "duracao": 8.777,
   "palavras": [
    {
     "texto": "Em",
-    "inicio": 0.0,
-    "fim": 0.208
+    "inicio": 0.02,
+    "fim": 0.22
    },
    {
     "texto": "1620,",
-    "inicio": 0.208,
-    "fim": 1.606
+    "inicio": 0.22,
+    "fim": 1.56
    },
    {
     "texto": "o",
-    "inicio": 1.606,
-    "fim": 1.755
+    "inicio": 1.56,
+    "fim": 1.82
    },
    {
     "texto": "inventor",
-    "inicio": 1.755,
-    "fim": 2.32
+    "inicio": 1.82,
+    "fim": 2.14
    },
    {
     "texto": "holandês",
-    "inicio": 2.32,
-    "fim": 2.885
+    "inicio": 2.14,
+    "fim": 2.72
    },
    {
     "texto": "Cornelis",
-    "inicio": 2.885,
-    "fim": 3.45
+    "inicio": 2.72,
+    "fim": 3.18
    },
    {
     "texto": "Drebbel",
-    "inicio": 3.45,
-    "fim": 3.956
+    "inicio": 3.18,
+    "fim": 3.58
    },
    {
     "texto": "cobriu",
-    "inicio": 3.956,
-    "fim": 4.402
+    "inicio": 3.58,
+    "fim": 4.18
    },
    {
     "texto": "um",
-    "inicio": 4.402,
-    "fim": 4.61
+    "inicio": 4.18,
+    "fim": 4.28
    },
    {
     "texto": "barco",
-    "inicio": 4.61,
-    "fim": 4.997
+    "inicio": 4.28,
+    "fim": 4.62
    },
    {
     "texto": "a",
-    "inicio": 4.997,
-    "fim": 5.146
+    "inicio": 4.62,
+    "fim": 4.76
    },
    {
     "texto": "remo",
-    "inicio": 5.146,
-    "fim": 5.473
+    "inicio": 4.76,
+    "fim": 4.96
    },
    {
     "texto": "com",
-    "inicio": 5.473,
-    "fim": 5.741
+    "inicio": 4.96,
+    "fim": 5.12
    },
    {
     "texto": "couro",
-    "inicio": 5.741,
-    "fim": 6.127
+    "inicio": 5.12,
+    "fim": 5.46
    },
    {
     "texto": "engraxado",
-    "inicio": 6.127,
-    "fim": 6.752
+    "inicio": 5.46,
+    "fim": 6.08
    },
    {
     "texto": "e",
-    "inicio": 6.752,
-    "fim": 6.901
+    "inicio": 6.08,
+    "fim": 6.46
    },
    {
     "texto": "mergulhou",
-    "inicio": 6.901,
-    "fim": 7.525
+    "inicio": 6.46,
+    "fim": 6.86
    },
    {
     "texto": "no",
-    "inicio": 7.525,
-    "fim": 7.734
+    "inicio": 6.86,
+    "fim": 6.98
    },
    {
     "texto": "rio",
-    "inicio": 7.734,
-    "fim": 8.001
+    "inicio": 6.98,
+    "fim": 7.16
    },
    {
     "texto": "Tâmisa,",
-    "inicio": 8.001,
-    "fim": 8.626
+    "inicio": 7.16,
+    "fim": 7.78
    },
    {
     "texto": "em",
-    "inicio": 8.626,
-    "fim": 8.784
+    "inicio": 7.78,
+    "fim": 7.98
    },
    {
     "texto": "Londres.",
-    "inicio": 8.784,
-    "fim": 9.441
+    "inicio": 7.98,
+    "fim": 8.06
    }
   ]
  },
@@ -170,38 +170,38 @@
   "palavras": [
    {
     "texto": "Remem,",
-    "inicio": 0.0,
-    "fim": 0.432
+    "inicio": 0.08,
+    "fim": 0.56
    },
    {
     "texto": "pessoal!",
-    "inicio": 0.432,
-    "fim": 1.091
+    "inicio": 0.56,
+    "fim": 1.1
    },
    {
     "texto": "E",
-    "inicio": 1.091,
-    "fim": 1.198
+    "inicio": 1.1,
+    "fim": 1.22
    },
    {
     "texto": "ninguém",
-    "inicio": 1.198,
-    "fim": 1.561
+    "inicio": 1.22,
+    "fim": 1.46
    },
    {
     "texto": "abre",
-    "inicio": 1.561,
-    "fim": 1.797
+    "inicio": 1.46,
+    "fim": 1.76
    },
    {
     "texto": "a",
-    "inicio": 1.797,
-    "fim": 1.904
+    "inicio": 1.76,
+    "fim": 1.84
    },
    {
     "texto": "janela!",
-    "inicio": 1.904,
-    "fim": 2.482
+    "inicio": 1.84,
+    "fim": 1.98
    }
   ]
  },
@@ -212,150 +212,150 @@
   "palavras": [
    {
     "texto": "Funcionou!",
-    "inicio": 0.135,
-    "fim": 0.982
+    "inicio": 0.1,
+    "fim": 0.96
    },
    {
     "texto": "Eles",
-    "inicio": 0.982,
-    "fim": 1.254
+    "inicio": 0.96,
+    "fim": 1.36
    },
    {
     "texto": "ficaram",
-    "inicio": 1.254,
-    "fim": 1.673
+    "inicio": 1.36,
+    "fim": 1.72
    },
    {
     "texto": "horas",
-    "inicio": 1.673,
-    "fim": 1.994
+    "inicio": 1.72,
+    "fim": 1.98
    },
    {
     "texto": "debaixo",
-    "inicio": 1.994,
-    "fim": 2.413
+    "inicio": 1.98,
+    "fim": 2.06
    },
    {
     "texto": "d'água.",
-    "inicio": 2.413,
-    "fim": 3.03
+    "inicio": 1.98,
+    "fim": 2.06
    }
   ]
  },
  {
   "id": "L4",
   "quem": "narrador",
-  "duracao": 11.154,
+  "duracao": 9.352,
   "palavras": [
    {
     "texto": "Em",
-    "inicio": 0.0,
-    "fim": 0.255
+    "inicio": 0,
+    "fim": 0.22
    },
    {
     "texto": "1776,",
-    "inicio": 0.255,
-    "fim": 2.473
+    "inicio": 0.22,
+    "fim": 2.18
    },
    {
     "texto": "na",
-    "inicio": 2.473,
-    "fim": 2.727
+    "inicio": 2.18,
+    "fim": 2.42
    },
    {
     "texto": "guerra",
-    "inicio": 2.727,
-    "fim": 3.273
+    "inicio": 2.42,
+    "fim": 2.64
    },
    {
     "texto": "de",
-    "inicio": 3.273,
-    "fim": 3.527
+    "inicio": 2.64,
+    "fim": 2.78
    },
    {
     "texto": "independência",
-    "inicio": 3.527,
-    "fim": 4.582
+    "inicio": 2.78,
+    "fim": 3.38
    },
    {
     "texto": "dos",
-    "inicio": 4.582,
-    "fim": 4.909
+    "inicio": 3.38,
+    "fim": 3.54
    },
    {
     "texto": "Estados",
-    "inicio": 4.909,
-    "fim": 5.527
+    "inicio": 3.54,
+    "fim": 3.84
    },
    {
     "texto": "Unidos,",
-    "inicio": 5.527,
-    "fim": 6.291
+    "inicio": 3.84,
+    "fim": 4.72
    },
    {
     "texto": "David",
-    "inicio": 6.291,
-    "fim": 6.64
+    "inicio": 4.72,
+    "fim": 4.98
    },
    {
     "texto": "Bushnell",
-    "inicio": 6.64,
-    "fim": 7.15
+    "inicio": 4.98,
+    "fim": 5.42
    },
    {
     "texto": "criou",
-    "inicio": 7.15,
-    "fim": 7.5
+    "inicio": 5.42,
+    "fim": 5.74
    },
    {
     "texto": "o",
-    "inicio": 7.5,
-    "fim": 7.634
+    "inicio": 5.74,
+    "fim": 5.88
    },
    {
     "texto": "Turtle:",
-    "inicio": 7.634,
-    "fim": 8.198
+    "inicio": 5.88,
+    "fim": 6.52
    },
    {
     "texto": "um",
-    "inicio": 8.198,
-    "fim": 8.38
+    "inicio": 6.52,
+    "fim": 6.74
    },
    {
     "texto": "submarino",
-    "inicio": 8.38,
-    "fim": 8.924
+    "inicio": 6.74,
+    "fim": 7.34
    },
    {
     "texto": "pra",
-    "inicio": 8.924,
-    "fim": 9.157
+    "inicio": 7.34,
+    "fim": 7.48
    },
    {
     "texto": "uma",
-    "inicio": 9.157,
-    "fim": 9.391
+    "inicio": 7.48,
+    "fim": 7.58
    },
    {
     "texto": "pessoa,",
-    "inicio": 9.391,
-    "fim": 9.935
+    "inicio": 7.58,
+    "fim": 8.2
    },
    {
     "texto": "movido",
-    "inicio": 9.935,
-    "fim": 10.294
+    "inicio": 8.2,
+    "fim": 8.62
    },
    {
     "texto": "a",
-    "inicio": 10.294,
-    "fim": 10.413
+    "inicio": 8.62,
+    "fim": 8.7
    },
    {
     "texto": "manivela.",
-    "inicio": 10.413,
-    "fim": 11.154
+    "inicio": 8.7,
+    "fim": 8.98
    }
   ]
  },
@@ -366,38 +366,38 @@
   "palavras": [
    {
     "texto": "Minhas",
-    "inicio": 0.0,
-    "fim": 0.231
+    "inicio": 0.02,
+    "fim": 0.5
    },
    {
     "texto": "pernas!",
-    "inicio": 0.231,
-    "fim": 0.647
+    "inicio": 0.5,
+    "fim": 1.34
    },
    {
     "texto": "Isso",
-    "inicio": 0.647,
-    "fim": 0.981
+    "inicio": 1.34,
+    "fim": 1.5
    },
    {
     "texto": "é",
-    "inicio": 0.981,
-    "fim": 1.133
+    "inicio": 1.5,
+    "fim": 1.6
    },
    {
     "texto": "pior",
-    "inicio": 1.133,
-    "fim": 1.468
+    "inicio": 1.6,
+    "fim": 1.98
    },
    {
     "texto": "que",
-    "inicio": 1.468,
-    "fim": 1.742
+    "inicio": 1.98,
+    "fim": 2.06
    },
    {
     "texto": "academia!",
-    "inicio": 1.742,
-    "fim": 2.685
+    "inicio": 1.98,
+    "fim": 2.06
    }
   ]
  },
@@ -408,307 +408,307 @@
   "palavras": [
    {
     "texto": "A",
-    "inicio": 0.0,
-    "fim": 0.119
+    "inicio": 0,
+    "fim": 0.16
    },
    {
     "texto": "missão",
-    "inicio": 0.119,
-    "fim": 0.476
+    "inicio": 0.16,
+    "fim": 0.52
    },
    {
     "texto": "era",
-    "inicio": 0.476,
-    "fim": 0.69
+    "inicio": 0.52,
+    "fim": 0.68
    },
    {
     "texto": "prender",
-    "inicio": 0.69,
-    "fim": 1.094
+    "inicio": 0.68,
+    "fim": 1.06
    },
    {
     "texto": "uma",
-    "inicio": 1.094,
-    "fim": 1.309
+    "inicio": 1.06,
+    "fim": 1.2
    },
    {
     "texto": "bomba",
-    "inicio": 1.309,
-    "fim": 1.618
+    "inicio": 1.2,
+    "fim": 1.56
    },
    {
     "texto": "no",
-    "inicio": 1.618,
-    "fim": 1.784
+    "inicio": 1.56,
+    "fim": 1.66
    },
    {
     "texto": "navio",
-    "inicio": 1.784,
-    "fim": 2.094
+    "inicio": 1.66,
+    "fim": 1.96
    },
    {
     "texto": "inimigo…",
-    "inicio": 2.094,
-    "fim": 2.784
+    "inicio": 1.96,
+    "fim": 2.76
    },
    {
     "texto": "mas",
-    "inicio": 2.784,
-    "fim": 3.005
+    "inicio": 2.76,
+    "fim": 3.28
    },
    {
     "texto": "a",
-    "inicio": 3.005,
-    "fim": 3.128
+    "inicio": 3.28,
+    "fim": 3.42
    },
    {
     "texto": "broca",
-    "inicio": 3.128,
-    "fim": 3.448
+    "inicio": 3.42,
+    "fim": 3.68
    },
    {
     "texto": "não",
-    "inicio": 3.448,
-    "fim": 3.67
+    "inicio": 3.68,
+    "fim": 3.82
    },
    {
     "texto": "furou",
-    "inicio": 3.67,
-    "fim": 3.99
+    "inicio": 3.82,
+    "fim": 3.98
    },
    {
     "texto": "o",
-    "inicio": 3.99,
-    "fim": 4.113
+    "inicio": 3.98,
+    "fim": 4.06
    },
    {
     "texto": "casco.",
-    "inicio": 4.113,
-    "fim": 4.728
+    "inicio": 3.98,
+    "fim": 4.06
    }
   ]
  },
  {
   "id": "L7",
   "quem": "narrador",
-  "duracao": 9.143,
+  "duracao": 7.706,
   "palavras": [
    {
     "texto": "Em",
-    "inicio": 0.218,
-    "fim": 0.433
+    "inicio": 0.04,
+    "fim": 0.26
    },
    {
     "texto": "1864,",
-    "inicio": 0.433,
-    "fim": 2.485
+    "inicio": 0.26,
+    "fim": 2.28
    },
    {
     "texto": "o",
-    "inicio": 2.485,
-    "fim": 2.638
+    "inicio": 2.28,
+    "fim": 2.38
    },
    {
     "texto": "Hunley",
-    "inicio": 2.638,
-    "fim": 3.098
+    "inicio": 2.38,
+    "fim": 2.64
    },
    {
     "texto": "virou",
-    "inicio": 3.098,
-    "fim": 3.496
+    "inicio": 2.64,
+    "fim": 2.92
    },
    {
     "texto": "o",
-    "inicio": 3.496,
-    "fim": 3.649
+    "inicio": 2.92,
+    "fim": 3.02
    },
    {
     "texto": "primeiro",
-    "inicio": 3.649,
-    "fim": 4.231
+    "inicio": 3.02,
+    "fim": 3.32
    },
    {
     "texto": "submarino",
-    "inicio": 4.231,
-    "fim": 4.874
+    "inicio": 3.32,
+    "fim": 3.98
    },
    {
     "texto": "a",
-    "inicio": 4.874,
-    "fim": 5.027
+    "inicio": 3.98,
+    "fim": 4.08
    },
    {
     "texto": "afundar",
-    "inicio": 5.027,
-    "fim": 5.548
+    "inicio": 4.08,
+    "fim": 4.5
    },
    {
     "texto": "um",
-    "inicio": 5.548,
-    "fim": 5.762
+    "inicio": 4.5,
+    "fim": 4.58
    },
    {
     "texto": "navio",
-    "inicio": 5.762,
-    "fim": 6.161
+    "inicio": 4.58,
+    "fim": 4.86
    },
    {
     "texto": "de",
-    "inicio": 6.161,
-    "fim": 6.375
+    "inicio": 4.86,
+    "fim": 4.98
    },
    {
     "texto": "guerra…",
-    "inicio": 6.375,
-    "fim": 7.202
+    "inicio": 4.98,
+    "fim": 5.6
    },
    {
     "texto": "mas",
-    "inicio": 7.202,
-    "fim": 7.423
+    "inicio": 5.6,
+    "fim": 6.02
    },
    {
     "texto": "também",
-    "inicio": 7.423,
-    "fim": 7.792
+    "inicio": 6.02,
+    "fim": 6.28
    },
    {
     "texto": "afundou",
-    "inicio": 7.792,
-    "fim": 8.209
+    "inicio": 6.28,
+    "fim": 6.74
    },
    {
     "texto": "logo",
-    "inicio": 8.209,
-    "fim": 8.48
+    "inicio": 6.74,
+    "fim": 6.98
    },
    {
     "texto": "depois.",
-    "inicio": 8.48,
-    "fim": 9.143
+    "inicio": 6.98,
+    "fim": 7.06
    }
   ]
  },
  {
   "id": "L8",
   "quem": "narrador",
-  "duracao": 10.397,
+  "duracao": 9.691,
   "palavras": [
    {
     "texto": "Até",
-    "inicio": 0.133,
-    "fim": 0.385
+    "inicio": 0.04,
+    "fim": 0.32
    },
    {
     "texto": "que,",
-    "inicio": 0.385,
-    "fim": 0.806
+    "inicio": 0.32,
+    "fim": 0.74
    },
    {
     "texto": "em",
-    "inicio": 0.806,
-    "fim": 0.938
+    "inicio": 0.74,
+    "fim": 1.02
    },
    {
     "texto": "1900,",
-    "inicio": 0.938,
-    "fim": 1.634
+    "inicio": 1.02,
+    "fim": 2.32
    },
    {
     "texto": "John",
-    "inicio": 1.634,
-    "fim": 1.841
+    "inicio": 2.32,
+    "fim": 2.5
    },
    {
     "texto": "Philip",
-    "inicio": 1.841,
-    "fim": 2.124
+    "inicio": 2.5,
+    "fim": 2.78
    },
    {
     "texto": "Holland",
-    "inicio": 2.124,
-    "fim": 2.443
+    "inicio": 2.78,
+    "fim": 3.18
    },
    {
     "texto": "juntou",
-    "inicio": 2.443,
-    "fim": 2.726
+    "inicio": 3.18,
+    "fim": 3.58
    },
    {
     "texto": "tudo:",
-    "inicio": 2.726,
-    "fim": 3.046
+    "inicio": 3.58,
+    "fim": 4.18
    },
    {
     "texto": "motor",
-    "inicio": 3.046,
-    "fim": 3.536
+    "inicio": 4.18,
+    "fim": 4.56
    },
    {
     "texto": "a",
-    "inicio": 3.536,
-    "fim": 3.725
+    "inicio": 4.56,
+    "fim": 4.7
    },
    {
     "texto": "gasolina",
-    "inicio": 3.725,
-    "fim": 4.442
+    "inicio": 4.7,
+    "fim": 5.06
    },
    {
     "texto": "na",
-    "inicio": 4.442,
-    "fim": 4.706
+    "inicio": 5.06,
+    "fim": 5.2
    },
    {
     "texto": "superfície",
-    "inicio": 4.706,
-    "fim": 5.574
+    "inicio": 5.2,
+    "fim": 5.82
    },
    {
     "texto": "e",
-    "inicio": 5.574,
-    "fim": 5.762
+    "inicio": 5.82,
+    "fim": 6.2
    },
    {
     "texto": "baterias",
-    "inicio": 5.762,
-    "fim": 6.479
+    "inicio": 6.2,
+    "fim": 6.62
    },
    {
     "texto": "elétricas",
-    "inicio": 6.479,
-    "fim": 7.272
+    "inicio": 6.62,
+    "fim": 7.14
    },
    {
     "texto": "debaixo",
-    "inicio": 7.272,
-    "fim": 7.913
+    "inicio": 7.14,
+    "fim": 7.48
    },
    {
     "texto": "d'água.",
-    "inicio": 7.913,
-    "fim": 8.857
+    "inicio": 7.48,
+    "fim": 8
    },
    {
     "texto": "A",
-    "inicio": 8.857,
-    "fim": 8.952
+    "inicio": 8,
+    "fim": 8.36
    },
    {
     "texto": "Marinha",
-    "inicio": 8.952,
-    "fim": 9.275
+    "inicio": 8.36,
+    "fim": 8.6
    },
    {
     "texto": "americana",
-    "inicio": 9.275,
-    "fim": 9.675
+    "inicio": 8.6,
+    "fim": 8.98
    },
    {
     "texto": "comprou!",
-    "inicio": 9.675,
-    "fim": 10.227
+    "inicio": 8.98,
+    "fim": 9.06
    }
   ]
  },
@@ -719,135 +719,135 @@
   "palavras": [
    {
     "texto": "Agora",
-    "inicio": 0.0,
-    "fim": 0.383
+    "inicio": 0.08,
+    "fim": 0.34
    },
    {
     "texto": "sim:",
-    "inicio": 0.383,
-    "fim": 0.825
+    "inicio": 0.34,
+    "fim": 1.04
    },
    {
     "texto": "ele",
-    "inicio": 0.825,
-    "fim": 1.09
+    "inicio": 1.04,
+    "fim": 1.12
    },
    {
     "texto": "mergulha",
-    "inicio": 1.09,
-    "fim": 1.65
+    "inicio": 1.12,
+    "fim": 1.66
    },
    {
     "texto": "e",
-    "inicio": 1.65,
-    "fim": 1.797
+    "inicio": 1.66,
+    "fim": 1.88
    },
    {
     "texto": "volta!",
-    "inicio": 1.797,
-    "fim": 2.534
+    "inicio": 1.88,
+    "fim": 1.98
    }
   ]
  },
  {
   "id": "L10",
   "quem": "narrador",
-  "duracao": 12.356,
+  "duracao": 8.934,
   "palavras": [
    {
     "texto": "Em",
-    "inicio": 0.0,
-    "fim": 0.238
+    "inicio": 0.08,
+    "fim": 0.32
    },
    {
     "texto": "1954",
-    "inicio": 0.238,
-    "fim": 2.382
+    "inicio": 0.32,
+    "fim": 2.1
    },
    {
     "texto": "veio",
-    "inicio": 2.382,
-    "fim": 2.756
+    "inicio": 2.1,
+    "fim": 2.4
    },
    {
     "texto": "o",
-    "inicio": 2.756,
-    "fim": 2.926
+    "inicio": 2.4,
+    "fim": 2.58
    },
    {
     "texto": "Nautilus,",
-    "inicio": 2.926,
-    "fim": 3.777
+    "inicio": 2.58,
+    "fim": 3.18
    },
    {
     "texto": "o",
-    "inicio": 3.777,
-    "fim": 3.978
+    "inicio": 3.18,
+    "fim": 3.32
    },
    {
     "texto": "primeiro",
-    "inicio": 3.978,
-    "fim": 4.741
+    "inicio": 3.32,
+    "fim": 3.62
    },
    {
     "texto": "submarino",
-    "inicio": 4.741,
-    "fim": 5.586
+    "inicio": 3.62,
+    "fim": 4.2
    },
    {
     "texto": "nuclear.",
-    "inicio": 5.586,
-    "fim": 6.751
+    "inicio": 4.2,
+    "fim": 4.92
    },
    {
     "texto": "E",
-    "inicio": 6.751,
-    "fim": 6.921
+    "inicio": 4.92,
+    "fim": 5.3
    },
    {
     "texto": "em",
-    "inicio": 6.921,
-    "fim": 7.158
+    "inicio": 5.3,
+    "fim": 5.44
    },
    {
     "texto": "1958",
-    "inicio": 7.158,
-    "fim": 9.16
+    "inicio": 5.44,
+    "fim": 7
    },
    {
     "texto": "ele",
-    "inicio": 9.16,
-    "fim": 9.465
+    "inicio": 7,
+    "fim": 7.08
    },
    {
     "texto": "passou",
-    "inicio": 9.465,
-    "fim": 9.974
+    "inicio": 7.04,
+    "fim": 7.32
    },
    {
     "texto": "por",
-    "inicio": 9.974,
-    "fim": 10.279
+    "inicio": 7.32,
+    "fim": 7.5
    },
    {
     "texto": "baixo",
-    "inicio": 10.279,
-    "fim": 10.72
+    "inicio": 7.5,
+    "fim": 7.88
    },
    {
     "texto": "do",
-    "inicio": 10.72,
-    "fim": 10.958
+    "inicio": 7.88,
+    "fim": 7.98
    },
    {
     "texto": "Polo",
-    "inicio": 10.958,
-    "fim": 11.331
+    "inicio": 7.98,
+    "fim": 8.06
    },
    {
     "texto": "Norte!",
-    "inicio": 11.331,
-    "fim": 12.179
+    "inicio": 7.98,
+    "fim": 8.06
    }
   ]
  },
@@ -858,108 +858,108 @@
   "palavras": [
    {
     "texto": "De",
-    "inicio": 0.145,
-    "fim": 0.309
+    "inicio": 0.04,
+    "fim": 0.24
    },
    {
     "texto": "um",
-    "inicio": 0.309,
-    "fim": 0.473
+    "inicio": 0.24,
+    "fim": 0.4
    },
    {
     "texto": "barco",
-    "inicio": 0.473,
-    "fim": 0.778
+    "inicio": 0.4,
+    "fim": 0.7
    },
    {
     "texto": "de",
-    "inicio": 0.778,
-    "fim": 0.942
+    "inicio": 0.7,
+    "fim": 0.82
    },
    {
     "texto": "couro",
-    "inicio": 0.942,
-    "fim": 1.247
+    "inicio": 0.82,
+    "fim": 1.16
    },
    {
     "texto": "até",
-    "inicio": 1.247,
-    "fim": 1.458
+    "inicio": 1.16,
+    "fim": 1.34
    },
    {
     "texto": "um",
-    "inicio": 1.458,
-    "fim": 1.622
+    "inicio": 1.34,
+    "fim": 1.48
    },
    {
     "texto": "gigante",
-    "inicio": 1.622,
-    "fim": 2.02
+    "inicio": 1.48,
+    "fim": 1.98
    },
    {
     "texto": "que",
-    "inicio": 2.02,
-    "fim": 2.231
+    "inicio": 1.98,
+    "fim": 2.14
    },
    {
     "texto": "atravessa",
-    "inicio": 2.231,
-    "fim": 2.724
+    "inicio": 2.14,
+    "fim": 2.62
    },
    {
     "texto": "o",
-    "inicio": 2.724,
-    "fim": 2.841
+    "inicio": 2.62,
+    "fim": 2.72
    },
    {
     "texto": "oceano",
-    "inicio": 2.841,
-    "fim": 3.193
+    "inicio": 2.72,
+    "fim": 3.04
    },
    {
     "texto": "escondido.",
-    "inicio": 3.193,
-    "fim": 3.966
+    "inicio": 3.04,
+    "fim": 3.96
    },
    {
     "texto": "Qual",
-    "inicio": 3.966,
-    "fim": 4.233
+    "inicio": 3.96,
+    "fim": 4.4
    },
    {
     "texto": "invenção",
-    "inicio": 4.233,
-    "fim": 4.695
+    "inicio": 4.4,
+    "fim": 4.92
    },
    {
     "texto": "você",
-    "inicio": 4.695,
-    "fim": 4.962
+    "inicio": 4.92,
+    "fim": 5.14
    },
    {
     "texto": "quer",
-    "inicio": 4.962,
-    "fim": 5.229
+    "inicio": 5.14,
+    "fim": 5.3
    },
    {
     "texto": "ver",
-    "inicio": 5.229,
-    "fim": 5.447
+    "inicio": 5.3,
+    "fim": 5.5
    },
    {
     "texto": "agora?",
-    "inicio": 5.447,
-    "fim": 6.054
+    "inicio": 5.5,
+    "fim": 5.98
    },
    {
     "texto": "Comenta",
-    "inicio": 6.054,
-    "fim": 6.489
+    "inicio": 5.98,
+    "fim": 6.06
    },
    {
     "texto": "aí!",
-    "inicio": 6.489,
-    "fim": 6.975
+    "inicio": 5.98,
+    "fim": 6.06
    }
   ]
  }
