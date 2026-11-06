@@ -168,6 +168,7 @@ export function veiculo(tipo = 'sedan', { cor } = {}) {
   const corso = cor || CORES_CARRO[Math.abs(hashStr(tipo + (cor || ''))) % CORES_CARRO.length];
   g.userData.comprimento = (MODELOS[tipo] || MODELOS.sedan)(g, corso);
   g.userData.tipo = tipo;
+  g.userData.semColisao = true; // a câmera não desvia de carros
   g.traverse((o) => { if (o.isMesh && o.castShadow === undefined) o.castShadow = true; });
   return g;
 }

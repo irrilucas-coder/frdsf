@@ -190,14 +190,16 @@ function montarEpisodio(dir, audios) {
       a.olharCam = dx > 0.5 ? -20 : dx < -0.5 ? 20 : 0; // a câmera se orienta pela frente final do personagem
       atores[p.id] = a;
     });
-    let t = 0.35;
+    const temEntrada = c.personagens.some((p) => p.entrada !== 'parado');
+    let t = temEntrada ? 1.6 : 0.35; // espera quem está entrando chegar
     c.falas.forEach((f) => {
       const au = audios[k++]; const d = au.dur;
       const quem = f.quem === 'narrador' ? null : (valido(f.quem) ? f.quem : null);
       if (quem) falas.push({ quem, t, dur: d });
       const foco = valido(f.foco) ? f.foco : (quem || [...presentes][0]);
       angAlt = -angAlt;
-      camera.push({ t: t === 0.35 ? 0 : t - 0.05, enq: f.foco === 'grupo' && f.camera !== 'close' && f.camera !== 'rosto' ? f.camera : f.camera, alvo: f.foco === 'grupo' || !foco ? undefined : foco, angulo: f.camera === 'aberto' || f.camera === 'muito_aberto' ? 25 * angAlt : (10 + (k % 3) * 8) * angAlt, mov: f.movimento === 'nenhum' ? undefined : f.movimento, tremor: f.movimento === 'tremor' ? 0.2 : undefined });
+      if (!camera.length && t > 0.5) camera.push({ t: 0, enq: 'geral', alvo: undefined, angulo: 15 * angAlt });
+      camera.push({ t: !camera.length ? 0 : t - 0.05, enq: f.foco === 'grupo' && f.camera !== 'close' && f.camera !== 'rosto' ? f.camera : f.camera, alvo: f.foco === 'grupo' || !foco ? undefined : foco, angulo: f.camera === 'aberto' || f.camera === 'muito_aberto' ? 25 * angAlt : (10 + (k % 3) * 8) * angAlt, mov: f.movimento === 'nenhum' ? undefined : f.movimento, tremor: f.movimento === 'tremor' ? 0.2 : undefined });
       for (const a of f.acoes) {
         if (!valido(a.quem)) continue;
         if (a.expr) eventos.push({ t, quem: a.quem, faz: 'expr', valor: a.expr, dur: d + 0.4 });

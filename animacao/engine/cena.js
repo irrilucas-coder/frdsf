@@ -305,7 +305,7 @@ export class Motor {
     const centro = pts.reduce((s, p) => s.add(p), new THREE.Vector3()).multiplyScalar(1 / pts.length);
     let spread = 0; pts.forEach((p) => { spread = Math.max(spread, p.distanceTo(centro) * 2); });
     const altPers = ids.length === 1 && this.atores.find((x) => x.id === ids[0]) ? this.atores.find((x) => x.id === ids[0]).rig.altura * this.atores.find((x) => x.id === ids[0]).rig.root.scale.x / ((this.atores.find((x) => x.id === ids[0]).rig.def.escala) || 1) : 5.25;
-    const enq = { close: [3.4, 0.83], rosto: [2.4, 0.86], medio: [6.2, 0.66], corpo: [9.5, 0.5], geral: [17, 0.45], aberto: [36, 0.4], muito_aberto: [70, 0.35] }[key.enq || 'medio'] || [6.2, 0.66];
+    const enq = { close: [4.8, 0.8], rosto: [3.4, 0.84], medio: [6.2, 0.66], corpo: [9.5, 0.5], geral: [17, 0.45], aberto: [36, 0.4], muito_aberto: [70, 0.35] }[key.enq || 'medio'] || [6.2, 0.66];
     const escalaRef = altPers / 5.25;
     let D = enq[0] * escalaRef, yAlvo = centro.y + altPers * enq[1];
     if (spread > 0) D = Math.max(D, (spread + 5) / (0.93 * 0.5625) * 0.9);
@@ -322,8 +322,23 @@ export class Motor {
     const pos = new THREE.Vector3(alvo.x + Math.sin(ang) * D, yAlvo + alt + subir, alvo.z + Math.cos(ang) * D);
     if (key.lateral) { const lado = new THREE.Vector3(Math.cos(ang), 0, -Math.sin(ang)).multiplyScalar(key.lateral); pos.add(lado); alvo.add(lado); }
     if (key.mov === 'pan') { const lado = new THREE.Vector3(Math.cos(ang), 0, -Math.sin(ang)).multiplyScalar(lerp(-2, 2, ease.inOut(k)) * (key.forca || 1)); pos.add(lado); alvo.add(lado); }
-    if (key.colisao !== false) this.evitarObstaculos(alvo, pos);
+    if (key.colisao !== false && !this.livre(alvo, pos)) {
+      // tenta girar a câmera para achar um ângulo sem obstáculo; se não achar, aproxima
+      let achou = false;
+      for (const d of [25, -25, 50, -50, 75, -75]) {
+        const a2 = ang + d * DEG, p2 = new THREE.Vector3(alvo.x + Math.sin(a2) * D, pos.y, alvo.z + Math.cos(a2) * D);
+        if (this.livre(alvo, p2)) { pos.copy(p2); achou = true; break; }
+      }
+      if (!achou) this.evitarObstaculos(alvo, pos);
+    }
     return [pos, alvo];
+  }
+
+  livre(alvo, pos) {
+    if (!this._ray) this._ray = new THREE.Raycaster();
+    const dir = pos.clone().sub(alvo), dist = dir.length(); if (dist < 2.5) return true;
+    this._ray.set(alvo, dir.normalize()); this._ray.far = dist + 1; this._ray.near = 1.0;
+    return !this._ray.intersectObject(this.cen.grupo, true).some((h) => h.object.visible && !h.object.isPoints && h.object.geometry?.type !== 'CircleGeometry' && !semColisao(h.object));
   }
 
   // puxa a câmera para frente se tiver uma árvore/poste/parede entre ela e o personagem
@@ -333,7 +348,7 @@ export class Motor {
     dir.normalize();
     this._ray.set(alvo, dir); this._ray.far = dist; this._ray.near = 1.2;
     const atoresRoots = new Set(this.atores.map((a) => a.rig.root));
-    const hits = this._ray.intersectObject(this.cen.grupo, true).filter((h) => h.object.visible && !h.object.isPoints && h.object.geometry?.type !== 'CircleGeometry');
+    const hits = this._ray.intersectObject(this.cen.grupo, true).filter((h) => h.object.visible && !h.object.isPoints && h.object.geometry?.type !== 'CircleGeometry' && !semColisao(h.object));
     if (hits.length) { const d = Math.max(2.2, hits[0].distance - 0.6); pos.copy(alvo).addScaledVector(dir, d); }
   }
 
@@ -347,6 +362,7 @@ export class Motor {
     if (this.cen.grupo.userData.animar) this.cen.grupo.userData.animar(tc);
     const estados = this.atores.map((at) => [at, this.estado(at, tc)]);
     estados.forEach(([at, s]) => this.aplicar(at, s, tc, this.falandoAgora(at.id, tc, c)));
+    this.scene.updateMatrixWorld(true); // posições atualizadas antes de testar obstáculos
     this.posicionarCamera(c, tc);
     this.renderer.render(this.scene, this.camera);
     const ctx = this.ctx;
@@ -384,6 +400,7 @@ export class Motor {
   }
 }
 
+function semColisao(o) { while (o) { if (o.userData?.semColisao) return true; o = o.parent; } return false; }
 function angLerp(a, b, t) { let d = b - a; d = Math.atan2(Math.sin(d), Math.cos(d)); return a + d * t; }
 function hash(s) { let h = 0; for (const ch of s) h = (h * 31 + ch.charCodeAt(0)) | 0; return Math.abs(h) % 1000; }
 
