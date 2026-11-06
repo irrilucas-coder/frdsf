@@ -2,6 +2,12 @@
 // Lista as vozes da sua conta ElevenLabs e grava a escolha em biblioteca/vozes.json
 //   node vozes.mjs                       → lista as vozes
 //   node vozes.mjs narrador=ID tito=ID   → define quem fala com qual voz
+// O fetch do Node só usa o proxy da rede com NODE_USE_ENV_PROXY=1: reabre o script com isso ligado.
+if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_USE_ENV_PROXY) {
+  const { spawnSync: _sp } = await import('node:child_process');
+  const r = _sp(process.execPath, process.argv.slice(1), { stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1', NODE_NO_WARNINGS: '1' } });
+  process.exit(r.status ?? 1);
+}
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';

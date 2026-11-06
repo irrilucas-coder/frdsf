@@ -7,6 +7,12 @@
 //   opções: --nome ceu  --sem-voz (testa sem ElevenLabs)  --rapido (540x960)  --so-json (não renderiza)
 //
 // Chaves: ANTHROPIC_API_KEY e ELEVENLABS_API_KEY no ambiente (ou injetadas pelo proxy do ambiente na nuvem).
+// O fetch do Node só usa o proxy da rede com NODE_USE_ENV_PROXY=1: reabre o script com isso ligado.
+if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_USE_ENV_PROXY) {
+  const { spawnSync: _sp } = await import('node:child_process');
+  const r = _sp(process.execPath, process.argv.slice(1), { stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1', NODE_NO_WARNINGS: '1' } });
+  process.exit(r.status ?? 1);
+}
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
