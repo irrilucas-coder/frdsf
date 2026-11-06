@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estúdio de Shorts</title>
+<style>
+  :root {
+    --bg: #0f1115; --panel: #171a21; --panel2: #1e222b; --line: #2a2f3a;
+    --text: #e8eaf0; --muted: #9aa1b2; --accent: #7c5cff; --accent2: #5b3fe0;
+    --ok: #2ecc71; --bad: #ff5c5c; --warn: #f5b942;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); }
+  header { display: flex; align-items: center; gap: 12px 18px; padding: 14px 24px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0 auto 0 0; }
+  header a.back { font-size: 13px; }
+  .key { display: flex; gap: 6px; align-items: center; }
+  .key input { width: 220px; max-width: 60vw; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--muted); display: inline-block; flex: none; }
+  .dot.ok { background: var(--ok); } .dot.bad { background: var(--bad); }
+  main { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 24px; padding: 24px; }
+  @media (max-width: 1000px) { main { grid-template-columns: 1fr; padding: 16px; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .tabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+  .tab { flex: 1; padding: 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel2); color: var(--muted); cursor: pointer; font-weight: 600; min-width: 120px; }
+  .tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
+  .seg button { background: var(--panel2); color: var(--muted); border: 0; padding: 8px 14px; cursor: pointer; font-weight: 600; }
+  .seg button.active { background: var(--line); color: var(--text); }
+  label { display: block; font-size: 13px; color: var(--muted); margin: 12px 0 6px; }
+  input, select, textarea { width: 100%; background: var(--panel2); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px; font: inherit; }
+  textarea { min-height: 80px; resize: vertical; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  @media (max-width: 600px) { .row, .row3 { grid-template-columns: 1fr; } }
+  .check { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 14px; color: var(--text); }
+  .check input { width: auto; }
+  button.primary { padding: 11px 16px; border: 0; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 700; font-size: 14px; cursor: pointer; }
+  button.primary:hover { background: var(--accent2); }
+  button:disabled { opacity: .5; cursor: not-allowed; }
+  button.small { padding: 7px 11px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel2); color: var(--text); cursor: pointer; white-space: nowrap; font-size: 13px; }
+  button.small:hover { border-color: var(--accent); }
+  button.danger { color: var(--bad); }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; align-items: center; }
+  .hint { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.45; }
+  .hidden { display: none !important; }
+  a { color: var(--accent); }
+  .err { color: var(--bad); font-size: 12px; word-break: break-word; }
+  h3 { font-size: 15px; margin: 22px 0 4px; }
+  .libgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-top: 14px; }
+  .libcard { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; cursor: pointer; }
+  .libcard.sel { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .libcard .ph { aspect-ratio: 4/3; background: #0b0d11; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; }
+  .libcard .ph img { width: 100%; height: 100%; object-fit: cover; }
+  .libcard .nm { padding: 8px 10px; font-size: 13px; font-weight: 600; }
+  .libcard .nm small { display: block; color: var(--muted); font-weight: 400; margin-top: 2px; }
+  .imgs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .imgs figure { margin: 0; position: relative; }
+  .imgs img { width: 96px; height: 96px; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); display: block; }
+  .imgs figure button { position: absolute; top: 3px; right: 3px; border: 0; border-radius: 50%; width: 22px; height: 22px; background: rgba(0,0,0,.7); color: #fff; cursor: pointer; font-size: 12px; }
+  .imgs figure .tag { position: absolute; left: 3px; bottom: 3px; font-size: 10px; background: rgba(0,0,0,.7); padding: 1px 5px; border-radius: 4px; }
+  .editor { margin-top: 16px; padding: 14px; border: 1px solid var(--line); border-radius: 10px; background: #13161c; }
+  .scene { border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-top: 14px; background: #13161c; }
+  .scene-head { display: flex; align-items: center; gap: 8px; }
+  .scene-head b { margin-right: auto; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px 5px 5px; border-radius: 99px; border: 1px solid var(--line); background: var(--panel2); font-size: 13px; cursor: pointer; user-select: none; }
+  .chip img { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; }
+  .chip.on { border-color: var(--accent); background: rgba(124,92,255,.18); }
+  .out { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; align-items: flex-start; }
+  .out video { width: 160px; aspect-ratio: 9/16; background: #000; border-radius: 8px; object-fit: cover; }
+  .out audio { width: 260px; max-width: 100%; }
+  .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 99px; background: var(--line); color: var(--text); }
+  .badge.ok { background: rgba(46,204,113,.2); color: var(--ok); }
+  .badge.bad { background: rgba(255,92,92,.2); color: var(--bad); }
+  .badge.run { background: rgba(245,185,66,.2); color: var(--warn); }
+  pre.prompt { white-space: pre-wrap; font-size: 12px; background: var(--panel2); padding: 10px; border-radius: 8px; color: var(--muted); max-height: 220px; overflow: auto; }
+  details summary { cursor: pointer; color: var(--muted); font-size: 13px; margin-top: 10px; }
+  .side h2 { font-size: 16px; margin: 0 0 12px; display: flex; justify-content: space-between; align-items: center; }
+  .job { display: flex; gap: 10px; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel2); margin-bottom: 10px; }
+  .job .m { width: 72px; flex: none; aspect-ratio: 9/16; background: #0b0d11; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .job .m img, .job .m video { width: 100%; height: 100%; object-fit: cover; }
+  .job .t { font-size: 12px; color: var(--muted); min-width: 0; }
+  .job .t b { color: var(--text); display: block; margin-bottom: 4px; font-size: 13px; }
+  .spinner { width: 24px; height: 24px; border: 3px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .voices { display: grid; gap: 6px; max-height: 260px; overflow: auto; margin-top: 8px; }
+  .voice { display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 6px 8px; background: var(--panel2); border-radius: 8px; }
+  .voice span { margin-right: auto; }
+  .voice small { color: var(--muted); }
+  .steps { font-size: 13px; color: var(--muted); line-height: 1.6; margin: 0 0 6px; padding-left: 20px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎬 Estúdio de Shorts</h1>
+  <a class="back" href="/">← Estúdio Kie</a>
+  <div class="key" title="Chave da Kie.ai (imagens e vídeos)">
+    <span class="dot" id="kieDot"></span>
+    <input id="kieKey" type="password" placeholder="KIE API key" autocomplete="off">
+  </div>
+  <div class="key" title="Chave da ElevenLabs (vozes)">
+    <span class="dot" id="xiDot"></span>
+    <input id="xiKey" type="password" placeholder="ElevenLabs API key" autocomplete="off">
+    <button class="small" id="testKeys">Testar</button>
+  </div>
+</header>
+
+<main>
+  <section class="panel">
+    <div class="tabs">
+      <button class="tab active" data-tab="lib">📚 Biblioteca</button>
+      <button class="tab" data-tab="style">🎨 Estilo e voz</button>
+      <button class="tab" data-tab="ep">🎬 Episódio</button>
+    </div>
+
+    <!-- ============ BIBLIOTECA ============ -->
+    <div id="tab-lib">
+      <ol class="steps">
+        <li>Cadastre <b>uma vez</b> os personagens fixos e os cenários (casa, rua, escola…).</li>
+        <li>Descreva cada um (a "ficha") e gere a imagem de referência com IA ou envie uma foto pronta.</li>
+        <li>Nos episódios, você só escolhe quem aparece e onde. O estúdio manda as referências junto, para manter o mesmo visual.</li>
+      </ol>
+      <div class="seg">
+        <button data-lib="personagens" class="active">🧍 Personagens</button>
+        <button data-lib="cenarios">🏠 Cenários</button>
+      </div>
+      <button class="small" id="libNew">+ Novo</button>
+      <div class="libgrid" id="libGrid"></div>
+
+      <div class="editor hidden" id="libEditor">
+        <div class="row">
+          <div><label>Nome</label><input id="libName" placeholder="Ex.: Kiko"></div>
+          <div id="libVoiceWrap"><label>Voz (ElevenLabs)</label><select id="libVoice"><option value="">— usar a do narrador —</option></select></div>
+        </div>
+        <label>Ficha visual (como ele é: vai em todos os prompts)</label>
+        <textarea id="libDesc" placeholder=""></textarea>
+        <label>Imagens de referência</label>
+        <div class="imgs" id="libImgs"></div>
+        <input id="libFiles" type="file" accept="image/*" multiple style="margin-top:8px">
+        <div class="hint">A <b>primeira</b> imagem é a principal e é a que vai para o vídeo. Para personagem, o ideal é uma folha de referência (frente, lado, costas e expressões).</div>
+        <div class="actions">
+          <button class="primary" id="libSave">Salvar</button>
+          <button class="small" id="libGen">✨ Gerar referência com IA</button>
+          <button class="small danger" id="libDel">Apagar</button>
+          <button class="small" id="libClose">Fechar</button>
+        </div>
+        <details><summary>Ver prompt da referência</summary><pre class="prompt" id="libPrompt"></pre></details>
+      </div>
+    </div>
+
+    <!-- ============ ESTILO ============ -->
+    <div id="tab-style" class="hidden">
+      <label>Estilo visual fixo do canal (entra no começo de todo prompt)</label>
+      <textarea id="styleText" style="min-height:120px"></textarea>
+      <div class="hint">É isso que deixa todos os vídeos com a mesma cara. Mude aqui uma vez e vale para tudo.</div>
+
+      <h3>🎙️ Voz</h3>
+      <div class="row">
+        <div><label>Narrador (voz padrão)</label><select id="narrVoice"><option value="">— carregue as vozes —</option></select></div>
+        <div>
+          <label>Modelo ElevenLabs</label>
+          <select id="xiModel">
+            <option value="eleven_multilingual_v2">Multilingual v2 (melhor em português)</option>
+            <option value="eleven_v3">Eleven v3 (mais expressivo)</option>
+            <option value="eleven_flash_v2_5">Flash v2.5 (rápido e barato)</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div><label>Estabilidade <span id="stabV"></span></label><input id="xiStab" type="range" min="0" max="1" step="0.05"></div>
+        <div><label>Exagero / emoção <span id="styV"></span></label><input id="xiStyle" type="range" min="0" max="1" step="0.05"></div>
+      </div>
+      <div class="hint">Estabilidade baixa = voz mais animada e variada. Alta = mais constante. Para storytime, algo entre 0,35 e 0,5 costuma funcionar.</div>
+      <div class="actions">
+        <button class="small" id="loadVoices">↻ Carregar minhas vozes</button>
+        <span class="hint" id="xiQuota"></span>
+      </div>
+      <div class="voices" id="voiceList"></div>
+      <div class="actions"><button class="primary" id="styleSave">Salvar estilo e voz</button></div>
+    </div>
+
+    <!-- ============ EPISÓDIO ============ -->
+    <div id="tab-ep" class="hidden">
+      <div class="row">
+        <div><label>Episódio</label><select id="epPick"></select></div>
+        <div class="actions" style="margin-top:31px">
+          <button class="small" id="epNew">+ Novo</button>
+          <button class="small" id="epDup">Duplicar</button>
+          <button class="small danger" id="epDel">Apagar</button>
+          <button class="small" id="epExport">Exportar roteiro</button>
+        </div>
+      </div>
+      <label>Título / regra do mundo</label>
+      <input id="epTitle" placeholder="Ex.: NÃO OLHE PRO RELÓGIO! 😰">
+      <label>Premissa (opcional, ajuda você a escrever as cenas)</label>
+      <textarea id="epPremise" style="min-height:60px" placeholder="Ex.: Num mundo onde quem olha o relógio envelhece 10 anos…"></textarea>
+
+      <div class="row3">
+        <div><label>Modelo de vídeo</label>
+          <select id="epModel">
+            <option value="bytedance/seedance-2">Seedance 2.0</option>
+            <option value="bytedance/seedance-2-fast">Seedance 2.0 Fast</option>
+          </select></div>
+        <div><label>Resolução</label>
+          <select id="epRes"><option>480p</option><option selected>720p</option><option>1080p</option></select></div>
+        <div><label>Áudio do vídeo</label>
+          <select id="epAudio">
+            <option value="off">Sem áudio (voz vem da ElevenLabs)</option>
+            <option value="on">Com efeitos/ambiente do Seedance</option>
+          </select></div>
+      </div>
+
+      <div id="scenes"></div>
+      <div class="actions">
+        <button class="small" id="addScene">+ Cena</button>
+        <button class="small" id="allVoices">🎙️ Gerar todas as vozes</button>
+        <button class="small" id="allVideos">🎬 Gerar todos os vídeos</button>
+        <span class="hint" id="epCost"></span>
+      </div>
+      <p class="hint">Depois, junte os clipes e as vozes no CapCut (ou outro editor), adicione legenda palavra por palavra e a pergunta final.</p>
+    </div>
+  </section>
+
+  <aside class="side">
+    <div class="panel">
+      <h2>Gerações <button class="small" id="clearJobs">Limpar</button></h2>
+      <div id="jobs"><div class="hint">Nada ainda.</div></div>
+    </div>
+  </aside>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const store = {
+  get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+const esc = (s = "") => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+// ---------- Keys (Kie key is shared with the main studio page) ----------
+$("kieKey").value = store.get("kieKey", "");
+$("xiKey").value = store.get("elevenKey", "");
+$("kieKey").oninput = () => { store.set("kieKey", $("kieKey").value.trim()); $("kieDot").className = "dot"; };
+$("xiKey").oninput = () => { store.set("elevenKey", $("xiKey").value.trim()); $("xiDot").className = "dot"; };
+const kieKey = () => $("kieKey").value.trim();
+const xiKey = () => $("xiKey").value.trim();
+
+async function api(path, opts = {}) {
+  const r = await fetch(path, { ...opts, headers: { "Content-Type": "application/json", "x-kie-key": kieKey(), "x-eleven-key": xiKey(), ...(opts.headers || {}) } });
+  let body; try { body = await r.json(); } catch { body = { msg: `Resposta inválida (${r.status})` }; }
+  body._ok = r.ok;
+  return body;
+}
+
+$("testKeys").onclick = async () => {
+  const lines = [];
+  if (kieKey()) {
+    const r = await api("/api/credit");
+    $("kieDot").className = r.code === 200 ? "dot ok" : "dot bad";
+    lines.push(r.code === 200 ? `Kie ✅ saldo: ${Math.round(r.data)} créditos` : `Kie ❌ ${r.msg || r.code}`);
+  } else lines.push("Kie: sem chave");
+  if (xiKey()) {
+    const r = await api("/api/eleven/user");
+    $("xiDot").className = r._ok ? "dot ok" : "dot bad";
+    lines.push(r._ok ? `ElevenLabs ✅ ${r.usados}/${r.limite} caracteres usados (plano ${r.plano})` : `ElevenLabs ❌ ${r.msg}`);
+  } else lines.push("ElevenLabs: sem chave");
+  alert(lines.join("\n"));
+};
+
+// ---------- Tabs ----------
+document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
+  document.querySelectorAll(".tab").forEach((x) => x.classList.toggle("active", x === t));
+  ["lib", "style", "ep"].forEach((n) => $("tab-" + n).classList.toggle("hidden", t.dataset.tab !== n));
+  if (t.dataset.tab === "ep") renderScenes();
+});
+
+// ---------- Prices (same table/keys as the main studio) ----------
+const DEFAULT_PRICES = { "img-1K": 6, "img-2K": 10, "img-4K": 16, "sd2-480p": 19, "sd2-720p": 41, "sd2-1080p": 102, "sdf-480p": 11.7, "sdf-720p": 24.8 };
+const price = (k) => ({ ...DEFAULT_PRICES, ...store.get("kiePrices", {}) })[k] || 0;
+const fmtCredits = (c) => `${Math.round(c * 10) / 10} créditos (~US$ ${(c / 200).toFixed(2)})`;
+const videoCost = (dur) => price(`${$("epModel").value.endsWith("fast") ? "sdf" : "sd2"}-${$("epRes").value}`) * dur;
+
+// ---------- Library ----------
+let lib = { personagens: [], cenarios: [] };
+let libTab = "personagens";
+let editing = null; // item being edited (or {} for new)
+let pendingFiles = [];
+let voices = [];
+const imgUrl = (tipo, f) => `/lib/${tipo}/${encodeURIComponent(f)}`;
+
+async function loadLib() {
+  for (const t of ["personagens", "cenarios"]) lib[t] = await (await fetch(`/api/lib?tipo=${t}`)).json();
+  renderLib();
+}
+document.querySelectorAll("[data-lib]").forEach((b) => b.onclick = () => {
+  libTab = b.dataset.lib;
+  document.querySelectorAll("[data-lib]").forEach((x) => x.classList.toggle("active", x === b));
+  closeEditor(); renderLib();
+});
+
+function renderLib() {
+  const list = lib[libTab];
+  $("libGrid").innerHTML = list.length ? "" : `<div class="hint">Nenhum ${libTab === "personagens" ? "personagem" : "cenário"} ainda. Clique em "+ Novo".</div>`;
+  list.forEach((it) => {
+    const d = document.createElement("div");
+    d.className = "libcard" + (editing && editing.id === it.id ? " sel" : "");
+    const v = voices.find((x) => x.id === it.vozId);
+    d.innerHTML = `<div class="ph">${it.imagens[0] ? `<img src="${imgUrl(libTab, it.imagens[0])}" alt="">` : "sem imagem"}</div>
+      <div class="nm">${esc(it.nome)}<small>${it.imagens.length} imagem(ns)${libTab === "personagens" ? " · voz: " + esc(v ? v.nome : it.vozId ? "definida" : "narrador") : ""}</small></div>`;
+    d.onclick = () => openEditor(it);
+    $("libGrid").appendChild(d);
+  });
+}
+
+const DESC_HINT = {
+  personagens: "Ex.: Menino de 12 anos, cabeça quadrada estilizada, cabelo laranja espetado, moletom azul com raio amarelo, bermuda cinza, tênis vermelho. Expressivo, olhos grandes.",
+  cenarios: "Ex.: Rua de bairro residencial ao entardecer, casas coloridas de dois andares, calçada com árvores, postes acesos, céu laranja.",
+};
+
+function openEditor(it) {
+  editing = it || {};
+  pendingFiles = [];
+  $("libEditor").classList.remove("hidden");
+  $("libName").value = editing.nome || "";
+  $("libDesc").value = editing.descricao || "";
+  $("libDesc").placeholder = DESC_HINT[libTab];
+  $("libVoiceWrap").classList.toggle("hidden", libTab !== "personagens");
+  fillVoiceSelect($("libVoice"), editing.vozId || "", "— usar a do narrador —");
+  $("libDel").classList.toggle("hidden", !editing.id);
+  $("libFiles").value = "";
+  renderEditorImgs(); updateLibPrompt(); renderLib();
+  $("libEditor").scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+function closeEditor() { editing = null; $("libEditor").classList.add("hidden"); renderLib(); }
+$("libNew").onclick = () => openEditor(null);
+$("libClose").onclick = closeEditor;
+
+function renderEditorImgs() {
+  const box = $("libImgs");
+  box.innerHTML = "";
+  (editing.imagens || []).forEach((f, i) => {
+    const fig = document.createElement("figure");
+    fig.innerHTML = `<img src="${imgUrl(libTab, f)}" alt="">${i === 0 ? '<span class="tag">principal</span>' : ""}<button title="remover">✕</button>`;
+    fig.querySelector("button").onclick = async () => {
+      if (!confirm("Remover esta imagem da biblioteca?")) return;
+      lib[libTab] = await api(`/api/lib?tipo=${libTab}`, { method: "POST", body: JSON.stringify({ id: editing.id, removerImagens: [f] }) });
+      editing = lib[libTab].find((x) => x.id === editing.id); renderEditorImgs(); renderLib();
+    };
+    box.appendChild(fig);
+  });
+  pendingFiles.forEach((file) => {
+    const fig = document.createElement("figure");
+    fig.innerHTML = `<img src="${URL.createObjectURL(file)}" alt=""><span class="tag">nova</span>`;
+    box.appendChild(fig);
+  });
+}
+$("libFiles").onchange = () => { pendingFiles = [...$("libFiles").files]; renderEditorImgs(); };
+
+const toDataUrl = (blob) => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(blob); });
+
+async function saveEditor(extra = {}) {
+  const body = {
+    id: editing.id, nome: $("libName").value, descricao: $("libDesc").value,
+    vozId: libTab === "personagens" ? $("libVoice").value : undefined,
+    novasImagens: await Promise.all(pendingFiles.map(toDataUrl)), ...extra,
+  };
+  const r = await api(`/api/lib?tipo=${libTab}`, { method: "POST", body: JSON.stringify(body) });
+  if (!Array.isArray(r)) { alert(r.msg || "Erro ao salvar"); return null; }
+  lib[libTab] = r;
+  editing = editing.id ? r.find((x) => x.id === editing.id) : r[r.length - 1];
+  pendingFiles = []; $("libFiles").value = "";
+  renderEditorImgs(); renderLib(); $("libDel").classList.remove("hidden");
+  return editing;
+}
+$("libSave").onclick = () => saveEditor();
+$("libDel").onclick = async () => {
+  if (!confirm(`Apagar "${editing.nome}" e as imagens dele da biblioteca?`)) return;
+  lib[libTab] = await api(`/api/lib?tipo=${libTab}&id=${editing.id}`, { method: "DELETE" });
+  closeEditor();
+};
+
+function refPrompt(tipo, nome, desc) {
+  const estilo = styleCfg.estilo || "";
+  if (tipo === "personagens") return `${estilo}
+
+Folha de referência de personagem (character sheet) de "${nome}": ${desc}
+Mostre o MESMO personagem de corpo inteiro em 3 vistas lado a lado (frente, perfil e costas) e, embaixo, 4 closes do rosto com expressões diferentes (feliz, assustado, bravo, surpreso).
+Fundo liso cinza-claro, iluminação de estúdio uniforme, sem texto, sem logotipos, sem outros personagens.`;
+  return `${estilo}
+
+Imagem de referência de cenário "${nome}": ${desc}
+Plano geral, vista ampla e nítida do ambiente inteiro, sem nenhum personagem ou pessoa, sem texto e sem logotipos. Iluminação consistente, pronto para servir de referência de cenário em várias cenas.`;
+}
+function updateLibPrompt() { if (editing) $("libPrompt").textContent = refPrompt(libTab, $("libName").value || "…", $("libDesc").value || "…"); }
+$("libName").oninput = updateLibPrompt; $("libDesc").oninput = updateLibPrompt;
+
+$("libGen").onclick = async () => {
+  if (!$("libName").value.trim() || !$("libDesc").value.trim()) return alert("Preencha o nome e a ficha visual primeiro.");
+  if (!kieKey()) return alert("Cole a chave da Kie no topo.");
+  const saved = await saveEditor();
+  if (!saved) return;
+  const tipo = libTab, id = saved.id;
+  const prompt = refPrompt(tipo, saved.nome, saved.descricao);
+  const base = saved.imagens.slice(0, 4); // keep identity if there is already a photo
+  const res = "2K";
+  if (!confirm(`Gerar a imagem de referência de "${saved.nome}" com GPT Image 2?\n${base.length ? "Vai usar as imagens atuais como base.\n" : ""}Custo estimado: ${fmtCredits(price("img-" + res))}`)) return;
+  runJob({
+    titulo: `Referência: ${saved.nome}`, kind: "image",
+    payload: async () => {
+      const input = { prompt, aspect_ratio: "16:9", resolution: res };
+      if (base.length) input.input_urls = await Promise.all(base.map((f) => uploadLib(tipo, f)));
+      return { model: base.length ? "gpt-image-2-image-to-image" : "gpt-image-2-text-to-image", input };
+    },
+    onDone: async (urls) => {
+      // Generated image becomes the NEW main reference (first in the list)
+      const r = await api(`/api/lib?tipo=${tipo}`, { method: "POST", body: JSON.stringify({ id, imagemUrl: urls[0], principal: true }) });
+      if (!Array.isArray(r)) return alert(r.msg);
+      lib[tipo] = await (await fetch(`/api/lib?tipo=${tipo}`)).json();
+      if (editing && editing.id === id) { editing = lib[tipo].find((x) => x.id === id); renderEditorImgs(); }
+      renderLib();
+    },
+  });
+};
+
+// ---------- Kie helpers ----------
+async function kieUpload(dataUrl, ext = "png") {
+  const r = await api("/api/upload", { method: "POST", body: JSON.stringify({ base64Data: dataUrl, uploadPath: "images/shorts", fileName: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}` }) });
+  const url = r?.data?.downloadUrl || r?.data?.fileUrl;
+  if (!url) throw new Error("Falha no upload: " + (r.msg || JSON.stringify(r)));
+  return url;
+}
+async function uploadLib(tipo, f) {
+  const blob = await (await fetch(imgUrl(tipo, f))).blob();
+  return kieUpload(await toDataUrl(blob), f.split(".").pop());
+}
+function parseUrls(d) {
+  let rj = d.resultJson;
+  try { if (typeof rj === "string") rj = JSON.parse(rj); } catch {}
+  const u = rj?.resultUrls || rj?.result_urls || rj?.urls || [];
+  return Array.isArray(u) ? u : [u];
+}
+
+// ---------- Jobs panel ----------
+let jobs = store.get("shortsJobs", []);
+const saveJobs = () => store.set("shortsJobs", jobs.slice(0, 60));
+const doneHandlers = {}; // job.id -> callback (only for this page session)
+
+function renderJobs() {
+  $("jobs").innerHTML = jobs.length ? "" : '<div class="hint">Nada ainda.</div>';
+  jobs.forEach((j) => {
+    const d = document.createElement("div");
+    d.className = "job";
+    const u = j.urls?.[0];
+    const media = j.status === "success" && u ? (j.kind === "video" ? `<video src="${u}" muted loop playsinline onmouseover="this.play()" onmouseout="this.pause()"></video>` : `<img src="${u}" alt="">`)
+      : j.status === "fail" ? "❌" : '<div class="spinner"></div>';
+    const badge = { success: ["ok", "pronto"], fail: ["bad", "erro"], running: ["run", j.state || "gerando"] }[j.status];
+    d.innerHTML = `<div class="m">${media}</div><div class="t"><b>${esc(j.titulo)}</b>
+      <span class="badge ${badge[0]}">${esc(badge[1])}</span>
+      ${j.error ? `<div class="err">${esc(j.error)}</div>` : ""}
+      ${u ? `<div style="margin-top:6px"><a href="${u}" target="_blank">abrir</a> · <a href="/api/download?url=${encodeURIComponent(u)}&name=${encodeURIComponent((j.arquivo || "arquivo") + (j.kind === "video" ? ".mp4" : ".png"))}">baixar</a></div>` : ""}</div>`;
+    $("jobs").appendChild(d);
+  });
+}
+
+async function runJob({ titulo, kind, payload, onDone, arquivo, sceneRef, epRef }) {
+  if (!kieKey()) { alert("Cole a chave da Kie no topo."); return null; }
+  const job = { id: Date.now() + Math.random(), titulo, kind, arquivo, sceneRef, epRef, status: "running", state: "enviando" };
+  jobs.unshift(job); saveJobs(); renderJobs();
+  if (onDone) doneHandlers[job.id] = onDone;
+  try {
+    const body = await payload();
+    const r = await api("/api/create", { method: "POST", body: JSON.stringify(body) });
+    if (!r?.data?.taskId) throw new Error(r.msg || JSON.stringify(r));
+    job.taskId = r.data.taskId; job.state = "na fila"; saveJobs(); renderJobs();
+    return poll(job);
+  } catch (e) {
+    job.status = "fail"; job.error = e.message; saveJobs(); renderJobs();
+    return job;
+  }
+}
+
+async function poll(job) {
+  while (job.status === "running") {
+    await new Promise((r) => setTimeout(r, job.kind === "video" ? 8000 : 4000));
+    try {
+      const r = await api(`/api/status?taskId=${encodeURIComponent(job.taskId)}`);
+      const d = r.data || {};
+      job.state = d.state;
+      if (d.state === "success") { job.status = "success"; job.urls = parseUrls(d); }
+      else if (d.state === "fail") { job.status = "fail"; job.error = d.failMsg || d.failCode || "Falhou"; }
+    } catch {}
+    saveJobs(); renderJobs();
+  }
+  if (job.status === "success" && doneHandlers[job.id]) { try { await doneHandlers[job.id](job.urls); } catch (e) { alert(e.message); } }
+  if (job.sceneRef) applySceneResult(job);
+  return job;
+}
+$("clearJobs").onclick = () => { jobs = jobs.filter((j) => j.status === "running"); saveJobs(); renderJobs(); };
+
+// ---------- Style & voices ----------
+const DEFAULT_STYLE = "Animação 3D estilizada de alta qualidade, personagens com cabeça e corpo em blocos arredondados (estilo de jogo infantil de construção), cores vivas e saturadas, iluminação suave e cinematográfica, expressões faciais grandes e claras. Vídeo vertical 9:16, câmera cinematográfica com closes e reações.";
+let styleCfg = {};
+async function loadStyle() {
+  styleCfg = await (await fetch("/api/estilo")).json();
+  styleCfg = { estilo: DEFAULT_STYLE, narradorVozId: "", modelo: "eleven_multilingual_v2", estabilidade: 0.45, exagero: 0.3, ...styleCfg };
+  $("styleText").value = styleCfg.estilo;
+  $("xiModel").value = styleCfg.modelo;
+  $("xiStab").value = styleCfg.estabilidade; $("xiStyle").value = styleCfg.exagero;
+  syncSliders();
+  fillVoiceSelect($("narrVoice"), styleCfg.narradorVozId, "— escolha —");
+}
+function syncSliders() { $("stabV").textContent = Number($("xiStab").value).toFixed(2); $("styV").textContent = Number($("xiStyle").value).toFixed(2); }
+$("xiStab").oninput = syncSliders; $("xiStyle").oninput = syncSliders;
+$("styleSave").onclick = async () => {
+  styleCfg = { estilo: $("styleText").value, narradorVozId: $("narrVoice").value, modelo: $("xiModel").value, estabilidade: Number($("xiStab").value), exagero: Number($("xiStyle").value), vozesCache: voices };
+  const r = await api("/api/estilo", { method: "POST", body: JSON.stringify(styleCfg) });
+  alert(r.ok ? "Salvo ✅" : r.msg);
+};
+
+function fillVoiceSelect(sel, value, emptyLabel) {
+  sel.innerHTML = `<option value="">${emptyLabel}</option>` + voices.map((v) => `<option value="${esc(v.id)}">${esc(v.nome)}${v.labels?.gender ? " · " + esc(v.labels.gender) : ""}</option>`).join("");
+  if (value && !voices.some((v) => v.id === value)) sel.insertAdjacentHTML("beforeend", `<option value="${esc(value)}">${esc(value)}</option>`);
+  sel.value = value || "";
+}
+async function loadVoices(silent) {
+  if (!xiKey()) { if (!silent) alert("Cole a chave da ElevenLabs no topo."); return; }
+  const r = await api("/api/eleven/voices");
+  if (!Array.isArray(r)) { $("xiDot").className = "dot bad"; if (!silent) alert(r.msg); return; }
+  $("xiDot").className = "dot ok";
+  voices = r;
+  $("voiceList").innerHTML = voices.map((v) => `<div class="voice"><span>${esc(v.nome)} <small>${esc([v.categoria, v.labels?.gender, v.labels?.accent, v.labels?.age].filter(Boolean).join(" · "))}</small></span>
+    ${v.preview ? `<button class="small" data-prev="${esc(v.preview)}">▶ ouvir</button>` : ""}<button class="small" data-narr="${esc(v.id)}">usar como narrador</button></div>`).join("");
+  $("voiceList").querySelectorAll("[data-prev]").forEach((b) => b.onclick = () => new Audio(b.dataset.prev).play());
+  $("voiceList").querySelectorAll("[data-narr]").forEach((b) => b.onclick = () => { $("narrVoice").value = b.dataset.narr; });
+  fillVoiceSelect($("narrVoice"), $("narrVoice").value || styleCfg.narradorVozId, "— escolha —");
+  if (editing) fillVoiceSelect($("libVoice"), $("libVoice").value || editing.vozId || "", "— usar a do narrador —");
+  const q = await api("/api/eleven/user");
+  if (q._ok) $("xiQuota").textContent = `${q.usados?.toLocaleString("pt-BR")} de ${q.limite?.toLocaleString("pt-BR")} caracteres usados este mês`;
+  renderLib(); renderScenes();
+}
+$("loadVoices").onclick = () => loadVoices(false);
+
+// ---------- Episodes ----------
+let eps = store.get("shortsEps", []);
+let curEp = store.get("shortsCurEp", null);
+const saveEps = () => { store.set("shortsEps", eps); store.set("shortsCurEp", curEp); };
+const newScene = () => ({ id: "c" + Date.now() + Math.floor(Math.random() * 1000), cenario: "", personagens: [], acao: "", falante: "narrador", fala: "", duracao: 5 });
+const newEp = (titulo = "Novo episódio") => ({ id: "e" + Date.now(), titulo, premissa: "", cenas: [newScene()] });
+if (!eps.length) { eps.push(newEp()); }
+if (!eps.find((e) => e.id === curEp)) curEp = eps[0].id;
+const ep = () => eps.find((e) => e.id === curEp);
+
+function renderEpPick() {
+  $("epPick").innerHTML = eps.map((e) => `<option value="${e.id}">${esc(e.titulo || "(sem título)")}</option>`).join("");
+  $("epPick").value = curEp;
+  $("epTitle").value = ep().titulo; $("epPremise").value = ep().premissa || "";
+}
+$("epPick").onchange = () => { curEp = $("epPick").value; saveEps(); renderEpPick(); renderScenes(); };
+$("epTitle").oninput = () => { ep().titulo = $("epTitle").value; saveEps(); $("epPick").selectedOptions[0].textContent = ep().titulo || "(sem título)"; };
+$("epPremise").oninput = () => { ep().premissa = $("epPremise").value; saveEps(); };
+$("epNew").onclick = () => { const e = newEp(); eps.unshift(e); curEp = e.id; saveEps(); renderEpPick(); renderScenes(); };
+$("epDup").onclick = () => {
+  const c = JSON.parse(JSON.stringify(ep())); c.id = "e" + Date.now(); c.titulo += " (cópia)";
+  c.cenas.forEach((s) => { s.id = newScene().id; delete s.video; delete s.audio; delete s.videoJob; });
+  eps.unshift(c); curEp = c.id; saveEps(); renderEpPick(); renderScenes();
+};
+$("epDel").onclick = () => {
+  if (!confirm(`Apagar o episódio "${ep().titulo}"?`)) return;
+  eps = eps.filter((e) => e.id !== curEp); if (!eps.length) eps.push(newEp());
+  curEp = eps[0].id; saveEps(); renderEpPick(); renderScenes();
+};
+$("epExport").onclick = () => {
+  const e = ep();
+  const nm = (arr, id) => (lib[arr].find((x) => x.id === id) || {}).nome || "?";
+  const txt = [`# ${e.titulo}`, "", e.premissa || "", ""].concat(e.cenas.map((s, i) => [
+    `## Cena ${i + 1} (${s.duracao} s) — ${nm("cenarios", s.cenario)}`,
+    `Personagens: ${s.personagens.map((p) => nm("personagens", p)).join(", ") || "—"}`,
+    `Ação/câmera: ${s.acao}`, s.fala ? `Fala (${s.falante === "narrador" ? "narrador" : nm("personagens", s.falante)}): "${s.fala}"` : "",
+    s.video ? `Vídeo: ${s.video}` : "", "", "Prompt:", scenePrompt(s), "",
+  ].join("\n"))).join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([txt], { type: "text/markdown" }));
+  a.download = `${(e.titulo || "episodio").replace(/[^\w\-]+/g, "_")}.md`; a.click();
+};
+["epModel", "epRes"].forEach((id) => $(id).onchange = () => { store.set("shorts_" + id, $(id).value); updateEpCost(); });
+$("epAudio").onchange = () => store.set("shorts_epAudio", $("epAudio").value);
+["epModel", "epRes", "epAudio"].forEach((id) => { const v = store.get("shorts_" + id, null); if (v) $(id).value = v; });
+$("epModel").addEventListener("change", () => {
+  const fast = $("epModel").value.endsWith("fast");
+  $("epRes").querySelector("option:last-child").disabled = fast;
+  if (fast && $("epRes").value === "1080p") $("epRes").value = "720p";
+});
+
+// References for a scene: main image of each character, then of the set (max 9)
+function sceneRefs(s) {
+  const refs = [];
+  s.personagens.forEach((pid) => { const p = lib.personagens.find((x) => x.id === pid); if (p && p.imagens[0]) refs.push({ tipo: "personagens", item: p }); });
+  const c = lib.cenarios.find((x) => x.id === s.cenario);
+  if (c && c.imagens[0]) refs.push({ tipo: "cenarios", item: c });
+  return refs.slice(0, 9);
+}
+function scenePrompt(s) {
+  const refs = sceneRefs(s);
+  const lines = [styleCfg.estilo || DEFAULT_STYLE, ""];
+  if (refs.length) {
+    lines.push("Referências (mantenha exatamente a aparência):");
+    refs.forEach((r, i) => lines.push(`@Image${i + 1} = ${r.tipo === "personagens" ? "personagem" : "cenário"} ${r.item.nome}${r.item.descricao ? ": " + r.item.descricao.replace(/\s+/g, " ").trim() : ""}`));
+    lines.push("");
+  }
+  const semImg = s.personagens.map((pid) => lib.personagens.find((x) => x.id === pid)).filter((p) => p && !p.imagens[0]);
+  semImg.forEach((p) => lines.push(`Personagem ${p.nome}: ${p.descricao}`));
+  const c = lib.cenarios.find((x) => x.id === s.cenario);
+  if (c && !c.imagens[0]) lines.push(`Cenário ${c.nome}: ${c.descricao}`);
+  lines.push(`Cena: ${s.acao || "(descreva a ação e a câmera)"}`);
+  if (s.fala) {
+    const quem = s.falante === "narrador" ? null : lib.personagens.find((x) => x.id === s.falante);
+    lines.push(quem ? `${quem.nome} fala olhando para a câmera, com a boca se mexendo e a expressão combinando com a fala: "${s.fala}"`
+      : `Narração em off (ninguém fala na tela); expressões e reações combinando com: "${s.fala}"`);
+  }
+  lines.push("Sem texto, legendas, marcas d'água ou logotipos na imagem.");
+  return lines.join("\n");
+}
+
+function updateEpCost() {
+  const total = ep().cenas.reduce((a, s) => a + videoCost(Number(s.duracao)), 0);
+  const chars = ep().cenas.reduce((a, s) => a + (s.fala || "").length, 0);
+  $("epCost").textContent = `Todos os vídeos: ~${fmtCredits(total)} · vozes: ${chars} caracteres`;
+}
+
+function renderScenes() {
+  if (!$("scenes")) return;
+  const e = ep();
+  $("scenes").innerHTML = "";
+  e.cenas.forEach((s, i) => {
+    const d = document.createElement("div");
+    d.className = "scene";
+    const voiceOpts = `<option value="narrador">Narrador</option>` + lib.personagens.map((p) => `<option value="${p.id}">${esc(p.nome)}</option>`).join("");
+    d.innerHTML = `
+      <div class="scene-head"><b>Cena ${i + 1}</b>
+        <button class="small" data-a="up" title="subir">↑</button><button class="small" data-a="down" title="descer">↓</button>
+        <button class="small danger" data-a="del">✕</button></div>
+      <div class="row">
+        <div><label>Cenário</label><select data-f="cenario"><option value="">— nenhum —</option>${lib.cenarios.map((c) => `<option value="${c.id}">${esc(c.nome)}</option>`).join("")}</select></div>
+        <div><label>Duração</label><select data-f="duracao"><option value="5">5 s</option><option value="10">10 s</option><option value="15">15 s</option></select></div>
+      </div>
+      <label>Personagens na cena</label>
+      <div class="chips">${lib.personagens.length ? lib.personagens.map((p) => `<span class="chip ${s.personagens.includes(p.id) ? "on" : ""}" data-p="${p.id}">${p.imagens[0] ? `<img src="${imgUrl("personagens", p.imagens[0])}" alt="">` : "🧍"}${esc(p.nome)}</span>`).join("") : '<span class="hint">Cadastre personagens na Biblioteca.</span>'}</div>
+      <label>Ação e câmera</label>
+      <textarea data-f="acao" placeholder="Ex.: Close no rosto do Kiko olhando o relógio; ele arregala os olhos e o cabelo fica branco de repente. Corte rápido para a mãe gritando na porta."></textarea>
+      <div class="row">
+        <div><label>Quem fala</label><select data-f="falante">${voiceOpts}</select></div>
+        <div><label>&nbsp;</label><div class="hint" data-info="voz"></div></div>
+      </div>
+      <label>Fala / narração (vira áudio na ElevenLabs)</label>
+      <textarea data-f="fala" style="min-height:60px" placeholder="Ex.: Eu sempre soube que nesse mundo não dava pra olhar pro relógio… mas hoje eu olhei."></textarea>
+      <div class="actions">
+        <button class="small" data-a="voz">🎙️ Gerar voz</button>
+        <button class="small" data-a="video">🎬 Gerar vídeo</button>
+        <span class="hint" data-info="cost"></span>
+      </div>
+      <details><summary>Ver prompt e referências</summary><div class="imgs" data-info="refs"></div><pre class="prompt" data-info="prompt"></pre></details>
+      <div class="out" data-info="out"></div>`;
+    const q = (sel) => d.querySelector(sel);
+    q('[data-f="cenario"]').value = s.cenario; q('[data-f="duracao"]').value = String(s.duracao);
+    q('[data-f="acao"]').value = s.acao; q('[data-f="falante"]').value = lib.personagens.some((p) => p.id === s.falante) ? s.falante : "narrador";
+    q('[data-f="fala"]').value = s.fala;
+    const refresh = () => {
+      const refs = sceneRefs(s);
+      q('[data-info="refs"]').innerHTML = refs.map((r, k) => `<figure><img src="${imgUrl(r.tipo, r.item.imagens[0])}" alt=""><span class="tag">@Image${k + 1}</span></figure>`).join("");
+      q('[data-info="prompt"]').textContent = scenePrompt(s);
+      q('[data-info="cost"]').textContent = `vídeo ~${fmtCredits(videoCost(Number(s.duracao)))}`;
+      const vid = speakerVoice(s);
+      q('[data-info="voz"]').textContent = vid ? `voz: ${(voices.find((v) => v.id === vid) || {}).nome || "definida"}` : "⚠️ sem voz definida (escolha o narrador em Estilo e voz)";
+      updateEpCost();
+    };
+    d.querySelectorAll("[data-f]").forEach((el) => el.addEventListener(el.tagName === "SELECT" ? "change" : "input", () => {
+      s[el.dataset.f] = el.dataset.f === "duracao" ? Number(el.value) : el.value; saveEps(); refresh();
+    }));
+    d.querySelectorAll("[data-p]").forEach((chip) => chip.onclick = () => {
+      const id = chip.dataset.p;
+      s.personagens = s.personagens.includes(id) ? s.personagens.filter((x) => x !== id) : [...s.personagens, id];
+      chip.classList.toggle("on"); saveEps(); refresh();
+    });
+    d.querySelector('[data-a="up"]').onclick = () => { if (i > 0) { [e.cenas[i - 1], e.cenas[i]] = [e.cenas[i], e.cenas[i - 1]]; saveEps(); renderScenes(); } };
+    d.querySelector('[data-a="down"]').onclick = () => { if (i < e.cenas.length - 1) { [e.cenas[i + 1], e.cenas[i]] = [e.cenas[i], e.cenas[i + 1]]; saveEps(); renderScenes(); } };
+    d.querySelector('[data-a="del"]').onclick = () => { if (confirm(`Apagar a cena ${i + 1}?`)) { e.cenas.splice(i, 1); if (!e.cenas.length) e.cenas.push(newScene()); saveEps(); renderScenes(); } };
+    d.querySelector('[data-a="voz"]').onclick = (ev) => genVoice(s, i, ev.target);
+    d.querySelector('[data-a="video"]').onclick = (ev) => genVideo(s, i, ev.target, true);
+    renderOut(q('[data-info="out"]'), s, i);
+    refresh();
+    $("scenes").appendChild(d);
+  });
+  updateEpCost();
+}
+
+function renderOut(box, s, i) {
+  const running = jobs.find((j) => j.sceneRef === s.id && j.status === "running");
+  box.innerHTML = (s.video ? `<div><video src="${s.video}" controls playsinline></video><div class="hint"><a href="/api/download?url=${encodeURIComponent(s.video)}&name=${encodeURIComponent(fileBase(i) + ".mp4")}">baixar vídeo</a></div></div>` : "")
+    + (running ? `<div class="hint"><span class="badge run">vídeo ${esc(running.state || "gerando")}</span></div>` : "")
+    + (s.audio ? `<div><audio src="${s.audio}" controls></audio><div class="hint" data-dur></div><div class="hint"><a href="${s.audio}?baixar=1">baixar voz</a></div></div>` : "");
+  const au = box.querySelector("audio");
+  if (au) au.onloadedmetadata = () => {
+    const sec = au.duration;
+    box.querySelector("[data-dur]").innerHTML = `duração da voz: ${sec.toFixed(1)} s` + (sec > s.duracao ? ` <span style="color:var(--warn)">⚠️ maior que a cena (${s.duracao} s). Aumente a duração ou encurte a fala.</span>` : "");
+  };
+}
+const fileBase = (i) => `${(ep().titulo || "episodio").replace(/[^\w\-]+/g, "_").slice(0, 40)}-cena${String(i + 1).padStart(2, "0")}`;
+$("addScene").onclick = () => { ep().cenas.push(newScene()); saveEps(); renderScenes(); };
+
+function speakerVoice(s) {
+  if (s.falante !== "narrador") { const p = lib.personagens.find((x) => x.id === s.falante); if (p && p.vozId) return p.vozId; }
+  return styleCfg.narradorVozId || "";
+}
+
+async function genVoice(s, i, btn) {
+  if (!xiKey()) return alert("Cole a chave da ElevenLabs no topo.");
+  if (!s.fala.trim()) return alert(`A cena ${i + 1} não tem fala.`);
+  const voz = speakerVoice(s);
+  if (!voz) return alert("Escolha a voz do narrador em 'Estilo e voz' (ou uma voz para o personagem na Biblioteca).");
+  if (btn) { btn.disabled = true; btn.textContent = "🎙️ Gerando…"; }
+  const r = await api("/api/eleven/tts", { method: "POST", body: JSON.stringify({
+    vozId: voz, texto: s.fala, modelo: styleCfg.modelo, estabilidade: styleCfg.estabilidade, estilo: styleCfg.exagero, nome: fileBase(i),
+  }) });
+  if (btn) { btn.disabled = false; btn.textContent = "🎙️ Gerar voz"; }
+  if (!r.url) { alert(`Voz da cena ${i + 1}: ${r.msg}`); return false; }
+  s.audio = r.url; saveEps(); renderScenes();
+  return true;
+}
+
+async function genVideo(s, i, btn, ask) {
+  const dur = Number(s.duracao);
+  if (!s.acao.trim()) { alert(`Descreva a ação da cena ${i + 1}.`); return; }
+  if (ask && !confirm(`Gerar o vídeo da cena ${i + 1}?\n${$("epModel").value} · ${$("epRes").value} · ${dur} s · 9:16\nCusto estimado: ${fmtCredits(videoCost(dur))}`)) return;
+  const refs = sceneRefs(s);
+  const prompt = scenePrompt(s);
+  const epId = curEp;
+  if (btn) btn.disabled = true;
+  const job = runJob({
+    titulo: `${ep().titulo} · cena ${i + 1}`, kind: "video", arquivo: fileBase(i), sceneRef: s.id, epRef: epId,
+    payload: async () => {
+      const input = { prompt, aspect_ratio: "9:16", resolution: $("epRes").value, duration: dur, generate_audio: $("epAudio").value === "on", web_search: false };
+      if (refs.length) input.reference_image_urls = await Promise.all(refs.map((r) => uploadLib(r.tipo, r.item.imagens[0])));
+      return { model: $("epModel").value, input };
+    },
+  });
+  setTimeout(() => { if (btn) btn.disabled = false; renderScenes(); }, 300);
+  return job;
+}
+function applySceneResult(job) {
+  const e = eps.find((x) => x.id === job.epRef);
+  const s = e && e.cenas.find((x) => x.id === job.sceneRef);
+  if (s && job.status === "success") { s.video = job.urls[0]; saveEps(); }
+  if (job.epRef === curEp) renderScenes();
+}
+
+$("allVoices").onclick = async () => {
+  const todo = ep().cenas.filter((s) => s.fala.trim());
+  if (!todo.length) return alert("Nenhuma cena tem fala.");
+  const chars = todo.reduce((a, s) => a + s.fala.length, 0);
+  if (!confirm(`Gerar ${todo.length} voz(es) na ElevenLabs? (${chars} caracteres)`)) return;
+  for (const s of todo) { if (await genVoice(s, ep().cenas.indexOf(s), null) === false) break; }
+};
+$("allVideos").onclick = async () => {
+  const todo = ep().cenas.filter((s) => s.acao.trim());
+  if (!todo.length) return alert("Nenhuma cena tem ação descrita.");
+  const total = todo.reduce((a, s) => a + videoCost(Number(s.duracao)), 0);
+  if (!confirm(`Gerar ${todo.length} vídeo(s)?\nCusto estimado total: ${fmtCredits(total)}`)) return;
+  todo.forEach((s) => genVideo(s, ep().cenas.indexOf(s), null, false));
+};
+
+// ---------- Boot ----------
+(async () => {
+  await loadStyle();
+  voices = styleCfg.vozesCache || [];
+  fillVoiceSelect($("narrVoice"), styleCfg.narradorVozId, "— escolha —");
+  await loadLib();
+  renderEpPick(); renderScenes(); renderJobs();
+  jobs.filter((j) => j.status === "running" && j.taskId).forEach(poll);
+  jobs.filter((j) => j.status === "running" && !j.taskId).forEach((j) => { j.status = "fail"; j.error = "Interrompido antes de enviar"; });
+  saveJobs(); renderJobs();
+  if (xiKey()) loadVoices(true);
+})();
+</script>
+</body>
+</html>

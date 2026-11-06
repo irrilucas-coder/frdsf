@@ -17,6 +17,33 @@ const readCast = () => { try { return JSON.parse(fs.readFileSync(CAST_INDEX, "ut
 const writeCast = (list) => fs.writeFileSync(CAST_INDEX, JSON.stringify(list, null, 2));
 const IMAGE_TYPES = { png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg", webp: "image/webp", gif: "image/gif" };
 
+// "Estúdio de Shorts": fixed library of characters and sets, saved on this computer in data/biblioteca/
+const LIB_DIR = path.join(__dirname, "data", "biblioteca");
+const LIB_TYPES = ["personagens", "cenarios"];
+LIB_TYPES.forEach((t) => fs.mkdirSync(path.join(LIB_DIR, t), { recursive: true }));
+const libIndex = (t) => path.join(LIB_DIR, t, "index.json");
+const readLib = (t) => { try { return JSON.parse(fs.readFileSync(libIndex(t), "utf8")); } catch { return []; } };
+const writeLib = (t, list) => fs.writeFileSync(libIndex(t), JSON.stringify(list, null, 2));
+const STYLE_FILE = path.join(LIB_DIR, "estilo.json");
+const AUDIO_DIR = path.join(__dirname, "data", "audios");
+fs.mkdirSync(AUDIO_DIR, { recursive: true });
+const ELEVEN_API = process.env.ELEVEN_API || "https://api.elevenlabs.io/v1";
+const newId = () => `${Date.now()}${Math.random().toString(36).slice(2, 6)}`;
+
+function saveImage(dir, dataUrl) {
+  const m = /^data:image\/(png|jpe?g|webp|gif);base64,(.+)$/.exec(dataUrl || "");
+  if (!m) return null;
+  const file = `${newId()}.${m[1] === "jpeg" ? "jpg" : m[1]}`;
+  fs.writeFileSync(path.join(dir, file), Buffer.from(m[2], "base64"));
+  return file;
+}
+
+function serveFile(res, full, type) {
+  if (!type || !fs.existsSync(full)) { res.writeHead(404); return res.end("Not found"); }
+  res.writeHead(200, { "Content-Type": type });
+  return fs.createReadStream(full).pipe(res);
+}
+
 function readBody(req) {
   return new Promise((resolve, reject) => {
     const chunks = [];
@@ -82,6 +109,124 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(200, { "Content-Type": type });
     return fs.createReadStream(full).pipe(res);
   }
+  // ----- Estúdio de Shorts: library (characters / sets) -----
+  if (url.pathname === "/api/lib") {
+    const tipo = url.searchParams.get("tipo");
+    if (!LIB_TYPES.includes(tipo)) return sendJson(res, 400, { msg: "tipo deve ser personagens ou cenarios" });
+    const dir = path.join(LIB_DIR, tipo);
+    if (req.method === "GET") return sendJson(res, 200, readLib(tipo));
+    if (req.method === "POST") {
+      // Create or update: { id?, nome, descricao, vozId?, novasImagens: [dataUrl], removerImagens: [file], imagemUrl? }
+      let b;
+      try { b = JSON.parse(await readBody(req)); } catch { return sendJson(res, 400, { msg: "JSON inválido" }); }
+      const list = readLib(tipo);
+      let item = list.find((x) => x.id === b.id);
+      if (!item) {
+        if (!String(b.nome || "").trim()) return sendJson(res, 400, { msg: "Dê um nome." });
+        item = { id: newId(), nome: "", descricao: "", vozId: "", imagens: [] };
+        list.push(item);
+      }
+      if (b.nome !== undefined) item.nome = String(b.nome).trim();
+      if (b.descricao !== undefined) item.descricao = String(b.descricao);
+      if (b.vozId !== undefined) item.vozId = String(b.vozId);
+      for (const f of b.removerImagens || []) {
+        const name = path.basename(f);
+        if (item.imagens.includes(name)) fs.rmSync(path.join(dir, name), { force: true });
+        item.imagens = item.imagens.filter((x) => x !== name);
+      }
+      for (const d of b.novasImagens || []) { const f = saveImage(dir, d); if (f) item.imagens.push(f); }
+      if (b.imagemUrl && /^https:\/\//.test(b.imagemUrl)) {
+        // Image generated on Kie: download it so the reference stays on this computer
+        try {
+          const r = await fetch(b.imagemUrl);
+          const type = (r.headers.get("content-type") || "image/png").split(";")[0];
+          const ext = Object.keys(IMAGE_TYPES).find((k) => IMAGE_TYPES[k] === type) || "png";
+          const file = `${newId()}.${ext}`;
+          fs.writeFileSync(path.join(dir, file), Buffer.from(await r.arrayBuffer()));
+          if (b.principal) item.imagens.unshift(file); else item.imagens.push(file);
+        } catch (err) { return sendJson(res, 502, { msg: `Não consegui baixar a imagem: ${err.message}` }); }
+      }
+      writeLib(tipo, list);
+      return sendJson(res, 200, list);
+    }
+    if (req.method === "DELETE") {
+      const id = url.searchParams.get("id");
+      const list = readLib(tipo);
+      const gone = list.find((x) => x.id === id);
+      if (gone) gone.imagens.forEach((f) => fs.rmSync(path.join(dir, f), { force: true }));
+      writeLib(tipo, list.filter((x) => x.id !== id));
+      return sendJson(res, 200, readLib(tipo));
+    }
+  }
+  const libFile = /^\/lib\/(personagens|cenarios)\/([^/]+)$/.exec(url.pathname);
+  if (libFile && req.method === "GET") {
+    const file = path.basename(libFile[2]);
+    return serveFile(res, path.join(LIB_DIR, libFile[1], file), IMAGE_TYPES[path.extname(file).slice(1).toLowerCase()]);
+  }
+  if (url.pathname === "/api/estilo") {
+    if (req.method === "GET") {
+      try { return sendJson(res, 200, JSON.parse(fs.readFileSync(STYLE_FILE, "utf8"))); } catch { return sendJson(res, 200, {}); }
+    }
+    if (req.method === "POST") {
+      try { fs.writeFileSync(STYLE_FILE, JSON.stringify(JSON.parse(await readBody(req)), null, 2)); }
+      catch { return sendJson(res, 400, { msg: "JSON inválido" }); }
+      return sendJson(res, 200, { ok: true });
+    }
+  }
+
+  // ----- ElevenLabs (voice). Key comes from the browser, never saved on disk. -----
+  if (url.pathname.startsWith("/api/eleven/")) {
+    const xiKey = req.headers["x-eleven-key"];
+    if (!xiKey) return sendJson(res, 401, { msg: "Cole sua chave da ElevenLabs primeiro." });
+    try {
+      if (url.pathname === "/api/eleven/voices" && req.method === "GET") {
+        const r = await fetch(`${ELEVEN_API}/voices`, { headers: { "xi-api-key": xiKey } });
+        const j = await r.json();
+        if (!r.ok) return sendJson(res, r.status, { msg: j?.detail?.message || j?.detail || `Erro ${r.status}` });
+        return sendJson(res, 200, (j.voices || []).map((v) => ({ id: v.voice_id, nome: v.name, categoria: v.category, preview: v.preview_url, labels: v.labels })));
+      }
+      if (url.pathname === "/api/eleven/user" && req.method === "GET") {
+        const r = await fetch(`${ELEVEN_API}/user/subscription`, { headers: { "xi-api-key": xiKey } });
+        const j = await r.json();
+        if (!r.ok) return sendJson(res, r.status, { msg: j?.detail?.message || j?.detail || `Erro ${r.status}` });
+        return sendJson(res, 200, { usados: j.character_count, limite: j.character_limit, plano: j.tier });
+      }
+      if (url.pathname === "/api/eleven/tts" && req.method === "POST") {
+        const b = JSON.parse(await readBody(req));
+        if (!b.vozId || !String(b.texto || "").trim()) return sendJson(res, 400, { msg: "Precisa de voz e texto." });
+        const r = await fetch(`${ELEVEN_API}/text-to-speech/${encodeURIComponent(b.vozId)}?output_format=mp3_44100_128`, {
+          method: "POST",
+          headers: { "xi-api-key": xiKey, "Content-Type": "application/json", Accept: "audio/mpeg" },
+          body: JSON.stringify({
+            text: b.texto,
+            model_id: b.modelo || "eleven_multilingual_v2",
+            voice_settings: { stability: b.estabilidade ?? 0.45, similarity_boost: 0.8, style: b.estilo ?? 0.3, use_speaker_boost: true },
+          }),
+        });
+        if (!r.ok) {
+          let msg = `Erro ${r.status}`;
+          try { const j = await r.json(); msg = j?.detail?.message || j?.detail?.status || JSON.stringify(j.detail || j); } catch {}
+          return sendJson(res, r.status, { msg });
+        }
+        const name = `${String(b.nome || "fala").replace(/[^\w\-]+/g, "_").slice(0, 60)}-${newId()}.mp3`;
+        fs.writeFileSync(path.join(AUDIO_DIR, name), Buffer.from(await r.arrayBuffer()));
+        return sendJson(res, 200, { url: `/audios/${name}` });
+      }
+    } catch (err) {
+      return sendJson(res, 502, { msg: `Não consegui falar com a ElevenLabs: ${err.message}` });
+    }
+    return sendJson(res, 404, { msg: "Unknown endpoint" });
+  }
+  if (url.pathname.startsWith("/audios/") && req.method === "GET") {
+    const file = path.basename(url.pathname);
+    const full = path.join(AUDIO_DIR, file);
+    if (url.searchParams.has("baixar") && fs.existsSync(full)) {
+      res.writeHead(200, { "Content-Type": "audio/mpeg", "Content-Disposition": `attachment; filename="${file}"` });
+      return fs.createReadStream(full).pipe(res);
+    }
+    return serveFile(res, full, file.endsWith(".mp3") ? "audio/mpeg" : null);
+  }
+
   if (url.pathname === "/api/download" && req.method === "GET") {
     // Saves a finished video with a friendly file name (e.g. episodio-cena-01.mp4)
     const target = url.searchParams.get("url") || "";
@@ -124,6 +269,10 @@ const server = http.createServer(async (req, res) => {
   if (url.pathname === "/" || url.pathname === "/index.html") {
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
     return fs.createReadStream(path.join(__dirname, "public", "index.html")).pipe(res);
+  }
+  if (url.pathname === "/shorts" || url.pathname === "/shorts.html") {
+    res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+    return fs.createReadStream(path.join(__dirname, "public", "shorts.html")).pipe(res);
   }
   res.writeHead(404);
   res.end("Not found");

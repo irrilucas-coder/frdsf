@@ -26,3 +26,19 @@ Não precisa instalar nenhuma dependência.
 
 A chave fica salva só no seu navegador (localStorage) e é enviada ao servidor local, que repassa para a Kie.ai.
 Ela nunca é gravada em arquivo. O servidor existe porque o navegador não deixa a página falar direto com a Kie (CORS).
+
+## Estúdio de Shorts (http://localhost:3000/shorts)
+
+Produção em série de Shorts com personagens e cenários fixos e a voz da ElevenLabs:
+
+1. **Biblioteca:** cadastre uma vez os personagens e os cenários (casa, rua, escola…), cada um com uma "ficha visual".
+   Gere a imagem de referência com GPT Image 2 (botão ✨) ou envie uma foto. Tudo fica salvo neste computador em `data/biblioteca/`.
+   Cada personagem pode ter a própria voz.
+2. **Estilo e voz:** defina o estilo visual fixo do canal (entra em todo prompt), a voz do narrador e o modelo da ElevenLabs.
+3. **Episódio:** escreva a regra do mundo e as cenas. Para cada cena, escolha o cenário, os personagens, a ação/câmera e a fala.
+   - 🎙️ gera a fala na ElevenLabs (o MP3 fica em `data/audios/` e o estúdio avisa se a voz ficou mais longa que a cena);
+   - 🎬 gera o clipe vertical 9:16 no Seedance, enviando as imagens dos personagens e do cenário como `@Image1`, `@Image2`…
+     para manter o mesmo visual em todos os episódios.
+   - "Exportar roteiro" baixa o episódio inteiro, com os prompts, em Markdown.
+
+A chave da ElevenLabs (elevenlabs.io → Profile → API Keys) fica só no navegador, assim como a da Kie.
