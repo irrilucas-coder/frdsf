@@ -3,7 +3,7 @@
 Bip vivia sozinho numa ilhazinha no céu...
 
 2
-00:00:04,200 --> 00:00:07,800
+00:00:03,900 --> 00:00:07,800
 Até que, numa noite, uma estrela caiu!
 
 3
@@ -15,5 +15,5 @@ Ele plantou a estrela com todo o cuidado...
 ...e dela nasceu uma árvore de luz.
 
 5
-00:00:15,300 --> 00:00:18,000
+00:00:15,400 --> 00:00:19,500
 Agora o céu inteiro brilha com ele.

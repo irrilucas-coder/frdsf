@@ -6,7 +6,7 @@ export const RemotionRoot = () => {
     <Composition
       id="BipEAEstrela"
       component={BipEAEstrela}
-      durationInFrames={540}
+      durationInFrames={585}
       fps={30}
       width={1080}
       height={1920}

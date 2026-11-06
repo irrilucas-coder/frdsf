@@ -1,4 +1,5 @@
-import {AbsoluteFill, Easing, Sequence, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {Audio} from '@remotion/media';
+import {AbsoluteFill, Easing, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Mundo3D} from './Mundo3D';
 import {mix, prog} from './tempo';
 
@@ -85,22 +86,29 @@ export const BipEAEstrela = () => {
     <AbsoluteFill>
       <Ceu />
       <Mundo3D />
+      <Audio src={staticFile('audio/musica.wav')} volume={0.35} />
+      <Audio src={staticFile('audio/efeitos.wav')} volume={0.8} />
       <Sequence name="Legenda 1" from={0.3 * fps} durationInFrames={3.5 * fps}>
         <Legenda texto="Bip vivia sozinho numa ilhazinha no céu…" />
+        <Audio src={staticFile('audio/fala1.mp3')} />
       </Sequence>
-      <Sequence name="Legenda 2" from={4.2 * fps} durationInFrames={3.6 * fps}>
+      <Sequence name="Legenda 2" from={3.9 * fps} durationInFrames={3.9 * fps}>
         <Legenda texto="Até que, numa noite, uma estrela caiu!" />
+        <Audio src={staticFile('audio/fala2.mp3')} />
       </Sequence>
-      <Sequence name="Legenda 3" from={8.2 * fps} durationInFrames={3.6 * fps}>
+      <Sequence name="Legenda 3" from={Math.round(8.2 * fps)} durationInFrames={3.6 * fps}>
         <Legenda texto="Ele plantou a estrela com todo o cuidado…" />
+        <Audio src={staticFile('audio/fala3.mp3')} />
       </Sequence>
       <Sequence name="Legenda 4" from={12.2 * fps} durationInFrames={3 * fps}>
         <Legenda texto="…e dela nasceu uma árvore de luz." />
+        <Audio src={staticFile('audio/fala4.mp3')} />
       </Sequence>
-      <Sequence name="Legenda 5" from={15.3 * fps} durationInFrames={2.7 * fps}>
+      <Sequence name="Legenda 5" from={15.4 * fps} durationInFrames={Math.round(4.1 * fps)}>
         <Legenda texto="Agora o céu inteiro brilha com ele." />
+        <Audio src={staticFile('audio/fala5.mp3')} />
       </Sequence>
-      <Sequence name="Título" from={15.3 * fps} durationInFrames={2.7 * fps}>
+      <Sequence name="Título" from={15.3 * fps} durationInFrames={4.2 * fps}>
         <Titulo />
       </Sequence>
     </AbsoluteFill>
