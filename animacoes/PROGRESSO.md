@@ -16,7 +16,7 @@ Atualizado a cada etapa. Se a conversa for interrompida (limite de uso), a próx
 - Toda narração passa pela conferência automática (transcrição do Vibi) antes e depois de renderizar.
 - Visual: `<Palco cinema>`; mãos segurando objetos com `alvoMaoE/alvoMaoD`; nada atravessando parede/chão.
 - Efeitos: biblioteca CC0 `public/sfx` (`src/sfx.ts`). Música: `public/musicas` (crédito em `creditos.json`).
-- Voz: `eleven_v3` com marcações de emoção; vozes pt-BR preferidas: Matheus, Will, Keren, Raquel.
+- Voz: `eleven_v3` com marcações de emoção. **Voz padrão do canal (escolhida pelo usuário): Matheus** (`36rVQA1AOIPwpA3Hg1tC`). Alternativas: Will, Keren, Raquel.
 - Vídeos do México em espanhol mexicano: vozes Adriel e Carlos Garza (`scripts/vozes-mx.py`).
 
 ## Vídeos entregues (`videos/`)
