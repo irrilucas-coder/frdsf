@@ -2,6 +2,8 @@ import {Composition, Still} from 'remotion';
 import {Perfil} from './perfil/Perfil';
 import {TesteCinema} from './teste/TesteCinema';
 import {ElevadorVideo} from './elevador/Elevador';
+import {FreioVideo} from './freio/Freio';
+import {FPS as FPS_FREIO, TOTAL_FRAMES as FRAMES_FREIO} from './freio/roteiro';
 import {FPS as FPS_ELEV, TOTAL_FRAMES as FRAMES_ELEV} from './elevador/roteiro';
 import {BipEAEstrela} from './BipEAEstrela';
 import {Submarino} from './submarino/Submarino';
@@ -66,6 +68,7 @@ export const RemotionRoot = () => {
         width={1080}
         height={1920}
       />
+      <Composition id="Freio" component={FreioVideo} durationInFrames={FRAMES_FREIO} fps={FPS_FREIO} width={1080} height={1920} />
       <Composition id="Elevador" component={ElevadorVideo} durationInFrames={FRAMES_ELEV} fps={FPS_ELEV} width={1080} height={1920} />
       <Still id="TesteCinema" component={TesteCinema} width={1080} height={1920} defaultProps={{cinema: true}} />
       <Still id="TesteNormal" component={TesteCinema} width={1080} height={1920} defaultProps={{cinema: false}} />

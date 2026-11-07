@@ -88,18 +88,18 @@ export const Rebobina = ({inicio, dur = 0.8}: {inicio: number; dur?: number}) =>
 };
 
 // Pergunta-gancho no topo, palavra-chave em amarelo
-export const Pergunta = ({dur}: {dur: number}) => {
+export const Pergunta = ({dur, linhas = [['POR QUE O ELEVADOR'], ['NÃO DESPENCA', true], ['SE O CABO ARREBENTAR?']]}: {dur: number; linhas?: [string, boolean?][]}) => {
   const {visivel, k} = useJanela(-0.4, dur + 0.4);
   if (!visivel) return null;
   const cont = '0 5px 0 #000, 4px 0 #000, -4px 0 #000, 0 -4px #000, 3px 3px #000, -3px 3px #000, 3px -3px #000, -3px -3px #000';
   return (
     <AbsoluteFill style={{alignItems: 'center', top: 250}}>
       <div style={{opacity: k, textAlign: 'center', fontFamily: FONTE, fontSize: 84, lineHeight: 1.05, color: '#fff', textShadow: cont, maxWidth: 920}}>
-        POR QUE O ELEVADOR
-        <br />
-        <span style={{color: '#ffcc00'}}>NÃO DESPENCA</span>
-        <br />
-        SE O CABO ARREBENTAR?
+        {linhas.map(([t, amarelo], i) => (
+          <div key={i} style={{color: amarelo ? '#ffcc00' : '#fff'}}>
+            {t}
+          </div>
+        ))}
       </div>
     </AbsoluteFill>
   );
@@ -126,6 +126,37 @@ export const Manda = ({inicio, dur}: {inicio: number; dur: number}) => {
       >
         📲 MANDA PRA ELE
       </div>
+    </AbsoluteFill>
+  );
+};
+
+// Painel genérico com duas caixas (outros vídeos)
+export const Painel2 = ({a, b}: {a: {rotulo: string; valor: string; unidade: string; perigo?: boolean}; b: {rotulo: string; valor: string; unidade: string; perigo?: boolean}}) => {
+  const caixa = (x: typeof a, lado: 'esq' | 'dir') => (
+    <div
+      style={{
+        position: 'absolute',
+        top: 70,
+        [lado === 'esq' ? 'left' : 'right']: 60,
+        background: x.perigo ? 'rgba(160,10,10,0.92)' : 'rgba(10,20,40,0.82)',
+        border: `5px solid ${x.perigo ? '#ff5a4f' : lado === 'esq' ? '#3ddc84' : '#ffcc00'}`,
+        borderRadius: 18,
+        padding: '8px 22px',
+        textAlign: 'center',
+        minWidth: 190,
+        scale: x.perigo ? 1.15 : 1,
+        transformOrigin: lado === 'esq' ? 'left top' : 'right top',
+      }}
+    >
+      <div style={{fontFamily: FONTE, fontSize: 24, color: '#ddd', letterSpacing: 2}}>{x.rotulo}</div>
+      <div style={{fontFamily: FONTE, fontSize: 62, color: x.perigo ? '#fff' : lado === 'esq' ? '#3ddc84' : '#ffcc00', lineHeight: 1}}>{x.valor}</div>
+      <div style={{fontFamily: FONTE, fontSize: 22, color: '#ddd'}}>{x.unidade}</div>
+    </div>
+  );
+  return (
+    <AbsoluteFill>
+      {caixa(a, 'esq')}
+      {caixa(b, 'dir')}
     </AbsoluteFill>
   );
 };
