@@ -14,7 +14,7 @@ import difflib, json, os, re, subprocess, sys, time, unicodedata
 API = "https://api.vibi.pro/v1"
 MODELO = "eleven_v3"  # voz expressiva: aceita marcações de emoção como [curious], [gasps]
 VOZES = {
-    "narrador": "4Nn4X9zUEoY31Hy6uXuU",  # Samuel - Curious (pt-BR)
+    "narrador": "36rVQA1AOIPwpA3Hg1tC",  # Matheus - Friendly and Energetic (pt-BR, a mais usada por criadores)
 }
 
 FALAS = [
