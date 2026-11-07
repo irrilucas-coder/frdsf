@@ -17,7 +17,7 @@ const B = ({tam, pos = [0, 0, 0], rot = [0, 0, 0], cor, emi = 0, metal = 0.1}: {
   </mesh>
 );
 
-const Voce = (p: {posicao?: V3; rotacaoY?: number; pose?: 'parado' | 'andar' | 'manivela' | 'acenar' | 'comemorar' | 'apontar' | 'susto'; expressao?: 'feliz' | 'assustado' | 'cansado' | 'serio'; suor?: boolean; escala?: number; velocidade?: number}) => (
+const Voce = (p: {posicao?: V3; rotacaoY?: number; alvoMaoE?: V3; alvoMaoD?: V3; pose?: 'parado' | 'andar' | 'manivela' | 'acenar' | 'comemorar' | 'apontar' | 'susto'; expressao?: 'feliz' | 'assustado' | 'cansado' | 'serio'; suor?: boolean; escala?: number; velocidade?: number}) => (
   <Bloquinho {...p} pele="#e8b48a" camisa="#ffcc00" calca="#1f5fa8" chapeu="cabelo" corChapeu="#2a1d14" />
 );
 
@@ -49,16 +49,18 @@ const Andares = ({andar}: {andar: number}) => {
         return (
           <group key={n} position={[0, y, 0]}>
             {/* laje */}
-            <B tam={[12, 0.3, 6]} pos={[-4.5, -0.15, 0]} cor="#8a857a" />
-            <B tam={[12, 0.3, 6]} pos={[6.5, -0.15, 0]} cor="#8a857a" />
+            <B tam={[10, 0.3, 6]} pos={[-6.6, -0.15, 0]} cor="#8a857a" />
+            <B tam={[10, 0.3, 6]} pos={[8, -0.15, 0]} cor="#8a857a" />
+            {/* soleira da porta do andar (fica atrás da cabine, no fundo do poço) */}
+            <B tam={[4.6, 0.12, 0.3]} pos={[0.7, 0, -1.75]} cor="#6b6b6b" metal={0.5} />
             {/* parede de fundo do poço com faixa do andar */}
             <B tam={[5, ALTURA_ANDAR, 0.2]} pos={[1, ALTURA_ANDAR / 2, -1.6]} cor={cor} />
             <B tam={[5, 0.25, 0.22]} pos={[1, 0.4, -1.58]} cor={n % 5 === 0 ? '#e10600' : '#7a8594'} />
             {/* corredores com porta e luz */}
             <B tam={[0.9, 2.1, 0.1]} pos={[-3.5, 1.05, -2.9]} cor="#5a3a24" />
             <B tam={[0.9, 2.1, 0.1]} pos={[5.5, 1.05, -2.9]} cor="#5a3a24" />
-            <B tam={[12, ALTURA_ANDAR, 0.2]} pos={[-4.5, ALTURA_ANDAR / 2, -3]} cor="#e8e2d2" />
-            <B tam={[12, ALTURA_ANDAR, 0.2]} pos={[6.5, ALTURA_ANDAR / 2, -3]} cor="#e8e2d2" />
+            <B tam={[10, ALTURA_ANDAR, 0.2]} pos={[-6.6, ALTURA_ANDAR / 2, -3]} cor="#e8e2d2" />
+            <B tam={[10, ALTURA_ANDAR, 0.2]} pos={[8, ALTURA_ANDAR / 2, -3]} cor="#e8e2d2" />
           </group>
         );
       })}
@@ -107,8 +109,11 @@ export const Poco = ({andar, corda = 'corda', cabosRompidos = 0, cordaRompida = 
     <group>
       <Andares andar={andar} />
       {/* trilhos guia */}
-      {[-1.3, 1.3].map((x) => (
-        <B key={x} tam={[0.12, 80, 0.2]} pos={[x, yc, -1.2]} cor="#5d6670" metal={0.7} />
+      {[-1.34, 1.34].map((x) => (
+        <group key={x}>
+          <B tam={[0.08, 80, 0.22]} pos={[x, yc, -0.2]} cor="#5d6670" metal={0.7} />
+          <B tam={[0.16, 80, 0.06]} pos={[x + (x > 0 ? 0.06 : -0.06), yc, -0.32]} cor="#4a525b" metal={0.7} />
+        </group>
       ))}
       {/* fosso e molas */}
       {molas > 0 && andar < 4 && (
@@ -125,6 +130,21 @@ export const Poco = ({andar, corda = 'corda', cabosRompidos = 0, cordaRompida = 
         <B tam={[0.1, 2.6, 2.4]} pos={[-1.15, 1.35, -0.2]} cor="#b8c0c8" metal={0.5} />
         <B tam={[0.1, 2.6, 2.4]} pos={[1.15, 1.35, -0.2]} cor="#b8c0c8" metal={0.5} />
         <B tam={[2.4, 2.6, 0.1]} pos={[0, 1.35, -1.35]} cor="#aab3bb" metal={0.5} />
+        {/* corrimão no fundo */}
+        <B tam={[2.0, 0.06, 0.06]} pos={[0, 0.95, -1.22]} cor="#d9d9d9" metal={0.9} />
+        {/* painel de botões na lateral direita */}
+        <B tam={[0.04, 0.9, 0.35]} pos={[1.08, 1.3, 0.55]} cor="#3a3f46" metal={0.6} />
+        {Array.from({length: 8}, (_, i) => (
+          <mesh key={i} position={[1.055, 1.0 + Math.floor(i / 2) * 0.17, 0.47 + (i % 2) * 0.16]} rotation={[0, 0, Math.PI / 2]}>
+            <cylinderGeometry args={[0.04, 0.04, 0.02, 12]} />
+            <meshStandardMaterial color="#ffcc66" emissive="#ffb347" emissiveIntensity={i === 7 ? 1.5 : 0.3} />
+          </mesh>
+        ))}
+        {/* display do andar */}
+        <B tam={[0.5, 0.18, 0.04]} pos={[0, 2.35, -1.28]} cor="#111" />
+        <B tam={[0.3, 0.1, 0.02]} pos={[0, 2.35, -1.25]} cor="#ff3b30" emi={1.2} />
+        {/* luminária no teto */}
+        <B tam={[1.2, 0.04, 0.6]} pos={[0, 2.53, -0.2]} cor="#fff6e0" emi={0.8} />
         {/* portas de correr */}
         {comPortas && (
           <>
@@ -136,7 +156,7 @@ export const Poco = ({andar, corda = 'corda', cabosRompidos = 0, cordaRompida = 
         {passageiro}
         {/* garras do freio de segurança */}
         {[-1, 1].map((l) => (
-          <group key={l} position={[l * (1.2 + garras * 0.06), 0.3, -1.2]}>
+          <group key={l} position={[l * (1.22 + garras * 0.06), 0.3, -0.2]}>
             <mesh rotation={[0, 0, l > 0 ? -0.4 : 0.4]} scale={[1, 1, 1]}>
               <boxGeometry args={[0.18, 0.5, 0.35]} />
               <meshStandardMaterial color={garras > 0.5 ? '#e10600' : '#c9a227'} metalness={0.7} emissive={garras > 0.5 ? '#e10600' : '#000'} emissiveIntensity={garras > 0.5 ? 0.6 : 0} />
@@ -145,8 +165,8 @@ export const Poco = ({andar, corda = 'corda', cabosRompidos = 0, cordaRompida = 
         ))}
         {faiscas && (
           <>
-            <Faiscas posicao={[-1.3, 0.3, -1.1]} />
-            <Faiscas posicao={[1.3, 0.3, -1.1]} />
+            <Faiscas posicao={[-1.34, 0.3, -0.2]} />
+            <Faiscas posicao={[1.34, 0.3, -0.2]} />
           </>
         )}
       </group>
@@ -235,7 +255,13 @@ export const CenaEscada = () => {
       {Array.from({length: 60}, (_, i) => (
         <B key={i} tam={[2, 0.3, 0.6]} pos={[0, i * 0.3, -i * 0.6]} cor={i % 10 === 0 ? '#e10600' : '#c9c2b0'} />
       ))}
-      <Voce posicao={[0, sobe * 0.3 + 0.3, -sobe * 0.6]} rotacaoY={Math.PI} pose="andar" expressao="cansado" suor velocidade={0.7} />
+      <Voce posicao={[0, sobe * 0.3 + 0.15, -sobe * 0.6]} rotacaoY={Math.PI} pose="andar" expressao="cansado" suor velocidade={0.7} />
+      {[-1.05, 1.05].map((x) => (
+        <mesh key={x} position={[x, 9 + 0.9, -18]} rotation={[Math.atan2(0.3, 0.6), 0, 0]}>
+          <boxGeometry args={[0.08, 0.08, 40.3]} />
+          <meshStandardMaterial color="#7a5a3a" />
+        </mesh>
+      ))}
       <mesh position={[0, 20, -30]}>
         <boxGeometry args={[2.4, 0.4, 0.6]} />
         <meshStandardMaterial color="#e10600" emissive="#e10600" emissiveIntensity={0.6} />
@@ -244,19 +270,77 @@ export const CenaEscada = () => {
   );
 };
 
-// ===== 2. MANIVELA =====
+// ===== 2. MANIVELA: guincho dentro da cabine, mãos na manopla =====
+const Guincho = ({angulo}: {angulo: number}) => {
+  // eixo em coordenadas da cabine; o boneco (escala 0.85 em [0, 0.15, -0.2]) alcança a manopla
+  const C: V3 = [0, 1.13, 0.31];
+  const r = 0.153;
+  const hy = C[1] + r * Math.sin(angulo);
+  const hz = C[2] + r * Math.cos(angulo);
+  return (
+    <group>
+      {/* suportes presos no piso da cabine */}
+      {[-0.42, 0.42].map((x) => (
+        <B key={x} tam={[0.06, C[1] - 0.15, 0.08]} pos={[x, (C[1] + 0.15) / 2, C[2]]} cor="#5a3a24" />
+      ))}
+      {/* eixo e tambor com a corda enrolada */}
+      <mesh position={C} rotation={[0, 0, Math.PI / 2]}>
+        <cylinderGeometry args={[0.03, 0.03, 0.9, 10]} />
+        <meshStandardMaterial color="#8a8a8a" metalness={0.8} />
+      </mesh>
+      <mesh position={C} rotation={[angulo, 0, Math.PI / 2]}>
+        <cylinderGeometry args={[0.1, 0.1, 0.4, 16]} />
+        <meshStandardMaterial color="#a0703c" />
+      </mesh>
+      {/* corda saindo do tambor e subindo pelo furo do teto */}
+      <mesh position={[0, (C[1] + 2.7) / 2, C[2] - 0.1]}>
+        <cylinderGeometry args={[0.025, 0.025, 2.7 - C[1], 6]} />
+        <meshStandardMaterial color="#a0703c" />
+      </mesh>
+      {/* braços da manivela (dos dois lados) e manopla onde ficam as mãos */}
+      {[-0.46, 0.46].map((x) => (
+        <mesh key={x} position={[x, (C[1] + hy) / 2, (C[2] + hz) / 2]} rotation={[Math.PI / 2 - angulo, 0, 0]}>
+          <boxGeometry args={[0.04, r, 0.04]} />
+          <meshStandardMaterial color="#c9a227" metalness={0.8} />
+        </mesh>
+      ))}
+      <mesh position={[0, hy, hz]} rotation={[0, 0, Math.PI / 2]}>
+        <cylinderGeometry args={[0.025, 0.025, 0.92, 10]} />
+        <meshStandardMaterial color="#c9a227" metalness={0.8} />
+      </mesh>
+    </group>
+  );
+};
+
 export const CenaManivela = () => {
   const {s, e} = usaEstado('manivela');
   const tDesiste = quandoDiz('manivela', 'L2', 'braço');
   const cansado = s > tDesiste - 0.6;
-  const c = camCabine(e.andar, s, 6.5, 1.2);
+  // gira enquanto sobe e para quando o braço desiste
+  const angulo = (cansado ? tDesiste - 0.6 : s) * 5;
+  // posição da manopla nas coordenadas do boneco (inverso de [0,0.15,-0.2] + 0.85·p)
+  const hy = (1.13 + 0.153 * Math.sin(angulo) - 0.15) / 0.85;
+  const hz = (0.31 + 0.153 * Math.cos(angulo) + 0.2) / 0.85;
+  const c = camCabine(e.andar, s, 5.8, 2.6);
   return (
-    <Palco cinema clima="interior" pos={c.pos} olha={c.olha} fov={48} sombras={false}>
-      <Poco andar={e.andar} passageiro={<Voce posicao={[0, 0.15, -0.2]} pose={cansado ? 'parado' : 'manivela'} expressao={cansado ? 'cansado' : 'feliz'} suor={cansado} escala={0.85} velocidade={cansado ? 0.2 : 1.5} />} />
-      <group position={[0.75, e.andar * ALTURA_ANDAR + 1.2, 0.3]} rotation={[0, 0, cansado ? 0 : s * 5]}>
-        <B tam={[0.5, 0.06, 0.06]} cor="#c9a227" metal={0.8} />
-        <B tam={[0.06, 0.06, 0.18]} pos={[0.25, 0, 0.08]} cor="#c9a227" metal={0.8} />
-      </group>
+    <Palco cinema clima="interior" pos={c.pos} olha={c.olha} fov={46} sombras={false}>
+      <Poco
+        andar={e.andar}
+        passageiro={
+          <>
+            <Voce
+              posicao={[0, 0.15, -0.2]}
+              pose="parado"
+              alvoMaoE={[-0.26, hy, hz]}
+              alvoMaoD={[0.26, hy, hz]}
+              expressao={cansado ? 'cansado' : 'feliz'}
+              suor={cansado}
+              escala={0.85}
+            />
+            <Guincho angulo={angulo} />
+          </>
+        }
+      />
     </Palco>
   );
 };
@@ -279,18 +363,56 @@ export const CenaMotor = () => {
   const {s, e} = usaEstado('motor');
   const tBotao = quandoDiz('motor', 'L4', 'botão');
   if (s < tBotao - 0.4) {
-    // casa de máquinas no topo
+    // casa de máquinas no topo: motor, freio, polia de tração e cabos descendo para cabine e contrapeso
     return (
-      <Palco cinema clima="interior" pos={[4.5, 3.6, 8.5]} olha={[0, 1.4, 0]} fov={45} sombras={false}>
-        <B tam={[10, 0.3, 8]} pos={[0, 0, 0]} cor="#6b6b6b" />
-        <B tam={[1.6, 1.2, 1.2]} pos={[-1.2, 0.75, 0]} cor="#1f5fa8" metal={0.5} />
-        <mesh position={[0.6, 1.5, 0]} rotation={[Math.PI / 2, 0, s * 4]}>
-          <cylinderGeometry args={[0.8, 0.8, 0.4, 20]} />
+      <Palco cinema clima="interior" pos={[4.2, 3.4, 7.5]} olha={[0.2, 1.4, 0]} fov={45} sombras={false}>
+        <B tam={[12, 0.3, 8]} pos={[0, 0, 0]} cor="#6b6b6b" />
+        <B tam={[12, 5, 0.2]} pos={[0, 2.5, -3]} cor="#8a8a80" />
+        {/* base da máquina */}
+        <B tam={[3.6, 0.4, 1.4]} pos={[0, 0.35, 0]} cor="#3a3f46" metal={0.5} />
+        {/* motor */}
+        <mesh position={[-1.1, 1.05, 0]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.5, 0.5, 1.2, 20]} />
+          <meshStandardMaterial color="#1f5fa8" metalness={0.5} roughness={0.4} />
+        </mesh>
+        {/* freio da máquina (tambor + sapatas) */}
+        <mesh position={[-0.25, 1.05, 0]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.38, 0.38, 0.3, 20]} />
           <meshStandardMaterial color="#9aa0a8" metalness={0.8} />
         </mesh>
-        <B tam={[0.15, 2.5, 0.15]} pos={[1.4, 0.2, 0]} cor="#9aa0a8" />
-        <B tam={[0.15, 2.5, 0.15]} pos={[-0.2, 0.2, 0]} cor="#9aa0a8" />
-        <pointLight position={[0, 3, 2]} intensity={14} />
+        <B tam={[0.16, 0.5, 0.2]} pos={[-0.25, 1.05, 0.48]} cor="#e10600" />
+        {/* polia de tração com sulcos */}
+        <group position={[0.75, 1.1, 0]} rotation={[0, 0, s * 3]}>
+          <mesh rotation={[Math.PI / 2, 0, 0]}>
+            <cylinderGeometry args={[0.6, 0.6, 0.5, 24]} />
+            <meshStandardMaterial color="#8a8a8a" metalness={0.8} roughness={0.3} />
+          </mesh>
+          {[-0.15, 0, 0.15].map((z) => (
+            <mesh key={z} position={[0, 0, z]}>
+              <torusGeometry args={[0.6, 0.025, 6, 24]} />
+              <meshStandardMaterial color="#555" metalness={0.8} />
+            </mesh>
+          ))}
+          <B tam={[1.1, 0.08, 0.52]} cor="#6b6b6b" metal={0.7} />
+        </group>
+        {/* cabos descendo pelos furos do piso: frente = cabine, trás = contrapeso */}
+        {[-0.12, 0, 0.12].map((z) => (
+          <group key={z}>
+            <mesh position={[1.35, -0.2, z]}>
+              <cylinderGeometry args={[0.02, 0.02, 2.6, 6]} />
+              <meshStandardMaterial color="#c0c4c8" metalness={0.9} />
+            </mesh>
+            <mesh position={[0.15, -0.2, z]}>
+              <cylinderGeometry args={[0.02, 0.02, 2.6, 6]} />
+              <meshStandardMaterial color="#c0c4c8" metalness={0.9} />
+            </mesh>
+          </group>
+        ))}
+        {/* quadro de comando */}
+        <B tam={[1, 1.8, 0.5]} pos={[3.2, 0.95, -2.5]} cor="#d9d4c7" />
+        <B tam={[0.16, 0.16, 0.04]} pos={[3.0, 1.5, -2.24]} cor="#3ddc84" emi={1.5} />
+        <B tam={[0.16, 0.16, 0.04]} pos={[3.3, 1.5, -2.24]} cor="#ffcc00" emi={1.2} />
+        <pointLight position={[0, 3.5, 2.5]} intensity={10} />
       </Palco>
     );
   }
@@ -351,7 +473,7 @@ export const CenaMolas = () => {
   const fim = duracaoCena('molas');
   const comp = lerp(s, fim * 0.45, fim * 0.65, 0.05, 1, Easing.out(Easing.back(2)));
   return (
-    <Palco cinema clima="interior" pos={[3.5, 1.4, 7]} olha={[0, 0, 0]} fov={50} sombras={false}>
+    <Palco cinema clima="interior" pos={[3.8, 2.2, 8]} olha={[0, 0.9, 0]} fov={52} sombras={false}>
       <Poco andar={Math.max(e.andar, 0) - comp * 0.2} corda="nenhuma" molas={comp} passageiro={<Voce posicao={[0, 0.15, -0.2]} pose="parado" expressao={comp > 0.9 ? 'feliz' : 'assustado'} escala={0.85} />} />
     </Palco>
   );

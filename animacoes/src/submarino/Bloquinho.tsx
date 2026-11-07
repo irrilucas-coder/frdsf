@@ -30,6 +30,9 @@ type Props = {
   suor?: boolean;
   velocidade?: number; // multiplica a velocidade da pose
   fase?: number; // desencontra personagens iguais
+  // Se definidos, os braços apontam para esses pontos (coordenadas locais do boneco): mãos segurando objetos
+  alvoMaoE?: [number, number, number];
+  alvoMaoD?: [number, number, number];
 };
 
 const Caixa = ({
@@ -91,6 +94,8 @@ export const Bloquinho = ({
   suor = false,
   velocidade = 1,
   fase = 0,
+  alvoMaoE,
+  alvoMaoD,
 }: Props) => {
   const frame = useCurrentFrame();
   const t = (frame + fase * 17) * velocidade;
@@ -140,6 +145,27 @@ export const Bloquinho = ({
     pulo = Math.abs(Math.sin(t * 0.9)) * 0.05;
   }
   // Leve respiração
+  // Braço apontando para um alvo (cinemática simples de 1 junta). Ombro em (±0.53, 1.55, 0).
+  const mira = (ombroX: number, alvo: [number, number, number]) => {
+    const dx = alvo[0] - ombroX;
+    const dy = alvo[1] - 1.55;
+    const dz = alvo[2];
+    const n = Math.hypot(dx, dy, dz) || 1;
+    const x = dx / n;
+    const y = dy / n;
+    const z = dz / n;
+    return {rx: Math.atan2(-z, -y), rz: Math.asin(Math.max(-1, Math.min(1, x)))};
+  };
+  if (alvoMaoE) {
+    const m = mira(-0.53, alvoMaoE);
+    bracoE = m.rx;
+    bracoEz = m.rz;
+  }
+  if (alvoMaoD) {
+    const m = mira(0.53, alvoMaoD);
+    bracoD = m.rx;
+    bracoDz = m.rz;
+  }
   const respira = Math.sin(t * 0.08) * 0.015;
 
   // Boca: abre e fecha enquanto fala
