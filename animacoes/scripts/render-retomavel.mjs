@@ -23,7 +23,7 @@ const navegador = '/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless
 const chromiumOptions = {gl: 'swangle'};
 const serveUrl = await bundle({entryPoint: path.join(raiz, 'src/index.ts'), publicDir: path.join(raiz, 'public')});
 const browser = await openBrowser('chrome', {browserExecutable: navegador, chromiumOptions});
-const composition = await selectComposition({serveUrl, id, puppeteerInstance: browser, chromiumOptions});
+const composition = await selectComposition({serveUrl, id, puppeteerInstance: browser, chromiumOptions, timeoutInMilliseconds: 180000});
 const total = composition.durationInFrames;
 
 const partes = [];
@@ -34,14 +34,14 @@ for (let a = 0; a < total; a += BLOCO) {
   if (fs.existsSync(arq)) continue;
   const tmp = arq.replace('.mp4', '.tmp.mp4');
   console.log(`renderizando frames ${a}-${b} de ${total}…`);
-  await renderMedia({composition, serveUrl, codec: 'h264', crf: 16, muted: true, frameRange: [a, b], outputLocation: tmp, puppeteerInstance: browser, chromiumOptions, concurrency: 4, imageFormat: 'jpeg', jpegQuality: 92});
+  await renderMedia({composition, serveUrl, codec: 'h264', crf: 16, muted: true, frameRange: [a, b], outputLocation: tmp, puppeteerInstance: browser, chromiumOptions, concurrency: 4, imageFormat: 'jpeg', jpegQuality: 92, timeoutInMilliseconds: 180000});
   fs.renameSync(tmp, arq);
 }
 
 const audio = path.join(pasta, 'audio.wav');
 if (!fs.existsSync(audio)) {
   console.log('renderizando áudio…');
-  await renderMedia({composition, serveUrl, codec: 'wav', outputLocation: audio + '.tmp.wav', puppeteerInstance: browser, chromiumOptions});
+  await renderMedia({composition, serveUrl, codec: 'wav', outputLocation: audio + '.tmp.wav', puppeteerInstance: browser, chromiumOptions, timeoutInMilliseconds: 180000, concurrency: 2});
   fs.renameSync(audio + '.tmp.wav', audio);
 }
 await browser.close({silent: true});
