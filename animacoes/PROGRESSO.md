@@ -10,6 +10,12 @@ Atualizado a cada etapa. Se a conversa for interrompida (limite de uso), a próx
     máquinas realistas, visual cinema, música "Monkeys Spinning Monkeys" (crédito CC BY na descrição).
   - Amostras de voz para o usuário escolher: `amostras-voz/` (Matheus, Will, Keren, Raquel).
 
+## Como renderizar (retomável)
+- `node scripts/render-retomavel.mjs <Composicao> <nome>`: renderiza em blocos de 300 frames em `out/partes/<nome>/`
+  (pula blocos prontos), áudio separado e junta em `out/<nome>.mp4`. Se cair, é só rodar de novo.
+- Depois: comprimir para `videos/<nome>.mp4` (crf 18), transcrever o áudio final e entregar.
+- Ordem atual: Elevador → Freio → Fila → FreioMX → FilaMX.
+
 ## Na fila de renderização (depois do elevador)
 - **Freio** (`npx remotion render Freio` → `videos/como-um-carro-consegue-parar.mp4`), narração Matheus conferida.
 - **Fila** (`npx remotion render Fila` → `videos/por-que-a-fila-do-lado-anda-mais-rapido.mp4`), narração Matheus conferida.
