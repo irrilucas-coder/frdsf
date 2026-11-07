@@ -15,6 +15,10 @@ type Props = {
   corChapeu?: string;
   capa?: string;
   bigode?: boolean;
+  faixa?: string[]; // faixa presidencial (cores de cima pra baixo)
+  gravata?: string;
+  colete?: string; // colete/uniforme por cima da camisa
+  capacete?: string;
   pose?: Pose;
   expressao?: Expressao;
   falando?: boolean;
@@ -60,6 +64,10 @@ export const Bloquinho = ({
   corChapeu = '#222222',
   capa,
   bigode = false,
+  faixa,
+  gravata,
+  colete,
+  capacete,
   pose = 'parado',
   expressao = 'feliz',
   falando = false,
@@ -137,6 +145,20 @@ export const Bloquinho = ({
         {/* Tronco */}
         <Caixa tam={[0.72, 0.8, 0.4]} pos={[0, 1.2 + respira, 0]} cor={camisa} />
         {capa && <Caixa tam={[0.78, 1.15, 0.05]} pos={[0, 1.02, -0.24]} cor={capa} />}
+        {colete && <Caixa tam={[0.76, 0.6, 0.44]} pos={[0, 1.25 + respira, 0]} cor={colete} />}
+        {gravata && (
+          <>
+            <Caixa tam={[0.2, 0.8, 0.02]} pos={[0, 1.2 + respira, 0.205]} cor="#f2f2f2" sombra={false} />
+            <Caixa tam={[0.09, 0.58, 0.03]} pos={[0, 1.28 + respira, 0.215]} cor={gravata} sombra={false} />
+          </>
+        )}
+        {faixa && (
+          <group position={[0, 1.2 + respira, 0]} rotation={[0, 0, -0.75]}>
+            {faixa.map((cor, i) => (
+              <Caixa key={i} tam={[0.09, 1.08, 0.44]} pos={[(i - (faixa.length - 1) / 2) * 0.09, 0, 0]} cor={cor} sombra={false} />
+            ))}
+          </group>
+        )}
         {/* Braços (giram no ombro) */}
         <group position={[-0.53, 1.55, 0]} rotation={[bracoE, 0, bracoEz]}>
           <Caixa tam={[0.32, 0.78, 0.36]} pos={[0, -0.36, 0]} cor={camisa} />
@@ -184,6 +206,12 @@ export const Bloquinho = ({
           )}
           {/* Chapéus */}
           {chapeu === 'cabelo' && <Caixa tam={[0.6, 0.14, 0.6]} pos={[0, 0.32, -0.02]} cor={corChapeu} />}
+          {capacete && (
+            <>
+              <Caixa tam={[0.66, 0.24, 0.66]} pos={[0, 0.34, 0]} cor={capacete} />
+              <Caixa tam={[0.4, 0.1, 0.06]} pos={[0, 0.3, 0.32]} cor="#1a1a1a" sombra={false} />
+            </>
+          )}
           {chapeu === 'cartola' && (
             <>
               <Caixa tam={[0.72, 0.05, 0.72]} pos={[0, 0.3, 0]} cor={corChapeu} />

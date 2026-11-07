@@ -1,0 +1,1236 @@
+[
+ {
+  "id": "L0",
+  "quem": "narrador",
+  "duracao": 8.359,
+  "palavras": [
+   {
+    "texto": "Madrugada",
+    "inicio": 0.06,
+    "fim": 0.54
+   },
+   {
+    "texto": "de",
+    "inicio": 0.54,
+    "fim": 0.68
+   },
+   {
+    "texto": "3",
+    "inicio": 0.68,
+    "fim": 0.88
+   },
+   {
+    "texto": "de",
+    "inicio": 0.88,
+    "fim": 1.02
+   },
+   {
+    "texto": "janeiro",
+    "inicio": 1.02,
+    "fim": 1.34
+   },
+   {
+    "texto": "de",
+    "inicio": 1.34,
+    "fim": 1.46
+   },
+   {
+    "texto": "2026.",
+    "inicio": 1.46,
+    "fim": 2.74
+   },
+   {
+    "texto": "Em",
+    "inicio": 2.74,
+    "fim": 3.14
+   },
+   {
+    "texto": "pouco",
+    "inicio": 3.14,
+    "fim": 3.34
+   },
+   {
+    "texto": "mais",
+    "inicio": 3.34,
+    "fim": 3.54
+   },
+   {
+    "texto": "de",
+    "inicio": 3.54,
+    "fim": 3.64
+   },
+   {
+    "texto": "duas",
+    "inicio": 3.64,
+    "fim": 3.84
+   },
+   {
+    "texto": "horas,",
+    "inicio": 3.84,
+    "fim": 4.56
+   },
+   {
+    "texto": "os",
+    "inicio": 4.56,
+    "fim": 4.66
+   },
+   {
+    "texto": "Estados",
+    "inicio": 4.66,
+    "fim": 4.94
+   },
+   {
+    "texto": "Unidos",
+    "inicio": 4.94,
+    "fim": 5.26
+   },
+   {
+    "texto": "capturaram",
+    "inicio": 5.26,
+    "fim": 5.88
+   },
+   {
+    "texto": "o",
+    "inicio": 5.88,
+    "fim": 6
+   },
+   {
+    "texto": "presidente",
+    "inicio": 6,
+    "fim": 6.32
+   },
+   {
+    "texto": "da",
+    "inicio": 6.32,
+    "fim": 6.54
+   },
+   {
+    "texto": "Venezuela,",
+    "inicio": 6.54,
+    "fim": 7.38
+   },
+   {
+    "texto": "Nicolás",
+    "inicio": 7.38,
+    "fim": 7.76
+   },
+   {
+    "texto": "Maduro.",
+    "inicio": 7.76,
+    "fim": 7.98
+   }
+  ]
+ },
+ {
+  "id": "L1",
+  "quem": "narrador",
+  "duracao": 8.882,
+  "palavras": [
+   {
+    "texto": "Washington",
+    "inicio": 0.04,
+    "fim": 0.48
+   },
+   {
+    "texto": "acusava",
+    "inicio": 0.48,
+    "fim": 0.94
+   },
+   {
+    "texto": "Maduro",
+    "inicio": 0.94,
+    "fim": 1.34
+   },
+   {
+    "texto": "de",
+    "inicio": 1.34,
+    "fim": 1.46
+   },
+   {
+    "texto": "comandar",
+    "inicio": 1.46,
+    "fim": 1.86
+   },
+   {
+    "texto": "o",
+    "inicio": 1.86,
+    "fim": 1.94
+   },
+   {
+    "texto": "Cartel",
+    "inicio": 1.92,
+    "fim": 2.24
+   },
+   {
+    "texto": "de",
+    "inicio": 2.24,
+    "fim": 2.34
+   },
+   {
+    "texto": "los",
+    "inicio": 2.538,
+    "fim": 2.749
+   },
+   {
+    "texto": "Soles.",
+    "inicio": 2.749,
+    "fim": 3.336
+   },
+   {
+    "texto": "Em",
+    "inicio": 3.12,
+    "fim": 3.58
+   },
+   {
+    "texto": "agosto",
+    "inicio": 3.58,
+    "fim": 3.92
+   },
+   {
+    "texto": "de",
+    "inicio": 3.92,
+    "fim": 4.04
+   },
+   {
+    "texto": "2025,",
+    "inicio": 4.04,
+    "fim": 5.2
+   },
+   {
+    "texto": "a",
+    "inicio": 5.2,
+    "fim": 5.42
+   },
+   {
+    "texto": "recompensa",
+    "inicio": 5.42,
+    "fim": 5.9
+   },
+   {
+    "texto": "pela",
+    "inicio": 5.9,
+    "fim": 6.08
+   },
+   {
+    "texto": "prisão",
+    "inicio": 6.08,
+    "fim": 6.38
+   },
+   {
+    "texto": "dele",
+    "inicio": 6.38,
+    "fim": 6.58
+   },
+   {
+    "texto": "dobrou:",
+    "inicio": 6.58,
+    "fim": 7.2
+   },
+   {
+    "texto": "cinquenta",
+    "inicio": 7.2,
+    "fim": 7.7
+   },
+   {
+    "texto": "milhões",
+    "inicio": 7.7,
+    "fim": 7.98
+   },
+   {
+    "texto": "de",
+    "inicio": 7.98,
+    "fim": 8.06
+   },
+   {
+    "texto": "dólares.",
+    "inicio": 7.98,
+    "fim": 8.06
+   }
+  ]
+ },
+ {
+  "id": "L2",
+  "quem": "narrador",
+  "duracao": 7.654,
+  "palavras": [
+   {
+    "texto": "Em",
+    "inicio": 0.04,
+    "fim": 0.22
+   },
+   {
+    "texto": "novembro,",
+    "inicio": 0.22,
+    "fim": 0.94
+   },
+   {
+    "texto": "o",
+    "inicio": 0.94,
+    "fim": 1.02
+   },
+   {
+    "texto": "maior",
+    "inicio": 0.96,
+    "fim": 1.2
+   },
+   {
+    "texto": "porta-aviões",
+    "inicio": 1.2,
+    "fim": 1.84
+   },
+   {
+    "texto": "do",
+    "inicio": 1.84,
+    "fim": 1.96
+   },
+   {
+    "texto": "mundo,",
+    "inicio": 1.96,
+    "fim": 2.4
+   },
+   {
+    "texto": "o",
+    "inicio": 2.4,
+    "fim": 2.58
+   },
+   {
+    "texto": "Gerald",
+    "inicio": 2.58,
+    "fim": 2.78
+   },
+   {
+    "texto": "Ford,",
+    "inicio": 2.78,
+    "fim": 3.5
+   },
+   {
+    "texto": "chegou",
+    "inicio": 3.5,
+    "fim": 3.76
+   },
+   {
+    "texto": "ao",
+    "inicio": 3.76,
+    "fim": 3.96
+   },
+   {
+    "texto": "Caribe.",
+    "inicio": 3.96,
+    "fim": 4.72
+   },
+   {
+    "texto": "Barcos",
+    "inicio": 4.72,
+    "fim": 5.08
+   },
+   {
+    "texto": "suspeitos",
+    "inicio": 5.08,
+    "fim": 5.5
+   },
+   {
+    "texto": "de",
+    "inicio": 5.5,
+    "fim": 5.64
+   },
+   {
+    "texto": "tráfico",
+    "inicio": 5.64,
+    "fim": 6.04
+   },
+   {
+    "texto": "já",
+    "inicio": 6.04,
+    "fim": 6.18
+   },
+   {
+    "texto": "vinham",
+    "inicio": 6.18,
+    "fim": 6.4
+   },
+   {
+    "texto": "sendo",
+    "inicio": 6.4,
+    "fim": 6.64
+   },
+   {
+    "texto": "bombardeados.",
+    "inicio": 6.64,
+    "fim": 6.98
+   }
+  ]
+ },
+ {
+  "id": "L3",
+  "quem": "narrador",
+  "duracao": 8.464,
+  "palavras": [
+   {
+    "texto": "Segundo",
+    "inicio": 0.04,
+    "fim": 0.38
+   },
+   {
+    "texto": "reportagens,",
+    "inicio": 0.38,
+    "fim": 1.46
+   },
+   {
+    "texto": "a",
+    "inicio": 1.46,
+    "fim": 1.58
+   },
+   {
+    "texto": "CIA",
+    "inicio": 1.58,
+    "fim": 1.68
+   },
+   {
+    "texto": "mantinha",
+    "inicio": 1.68,
+    "fim": 2.06
+   },
+   {
+    "texto": "uma",
+    "inicio": 2.06,
+    "fim": 2.18
+   },
+   {
+    "texto": "equipe",
+    "inicio": 2.18,
+    "fim": 2.44
+   },
+   {
+    "texto": "secreta",
+    "inicio": 2.44,
+    "fim": 2.92
+   },
+   {
+    "texto": "na",
+    "inicio": 2.92,
+    "fim": 3.02
+   },
+   {
+    "texto": "Venezuela,",
+    "inicio": 3.02,
+    "fim": 3.98
+   },
+   {
+    "texto": "seguindo",
+    "inicio": 3.98,
+    "fim": 4.2
+   },
+   {
+    "texto": "cada",
+    "inicio": 4.2,
+    "fim": 4.54
+   },
+   {
+    "texto": "passo",
+    "inicio": 4.54,
+    "fim": 4.9
+   },
+   {
+    "texto": "de",
+    "inicio": 4.9,
+    "fim": 5.02
+   },
+   {
+    "texto": "Maduro.",
+    "inicio": 5.02,
+    "fim": 5.86
+   },
+   {
+    "texto": "Pouco",
+    "inicio": 5.86,
+    "fim": 6.14
+   },
+   {
+    "texto": "antes",
+    "inicio": 6.14,
+    "fim": 6.36
+   },
+   {
+    "texto": "do",
+    "inicio": 6.36,
+    "fim": 6.48
+   },
+   {
+    "texto": "Natal,",
+    "inicio": 6.48,
+    "fim": 7.18
+   },
+   {
+    "texto": "Trump",
+    "inicio": 7.18,
+    "fim": 7.44
+   },
+   {
+    "texto": "deu",
+    "inicio": 7.44,
+    "fim": 7.6
+   },
+   {
+    "texto": "sinal",
+    "inicio": 7.6,
+    "fim": 7.86
+   },
+   {
+    "texto": "verde.",
+    "inicio": 7.86,
+    "fim": 7.98
+   }
+  ]
+ },
+ {
+  "id": "L4",
+  "quem": "narrador",
+  "duracao": 7.419,
+  "palavras": [
+   {
+    "texto": "Por",
+    "inicio": 0,
+    "fim": 0.18
+   },
+   {
+    "texto": "volta",
+    "inicio": 0.18,
+    "fim": 0.44
+   },
+   {
+    "texto": "das",
+    "inicio": 0.44,
+    "fim": 0.66
+   },
+   {
+    "texto": "duas",
+    "inicio": 0.66,
+    "fim": 0.86
+   },
+   {
+    "texto": "da",
+    "inicio": 0.86,
+    "fim": 1
+   },
+   {
+    "texto": "manhã,",
+    "inicio": 1,
+    "fim": 1.74
+   },
+   {
+    "texto": "mais",
+    "inicio": 1.74,
+    "fim": 1.9
+   },
+   {
+    "texto": "de",
+    "inicio": 1.9,
+    "fim": 2.02
+   },
+   {
+    "texto": "cento",
+    "inicio": 2.078,
+    "fim": 2.392
+   },
+   {
+    "texto": "e",
+    "inicio": 2.392,
+    "fim": 2.513
+   },
+   {
+    "texto": "cinquenta",
+    "inicio": 2.513,
+    "fim": 3.021
+   },
+   {
+    "texto": "aeronaves",
+    "inicio": 2.66,
+    "fim": 3.36
+   },
+   {
+    "texto": "entraram",
+    "inicio": 3.36,
+    "fim": 3.86
+   },
+   {
+    "texto": "em",
+    "inicio": 3.86,
+    "fim": 3.96
+   },
+   {
+    "texto": "ação.",
+    "inicio": 3.96,
+    "fim": 4.68
+   },
+   {
+    "texto": "Explosões",
+    "inicio": 4.68,
+    "fim": 5.22
+   },
+   {
+    "texto": "atingiram",
+    "inicio": 5.22,
+    "fim": 5.68
+   },
+   {
+    "texto": "alvos",
+    "inicio": 5.68,
+    "fim": 6.02
+   },
+   {
+    "texto": "militares",
+    "inicio": 6.02,
+    "fim": 6.54
+   },
+   {
+    "texto": "em",
+    "inicio": 6.54,
+    "fim": 6.68
+   },
+   {
+    "texto": "Caracas.",
+    "inicio": 6.68,
+    "fim": 6.98
+   }
+  ]
+ },
+ {
+  "id": "L5",
+  "quem": "narrador",
+  "duracao": 5.93,
+  "palavras": [
+   {
+    "texto": "Forças",
+    "inicio": 0.08,
+    "fim": 0.54
+   },
+   {
+    "texto": "especiais",
+    "inicio": 0.54,
+    "fim": 1.06
+   },
+   {
+    "texto": "invadiram",
+    "inicio": 1.06,
+    "fim": 1.54
+   },
+   {
+    "texto": "o",
+    "inicio": 1.54,
+    "fim": 1.64
+   },
+   {
+    "texto": "local",
+    "inicio": 1.64,
+    "fim": 1.86
+   },
+   {
+    "texto": "onde",
+    "inicio": 1.86,
+    "fim": 2.06
+   },
+   {
+    "texto": "Maduro",
+    "inicio": 2.06,
+    "fim": 2.42
+   },
+   {
+    "texto": "estava",
+    "inicio": 2.42,
+    "fim": 2.78
+   },
+   {
+    "texto": "e",
+    "inicio": 2.78,
+    "fim": 3.18
+   },
+   {
+    "texto": "o",
+    "inicio": 3.18,
+    "fim": 3.26
+   },
+   {
+    "texto": "capturaram",
+    "inicio": 3.26,
+    "fim": 3.84
+   },
+   {
+    "texto": "junto",
+    "inicio": 3.84,
+    "fim": 4.08
+   },
+   {
+    "texto": "com",
+    "inicio": 4.08,
+    "fim": 4.26
+   },
+   {
+    "texto": "a",
+    "inicio": 4.26,
+    "fim": 4.34
+   },
+   {
+    "texto": "esposa,",
+    "inicio": 4.3,
+    "fim": 4.98
+   },
+   {
+    "texto": "Cilia",
+    "inicio": 4.98,
+    "fim": 5.06
+   },
+   {
+    "texto": "Flores.",
+    "inicio": 4.98,
+    "fim": 5.06
+   }
+  ]
+ },
+ {
+  "id": "L6",
+  "quem": "narrador",
+  "duracao": 4.519,
+  "palavras": [
+   {
+    "texto": "Os",
+    "inicio": 0,
+    "fim": 0.22
+   },
+   {
+    "texto": "dois",
+    "inicio": 0.22,
+    "fim": 0.34
+   },
+   {
+    "texto": "foram",
+    "inicio": 0.34,
+    "fim": 0.56
+   },
+   {
+    "texto": "levados",
+    "inicio": 0.56,
+    "fim": 0.94
+   },
+   {
+    "texto": "para",
+    "inicio": 0.94,
+    "fim": 1.1
+   },
+   {
+    "texto": "o",
+    "inicio": 1.1,
+    "fim": 1.18
+   },
+   {
+    "texto": "navio",
+    "inicio": 1.18,
+    "fim": 1.42
+   },
+   {
+    "texto": "de",
+    "inicio": 1.42,
+    "fim": 1.52
+   },
+   {
+    "texto": "guerra",
+    "inicio": 1.52,
+    "fim": 1.78
+   },
+   {
+    "texto": "Iwo",
+    "inicio": 1.78,
+    "fim": 2.08
+   },
+   {
+    "texto": "Jima",
+    "inicio": 2.08,
+    "fim": 2.34
+   },
+   {
+    "texto": "e,",
+    "inicio": 2.34,
+    "fim": 2.84
+   },
+   {
+    "texto": "de",
+    "inicio": 2.84,
+    "fim": 3.3
+   },
+   {
+    "texto": "lá,",
+    "inicio": 3.3,
+    "fim": 3.48
+   },
+   {
+    "texto": "para",
+    "inicio": 3.48,
+    "fim": 3.9
+   },
+   {
+    "texto": "Nova",
+    "inicio": 3.9,
+    "fim": 3.98
+   },
+   {
+    "texto": "York.",
+    "inicio": 3.98,
+    "fim": 4.06
+   }
+  ]
+ },
+ {
+  "id": "L7",
+  "quem": "narrador",
+  "duracao": 3.109,
+  "palavras": [
+   {
+    "texto": "Pela",
+    "inicio": 0,
+    "fim": 0.22
+   },
+   {
+    "texto": "manhã,",
+    "inicio": 0.22,
+    "fim": 0.72
+   },
+   {
+    "texto": "Trump",
+    "inicio": 0.72,
+    "fim": 1.06
+   },
+   {
+    "texto": "anunciou",
+    "inicio": 1.06,
+    "fim": 1.5
+   },
+   {
+    "texto": "a",
+    "inicio": 1.5,
+    "fim": 1.6
+   },
+   {
+    "texto": "captura",
+    "inicio": 1.6,
+    "fim": 1.94
+   },
+   {
+    "texto": "nas",
+    "inicio": 1.94,
+    "fim": 2.1
+   },
+   {
+    "texto": "redes",
+    "inicio": 2.1,
+    "fim": 2.3
+   },
+   {
+    "texto": "sociais.",
+    "inicio": 2.3,
+    "fim": 2.98
+   }
+  ]
+ },
+ {
+  "id": "L8",
+  "quem": "narrador",
+  "duracao": 8.751,
+  "palavras": [
+   {
+    "texto": "No",
+    "inicio": 0,
+    "fim": 0.24
+   },
+   {
+    "texto": "dia",
+    "inicio": 0.24,
+    "fim": 0.4
+   },
+   {
+    "texto": "5",
+    "inicio": 0.4,
+    "fim": 0.68
+   },
+   {
+    "texto": "de",
+    "inicio": 0.68,
+    "fim": 0.8
+   },
+   {
+    "texto": "janeiro,",
+    "inicio": 0.8,
+    "fim": 1.44
+   },
+   {
+    "texto": "num",
+    "inicio": 1.44,
+    "fim": 1.6
+   },
+   {
+    "texto": "tribunal",
+    "inicio": 1.6,
+    "fim": 1.98
+   },
+   {
+    "texto": "de",
+    "inicio": 1.98,
+    "fim": 2.1
+   },
+   {
+    "texto": "Manhattan,",
+    "inicio": 2.1,
+    "fim": 2.88
+   },
+   {
+    "texto": "Maduro",
+    "inicio": 2.88,
+    "fim": 3.32
+   },
+   {
+    "texto": "se",
+    "inicio": 3.32,
+    "fim": 3.76
+   },
+   {
+    "texto": "declarou",
+    "inicio": 3.76,
+    "fim": 4.14
+   },
+   {
+    "texto": "inocente",
+    "inicio": 4.14,
+    "fim": 4.7
+   },
+   {
+    "texto": "das",
+    "inicio": 4.7,
+    "fim": 4.84
+   },
+   {
+    "texto": "acusações",
+    "inicio": 4.84,
+    "fim": 5.38
+   },
+   {
+    "texto": "de",
+    "inicio": 5.38,
+    "fim": 5.5
+   },
+   {
+    "texto": "narcoterrorismo,",
+    "inicio": 5.5,
+    "fim": 6.64
+   },
+   {
+    "texto": "tráfico",
+    "inicio": 6.64,
+    "fim": 7
+   },
+   {
+    "texto": "de",
+    "inicio": 7,
+    "fim": 7.08
+   },
+   {
+    "texto": "cocaína",
+    "inicio": 7.08,
+    "fim": 7.56
+   },
+   {
+    "texto": "e",
+    "inicio": 7.56,
+    "fim": 7.92
+   },
+   {
+    "texto": "armas.",
+    "inicio": 7.92,
+    "fim": 8.0
+   }
+  ]
+ },
+ {
+  "id": "L9",
+  "quem": "narrador",
+  "duracao": 6.243,
+  "palavras": [
+   {
+    "texto": "Ele",
+    "inicio": 0.02,
+    "fim": 0.22
+   },
+   {
+    "texto": "disse",
+    "inicio": 0.22,
+    "fim": 0.46
+   },
+   {
+    "texto": "ser",
+    "inicio": 0.46,
+    "fim": 0.66
+   },
+   {
+    "texto": "um",
+    "inicio": 0.66,
+    "fim": 0.76
+   },
+   {
+    "texto": "presidente",
+    "inicio": 0.76,
+    "fim": 1.12
+   },
+   {
+    "texto": "sequestrado.",
+    "inicio": 1.12,
+    "fim": 2.24
+   },
+   {
+    "texto": "Na",
+    "inicio": 2.24,
+    "fim": 2.58
+   },
+   {
+    "texto": "Venezuela,",
+    "inicio": 2.58,
+    "fim": 3.44
+   },
+   {
+    "texto": "a",
+    "inicio": 3.44,
+    "fim": 3.54
+   },
+   {
+    "texto": "vice",
+    "inicio": 3.54,
+    "fim": 3.72
+   },
+   {
+    "texto": "Delcy",
+    "inicio": 3.72,
+    "fim": 4.04
+   },
+   {
+    "texto": "Rodríguez",
+    "inicio": 4.04,
+    "fim": 4.5
+   },
+   {
+    "texto": "assumiu",
+    "inicio": 4.5,
+    "fim": 4.88
+   },
+   {
+    "texto": "como",
+    "inicio": 4.88,
+    "fim": 5.06
+   },
+   {
+    "texto": "presidente",
+    "inicio": 5.06,
+    "fim": 5.5
+   },
+   {
+    "texto": "interina.",
+    "inicio": 5.5,
+    "fim": 5.98
+   }
+  ]
+ },
+ {
+  "id": "L10",
+  "quem": "narrador",
+  "duracao": 9.247,
+  "palavras": [
+   {
+    "texto": "Os",
+    "inicio": 0,
+    "fim": 0.2
+   },
+   {
+    "texto": "Estados",
+    "inicio": 0.2,
+    "fim": 0.48
+   },
+   {
+    "texto": "Unidos",
+    "inicio": 0.48,
+    "fim": 0.82
+   },
+   {
+    "texto": "não",
+    "inicio": 0.82,
+    "fim": 1.04
+   },
+   {
+    "texto": "relataram",
+    "inicio": 1.04,
+    "fim": 1.54
+   },
+   {
+    "texto": "mortes",
+    "inicio": 1.54,
+    "fim": 1.9
+   },
+   {
+    "texto": "de",
+    "inicio": 1.9,
+    "fim": 1.98
+   },
+   {
+    "texto": "militares",
+    "inicio": 1.98,
+    "fim": 2.36
+   },
+   {
+    "texto": "americanos.",
+    "inicio": 2.36,
+    "fim": 3.22
+   },
+   {
+    "texto": "Cuba",
+    "inicio": 3.22,
+    "fim": 3.74
+   },
+   {
+    "texto": "afirmou",
+    "inicio": 3.74,
+    "fim": 4.12
+   },
+   {
+    "texto": "ter",
+    "inicio": 4.12,
+    "fim": 4.26
+   },
+   {
+    "texto": "perdido",
+    "inicio": 4.26,
+    "fim": 4.64
+   },
+   {
+    "texto": "trinta",
+    "inicio": 4.67,
+    "fim": 5.019
+   },
+   {
+    "texto": "e",
+    "inicio": 5.019,
+    "fim": 5.135
+   },
+   {
+    "texto": "dois",
+    "inicio": 5.135,
+    "fim": 5.39
+   },
+   {
+    "texto": "agentes.",
+    "inicio": 5.2,
+    "fim": 5.96
+   },
+   {
+    "texto": "E",
+    "inicio": 5.96,
+    "fim": 6.38
+   },
+   {
+    "texto": "a",
+    "inicio": 6.38,
+    "fim": 6.46
+   },
+   {
+    "texto": "legalidade",
+    "inicio": 6.44,
+    "fim": 6.88
+   },
+   {
+    "texto": "da",
+    "inicio": 6.88,
+    "fim": 7
+   },
+   {
+    "texto": "operação",
+    "inicio": 7,
+    "fim": 7.4
+   },
+   {
+    "texto": "segue",
+    "inicio": 7.4,
+    "fim": 7.7
+   },
+   {
+    "texto": "em",
+    "inicio": 7.7,
+    "fim": 7.84
+   },
+   {
+    "texto": "debate",
+    "inicio": 7.84,
+    "fim": 8.2
+   },
+   {
+    "texto": "no",
+    "inicio": 8.2,
+    "fim": 8.36
+   },
+   {
+    "texto": "mundo",
+    "inicio": 8.36,
+    "fim": 8.56
+   },
+   {
+    "texto": "todo.",
+    "inicio": 8.56,
+    "fim": 8.98
+   }
+  ]
+ },
+ {
+  "id": "L11",
+  "quem": "narrador",
+  "duracao": 2.691,
+  "palavras": [
+   {
+    "texto": "E",
+    "inicio": 0,
+    "fim": 0.16
+   },
+   {
+    "texto": "você,",
+    "inicio": 0.16,
+    "fim": 0.68
+   },
+   {
+    "texto": "o",
+    "inicio": 0.68,
+    "fim": 0.88
+   },
+   {
+    "texto": "que",
+    "inicio": 0.88,
+    "fim": 0.98
+   },
+   {
+    "texto": "acha",
+    "inicio": 0.98,
+    "fim": 1.24
+   },
+   {
+    "texto": "dessa",
+    "inicio": 1.24,
+    "fim": 1.44
+   },
+   {
+    "texto": "operação?",
+    "inicio": 1.44,
+    "fim": 1.98
+   },
+   {
+    "texto": "Comenta",
+    "inicio": 1.98,
+    "fim": 2.06
+   },
+   {
+    "texto": "aí!",
+    "inicio": 1.98,
+    "fim": 2.06
+   }
+  ]
+ }
+]

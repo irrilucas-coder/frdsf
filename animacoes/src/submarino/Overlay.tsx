@@ -45,21 +45,48 @@ const paginar = (f: FalaNoTempo): Pagina[] => {
 
 const PAGINAS = TODAS_FALAS.map((f) => ({fala: f, paginas: paginar(f)}));
 
-export const Legendas = () => {
+// Outros vídeos reaproveitam as legendas passando as próprias falas, destaques e cores.
+type OpcoesLegenda = {
+  falas?: FalaNoTempo[];
+  destaques?: RegExp;
+  cores?: Record<string, string>;
+  nomes?: Record<string, string>;
+  corFalando?: string;
+  corDestaque?: string;
+  topo?: string;
+  tamanho?: number;
+};
+const cachePaginas = new WeakMap<FalaNoTempo[], {fala: FalaNoTempo; paginas: Pagina[]}[]>();
+
+export const Legendas = ({
+  falas,
+  destaques = DESTAQUES,
+  cores = COR_PERSONAGEM,
+  nomes = NOME_PERSONAGEM,
+  corFalando = '#ffe14d',
+  corDestaque = '#5ef2ff',
+  topo = '58%',
+  tamanho = 100,
+}: OpcoesLegenda = {}) => {
+  let PAGINAS_USADAS = PAGINAS;
+  if (falas) {
+    if (!cachePaginas.has(falas)) cachePaginas.set(falas, falas.map((f) => ({fala: f, paginas: paginar(f)})));
+    PAGINAS_USADAS = cachePaginas.get(falas)!;
+  }
   const frame = useCurrentFrame();
   const s = frame / FPS;
   const {width} = useVideoConfig();
   let ativa: {fala: FalaNoTempo; pagina: Pagina} | null = null;
-  for (const {fala, paginas} of PAGINAS) {
+  for (const {fala, paginas} of PAGINAS_USADAS) {
     for (const pg of paginas) if (s >= pg.inicio && s < pg.fim) ativa = {fala, pagina: pg};
   }
   if (!ativa) return null;
   const {fala, pagina} = ativa;
   const entra = interpolate(s, [pagina.inicio, pagina.inicio + 0.12], [0.7, 1], {...clamp, easing: Easing.out(Easing.back(2.5))});
-  const corBase = COR_PERSONAGEM[fala.quem] ?? '#fff';
-  const nome = NOME_PERSONAGEM[fala.quem];
+  const corBase = cores[fala.quem] ?? '#fff';
+  const nome = nomes[fala.quem];
   return (
-    <AbsoluteFill style={{justifyContent: 'flex-start', alignItems: 'center', top: '58%'}}>
+    <AbsoluteFill style={{justifyContent: 'flex-start', alignItems: 'center', top: topo}}>
       {nome && (
         <div
           style={{
@@ -86,7 +113,7 @@ export const Legendas = () => {
           gap: '0 34px',
           maxWidth: width - 160,
           fontFamily: FONTE,
-          fontSize: 100,
+          fontSize: tamanho,
           lineHeight: 1.08,
           textAlign: 'center',
           textTransform: 'uppercase',
@@ -97,8 +124,8 @@ export const Legendas = () => {
           const falando = s >= ini && s < fala.inicio + p.fim + 0.05;
           const dita = s >= ini;
           const pop = falando ? interpolate(s, [ini, ini + 0.08, ini + 0.18], [1, 1.12, 1.05], clamp) : 1;
-          const destaque = DESTAQUES.test(p.texto.replace(/[^\wÀ-ú]/g, ''));
-          const cor = falando ? '#ffe14d' : destaque && dita ? '#5ef2ff' : corBase;
+          const destaque = destaques.test(p.texto.replace(/[^\wÀ-ú]/g, ''));
+          const cor = falando ? corFalando : destaque && dita ? corDestaque : corBase;
           return (
             <span
               key={i}
