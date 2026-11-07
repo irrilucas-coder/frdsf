@@ -10,6 +10,11 @@ Atualizado a cada etapa. Se a conversa for interrompida (limite de uso), a próx
     máquinas realistas, visual cinema, música "Monkeys Spinning Monkeys" (crédito CC BY na descrição).
   - Amostras de voz para o usuário escolher: `amostras-voz/` (Matheus, Will, Keren, Raquel).
 
+## Na fila de renderização (depois do elevador)
+- **Freio** (`npx remotion render Freio` → `videos/como-um-carro-consegue-parar.mp4`), narração Matheus conferida.
+- **Fila** (`npx remotion render Fila` → `videos/por-que-a-fila-do-lado-anda-mais-rapido.mp4`), narração Matheus conferida.
+- Roteiros: `roteiro/freio-e-fila.md`. Depois de renderizar: transcrever o áudio final e entregar.
+
 ## Padrões decididos com o usuário
 - Vertical 1080×1920, até 1min30s, legenda **numa linha só** (máx. 3 palavras), sem selo "recriação" nem barra de tempo.
 - Roteiros seguem `roteiro/GUIA_ESTILO.md` (você constrói) e `roteiro/GUIA_ESTILO_2_CURIOSIDADE.md` (curiosidade).
