@@ -14,7 +14,7 @@ Atualizado a cada etapa. Se a conversa for interrompida (limite de uso), a próx
 - Vertical 1080×1920, até 1min30s, legenda **numa linha só** (máx. 3 palavras), sem selo "recriação" nem barra de tempo.
 - Roteiros seguem `roteiro/GUIA_ESTILO.md` (você constrói) e `roteiro/GUIA_ESTILO_2_CURIOSIDADE.md` (curiosidade).
 - Toda narração passa pela conferência automática (transcrição do Vibi) antes e depois de renderizar.
-- Visual: `<Palco cinema>`; mãos segurando objetos com `alvoMaoE/alvoMaoD`; nada atravessando parede/chão.
+- Visual: `<Palco cinema>` completo sempre (o usuário prefere qualidade a velocidade; render ~1h por vídeo); mãos segurando objetos com `alvoMaoE/alvoMaoD`; nada atravessando parede/chão.
 - Efeitos: biblioteca CC0 `public/sfx` (`src/sfx.ts`). Música: `public/musicas` (crédito em `creditos.json`).
 - Voz: `eleven_v3` com marcações de emoção. **Voz padrão do canal (escolhida pelo usuário): Matheus** (`36rVQA1AOIPwpA3Hg1tC`). Alternativas: Will, Keren, Raquel.
 - Vídeos do México em espanhol mexicano: vozes Adriel e Carlos Garza (`scripts/vozes-mx.py`).
