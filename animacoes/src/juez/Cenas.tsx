@@ -33,7 +33,7 @@ const ChuvaDinero = ({s, n = 26}: {s: number; n?: number}) => (
     {Array.from({length: n}, (_, i) => {
       const y = 6 - ((s * (1.6 + (i % 5) * 0.25) + i * 0.37) % 7);
       return (
-        <mesh key={i} position={[((i * 1.37) % 6) - 3, y, ((i * 0.73) % 3) - 1.5]} rotation={[s * 2 + i, s * 1.3 + i, 0]}>
+        <mesh key={i} position={[((i * 1.37) % 6) - 3, y, ((i * 0.73) % 2) - 1.7]} rotation={[s * 2 + i, s * 1.3 + i, 0]}>
           <boxGeometry args={[0.5, 0.02, 0.25]} />
           <meshStandardMaterial color="#6fa85a" side={2} />
         </mesh>

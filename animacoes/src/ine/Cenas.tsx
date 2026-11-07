@@ -15,7 +15,7 @@ const Tarjetas = ({s, inicio, n = 12, ritmo = 0.12}: {s: number; inicio: number;
     {Array.from({length: n}, (_, i) => (
       <TarjetaCongelada
         key={i}
-        posicao={[((i % 4) - 1.5) * 1.95, 2.8 - Math.floor(i / 4) * 1.3, -Math.floor(i / 4) * 0.2]}
+        posicao={[((i % 3) - 1) * 1.8, 3.9 - Math.floor(i / 3) * 1.3, -Math.floor(i / 3) * 0.15]}
         gelo={lerp(s, inicio + i * ritmo, inicio + i * ritmo + 0.4, 0, 1, Easing.out(Easing.back(1.5)))}
       />
     ))}
@@ -28,8 +28,8 @@ export const CenaGancho = () => {
   const fim = duracaoCena('gancho');
   const tExp = quandoDiz('gancho', 'L0', 'expresidenta');
   const planos: Plano[] = [
-    {de: 0, pos: [[0, 1.9, 7.5], [0, 1.9, 6]], olha: [[0, 1.9, 0], [0, 1.9, 0]], fov: 48},
-    {de: tExp - 0.5, pos: [[0, 2, 4], [0, 2, 3.2]], olha: [[0, 1.8, 0], [0, 1.8, 0]], fov: 42},
+    {de: 0, pos: [[0, 1.95, 10], [0, 1.95, 8.6]], olha: [[0, 1.95, 0], [0, 1.95, 0]], fov: 48},
+    {de: tExp - 0.5, pos: [[0, 1.8, 6.2], [0, 1.7, 5.2]], olha: [[0, 1.4, 0], [0, 1.4, 0]], fov: 42},
   ];
   const cam = camNoTempo(planos, s, fim);
   if (cam.plano === 0) {
