@@ -44,11 +44,44 @@ PROJETOS = {
         ("L9", "Então, fica a dica: se tiver fila única, não reclama. Ela é a mais justa."),
         ("L10", "Conhece alguém que vive trocando de fila? [laughs] Manda pra ele."),
     ],
+    # ---- Versões remodeladas para o público do México (voz David, mexicano) ----
+    "freio-mx": [
+        ("L0", "[curious] ¿Cómo hace un carro a cien kilómetros por hora para frenar en unos segundos?"),
+        ("L1", "Si vas a cien y tratas de frenar con el pie en el pavimento, [laughs] te quedas sin suela y sin pie."),
+        ("L2", "Entonces le pegas un bloque de madera a la llanta y jalas una palanca. La fricción frena la rueda. Ese es el freno de zapata."),
+        ("L3", "Pero la madera se calienta, se gasta rapidísimo y, en una bajada, [gasps] se prende."),
+        ("L4", "Entonces pones un tambor de metal en la rueda y empujas dos zapatas contra él, por dentro. Ese es el freno de tambor."),
+        ("L5", "Pero si frenas fuerte varias veces seguidas, el tambor se calienta tanto que el freno pierde fuerza."),
+        ("L6", "Entonces cambias el tambor por un disco que gira con la rueda, y dos balatas lo aprietan por los dos lados. El aire enfría el disco. Ese es el freno de disco."),
+        ("L7", "Pero para apretar las cuatro llantas al mismo tiempo, ocuparías cuatro pies. [laughs]"),
+        ("L8", "Entonces conectas el pedal a unos tubos llenos de líquido. Cuando pisas, el líquido empuja las balatas en las cuatro llantas con la misma fuerza. Ese es el líquido de frenos."),
+        ("L9", "Pero en un frenón de susto, [gasps] la llanta se bloquea, el carro se derrapa y pierdes el control."),
+        ("L10", "Entonces pones un sensor en cada rueda. Cuando empieza a bloquearse, el sistema suelta y aprieta el freno varias veces por segundo. Ese es el ABS."),
+        ("L11", "[excited] ¡Felicidades! Construiste un freno. ¿Conoces a alguien que siempre frena de último momento? [laughs] Mándaselo."),
+    ],
+    "fila-mx": [
+        ("L0", "[curious] ¿Por qué la fila de al lado siempre avanza más rápido?"),
+        ("L1", "No es mala suerte. [laughs] Son matemáticas. Mira."),
+        ("L2", "En el súper hay tres cajas y tú eliges una. Para que tu fila sea la más rápida, tiene que ganarle a las otras dos."),
+        ("L3", "O sea, solo tienes una oportunidad de tres. Dos de cada tres veces, alguna fila de al lado va a avanzar más rápido que la tuya."),
+        ("L4", "Y basta con un imprevisto: el señor que no se sabe el NIP, [sighs] el producto sin código, las monedas que se caen al piso."),
+        ("L5", "Una tardanza así frena toda tu fila, y las otras siguen avanzando."),
+        ("L6", "Y luego está tu cerebro: cuando tu fila avanza, ni lo notas. Pero cuando se detiene, te acuerdas por semanas."),
+        ("L7", "Por eso algunos bancos y aeropuertos usan fila única: todos en una sola fila, y el siguiente pasa a la primera caja libre."),
+        ("L8", "Así un imprevisto no atora solo una fila, y la espera es más justa y más predecible."),
+        ("L9", "Así que ya sabes: si hay fila única, no te quejes. Es la más justa."),
+        ("L10", "¿Conoces a alguien que siempre se cambia de fila? [laughs] Mándaselo."),
+    ],
 }
+IDIOMAS = {"freio-mx": "es", "fila-mx": "es"}
+VOZES_PROJETO = {"freio-mx": "qRUgOhnxGASxirG4fKjv", "fila-mx": "qRUgOhnxGASxirG4fKjv"}  # David - mexicano
 PROJETO = next((a for a in sys.argv[1:] if a in PROJETOS), None)
 if not PROJETO:
-    sys.exit("Uso: python3 scripts/vozes-pt.py freio|fila [L1 ...]")
+    sys.exit("Uso: python3 scripts/vozes-pt.py freio|fila|freio-mx|fila-mx [L1 ...]")
 FALAS = [(fid, "narrador", txt) for fid, txt in PROJETOS[PROJETO]]
+IDIOMA = IDIOMAS.get(PROJETO, "pt")
+if PROJETO in VOZES_PROJETO:
+    VOZES = {"narrador": VOZES_PROJETO[PROJETO]}
 
 chave = os.environ.get("VIBI_API_KEY")
 if not chave:
@@ -146,7 +179,7 @@ def normaliza(texto):
 
 
 def transcreve(arq):
-    tarefa = json.loads(curl("-X", "POST", "-F", "model_id=scribe_v1", "-F", "language_code=pt",
+    tarefa = json.loads(curl("-X", "POST", "-F", "model_id=scribe_v1", "-F", f"language_code={IDIOMA}",
                              "-F", f"file=@{arq}", f"{API}/speech-to-text"))
     for _ in range(90):
         info = json.loads(curl(f"{API}/speech-to-text/{tarefa['task_id']}"))
@@ -214,7 +247,7 @@ def tempos_reais(tokens, stt, comeco, termino):
 
 
 def gera(fid, quem, texto, arq):
-    corpo = json.dumps({"text": texto, "model_id": MODELO, "language_code": "pt",
+    corpo = json.dumps({"text": texto, "model_id": MODELO, "language_code": IDIOMA,
                         "voice_settings": {"stability": 0.5, "similarity_boost": 0.8, "style": 0.35}})
     tarefa = json.loads(curl("-X", "POST", "-H", "Content-Type: application/json", "-d", corpo,
                              f"{API}/text-to-speech/{VOZES[quem]}?output_format=mp3_44100_128"))

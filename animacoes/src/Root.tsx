@@ -4,6 +4,10 @@ import {TesteCinema} from './teste/TesteCinema';
 import {ElevadorVideo} from './elevador/Elevador';
 import {FreioVideo} from './freio/Freio';
 import {FilaVideo} from './fila/Fila';
+import {FreioMxVideo} from './freio-mx/FreioMx';
+import {FPS as FPS_FREIO_MX, TOTAL_FRAMES as FRAMES_FREIO_MX} from './freio-mx/roteiro';
+import {FilaMxVideo} from './fila-mx/FilaMx';
+import {FPS as FPS_FILA_MX, TOTAL_FRAMES as FRAMES_FILA_MX} from './fila-mx/roteiro';
 import {FPS as FPS_FILA, TOTAL_FRAMES as FRAMES_FILA} from './fila/roteiro';
 import {FPS as FPS_FREIO, TOTAL_FRAMES as FRAMES_FREIO} from './freio/roteiro';
 import {FPS as FPS_ELEV, TOTAL_FRAMES as FRAMES_ELEV} from './elevador/roteiro';
@@ -70,6 +74,8 @@ export const RemotionRoot = () => {
         width={1080}
         height={1920}
       />
+      <Composition id="FreioMX" component={FreioMxVideo} durationInFrames={FRAMES_FREIO_MX} fps={FPS_FREIO_MX} width={1080} height={1920} />
+      <Composition id="FilaMX" component={FilaMxVideo} durationInFrames={FRAMES_FILA_MX} fps={FPS_FILA_MX} width={1080} height={1920} />
       <Composition id="Fila" component={FilaVideo} durationInFrames={FRAMES_FILA} fps={FPS_FILA} width={1080} height={1920} />
       <Composition id="Freio" component={FreioVideo} durationInFrames={FRAMES_FREIO} fps={FPS_FREIO} width={1080} height={1920} />
       <Composition id="Elevador" component={ElevadorVideo} durationInFrames={FRAMES_ELEV} fps={FPS_ELEV} width={1080} height={1920} />

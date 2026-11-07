@@ -1,0 +1,1321 @@
+[
+ {
+  "id": "L0",
+  "quem": "narrador",
+  "duracao": 3.579,
+  "palavras": [
+   {
+    "texto": "¿Cómo",
+    "inicio": 0.06,
+    "fim": 0.32
+   },
+   {
+    "texto": "hace",
+    "inicio": 0.32,
+    "fim": 0.58
+   },
+   {
+    "texto": "un",
+    "inicio": 0.58,
+    "fim": 0.7
+   },
+   {
+    "texto": "carro",
+    "inicio": 0.7,
+    "fim": 1
+   },
+   {
+    "texto": "a",
+    "inicio": 1,
+    "fim": 1.16
+   },
+   {
+    "texto": "cien",
+    "inicio": 1.16,
+    "fim": 1.32
+   },
+   {
+    "texto": "kilómetros",
+    "inicio": 1.32,
+    "fim": 1.72
+   },
+   {
+    "texto": "por",
+    "inicio": 1.72,
+    "fim": 1.92
+   },
+   {
+    "texto": "hora",
+    "inicio": 1.92,
+    "fim": 2.12
+   },
+   {
+    "texto": "para",
+    "inicio": 2.12,
+    "fim": 2.32
+   },
+   {
+    "texto": "frenar",
+    "inicio": 2.32,
+    "fim": 2.68
+   },
+   {
+    "texto": "en",
+    "inicio": 2.68,
+    "fim": 2.78
+   },
+   {
+    "texto": "unos",
+    "inicio": 2.78,
+    "fim": 2.94
+   },
+   {
+    "texto": "segundos?",
+    "inicio": 2.94,
+    "fim": 3.02
+   }
+  ]
+ },
+ {
+  "id": "L1",
+  "quem": "narrador",
+  "duracao": 4.65,
+  "palavras": [
+   {
+    "texto": "Si",
+    "inicio": 0,
+    "fim": 0.18
+   },
+   {
+    "texto": "vas",
+    "inicio": 0.149,
+    "fim": 0.34
+   },
+   {
+    "texto": "a",
+    "inicio": 0.34,
+    "fim": 0.446
+   },
+   {
+    "texto": "cien",
+    "inicio": 0.446,
+    "fim": 0.679
+   },
+   {
+    "texto": "y",
+    "inicio": 0.7,
+    "fim": 0.86
+   },
+   {
+    "texto": "tratas",
+    "inicio": 0.86,
+    "fim": 1.14
+   },
+   {
+    "texto": "de",
+    "inicio": 1.14,
+    "fim": 1.24
+   },
+   {
+    "texto": "frenar",
+    "inicio": 1.24,
+    "fim": 1.56
+   },
+   {
+    "texto": "con",
+    "inicio": 1.56,
+    "fim": 1.68
+   },
+   {
+    "texto": "el",
+    "inicio": 1.68,
+    "fim": 1.82
+   },
+   {
+    "texto": "pie",
+    "inicio": 1.82,
+    "fim": 1.94
+   },
+   {
+    "texto": "en",
+    "inicio": 1.94,
+    "fim": 2.04
+   },
+   {
+    "texto": "el",
+    "inicio": 2.04,
+    "fim": 2.12
+   },
+   {
+    "texto": "pavimento,",
+    "inicio": 2.12,
+    "fim": 2.76
+   },
+   {
+    "texto": "te",
+    "inicio": 2.76,
+    "fim": 2.98
+   },
+   {
+    "texto": "quedas",
+    "inicio": 2.98,
+    "fim": 3.26
+   },
+   {
+    "texto": "sin",
+    "inicio": 3.26,
+    "fim": 3.5
+   },
+   {
+    "texto": "suela",
+    "inicio": 3.5,
+    "fim": 3.84
+   },
+   {
+    "texto": "y",
+    "inicio": 3.84,
+    "fim": 3.98
+   },
+   {
+    "texto": "sin",
+    "inicio": 3.98,
+    "fim": 4.06
+   },
+   {
+    "texto": "pie.",
+    "inicio": 3.98,
+    "fim": 4.06
+   }
+  ]
+ },
+ {
+  "id": "L2",
+  "quem": "narrador",
+  "duracao": 7.131,
+  "palavras": [
+   {
+    "texto": "Entonces",
+    "inicio": 0,
+    "fim": 0.42
+   },
+   {
+    "texto": "le",
+    "inicio": 0.42,
+    "fim": 0.6
+   },
+   {
+    "texto": "pegas",
+    "inicio": 0.6,
+    "fim": 0.88
+   },
+   {
+    "texto": "un",
+    "inicio": 0.88,
+    "fim": 1
+   },
+   {
+    "texto": "bloque",
+    "inicio": 1,
+    "fim": 1.24
+   },
+   {
+    "texto": "de",
+    "inicio": 1.24,
+    "fim": 1.36
+   },
+   {
+    "texto": "madera",
+    "inicio": 1.36,
+    "fim": 1.66
+   },
+   {
+    "texto": "a",
+    "inicio": 1.66,
+    "fim": 1.82
+   },
+   {
+    "texto": "la",
+    "inicio": 1.82,
+    "fim": 1.9
+   },
+   {
+    "texto": "llanta",
+    "inicio": 1.9,
+    "fim": 2.24
+   },
+   {
+    "texto": "y",
+    "inicio": 2.24,
+    "fim": 2.46
+   },
+   {
+    "texto": "jalas",
+    "inicio": 2.46,
+    "fim": 2.78
+   },
+   {
+    "texto": "una",
+    "inicio": 2.78,
+    "fim": 2.92
+   },
+   {
+    "texto": "palanca.",
+    "inicio": 2.92,
+    "fim": 3.56
+   },
+   {
+    "texto": "La",
+    "inicio": 3.56,
+    "fim": 3.9
+   },
+   {
+    "texto": "fricción",
+    "inicio": 3.9,
+    "fim": 4.42
+   },
+   {
+    "texto": "frena",
+    "inicio": 4.42,
+    "fim": 4.86
+   },
+   {
+    "texto": "la",
+    "inicio": 4.86,
+    "fim": 4.98
+   },
+   {
+    "texto": "rueda.",
+    "inicio": 4.98,
+    "fim": 5.72
+   },
+   {
+    "texto": "Ese",
+    "inicio": 5.72,
+    "fim": 6.06
+   },
+   {
+    "texto": "es",
+    "inicio": 6.06,
+    "fim": 6.16
+   },
+   {
+    "texto": "el",
+    "inicio": 6.16,
+    "fim": 6.26
+   },
+   {
+    "texto": "freno",
+    "inicio": 6.26,
+    "fim": 6.52
+   },
+   {
+    "texto": "de",
+    "inicio": 6.52,
+    "fim": 6.6
+   },
+   {
+    "texto": "zapata.",
+    "inicio": 6.6,
+    "fim": 6.98
+   }
+  ]
+ },
+ {
+  "id": "L3",
+  "quem": "narrador",
+  "duracao": 5.172,
+  "palavras": [
+   {
+    "texto": "Pero",
+    "inicio": 0,
+    "fim": 0.24
+   },
+   {
+    "texto": "la",
+    "inicio": 0.24,
+    "fim": 0.38
+   },
+   {
+    "texto": "madera",
+    "inicio": 0.38,
+    "fim": 0.64
+   },
+   {
+    "texto": "se",
+    "inicio": 0.64,
+    "fim": 0.8
+   },
+   {
+    "texto": "calienta,",
+    "inicio": 0.8,
+    "fim": 1.54
+   },
+   {
+    "texto": "se",
+    "inicio": 1.54,
+    "fim": 1.7
+   },
+   {
+    "texto": "gasta",
+    "inicio": 1.7,
+    "fim": 1.92
+   },
+   {
+    "texto": "rapidísimo",
+    "inicio": 1.92,
+    "fim": 2.66
+   },
+   {
+    "texto": "y,",
+    "inicio": 2.66,
+    "fim": 3.3
+   },
+   {
+    "texto": "en",
+    "inicio": 3.3,
+    "fim": 3.58
+   },
+   {
+    "texto": "una",
+    "inicio": 3.58,
+    "fim": 3.72
+   },
+   {
+    "texto": "bajada,",
+    "inicio": 3.72,
+    "fim": 4.38
+   },
+   {
+    "texto": "se",
+    "inicio": 4.38,
+    "fim": 4.66
+   },
+   {
+    "texto": "prende.",
+    "inicio": 4.66,
+    "fim": 4.98
+   }
+  ]
+ },
+ {
+  "id": "L4",
+  "quem": "narrador",
+  "duracao": 6.191,
+  "palavras": [
+   {
+    "texto": "Entonces",
+    "inicio": 0.04,
+    "fim": 0.42
+   },
+   {
+    "texto": "pones",
+    "inicio": 0.42,
+    "fim": 0.8
+   },
+   {
+    "texto": "un",
+    "inicio": 0.8,
+    "fim": 0.94
+   },
+   {
+    "texto": "tambor",
+    "inicio": 0.94,
+    "fim": 1.32
+   },
+   {
+    "texto": "de",
+    "inicio": 1.32,
+    "fim": 1.42
+   },
+   {
+    "texto": "metal",
+    "inicio": 1.42,
+    "fim": 1.66
+   },
+   {
+    "texto": "en",
+    "inicio": 1.66,
+    "fim": 1.82
+   },
+   {
+    "texto": "la",
+    "inicio": 1.82,
+    "fim": 1.92
+   },
+   {
+    "texto": "rueda",
+    "inicio": 1.92,
+    "fim": 2.24
+   },
+   {
+    "texto": "y",
+    "inicio": 2.24,
+    "fim": 2.54
+   },
+   {
+    "texto": "empujas",
+    "inicio": 2.54,
+    "fim": 2.98
+   },
+   {
+    "texto": "dos",
+    "inicio": 2.98,
+    "fim": 3.18
+   },
+   {
+    "texto": "zapatas",
+    "inicio": 3.18,
+    "fim": 3.56
+   },
+   {
+    "texto": "contra",
+    "inicio": 3.56,
+    "fim": 3.8
+   },
+   {
+    "texto": "él,",
+    "inicio": 3.8,
+    "fim": 4.2
+   },
+   {
+    "texto": "por",
+    "inicio": 4.2,
+    "fim": 4.38
+   },
+   {
+    "texto": "dentro.",
+    "inicio": 4.38,
+    "fim": 4.86
+   },
+   {
+    "texto": "Ese",
+    "inicio": 4.86,
+    "fim": 5.06
+   },
+   {
+    "texto": "es",
+    "inicio": 5.06,
+    "fim": 5.18
+   },
+   {
+    "texto": "el",
+    "inicio": 5.18,
+    "fim": 5.28
+   },
+   {
+    "texto": "freno",
+    "inicio": 5.28,
+    "fim": 5.56
+   },
+   {
+    "texto": "de",
+    "inicio": 5.56,
+    "fim": 5.64
+   },
+   {
+    "texto": "tambor.",
+    "inicio": 5.64,
+    "fim": 5.98
+   }
+  ]
+ },
+ {
+  "id": "L5",
+  "quem": "narrador",
+  "duracao": 5.329,
+  "palavras": [
+   {
+    "texto": "Pero",
+    "inicio": 0.02,
+    "fim": 0.28
+   },
+   {
+    "texto": "si",
+    "inicio": 0.28,
+    "fim": 0.44
+   },
+   {
+    "texto": "frenas",
+    "inicio": 0.44,
+    "fim": 0.76
+   },
+   {
+    "texto": "fuerte",
+    "inicio": 0.76,
+    "fim": 1.12
+   },
+   {
+    "texto": "varias",
+    "inicio": 1.12,
+    "fim": 1.48
+   },
+   {
+    "texto": "veces",
+    "inicio": 1.48,
+    "fim": 1.74
+   },
+   {
+    "texto": "seguidas,",
+    "inicio": 1.74,
+    "fim": 2.62
+   },
+   {
+    "texto": "el",
+    "inicio": 2.62,
+    "fim": 2.7
+   },
+   {
+    "texto": "tambor",
+    "inicio": 2.66,
+    "fim": 2.98
+   },
+   {
+    "texto": "se",
+    "inicio": 2.98,
+    "fim": 3.12
+   },
+   {
+    "texto": "calienta",
+    "inicio": 3.12,
+    "fim": 3.52
+   },
+   {
+    "texto": "tanto",
+    "inicio": 3.52,
+    "fim": 3.86
+   },
+   {
+    "texto": "que",
+    "inicio": 3.86,
+    "fim": 4.2
+   },
+   {
+    "texto": "el",
+    "inicio": 4.2,
+    "fim": 4.28
+   },
+   {
+    "texto": "freno",
+    "inicio": 4.28,
+    "fim": 4.54
+   },
+   {
+    "texto": "pierde",
+    "inicio": 4.54,
+    "fim": 4.8
+   },
+   {
+    "texto": "fuerza.",
+    "inicio": 4.8,
+    "fim": 4.98
+   }
+  ]
+ },
+ {
+  "id": "L6",
+  "quem": "narrador",
+  "duracao": 8.594,
+  "palavras": [
+   {
+    "texto": "Entonces",
+    "inicio": 0.04,
+    "fim": 0.42
+   },
+   {
+    "texto": "cambias",
+    "inicio": 0.42,
+    "fim": 0.86
+   },
+   {
+    "texto": "el",
+    "inicio": 0.86,
+    "fim": 0.96
+   },
+   {
+    "texto": "tambor",
+    "inicio": 0.96,
+    "fim": 1.28
+   },
+   {
+    "texto": "por",
+    "inicio": 1.28,
+    "fim": 1.44
+   },
+   {
+    "texto": "un",
+    "inicio": 1.44,
+    "fim": 1.56
+   },
+   {
+    "texto": "disco",
+    "inicio": 1.56,
+    "fim": 1.78
+   },
+   {
+    "texto": "que",
+    "inicio": 1.78,
+    "fim": 1.94
+   },
+   {
+    "texto": "gira",
+    "inicio": 1.94,
+    "fim": 2.16
+   },
+   {
+    "texto": "con",
+    "inicio": 2.16,
+    "fim": 2.3
+   },
+   {
+    "texto": "la",
+    "inicio": 2.3,
+    "fim": 2.4
+   },
+   {
+    "texto": "rueda,",
+    "inicio": 2.4,
+    "fim": 2.68
+   },
+   {
+    "texto": "y",
+    "inicio": 2.68,
+    "fim": 3.2
+   },
+   {
+    "texto": "dos",
+    "inicio": 3.2,
+    "fim": 3.38
+   },
+   {
+    "texto": "balatas",
+    "inicio": 3.38,
+    "fim": 3.76
+   },
+   {
+    "texto": "lo",
+    "inicio": 3.76,
+    "fim": 3.92
+   },
+   {
+    "texto": "aprietan",
+    "inicio": 3.92,
+    "fim": 4.32
+   },
+   {
+    "texto": "por",
+    "inicio": 4.32,
+    "fim": 4.48
+   },
+   {
+    "texto": "los",
+    "inicio": 4.48,
+    "fim": 4.62
+   },
+   {
+    "texto": "dos",
+    "inicio": 4.62,
+    "fim": 4.72
+   },
+   {
+    "texto": "lados.",
+    "inicio": 4.72,
+    "fim": 5.36
+   },
+   {
+    "texto": "El",
+    "inicio": 5.36,
+    "fim": 5.68
+   },
+   {
+    "texto": "aire",
+    "inicio": 5.68,
+    "fim": 5.9
+   },
+   {
+    "texto": "enfría",
+    "inicio": 5.9,
+    "fim": 6.32
+   },
+   {
+    "texto": "el",
+    "inicio": 6.32,
+    "fim": 6.44
+   },
+   {
+    "texto": "disco.",
+    "inicio": 6.44,
+    "fim": 7.22
+   },
+   {
+    "texto": "Ese",
+    "inicio": 7.22,
+    "fim": 7.5
+   },
+   {
+    "texto": "es",
+    "inicio": 7.5,
+    "fim": 7.6
+   },
+   {
+    "texto": "el",
+    "inicio": 7.6,
+    "fim": 7.7
+   },
+   {
+    "texto": "freno",
+    "inicio": 7.7,
+    "fim": 7.98
+   },
+   {
+    "texto": "de",
+    "inicio": 7.98,
+    "fim": 8.06
+   },
+   {
+    "texto": "disco.",
+    "inicio": 7.98,
+    "fim": 8.06
+   }
+  ]
+ },
+ {
+  "id": "L7",
+  "quem": "narrador",
+  "duracao": 4.441,
+  "palavras": [
+   {
+    "texto": "Pero",
+    "inicio": 0,
+    "fim": 0.26
+   },
+   {
+    "texto": "para",
+    "inicio": 0.26,
+    "fim": 0.5
+   },
+   {
+    "texto": "apretar",
+    "inicio": 0.5,
+    "fim": 0.88
+   },
+   {
+    "texto": "las",
+    "inicio": 0.88,
+    "fim": 1.04
+   },
+   {
+    "texto": "cuatro",
+    "inicio": 1.04,
+    "fim": 1.34
+   },
+   {
+    "texto": "llantas",
+    "inicio": 1.34,
+    "fim": 1.7
+   },
+   {
+    "texto": "al",
+    "inicio": 1.7,
+    "fim": 1.88
+   },
+   {
+    "texto": "mismo",
+    "inicio": 1.88,
+    "fim": 2.08
+   },
+   {
+    "texto": "tiempo,",
+    "inicio": 2.08,
+    "fim": 2.66
+   },
+   {
+    "texto": "ocuparías",
+    "inicio": 2.66,
+    "fim": 3.36
+   },
+   {
+    "texto": "cuatro",
+    "inicio": 3.36,
+    "fim": 3.72
+   },
+   {
+    "texto": "pies.",
+    "inicio": 3.72,
+    "fim": 3.98
+   }
+  ]
+ },
+ {
+  "id": "L8",
+  "quem": "narrador",
+  "duracao": 9.3,
+  "palavras": [
+   {
+    "texto": "Entonces",
+    "inicio": 0.04,
+    "fim": 0.44
+   },
+   {
+    "texto": "conectas",
+    "inicio": 0.44,
+    "fim": 0.96
+   },
+   {
+    "texto": "el",
+    "inicio": 0.96,
+    "fim": 1.08
+   },
+   {
+    "texto": "pedal",
+    "inicio": 1.08,
+    "fim": 1.32
+   },
+   {
+    "texto": "a",
+    "inicio": 1.32,
+    "fim": 1.54
+   },
+   {
+    "texto": "unos",
+    "inicio": 1.54,
+    "fim": 1.72
+   },
+   {
+    "texto": "tubos",
+    "inicio": 1.72,
+    "fim": 2.08
+   },
+   {
+    "texto": "llenos",
+    "inicio": 2.08,
+    "fim": 2.46
+   },
+   {
+    "texto": "de",
+    "inicio": 2.46,
+    "fim": 2.58
+   },
+   {
+    "texto": "líquido.",
+    "inicio": 2.58,
+    "fim": 3.14
+   },
+   {
+    "texto": "Cuando",
+    "inicio": 3.14,
+    "fim": 3.46
+   },
+   {
+    "texto": "pisas,",
+    "inicio": 3.46,
+    "fim": 4.34
+   },
+   {
+    "texto": "el",
+    "inicio": 4.34,
+    "fim": 4.42
+   },
+   {
+    "texto": "líquido",
+    "inicio": 4.42,
+    "fim": 4.72
+   },
+   {
+    "texto": "empuja",
+    "inicio": 4.72,
+    "fim": 5.12
+   },
+   {
+    "texto": "las",
+    "inicio": 5.12,
+    "fim": 5.26
+   },
+   {
+    "texto": "balatas",
+    "inicio": 5.26,
+    "fim": 5.62
+   },
+   {
+    "texto": "en",
+    "inicio": 5.62,
+    "fim": 5.74
+   },
+   {
+    "texto": "las",
+    "inicio": 5.74,
+    "fim": 5.86
+   },
+   {
+    "texto": "cuatro",
+    "inicio": 5.86,
+    "fim": 6.18
+   },
+   {
+    "texto": "llantas",
+    "inicio": 6.18,
+    "fim": 6.54
+   },
+   {
+    "texto": "con",
+    "inicio": 6.54,
+    "fim": 6.74
+   },
+   {
+    "texto": "la",
+    "inicio": 6.74,
+    "fim": 6.84
+   },
+   {
+    "texto": "misma",
+    "inicio": 6.84,
+    "fim": 7.02
+   },
+   {
+    "texto": "fuerza.",
+    "inicio": 7.02,
+    "fim": 7.7
+   },
+   {
+    "texto": "Ese",
+    "inicio": 7.7,
+    "fim": 8
+   },
+   {
+    "texto": "es",
+    "inicio": 8,
+    "fim": 8.1
+   },
+   {
+    "texto": "el",
+    "inicio": 8.1,
+    "fim": 8.22
+   },
+   {
+    "texto": "líquido",
+    "inicio": 8.22,
+    "fim": 8.48
+   },
+   {
+    "texto": "de",
+    "inicio": 8.48,
+    "fim": 8.62
+   },
+   {
+    "texto": "frenos.",
+    "inicio": 8.62,
+    "fim": 8.98
+   }
+  ]
+ },
+ {
+  "id": "L9",
+  "quem": "narrador",
+  "duracao": 5.329,
+  "palavras": [
+   {
+    "texto": "Pero",
+    "inicio": 0,
+    "fim": 0.26
+   },
+   {
+    "texto": "en",
+    "inicio": 0.26,
+    "fim": 0.38
+   },
+   {
+    "texto": "un",
+    "inicio": 0.38,
+    "fim": 0.46
+   },
+   {
+    "texto": "frenón",
+    "inicio": 0.46,
+    "fim": 0.76
+   },
+   {
+    "texto": "de",
+    "inicio": 0.76,
+    "fim": 0.9
+   },
+   {
+    "texto": "susto,",
+    "inicio": 0.9,
+    "fim": 1.5
+   },
+   {
+    "texto": "la",
+    "inicio": 1.5,
+    "fim": 1.76
+   },
+   {
+    "texto": "llanta",
+    "inicio": 1.76,
+    "fim": 2.04
+   },
+   {
+    "texto": "se",
+    "inicio": 2.04,
+    "fim": 2.2
+   },
+   {
+    "texto": "bloquea,",
+    "inicio": 2.2,
+    "fim": 3.04
+   },
+   {
+    "texto": "el",
+    "inicio": 3.04,
+    "fim": 3.14
+   },
+   {
+    "texto": "carro",
+    "inicio": 3.14,
+    "fim": 3.42
+   },
+   {
+    "texto": "se",
+    "inicio": 3.42,
+    "fim": 3.58
+   },
+   {
+    "texto": "derrapa",
+    "inicio": 3.58,
+    "fim": 4.06
+   },
+   {
+    "texto": "y",
+    "inicio": 4.06,
+    "fim": 4.24
+   },
+   {
+    "texto": "pierdes",
+    "inicio": 4.24,
+    "fim": 4.64
+   },
+   {
+    "texto": "el",
+    "inicio": 4.64,
+    "fim": 4.74
+   },
+   {
+    "texto": "control.",
+    "inicio": 4.74,
+    "fim": 4.98
+   }
+  ]
+ },
+ {
+  "id": "L10",
+  "quem": "narrador",
+  "duracao": 7.576,
+  "palavras": [
+   {
+    "texto": "Entonces",
+    "inicio": 0.04,
+    "fim": 0.44
+   },
+   {
+    "texto": "pones",
+    "inicio": 0.44,
+    "fim": 0.82
+   },
+   {
+    "texto": "un",
+    "inicio": 0.82,
+    "fim": 0.96
+   },
+   {
+    "texto": "sensor",
+    "inicio": 0.96,
+    "fim": 1.32
+   },
+   {
+    "texto": "en",
+    "inicio": 1.32,
+    "fim": 1.48
+   },
+   {
+    "texto": "cada",
+    "inicio": 1.48,
+    "fim": 1.68
+   },
+   {
+    "texto": "rueda.",
+    "inicio": 1.68,
+    "fim": 2.16
+   },
+   {
+    "texto": "Cuando",
+    "inicio": 2.16,
+    "fim": 2.42
+   },
+   {
+    "texto": "empieza",
+    "inicio": 2.42,
+    "fim": 2.68
+   },
+   {
+    "texto": "a",
+    "inicio": 2.68,
+    "fim": 2.78
+   },
+   {
+    "texto": "bloquearse,",
+    "inicio": 2.78,
+    "fim": 3.68
+   },
+   {
+    "texto": "el",
+    "inicio": 3.68,
+    "fim": 3.76
+   },
+   {
+    "texto": "sistema",
+    "inicio": 3.74,
+    "fim": 4.04
+   },
+   {
+    "texto": "suelta",
+    "inicio": 4.04,
+    "fim": 4.5
+   },
+   {
+    "texto": "y",
+    "inicio": 4.5,
+    "fim": 4.6
+   },
+   {
+    "texto": "aprieta",
+    "inicio": 4.6,
+    "fim": 4.9
+   },
+   {
+    "texto": "el",
+    "inicio": 4.9,
+    "fim": 5
+   },
+   {
+    "texto": "freno",
+    "inicio": 5,
+    "fim": 5.28
+   },
+   {
+    "texto": "varias",
+    "inicio": 5.28,
+    "fim": 5.56
+   },
+   {
+    "texto": "veces",
+    "inicio": 5.56,
+    "fim": 5.88
+   },
+   {
+    "texto": "por",
+    "inicio": 5.88,
+    "fim": 6.06
+   },
+   {
+    "texto": "segundo.",
+    "inicio": 6.06,
+    "fim": 6.64
+   },
+   {
+    "texto": "Ese",
+    "inicio": 6.64,
+    "fim": 6.86
+   },
+   {
+    "texto": "es",
+    "inicio": 6.86,
+    "fim": 6.98
+   },
+   {
+    "texto": "el",
+    "inicio": 6.98,
+    "fim": 7.06
+   },
+   {
+    "texto": "ABS.",
+    "inicio": 6.98,
+    "fim": 7.06
+   }
+  ]
+ },
+ {
+  "id": "L11",
+  "quem": "narrador",
+  "duracao": 5.538,
+  "palavras": [
+   {
+    "texto": "¡Felicidades!",
+    "inicio": 0.1,
+    "fim": 0.96
+   },
+   {
+    "texto": "Construiste",
+    "inicio": 0.96,
+    "fim": 1.48
+   },
+   {
+    "texto": "un",
+    "inicio": 1.48,
+    "fim": 1.62
+   },
+   {
+    "texto": "freno.",
+    "inicio": 1.62,
+    "fim": 2.24
+   },
+   {
+    "texto": "¿Conoces",
+    "inicio": 2.24,
+    "fim": 2.62
+   },
+   {
+    "texto": "a",
+    "inicio": 2.62,
+    "fim": 2.7
+   },
+   {
+    "texto": "alguien",
+    "inicio": 2.7,
+    "fim": 2.88
+   },
+   {
+    "texto": "que",
+    "inicio": 2.88,
+    "fim": 3
+   },
+   {
+    "texto": "siempre",
+    "inicio": 3,
+    "fim": 3.36
+   },
+   {
+    "texto": "frena",
+    "inicio": 3.36,
+    "fim": 3.7
+   },
+   {
+    "texto": "de",
+    "inicio": 3.7,
+    "fim": 3.8
+   },
+   {
+    "texto": "último",
+    "inicio": 3.8,
+    "fim": 4.02
+   },
+   {
+    "texto": "momento?",
+    "inicio": 4.02,
+    "fim": 4.62
+   },
+   {
+    "texto": "Mándaselo.",
+    "inicio": 4.62,
+    "fim": 4.98
+   }
+  ]
+ }
+]

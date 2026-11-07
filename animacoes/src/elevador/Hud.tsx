@@ -106,7 +106,7 @@ export const Pergunta = ({dur, linhas = [['POR QUE O ELEVADOR'], ['NÃO DESPENCA
 };
 
 // Botão "MANDA PRA ELE"
-export const Manda = ({inicio, dur}: {inicio: number; dur: number}) => {
+export const Manda = ({inicio, dur, texto = '📲 MANDA PRA ELE'}: {inicio: number; dur: number; texto?: string}) => {
   const {visivel, k, s} = useJanela(inicio, dur);
   if (!visivel) return null;
   return (
@@ -124,7 +124,7 @@ export const Manda = ({inicio, dur}: {inicio: number; dur: number}) => {
           boxShadow: '0 12px 0 #111',
         }}
       >
-        📲 MANDA PRA ELE
+        {texto}
       </div>
     </AbsoluteFill>
   );
