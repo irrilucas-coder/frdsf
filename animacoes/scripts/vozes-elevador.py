@@ -165,8 +165,8 @@ def confere(tela_texto, stt, falado_texto=""):
     problemas = min(candidatos, key=len)
     repetidas = [w for i, w in enumerate(ouvido[1:], 1) if w == ouvido[i - 1] and len(w) > 2]
     # número dito duas vezes seguidas (o erro do vídeo do submarino)
-    numeros = re.findall(r"\d+", stt["text"])
-    dobrados = [n for i, n in enumerate(numeros[1:], 1) if n == numeros[i - 1]]
+    # número dito duas vezes colado (ex.: "1900-1900" ou "1900 1900"), não números iguais em lugares diferentes
+    dobrados = re.findall(r"\b(\d+)[\s-]+\1\b", stt["text"])
     if repetidas:
         problemas.append(f"palavra repetida: {repetidas}")
     if dobrados:
