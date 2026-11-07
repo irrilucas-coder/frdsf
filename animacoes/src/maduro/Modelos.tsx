@@ -210,7 +210,7 @@ export const Complexo = ({posicao = [0, 0, 0] as V3}) => (
 );
 
 // Tribunal
-export const Tribunal = () => (
+export const Tribunal = ({bandeira = 'eua' as 'eua' | 'brasil'}) => (
   <group>
     <mesh position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
       <planeGeometry args={[30, 30]} />
@@ -228,13 +228,29 @@ export const Tribunal = () => (
       <cylinderGeometry args={[0.9, 0.9, 0.1, 24]} />
       <meshStandardMaterial color="#c9a227" metalness={0.8} roughness={0.3} />
     </mesh>
-    {/* Bandeira dos EUA estilizada */}
+    {/* Bandeira estilizada */}
     <group position={[-4, 3.2, -4.6]}>
       <B tam={[0.08, 4, 0.08]} pos={[0, -1.2, 0]} cor="#c9a227" metal={0.8} />
-      {Array.from({length: 7}, (_, i) => (
-        <B key={i} tam={[1.6, 0.16, 0.03]} pos={[0.85, 0.5 - i * 0.16, 0]} cor={i % 2 ? '#f2f2f2' : '#b22234'} />
-      ))}
-      <B tam={[0.65, 0.48, 0.04]} pos={[0.37, 0.34, 0.01]} cor="#3c3b6e" />
+      {bandeira === 'eua' ? (
+        <>
+          {Array.from({length: 7}, (_, i) => (
+            <B key={i} tam={[1.6, 0.16, 0.03]} pos={[0.85, 0.5 - i * 0.16, 0]} cor={i % 2 ? '#f2f2f2' : '#b22234'} />
+          ))}
+          <B tam={[0.65, 0.48, 0.04]} pos={[0.37, 0.34, 0.01]} cor="#3c3b6e" />
+        </>
+      ) : (
+        <>
+          <B tam={[1.6, 1.1, 0.03]} pos={[0.85, 0.05, 0]} cor="#009c3b" />
+          <mesh position={[0.85, 0.05, 0.02]} rotation={[0, 0, Math.PI / 4]}>
+            <boxGeometry args={[0.62, 0.62, 0.02]} />
+            <meshStandardMaterial color="#ffdf00" />
+          </mesh>
+          <mesh position={[0.85, 0.05, 0.04]} rotation={[Math.PI / 2, 0, 0]}>
+            <cylinderGeometry args={[0.24, 0.24, 0.02, 20]} />
+            <meshStandardMaterial color="#002776" />
+          </mesh>
+        </>
+      )}
     </group>
     {/* Mesa da defesa */}
     <B tam={[3, 0.9, 1.2]} pos={[0, 0.45, 1.2]} cor="#7a5232" />

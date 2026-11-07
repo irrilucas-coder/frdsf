@@ -63,7 +63,7 @@ export const Carimbo = ({inicio, dur, texto}: {inicio: number; dur: number; text
 };
 
 // Faixa "URGENTE" do gancho
-export const Urgente = ({inicio, dur}: {inicio: number; dur: number}) => {
+export const Urgente = ({inicio, dur, selo = 'URGENTE', linhas = ['MADURO É', 'CAPTURADO']}: {inicio: number; dur: number; selo?: string; linhas?: string[]}) => {
   const {visivel, k, s} = useJanela(inicio, dur);
   if (!visivel) return null;
   return (
@@ -81,12 +81,12 @@ export const Urgente = ({inicio, dur}: {inicio: number; dur: number}) => {
             opacity: Math.floor(s * 3) % 2 === 0 ? 1 : 0.85,
           }}
         >
-          URGENTE
+          {selo}
         </div>
         <div style={{fontFamily: FONTE, fontSize: 92, color: '#fff', marginTop: 16, lineHeight: 1.05, textShadow: '0 6px 20px #000'}}>
-          MADURO É
-          <br />
-          CAPTURADO
+          {linhas.map((l, i) => (
+            <div key={i}>{l}</div>
+          ))}
         </div>
       </div>
     </AbsoluteFill>
@@ -164,12 +164,12 @@ export const Celular = ({inicio, dur}: {inicio: number; dur: number}) => {
 };
 
 // Faixa de fontes no final
-export const Fontes = ({inicio, dur}: {inicio: number; dur: number}) => {
+export const Fontes = ({inicio, dur, texto = 'Fontes: CNN, CNN Brasil, Parlamento Britânico, Congresso dos EUA, Jurist. Recriação ilustrativa.'}: {inicio: number; dur: number; texto?: string}) => {
   const {visivel, k} = useJanela(inicio, dur);
   if (!visivel) return null;
   return (
     <div style={{position: 'absolute', bottom: 70, left: 60, right: 60, opacity: k * 0.9, fontFamily: FONTE, fontSize: 28, color: '#ddd', textAlign: 'center'}}>
-      Fontes: CNN, CNN Brasil, Parlamento Britânico, Congresso dos EUA, Jurist. Recriação ilustrativa.
+      {texto}
     </div>
   );
 };

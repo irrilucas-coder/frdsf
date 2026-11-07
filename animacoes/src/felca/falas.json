@@ -1,0 +1,1361 @@
+[
+ {
+  "id": "L0",
+  "quem": "narrador",
+  "duracao": 6.687,
+  "palavras": [
+   {
+    "texto": "Um",
+    "inicio": 0.02,
+    "fim": 0.2
+   },
+   {
+    "texto": "vídeo",
+    "inicio": 0.2,
+    "fim": 0.46
+   },
+   {
+    "texto": "de",
+    "inicio": 0.46,
+    "fim": 0.58
+   },
+   {
+    "texto": "cinquenta",
+    "inicio": 0.58,
+    "fim": 0.94
+   },
+   {
+    "texto": "minutos",
+    "inicio": 0.94,
+    "fim": 1.26
+   },
+   {
+    "texto": "no",
+    "inicio": 1.26,
+    "fim": 1.44
+   },
+   {
+    "texto": "YouTube",
+    "inicio": 1.44,
+    "fim": 1.76
+   },
+   {
+    "texto": "mudou",
+    "inicio": 1.76,
+    "fim": 2.38
+   },
+   {
+    "texto": "uma",
+    "inicio": 2.38,
+    "fim": 2.52
+   },
+   {
+    "texto": "lei",
+    "inicio": 2.52,
+    "fim": 2.7
+   },
+   {
+    "texto": "no",
+    "inicio": 2.7,
+    "fim": 2.8
+   },
+   {
+    "texto": "Brasil",
+    "inicio": 2.8,
+    "fim": 3.12
+   },
+   {
+    "texto": "e",
+    "inicio": 3.12,
+    "fim": 3.58
+   },
+   {
+    "texto": "levou",
+    "inicio": 3.58,
+    "fim": 3.8
+   },
+   {
+    "texto": "um",
+    "inicio": 3.8,
+    "fim": 3.9
+   },
+   {
+    "texto": "dos",
+    "inicio": 3.9,
+    "fim": 4.02
+   },
+   {
+    "texto": "influenciadores",
+    "inicio": 4.02,
+    "fim": 4.66
+   },
+   {
+    "texto": "mais",
+    "inicio": 4.66,
+    "fim": 4.96
+   },
+   {
+    "texto": "famosos",
+    "inicio": 4.96,
+    "fim": 5.42
+   },
+   {
+    "texto": "do",
+    "inicio": 5.42,
+    "fim": 5.56
+   },
+   {
+    "texto": "país",
+    "inicio": 5.56,
+    "fim": 5.82
+   },
+   {
+    "texto": "para",
+    "inicio": 5.82,
+    "fim": 5.98
+   },
+   {
+    "texto": "a",
+    "inicio": 5.98,
+    "fim": 6.06
+   },
+   {
+    "texto": "prisão.",
+    "inicio": 5.98,
+    "fim": 6.06
+   }
+  ]
+ },
+ {
+  "id": "L1",
+  "quem": "narrador",
+  "duracao": 8.673,
+  "palavras": [
+   {
+    "texto": "Em",
+    "inicio": 0.02,
+    "fim": 0.32
+   },
+   {
+    "texto": "6",
+    "inicio": 0.32,
+    "fim": 0.54
+   },
+   {
+    "texto": "de",
+    "inicio": 0.54,
+    "fim": 0.66
+   },
+   {
+    "texto": "agosto",
+    "inicio": 0.66,
+    "fim": 0.98
+   },
+   {
+    "texto": "de",
+    "inicio": 0.98,
+    "fim": 1.12
+   },
+   {
+    "texto": "2025,",
+    "inicio": 1.12,
+    "fim": 2.42
+   },
+   {
+    "texto": "o",
+    "inicio": 2.42,
+    "fim": 2.5
+   },
+   {
+    "texto": "youtuber",
+    "inicio": 2.46,
+    "fim": 2.74
+   },
+   {
+    "texto": "Felca",
+    "inicio": 2.74,
+    "fim": 3.12
+   },
+   {
+    "texto": "publicou",
+    "inicio": 3.12,
+    "fim": 3.5
+   },
+   {
+    "texto": "Adultização,",
+    "inicio": 3.5,
+    "fim": 4.42
+   },
+   {
+    "texto": "um",
+    "inicio": 4.42,
+    "fim": 4.74
+   },
+   {
+    "texto": "vídeo",
+    "inicio": 4.74,
+    "fim": 4.98
+   },
+   {
+    "texto": "sobre",
+    "inicio": 4.98,
+    "fim": 5.22
+   },
+   {
+    "texto": "a",
+    "inicio": 5.22,
+    "fim": 5.3
+   },
+   {
+    "texto": "exposição",
+    "inicio": 5.3,
+    "fim": 5.74
+   },
+   {
+    "texto": "sexualizada",
+    "inicio": 5.74,
+    "fim": 6.36
+   },
+   {
+    "texto": "de",
+    "inicio": 6.36,
+    "fim": 6.48
+   },
+   {
+    "texto": "crianças",
+    "inicio": 6.48,
+    "fim": 6.84
+   },
+   {
+    "texto": "e",
+    "inicio": 6.84,
+    "fim": 7.02
+   },
+   {
+    "texto": "adolescentes",
+    "inicio": 7.02,
+    "fim": 7.52
+   },
+   {
+    "texto": "nas",
+    "inicio": 7.52,
+    "fim": 7.66
+   },
+   {
+    "texto": "redes",
+    "inicio": 7.66,
+    "fim": 7.9
+   },
+   {
+    "texto": "sociais.",
+    "inicio": 7.9,
+    "fim": 7.98
+   }
+  ]
+ },
+ {
+  "id": "L2",
+  "quem": "narrador",
+  "duracao": 7.184,
+  "palavras": [
+   {
+    "texto": "Ele",
+    "inicio": 0,
+    "fim": 0.22
+   },
+   {
+    "texto": "mostrou",
+    "inicio": 0.22,
+    "fim": 0.54
+   },
+   {
+    "texto": "como",
+    "inicio": 0.54,
+    "fim": 0.72
+   },
+   {
+    "texto": "os",
+    "inicio": 0.72,
+    "fim": 0.84
+   },
+   {
+    "texto": "algoritmos",
+    "inicio": 0.84,
+    "fim": 1.36
+   },
+   {
+    "texto": "espalham",
+    "inicio": 1.36,
+    "fim": 1.84
+   },
+   {
+    "texto": "esse",
+    "inicio": 1.84,
+    "fim": 2.02
+   },
+   {
+    "texto": "tipo",
+    "inicio": 2.02,
+    "fim": 2.2
+   },
+   {
+    "texto": "de",
+    "inicio": 2.2,
+    "fim": 2.32
+   },
+   {
+    "texto": "conteúdo",
+    "inicio": 2.32,
+    "fim": 2.7
+   },
+   {
+    "texto": "e",
+    "inicio": 2.7,
+    "fim": 3.08
+   },
+   {
+    "texto": "citou",
+    "inicio": 3.08,
+    "fim": 3.4
+   },
+   {
+    "texto": "nomes.",
+    "inicio": 3.4,
+    "fim": 3.88
+   },
+   {
+    "texto": "Um",
+    "inicio": 3.88,
+    "fim": 4.16
+   },
+   {
+    "texto": "deles:",
+    "inicio": 4.16,
+    "fim": 4.68
+   },
+   {
+    "texto": "o",
+    "inicio": 4.68,
+    "fim": 4.96
+   },
+   {
+    "texto": "influenciador",
+    "inicio": 4.96,
+    "fim": 5.52
+   },
+   {
+    "texto": "paraibano",
+    "inicio": 5.52,
+    "fim": 6.08
+   },
+   {
+    "texto": "Hytalo",
+    "inicio": 6.08,
+    "fim": 6.52
+   },
+   {
+    "texto": "Santos.",
+    "inicio": 6.52,
+    "fim": 6.98
+   }
+  ]
+ },
+ {
+  "id": "L3",
+  "quem": "narrador",
+  "duracao": 6.322,
+  "palavras": [
+   {
+    "texto": "Entre",
+    "inicio": 0.12,
+    "fim": 0.4
+   },
+   {
+    "texto": "os",
+    "inicio": 0.4,
+    "fim": 0.54
+   },
+   {
+    "texto": "casos",
+    "inicio": 0.54,
+    "fim": 0.84
+   },
+   {
+    "texto": "citados,",
+    "inicio": 0.84,
+    "fim": 1.58
+   },
+   {
+    "texto": "estava",
+    "inicio": 1.58,
+    "fim": 2
+   },
+   {
+    "texto": "o",
+    "inicio": 2,
+    "fim": 2.08
+   },
+   {
+    "texto": "de",
+    "inicio": 2.08,
+    "fim": 2.16
+   },
+   {
+    "texto": "uma",
+    "inicio": 2.14,
+    "fim": 2.24
+   },
+   {
+    "texto": "adolescente",
+    "inicio": 2.24,
+    "fim": 2.76
+   },
+   {
+    "texto": "de",
+    "inicio": 2.76,
+    "fim": 2.9
+   },
+   {
+    "texto": "dezessete",
+    "inicio": 2.9,
+    "fim": 3.44
+   },
+   {
+    "texto": "anos,",
+    "inicio": 3.44,
+    "fim": 4.06
+   },
+   {
+    "texto": "que",
+    "inicio": 4.06,
+    "fim": 4.3
+   },
+   {
+    "texto": "aparecia",
+    "inicio": 4.3,
+    "fim": 4.74
+   },
+   {
+    "texto": "com",
+    "inicio": 4.74,
+    "fim": 4.86
+   },
+   {
+    "texto": "frequência",
+    "inicio": 4.86,
+    "fim": 5.38
+   },
+   {
+    "texto": "nos",
+    "inicio": 5.38,
+    "fim": 5.56
+   },
+   {
+    "texto": "vídeos",
+    "inicio": 5.56,
+    "fim": 5.8
+   },
+   {
+    "texto": "dele.",
+    "inicio": 5.8,
+    "fim": 5.98
+   }
+  ]
+ },
+ {
+  "id": "L4",
+  "quem": "narrador",
+  "duracao": 6.531,
+  "palavras": [
+   {
+    "texto": "O",
+    "inicio": 0,
+    "fim": 0.24
+   },
+   {
+    "texto": "vídeo",
+    "inicio": 0.24,
+    "fim": 0.44
+   },
+   {
+    "texto": "passou",
+    "inicio": 0.44,
+    "fim": 0.76
+   },
+   {
+    "texto": "de",
+    "inicio": 0.76,
+    "fim": 0.9
+   },
+   {
+    "texto": "quinze",
+    "inicio": 0.9,
+    "fim": 1.22
+   },
+   {
+    "texto": "milhões",
+    "inicio": 1.22,
+    "fim": 1.52
+   },
+   {
+    "texto": "de",
+    "inicio": 1.52,
+    "fim": 1.72
+   },
+   {
+    "texto": "visualizações.",
+    "inicio": 1.72,
+    "fim": 2.82
+   },
+   {
+    "texto": "Dois",
+    "inicio": 2.82,
+    "fim": 3.36
+   },
+   {
+    "texto": "dias",
+    "inicio": 3.36,
+    "fim": 3.54
+   },
+   {
+    "texto": "depois,",
+    "inicio": 3.54,
+    "fim": 4.34
+   },
+   {
+    "texto": "o",
+    "inicio": 4.34,
+    "fim": 4.42
+   },
+   {
+    "texto": "Instagram",
+    "inicio": 4.4,
+    "fim": 4.74
+   },
+   {
+    "texto": "de",
+    "inicio": 4.74,
+    "fim": 5
+   },
+   {
+    "texto": "Hytalo",
+    "inicio": 5,
+    "fim": 5.26
+   },
+   {
+    "texto": "foi",
+    "inicio": 5.26,
+    "fim": 5.48
+   },
+   {
+    "texto": "desativado.",
+    "inicio": 5.48,
+    "fim": 5.98
+   }
+  ]
+ },
+ {
+  "id": "L5",
+  "quem": "narrador",
+  "duracao": 6.087,
+  "palavras": [
+   {
+    "texto": "O",
+    "inicio": 0,
+    "fim": 0.16
+   },
+   {
+    "texto": "Ministério",
+    "inicio": 0.16,
+    "fim": 0.54
+   },
+   {
+    "texto": "Público",
+    "inicio": 0.54,
+    "fim": 0.92
+   },
+   {
+    "texto": "da",
+    "inicio": 0.92,
+    "fim": 1.04
+   },
+   {
+    "texto": "Paraíba,",
+    "inicio": 1.04,
+    "fim": 1.56
+   },
+   {
+    "texto": "que",
+    "inicio": 1.56,
+    "fim": 1.74
+   },
+   {
+    "texto": "já",
+    "inicio": 1.74,
+    "fim": 1.84
+   },
+   {
+    "texto": "investigava",
+    "inicio": 1.84,
+    "fim": 2.34
+   },
+   {
+    "texto": "o",
+    "inicio": 2.34,
+    "fim": 2.44
+   },
+   {
+    "texto": "caso,",
+    "inicio": 2.44,
+    "fim": 3.14
+   },
+   {
+    "texto": "pediu",
+    "inicio": 3.14,
+    "fim": 3.38
+   },
+   {
+    "texto": "a",
+    "inicio": 3.38,
+    "fim": 3.46
+   },
+   {
+    "texto": "prisão",
+    "inicio": 3.46,
+    "fim": 3.78
+   },
+   {
+    "texto": "dele",
+    "inicio": 3.78,
+    "fim": 4.06
+   },
+   {
+    "texto": "e",
+    "inicio": 4.06,
+    "fim": 4.26
+   },
+   {
+    "texto": "do",
+    "inicio": 4.26,
+    "fim": 4.34
+   },
+   {
+    "texto": "marido,",
+    "inicio": 4.34,
+    "fim": 4.98
+   },
+   {
+    "texto": "Israel",
+    "inicio": 4.98,
+    "fim": 5.28
+   },
+   {
+    "texto": "Vicente.",
+    "inicio": 5.28,
+    "fim": 5.96
+   }
+  ]
+ },
+ {
+  "id": "L6",
+  "quem": "narrador",
+  "duracao": 5.486,
+  "palavras": [
+   {
+    "texto": "Em",
+    "inicio": 0.04,
+    "fim": 0.26
+   },
+   {
+    "texto": "15",
+    "inicio": 0.26,
+    "fim": 0.52
+   },
+   {
+    "texto": "de",
+    "inicio": 0.52,
+    "fim": 0.64
+   },
+   {
+    "texto": "agosto,",
+    "inicio": 0.64,
+    "fim": 1.48
+   },
+   {
+    "texto": "os",
+    "inicio": 1.48,
+    "fim": 1.56
+   },
+   {
+    "texto": "dois",
+    "inicio": 1.54,
+    "fim": 1.68
+   },
+   {
+    "texto": "foram",
+    "inicio": 1.68,
+    "fim": 1.92
+   },
+   {
+    "texto": "presos",
+    "inicio": 1.92,
+    "fim": 2.34
+   },
+   {
+    "texto": "em",
+    "inicio": 2.34,
+    "fim": 2.46
+   },
+   {
+    "texto": "São",
+    "inicio": 2.46,
+    "fim": 2.66
+   },
+   {
+    "texto": "Paulo",
+    "inicio": 2.66,
+    "fim": 2.98
+   },
+   {
+    "texto": "e",
+    "inicio": 2.98,
+    "fim": 3.38
+   },
+   {
+    "texto": "levados",
+    "inicio": 3.38,
+    "fim": 3.8
+   },
+   {
+    "texto": "para",
+    "inicio": 3.8,
+    "fim": 4
+   },
+   {
+    "texto": "um",
+    "inicio": 4,
+    "fim": 4.08
+   },
+   {
+    "texto": "presídio",
+    "inicio": 4.08,
+    "fim": 4.56
+   },
+   {
+    "texto": "em",
+    "inicio": 4.56,
+    "fim": 4.66
+   },
+   {
+    "texto": "João",
+    "inicio": 4.66,
+    "fim": 4.82
+   },
+   {
+    "texto": "Pessoa.",
+    "inicio": 4.82,
+    "fim": 4.98
+   }
+  ]
+ },
+ {
+  "id": "L7",
+  "quem": "narrador",
+  "duracao": 8.307,
+  "palavras": [
+   {
+    "texto": "Em",
+    "inicio": 0.04,
+    "fim": 0.2
+   },
+   {
+    "texto": "Brasília,",
+    "inicio": 0.2,
+    "fim": 0.92
+   },
+   {
+    "texto": "o",
+    "inicio": 0.92,
+    "fim": 1.0
+   },
+   {
+    "texto": "Congresso",
+    "inicio": 0.98,
+    "fim": 1.32
+   },
+   {
+    "texto": "aprovou",
+    "inicio": 1.32,
+    "fim": 1.72
+   },
+   {
+    "texto": "em",
+    "inicio": 1.72,
+    "fim": 1.86
+   },
+   {
+    "texto": "tempo",
+    "inicio": 1.86,
+    "fim": 2.08
+   },
+   {
+    "texto": "recorde",
+    "inicio": 2.08,
+    "fim": 2.58
+   },
+   {
+    "texto": "o",
+    "inicio": 2.58,
+    "fim": 2.68
+   },
+   {
+    "texto": "ECA",
+    "inicio": 2.68,
+    "fim": 2.84
+   },
+   {
+    "texto": "Digital,",
+    "inicio": 2.84,
+    "fim": 3.56
+   },
+   {
+    "texto": "apelidado",
+    "inicio": 3.56,
+    "fim": 4.08
+   },
+   {
+    "texto": "de",
+    "inicio": 4.08,
+    "fim": 4.18
+   },
+   {
+    "texto": "Lei",
+    "inicio": 4.18,
+    "fim": 4.3
+   },
+   {
+    "texto": "Felca.",
+    "inicio": 4.3,
+    "fim": 4.9
+   },
+   {
+    "texto": "A",
+    "inicio": 4.9,
+    "fim": 5.28
+   },
+   {
+    "texto": "lei",
+    "inicio": 5.28,
+    "fim": 5.4
+   },
+   {
+    "texto": "proíbe",
+    "inicio": 5.4,
+    "fim": 5.82
+   },
+   {
+    "texto": "lucrar",
+    "inicio": 5.82,
+    "fim": 6.22
+   },
+   {
+    "texto": "com",
+    "inicio": 6.22,
+    "fim": 6.36
+   },
+   {
+    "texto": "conteúdo",
+    "inicio": 6.36,
+    "fim": 6.76
+   },
+   {
+    "texto": "que",
+    "inicio": 6.76,
+    "fim": 6.98
+   },
+   {
+    "texto": "sexualize",
+    "inicio": 6.98,
+    "fim": 7.56
+   },
+   {
+    "texto": "menores.",
+    "inicio": 7.56,
+    "fim": 7.98
+   }
+  ]
+ },
+ {
+  "id": "L8",
+  "quem": "narrador",
+  "duracao": 10.815,
+  "palavras": [
+   {
+    "texto": "Em",
+    "inicio": 0,
+    "fim": 0.18
+   },
+   {
+    "texto": "fevereiro",
+    "inicio": 0.18,
+    "fim": 0.66
+   },
+   {
+    "texto": "de",
+    "inicio": 0.66,
+    "fim": 0.8
+   },
+   {
+    "texto": "2026,",
+    "inicio": 0.8,
+    "fim": 1.96
+   },
+   {
+    "texto": "a",
+    "inicio": 1.96,
+    "fim": 2.22
+   },
+   {
+    "texto": "Justiça",
+    "inicio": 2.22,
+    "fim": 2.6
+   },
+   {
+    "texto": "condenou",
+    "inicio": 2.6,
+    "fim": 2.98
+   },
+   {
+    "texto": "Hytalo",
+    "inicio": 2.98,
+    "fim": 3.3
+   },
+   {
+    "texto": "a",
+    "inicio": 3.3,
+    "fim": 3.44
+   },
+   {
+    "texto": "onze",
+    "inicio": 3.44,
+    "fim": 3.68
+   },
+   {
+    "texto": "anos",
+    "inicio": 3.68,
+    "fim": 3.94
+   },
+   {
+    "texto": "e",
+    "inicio": 3.94,
+    "fim": 4.08
+   },
+   {
+    "texto": "quatro",
+    "inicio": 4.08,
+    "fim": 4.32
+   },
+   {
+    "texto": "meses",
+    "inicio": 4.32,
+    "fim": 4.64
+   },
+   {
+    "texto": "de",
+    "inicio": 4.64,
+    "fim": 4.76
+   },
+   {
+    "texto": "prisão,",
+    "inicio": 4.76,
+    "fim": 5.1
+   },
+   {
+    "texto": "e",
+    "inicio": 5.1,
+    "fim": 5.78
+   },
+   {
+    "texto": "Israel",
+    "inicio": 5.78,
+    "fim": 6.16
+   },
+   {
+    "texto": "a",
+    "inicio": 6.16,
+    "fim": 6.42
+   },
+   {
+    "texto": "oito",
+    "inicio": 6.42,
+    "fim": 6.64
+   },
+   {
+    "texto": "anos",
+    "inicio": 6.64,
+    "fim": 6.9
+   },
+   {
+    "texto": "e",
+    "inicio": 6.9,
+    "fim": 7.04
+   },
+   {
+    "texto": "dez",
+    "inicio": 7.04,
+    "fim": 7.26
+   },
+   {
+    "texto": "meses,",
+    "inicio": 7.26,
+    "fim": 7.88
+   },
+   {
+    "texto": "por",
+    "inicio": 7.88,
+    "fim": 8.18
+   },
+   {
+    "texto": "produção",
+    "inicio": 8.18,
+    "fim": 8.52
+   },
+   {
+    "texto": "de",
+    "inicio": 8.52,
+    "fim": 8.72
+   },
+   {
+    "texto": "conteúdo",
+    "inicio": 8.72,
+    "fim": 9.06
+   },
+   {
+    "texto": "pornográfico",
+    "inicio": 9.06,
+    "fim": 9.78
+   },
+   {
+    "texto": "com",
+    "inicio": 9.78,
+    "fim": 9.9
+   },
+   {
+    "texto": "adolescentes.",
+    "inicio": 9.9,
+    "fim": 9.98
+   }
+  ]
+ },
+ {
+  "id": "L9",
+  "quem": "narrador",
+  "duracao": 5.486,
+  "palavras": [
+   {
+    "texto": "A",
+    "inicio": 0,
+    "fim": 0.16
+   },
+   {
+    "texto": "defesa",
+    "inicio": 0.16,
+    "fim": 0.5
+   },
+   {
+    "texto": "recorre",
+    "inicio": 0.5,
+    "fim": 0.9
+   },
+   {
+    "texto": "da",
+    "inicio": 0.9,
+    "fim": 1
+   },
+   {
+    "texto": "condenação.",
+    "inicio": 1,
+    "fim": 1.74
+   },
+   {
+    "texto": "Em",
+    "inicio": 1.74,
+    "fim": 2
+   },
+   {
+    "texto": "novembro,",
+    "inicio": 2,
+    "fim": 2.76
+   },
+   {
+    "texto": "o",
+    "inicio": 2.76,
+    "fim": 2.84
+   },
+   {
+    "texto": "Tribunal",
+    "inicio": 2.8,
+    "fim": 3.1
+   },
+   {
+    "texto": "de",
+    "inicio": 3.1,
+    "fim": 3.24
+   },
+   {
+    "texto": "Justiça",
+    "inicio": 3.24,
+    "fim": 3.6
+   },
+   {
+    "texto": "da",
+    "inicio": 3.6,
+    "fim": 3.7
+   },
+   {
+    "texto": "Paraíba",
+    "inicio": 3.7,
+    "fim": 4.08
+   },
+   {
+    "texto": "manteve",
+    "inicio": 4.08,
+    "fim": 4.46
+   },
+   {
+    "texto": "os",
+    "inicio": 4.46,
+    "fim": 4.58
+   },
+   {
+    "texto": "dois",
+    "inicio": 4.58,
+    "fim": 4.74
+   },
+   {
+    "texto": "presos.",
+    "inicio": 4.74,
+    "fim": 4.98
+   }
+  ]
+ },
+ {
+  "id": "L10",
+  "quem": "narrador",
+  "duracao": 6.531,
+  "palavras": [
+   {
+    "texto": "Felca",
+    "inicio": 0.08,
+    "fim": 0.48
+   },
+   {
+    "texto": "passou",
+    "inicio": 0.48,
+    "fim": 0.74
+   },
+   {
+    "texto": "a",
+    "inicio": 0.74,
+    "fim": 0.84
+   },
+   {
+    "texto": "andar",
+    "inicio": 0.84,
+    "fim": 1.06
+   },
+   {
+    "texto": "com",
+    "inicio": 1.06,
+    "fim": 1.22
+   },
+   {
+    "texto": "seguranças",
+    "inicio": 1.22,
+    "fim": 1.76
+   },
+   {
+    "texto": "por",
+    "inicio": 1.76,
+    "fim": 1.94
+   },
+   {
+    "texto": "causa",
+    "inicio": 1.94,
+    "fim": 2.14
+   },
+   {
+    "texto": "de",
+    "inicio": 2.14,
+    "fim": 2.24
+   },
+   {
+    "texto": "ameaças.",
+    "inicio": 2.24,
+    "fim": 3.14
+   },
+   {
+    "texto": "Mas",
+    "inicio": 3.14,
+    "fim": 3.58
+   },
+   {
+    "texto": "o",
+    "inicio": 3.58,
+    "fim": 3.66
+   },
+   {
+    "texto": "vídeo",
+    "inicio": 3.66,
+    "fim": 3.86
+   },
+   {
+    "texto": "dele",
+    "inicio": 3.86,
+    "fim": 4.08
+   },
+   {
+    "texto": "virou",
+    "inicio": 4.08,
+    "fim": 4.32
+   },
+   {
+    "texto": "um",
+    "inicio": 4.32,
+    "fim": 4.44
+   },
+   {
+    "texto": "marco",
+    "inicio": 4.44,
+    "fim": 4.72
+   },
+   {
+    "texto": "na",
+    "inicio": 4.72,
+    "fim": 4.8
+   },
+   {
+    "texto": "proteção",
+    "inicio": 4.8,
+    "fim": 5.18
+   },
+   {
+    "texto": "de",
+    "inicio": 5.18,
+    "fim": 5.3
+   },
+   {
+    "texto": "crianças",
+    "inicio": 5.3,
+    "fim": 5.66
+   },
+   {
+    "texto": "na",
+    "inicio": 5.66,
+    "fim": 5.84
+   },
+   {
+    "texto": "internet.",
+    "inicio": 5.84,
+    "fim": 5.98
+   }
+  ]
+ },
+ {
+  "id": "L11",
+  "quem": "narrador",
+  "duracao": 5.851,
+  "palavras": [
+   {
+    "texto": "Viu",
+    "inicio": 0.06,
+    "fim": 0.28
+   },
+   {
+    "texto": "uma",
+    "inicio": 0.28,
+    "fim": 0.38
+   },
+   {
+    "texto": "criança",
+    "inicio": 0.38,
+    "fim": 0.68
+   },
+   {
+    "texto": "sendo",
+    "inicio": 0.68,
+    "fim": 0.96
+   },
+   {
+    "texto": "exposta?",
+    "inicio": 0.96,
+    "fim": 1.68
+   },
+   {
+    "texto": "Denuncie",
+    "inicio": 1.68,
+    "fim": 2.36
+   },
+   {
+    "texto": "no",
+    "inicio": 2.36,
+    "fim": 2.48
+   },
+   {
+    "texto": "Disque",
+    "inicio": 2.48,
+    "fim": 2.78
+   },
+   {
+    "texto": "100.",
+    "inicio": 2.78,
+    "fim": 3.02
+   },
+   {
+    "texto": "E",
+    "inicio": 3.02,
+    "fim": 3.52
+   },
+   {
+    "texto": "comenta",
+    "inicio": 3.52,
+    "fim": 3.88
+   },
+   {
+    "texto": "aí:",
+    "inicio": 3.88,
+    "fim": 4.24
+   },
+   {
+    "texto": "o",
+    "inicio": 4.24,
+    "fim": 4.52
+   },
+   {
+    "texto": "que",
+    "inicio": 4.52,
+    "fim": 4.6
+   },
+   {
+    "texto": "você",
+    "inicio": 4.6,
+    "fim": 4.8
+   },
+   {
+    "texto": "achou",
+    "inicio": 4.8,
+    "fim": 4.98
+   },
+   {
+    "texto": "desse",
+    "inicio": 4.98,
+    "fim": 5.06
+   },
+   {
+    "texto": "caso?",
+    "inicio": 4.98,
+    "fim": 5.06
+   }
+  ]
+ }
+]

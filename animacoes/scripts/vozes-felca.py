@@ -1,0 +1,278 @@
+#!/usr/bin/env python3
+"""Gera as falas do vídeo "Felca e o caso Hytalo Santos" pela API do Vibi
+e monta src/felca/falas.json com a duração e o tempo de cada palavra da legenda.
+
+Uso:  VIBI_API_KEY=sk_... python3 scripts/vozes-felca.py [L1 L4 ...]
+      (sem ids gera todas; --so-json só recalcula a legenda a partir dos áudios existentes)
+
+Cada fala gerada é conferida: o áudio é transcrito (speech-to-text do Vibi) e comparado
+com o roteiro. Se tiver palavra repetida, faltando ou trocada, gera de novo (até 4 tentativas).
+A transcrição também dá o tempo real de cada palavra, usado na legenda.
+"""
+import difflib, json, os, re, subprocess, sys, time, unicodedata
+
+API = "https://api.vibi.pro/v1"
+MODELO = "eleven_multilingual_v2"
+VOZES = {
+    "narrador": "jKCVPYeBYhiBZRS5hbIL",  # Rozeng - Mature, Deep (tom de documentário)
+}
+
+# (id, quem, legenda). "2026{dois mil e vinte e seis}" mostra 2026 na tela e manda o texto entre chaves para a voz.
+FALAS = [
+    ("L0", "narrador", "Um vídeo de cinquenta minutos no YouTube mudou uma lei no Brasil e levou um dos influenciadores mais famosos do país para a prisão."),
+    ("L1", "narrador", "Em 6{seis} de agosto de 2025{dois mil e vinte e cinco}, o youtuber Felca publicou Adultização, um vídeo sobre a exposição sexualizada de crianças e adolescentes nas redes sociais."),
+    ("L2", "narrador", "Ele mostrou como os algoritmos espalham esse tipo de conteúdo e citou nomes. Um deles: o influenciador paraibano Hytalo{Ítalo} Santos."),
+    ("L3", "narrador", "Entre os casos citados, estava o de uma adolescente de dezessete anos, que aparecia com frequência nos vídeos dele."),
+    ("L4", "narrador", "O vídeo passou de quinze milhões de visualizações. Dois dias depois, o Instagram de Hytalo{Ítalo} foi desativado."),
+    ("L5", "narrador", "O Ministério Público da Paraíba, que já investigava o caso, pediu a prisão dele e do marido, Israel Vicente."),
+    ("L6", "narrador", "Em 15{quinze} de agosto, os dois foram presos em São Paulo e levados para um presídio em João Pessoa."),
+    ("L7", "narrador", "Em Brasília, o Congresso aprovou em tempo recorde o ECA Digital, apelidado de Lei Felca. A lei proíbe lucrar com conteúdo que sexualize menores."),
+    ("L8", "narrador", "Em fevereiro de 2026{dois mil e vinte e seis}, a Justiça condenou Hytalo{Ítalo} a onze anos e quatro meses de prisão, e Israel a oito anos e dez meses, por produção de conteúdo pornográfico com adolescentes."),
+    ("L9", "narrador", "A defesa recorre da condenação. Em novembro, o Tribunal de Justiça da Paraíba manteve os dois presos."),
+    ("L10", "narrador", "Felca passou a andar com seguranças por causa de ameaças. Mas o vídeo dele virou um marco na proteção de crianças na internet."),
+    ("L11", "narrador", "Viu uma criança sendo exposta? Denuncie no Disque 100. E comenta aí: o que você achou desse caso?"),
+]
+
+chave = os.environ.get("VIBI_API_KEY")
+if not chave:
+    sys.exit("Defina VIBI_API_KEY")
+raiz = os.path.join(os.path.dirname(__file__), "..")
+pasta_audio = os.path.join(raiz, "public", "felca")
+os.makedirs(pasta_audio, exist_ok=True)
+so_json = "--so-json" in sys.argv  # recalcula o JSON sem gastar créditos
+
+
+def curl(*args):
+    out = subprocess.run(["curl", "-sS", "--max-time", "120", "-H", f"xi-api-key: {chave}", *args],
+                         check=True, capture_output=True)
+    return out.stdout
+
+
+def separa(legenda):
+    """Devolve (texto falado, [(palavra da tela, peso)])."""
+    falado, tokens = [], []
+    legenda = re.sub(r"\{([^}]+)\}", lambda m: "{" + m.group(1).replace(" ", "\u00a0") + "}", legenda)
+    for parte in legenda.split(" "):
+        m = re.match(r"^(.*?)\{(.+)\}(.*)$", parte)
+        if m:
+            tela = m.group(1) + m.group(3)
+            voz = m.group(2) + m.group(3)
+        else:
+            tela = voz = parte
+        voz = voz.replace("\u00a0", " ")
+        falado.append(voz)
+        # peso ~ quanto tempo leva pra falar; pontuação vira pausa
+        peso = len(re.sub(r"[^\wÀ-ú]", "", voz)) + 1.5
+        if re.search(r"[,:]$", voz):
+            peso += 3
+        if re.search(r"[.!?…]$", voz):
+            peso += 6
+        tokens.append((tela, peso))
+    return " ".join(falado).replace("{", "").replace("}", ""), tokens
+
+
+def duracao(caminho):
+    out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", caminho],
+                         check=True, capture_output=True, text=True)
+    return float(out.stdout)
+
+
+def silencio_inicio_fim(caminho):
+    """Acha onde a fala começa e termina (corta silêncio das pontas)."""
+    out = subprocess.run(["ffmpeg", "-i", caminho, "-af", "silencedetect=n=-40dB:d=0.12", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
+    ini = [float(x) for x in re.findall(r"silence_start: ([\d.]+)", out)]
+    fim = [float(x) for x in re.findall(r"silence_end: ([\d.]+)", out)]
+    total = duracao(caminho)
+    comeco = fim[0] if ini and ini[0] < 0.05 and fim else 0.0
+    termino = ini[-1] if ini and (len(fim) < len(ini) or fim[-1] >= total - 0.05) and ini[-1] > comeco else total
+    return comeco, termino
+
+
+# Ritmo de vídeo curto: narrador um pouco mais rápido (sem mudar o tom da voz)
+VELOCIDADE = {"narrador": 1.08}
+
+
+def acelera(origem, destino, quem):
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", origem, "-af", f"atempo={VELOCIDADE[quem]}",
+                    "-b:a", "160k", destino], check=True)
+
+
+def pausas_internas(caminho, comeco, termino):
+    out = subprocess.run(["ffmpeg", "-i", caminho, "-af", "silencedetect=n=-38dB:d=0.13", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
+    ini = [float(x) for x in re.findall(r"silence_start: ([\d.]+)", out)]
+    fim = [float(x) for x in re.findall(r"silence_end: ([\d.]+)", out)]
+    return [((a + b) / 2) for a, b in zip(ini, fim) if a > comeco + 0.1 and b < termino - 0.1]
+
+
+def distribui(tokens, comeco, termino):
+    soma = sum(p for _, p in tokens)
+    t, saida = comeco, []
+    for tela, peso in tokens:
+        d = (termino - comeco) * peso / soma
+        saida.append([tela, t, t + d])
+        t += d
+    return saida
+
+
+def normaliza(texto):
+    t = unicodedata.normalize("NFD", texto.lower())
+    t = "".join(c for c in t if unicodedata.category(c) != "Mn")
+    t = re.sub(r"(\d)-(\d)", r"\1 \2", t)
+    return re.findall(r"[a-z0-9']+", t)
+
+
+def transcreve(arq):
+    tarefa = json.loads(curl("-X", "POST", "-F", "model_id=scribe_v1", "-F", "language_code=pt",
+                             "-F", f"file=@{arq}", f"{API}/speech-to-text"))
+    for _ in range(90):
+        info = json.loads(curl(f"{API}/speech-to-text/{tarefa['task_id']}"))
+        if info["status"] == "completed":
+            return info["result"]
+        if info["status"] == "failed":
+            raise RuntimeError(f"transcrição falhou: {info}")
+        time.sleep(2)
+    raise RuntimeError("transcrição demorou demais")
+
+
+def _problemas(esperado, ouvido):
+    sm = difflib.SequenceMatcher(a=esperado, b=ouvido, autojunk=False)
+    out = []
+    for op, a1, a2, b1, b2 in sm.get_opcodes():
+        if op == "equal":
+            continue
+        a, b = " ".join(esperado[a1:a2]), " ".join(ouvido[b1:b2])
+        if op == "replace" and difflib.SequenceMatcher(a=a, b=b).ratio() > 0.75:
+            continue
+        # número escrito diferente ("50" x "cinquenta"): não é erro de fala
+        if op == "replace" and (re.search(r"\d", a) or re.search(r"\d", b)):
+            continue
+        out.append(f"{op}: roteiro='{a}' áudio='{b}'")
+    return out
+
+
+def confere(tela_texto, stt, falado_texto=""):
+    """Compara o áudio transcrito com o roteiro (texto da tela e texto falado; vale o mais parecido)."""
+    ouvido = normaliza(stt["text"])
+    candidatos = [_problemas(normaliza(tela_texto), ouvido)]
+    if falado_texto:
+        candidatos.append(_problemas(normaliza(falado_texto), ouvido))
+    problemas = min(candidatos, key=len)
+    repetidas = [w for i, w in enumerate(ouvido[1:], 1) if w == ouvido[i - 1] and len(w) > 2]
+    # número dito duas vezes seguidas (o erro do vídeo do submarino)
+    numeros = re.findall(r"\d+", stt["text"])
+    dobrados = [n for i, n in enumerate(numeros[1:], 1) if n == numeros[i - 1]]
+    if repetidas:
+        problemas.append(f"palavra repetida: {repetidas}")
+    if dobrados:
+        problemas.append(f"número repetido: {dobrados}")
+    return problemas
+
+
+def tempos_reais(tokens, stt, comeco, termino):
+    """Casa cada palavra da legenda com a palavra transcrita e usa o tempo real dela."""
+    palavras_stt = [w for w in stt.get("words", []) if w.get("type") == "word"]
+    alvo = [(normaliza(t) or [""])[0] for t, _ in tokens]
+    ouvido = [(normaliza(w["text"]) or [""])[0] for w in palavras_stt]
+    sm = difflib.SequenceMatcher(a=alvo, b=ouvido, autojunk=False)
+    inicio = [None] * len(tokens)
+    fim = [None] * len(tokens)
+    for op, a1, a2, b1, b2 in sm.get_opcodes():
+        if op in ("equal", "replace") and (a2 - a1) == (b2 - b1):
+            for k in range(a2 - a1):
+                inicio[a1 + k] = palavras_stt[b1 + k]["start"]
+                fim[a1 + k] = palavras_stt[b1 + k]["end"]
+    estimado = distribui(tokens, comeco, termino)
+    for i in range(len(tokens)):
+        if inicio[i] is None:
+            inicio[i], fim[i] = estimado[i][1], estimado[i][2]
+    return [{"texto": t, "inicio": round(inicio[i], 3), "fim": round(max(fim[i], inicio[i] + 0.08), 3)}
+            for i, (t, _) in enumerate(tokens)]
+
+
+def gera(fid, quem, texto, arq):
+    corpo = json.dumps({"text": texto, "model_id": MODELO, "language_code": "pt",
+                        "voice_settings": {"stability": 0.5, "similarity_boost": 0.8, "style": 0.35}})
+    tarefa = json.loads(curl("-X", "POST", "-H", "Content-Type: application/json", "-d", corpo,
+                             f"{API}/text-to-speech/{VOZES[quem]}?output_format=mp3_44100_128"))
+    for _ in range(90):
+        info = json.loads(curl(f"{API}/history/{tarefa['id']}"))
+        if info["status"] == "completed":
+            break
+        if info["status"] == "failed":
+            sys.exit(f"{fid} falhou: {info.get('error')}")
+        time.sleep(2)
+    bruto = arq.replace(".mp3", ".bruto.mp3")
+    with open(bruto, "wb") as f:
+        f.write(curl(info["result"]["audio_url"]))
+    acelera(bruto, arq, quem)
+    os.remove(bruto)
+    return info["credits_deducted"]
+
+
+pedidos = [a for a in sys.argv[1:] if not a.startswith("--")]
+relatorio = []
+
+resultado = []
+for fid, quem, legenda in FALAS:
+    texto, tokens = separa(legenda)
+    arq = os.path.join(pasta_audio, f"{fid}.mp3")
+    tela_texto = " ".join(t for t, _ in tokens)
+    stt = None
+    if not so_json and (not pedidos or fid in pedidos):
+        for tentativa in range(1, 5):
+            creditos = gera(fid, quem, texto, arq)
+            stt = transcreve(arq)
+            problemas = confere(tela_texto, stt, texto)
+            if not problemas:
+                print(f"{fid} ok na tentativa {tentativa} ({creditos} créditos) -> {stt['text']}")
+                relatorio.append(f"{fid}: OK (tentativa {tentativa})")
+                break
+            print(f"{fid} tentativa {tentativa} com problema: {problemas}")
+        else:
+            relatorio.append(f"{fid}: AINDA COM PROBLEMA {problemas}")
+    elif not so_json:
+        stt = transcreve(arq)
+        problemas = confere(tela_texto, stt, texto)
+        relatorio.append(f"{fid}: {'OK' if not problemas else 'PROBLEMA ' + str(problemas)} (sem regerar)")
+    total = duracao(arq)
+    comeco, termino = silencio_inicio_fim(arq)
+    # Ancora as pausas reais do áudio nas vírgulas/pontos mais próximos e redistribui
+    estimado = distribui(tokens, comeco, termino)
+    quebras = [i for i, (tela, _) in enumerate(tokens) if re.search(r"[,:.!?…]$", tela) and i < len(tokens) - 1]
+    ancoras = {}
+    for pausa in pausas_internas(arq, comeco, termino):
+        livres = [i for i in quebras if i not in ancoras]
+        if not livres:
+            break
+        melhor = min(livres, key=lambda i: abs(estimado[i][2] - pausa))
+        if abs(estimado[melhor][2] - pausa) < 1.2:
+            ancoras[melhor] = pausa
+    if stt is not None:
+        palavras = tempos_reais(tokens, stt, comeco, termino)
+        with open(arq.replace(".mp3", ".stt.json"), "w") as f:
+            json.dump(stt, f, ensure_ascii=False)
+        resultado.append({"id": fid, "quem": quem, "duracao": round(total, 3), "palavras": palavras})
+        continue
+    cache = arq.replace(".mp3", ".stt.json")
+    if os.path.exists(cache):
+        palavras = tempos_reais(tokens, json.load(open(cache)), comeco, termino)
+        resultado.append({"id": fid, "quem": quem, "duracao": round(total, 3), "palavras": palavras})
+        continue
+    palavras, ini_seg, idx = [], comeco, 0
+    for corte in sorted(ancoras) + [len(tokens) - 1]:
+        fim_seg = ancoras.get(corte, termino)
+        for tela, a, b in distribui(tokens[idx:corte + 1], ini_seg, fim_seg):
+            palavras.append({"texto": tela, "inicio": round(a, 3), "fim": round(b, 3)})
+        idx, ini_seg = corte + 1, fim_seg
+    resultado.append({"id": fid, "quem": quem, "duracao": round(total, 3), "palavras": palavras})
+
+destino = os.path.join(raiz, "src", "felca", "falas.json")
+os.makedirs(os.path.dirname(destino), exist_ok=True)
+with open(destino, "w") as f:
+    json.dump(resultado, f, ensure_ascii=False, indent=1)
+print("falas.json ok")
+if relatorio:
+    print("\n=== CONFERÊNCIA DAS FALAS ===")
+    print("\n".join(relatorio))
