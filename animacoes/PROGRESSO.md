@@ -15,6 +15,12 @@ Atualizado a cada etapa. Se a conversa for interrompida (limite de uso), a próx
 - **Fila** (`npx remotion render Fila` → `videos/por-que-a-fila-do-lado-anda-mais-rapido.mp4`), narração Matheus conferida.
 - Roteiros: `roteiro/freio-e-fila.md`. Depois de renderizar: transcrever o áudio final e entregar.
 
+## Próximo trabalho (pedido do usuário): versões em espanhol do México
+- Remodelar **Freio** e **Fila** para o público mexicano (expressões locais, não tradução literal), voz mexicana
+  popular entre criadores, mesma qualidade visual. Composições `FreioMX` e `FilaMX` (pastas `src/freio-mx`, `src/fila-mx`).
+- Conferir a narração (transcrição em espanhol), renderizar em Full HD, entregar e sugerir título/descrição em espanhol.
+- O usuário pediu: **mesmo se o limite da conversa chegar, continuar quando voltar.**
+
 ## Padrões decididos com o usuário
 - Vertical 1080×1920, até 1min30s, legenda **numa linha só** (máx. 3 palavras), sem selo "recriação" nem barra de tempo.
 - Roteiros seguem `roteiro/GUIA_ESTILO.md` (você constrói) e `roteiro/GUIA_ESTILO_2_CURIOSIDADE.md` (curiosidade).
