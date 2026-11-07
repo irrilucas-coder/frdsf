@@ -76,10 +76,13 @@ const Som = ({cat, n, em, vol, dur}: {cat: CategoriaSfx; n: number; em: number; 
   </Sequence>
 );
 
-export const FilaVideo = () => {
+// semVideo: só o áudio (vozes, efeitos e música), para renderizar o som rápido sem desenhar as cenas
+export const FilaVideo = ({semVideo = false}: {semVideo?: boolean}) => {
   const volumeTrilha = (f: number) => 0.09 * interpolate(f, [TOTAL_FRAMES - 40, TOTAL_FRAMES], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{background: '#000'}}>
+      {!semVideo && (
+        <>
       <Impacto zooms={[0, Q('azar', 'L1', 'matemática'), Q('chance', 'L3', 'chance'), Q('cerebro', 'L6', 'para'), Q('unica', 'L7', 'única')]} tremidas={[{inicio: 0, dur: 0.3, forca: 8}]}>
         {CENAS.map((c) => {
           const Comp = COMPONENTE[c.id];
@@ -108,6 +111,8 @@ export const FilaVideo = () => {
       <Clarao momentos={[cena('tres').inicio, cena('unica').inicio]} />
       <Legendas falas={TODAS_FALAS} destaques={DESTAQUES} corFalando="#ffcc00" corDestaque="#ffffff" topo="66%" tamanho={66} umaLinha maxPalavras={3} />
 
+        </>
+      )}
       {/* Música: "Monkeys Spinning Monkeys" – Kevin MacLeod (incompetech.com), CC BY 3.0 */}
       <Audio src={staticFile('musicas/curiosidade/monkeys-spinning-monkeys.mp3')} volume={volumeTrilha} loop />
       {TODAS_FALAS.map((f) => (

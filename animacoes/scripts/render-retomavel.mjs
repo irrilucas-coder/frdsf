@@ -41,7 +41,9 @@ for (let a = 0; a < total; a += BLOCO) {
 const audio = path.join(pasta, 'audio.wav');
 if (!fs.existsSync(audio)) {
   console.log('renderizando áudio…');
-  await renderMedia({composition, serveUrl, codec: 'wav', outputLocation: audio + '.tmp.wav', puppeteerInstance: browser, chromiumOptions, timeoutInMilliseconds: 180000, concurrency: 2});
+  // só o áudio: a composição pula as cenas 3D quando recebe semVideo
+  const compAudio = await selectComposition({serveUrl, id, puppeteerInstance: browser, chromiumOptions, inputProps: {semVideo: true}});
+  await renderMedia({composition: compAudio, serveUrl, codec: 'wav', inputProps: {semVideo: true}, outputLocation: audio + '.tmp.wav', puppeteerInstance: browser, chromiumOptions, timeoutInMilliseconds: 180000});
   fs.renameSync(audio + '.tmp.wav', audio);
 }
 await browser.close({silent: true});
