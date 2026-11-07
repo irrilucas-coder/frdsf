@@ -120,7 +120,9 @@ def normaliza(texto):
     t = unicodedata.normalize("NFD", texto.lower())
     t = "".join(c for c in t if unicodedata.category(c) != "Mn")
     t = re.sub(r"(\d)-(\d)", r"\1 \2", t)
-    return re.findall(r"[a-z0-9']+", t)
+    # palavras com o mesmo som não contam como erro (ex.: "cem" e "sem")
+    HOMOFONOS = {"cem": "sem", "cento": "sento", "conserto": "concerto"}
+    return [HOMOFONOS.get(w, w) for w in re.findall(r"[a-z0-9']+", t)]
 
 
 def transcreve(arq):

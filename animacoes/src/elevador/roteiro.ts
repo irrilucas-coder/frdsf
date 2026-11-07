@@ -1,4 +1,4 @@
-import falasJson from './falas.json';
+import falasJson from './falas-v2.json';
 
 export const FPS = 30;
 

@@ -84,7 +84,7 @@ const Som = ({cat, n, em, vol, dur}: {cat: CategoriaSfx; n: number; em: number; 
 );
 
 export const ElevadorVideo = () => {
-  const volumeTrilha = (f: number) => 0.12 * interpolate(f, [TOTAL_FRAMES - 40, TOTAL_FRAMES], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const volumeTrilha = (f: number) => 0.1 * interpolate(f, [TOTAL_FRAMES - 40, TOTAL_FRAMES], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{background: '#000'}}>
       <Impacto
@@ -129,10 +129,11 @@ export const ElevadorVideo = () => {
       <Clarao momentos={[cena('arrebenta').inicio, cena('inventor').inicio]} />
       <Legendas falas={TODAS_FALAS} destaques={DESTAQUES} corFalando="#ffcc00" corDestaque="#ffffff" topo="66%" tamanho={66} umaLinha maxPalavras={3} />
 
-      <Audio src={staticFile('submarino/musica.mp3')} volume={volumeTrilha} />
+      {/* Música: "Monkeys Spinning Monkeys" – Kevin MacLeod (incompetech.com), CC BY 3.0 */}
+      <Audio src={staticFile('musicas/curiosidade/monkeys-spinning-monkeys.mp3')} volume={volumeTrilha} loop />
       {TODAS_FALAS.map((f) => (
         <Sequence key={f.id} name={`Voz ${f.id}`} from={segFrame(f.inicio)} layout="none">
-          <Audio src={staticFile(`elevador/${f.id}.mp3`)} />
+          <Audio src={staticFile(`elevador-v2/${f.id}.mp3`)} />
         </Sequence>
       ))}
       {SONS.map(([cat, n, em, vol, dur], i) => (

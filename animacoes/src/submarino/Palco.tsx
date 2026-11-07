@@ -63,17 +63,19 @@ export const Palco = ({
   const [topo, base] = CEU[clima];
   const neb = NEBLINA[clima];
   const luzDia = clima === 'dia' || clima === 'estudio';
+  // no modo cinema o Environment já ilumina: reduzimos as outras luzes para não estourar
+  const k = cinema ? 0.55 : 1;
   return (
     <AbsoluteFill>
       <AbsoluteFill style={{background: `linear-gradient(180deg, ${topo} 0%, ${base} 100%)`}} />
       <ThreeCanvas width={width} height={height} shadows={sombras} camera={{fov, near: 0.1, far: 300}}>
         <SincronizaCamera pos={pos} olha={olha} fov={fov} />
         {neb && <fog attach="fog" args={neb} />}
-        <ambientLight intensity={luzDia ? 0.9 : clima === 'interior' ? 0.35 : clima === 'noite' || clima === 'submersoEscuro' ? 1.1 : 0.6} color={luzDia ? '#ffffff' : '#9fc4ff'} />
-        <hemisphereLight args={[luzDia ? '#bfe3ff' : '#6f9fd8', '#2a2a2a', luzDia ? 0.9 : 1.0]} />
+        <ambientLight intensity={k * (luzDia ? 0.9 : clima === 'interior' ? 0.35 : clima === 'noite' || clima === 'submersoEscuro' ? 1.1 : 0.6)} color={luzDia ? '#ffffff' : '#9fc4ff'} />
+        <hemisphereLight args={[luzDia ? '#bfe3ff' : '#6f9fd8', '#2a2a2a', k * (luzDia ? 0.9 : 1.0)]} />
         <directionalLight
           position={[6, 12, 8]}
-          intensity={luzDia ? 2.4 : clima === 'interior' ? 0.3 : 1.1}
+          intensity={k * (luzDia ? 2.4 : clima === 'interior' ? 0.3 : 1.1)}
           color={luzDia ? '#fff3dd' : '#b8d4ff'}
           castShadow
           shadow-mapSize={[1024, 1024]}
@@ -86,12 +88,12 @@ export const Palco = ({
         {cinema && (
           <>
             <Environment resolution={64}>
-              <Lightformer intensity={2} position={[0, 5, 5]} scale={[10, 5, 1]} />
+              <Lightformer intensity={1.2} position={[0, 5, 5]} scale={[10, 5, 1]} />
               <Lightformer intensity={1} position={[-5, 2, 2]} scale={[4, 4, 1]} color="#9fc4ff" />
               <Lightformer intensity={1} position={[5, 2, 2]} scale={[4, 4, 1]} color="#ffd9a8" />
             </Environment>
             <EffectComposer multisampling={4}>
-              <Bloom intensity={0.6} luminanceThreshold={0.85} luminanceSmoothing={0.2} mipmapBlur />
+              <Bloom intensity={0.5} luminanceThreshold={0.95} luminanceSmoothing={0.15} mipmapBlur />
               <Vignette offset={0.25} darkness={0.55} />
             </EffectComposer>
           </>

@@ -12,31 +12,31 @@ A transcrição também dá o tempo real de cada palavra, usado na legenda.
 import difflib, json, os, re, subprocess, sys, time, unicodedata
 
 API = "https://api.vibi.pro/v1"
-MODELO = "eleven_multilingual_v2"
+MODELO = "eleven_v3"  # voz expressiva: aceita marcações de emoção como [curious], [gasps]
 VOZES = {
     "narrador": "4Nn4X9zUEoY31Hy6uXuU",  # Samuel - Curious (pt-BR)
 }
 
 FALAS = [
-    ("L0", "narrador", "Por que o elevador não despenca, mesmo se o cabo arrebentar?"),
-    ("L1", "narrador", "Se você quiser subir cem andares, vai chegar lá em cima sem perna."),
-    ("L2", "narrador", "Então você entra numa caixa, amarra uma corda e puxa com uma manivela. Funciona… até o terceiro andar, quando seu braço desiste."),
+    ("L0", "narrador", "[curious] Por que o elevador não despenca, mesmo se o cabo arrebentar?"),
+    ("L1", "narrador", "Se você quiser subir cem andares, [laughs] vai chegar lá em cima sem perna."),
+    ("L2", "narrador", "Então você entra numa caixa, amarra uma corda e puxa com uma manivela. [excited] Funciona… [sighs] até o terceiro andar, quando seu braço desiste."),
     ("L3", "narrador", "Então você pendura do outro lado um peso quase igual ao da caixa. Agora um sobe enquanto o outro desce, e quase não faz força. Esse é o contrapeso."),
-    ("L4", "narrador", "Agora você troca a manivela por um motor numa roda lá no alto. Você só aperta o botão."),
-    ("L5", "narrador", "Mas um dia a corda gasta, arrebenta… e você vai do quadragésimo andar pro térreo em cinco segundos."),
+    ("L4", "narrador", "Agora você troca a manivela por um motor numa roda lá no alto. [cheerful] Você só aperta o botão."),
+    ("L5", "narrador", "Mas um dia a corda gasta, arrebenta… [gasps] e você vai do quadragésimo andar pro térreo em cinco segundos."),
     ("L6", "narrador", "Então você troca a corda por vários cabos de aço. Cada um aguenta o elevador sozinho. Se um rompe, os outros seguram."),
-    ("L7", "narrador", "Mas e se todos arrebentarem? Então você coloca garras dos lados da cabine. Se ela passar da velocidade, as garras mordem os trilhos e travam tudo. Esse é o freio de segurança."),
+    ("L7", "narrador", "[suspenseful] Mas e se todos arrebentarem? Então você coloca garras dos lados da cabine. Se ela passar da velocidade, as garras mordem os trilhos e travam tudo. Esse é o freio de segurança."),
     ("L8", "narrador", "E se mesmo assim ela chegar no fundo, molas gigantes lá embaixo amortecem a pancada."),
-    ("L9", "narrador", "Esse freio é tão confiável que, na primeira apresentação, o inventor subiu na plataforma e mandou cortar a corda com ele lá em cima."),
-    ("L10", "narrador", "Parabéns! Você construiu um elevador que não despenca."),
-    ("L11", "narrador", "Conhece alguém que tem medo de elevador? Manda pra ele."),
+    ("L9", "narrador", "Esse freio é tão confiável que, na primeira apresentação, o inventor subiu na plataforma e mandou cortar a corda [whispers] com ele lá em cima."),
+    ("L10", "narrador", "[excited] Parabéns! Você construiu um elevador que não despenca."),
+    ("L11", "narrador", "Conhece alguém que tem medo de elevador? [laughs] Manda pra ele."),
 ]
 
 chave = os.environ.get("VIBI_API_KEY")
 if not chave:
     sys.exit("Defina VIBI_API_KEY")
 raiz = os.path.join(os.path.dirname(__file__), "..")
-pasta_audio = os.path.join(raiz, "public", "elevador")
+pasta_audio = os.path.join(raiz, "public", "elevador-v2")
 os.makedirs(pasta_audio, exist_ok=True)
 so_json = "--so-json" in sys.argv  # recalcula o JSON sem gastar créditos
 
@@ -52,6 +52,9 @@ def separa(legenda):
     falado, tokens = [], []
     legenda = re.sub(r"\{([^}]+)\}", lambda m: "{" + m.group(1).replace(" ", "\u00a0") + "}", legenda)
     for parte in legenda.split(" "):
+        if re.fullmatch(r"\[[a-z ]+\]", parte):
+            falado.append(parte)
+            continue
         m = re.match(r"^(.*?)\{(.+)\}(.*)$", parte)
         if m:
             tela = m.group(1) + m.group(3)
@@ -119,7 +122,9 @@ def normaliza(texto):
     t = unicodedata.normalize("NFD", texto.lower())
     t = "".join(c for c in t if unicodedata.category(c) != "Mn")
     t = re.sub(r"(\d)-(\d)", r"\1 \2", t)
-    return re.findall(r"[a-z0-9']+", t)
+    # palavras com o mesmo som não contam como erro (ex.: "cem" e "sem")
+    HOMOFONOS = {"cem": "sem", "cento": "sento", "conserto": "concerto"}
+    return [HOMOFONOS.get(w, w) for w in re.findall(r"[a-z0-9']+", t)]
 
 
 def transcreve(arq):
@@ -267,7 +272,7 @@ for fid, quem, legenda in FALAS:
         idx, ini_seg = corte + 1, fim_seg
     resultado.append({"id": fid, "quem": quem, "duracao": round(total, 3), "palavras": palavras})
 
-destino = os.path.join(raiz, "src", "elevador", "falas.json")
+destino = os.path.join(raiz, "src", "elevador", "falas-v2.json")
 os.makedirs(os.path.dirname(destino), exist_ok=True)
 with open(destino, "w") as f:
     json.dump(resultado, f, ensure_ascii=False, indent=1)

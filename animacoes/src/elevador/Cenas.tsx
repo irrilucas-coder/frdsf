@@ -132,7 +132,7 @@ export const Poco = ({andar, corda = 'corda', cabosRompidos = 0, cordaRompida = 
             <B tam={[1.15, 2.4, 0.06]} pos={[0.58 + portas * 1.0, 1.32, 1.0]} cor="#8a939c" metal={0.7} />
           </>
         )}
-        <pointLight position={[0, 2.2, 0.6]} intensity={14} distance={5} color="#fff6e0" />
+        <pointLight position={[0, 2.2, 0.6]} intensity={6} distance={5} color="#fff6e0" />
         {passageiro}
         {/* garras do freio de segurança */}
         {[-1, 1].map((l) => (
@@ -218,7 +218,7 @@ export const CenaGancho = () => {
   const c = camCabine(e.andar, s, 7, 2.2);
   const treme = Math.sin(s * 50) * 0.06;
   return (
-    <Palco clima="interior" pos={[c.pos[0] + treme, c.pos[1], c.pos[2]]} olha={c.olha} fov={52} sombras={false}>
+    <Palco cinema clima="interior" pos={[c.pos[0] + treme, c.pos[1], c.pos[2]]} olha={c.olha} fov={52} sombras={false}>
       <Poco andar={e.andar} cordaRompida passageiro={<Voce posicao={[0, 0.15, -0.3]} pose="susto" expressao="assustado" escala={0.85} />} />
       <pointLight position={[3, e.andar * ALTURA_ANDAR + 4, 4]} intensity={20} color="#ff6b5a" />
     </Palco>
@@ -231,7 +231,7 @@ export const CenaEscada = () => {
   const fim = duracaoCena('escada');
   const sobe = lerp(s, 0, fim, 0, 3.2, Easing.linear);
   return (
-    <Palco clima="dia" pos={[5.5, 2.6 + sobe * 0.6, 7]} olha={[0, 1.6 + sobe * 0.6, 0]} fov={50}>
+    <Palco cinema clima="dia" pos={[5.5, 2.6 + sobe * 0.6, 7]} olha={[0, 1.6 + sobe * 0.6, 0]} fov={50}>
       {Array.from({length: 60}, (_, i) => (
         <B key={i} tam={[2, 0.3, 0.6]} pos={[0, i * 0.3, -i * 0.6]} cor={i % 10 === 0 ? '#e10600' : '#c9c2b0'} />
       ))}
@@ -251,7 +251,7 @@ export const CenaManivela = () => {
   const cansado = s > tDesiste - 0.6;
   const c = camCabine(e.andar, s, 6.5, 1.2);
   return (
-    <Palco clima="interior" pos={c.pos} olha={c.olha} fov={48} sombras={false}>
+    <Palco cinema clima="interior" pos={c.pos} olha={c.olha} fov={48} sombras={false}>
       <Poco andar={e.andar} passageiro={<Voce posicao={[0, 0.15, -0.2]} pose={cansado ? 'parado' : 'manivela'} expressao={cansado ? 'cansado' : 'feliz'} suor={cansado} escala={0.85} velocidade={cansado ? 0.2 : 1.5} />} />
       <group position={[0.75, e.andar * ALTURA_ANDAR + 1.2, 0.3]} rotation={[0, 0, cansado ? 0 : s * 5]}>
         <B tam={[0.5, 0.06, 0.06]} cor="#c9a227" metal={0.8} />
@@ -266,7 +266,7 @@ export const CenaContrapeso = () => {
   const {s, e} = usaEstado('contrapeso');
   const y = e.andar * ALTURA_ANDAR;
   return (
-    <Palco clima="interior" pos={[3, y + 1.8, 12]} olha={[1, y + 1.2, 0]} fov={52} sombras={false}>
+    <Palco cinema clima="interior" pos={[3, y + 1.8, 12]} olha={[1, y + 1.2, 0]} fov={52} sombras={false}>
       <Poco andar={e.andar} contrapeso contrapesoC={2 * 5.5 * 3 + 1} passageiro={<Voce posicao={[0, 0.15, -0.2]} pose="parado" expressao="feliz" escala={0.85} />} />
       <Seta posicao={[-1.9, y + 1.5, 0.5]} para="cima" escala={1.4} />
       <Seta posicao={[3.4, y + 0.5, 0.5]} para="baixo" escala={1.4} />
@@ -281,7 +281,7 @@ export const CenaMotor = () => {
   if (s < tBotao - 0.4) {
     // casa de máquinas no topo
     return (
-      <Palco clima="interior" pos={[4.5, 3.6, 8.5]} olha={[0, 1.4, 0]} fov={45} sombras={false}>
+      <Palco cinema clima="interior" pos={[4.5, 3.6, 8.5]} olha={[0, 1.4, 0]} fov={45} sombras={false}>
         <B tam={[10, 0.3, 8]} pos={[0, 0, 0]} cor="#6b6b6b" />
         <B tam={[1.6, 1.2, 1.2]} pos={[-1.2, 0.75, 0]} cor="#1f5fa8" metal={0.5} />
         <mesh position={[0.6, 1.5, 0]} rotation={[Math.PI / 2, 0, s * 4]}>
@@ -296,7 +296,7 @@ export const CenaMotor = () => {
   }
   const c = camCabine(e.andar, s, 6.5, 1);
   return (
-    <Palco clima="interior" pos={c.pos} olha={c.olha} fov={48} sombras={false}>
+    <Palco cinema clima="interior" pos={c.pos} olha={c.olha} fov={48} sombras={false}>
       <Poco andar={e.andar} passageiro={<Voce posicao={[0, 0.15, -0.2]} pose="apontar" expressao="feliz" escala={0.85} />} />
       <Seta posicao={[-1.9, e.andar * ALTURA_ANDAR + 1.4, 0.6]} para="cima" escala={1.6} />
     </Palco>
@@ -311,7 +311,7 @@ export const CenaArrebenta = () => {
   const c = camCabine(e.andar, s, rompeu ? 6 : 7, rompeu ? 2.3 : 1.3);
   const treme = rompeu && e.vel > 2 ? Math.sin(s * 55) * 0.07 : 0;
   return (
-    <Palco clima="interior" pos={[c.pos[0] + treme, c.pos[1], c.pos[2]]} olha={c.olha} fov={50} sombras={false}>
+    <Palco cinema clima="interior" pos={[c.pos[0] + treme, c.pos[1], c.pos[2]]} olha={c.olha} fov={50} sombras={false}>
       <Poco andar={e.andar} cordaRompida={rompeu} passageiro={<Voce posicao={[0, 0.15, -0.2]} pose={rompeu ? 'susto' : 'parado'} expressao={rompeu ? 'assustado' : 'feliz'} escala={0.85} />} />
       {rompeu && <pointLight position={[2, e.andar * ALTURA_ANDAR + 3, 3]} intensity={18} color="#ff4d3a" />}
     </Palco>
@@ -324,7 +324,7 @@ export const CenaCabos = () => {
   const tRompe = quandoDiz('cabos', 'L6', 'rompe');
   const y = e.andar * ALTURA_ANDAR;
   return (
-    <Palco clima="interior" pos={[1.2, y + 2.3, 7.5]} olha={[0, y + 1.9, 0]} fov={52} sombras={false}>
+    <Palco cinema clima="interior" pos={[1.2, y + 2.3, 7.5]} olha={[0, y + 1.9, 0]} fov={52} sombras={false}>
       <Poco andar={e.andar} corda="cabos" cabosRompidos={s > tRompe ? 1 : 0} passageiro={<Voce posicao={[0, 0.15, -0.2]} pose={s > tRompe + 1 ? 'comemorar' : 'parado'} expressao="feliz" escala={0.85} />} />
     </Palco>
   );
@@ -339,7 +339,7 @@ export const CenaFreio = () => {
   const caindo = s > tVel - 1.5 && s < tMordem + 0.3;
   const c = camCabine(e.andar, s, 5.6, 2.4);
   return (
-    <Palco clima="interior" pos={[c.pos[0] + (caindo ? Math.sin(s * 50) * 0.05 : 0), c.pos[1] - 0.8, c.pos[2]]} olha={[c.olha[0], c.olha[1] - 0.6, c.olha[2]]} fov={50} sombras={false}>
+    <Palco cinema clima="interior" pos={[c.pos[0] + (caindo ? Math.sin(s * 50) * 0.05 : 0), c.pos[1] - 0.8, c.pos[2]]} olha={[c.olha[0], c.olha[1] - 0.6, c.olha[2]]} fov={50} sombras={false}>
       <Poco andar={e.andar} corda="nenhuma" garras={garras} faiscas={garras > 0.2 && s < tMordem + 1.6} passageiro={<Voce posicao={[0, 0.15, -0.2]} pose={garras > 0.9 ? 'comemorar' : 'susto'} expressao={garras > 0.9 ? 'feliz' : 'assustado'} escala={0.85} />} />
     </Palco>
   );
@@ -351,7 +351,7 @@ export const CenaMolas = () => {
   const fim = duracaoCena('molas');
   const comp = lerp(s, fim * 0.45, fim * 0.65, 0.05, 1, Easing.out(Easing.back(2)));
   return (
-    <Palco clima="interior" pos={[3.5, 1.4, 7]} olha={[0, 0, 0]} fov={50} sombras={false}>
+    <Palco cinema clima="interior" pos={[3.5, 1.4, 7]} olha={[0, 0, 0]} fov={50} sombras={false}>
       <Poco andar={Math.max(e.andar, 0) - comp * 0.2} corda="nenhuma" molas={comp} passageiro={<Voce posicao={[0, 0.15, -0.2]} pose="parado" expressao={comp > 0.9 ? 'feliz' : 'assustado'} escala={0.85} />} />
     </Palco>
   );
@@ -366,7 +366,7 @@ export const CenaInventor = () => {
   const cai = lerp(s, tCortar + 0.3, tCortar + 0.6, 0, 0.35, Easing.in(Easing.quad));
   const frame = useCurrentFrame();
   return (
-    <Palco clima="interior" pos={[lerp(s, 0, fim, -5, 3), 5, 15]} olha={[0, 5, 0]} fov={50}>
+    <Palco cinema clima="interior" pos={[lerp(s, 0, fim, -5, 3), 5, 15]} olha={[0, 5, 0]} fov={50}>
       <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
         <planeGeometry args={[40, 40]} />
         <meshStandardMaterial color="#8a6a45" />
@@ -451,7 +451,7 @@ export const CenaParabens = () => {
   const c = camCabine(e.andar, s, 6, 0.8);
   const y = e.andar * ALTURA_ANDAR;
   return (
-    <Palco clima="interior" pos={c.pos} olha={c.olha} fov={48} sombras={false}>
+    <Palco cinema clima="interior" pos={c.pos} olha={c.olha} fov={48} sombras={false}>
       <Poco andar={e.andar} corda="cabos" comPortas portas={portas} passageiro={<Voce posicao={[0, 0.15, -0.2]} pose={portas > 0.5 ? 'comemorar' : 'parado'} expressao="feliz" escala={0.85} />} />
       {portas > 0.3 &&
         Array.from({length: 40}, (_, i) => {
@@ -471,7 +471,7 @@ export const CenaParabens = () => {
 export const CenaManda = () => {
   const s = useSeg();
   return (
-    <Palco clima="estudio" pos={[0, 1.9, 5 + s * 0.2]} olha={[0, 1.4, 0]} fov={45} sombras={false}>
+    <Palco cinema clima="estudio" pos={[0, 1.9, 5 + s * 0.2]} olha={[0, 1.4, 0]} fov={45} sombras={false}>
       <Voce pose="acenar" expressao="feliz" />
     </Palco>
   );
