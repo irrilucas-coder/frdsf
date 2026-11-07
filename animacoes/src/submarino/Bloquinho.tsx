@@ -1,4 +1,9 @@
+import {createContext, useContext} from 'react';
+import {BackSide} from 'three';
 import {useCurrentFrame} from 'remotion';
+
+// Quando ligado (Palco com cinema), as peças dos personagens ganham contorno preto estilo desenho.
+export const ContornoCtx = createContext(false);
 
 export type Pose = 'parado' | 'andar' | 'remar' | 'manivela' | 'acenar' | 'comemorar' | 'apontar' | 'susto';
 export type Chapeu = 'nenhum' | 'cartola' | 'coco' | 'coroa' | 'tricornio' | 'cabelo';
@@ -39,7 +44,17 @@ const Caixa = ({
   cor: string;
   sombra?: boolean;
   emissivo?: number;
-}) => (
+}) => {
+  const contorno = useContext(ContornoCtx);
+  const borda = 0.045;
+  return (
+  <>
+  {contorno && sombra && (
+    <mesh position={pos} scale={[(tam[0] + borda) / tam[0], (tam[1] + borda) / tam[1], (tam[2] + borda) / tam[2]]}>
+      <boxGeometry args={tam} />
+      <meshBasicMaterial color="#141414" side={BackSide} />
+    </mesh>
+  )}
   <mesh position={pos} castShadow={sombra}>
     <boxGeometry args={tam} />
     <meshStandardMaterial
@@ -49,7 +64,9 @@ const Caixa = ({
       emissiveIntensity={emissivo ?? 0}
     />
   </mesh>
-);
+  </>
+  );
+};
 
 // Personagem de bloquinhos: pernas, tronco, braços e cabeça quadrada.
 // Altura total ~2 unidades, com os pés em y=0.

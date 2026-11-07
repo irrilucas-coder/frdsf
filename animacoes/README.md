@@ -36,3 +36,20 @@ explosão, erro, acerto, conquista, água, bolhas, alarme, sonar, mecânico, mot
 de 3 a 4 versões cada. Fontes: Kenney.nl e OpenGameArt (via Open Game SFX Index no GitHub) e o pacote
 `uisfx` do npm, todas CC0, sem chave e sem custo. Origem de cada arquivo em `public/sfx/creditos.json`.
 Nos vídeos, use `sfx('whoosh', n)` de `src/sfx.ts`, variando `n`.
+
+## Visual "cinema" (drei + pós-processamento)
+
+`<Palco cinema>` liga: contorno preto nos personagens (estilo desenho), reflexos suaves (Environment com
+Lightformers, sem baixar nada), brilho nas luzes (Bloom) e vinheta. Desligado por padrão, então os vídeos
+antigos não mudam. Comparação em `roteiro/comparacao-visual-cinema.png`.
+
+## Músicas livres
+
+`python3 scripts/biblioteca-musicas.py` baixa trilhas da Wikimedia Commons (CC0, domínio público ou CC BY)
+para `public/musicas/<categoria>/`, respeitando o limite de downloads deles (rode de novo para continuar).
+A linha de crédito para a descrição do vídeo fica em `public/musicas/creditos.json`.
+
+## Voz expressiva
+
+O Vibi aceita o modelo `eleven_v3` com marcações de emoção no texto (`[curious]`, `[gasps]`, `[laughs]`…),
+pelo mesmo preço por caractere. As marcações não são faladas.

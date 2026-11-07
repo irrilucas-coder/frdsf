@@ -4,6 +4,9 @@ import type {PerspectiveCamera} from 'three';
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
 import type {V3} from './camera';
+import {Environment, Lightformer} from '@react-three/drei';
+import {Bloom, EffectComposer, Vignette} from '@react-three/postprocessing';
+import {ContornoCtx} from './Bloquinho';
 
 const SincronizaCamera = ({pos, olha, fov}: {pos: V3; olha: V3; fov: number}) => {
   const camera = useThree((s) => s.camera) as PerspectiveCamera;
@@ -46,6 +49,7 @@ export const Palco = ({
   fov = 50,
   children,
   sombras = true,
+  cinema = false,
 }: {
   clima: Clima;
   pos: V3;
@@ -53,6 +57,7 @@ export const Palco = ({
   fov?: number;
   children: React.ReactNode;
   sombras?: boolean;
+  cinema?: boolean; // visual novo: contorno, brilho nas luzes, vinheta e reflexos suaves
 }) => {
   const {width, height} = useVideoConfig();
   const [topo, base] = CEU[clima];
@@ -77,7 +82,20 @@ export const Palco = ({
           shadow-camera-top={12}
           shadow-camera-bottom={-12}
         />
-        {children}
+        <ContornoCtx.Provider value={cinema}>{children}</ContornoCtx.Provider>
+        {cinema && (
+          <>
+            <Environment resolution={64}>
+              <Lightformer intensity={2} position={[0, 5, 5]} scale={[10, 5, 1]} />
+              <Lightformer intensity={1} position={[-5, 2, 2]} scale={[4, 4, 1]} color="#9fc4ff" />
+              <Lightformer intensity={1} position={[5, 2, 2]} scale={[4, 4, 1]} color="#ffd9a8" />
+            </Environment>
+            <EffectComposer multisampling={4}>
+              <Bloom intensity={0.6} luminanceThreshold={0.85} luminanceSmoothing={0.2} mipmapBlur />
+              <Vignette offset={0.25} darkness={0.55} />
+            </EffectComposer>
+          </>
+        )}
       </ThreeCanvas>
     </AbsoluteFill>
   );

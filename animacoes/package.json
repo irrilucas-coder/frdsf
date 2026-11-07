@@ -10,7 +10,9 @@
   "dependencies": {
     "@fontsource/lilita-one": "5.2.8",
     "@fontsource/nunito": "5.2.7",
+    "@react-three/drei": "10.7.6",
     "@react-three/fiber": "^9.4.0",
+    "@react-three/postprocessing": "3.0.4",
     "@remotion/cli": "4.0.541",
     "@remotion/media": "4.0.541",
     "@remotion/three": "4.0.541",
