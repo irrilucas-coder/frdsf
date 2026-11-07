@@ -1,0 +1,1196 @@
+[
+ {
+  "id": "L0",
+  "quem": "narrador",
+  "duracao": 3.187,
+  "palavras": [
+   {
+    "texto": "Por",
+    "inicio": 0.04,
+    "fim": 0.22
+   },
+   {
+    "texto": "que",
+    "inicio": 0.22,
+    "fim": 0.3
+   },
+   {
+    "texto": "o",
+    "inicio": 0.28,
+    "fim": 0.38
+   },
+   {
+    "texto": "elevador",
+    "inicio": 0.38,
+    "fim": 0.76
+   },
+   {
+    "texto": "não",
+    "inicio": 0.76,
+    "fim": 0.88
+   },
+   {
+    "texto": "despenca,",
+    "inicio": 0.88,
+    "fim": 1.7
+   },
+   {
+    "texto": "mesmo",
+    "inicio": 1.7,
+    "fim": 2
+   },
+   {
+    "texto": "se",
+    "inicio": 2,
+    "fim": 2.18
+   },
+   {
+    "texto": "o",
+    "inicio": 2.18,
+    "fim": 2.26
+   },
+   {
+    "texto": "cabo",
+    "inicio": 2.26,
+    "fim": 2.56
+   },
+   {
+    "texto": "arrebentar?",
+    "inicio": 2.56,
+    "fim": 2.98
+   }
+  ]
+ },
+ {
+  "id": "L1",
+  "quem": "narrador",
+  "duracao": 3.866,
+  "palavras": [
+   {
+    "texto": "Se",
+    "inicio": 0.06,
+    "fim": 0.26
+   },
+   {
+    "texto": "você",
+    "inicio": 0.26,
+    "fim": 0.42
+   },
+   {
+    "texto": "quiser",
+    "inicio": 0.42,
+    "fim": 0.66
+   },
+   {
+    "texto": "subir",
+    "inicio": 0.66,
+    "fim": 0.96
+   },
+   {
+    "texto": "cem",
+    "inicio": 0.96,
+    "fim": 1.22
+   },
+   {
+    "texto": "andares,",
+    "inicio": 1.22,
+    "fim": 2.18
+   },
+   {
+    "texto": "vai",
+    "inicio": 2.18,
+    "fim": 2.26
+   },
+   {
+    "texto": "chegar",
+    "inicio": 2.24,
+    "fim": 2.46
+   },
+   {
+    "texto": "lá",
+    "inicio": 2.46,
+    "fim": 2.62
+   },
+   {
+    "texto": "em",
+    "inicio": 2.62,
+    "fim": 2.8
+   },
+   {
+    "texto": "cima",
+    "inicio": 2.8,
+    "fim": 2.98
+   },
+   {
+    "texto": "sem",
+    "inicio": 2.98,
+    "fim": 3.06
+   },
+   {
+    "texto": "perna.",
+    "inicio": 2.98,
+    "fim": 3.06
+   }
+  ]
+ },
+ {
+  "id": "L2",
+  "quem": "narrador",
+  "duracao": 8.542,
+  "palavras": [
+   {
+    "texto": "Então",
+    "inicio": 0.02,
+    "fim": 0.26
+   },
+   {
+    "texto": "você",
+    "inicio": 0.26,
+    "fim": 0.52
+   },
+   {
+    "texto": "entra",
+    "inicio": 0.52,
+    "fim": 0.72
+   },
+   {
+    "texto": "numa",
+    "inicio": 0.72,
+    "fim": 0.88
+   },
+   {
+    "texto": "caixa,",
+    "inicio": 0.88,
+    "fim": 1.78
+   },
+   {
+    "texto": "amarra",
+    "inicio": 1.78,
+    "fim": 2.02
+   },
+   {
+    "texto": "uma",
+    "inicio": 2.02,
+    "fim": 2.14
+   },
+   {
+    "texto": "corda",
+    "inicio": 2.14,
+    "fim": 2.62
+   },
+   {
+    "texto": "e",
+    "inicio": 2.62,
+    "fim": 2.94
+   },
+   {
+    "texto": "puxa",
+    "inicio": 2.94,
+    "fim": 3.28
+   },
+   {
+    "texto": "com",
+    "inicio": 3.28,
+    "fim": 3.4
+   },
+   {
+    "texto": "uma",
+    "inicio": 3.4,
+    "fim": 3.54
+   },
+   {
+    "texto": "manivela.",
+    "inicio": 3.54,
+    "fim": 4.58
+   },
+   {
+    "texto": "Funciona…",
+    "inicio": 4.58,
+    "fim": 5.38
+   },
+   {
+    "texto": "até",
+    "inicio": 5.38,
+    "fim": 5.92
+   },
+   {
+    "texto": "o",
+    "inicio": 5.92,
+    "fim": 6.04
+   },
+   {
+    "texto": "terceiro",
+    "inicio": 6.04,
+    "fim": 6.46
+   },
+   {
+    "texto": "andar,",
+    "inicio": 6.46,
+    "fim": 7.02
+   },
+   {
+    "texto": "quando",
+    "inicio": 7.02,
+    "fim": 7.28
+   },
+   {
+    "texto": "seu",
+    "inicio": 7.28,
+    "fim": 7.48
+   },
+   {
+    "texto": "braço",
+    "inicio": 7.48,
+    "fim": 7.82
+   },
+   {
+    "texto": "desiste.",
+    "inicio": 7.82,
+    "fim": 7.98
+   }
+  ]
+ },
+ {
+  "id": "L3",
+  "quem": "narrador",
+  "duracao": 8.829,
+  "palavras": [
+   {
+    "texto": "Então",
+    "inicio": 0.02,
+    "fim": 0.22
+   },
+   {
+    "texto": "você",
+    "inicio": 0.22,
+    "fim": 0.46
+   },
+   {
+    "texto": "pendura",
+    "inicio": 0.46,
+    "fim": 0.9
+   },
+   {
+    "texto": "do",
+    "inicio": 0.9,
+    "fim": 1
+   },
+   {
+    "texto": "outro",
+    "inicio": 1,
+    "fim": 1.2
+   },
+   {
+    "texto": "lado",
+    "inicio": 1.2,
+    "fim": 1.42
+   },
+   {
+    "texto": "um",
+    "inicio": 1.42,
+    "fim": 1.6
+   },
+   {
+    "texto": "peso",
+    "inicio": 1.6,
+    "fim": 1.98
+   },
+   {
+    "texto": "quase",
+    "inicio": 1.98,
+    "fim": 2.36
+   },
+   {
+    "texto": "igual",
+    "inicio": 2.36,
+    "fim": 2.58
+   },
+   {
+    "texto": "ao",
+    "inicio": 2.58,
+    "fim": 2.68
+   },
+   {
+    "texto": "da",
+    "inicio": 2.68,
+    "fim": 2.76
+   },
+   {
+    "texto": "caixa.",
+    "inicio": 2.76,
+    "fim": 3.4
+   },
+   {
+    "texto": "Agora",
+    "inicio": 3.4,
+    "fim": 4
+   },
+   {
+    "texto": "um",
+    "inicio": 4,
+    "fim": 4.14
+   },
+   {
+    "texto": "sobe",
+    "inicio": 4.14,
+    "fim": 4.5
+   },
+   {
+    "texto": "enquanto",
+    "inicio": 4.5,
+    "fim": 4.72
+   },
+   {
+    "texto": "o",
+    "inicio": 4.72,
+    "fim": 4.92
+   },
+   {
+    "texto": "outro",
+    "inicio": 4.92,
+    "fim": 5.12
+   },
+   {
+    "texto": "desce,",
+    "inicio": 5.12,
+    "fim": 5.58
+   },
+   {
+    "texto": "e",
+    "inicio": 5.58,
+    "fim": 5.88
+   },
+   {
+    "texto": "quase",
+    "inicio": 5.88,
+    "fim": 6.18
+   },
+   {
+    "texto": "não",
+    "inicio": 6.18,
+    "fim": 6.3
+   },
+   {
+    "texto": "faz",
+    "inicio": 6.3,
+    "fim": 6.5
+   },
+   {
+    "texto": "força.",
+    "inicio": 6.5,
+    "fim": 7.7
+   },
+   {
+    "texto": "Esse",
+    "inicio": 7.7,
+    "fim": 7.94
+   },
+   {
+    "texto": "é",
+    "inicio": 7.94,
+    "fim": 8.02
+   },
+   {
+    "texto": "o",
+    "inicio": 7.98,
+    "fim": 8.06
+   },
+   {
+    "texto": "contrapeso.",
+    "inicio": 7.98,
+    "fim": 8.06
+   }
+  ]
+ },
+ {
+  "id": "L4",
+  "quem": "narrador",
+  "duracao": 5.042,
+  "palavras": [
+   {
+    "texto": "Agora",
+    "inicio": 0.04,
+    "fim": 0.32
+   },
+   {
+    "texto": "você",
+    "inicio": 0.32,
+    "fim": 0.54
+   },
+   {
+    "texto": "troca",
+    "inicio": 0.54,
+    "fim": 0.88
+   },
+   {
+    "texto": "a",
+    "inicio": 0.88,
+    "fim": 0.98
+   },
+   {
+    "texto": "manivela",
+    "inicio": 0.98,
+    "fim": 1.38
+   },
+   {
+    "texto": "por",
+    "inicio": 1.38,
+    "fim": 1.54
+   },
+   {
+    "texto": "um",
+    "inicio": 1.54,
+    "fim": 1.64
+   },
+   {
+    "texto": "motor",
+    "inicio": 1.64,
+    "fim": 1.98
+   },
+   {
+    "texto": "numa",
+    "inicio": 1.98,
+    "fim": 2.16
+   },
+   {
+    "texto": "roda",
+    "inicio": 2.16,
+    "fim": 2.54
+   },
+   {
+    "texto": "lá",
+    "inicio": 2.54,
+    "fim": 2.66
+   },
+   {
+    "texto": "no",
+    "inicio": 2.66,
+    "fim": 2.78
+   },
+   {
+    "texto": "alto.",
+    "inicio": 2.78,
+    "fim": 3.44
+   },
+   {
+    "texto": "Você",
+    "inicio": 3.44,
+    "fim": 3.92
+   },
+   {
+    "texto": "só",
+    "inicio": 3.92,
+    "fim": 4.0
+   },
+   {
+    "texto": "aperta",
+    "inicio": 3.98,
+    "fim": 4.06
+   },
+   {
+    "texto": "o",
+    "inicio": 3.98,
+    "fim": 4.06
+   },
+   {
+    "texto": "botão.",
+    "inicio": 3.98,
+    "fim": 4.06
+   }
+  ]
+ },
+ {
+  "id": "L5",
+  "quem": "narrador",
+  "duracao": 6.557,
+  "palavras": [
+   {
+    "texto": "Mas",
+    "inicio": 0.02,
+    "fim": 0.24
+   },
+   {
+    "texto": "um",
+    "inicio": 0.24,
+    "fim": 0.38
+   },
+   {
+    "texto": "dia",
+    "inicio": 0.38,
+    "fim": 0.64
+   },
+   {
+    "texto": "a",
+    "inicio": 0.64,
+    "fim": 0.92
+   },
+   {
+    "texto": "corda",
+    "inicio": 0.92,
+    "fim": 1.16
+   },
+   {
+    "texto": "gasta,",
+    "inicio": 1.16,
+    "fim": 2
+   },
+   {
+    "texto": "arrebenta…",
+    "inicio": 2,
+    "fim": 2.72
+   },
+   {
+    "texto": "e",
+    "inicio": 2.72,
+    "fim": 3.14
+   },
+   {
+    "texto": "você",
+    "inicio": 3.14,
+    "fim": 3.34
+   },
+   {
+    "texto": "vai",
+    "inicio": 3.34,
+    "fim": 3.52
+   },
+   {
+    "texto": "do",
+    "inicio": 3.52,
+    "fim": 3.62
+   },
+   {
+    "texto": "quadragésimo",
+    "inicio": 3.62,
+    "fim": 4.44
+   },
+   {
+    "texto": "andar",
+    "inicio": 4.44,
+    "fim": 4.64
+   },
+   {
+    "texto": "pro",
+    "inicio": 4.64,
+    "fim": 4.84
+   },
+   {
+    "texto": "térreo",
+    "inicio": 4.84,
+    "fim": 5.22
+   },
+   {
+    "texto": "em",
+    "inicio": 5.22,
+    "fim": 5.4
+   },
+   {
+    "texto": "cinco",
+    "inicio": 5.4,
+    "fim": 5.74
+   },
+   {
+    "texto": "segundos.",
+    "inicio": 5.74,
+    "fim": 5.98
+   }
+  ]
+ },
+ {
+  "id": "L6",
+  "quem": "narrador",
+  "duracao": 6.766,
+  "palavras": [
+   {
+    "texto": "Então",
+    "inicio": 0.04,
+    "fim": 0.24
+   },
+   {
+    "texto": "você",
+    "inicio": 0.24,
+    "fim": 0.46
+   },
+   {
+    "texto": "troca",
+    "inicio": 0.46,
+    "fim": 0.76
+   },
+   {
+    "texto": "a",
+    "inicio": 0.76,
+    "fim": 0.9
+   },
+   {
+    "texto": "corda",
+    "inicio": 0.9,
+    "fim": 1.18
+   },
+   {
+    "texto": "por",
+    "inicio": 1.18,
+    "fim": 1.36
+   },
+   {
+    "texto": "vários",
+    "inicio": 1.36,
+    "fim": 1.74
+   },
+   {
+    "texto": "cabos",
+    "inicio": 1.74,
+    "fim": 2.14
+   },
+   {
+    "texto": "de",
+    "inicio": 2.14,
+    "fim": 2.28
+   },
+   {
+    "texto": "aço.",
+    "inicio": 2.28,
+    "fim": 2.78
+   },
+   {
+    "texto": "Cada",
+    "inicio": 2.78,
+    "fim": 3.18
+   },
+   {
+    "texto": "um",
+    "inicio": 3.18,
+    "fim": 3.3
+   },
+   {
+    "texto": "aguenta",
+    "inicio": 3.3,
+    "fim": 3.62
+   },
+   {
+    "texto": "o",
+    "inicio": 3.62,
+    "fim": 3.7
+   },
+   {
+    "texto": "elevador",
+    "inicio": 3.7,
+    "fim": 4.06
+   },
+   {
+    "texto": "sozinho.",
+    "inicio": 4.06,
+    "fim": 4.76
+   },
+   {
+    "texto": "Se",
+    "inicio": 4.76,
+    "fim": 5.08
+   },
+   {
+    "texto": "um",
+    "inicio": 5.08,
+    "fim": 5.18
+   },
+   {
+    "texto": "rompe,",
+    "inicio": 5.18,
+    "fim": 5.78
+   },
+   {
+    "texto": "os",
+    "inicio": 5.78,
+    "fim": 5.88
+   },
+   {
+    "texto": "outros",
+    "inicio": 5.88,
+    "fim": 5.98
+   },
+   {
+    "texto": "seguram.",
+    "inicio": 5.98,
+    "fim": 6.06
+   }
+  ]
+ },
+ {
+  "id": "L7",
+  "quem": "narrador",
+  "duracao": 10.188,
+  "palavras": [
+   {
+    "texto": "Mas",
+    "inicio": 0,
+    "fim": 0.22
+   },
+   {
+    "texto": "e",
+    "inicio": 0.22,
+    "fim": 0.36
+   },
+   {
+    "texto": "se",
+    "inicio": 0.36,
+    "fim": 0.44
+   },
+   {
+    "texto": "todos",
+    "inicio": 0.44,
+    "fim": 0.78
+   },
+   {
+    "texto": "arrebentarem?",
+    "inicio": 0.78,
+    "fim": 1.72
+   },
+   {
+    "texto": "Então",
+    "inicio": 1.72,
+    "fim": 2.12
+   },
+   {
+    "texto": "você",
+    "inicio": 2.12,
+    "fim": 2.34
+   },
+   {
+    "texto": "coloca",
+    "inicio": 2.34,
+    "fim": 2.64
+   },
+   {
+    "texto": "garras",
+    "inicio": 2.64,
+    "fim": 3.08
+   },
+   {
+    "texto": "dos",
+    "inicio": 3.08,
+    "fim": 3.22
+   },
+   {
+    "texto": "lados",
+    "inicio": 3.22,
+    "fim": 3.48
+   },
+   {
+    "texto": "da",
+    "inicio": 3.48,
+    "fim": 3.6
+   },
+   {
+    "texto": "cabine.",
+    "inicio": 3.6,
+    "fim": 4.2
+   },
+   {
+    "texto": "Se",
+    "inicio": 4.2,
+    "fim": 4.52
+   },
+   {
+    "texto": "ela",
+    "inicio": 4.52,
+    "fim": 4.64
+   },
+   {
+    "texto": "passar",
+    "inicio": 4.64,
+    "fim": 4.92
+   },
+   {
+    "texto": "da",
+    "inicio": 4.92,
+    "fim": 5.02
+   },
+   {
+    "texto": "velocidade,",
+    "inicio": 5.02,
+    "fim": 5.92
+   },
+   {
+    "texto": "as",
+    "inicio": 5.92,
+    "fim": 6.02
+   },
+   {
+    "texto": "garras",
+    "inicio": 6.02,
+    "fim": 6.32
+   },
+   {
+    "texto": "mordem",
+    "inicio": 6.32,
+    "fim": 6.74
+   },
+   {
+    "texto": "os",
+    "inicio": 6.74,
+    "fim": 6.9
+   },
+   {
+    "texto": "trilhos",
+    "inicio": 6.9,
+    "fim": 7.3
+   },
+   {
+    "texto": "e",
+    "inicio": 7.3,
+    "fim": 7.46
+   },
+   {
+    "texto": "travam",
+    "inicio": 7.46,
+    "fim": 7.8
+   },
+   {
+    "texto": "tudo.",
+    "inicio": 7.8,
+    "fim": 8.42
+   },
+   {
+    "texto": "Esse",
+    "inicio": 8.42,
+    "fim": 8.86
+   },
+   {
+    "texto": "é",
+    "inicio": 8.86,
+    "fim": 8.94
+   },
+   {
+    "texto": "o",
+    "inicio": 8.94,
+    "fim": 9.02
+   },
+   {
+    "texto": "freio",
+    "inicio": 9.02,
+    "fim": 9.3
+   },
+   {
+    "texto": "de",
+    "inicio": 9.3,
+    "fim": 9.4
+   },
+   {
+    "texto": "segurança.",
+    "inicio": 9.4,
+    "fim": 9.98
+   }
+  ]
+ },
+ {
+  "id": "L8",
+  "quem": "narrador",
+  "duracao": 4.65,
+  "palavras": [
+   {
+    "texto": "E",
+    "inicio": 0,
+    "fim": 0.16
+   },
+   {
+    "texto": "se",
+    "inicio": 0.16,
+    "fim": 0.26
+   },
+   {
+    "texto": "mesmo",
+    "inicio": 0.26,
+    "fim": 0.48
+   },
+   {
+    "texto": "assim",
+    "inicio": 0.48,
+    "fim": 0.72
+   },
+   {
+    "texto": "ela",
+    "inicio": 0.72,
+    "fim": 0.9
+   },
+   {
+    "texto": "chegar",
+    "inicio": 0.9,
+    "fim": 1.14
+   },
+   {
+    "texto": "no",
+    "inicio": 1.14,
+    "fim": 1.28
+   },
+   {
+    "texto": "fundo,",
+    "inicio": 1.28,
+    "fim": 2.16
+   },
+   {
+    "texto": "molas",
+    "inicio": 2.16,
+    "fim": 2.42
+   },
+   {
+    "texto": "gigantes",
+    "inicio": 2.42,
+    "fim": 2.82
+   },
+   {
+    "texto": "lá",
+    "inicio": 2.82,
+    "fim": 2.94
+   },
+   {
+    "texto": "embaixo",
+    "inicio": 2.94,
+    "fim": 3.3
+   },
+   {
+    "texto": "amortecem",
+    "inicio": 3.3,
+    "fim": 3.9
+   },
+   {
+    "texto": "a",
+    "inicio": 3.9,
+    "fim": 3.98
+   },
+   {
+    "texto": "pancada.",
+    "inicio": 3.98,
+    "fim": 4.06
+   }
+  ]
+ },
+ {
+  "id": "L9",
+  "quem": "narrador",
+  "duracao": 7.784,
+  "palavras": [
+   {
+    "texto": "Esse",
+    "inicio": 0.04,
+    "fim": 0.3
+   },
+   {
+    "texto": "freio",
+    "inicio": 0.3,
+    "fim": 0.56
+   },
+   {
+    "texto": "é",
+    "inicio": 0.56,
+    "fim": 0.7
+   },
+   {
+    "texto": "tão",
+    "inicio": 0.7,
+    "fim": 0.88
+   },
+   {
+    "texto": "confiável",
+    "inicio": 0.88,
+    "fim": 1.56
+   },
+   {
+    "texto": "que,",
+    "inicio": 1.56,
+    "fim": 2.14
+   },
+   {
+    "texto": "na",
+    "inicio": 2.14,
+    "fim": 2.34
+   },
+   {
+    "texto": "primeira",
+    "inicio": 2.34,
+    "fim": 2.66
+   },
+   {
+    "texto": "apresentação,",
+    "inicio": 2.66,
+    "fim": 3.7
+   },
+   {
+    "texto": "o",
+    "inicio": 3.7,
+    "fim": 3.82
+   },
+   {
+    "texto": "inventor",
+    "inicio": 3.82,
+    "fim": 4.12
+   },
+   {
+    "texto": "subiu",
+    "inicio": 4.12,
+    "fim": 4.6
+   },
+   {
+    "texto": "na",
+    "inicio": 4.6,
+    "fim": 4.68
+   },
+   {
+    "texto": "plataforma",
+    "inicio": 4.68,
+    "fim": 5.26
+   },
+   {
+    "texto": "e",
+    "inicio": 5.26,
+    "fim": 5.6
+   },
+   {
+    "texto": "mandou",
+    "inicio": 5.6,
+    "fim": 5.86
+   },
+   {
+    "texto": "cortar",
+    "inicio": 5.86,
+    "fim": 6.18
+   },
+   {
+    "texto": "a",
+    "inicio": 6.18,
+    "fim": 6.34
+   },
+   {
+    "texto": "corda",
+    "inicio": 6.34,
+    "fim": 6.6
+   },
+   {
+    "texto": "com",
+    "inicio": 6.6,
+    "fim": 6.74
+   },
+   {
+    "texto": "ele",
+    "inicio": 6.74,
+    "fim": 6.98
+   },
+   {
+    "texto": "lá",
+    "inicio": 6.98,
+    "fim": 7.06
+   },
+   {
+    "texto": "em",
+    "inicio": 6.98,
+    "fim": 7.06
+   },
+   {
+    "texto": "cima.",
+    "inicio": 6.98,
+    "fim": 7.06
+   }
+  ]
+ },
+ {
+  "id": "L10",
+  "quem": "narrador",
+  "duracao": 3.422,
+  "palavras": [
+   {
+    "texto": "Parabéns!",
+    "inicio": 0.08,
+    "fim": 0.92
+   },
+   {
+    "texto": "Você",
+    "inicio": 0.92,
+    "fim": 1.24
+   },
+   {
+    "texto": "construiu",
+    "inicio": 1.24,
+    "fim": 1.7
+   },
+   {
+    "texto": "um",
+    "inicio": 1.7,
+    "fim": 1.78
+   },
+   {
+    "texto": "elevador",
+    "inicio": 1.78,
+    "fim": 2.24
+   },
+   {
+    "texto": "que",
+    "inicio": 2.24,
+    "fim": 2.4
+   },
+   {
+    "texto": "não",
+    "inicio": 2.4,
+    "fim": 2.56
+   },
+   {
+    "texto": "despenca.",
+    "inicio": 2.56,
+    "fim": 2.98
+   }
+  ]
+ },
+ {
+  "id": "L11",
+  "quem": "narrador",
+  "duracao": 3.553,
+  "palavras": [
+   {
+    "texto": "Conhece",
+    "inicio": 0.04,
+    "fim": 0.38
+   },
+   {
+    "texto": "alguém",
+    "inicio": 0.38,
+    "fim": 0.56
+   },
+   {
+    "texto": "que",
+    "inicio": 0.56,
+    "fim": 0.68
+   },
+   {
+    "texto": "tem",
+    "inicio": 0.68,
+    "fim": 0.82
+   },
+   {
+    "texto": "medo",
+    "inicio": 0.82,
+    "fim": 1.18
+   },
+   {
+    "texto": "de",
+    "inicio": 1.18,
+    "fim": 1.3
+   },
+   {
+    "texto": "elevador?",
+    "inicio": 1.3,
+    "fim": 2.1
+   },
+   {
+    "texto": "Manda",
+    "inicio": 2.1,
+    "fim": 2.98
+   },
+   {
+    "texto": "pra",
+    "inicio": 2.98,
+    "fim": 3.06
+   },
+   {
+    "texto": "ele.",
+    "inicio": 2.98,
+    "fim": 3.06
+   }
+  ]
+ }
+]

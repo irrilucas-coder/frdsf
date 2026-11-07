@@ -28,12 +28,12 @@ const DESTAQUES = /^(1620|1776|1864|1900|1954|1958|propósito|horas|Turtle|bomba
 // ---------- Legendas palavra por palavra ----------
 type Pagina = {palavras: Palavra[]; inicio: number; fim: number};
 
-const paginar = (f: FalaNoTempo): Pagina[] => {
+const paginar = (f: FalaNoTempo, max = 3): Pagina[] => {
   const paginas: Pagina[] = [];
   let atual: Palavra[] = [];
   f.palavras.forEach((p, i) => {
     atual.push(p);
-    const quebra = /[,.!?…:]$/.test(p.texto) || atual.length >= 3 || i === f.palavras.length - 1;
+    const quebra = /[,.!?…:]$/.test(p.texto) || atual.length >= max || i === f.palavras.length - 1;
     if (quebra) {
       paginas.push({palavras: atual, inicio: f.inicio + atual[0].inicio, fim: f.inicio + p.fim});
       atual = [];
@@ -55,6 +55,8 @@ type OpcoesLegenda = {
   corDestaque?: string;
   topo?: string;
   tamanho?: number;
+  umaLinha?: boolean; // legenda numa linha só (sem quebrar)
+  maxPalavras?: number;
 };
 const cachePaginas = new WeakMap<FalaNoTempo[], {fala: FalaNoTempo; paginas: Pagina[]}[]>();
 
@@ -67,10 +69,12 @@ export const Legendas = ({
   corDestaque = '#5ef2ff',
   topo = '58%',
   tamanho = 100,
+  umaLinha = false,
+  maxPalavras = 3,
 }: OpcoesLegenda = {}) => {
   let PAGINAS_USADAS = PAGINAS;
   if (falas) {
-    if (!cachePaginas.has(falas)) cachePaginas.set(falas, falas.map((f) => ({fala: f, paginas: paginar(f)})));
+    if (!cachePaginas.has(falas)) cachePaginas.set(falas, falas.map((f) => ({fala: f, paginas: paginar(f, maxPalavras)})));
     PAGINAS_USADAS = cachePaginas.get(falas)!;
   }
   const frame = useCurrentFrame();
@@ -108,7 +112,8 @@ export const Legendas = ({
         style={{
           scale: entra,
           display: 'flex',
-          flexWrap: 'wrap',
+          flexWrap: umaLinha ? 'nowrap' : 'wrap',
+          whiteSpace: umaLinha ? 'nowrap' : undefined,
           justifyContent: 'center',
           gap: '0 34px',
           maxWidth: width - 160,

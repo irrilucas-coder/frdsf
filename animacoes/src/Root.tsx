@@ -1,5 +1,7 @@
 import {Composition, Still} from 'remotion';
 import {Perfil} from './perfil/Perfil';
+import {ElevadorVideo} from './elevador/Elevador';
+import {FPS as FPS_ELEV, TOTAL_FRAMES as FRAMES_ELEV} from './elevador/roteiro';
 import {BipEAEstrela} from './BipEAEstrela';
 import {Submarino} from './submarino/Submarino';
 import {FPS, TOTAL_FRAMES} from './submarino/roteiro';
@@ -63,6 +65,7 @@ export const RemotionRoot = () => {
         width={1080}
         height={1920}
       />
+      <Composition id="Elevador" component={ElevadorVideo} durationInFrames={FRAMES_ELEV} fps={FPS_ELEV} width={1080} height={1920} />
       <Still id="PerfilVermelho" component={Perfil} width={1080} height={1080} defaultProps={{fundo1: '#ff5a4f', fundo2: '#7a0f0a', camisa: '#1c2a4a', cabelo: '#2a1d14', boné: '#ffcc00'}} />
       <Still id="PerfilAzul" component={Perfil} width={1080} height={1080} defaultProps={{fundo1: '#4cc9f0', fundo2: '#0b2a6b', camisa: '#e10600', cabelo: '#2a1d14', boné: '#ffcc00'}} />
       <Still id="PerfilAmarelo" component={Perfil} width={1080} height={1080} defaultProps={{fundo1: '#ffe14d', fundo2: '#e07b00', camisa: '#1c2a4a', cabelo: '#2a1d14', boné: '#e10600'}} />
