@@ -72,6 +72,21 @@ PROJETOS = {
         ("L9", "Así que ya sabes: si hay fila única, no te quejes. Es la más justa."),
         ("L10", "¿Conoces a alguien que siempre se cambia de fila? [laughs] Mándaselo."),
     ],
+    # ---- Documentário: Cristiano Ronaldo deixa a seleção (notícia de 05/11/2026) ----
+    "cr7": [
+        ("L0", "[suspenseful] Acabou. Depois de vinte e três anos, Cristiano Ronaldo não vai mais vestir a camisa de Portugal."),
+        ("L1", "No dia cinco de novembro, aos quarenta e um anos, ele anunciou num vídeo nas redes sociais: [sighs] Portugal estará sempre em mim."),
+        ("L2", "Tudo começou em dois mil e três, quando um garoto de dezoito anos estreou pela seleção."),
+        ("L3", "Depois vieram os títulos: [excited] a Eurocopa de dois mil e dezesseis e duas Ligas das Nações."),
+        ("L4", "E os recordes: duzentos e trinta e quatro jogos e cento e quarenta e seis gols. Nenhum jogador marcou mais por uma seleção na história."),
+        ("L5", "Mas em julho, a Espanha eliminou Portugal nas oitavas da Copa do Mundo, com um gol nos acréscimos."),
+        ("L6", "Em setembro, veio a briga. Depois de começar no banco contra a Noruega, Ronaldo acusou o técnico Jorge Jesus de não cumprir o combinado, [gasps] e abandonou a concentração."),
+        ("L7", "A Federação Portuguesa suspendeu Ronaldo por trinta dias e ainda aplicou uma multa."),
+        ("L8", "Semanas depois, um dia antes da nova convocação, veio o adeus."),
+        ("L9", "Jorge Jesus disse que pediu pra ele ficar, [sighs] mas que tem que aceitar a decisão."),
+        ("L10", "Ronaldo segue jogando pelo Al Nassr, na Arábia Saudita. Mas a camisa sete de Portugal agora está livre."),
+        ("L11", "[curious] E pra você, quem merece herdar a camisa sete? Comenta aqui."),
+    ],
 }
 IDIOMAS = {"freio-mx": "es", "fila-mx": "es"}
 VOZES_PROJETO = {"freio-mx": "qRUgOhnxGASxirG4fKjv", "fila-mx": "qRUgOhnxGASxirG4fKjv"}  # David - mexicano

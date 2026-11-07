@@ -1,0 +1,1136 @@
+[
+ {
+  "id": "L0",
+  "quem": "narrador",
+  "duracao": 4.963,
+  "palavras": [
+   {
+    "texto": "Acabou.",
+    "inicio": 0.04,
+    "fim": 0.74
+   },
+   {
+    "texto": "Depois",
+    "inicio": 0.74,
+    "fim": 0.98
+   },
+   {
+    "texto": "de",
+    "inicio": 0.98,
+    "fim": 1.14
+   },
+   {
+    "texto": "vinte",
+    "inicio": 1.035,
+    "fim": 1.309
+   },
+   {
+    "texto": "e",
+    "inicio": 1.309,
+    "fim": 1.415
+   },
+   {
+    "texto": "três",
+    "inicio": 1.415,
+    "fim": 1.647
+   },
+   {
+    "texto": "anos,",
+    "inicio": 1.5,
+    "fim": 2.36
+   },
+   {
+    "texto": "Cristiano",
+    "inicio": 2.36,
+    "fim": 2.7
+   },
+   {
+    "texto": "Ronaldo",
+    "inicio": 2.7,
+    "fim": 3.08
+   },
+   {
+    "texto": "não",
+    "inicio": 3.08,
+    "fim": 3.26
+   },
+   {
+    "texto": "vai",
+    "inicio": 3.26,
+    "fim": 3.5
+   },
+   {
+    "texto": "mais",
+    "inicio": 3.5,
+    "fim": 3.66
+   },
+   {
+    "texto": "vestir",
+    "inicio": 3.66,
+    "fim": 3.92
+   },
+   {
+    "texto": "a",
+    "inicio": 3.92,
+    "fim": 4.0
+   },
+   {
+    "texto": "camisa",
+    "inicio": 3.98,
+    "fim": 4.06
+   },
+   {
+    "texto": "de",
+    "inicio": 3.98,
+    "fim": 4.06
+   },
+   {
+    "texto": "Portugal.",
+    "inicio": 3.98,
+    "fim": 4.06
+   }
+  ]
+ },
+ {
+  "id": "L1",
+  "quem": "narrador",
+  "duracao": 7.053,
+  "palavras": [
+   {
+    "texto": "No",
+    "inicio": 0.02,
+    "fim": 0.2
+   },
+   {
+    "texto": "dia",
+    "inicio": 0.2,
+    "fim": 0.36
+   },
+   {
+    "texto": "cinco",
+    "inicio": 0.36,
+    "fim": 0.7
+   },
+   {
+    "texto": "de",
+    "inicio": 0.7,
+    "fim": 0.82
+   },
+   {
+    "texto": "novembro,",
+    "inicio": 0.82,
+    "fim": 1.5
+   },
+   {
+    "texto": "aos",
+    "inicio": 1.5,
+    "fim": 1.68
+   },
+   {
+    "texto": "quarenta",
+    "inicio": 1.702,
+    "fim": 2.165
+   },
+   {
+    "texto": "e",
+    "inicio": 2.165,
+    "fim": 2.286
+   },
+   {
+    "texto": "um",
+    "inicio": 2.286,
+    "fim": 2.456
+   },
+   {
+    "texto": "anos,",
+    "inicio": 2.06,
+    "fim": 2.94
+   },
+   {
+    "texto": "ele",
+    "inicio": 2.94,
+    "fim": 3.02
+   },
+   {
+    "texto": "anunciou",
+    "inicio": 3.02,
+    "fim": 3.52
+   },
+   {
+    "texto": "num",
+    "inicio": 3.52,
+    "fim": 3.64
+   },
+   {
+    "texto": "vídeo",
+    "inicio": 3.64,
+    "fim": 3.96
+   },
+   {
+    "texto": "nas",
+    "inicio": 3.96,
+    "fim": 4.12
+   },
+   {
+    "texto": "redes",
+    "inicio": 4.12,
+    "fim": 4.32
+   },
+   {
+    "texto": "sociais:",
+    "inicio": 4.32,
+    "fim": 5.12
+   },
+   {
+    "texto": "Portugal",
+    "inicio": 5.12,
+    "fim": 5.86
+   },
+   {
+    "texto": "estará",
+    "inicio": 5.86,
+    "fim": 6.3
+   },
+   {
+    "texto": "sempre",
+    "inicio": 6.3,
+    "fim": 6.6
+   },
+   {
+    "texto": "em",
+    "inicio": 6.6,
+    "fim": 6.76
+   },
+   {
+    "texto": "mim.",
+    "inicio": 6.76,
+    "fim": 6.98
+   }
+  ]
+ },
+ {
+  "id": "L2",
+  "quem": "narrador",
+  "duracao": 4.441,
+  "palavras": [
+   {
+    "texto": "Tudo",
+    "inicio": 0.04,
+    "fim": 0.22
+   },
+   {
+    "texto": "começou",
+    "inicio": 0.22,
+    "fim": 0.56
+   },
+   {
+    "texto": "em",
+    "inicio": 0.56,
+    "fim": 0.68
+   },
+   {
+    "texto": "dois",
+    "inicio": 0.857,
+    "fim": 1.087
+   },
+   {
+    "texto": "mil",
+    "inicio": 1.087,
+    "fim": 1.276
+   },
+   {
+    "texto": "e",
+    "inicio": 1.276,
+    "fim": 1.381
+   },
+   {
+    "texto": "três,",
+    "inicio": 1.381,
+    "fim": 1.737
+   },
+   {
+    "texto": "quando",
+    "inicio": 1.66,
+    "fim": 1.9
+   },
+   {
+    "texto": "um",
+    "inicio": 1.9,
+    "fim": 2
+   },
+   {
+    "texto": "garoto",
+    "inicio": 2,
+    "fim": 2.34
+   },
+   {
+    "texto": "de",
+    "inicio": 2.34,
+    "fim": 2.46
+   },
+   {
+    "texto": "dezoito",
+    "inicio": 2.46,
+    "fim": 2.8
+   },
+   {
+    "texto": "anos",
+    "inicio": 2.8,
+    "fim": 3.14
+   },
+   {
+    "texto": "estreou",
+    "inicio": 3.14,
+    "fim": 3.58
+   },
+   {
+    "texto": "pela",
+    "inicio": 3.58,
+    "fim": 3.76
+   },
+   {
+    "texto": "seleção.",
+    "inicio": 3.76,
+    "fim": 3.98
+   }
+  ]
+ },
+ {
+  "id": "L3",
+  "quem": "narrador",
+  "duracao": 4.885,
+  "palavras": [
+   {
+    "texto": "Depois",
+    "inicio": 0.04,
+    "fim": 0.36
+   },
+   {
+    "texto": "vieram",
+    "inicio": 0.36,
+    "fim": 0.68
+   },
+   {
+    "texto": "os",
+    "inicio": 0.68,
+    "fim": 0.86
+   },
+   {
+    "texto": "títulos:",
+    "inicio": 0.86,
+    "fim": 1.5
+   },
+   {
+    "texto": "a",
+    "inicio": 1.5,
+    "fim": 1.9
+   },
+   {
+    "texto": "Eurocopa",
+    "inicio": 1.9,
+    "fim": 2.34
+   },
+   {
+    "texto": "de",
+    "inicio": 2.34,
+    "fim": 2.42
+   },
+   {
+    "texto": "dois",
+    "inicio": 2.115,
+    "fim": 2.371
+   },
+   {
+    "texto": "mil",
+    "inicio": 2.371,
+    "fim": 2.58
+   },
+   {
+    "texto": "e",
+    "inicio": 2.58,
+    "fim": 2.696
+   },
+   {
+    "texto": "dezesseis",
+    "inicio": 2.696,
+    "fim": 3.184
+   },
+   {
+    "texto": "e",
+    "inicio": 3.32,
+    "fim": 3.52
+   },
+   {
+    "texto": "duas",
+    "inicio": 3.52,
+    "fim": 3.68
+   },
+   {
+    "texto": "Ligas",
+    "inicio": 3.68,
+    "fim": 3.98
+   },
+   {
+    "texto": "das",
+    "inicio": 3.98,
+    "fim": 4.06
+   },
+   {
+    "texto": "Nações.",
+    "inicio": 3.98,
+    "fim": 4.06
+   }
+  ]
+ },
+ {
+  "id": "L4",
+  "quem": "narrador",
+  "duracao": 6.557,
+  "palavras": [
+   {
+    "texto": "E",
+    "inicio": 0.08,
+    "fim": 0.18
+   },
+   {
+    "texto": "os",
+    "inicio": 0.18,
+    "fim": 0.3
+   },
+   {
+    "texto": "recordes:",
+    "inicio": 0.3,
+    "fim": 0.96
+   },
+   {
+    "texto": "duzentos",
+    "inicio": 0.845,
+    "fim": 1.214
+   },
+   {
+    "texto": "e",
+    "inicio": 1.214,
+    "fim": 1.311
+   },
+   {
+    "texto": "trinta",
+    "inicio": 1.311,
+    "fim": 1.603
+   },
+   {
+    "texto": "e",
+    "inicio": 1.603,
+    "fim": 1.7
+   },
+   {
+    "texto": "quatro",
+    "inicio": 1.7,
+    "fim": 1.992
+   },
+   {
+    "texto": "jogos",
+    "inicio": 1.96,
+    "fim": 2.34
+   },
+   {
+    "texto": "e",
+    "inicio": 2.34,
+    "fim": 2.62
+   },
+   {
+    "texto": "cento",
+    "inicio": 2.342,
+    "fim": 2.594
+   },
+   {
+    "texto": "e",
+    "inicio": 2.594,
+    "fim": 2.691
+   },
+   {
+    "texto": "quarenta",
+    "inicio": 2.691,
+    "fim": 3.061
+   },
+   {
+    "texto": "e",
+    "inicio": 3.061,
+    "fim": 3.158
+   },
+   {
+    "texto": "seis",
+    "inicio": 3.158,
+    "fim": 3.372
+   },
+   {
+    "texto": "gols.",
+    "inicio": 3.4,
+    "fim": 3.92
+   },
+   {
+    "texto": "Nenhum",
+    "inicio": 3.92,
+    "fim": 4.32
+   },
+   {
+    "texto": "jogador",
+    "inicio": 4.32,
+    "fim": 4.68
+   },
+   {
+    "texto": "marcou",
+    "inicio": 4.68,
+    "fim": 5
+   },
+   {
+    "texto": "mais",
+    "inicio": 5,
+    "fim": 5.18
+   },
+   {
+    "texto": "por",
+    "inicio": 5.18,
+    "fim": 5.32
+   },
+   {
+    "texto": "uma",
+    "inicio": 5.32,
+    "fim": 5.44
+   },
+   {
+    "texto": "seleção",
+    "inicio": 5.44,
+    "fim": 5.8
+   },
+   {
+    "texto": "na",
+    "inicio": 5.8,
+    "fim": 5.9
+   },
+   {
+    "texto": "história.",
+    "inicio": 5.9,
+    "fim": 5.98
+   }
+  ]
+ },
+ {
+  "id": "L5",
+  "quem": "narrador",
+  "duracao": 5.12,
+  "palavras": [
+   {
+    "texto": "Mas",
+    "inicio": 0.02,
+    "fim": 0.24
+   },
+   {
+    "texto": "em",
+    "inicio": 0.24,
+    "fim": 0.44
+   },
+   {
+    "texto": "julho,",
+    "inicio": 0.44,
+    "fim": 1.02
+   },
+   {
+    "texto": "a",
+    "inicio": 1.02,
+    "fim": 1.1
+   },
+   {
+    "texto": "Espanha",
+    "inicio": 1.04,
+    "fim": 1.32
+   },
+   {
+    "texto": "eliminou",
+    "inicio": 1.32,
+    "fim": 1.66
+   },
+   {
+    "texto": "Portugal",
+    "inicio": 1.66,
+    "fim": 2.04
+   },
+   {
+    "texto": "nas",
+    "inicio": 2.04,
+    "fim": 2.22
+   },
+   {
+    "texto": "oitavas",
+    "inicio": 2.22,
+    "fim": 2.64
+   },
+   {
+    "texto": "da",
+    "inicio": 2.64,
+    "fim": 2.76
+   },
+   {
+    "texto": "Copa",
+    "inicio": 2.76,
+    "fim": 3
+   },
+   {
+    "texto": "do",
+    "inicio": 3,
+    "fim": 3.08
+   },
+   {
+    "texto": "Mundo,",
+    "inicio": 3.08,
+    "fim": 3.52
+   },
+   {
+    "texto": "com",
+    "inicio": 3.52,
+    "fim": 3.8
+   },
+   {
+    "texto": "um",
+    "inicio": 3.8,
+    "fim": 3.94
+   },
+   {
+    "texto": "gol",
+    "inicio": 3.94,
+    "fim": 4.08
+   },
+   {
+    "texto": "nos",
+    "inicio": 4.08,
+    "fim": 4.24
+   },
+   {
+    "texto": "acréscimos.",
+    "inicio": 4.24,
+    "fim": 4.98
+   }
+  ]
+ },
+ {
+  "id": "L6",
+  "quem": "narrador",
+  "duracao": 9.247,
+  "palavras": [
+   {
+    "texto": "Em",
+    "inicio": 0.04,
+    "fim": 0.2
+   },
+   {
+    "texto": "setembro,",
+    "inicio": 0.2,
+    "fim": 0.86
+   },
+   {
+    "texto": "veio",
+    "inicio": 0.86,
+    "fim": 1.14
+   },
+   {
+    "texto": "a",
+    "inicio": 1.14,
+    "fim": 1.3
+   },
+   {
+    "texto": "briga.",
+    "inicio": 1.3,
+    "fim": 1.8
+   },
+   {
+    "texto": "Depois",
+    "inicio": 1.8,
+    "fim": 2.26
+   },
+   {
+    "texto": "de",
+    "inicio": 2.26,
+    "fim": 2.4
+   },
+   {
+    "texto": "começar",
+    "inicio": 2.4,
+    "fim": 2.7
+   },
+   {
+    "texto": "no",
+    "inicio": 2.7,
+    "fim": 2.86
+   },
+   {
+    "texto": "banco",
+    "inicio": 2.86,
+    "fim": 3.12
+   },
+   {
+    "texto": "contra",
+    "inicio": 3.12,
+    "fim": 3.4
+   },
+   {
+    "texto": "a",
+    "inicio": 3.4,
+    "fim": 3.52
+   },
+   {
+    "texto": "Noruega,",
+    "inicio": 3.52,
+    "fim": 4.3
+   },
+   {
+    "texto": "Ronaldo",
+    "inicio": 4.3,
+    "fim": 4.56
+   },
+   {
+    "texto": "acusou",
+    "inicio": 4.56,
+    "fim": 4.98
+   },
+   {
+    "texto": "o",
+    "inicio": 4.98,
+    "fim": 5.1
+   },
+   {
+    "texto": "técnico",
+    "inicio": 5.1,
+    "fim": 5.48
+   },
+   {
+    "texto": "Jorge",
+    "inicio": 5.48,
+    "fim": 5.76
+   },
+   {
+    "texto": "Jesus",
+    "inicio": 5.76,
+    "fim": 6.12
+   },
+   {
+    "texto": "de",
+    "inicio": 6.12,
+    "fim": 6.28
+   },
+   {
+    "texto": "não",
+    "inicio": 6.28,
+    "fim": 6.44
+   },
+   {
+    "texto": "cumprir",
+    "inicio": 6.44,
+    "fim": 6.8
+   },
+   {
+    "texto": "o",
+    "inicio": 6.8,
+    "fim": 6.88
+   },
+   {
+    "texto": "combinado,",
+    "inicio": 6.86,
+    "fim": 7.4
+   },
+   {
+    "texto": "e",
+    "inicio": 7.4,
+    "fim": 7.8
+   },
+   {
+    "texto": "abandonou",
+    "inicio": 7.8,
+    "fim": 8.28
+   },
+   {
+    "texto": "a",
+    "inicio": 8.28,
+    "fim": 8.36
+   },
+   {
+    "texto": "concentração.",
+    "inicio": 8.36,
+    "fim": 8.98
+   }
+  ]
+ },
+ {
+  "id": "L7",
+  "quem": "narrador",
+  "duracao": 4.441,
+  "palavras": [
+   {
+    "texto": "A",
+    "inicio": 0.04,
+    "fim": 0.18
+   },
+   {
+    "texto": "Federação",
+    "inicio": 0.18,
+    "fim": 0.64
+   },
+   {
+    "texto": "Portuguesa",
+    "inicio": 0.64,
+    "fim": 1.1
+   },
+   {
+    "texto": "suspendeu",
+    "inicio": 1.1,
+    "fim": 1.52
+   },
+   {
+    "texto": "Ronaldo",
+    "inicio": 1.52,
+    "fim": 1.84
+   },
+   {
+    "texto": "por",
+    "inicio": 1.84,
+    "fim": 2.1
+   },
+   {
+    "texto": "trinta",
+    "inicio": 2.1,
+    "fim": 2.4
+   },
+   {
+    "texto": "dias",
+    "inicio": 2.4,
+    "fim": 2.84
+   },
+   {
+    "texto": "e",
+    "inicio": 2.84,
+    "fim": 3.2
+   },
+   {
+    "texto": "ainda",
+    "inicio": 3.2,
+    "fim": 3.4
+   },
+   {
+    "texto": "aplicou",
+    "inicio": 3.4,
+    "fim": 3.74
+   },
+   {
+    "texto": "uma",
+    "inicio": 3.74,
+    "fim": 3.86
+   },
+   {
+    "texto": "multa.",
+    "inicio": 3.86,
+    "fim": 3.98
+   }
+  ]
+ },
+ {
+  "id": "L8",
+  "quem": "narrador",
+  "duracao": 3.944,
+  "palavras": [
+   {
+    "texto": "Semanas",
+    "inicio": 0.08,
+    "fim": 0.46
+   },
+   {
+    "texto": "depois,",
+    "inicio": 0.46,
+    "fim": 1.22
+   },
+   {
+    "texto": "um",
+    "inicio": 1.22,
+    "fim": 1.3
+   },
+   {
+    "texto": "dia",
+    "inicio": 1.3,
+    "fim": 1.5
+   },
+   {
+    "texto": "antes",
+    "inicio": 1.5,
+    "fim": 1.72
+   },
+   {
+    "texto": "da",
+    "inicio": 1.72,
+    "fim": 1.84
+   },
+   {
+    "texto": "nova",
+    "inicio": 1.84,
+    "fim": 2
+   },
+   {
+    "texto": "convocação,",
+    "inicio": 2,
+    "fim": 2.82
+   },
+   {
+    "texto": "veio",
+    "inicio": 2.82,
+    "fim": 2.98
+   },
+   {
+    "texto": "o",
+    "inicio": 2.98,
+    "fim": 3.06
+   },
+   {
+    "texto": "adeus.",
+    "inicio": 2.98,
+    "fim": 3.06
+   }
+  ]
+ },
+ {
+  "id": "L9",
+  "quem": "narrador",
+  "duracao": 4.284,
+  "palavras": [
+   {
+    "texto": "Jorge",
+    "inicio": 0.2,
+    "fim": 0.54
+   },
+   {
+    "texto": "Jesus",
+    "inicio": 0.54,
+    "fim": 0.84
+   },
+   {
+    "texto": "disse",
+    "inicio": 0.84,
+    "fim": 1.16
+   },
+   {
+    "texto": "que",
+    "inicio": 1.16,
+    "fim": 1.26
+   },
+   {
+    "texto": "pediu",
+    "inicio": 1.26,
+    "fim": 1.54
+   },
+   {
+    "texto": "pra",
+    "inicio": 1.54,
+    "fim": 1.66
+   },
+   {
+    "texto": "ele",
+    "inicio": 1.66,
+    "fim": 1.8
+   },
+   {
+    "texto": "ficar,",
+    "inicio": 1.8,
+    "fim": 2.44
+   },
+   {
+    "texto": "mas",
+    "inicio": 2.44,
+    "fim": 2.76
+   },
+   {
+    "texto": "que",
+    "inicio": 2.76,
+    "fim": 2.86
+   },
+   {
+    "texto": "tem",
+    "inicio": 2.86,
+    "fim": 2.96
+   },
+   {
+    "texto": "que",
+    "inicio": 2.96,
+    "fim": 3.06
+   },
+   {
+    "texto": "aceitar",
+    "inicio": 3.06,
+    "fim": 3.52
+   },
+   {
+    "texto": "a",
+    "inicio": 3.52,
+    "fim": 3.64
+   },
+   {
+    "texto": "decisão.",
+    "inicio": 3.64,
+    "fim": 3.98
+   }
+  ]
+ },
+ {
+  "id": "L10",
+  "quem": "narrador",
+  "duracao": 6.06,
+  "palavras": [
+   {
+    "texto": "Ronaldo",
+    "inicio": 0.06,
+    "fim": 0.42
+   },
+   {
+    "texto": "segue",
+    "inicio": 0.42,
+    "fim": 0.7
+   },
+   {
+    "texto": "jogando",
+    "inicio": 0.7,
+    "fim": 1.06
+   },
+   {
+    "texto": "pelo",
+    "inicio": 1.06,
+    "fim": 1.26
+   },
+   {
+    "texto": "Al",
+    "inicio": 1.26,
+    "fim": 1.42
+   },
+   {
+    "texto": "Nassr,",
+    "inicio": 1.42,
+    "fim": 1.82
+   },
+   {
+    "texto": "na",
+    "inicio": 1.82,
+    "fim": 2.18
+   },
+   {
+    "texto": "Arábia",
+    "inicio": 2.18,
+    "fim": 2.42
+   },
+   {
+    "texto": "Saudita.",
+    "inicio": 2.42,
+    "fim": 3.36
+   },
+   {
+    "texto": "Mas",
+    "inicio": 3.36,
+    "fim": 3.44
+   },
+   {
+    "texto": "a",
+    "inicio": 3.44,
+    "fim": 3.54
+   },
+   {
+    "texto": "camisa",
+    "inicio": 3.54,
+    "fim": 3.82
+   },
+   {
+    "texto": "sete",
+    "inicio": 3.82,
+    "fim": 4.18
+   },
+   {
+    "texto": "de",
+    "inicio": 4.18,
+    "fim": 4.3
+   },
+   {
+    "texto": "Portugal",
+    "inicio": 4.3,
+    "fim": 4.66
+   },
+   {
+    "texto": "agora",
+    "inicio": 4.66,
+    "fim": 5.02
+   },
+   {
+    "texto": "está",
+    "inicio": 5.02,
+    "fim": 5.44
+   },
+   {
+    "texto": "livre.",
+    "inicio": 5.44,
+    "fim": 5.98
+   }
+  ]
+ },
+ {
+  "id": "L11",
+  "quem": "narrador",
+  "duracao": 3.736,
+  "palavras": [
+   {
+    "texto": "E",
+    "inicio": 0.02,
+    "fim": 0.16
+   },
+   {
+    "texto": "pra",
+    "inicio": 0.16,
+    "fim": 0.26
+   },
+   {
+    "texto": "você,",
+    "inicio": 0.26,
+    "fim": 0.84
+   },
+   {
+    "texto": "quem",
+    "inicio": 0.84,
+    "fim": 1.16
+   },
+   {
+    "texto": "merece",
+    "inicio": 1.16,
+    "fim": 1.52
+   },
+   {
+    "texto": "herdar",
+    "inicio": 1.52,
+    "fim": 1.74
+   },
+   {
+    "texto": "a",
+    "inicio": 1.74,
+    "fim": 1.9
+   },
+   {
+    "texto": "camisa",
+    "inicio": 1.9,
+    "fim": 2.16
+   },
+   {
+    "texto": "sete?",
+    "inicio": 2.16,
+    "fim": 2.76
+   },
+   {
+    "texto": "Comenta",
+    "inicio": 2.76,
+    "fim": 2.98
+   },
+   {
+    "texto": "aqui.",
+    "inicio": 2.98,
+    "fim": 3.06
+   }
+  ]
+ }
+]
