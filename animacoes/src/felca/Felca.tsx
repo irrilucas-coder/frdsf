@@ -2,8 +2,8 @@ import {Audio} from '@remotion/media';
 import React from 'react';
 import {AbsoluteFill, Sequence, interpolate, staticFile} from 'remotion';
 import {sfx, type CategoriaSfx, VOLUME_SFX} from '../sfx';
-import {Clarao, Comenta, Impacto, Legendas, Progresso} from '../submarino/Overlay';
-import {Carimbo, Citacao, Fontes, Numero, Recriacao, Tarja, Urgente, Vinheta} from '../maduro/Doc';
+import {Clarao, Comenta, Impacto, Legendas} from '../submarino/Overlay';
+import {Carimbo, Citacao, Fontes, Numero, Tarja, Urgente, Vinheta} from '../maduro/Doc';
 import {ContaDesativada, Disque100, Pena, Player, Protegido} from './Cartoes';
 import {
   CenaAdolescente,
@@ -134,10 +134,8 @@ export const FelcaDoc = () => {
       <Comenta inicio={Q('final', 'L11', 'Comenta') - 0.1} dur={D('final') - R('final', 'L11', 'Comenta') + 0.1} />
       <Fontes inicio={T('final', 0.2)} dur={D('final') - 0.2} texto="Fontes: CNN Brasil, Terra, Migalhas, Metrópoles, Diário do Nordeste. Recriação ilustrativa." />
 
-      <Recriacao />
       <Clarao momentos={[cena('prisao').inicio, cena('condenacao').inicio]} />
       <Legendas falas={TODAS_FALAS} destaques={DESTAQUES} corFalando="#ffcc00" corDestaque="#ff5a4f" topo="60%" tamanho={88} />
-      <Progresso total={TOTAL_FRAMES} />
 
       {/* ---------- Áudio ---------- */}
       <Audio src={staticFile('felca/trilha.mp3')} volume={volumeTrilha} />
