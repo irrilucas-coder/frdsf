@@ -17,7 +17,7 @@ export const Cristiano = (p: BP & {kit?: 'portugal' | 'clube' | 'treino'}) => {
       : p.kit === 'treino'
         ? {camisa: '#1d1d24', manga: '#1d1d24', calca: '#1d1d24', meia: undefined, sapato: '#f2f2f2', corNumero: '#c8102e'}
         : POR;
-  return <Bloquinho corpo="forte" cabeca="oval" cabelo="topete" corCabelo="#16110d" pele="#d6a07a" olhos="grandes" numero="7" {...kit} {...p} />;
+  return <Bloquinho corpo="forte" cabeca="oval" cabelo="topete" corCabelo="#2b1d14" pele="#d6a07a" olhos="grandes" numero="7" {...kit} {...p} />;
 };
 // Cristiano garoto (2003): mais magro, cabelo com franja
 export const CristianoJovem = (p: BP) => (

@@ -449,19 +449,20 @@ export const Bloquinho = ({
 const CabeloPecas = ({estilo, cor, H}: {estilo: Cabelo; cor: string; H: {w: number; h: number; d: number}}) => {
   if (estilo === 'nenhum') return null;
   const topo = H.h / 2;
-  const base = <Caixa tam={[H.w + 0.04, 0.12, H.d + 0.04]} pos={[0, topo + 0.02, -0.01]} cor={cor} />;
-  const nuca = <Caixa tam={[H.w + 0.04, H.h * 0.55, 0.1]} pos={[0, topo - H.h * 0.25, -H.d / 2 - 0.01]} cor={cor} />;
-  if (estilo === 'liso') return <>{base}{nuca}</>;
+  // cabelo rente à cabeça e sem contorno grosso (não parece capacete)
+  const base = <Caixa tam={[H.w + 0.025, 0.09, H.d + 0.025]} pos={[0, topo - 0.005, -0.005]} cor={cor} sombra={false} raio={0.035} />;
+  const nuca = <Caixa tam={[H.w + 0.02, H.h * 0.42, 0.05]} pos={[0, topo - H.h * 0.22, -H.d / 2 - 0.005]} cor={cor} sombra={false} raio={0.02} />;
+  const lados = [-1, 1].map((l) => (
+    <Caixa key={l} tam={[0.03, H.h * 0.28, H.d * 0.55]} pos={[l * (H.w / 2 + 0.006), topo - H.h * 0.16, -0.08]} cor={cor} sombra={false} />
+  ));
+  if (estilo === 'liso') return <>{base}{nuca}{lados}</>;
   if (estilo === 'topete')
     return (
       <>
-        <Caixa tam={[H.w + 0.015, 0.07, H.d + 0.015]} pos={[0, topo - 0.015, -0.01]} cor={cor} raio={0.03} />
-        <Caixa tam={[H.w * 0.72, 0.1, H.d * 0.42]} pos={[0, topo + 0.06, H.d * 0.24]} rot={[-0.45, 0, 0]} cor={cor} raio={0.045} />
-        <Caixa tam={[H.w * 0.8, 0.08, H.d * 0.5]} pos={[0, topo + 0.03, -H.d * 0.05]} cor={cor} raio={0.035} />
-        {[-1, 1].map((l) => (
-          <Caixa key={l} tam={[0.03, H.h * 0.3, H.d * 0.6]} pos={[l * (H.w / 2 + 0.005), topo - H.h * 0.18, -0.06]} cor={cor} sombra={false} />
-        ))}
-        <Caixa tam={[H.w + 0.02, H.h * 0.4, 0.06]} pos={[0, topo - H.h * 0.2, -H.d / 2 - 0.005]} cor={cor} />
+        {base}
+        {nuca}
+        {lados}
+        <Caixa tam={[H.w * 0.66, 0.1, H.d * 0.4]} pos={[0, topo + 0.07, H.d * 0.2]} rot={[-0.35, 0, 0]} cor={cor} raio={0.04} />
       </>
     );
   if (estilo === 'black') return <Caixa tam={[H.w + 0.22, 0.36, H.d + 0.22]} pos={[0, topo + 0.07, -0.04]} cor={cor} raio={0.16} />;
@@ -470,7 +471,8 @@ const CabeloPecas = ({estilo, cor, H}: {estilo: Cabelo; cor: string; H: {w: numb
       <>
         {base}
         {nuca}
-        <Caixa tam={[H.w * 0.62, 0.1, 0.1]} pos={[-H.w * 0.16, topo - 0.02, H.d / 2]} rot={[0, 0, 0.18]} cor={cor} />
+        {lados}
+        <Caixa tam={[H.w * 0.62, 0.09, 0.08]} pos={[-H.w * 0.16, topo - 0.03, H.d / 2]} rot={[0, 0, 0.18]} cor={cor} sombra={false} />
       </>
     );
   if (estilo === 'moicano') return <Caixa tam={[0.13, 0.24, H.d + 0.04]} pos={[0, topo + 0.1, -0.01]} cor={cor} />;
@@ -478,9 +480,9 @@ const CabeloPecas = ({estilo, cor, H}: {estilo: Cabelo; cor: string; H: {w: numb
     return (
       <>
         {base}
-        <Caixa tam={[H.w + 0.06, H.h + 0.3, 0.12]} pos={[0, topo - H.h / 2 - 0.1, -H.d / 2 - 0.02]} cor={cor} />
+        <Caixa tam={[H.w + 0.03, H.h * 0.85, 0.06]} pos={[0, topo - H.h * 0.42, -H.d / 2 - 0.01]} cor={cor} sombra={false} raio={0.02} />
         {[-1, 1].map((l) => (
-          <Caixa key={l} tam={[0.08, H.h * 0.8, H.d * 0.7]} pos={[l * (H.w / 2 + 0.03), topo - H.h * 0.42, -0.08]} cor={cor} />
+          <Caixa key={l} tam={[0.04, H.h * 0.6, H.d * 0.6]} pos={[l * (H.w / 2 + 0.01), topo - H.h * 0.3, -0.1]} cor={cor} sombra={false} />
         ))}
       </>
     );
@@ -489,6 +491,7 @@ const CabeloPecas = ({estilo, cor, H}: {estilo: Cabelo; cor: string; H: {w: numb
       <>
         {base}
         {nuca}
+        {lados}
         <Caixa tam={[0.14, 0.4, 0.14]} pos={[0, topo - 0.2, -H.d / 2 - 0.12]} rot={[0.3, 0, 0]} cor={cor} />
       </>
     );

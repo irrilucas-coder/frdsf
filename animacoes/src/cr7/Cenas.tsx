@@ -51,15 +51,15 @@ export const CenaAnuncio = () => {
   const s = useSeg();
   const tFrase = R('anuncio', 'L1', 'Portugal');
   const c = cam('anuncio', [
-    {de: 0, pos: [[2.2, 2.0, 4.2], [1.4, 1.95, 3.4]], olha: [[0, 1.7, 0], [0, 1.75, 0]], fov: 40},
-    {de: tFrase - 0.1, pos: [[0.5, 1.95, 2.3], [0.35, 1.95, 1.9]], olha: [[0, 1.95, 0], [0, 1.95, 0]], fov: 36},
+    {de: 0, pos: [[-2.4, 2.0, 4.0], [-1.7, 1.95, 3.3]], olha: [[0.1, 1.7, 0], [0.1, 1.75, 0]], fov: 40},
+    {de: tFrase - 0.1, pos: [[-1.0, 2.0, 2.2], [-0.8, 2.0, 1.85]], olha: [[0, 1.95, 0], [0, 1.95, 0]], fov: 36},
   ], s);
   return (
     <Palco cinema clima="interior" pos={c.pos} olha={c.olha} fov={c.fov} sombras={false}>
       <Sala />
       <group position={[0, 0, 0]}>
-        <Cristiano kit="treino" numero={undefined} falando={s > 0.3} expressao={s > tFrase ? 'emocionado' : 'serio'} alvoMaoD={[0.3, 1.72, 0.78]} />
-        <Celular pos={[0.3, 1.72, 0.8]} rot={[0, Math.PI - 0.3, 0]} />
+        <Cristiano kit="treino" numero={undefined} falando={s > 0.3} expressao={s > tFrase ? 'emocionado' : 'serio'} alvoMaoD={[0.62, 1.68, 0.72]} />
+        <Celular pos={[0.62, 1.7, 0.76]} rot={[0, Math.PI + 0.75, 0]} />
       </group>
       <pointLight position={[0.3, 2.2, 1.6]} intensity={6} color="#cfe8ff" />
       <pointLight position={[-2, 3, 2]} intensity={10} color="#ffd9a8" />
@@ -95,8 +95,8 @@ export const CenaTitulos = () => {
     <Palco cinema clima="noite" pos={c.pos} olha={c.olha} fov={c.fov} sombras={false}>
       <Estadio />
       <group position={[0, pulo, 0]}>
-        <Cristiano expressao="feliz" alvoMaoE={[-0.16, 2.55, 0.18]} alvoMaoD={[0.16, 2.55, 0.18]} />
-        <Trofeu pos={[0, 2.42, 0.2]} escala={0.95} />
+        <Cristiano expressao="feliz" alvoMaoE={[-0.34, 2.6, 0.16]} alvoMaoD={[0.34, 2.6, 0.16]} />
+        <Trofeu pos={[0, 2.32, 0.13]} escala={1.6} />
       </group>
       {s > tLigas - 0.3 && (
         <>
@@ -124,9 +124,9 @@ export const CenaRecordes = () => {
   const altura = s > tPulo && s < tPulo + 0.55 ? Math.sin(((s - tPulo) / 0.55) * Math.PI) * 0.9 : 0;
   const pose = s < 1.0 ? 'chutar' : s < tPulo ? 'parado' : 'siu';
   const c = cam('recordes', [
-    {de: 0, pos: [[17.5, 1.7, 1.2], [18.2, 1.8, 1.4]], olha: [[26, 1.0, 0.4], [27, 1.2, 0.6]], fov: 46},
-    {de: 1.25, pos: [[25.5, 1.8, 0.4], [25.0, 1.9, 0.4]], olha: [[21.5, 1.4, 0.2], [21.5, 1.6, 0.2]], fov: 44},
-    {de: tCento, pos: [[24.2, 1.4, 2.8], [23.6, 1.6, 2.2]], olha: [[21.5, 1.8, 0.2], [21.5, 1.8, 0.2]], fov: 42},
+    {de: 0, pos: [[16.6, 2.5, 2.6], [17.2, 2.4, 2.4]], olha: [[25, 1.0, 0.3], [27, 1.3, 0.6]], fov: 46},
+    {de: 1.25, pos: [[17.6, 1.9, 1.8], [18.0, 1.9, 1.6]], olha: [[21.5, 1.5, 0.2], [21.5, 1.6, 0.2]], fov: 44},
+    {de: tCento, pos: [[18.6, 1.5, 2.4], [19.2, 1.7, 1.8]], olha: [[21.5, 1.8, 0.2], [21.5, 1.85, 0.2]], fov: 42},
   ], s);
   return (
     <Palco cinema clima="noite" pos={c.pos} olha={c.olha} fov={c.fov} sombras={false}>
@@ -266,7 +266,7 @@ export const CenaClube = () => {
 
 // Camisa 7 girando sob um holofote
 const CamisaLivre = ({s}: {s: number}) => {
-  const c: {pos: V3; olha: V3} = {pos: [Math.sin(s * 0.25) * 1.2, 1.9, 3.4 - s * 0.12], olha: [0, 1.75, 0]};
+  const c: {pos: V3; olha: V3} = {pos: [Math.sin(s * 0.25) * 1.2, 1.9, Math.max(2.9, 3.6 - s * 0.1)], olha: [0, 1.75, 0]};
   return (
     <Palco cinema clima="espaco" pos={c.pos} olha={c.olha} fov={40} sombras={false}>
       <mesh rotation={[-Math.PI / 2, 0, 0]}>
