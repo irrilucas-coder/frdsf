@@ -210,7 +210,7 @@ export const Complexo = ({posicao = [0, 0, 0] as V3}) => (
 );
 
 // Tribunal
-export const Tribunal = ({bandeira = 'eua' as 'eua' | 'brasil'}) => (
+export const Tribunal = ({bandeira = 'eua' as 'eua' | 'brasil' | 'mexico'}) => (
   <group>
     <mesh position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
       <planeGeometry args={[30, 30]} />
@@ -237,6 +237,13 @@ export const Tribunal = ({bandeira = 'eua' as 'eua' | 'brasil'}) => (
             <B key={i} tam={[1.6, 0.16, 0.03]} pos={[0.85, 0.5 - i * 0.16, 0]} cor={i % 2 ? '#f2f2f2' : '#b22234'} />
           ))}
           <B tam={[0.65, 0.48, 0.04]} pos={[0.37, 0.34, 0.01]} cor="#3c3b6e" />
+        </>
+      ) : bandeira === 'mexico' ? (
+        <>
+          <B tam={[0.53, 1.1, 0.03]} pos={[0.32, 0.05, 0]} cor="#006847" />
+          <B tam={[0.54, 1.1, 0.03]} pos={[0.85, 0.05, 0]} cor="#f2f2f2" />
+          <B tam={[0.53, 1.1, 0.03]} pos={[1.38, 0.05, 0]} cor="#ce1126" />
+          <B tam={[0.22, 0.22, 0.04]} pos={[0.85, 0.05, 0.01]} cor="#8a5a2b" />
         </>
       ) : (
         <>

@@ -94,14 +94,14 @@ export const Urgente = ({inicio, dur, selo = 'URGENTE', linhas = ['MADURO É', '
 };
 
 // Número que sobe rápido (recompensa)
-export const Contador = ({inicio, dur, ate, prefixo = '', sufixo = '', topo = 300}: {inicio: number; dur: number; ate: number; prefixo?: string; sufixo?: string; topo?: number}) => {
+export const Contador = ({inicio, dur, ate, prefixo = '', sufixo = '', topo = 300, rotulo = 'RECOMPENSA'}: {inicio: number; dur: number; ate: number; prefixo?: string; sufixo?: string; topo?: number; rotulo?: string}) => {
   const {visivel, k, s} = useJanela(inicio, dur);
   if (!visivel) return null;
   const v = Math.round(interpolate(s, [0.1, 1.2], [0, ate], {...clamp, easing: Easing.out(Easing.cubic)}));
   return (
     <AbsoluteFill style={{alignItems: 'center', top: topo}}>
       <div style={{opacity: k, textAlign: 'center'}}>
-        <div style={{fontFamily: FONTE, fontSize: 40, color: '#fff', letterSpacing: 6, background: '#e10600', padding: '4px 18px', display: 'inline-block'}}>RECOMPENSA</div>
+        <div style={{fontFamily: FONTE, fontSize: 40, color: '#fff', letterSpacing: 6, background: '#e10600', padding: '4px 18px', display: 'inline-block'}}>{rotulo}</div>
         <div style={{fontFamily: FONTE, fontSize: 150, color: '#ffcc00', lineHeight: 1, marginTop: 10, textShadow: '0 8px 0 #000, 0 0 30px rgba(255,204,0,0.5)'}}>
           {prefixo}
           {v}

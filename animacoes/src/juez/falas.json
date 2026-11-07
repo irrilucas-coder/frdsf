@@ -1,0 +1,1149 @@
+[
+ {
+  "id": "L0",
+  "quem": "narrador",
+  "duracao": 6.531,
+  "palavras": [
+   {
+    "texto": "Lo",
+    "inicio": 0,
+    "fim": 0.22
+   },
+   {
+    "texto": "acusan",
+    "inicio": 0.22,
+    "fim": 0.6
+   },
+   {
+    "texto": "de",
+    "inicio": 0.6,
+    "fim": 0.74
+   },
+   {
+    "texto": "cobrar",
+    "inicio": 0.74,
+    "fim": 1.1
+   },
+   {
+    "texto": "dos",
+    "inicio": 1.1,
+    "fim": 1.36
+   },
+   {
+    "texto": "millones",
+    "inicio": 1.36,
+    "fim": 1.8
+   },
+   {
+    "texto": "de",
+    "inicio": 1.8,
+    "fim": 2
+   },
+   {
+    "texto": "dólares",
+    "inicio": 2,
+    "fim": 2.32
+   },
+   {
+    "texto": "por",
+    "inicio": 2.32,
+    "fim": 2.6
+   },
+   {
+    "texto": "liberar",
+    "inicio": 2.6,
+    "fim": 3
+   },
+   {
+    "texto": "a",
+    "inicio": 3,
+    "fim": 3.1
+   },
+   {
+    "texto": "un",
+    "inicio": 3.1,
+    "fim": 3.18
+   },
+   {
+    "texto": "narco.",
+    "inicio": 3.18,
+    "fim": 3.62
+   },
+   {
+    "texto": "Y",
+    "inicio": 3.62,
+    "fim": 4.58
+   },
+   {
+    "texto": "lo",
+    "inicio": 4.58,
+    "fim": 4.7
+   },
+   {
+    "texto": "atraparon",
+    "inicio": 4.7,
+    "fim": 5.26
+   },
+   {
+    "texto": "en",
+    "inicio": 5.26,
+    "fim": 5.44
+   },
+   {
+    "texto": "pleno",
+    "inicio": 5.44,
+    "fim": 5.72
+   },
+   {
+    "texto": "aeropuerto.",
+    "inicio": 5.72,
+    "fim": 5.98
+   }
+  ]
+ },
+ {
+  "id": "L1",
+  "quem": "narrador",
+  "duracao": 10.501,
+  "palavras": [
+   {
+    "texto": "Domingo",
+    "inicio": 0.06,
+    "fim": 0.48
+   },
+   {
+    "texto": "1",
+    "inicio": 0.48,
+    "fim": 0.7
+   },
+   {
+    "texto": "de",
+    "inicio": 0.7,
+    "fim": 0.9
+   },
+   {
+    "texto": "noviembre.",
+    "inicio": 0.9,
+    "fim": 2.08
+   },
+   {
+    "texto": "Aeropuerto",
+    "inicio": 2.08,
+    "fim": 2.5
+   },
+   {
+    "texto": "El",
+    "inicio": 2.5,
+    "fim": 2.64
+   },
+   {
+    "texto": "Dorado,",
+    "inicio": 2.64,
+    "fim": 3.34
+   },
+   {
+    "texto": "en",
+    "inicio": 3.34,
+    "fim": 3.42
+   },
+   {
+    "texto": "Bogotá.",
+    "inicio": 3.42,
+    "fim": 4.4
+   },
+   {
+    "texto": "La",
+    "inicio": 4.4,
+    "fim": 4.96
+   },
+   {
+    "texto": "policía",
+    "inicio": 4.96,
+    "fim": 5.36
+   },
+   {
+    "texto": "de",
+    "inicio": 5.36,
+    "fim": 5.46
+   },
+   {
+    "texto": "Colombia,",
+    "inicio": 5.46,
+    "fim": 6.22
+   },
+   {
+    "texto": "en",
+    "inicio": 6.22,
+    "fim": 6.36
+   },
+   {
+    "texto": "coordinación",
+    "inicio": 6.36,
+    "fim": 6.98
+   },
+   {
+    "texto": "con",
+    "inicio": 6.98,
+    "fim": 7.16
+   },
+   {
+    "texto": "el",
+    "inicio": 7.16,
+    "fim": 7.32
+   },
+   {
+    "texto": "FBI,",
+    "inicio": 7.32,
+    "fim": 8.16
+   },
+   {
+    "texto": "detiene",
+    "inicio": 8.16,
+    "fim": 8.86
+   },
+   {
+    "texto": "a",
+    "inicio": 8.86,
+    "fim": 9.02
+   },
+   {
+    "texto": "un",
+    "inicio": 9.02,
+    "fim": 9.12
+   },
+   {
+    "texto": "juez",
+    "inicio": 9.12,
+    "fim": 9.4
+   },
+   {
+    "texto": "federal",
+    "inicio": 9.4,
+    "fim": 9.7
+   },
+   {
+    "texto": "mexicano.",
+    "inicio": 9.7,
+    "fim": 9.98
+   }
+  ]
+ },
+ {
+  "id": "L2",
+  "quem": "narrador",
+  "duracao": 8.15,
+  "palavras": [
+   {
+    "texto": "Su",
+    "inicio": 0.04,
+    "fim": 0.28
+   },
+   {
+    "texto": "nombre:",
+    "inicio": 0.28,
+    "fim": 0.98
+   },
+   {
+    "texto": "Luis",
+    "inicio": 0.98,
+    "fim": 1.62
+   },
+   {
+    "texto": "Benítez",
+    "inicio": 1.62,
+    "fim": 2.08
+   },
+   {
+    "texto": "Alcántara.",
+    "inicio": 2.08,
+    "fim": 3.46
+   },
+   {
+    "texto": "Cuarenta",
+    "inicio": 2.697,
+    "fim": 3.272
+   },
+   {
+    "texto": "y",
+    "inicio": 3.272,
+    "fim": 3.424
+   },
+   {
+    "texto": "nueve",
+    "inicio": 3.424,
+    "fim": 3.818
+   },
+   {
+    "texto": "años.",
+    "inicio": 3.86,
+    "fim": 5.34
+   },
+   {
+    "texto": "Juez",
+    "inicio": 5.34,
+    "fim": 5.66
+   },
+   {
+    "texto": "en",
+    "inicio": 5.66,
+    "fim": 5.78
+   },
+   {
+    "texto": "el",
+    "inicio": 5.78,
+    "fim": 5.9
+   },
+   {
+    "texto": "Reclusorio",
+    "inicio": 5.9,
+    "fim": 6.5
+   },
+   {
+    "texto": "Sur",
+    "inicio": 6.5,
+    "fim": 6.8
+   },
+   {
+    "texto": "de",
+    "inicio": 6.8,
+    "fim": 6.92
+   },
+   {
+    "texto": "la",
+    "inicio": 6.92,
+    "fim": 7.04
+   },
+   {
+    "texto": "Ciudad",
+    "inicio": 7.04,
+    "fim": 7.36
+   },
+   {
+    "texto": "de",
+    "inicio": 7.36,
+    "fim": 7.48
+   },
+   {
+    "texto": "México.",
+    "inicio": 7.48,
+    "fim": 7.98
+   }
+  ]
+ },
+ {
+  "id": "L3",
+  "quem": "narrador",
+  "duracao": 7.549,
+  "palavras": [
+   {
+    "texto": "Estados",
+    "inicio": 0.04,
+    "fim": 0.4
+   },
+   {
+    "texto": "Unidos",
+    "inicio": 0.4,
+    "fim": 0.84
+   },
+   {
+    "texto": "lo",
+    "inicio": 0.84,
+    "fim": 1.08
+   },
+   {
+    "texto": "acusa",
+    "inicio": 1.08,
+    "fim": 1.44
+   },
+   {
+    "texto": "de",
+    "inicio": 1.44,
+    "fim": 1.58
+   },
+   {
+    "texto": "un",
+    "inicio": 1.58,
+    "fim": 1.72
+   },
+   {
+    "texto": "soborno",
+    "inicio": 1.72,
+    "fim": 2.22
+   },
+   {
+    "texto": "millonario.",
+    "inicio": 2.22,
+    "fim": 3.18
+   },
+   {
+    "texto": "Para",
+    "inicio": 3.18,
+    "fim": 3.74
+   },
+   {
+    "texto": "entenderlo,",
+    "inicio": 3.74,
+    "fim": 4.64
+   },
+   {
+    "texto": "hay",
+    "inicio": 4.64,
+    "fim": 5.08
+   },
+   {
+    "texto": "que",
+    "inicio": 5.08,
+    "fim": 5.18
+   },
+   {
+    "texto": "regresar",
+    "inicio": 5.18,
+    "fim": 5.68
+   },
+   {
+    "texto": "a",
+    "inicio": 5.68,
+    "fim": 5.76
+   },
+   {
+    "texto": "febrero",
+    "inicio": 5.76,
+    "fim": 6.2
+   },
+   {
+    "texto": "de",
+    "inicio": 6.2,
+    "fim": 6.34
+   },
+   {
+    "texto": "2025.",
+    "inicio": 6.34,
+    "fim": 6.94
+   }
+  ]
+ },
+ {
+  "id": "L4",
+  "quem": "narrador",
+  "duracao": 10.083,
+  "palavras": [
+   {
+    "texto": "En",
+    "inicio": 0.02,
+    "fim": 0.2
+   },
+   {
+    "texto": "sus",
+    "inicio": 0.2,
+    "fim": 0.38
+   },
+   {
+    "texto": "manos",
+    "inicio": 0.38,
+    "fim": 0.64
+   },
+   {
+    "texto": "estaba",
+    "inicio": 0.64,
+    "fim": 0.98
+   },
+   {
+    "texto": "el",
+    "inicio": 0.98,
+    "fim": 1.14
+   },
+   {
+    "texto": "caso",
+    "inicio": 1.14,
+    "fim": 1.38
+   },
+   {
+    "texto": "de",
+    "inicio": 1.38,
+    "fim": 1.54
+   },
+   {
+    "texto": "Andrew",
+    "inicio": 1.54,
+    "fim": 1.84
+   },
+   {
+    "texto": "Clark,",
+    "inicio": 1.84,
+    "fim": 2.56
+   },
+   {
+    "texto": "un",
+    "inicio": 2.56,
+    "fim": 2.86
+   },
+   {
+    "texto": "canadiense",
+    "inicio": 2.86,
+    "fim": 3.42
+   },
+   {
+    "texto": "señalado",
+    "inicio": 3.42,
+    "fim": 3.94
+   },
+   {
+    "texto": "como",
+    "inicio": 3.94,
+    "fim": 4.16
+   },
+   {
+    "texto": "el",
+    "inicio": 4.16,
+    "fim": 4.28
+   },
+   {
+    "texto": "número",
+    "inicio": 4.28,
+    "fim": 4.54
+   },
+   {
+    "texto": "dos",
+    "inicio": 4.54,
+    "fim": 4.82
+   },
+   {
+    "texto": "de",
+    "inicio": 4.82,
+    "fim": 4.98
+   },
+   {
+    "texto": "la",
+    "inicio": 4.98,
+    "fim": 5.1
+   },
+   {
+    "texto": "red",
+    "inicio": 5.1,
+    "fim": 5.32
+   },
+   {
+    "texto": "de",
+    "inicio": 5.32,
+    "fim": 5.46
+   },
+   {
+    "texto": "Ryan",
+    "inicio": 5.46,
+    "fim": 5.74
+   },
+   {
+    "texto": "Wedding,",
+    "inicio": 5.74,
+    "fim": 6.46
+   },
+   {
+    "texto": "un",
+    "inicio": 6.46,
+    "fim": 6.62
+   },
+   {
+    "texto": "exatleta",
+    "inicio": 6.62,
+    "fim": 7.16
+   },
+   {
+    "texto": "olímpico",
+    "inicio": 7.16,
+    "fim": 7.66
+   },
+   {
+    "texto": "de",
+    "inicio": 7.66,
+    "fim": 7.8
+   },
+   {
+    "texto": "snowboard",
+    "inicio": 7.8,
+    "fim": 8.28
+   },
+   {
+    "texto": "convertido",
+    "inicio": 8.28,
+    "fim": 8.86
+   },
+   {
+    "texto": "en",
+    "inicio": 8.86,
+    "fim": 8.96
+   },
+   {
+    "texto": "narcotraficante.",
+    "inicio": 8.96,
+    "fim": 9.98
+   }
+  ]
+ },
+ {
+  "id": "L5",
+  "quem": "narrador",
+  "duracao": 10.501,
+  "palavras": [
+   {
+    "texto": "El",
+    "inicio": 0.02,
+    "fim": 0.24
+   },
+   {
+    "texto": "24",
+    "inicio": 0.24,
+    "fim": 0.64
+   },
+   {
+    "texto": "de",
+    "inicio": 0.64,
+    "fim": 0.98
+   },
+   {
+    "texto": "febrero,",
+    "inicio": 0.98,
+    "fim": 1.68
+   },
+   {
+    "texto": "el",
+    "inicio": 1.68,
+    "fim": 2.22
+   },
+   {
+    "texto": "juez",
+    "inicio": 2.22,
+    "fim": 2.62
+   },
+   {
+    "texto": "le",
+    "inicio": 2.62,
+    "fim": 3.1
+   },
+   {
+    "texto": "concedió",
+    "inicio": 3.1,
+    "fim": 3.56
+   },
+   {
+    "texto": "la",
+    "inicio": 3.56,
+    "fim": 3.68
+   },
+   {
+    "texto": "libertad",
+    "inicio": 3.68,
+    "fim": 4.18
+   },
+   {
+    "texto": "bajo",
+    "inicio": 4.18,
+    "fim": 4.38
+   },
+   {
+    "texto": "fianza.",
+    "inicio": 4.38,
+    "fim": 5.32
+   },
+   {
+    "texto": "Según",
+    "inicio": 5.32,
+    "fim": 6.14
+   },
+   {
+    "texto": "la",
+    "inicio": 6.14,
+    "fim": 6.26
+   },
+   {
+    "texto": "acusación,",
+    "inicio": 6.26,
+    "fim": 7.24
+   },
+   {
+    "texto": "ese",
+    "inicio": 7.24,
+    "fim": 7.7
+   },
+   {
+    "texto": "mismo",
+    "inicio": 7.7,
+    "fim": 8
+   },
+   {
+    "texto": "día",
+    "inicio": 8,
+    "fim": 8.26
+   },
+   {
+    "texto": "recibió",
+    "inicio": 8.26,
+    "fim": 8.74
+   },
+   {
+    "texto": "los",
+    "inicio": 8.74,
+    "fim": 8.96
+   },
+   {
+    "texto": "dos",
+    "inicio": 8.96,
+    "fim": 9.2
+   },
+   {
+    "texto": "millones",
+    "inicio": 9.2,
+    "fim": 9.64
+   },
+   {
+    "texto": "de",
+    "inicio": 9.64,
+    "fim": 9.86
+   },
+   {
+    "texto": "dólares.",
+    "inicio": 9.86,
+    "fim": 9.98
+   }
+  ]
+ },
+ {
+  "id": "L6",
+  "quem": "narrador",
+  "duracao": 7.184,
+  "palavras": [
+   {
+    "texto": "Pero",
+    "inicio": 0,
+    "fim": 0.22
+   },
+   {
+    "texto": "la",
+    "inicio": 0.22,
+    "fim": 0.36
+   },
+   {
+    "texto": "libertad",
+    "inicio": 0.36,
+    "fim": 0.9
+   },
+   {
+    "texto": "le",
+    "inicio": 0.9,
+    "fim": 1.06
+   },
+   {
+    "texto": "duró",
+    "inicio": 1.06,
+    "fim": 1.3
+   },
+   {
+    "texto": "poco.",
+    "inicio": 1.3,
+    "fim": 2.16
+   },
+   {
+    "texto": "Días",
+    "inicio": 2.16,
+    "fim": 2.8
+   },
+   {
+    "texto": "después,",
+    "inicio": 2.8,
+    "fim": 3.88
+   },
+   {
+    "texto": "Clark",
+    "inicio": 3.88,
+    "fim": 4.08
+   },
+   {
+    "texto": "fue",
+    "inicio": 4.08,
+    "fim": 4.34
+   },
+   {
+    "texto": "recapturado",
+    "inicio": 4.34,
+    "fim": 5.04
+   },
+   {
+    "texto": "y",
+    "inicio": 5.04,
+    "fim": 5.2
+   },
+   {
+    "texto": "extraditado",
+    "inicio": 5.2,
+    "fim": 5.92
+   },
+   {
+    "texto": "a",
+    "inicio": 5.92,
+    "fim": 6.06
+   },
+   {
+    "texto": "Estados",
+    "inicio": 6.06,
+    "fim": 6.36
+   },
+   {
+    "texto": "Unidos.",
+    "inicio": 6.36,
+    "fim": 6.98
+   }
+  ]
+ },
+ {
+  "id": "L7",
+  "quem": "narrador",
+  "duracao": 7.105,
+  "palavras": [
+   {
+    "texto": "Ahora",
+    "inicio": 0.04,
+    "fim": 0.38
+   },
+   {
+    "texto": "el",
+    "inicio": 0.38,
+    "fim": 0.54
+   },
+   {
+    "texto": "juez",
+    "inicio": 0.54,
+    "fim": 0.84
+   },
+   {
+    "texto": "enfrenta",
+    "inicio": 0.84,
+    "fim": 1.34
+   },
+   {
+    "texto": "nueve",
+    "inicio": 1.34,
+    "fim": 1.68
+   },
+   {
+    "texto": "cargos",
+    "inicio": 1.68,
+    "fim": 2.1
+   },
+   {
+    "texto": "en",
+    "inicio": 2.1,
+    "fim": 2.28
+   },
+   {
+    "texto": "Estados",
+    "inicio": 2.28,
+    "fim": 2.56
+   },
+   {
+    "texto": "Unidos.",
+    "inicio": 2.56,
+    "fim": 3.46
+   },
+   {
+    "texto": "Cada",
+    "inicio": 3.46,
+    "fim": 4.1
+   },
+   {
+    "texto": "uno",
+    "inicio": 4.1,
+    "fim": 4.34
+   },
+   {
+    "texto": "podría",
+    "inicio": 4.34,
+    "fim": 4.68
+   },
+   {
+    "texto": "costarle",
+    "inicio": 4.68,
+    "fim": 5.28
+   },
+   {
+    "texto": "hasta",
+    "inicio": 5.28,
+    "fim": 5.52
+   },
+   {
+    "texto": "quince",
+    "inicio": 5.52,
+    "fim": 5.94
+   },
+   {
+    "texto": "años",
+    "inicio": 5.94,
+    "fim": 6.32
+   },
+   {
+    "texto": "de",
+    "inicio": 6.32,
+    "fim": 6.44
+   },
+   {
+    "texto": "prisión.",
+    "inicio": 6.44,
+    "fim": 6.98
+   }
+  ]
+ },
+ {
+  "id": "L8",
+  "quem": "narrador",
+  "duracao": 6.165,
+  "palavras": [
+   {
+    "texto": "Antes",
+    "inicio": 0.06,
+    "fim": 0.4
+   },
+   {
+    "texto": "de",
+    "inicio": 0.4,
+    "fim": 0.56
+   },
+   {
+    "texto": "esto,",
+    "inicio": 0.56,
+    "fim": 1.48
+   },
+   {
+    "texto": "ya",
+    "inicio": 1.48,
+    "fim": 1.58
+   },
+   {
+    "texto": "había",
+    "inicio": 1.58,
+    "fim": 1.8
+   },
+   {
+    "texto": "llevado",
+    "inicio": 1.8,
+    "fim": 2.22
+   },
+   {
+    "texto": "expedientes",
+    "inicio": 2.22,
+    "fim": 2.84
+   },
+   {
+    "texto": "muy",
+    "inicio": 2.84,
+    "fim": 3.14
+   },
+   {
+    "texto": "sonados,",
+    "inicio": 3.14,
+    "fim": 3.9
+   },
+   {
+    "texto": "como",
+    "inicio": 3.9,
+    "fim": 4.32
+   },
+   {
+    "texto": "el",
+    "inicio": 4.32,
+    "fim": 4.46
+   },
+   {
+    "texto": "del",
+    "inicio": 4.46,
+    "fim": 4.6
+   },
+   {
+    "texto": "espionaje",
+    "inicio": 4.6,
+    "fim": 5.14
+   },
+   {
+    "texto": "con",
+    "inicio": 5.14,
+    "fim": 5.38
+   },
+   {
+    "texto": "Pegasus.",
+    "inicio": 5.38,
+    "fim": 5.98
+   }
+  ]
+ },
+ {
+  "id": "L9",
+  "quem": "narrador",
+  "duracao": 7.784,
+  "palavras": [
+   {
+    "texto": "Por",
+    "inicio": 0,
+    "fim": 0.22
+   },
+   {
+    "texto": "ahora",
+    "inicio": 0.22,
+    "fim": 0.48
+   },
+   {
+    "texto": "sigue",
+    "inicio": 0.48,
+    "fim": 0.74
+   },
+   {
+    "texto": "detenido",
+    "inicio": 0.74,
+    "fim": 1.2
+   },
+   {
+    "texto": "en",
+    "inicio": 1.2,
+    "fim": 1.3
+   },
+   {
+    "texto": "Colombia",
+    "inicio": 1.3,
+    "fim": 1.72
+   },
+   {
+    "texto": "y",
+    "inicio": 1.72,
+    "fim": 2.26
+   },
+   {
+    "texto": "su",
+    "inicio": 2.26,
+    "fim": 2.4
+   },
+   {
+    "texto": "extradición",
+    "inicio": 2.4,
+    "fim": 2.96
+   },
+   {
+    "texto": "todavía",
+    "inicio": 2.96,
+    "fim": 3.36
+   },
+   {
+    "texto": "no",
+    "inicio": 3.36,
+    "fim": 3.66
+   },
+   {
+    "texto": "tiene",
+    "inicio": 3.66,
+    "fim": 3.88
+   },
+   {
+    "texto": "fecha.",
+    "inicio": 3.88,
+    "fim": 4.6
+   },
+   {
+    "texto": "Los",
+    "inicio": 4.6,
+    "fim": 5.1
+   },
+   {
+    "texto": "cargos",
+    "inicio": 5.1,
+    "fim": 5.46
+   },
+   {
+    "texto": "aún",
+    "inicio": 5.46,
+    "fim": 5.86
+   },
+   {
+    "texto": "deben",
+    "inicio": 5.86,
+    "fim": 6.18
+   },
+   {
+    "texto": "probarse",
+    "inicio": 6.18,
+    "fim": 6.7
+   },
+   {
+    "texto": "ante",
+    "inicio": 6.7,
+    "fim": 6.92
+   },
+   {
+    "texto": "una",
+    "inicio": 6.92,
+    "fim": 7.0
+   },
+   {
+    "texto": "corte.",
+    "inicio": 6.98,
+    "fim": 7.06
+   }
+  ]
+ },
+ {
+  "id": "L10",
+  "quem": "narrador",
+  "duracao": 4.023,
+  "palavras": [
+   {
+    "texto": "¿Crees",
+    "inicio": 0.04,
+    "fim": 0.34
+   },
+   {
+    "texto": "que",
+    "inicio": 0.34,
+    "fim": 0.48
+   },
+   {
+    "texto": "lo",
+    "inicio": 0.48,
+    "fim": 0.58
+   },
+   {
+    "texto": "van",
+    "inicio": 0.58,
+    "fim": 0.74
+   },
+   {
+    "texto": "a",
+    "inicio": 0.74,
+    "fim": 0.86
+   },
+   {
+    "texto": "extraditar?",
+    "inicio": 0.86,
+    "fim": 1.84
+   },
+   {
+    "texto": "Te",
+    "inicio": 1.84,
+    "fim": 2.54
+   },
+   {
+    "texto": "leo",
+    "inicio": 2.54,
+    "fim": 2.84
+   },
+   {
+    "texto": "en",
+    "inicio": 2.84,
+    "fim": 2.98
+   },
+   {
+    "texto": "los",
+    "inicio": 2.98,
+    "fim": 3.06
+   },
+   {
+    "texto": "comentarios.",
+    "inicio": 2.98,
+    "fim": 3.06
+   }
+  ]
+ }
+]

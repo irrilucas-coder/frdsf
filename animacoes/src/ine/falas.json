@@ -1,0 +1,1114 @@
+[
+ {
+  "id": "L0",
+  "quem": "narrador",
+  "duracao": 8.15,
+  "palavras": [
+   {
+    "texto": "Congelaron",
+    "inicio": 0.08,
+    "fim": 0.58
+   },
+   {
+    "texto": "las",
+    "inicio": 0.58,
+    "fim": 0.74
+   },
+   {
+    "texto": "cuentas",
+    "inicio": 0.74,
+    "fim": 1.12
+   },
+   {
+    "texto": "de",
+    "inicio": 1.12,
+    "fim": 1.22
+   },
+   {
+    "texto": "cuarenta",
+    "inicio": 1.22,
+    "fim": 1.56
+   },
+   {
+    "texto": "personas",
+    "inicio": 1.56,
+    "fim": 2.12
+   },
+   {
+    "texto": "y",
+    "inicio": 2.12,
+    "fim": 2.32
+   },
+   {
+    "texto": "empresas",
+    "inicio": 2.32,
+    "fim": 2.72
+   },
+   {
+    "texto": "ligadas",
+    "inicio": 2.72,
+    "fim": 3.18
+   },
+   {
+    "texto": "al",
+    "inicio": 3.18,
+    "fim": 3.4
+   },
+   {
+    "texto": "INE.",
+    "inicio": 3.4,
+    "fim": 3.82
+   },
+   {
+    "texto": "Y",
+    "inicio": 3.82,
+    "fim": 4.4
+   },
+   {
+    "texto": "en",
+    "inicio": 4.4,
+    "fim": 4.48
+   },
+   {
+    "texto": "la",
+    "inicio": 4.48,
+    "fim": 4.56
+   },
+   {
+    "texto": "lista,",
+    "inicio": 4.56,
+    "fim": 5.14
+   },
+   {
+    "texto": "según",
+    "inicio": 5.14,
+    "fim": 5.58
+   },
+   {
+    "texto": "varios",
+    "inicio": 5.58,
+    "fim": 5.88
+   },
+   {
+    "texto": "medios,",
+    "inicio": 5.88,
+    "fim": 6.64
+   },
+   {
+    "texto": "aparece",
+    "inicio": 6.64,
+    "fim": 7.12
+   },
+   {
+    "texto": "su",
+    "inicio": 7.12,
+    "fim": 7.32
+   },
+   {
+    "texto": "expresidenta.",
+    "inicio": 7.32,
+    "fim": 7.98
+   }
+  ]
+ },
+ {
+  "id": "L1",
+  "quem": "narrador",
+  "duracao": 7.549,
+  "palavras": [
+   {
+    "texto": "El",
+    "inicio": 0.04,
+    "fim": 0.22
+   },
+   {
+    "texto": "4",
+    "inicio": 0.22,
+    "fim": 0.44
+   },
+   {
+    "texto": "de",
+    "inicio": 0.44,
+    "fim": 0.6
+   },
+   {
+    "texto": "noviembre,",
+    "inicio": 0.6,
+    "fim": 1.46
+   },
+   {
+    "texto": "la",
+    "inicio": 1.46,
+    "fim": 1.54
+   },
+   {
+    "texto": "Unidad",
+    "inicio": 1.5,
+    "fim": 1.74
+   },
+   {
+    "texto": "de",
+    "inicio": 1.74,
+    "fim": 1.86
+   },
+   {
+    "texto": "Inteligencia",
+    "inicio": 1.86,
+    "fim": 2.36
+   },
+   {
+    "texto": "Financiera",
+    "inicio": 2.36,
+    "fim": 2.92
+   },
+   {
+    "texto": "metió",
+    "inicio": 2.92,
+    "fim": 3.26
+   },
+   {
+    "texto": "a",
+    "inicio": 3.26,
+    "fim": 3.36
+   },
+   {
+    "texto": "veinticinco",
+    "inicio": 3.36,
+    "fim": 3.7
+   },
+   {
+    "texto": "personas",
+    "inicio": 3.7,
+    "fim": 4.4
+   },
+   {
+    "texto": "y",
+    "inicio": 4.4,
+    "fim": 4.76
+   },
+   {
+    "texto": "quince",
+    "inicio": 4.76,
+    "fim": 5.1
+   },
+   {
+    "texto": "empresas",
+    "inicio": 5.1,
+    "fim": 5.56
+   },
+   {
+    "texto": "a",
+    "inicio": 5.56,
+    "fim": 5.76
+   },
+   {
+    "texto": "su",
+    "inicio": 5.76,
+    "fim": 5.9
+   },
+   {
+    "texto": "lista",
+    "inicio": 5.9,
+    "fim": 6.14
+   },
+   {
+    "texto": "de",
+    "inicio": 6.14,
+    "fim": 6.26
+   },
+   {
+    "texto": "personas",
+    "inicio": 6.26,
+    "fim": 6.62
+   },
+   {
+    "texto": "bloqueadas.",
+    "inicio": 6.62,
+    "fim": 6.98
+   }
+  ]
+ },
+ {
+  "id": "L2",
+  "quem": "narrador",
+  "duracao": 5.616,
+  "palavras": [
+   {
+    "texto": "Todas",
+    "inicio": 0.08,
+    "fim": 0.42
+   },
+   {
+    "texto": "relacionadas",
+    "inicio": 0.42,
+    "fim": 1
+   },
+   {
+    "texto": "con",
+    "inicio": 1,
+    "fim": 1.16
+   },
+   {
+    "texto": "contratos",
+    "inicio": 1.16,
+    "fim": 1.7
+   },
+   {
+    "texto": "del",
+    "inicio": 1.7,
+    "fim": 1.9
+   },
+   {
+    "texto": "Instituto",
+    "inicio": 1.9,
+    "fim": 2.38
+   },
+   {
+    "texto": "Nacional",
+    "inicio": 2.38,
+    "fim": 2.64
+   },
+   {
+    "texto": "Electoral,",
+    "inicio": 2.64,
+    "fim": 3.62
+   },
+   {
+    "texto": "el",
+    "inicio": 3.62,
+    "fim": 3.72
+   },
+   {
+    "texto": "árbitro",
+    "inicio": 3.72,
+    "fim": 4.14
+   },
+   {
+    "texto": "de",
+    "inicio": 4.14,
+    "fim": 4.24
+   },
+   {
+    "texto": "las",
+    "inicio": 4.24,
+    "fim": 4.36
+   },
+   {
+    "texto": "elecciones",
+    "inicio": 4.36,
+    "fim": 4.76
+   },
+   {
+    "texto": "en",
+    "inicio": 4.76,
+    "fim": 4.98
+   },
+   {
+    "texto": "México.",
+    "inicio": 4.98,
+    "fim": 5.06
+   }
+  ]
+ },
+ {
+  "id": "L3",
+  "quem": "narrador",
+  "duracao": 6.922,
+  "palavras": [
+   {
+    "texto": "En",
+    "inicio": 0.08,
+    "fim": 0.24
+   },
+   {
+    "texto": "esa",
+    "inicio": 0.24,
+    "fim": 0.42
+   },
+   {
+    "texto": "lista,",
+    "inicio": 0.42,
+    "fim": 1
+   },
+   {
+    "texto": "de",
+    "inicio": 1,
+    "fim": 1.22
+   },
+   {
+    "texto": "acuerdo",
+    "inicio": 1.22,
+    "fim": 1.42
+   },
+   {
+    "texto": "con",
+    "inicio": 1.42,
+    "fim": 1.6
+   },
+   {
+    "texto": "reportes",
+    "inicio": 1.6,
+    "fim": 2.06
+   },
+   {
+    "texto": "de",
+    "inicio": 2.06,
+    "fim": 2.14
+   },
+   {
+    "texto": "prensa,",
+    "inicio": 2.14,
+    "fim": 2.9
+   },
+   {
+    "texto": "está",
+    "inicio": 2.9,
+    "fim": 3.06
+   },
+   {
+    "texto": "Guadalupe",
+    "inicio": 3.06,
+    "fim": 3.62
+   },
+   {
+    "texto": "Taddei,",
+    "inicio": 3.62,
+    "fim": 4.22
+   },
+   {
+    "texto": "quien",
+    "inicio": 4.22,
+    "fim": 4.48
+   },
+   {
+    "texto": "presidía",
+    "inicio": 4.48,
+    "fim": 4.9
+   },
+   {
+    "texto": "el",
+    "inicio": 4.9,
+    "fim": 5.08
+   },
+   {
+    "texto": "INE",
+    "inicio": 5.08,
+    "fim": 5.28
+   },
+   {
+    "texto": "y",
+    "inicio": 5.28,
+    "fim": 5.46
+   },
+   {
+    "texto": "renunció",
+    "inicio": 5.46,
+    "fim": 5.92
+   },
+   {
+    "texto": "a",
+    "inicio": 5.92,
+    "fim": 6.0
+   },
+   {
+    "texto": "finales",
+    "inicio": 5.98,
+    "fim": 6.06
+   },
+   {
+    "texto": "de",
+    "inicio": 5.98,
+    "fim": 6.06
+   },
+   {
+    "texto": "octubre.",
+    "inicio": 5.98,
+    "fim": 6.06
+   }
+  ]
+ },
+ {
+  "id": "L4",
+  "quem": "narrador",
+  "duracao": 8.385,
+  "palavras": [
+   {
+    "texto": "Pero",
+    "inicio": 0,
+    "fim": 0.24
+   },
+   {
+    "texto": "ojo:",
+    "inicio": 0.24,
+    "fim": 1.12
+   },
+   {
+    "texto": "la",
+    "inicio": 1.12,
+    "fim": 1.22
+   },
+   {
+    "texto": "UIF",
+    "inicio": 1.22,
+    "fim": 1.52
+   },
+   {
+    "texto": "no",
+    "inicio": 1.52,
+    "fim": 1.68
+   },
+   {
+    "texto": "ha",
+    "inicio": 1.68,
+    "fim": 1.76
+   },
+   {
+    "texto": "confirmado",
+    "inicio": 1.76,
+    "fim": 2.26
+   },
+   {
+    "texto": "oficialmente",
+    "inicio": 2.26,
+    "fim": 2.88
+   },
+   {
+    "texto": "si",
+    "inicio": 2.88,
+    "fim": 3.04
+   },
+   {
+    "texto": "la",
+    "inicio": 3.04,
+    "fim": 3.16
+   },
+   {
+    "texto": "cuenta",
+    "inicio": 3.16,
+    "fim": 3.44
+   },
+   {
+    "texto": "de",
+    "inicio": 3.44,
+    "fim": 3.62
+   },
+   {
+    "texto": "Taddei",
+    "inicio": 3.62,
+    "fim": 3.86
+   },
+   {
+    "texto": "está",
+    "inicio": 3.86,
+    "fim": 4.08
+   },
+   {
+    "texto": "incluida.",
+    "inicio": 4.08,
+    "fim": 4.82
+   },
+   {
+    "texto": "Y",
+    "inicio": 4.82,
+    "fim": 5.38
+   },
+   {
+    "texto": "el",
+    "inicio": 5.38,
+    "fim": 5.48
+   },
+   {
+    "texto": "bloqueo",
+    "inicio": 5.48,
+    "fim": 5.82
+   },
+   {
+    "texto": "es",
+    "inicio": 5.82,
+    "fim": 5.94
+   },
+   {
+    "texto": "una",
+    "inicio": 5.94,
+    "fim": 6.08
+   },
+   {
+    "texto": "medida",
+    "inicio": 6.08,
+    "fim": 6.34
+   },
+   {
+    "texto": "preventiva,",
+    "inicio": 6.34,
+    "fim": 7.22
+   },
+   {
+    "texto": "no",
+    "inicio": 7.22,
+    "fim": 7.6
+   },
+   {
+    "texto": "una",
+    "inicio": 7.6,
+    "fim": 7.82
+   },
+   {
+    "texto": "condena.",
+    "inicio": 7.82,
+    "fim": 7.98
+   }
+  ]
+ },
+ {
+  "id": "L5",
+  "quem": "narrador",
+  "duracao": 7.576,
+  "palavras": [
+   {
+    "texto": "Todo",
+    "inicio": 0,
+    "fim": 0.2
+   },
+   {
+    "texto": "empezó",
+    "inicio": 0.2,
+    "fim": 0.54
+   },
+   {
+    "texto": "con",
+    "inicio": 0.54,
+    "fim": 0.68
+   },
+   {
+    "texto": "investigaciones",
+    "inicio": 0.68,
+    "fim": 1.3
+   },
+   {
+    "texto": "periodísticas",
+    "inicio": 1.3,
+    "fim": 2.06
+   },
+   {
+    "texto": "sobre",
+    "inicio": 2.06,
+    "fim": 2.32
+   },
+   {
+    "texto": "posibles",
+    "inicio": 2.32,
+    "fim": 2.8
+   },
+   {
+    "texto": "conflictos",
+    "inicio": 2.8,
+    "fim": 3.36
+   },
+   {
+    "texto": "de",
+    "inicio": 3.36,
+    "fim": 3.46
+   },
+   {
+    "texto": "interés",
+    "inicio": 3.46,
+    "fim": 3.94
+   },
+   {
+    "texto": "en",
+    "inicio": 3.94,
+    "fim": 4.38
+   },
+   {
+    "texto": "contratos",
+    "inicio": 4.38,
+    "fim": 4.94
+   },
+   {
+    "texto": "que",
+    "inicio": 4.94,
+    "fim": 5.16
+   },
+   {
+    "texto": "el",
+    "inicio": 5.16,
+    "fim": 5.3
+   },
+   {
+    "texto": "INE",
+    "inicio": 5.3,
+    "fim": 5.7
+   },
+   {
+    "texto": "entregó",
+    "inicio": 5.7,
+    "fim": 6.26
+   },
+   {
+    "texto": "a",
+    "inicio": 6.26,
+    "fim": 6.36
+   },
+   {
+    "texto": "varias",
+    "inicio": 6.36,
+    "fim": 6.64
+   },
+   {
+    "texto": "empresas.",
+    "inicio": 6.64,
+    "fim": 6.98
+   }
+  ]
+ },
+ {
+  "id": "L6",
+  "quem": "narrador",
+  "duracao": 6.217,
+  "palavras": [
+   {
+    "texto": "Además,",
+    "inicio": 0.08,
+    "fim": 0.84
+   },
+   {
+    "texto": "según",
+    "inicio": 0.84,
+    "fim": 1.14
+   },
+   {
+    "texto": "fuentes",
+    "inicio": 1.14,
+    "fim": 1.5
+   },
+   {
+    "texto": "del",
+    "inicio": 1.5,
+    "fim": 1.64
+   },
+   {
+    "texto": "gobierno",
+    "inicio": 1.64,
+    "fim": 1.9
+   },
+   {
+    "texto": "federal,",
+    "inicio": 1.9,
+    "fim": 2.8
+   },
+   {
+    "texto": "la",
+    "inicio": 2.8,
+    "fim": 2.88
+   },
+   {
+    "texto": "UIF",
+    "inicio": 2.84,
+    "fim": 3.08
+   },
+   {
+    "texto": "presentó",
+    "inicio": 3.08,
+    "fim": 3.5
+   },
+   {
+    "texto": "una",
+    "inicio": 3.5,
+    "fim": 3.64
+   },
+   {
+    "texto": "denuncia",
+    "inicio": 3.64,
+    "fim": 4.12
+   },
+   {
+    "texto": "ante",
+    "inicio": 4.12,
+    "fim": 4.26
+   },
+   {
+    "texto": "la",
+    "inicio": 4.26,
+    "fim": 4.4
+   },
+   {
+    "texto": "Fiscalía",
+    "inicio": 4.4,
+    "fim": 4.86
+   },
+   {
+    "texto": "General",
+    "inicio": 4.86,
+    "fim": 5.22
+   },
+   {
+    "texto": "de",
+    "inicio": 5.22,
+    "fim": 5.36
+   },
+   {
+    "texto": "la",
+    "inicio": 5.36,
+    "fim": 5.46
+   },
+   {
+    "texto": "República.",
+    "inicio": 5.46,
+    "fim": 5.94
+   }
+  ]
+ },
+ {
+  "id": "L7",
+  "quem": "narrador",
+  "duracao": 6.74,
+  "palavras": [
+   {
+    "texto": "Y",
+    "inicio": 0,
+    "fim": 0.2
+   },
+   {
+    "texto": "la",
+    "inicio": 0.2,
+    "fim": 0.3
+   },
+   {
+    "texto": "Auditoría",
+    "inicio": 0.3,
+    "fim": 0.72
+   },
+   {
+    "texto": "Superior",
+    "inicio": 0.72,
+    "fim": 1.14
+   },
+   {
+    "texto": "de",
+    "inicio": 1.14,
+    "fim": 1.28
+   },
+   {
+    "texto": "la",
+    "inicio": 1.28,
+    "fim": 1.4
+   },
+   {
+    "texto": "Federación",
+    "inicio": 1.4,
+    "fim": 1.92
+   },
+   {
+    "texto": "ya",
+    "inicio": 1.92,
+    "fim": 2.5
+   },
+   {
+    "texto": "hace",
+    "inicio": 2.5,
+    "fim": 2.7
+   },
+   {
+    "texto": "una",
+    "inicio": 2.7,
+    "fim": 2.8
+   },
+   {
+    "texto": "auditoría",
+    "inicio": 2.8,
+    "fim": 3.24
+   },
+   {
+    "texto": "completa",
+    "inicio": 3.24,
+    "fim": 3.82
+   },
+   {
+    "texto": "al",
+    "inicio": 3.82,
+    "fim": 4.12
+   },
+   {
+    "texto": "INE",
+    "inicio": 4.12,
+    "fim": 4.38
+   },
+   {
+    "texto": "y",
+    "inicio": 4.38,
+    "fim": 4.56
+   },
+   {
+    "texto": "a",
+    "inicio": 4.56,
+    "fim": 4.64
+   },
+   {
+    "texto": "los",
+    "inicio": 4.62,
+    "fim": 4.76
+   },
+   {
+    "texto": "institutos",
+    "inicio": 4.76,
+    "fim": 5.24
+   },
+   {
+    "texto": "electorales",
+    "inicio": 5.24,
+    "fim": 5.8
+   },
+   {
+    "texto": "de",
+    "inicio": 5.8,
+    "fim": 5.9
+   },
+   {
+    "texto": "los",
+    "inicio": 5.9,
+    "fim": 5.98
+   },
+   {
+    "texto": "estados.",
+    "inicio": 5.98,
+    "fim": 6.06
+   }
+  ]
+ },
+ {
+  "id": "L8",
+  "quem": "narrador",
+  "duracao": 5.486,
+  "palavras": [
+   {
+    "texto": "Mientras",
+    "inicio": 0.08,
+    "fim": 0.42
+   },
+   {
+    "texto": "tanto,",
+    "inicio": 0.42,
+    "fim": 1.36
+   },
+   {
+    "texto": "Blanca",
+    "inicio": 1.36,
+    "fim": 1.64
+   },
+   {
+    "texto": "Yassahara",
+    "inicio": 1.64,
+    "fim": 2.22
+   },
+   {
+    "texto": "Cruz",
+    "inicio": 2.22,
+    "fim": 2.5
+   },
+   {
+    "texto": "García",
+    "inicio": 2.5,
+    "fim": 2.92
+   },
+   {
+    "texto": "quedó",
+    "inicio": 2.92,
+    "fim": 3.26
+   },
+   {
+    "texto": "como",
+    "inicio": 3.26,
+    "fim": 3.44
+   },
+   {
+    "texto": "presidenta",
+    "inicio": 3.44,
+    "fim": 4.06
+   },
+   {
+    "texto": "interina",
+    "inicio": 4.06,
+    "fim": 4.52
+   },
+   {
+    "texto": "del",
+    "inicio": 4.52,
+    "fim": 4.7
+   },
+   {
+    "texto": "instituto.",
+    "inicio": 4.7,
+    "fim": 4.98
+   }
+  ]
+ },
+ {
+  "id": "L9",
+  "quem": "narrador",
+  "duracao": 6.87,
+  "palavras": [
+   {
+    "texto": "Y",
+    "inicio": 0,
+    "fim": 0.22
+   },
+   {
+    "texto": "todo",
+    "inicio": 0.22,
+    "fim": 0.48
+   },
+   {
+    "texto": "esto",
+    "inicio": 0.48,
+    "fim": 0.8
+   },
+   {
+    "texto": "pasa",
+    "inicio": 0.8,
+    "fim": 1.16
+   },
+   {
+    "texto": "rumbo",
+    "inicio": 1.16,
+    "fim": 1.48
+   },
+   {
+    "texto": "a",
+    "inicio": 1.48,
+    "fim": 1.58
+   },
+   {
+    "texto": "la",
+    "inicio": 1.58,
+    "fim": 1.66
+   },
+   {
+    "texto": "elección",
+    "inicio": 1.64,
+    "fim": 2.04
+   },
+   {
+    "texto": "de",
+    "inicio": 2.04,
+    "fim": 2.18
+   },
+   {
+    "texto": "2027,",
+    "inicio": 2.18,
+    "fim": 3.38
+   },
+   {
+    "texto": "mientras",
+    "inicio": 3.38,
+    "fim": 3.8
+   },
+   {
+    "texto": "en",
+    "inicio": 3.8,
+    "fim": 4.02
+   },
+   {
+    "texto": "el",
+    "inicio": 4.02,
+    "fim": 4.12
+   },
+   {
+    "texto": "Congreso",
+    "inicio": 4.12,
+    "fim": 4.52
+   },
+   {
+    "texto": "se",
+    "inicio": 4.52,
+    "fim": 4.7
+   },
+   {
+    "texto": "discute",
+    "inicio": 4.7,
+    "fim": 5.1
+   },
+   {
+    "texto": "un",
+    "inicio": 5.1,
+    "fim": 5.2
+   },
+   {
+    "texto": "recorte",
+    "inicio": 5.2,
+    "fim": 5.62
+   },
+   {
+    "texto": "al",
+    "inicio": 5.62,
+    "fim": 5.74
+   },
+   {
+    "texto": "presupuesto",
+    "inicio": 5.74,
+    "fim": 5.98
+   },
+   {
+    "texto": "del",
+    "inicio": 5.98,
+    "fim": 6.06
+   },
+   {
+    "texto": "INE.",
+    "inicio": 5.98,
+    "fim": 6.06
+   }
+  ]
+ },
+ {
+  "id": "L10",
+  "quem": "narrador",
+  "duracao": 2.9,
+  "palavras": [
+   {
+    "texto": "¿Tú",
+    "inicio": 0.06,
+    "fim": 0.32
+   },
+   {
+    "texto": "confías",
+    "inicio": 0.32,
+    "fim": 0.76
+   },
+   {
+    "texto": "en",
+    "inicio": 0.76,
+    "fim": 0.94
+   },
+   {
+    "texto": "el",
+    "inicio": 0.94,
+    "fim": 1.06
+   },
+   {
+    "texto": "INE?",
+    "inicio": 1.06,
+    "fim": 1.4
+   },
+   {
+    "texto": "Déjalo",
+    "inicio": 1.4,
+    "fim": 1.76
+   },
+   {
+    "texto": "en",
+    "inicio": 1.76,
+    "fim": 1.84
+   },
+   {
+    "texto": "los",
+    "inicio": 1.84,
+    "fim": 1.92
+   },
+   {
+    "texto": "comentarios.",
+    "inicio": 1.92,
+    "fim": 2.0
+   }
+  ]
+ }
+]

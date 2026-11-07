@@ -309,7 +309,7 @@ export const AnosLinhaDoTempo = ({inicio, dur}: {inicio: number; dur: number}) =
 };
 
 // Botão "comenta" pulsando
-export const Comenta = ({inicio, dur}: {inicio: number; dur: number}) => {
+export const Comenta = ({inicio, dur, texto = '💬 COMENTA AÍ!'}: {inicio: number; dur: number; texto?: string}) => {
   const {visivel, k, s} = usePop(inicio, dur);
   if (!visivel) return null;
   const pulsa = 1 + Math.sin(s * 8) * 0.04;
@@ -329,7 +329,7 @@ export const Comenta = ({inicio, dur}: {inicio: number; dur: number}) => {
           boxShadow: '0 12px 0 #111',
         }}
       >
-        💬 COMENTA AÍ!
+        {texto}
       </div>
     </AbsoluteFill>
   );
