@@ -23,6 +23,16 @@ Atualizado a cada etapa. Se a conversa for interrompida (limite de uso), a próx
 - `videos/por-que-la-fila-de-al-lado-mx.mp4` (FilaMX, David)
 - Roteiros: `roteiro/freio-e-fila.md`. Crédito da música na descrição (CC BY).
 
+- `videos/cristiano-ronaldo-deixa-a-selecao.mp4` (CR7, documentário, Matheus, trilha original) — roteiro `roteiro/cr7.md`
+- Capa do canal: `perfil/capa-canal.png` (2560×1440, composição `CapaCanal`)
+
+## Personagens 2.0 (pedido do usuário: variar formatos, nada de bonecos todos iguais)
+- `Bloquinho` agora tem: `corpo` (padrao/magro/forte/gordinho), `cabeca` (quadrada/redonda/oval/larga),
+  `cabelo` (liso/topete/black/lateral/moicano/comprido/rabo/nenhum) + `corCabelo`, `barba` (curta/cavanhaque/cheia),
+  `olhos="grandes"`, nariz, sobrancelhas, sapatos, `numero` na camisa, `manga`, `meia`, cantos arredondados,
+  expressões `triste`/`emocionado`, poses `siu`/`chutar`/`correr`/`bracosCruzados`/`sentado`.
+- SEMPRE variar corpo/cabeça/cabelo entre personagens. Vitrine: composição `TestePersonagens`.
+
 ## Próximo
 - Aguardando novos pedidos do usuário. Pendência opcional: baixar mais músicas (`scripts/biblioteca-musicas.py`).
 - O usuário pediu: **mesmo se o limite da conversa chegar, continuar quando voltar.**
