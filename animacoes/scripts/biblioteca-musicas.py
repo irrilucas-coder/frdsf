@@ -52,7 +52,9 @@ def slug(t):
     return re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")[:40]
 
 
-creditos = {}
+arq_creditos = os.path.join(raiz, "creditos.json")
+creditos = json.load(open(arq_creditos)) if os.path.exists(arq_creditos) else {}
+limite_atingido = False
 for cat, titulos in CATALOGO.items():
     os.makedirs(os.path.join(raiz, cat), exist_ok=True)
     for titulo in titulos:
@@ -64,16 +66,24 @@ for cat, titulos in CATALOGO.items():
         if os.path.exists(os.path.join(raiz, cat, f"{slug(titulo)}.mp3")):
             print(f"{cat}: {titulo} já existe")
             continue
+        if limite_atingido:
+            continue
+        baixou = False
         for tentativa in range(3):  # respeita o limite da Wikimedia: espera e tenta de novo
             try:
                 with urllib.request.urlopen(urllib.request.Request(item["url"], headers=UA), timeout=120) as r, open(bruto, "wb") as f:
                     f.write(r.read())
+                baixou = True
                 break
             except urllib.error.HTTPError as e:
-                if e.code != 429 or tentativa == 2:
+                if e.code != 429:
                     raise
                 print("  Wikimedia pediu calma, esperando 90 s…")
                 time.sleep(90)
+        if not baixou:
+            print("  limite da Wikimedia atingido; o resto fica para outra hora (rode o script de novo)")
+            limite_atingido = True
+            continue
         time.sleep(12)  # pausa entre downloads
         destino = os.path.join(raiz, cat, f"{slug(titulo)}.mp3")
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", bruto, "-t", "150", "-af", "loudnorm=I=-20:TP=-2:LRA=11",
@@ -93,8 +103,11 @@ for cat, titulos in CATALOGO.items():
             "origem": item.get("foreign_landing_url"),
             "credito": credito,
         }
+        json.dump(creditos, open(arq_creditos, "w"), ensure_ascii=False, indent=1)
         print(f"{cat}: {titulo} ok ({lic} {versao})")
 
-json.dump(creditos, open(os.path.join(raiz, "creditos.json"), "w"), ensure_ascii=False, indent=1)
+json.dump(creditos, open(arq_creditos, "w"), ensure_ascii=False, indent=1)
+for f in os.listdir(tmp):
+    os.remove(os.path.join(tmp, f))
 os.rmdir(tmp)
 print("biblioteca de músicas pronta")
