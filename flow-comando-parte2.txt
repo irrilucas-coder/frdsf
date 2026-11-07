@@ -1,0 +1,158 @@
+FLOW AGENT — PRODUCTION ORDER: "O SANGUE NÃO MENTE" (PART 2 — 8 SCENES)
+This is Part 2 of the series already in this project. Execute every step below automatically, in order. Do not skip steps, do not merge scenes, do not change dialogue.
+
+STORY CONTEXT (for the agent): Lucas (22) was in an accident and needs an urgent living-donor liver transplant. His biological father is Marcos, Roberto's brother. Marcos has a weak heart and knows the surgery could kill him, but he donates anyway. Lucas survives. Marcos dies on the operating table.
+
+STEP 1 — GLOBAL RULES (apply to every generation)
+You are generating a Brazilian telenovela series, one 8-second vertical 9:16 clip per prompt. Rules for EVERY clip:
+- Reuse the character ingredients already saved in this project: ROBERTO, HELENA, CAMILA, DR. RAFAEL, MARCOS. Create only the new ingredients listed in STEP 2.
+- Use ONLY the character ingredients listed for that scene (maximum 3). Keep each character's face, hair, age, body and wardrobe 100% identical to their reference image. Never invent new outfits.
+- Same hospital as Part 1: bright modern Brazilian private hospital, white walls, glossy light floor, fluorescent ceiling panels, same lighting and color grade.
+- Ultra-realistic live-action footage, never animated, never CGI-looking.
+- All dialogue is spoken in Brazilian Portuguese (pt-BR) with a natural Brazilian accent. Never European Portuguese, never Spanish.
+- Perfect lip-sync: mouth movements match every syllable of the dialogue. Only the character named as speaking moves their lips.
+- No subtitles, no captions, no on-screen text, no watermark, no background music. Only dialogue, natural ambience and the sound effects described.
+- No gore, no blood, no open wounds, no visible surgical incisions.
+
+STEP 2 — CREATE 3 NEW CHARACTER REFERENCE IMAGES (image mode, 9:16). Save each one as an ingredient with the exact name shown.
+
+IMAGE — LUCAS (the son). Save ingredient as: LUCAS
+Ultra-realistic photograph for a film character reference. Vertical 9:16. One Brazilian young man, 22 years old, standing centered, framed from mid-thigh up, facing the camera directly, tired fragile expression. Strong family resemblance to MARCOS (use MARCOS ingredient as facial reference for nose, jawline and eyes, but 30 years younger). Light olive skin, short dark brown wavy hair slightly messy, clean-shaven with light stubble, brown eyes, a small white adhesive bandage on the right side of his forehead and a faint bruise on his cheekbone from a car accident. Wearing a light blue hospital patient gown with a small white pattern, a white hospital ID wristband on his left wrist. Plain seamless light grey studio background, soft even diffused lighting, no harsh shadows. Shot on Canon EOS R5, 85mm lens, f/2.8, sharp focus on the face. Real natural skin texture with visible pores and small imperfections, no retouching, no beauty filter. Photorealistic, not CGI, not illustration. No text, no watermark, no props, no other people.
+
+IMAGE — MARCOS HOSPITAL (Marcos as a patient). Save ingredient as: MARCOS HOSPITAL
+Use the MARCOS ingredient as the exact face and identity reference: same man, same face, same hair, same stubble, same age. Ultra-realistic photograph for a film character reference. Vertical 9:16. He stands centered, framed from mid-thigh up, facing the camera directly, calm but sad expression. Wearing a light blue hospital patient gown with a small white pattern, a white hospital ID wristband on his left wrist, no watch, no jacket. Plain seamless light grey studio background, soft even diffused lighting. Shot on Canon EOS R5, 85mm lens, f/2.8. Real natural skin texture, slightly pale, no retouching. Photorealistic, not CGI. No text, no watermark, no other people.
+
+IMAGE — DR. RAFAEL SURGERY (the doctor in surgical attire). Save ingredient as: DR. RAFAEL SURGERY
+Use the DR. RAFAEL ingredient as the exact face and identity reference: same man, same face, same beard, same age. Ultra-realistic photograph for a film character reference. Vertical 9:16. He stands centered, framed from mid-thigh up, facing the camera directly, exhausted serious expression. Wearing navy blue surgical scrubs, a navy blue surgical scrub cap covering his hair, a light blue surgical mask pulled down under his chin, no lab coat, no stethoscope. Plain seamless light grey studio background, soft even diffused lighting. Shot on Canon EOS R5, 85mm lens, f/2.8. Real natural skin texture, light sweat on the forehead, no retouching. Photorealistic, not CGI. No text, no watermark, no other people.
+
+STEP 3 — CREATE 8 VIDEO SCENES (video mode, 9:16, 8 seconds each). Generate ONE scene per prompt, in order 1 to 8. For each scene, attach ONLY the listed ingredients. Dialogue must stay exactly as written, in Brazilian Portuguese (pt-BR), with perfect lip-sync.
+
+SCENE 1 — THE HOOK: "YOU MAY DIE"
+Ingredients: MARCOS HOSPITAL + DR. RAFAEL
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: pre-operative room of a bright modern Brazilian private hospital, white walls, a heart monitor beside the bed, an IV stand, soft fluorescent light.
+Characters (use ingredients): MARCOS in a light blue hospital gown, sitting on the edge of a hospital bed, IV line in his left arm. The DOCTOR (Dr. Rafael, white coat, navy scrubs, stethoscope) standing in front of him holding a medical chart.
+Timeline:
+0.0–3.0s: Close-up of the doctor, grave, looking directly at Marcos, says immediately in Brazilian Portuguese: "Seu Marcos... o senhor pode morrer nessa cirurgia."
+3.0–4.0s: Fast telenovela push-in onto Marcos's face: he swallows, eyes glossy, but does not hesitate.
+4.0–8.0s: Marcos, calm and firm, voice low, in Brazilian Portuguese: "Ele é meu filho, doutor. Tira o que precisar de mim."
+Only the doctor and Marcos speak.
+Camera: shot / reverse-shot close-ups at eye level, slow push-in on Marcos at the end. 50mm look, shallow depth of field, subtle film grain.
+Lighting and grade: soft cool fluorescent hospital light, natural warm skin tones, Marcos slightly pale, teal-white grade.
+Acting: restrained, noble, deeply emotional, real micro-expressions.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: steady heart-monitor beep in the room, quiet hospital room tone. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands.
+
+SCENE 2 — CAMILA'S REVELATION
+Ingredients: CAMILA + ROBERTO + HELENA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright modern Brazilian private hospital corridor from Part 1.
+Characters (use ingredients): the DAUGHTER (Camila, long wavy brown hair, cream blouse, eyes red from crying), the FATHER (Roberto, navy suit, teal tie) and the MOTHER (Helena, burgundy dress, gold cross necklace).
+Timeline:
+0.0–4.0s: The daughter grabs her father's arm, desperate, crying, in Brazilian Portuguese: "Pai, o tio Marcos tem problema no coração... e a mãe sabia!"
+4.0–5.0s: The father turns slowly to the mother, stunned.
+5.0–8.0s: The mother, sobbing, hand on her gold cross, in Brazilian Portuguese: "Ele me pediu segredo... ele quis salvar o filho dele."
+Only the daughter and the mother speak. The father stays silent.
+Camera: medium three-shot, then a whip-pan to the mother's close-up. 35mm anamorphic look, shallow depth of field, subtle film grain.
+Lighting and grade: cool white fluorescent hospital light, natural warm skin tones, teal-white grade.
+Acting: high emotion, realistic tears, the father's face frozen in disbelief.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: hospital room tone, distant heart-monitor beeps. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands.
+
+SCENE 3 — THE LAST GOODBYE
+Ingredients: MARCOS HOSPITAL + ROBERTO + DR. RAFAEL SURGERY
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: hospital corridor in front of double doors marked only by a red light above them (no readable text), leading to the operating room.
+Characters (use ingredients): MARCOS lying on a hospital gurney in a light blue gown, IV line attached, being pushed by the DOCTOR (Dr. Rafael in navy scrubs and navy scrub cap, mask under his chin). The FATHER (Roberto, navy suit, teal tie) rushes in and stops the gurney.
+Timeline:
+0.0–1.5s: The father grabs the side rail of the gurney; the doctor stops pushing.
+1.5–5.5s: Marcos turns his head, takes his brother's hand, weak but smiling through tears, in Brazilian Portuguese: "Roberto... cuida dele por mim. Ele sempre foi seu."
+5.5–8.0s: The father, squeezing his hand, crying, voice breaking, in Brazilian Portuguese: "Volta vivo, seu teimoso."
+Only Marcos and the father speak. The doctor stays silent.
+Camera: medium shot, then close-up on the two hands holding each other, then close-up of the father's face. 50mm look, very shallow depth of field, subtle film grain.
+Lighting and grade: cool fluorescent light, warm skin tones, a soft red glow from the light above the doors.
+Acting: heartbreaking brotherly love and forgiveness, real tears, trembling lips.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. SFX: gurney wheels squeaking softly. Ambience: hospital room tone. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands.
+
+SCENE 4 — THE OPERATING ROOM
+Ingredients: DR. RAFAEL SURGERY + MARCOS HOSPITAL
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: modern hospital operating room, bright surgical lights overhead, green-blue surgical drapes, heart monitor screen, anesthesia machine. Two out-of-focus nurses in scrubs and masks in the background, silent.
+Characters (use ingredients): the DOCTOR (Dr. Rafael in navy scrubs, navy scrub cap, surgical mask ON covering nose and mouth, eyes visible). MARCOS lying unconscious on the operating table, oxygen mask on his face, body covered by surgical drapes up to his chest.
+Timeline:
+0.0–2.0s: Close-up of the heart monitor: the heart line becomes irregular, an alarm starts beeping fast.
+2.0–5.5s: The doctor looks up sharply from the table, urgent, voice muffled by the mask, in Brazilian Portuguese: "Ele está parando! Carrinho de parada, agora!"
+5.5–8.0s: Close-up of Marcos's still face under the oxygen mask; the monitor sound turns into a long continuous flatline tone.
+Only the doctor speaks.
+Camera: fast handheld, tense close-ups, ending on a static close-up of Marcos. 35mm look, shallow depth of field, subtle film grain.
+Lighting and grade: cold bright surgical light, slightly desaturated cold grade.
+Acting: urgent, realistic medical tension.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), muffled by the mask but clear, perfect lip-sync with the mask movement. SFX: fast monitor alarm, then a continuous flatline tone. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, blood, gore, visible incision, open body, face morphing, distorted hands.
+
+SCENE 5 — LUCAS WAKES UP
+Ingredients: LUCAS + HELENA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: hospital ICU room, white walls, heart monitor beeping steadily, soft morning light through window blinds.
+Characters (use ingredients): LUCAS lying in an ICU bed, light blue gown, nasal oxygen cannula, IV line, small bandage on his forehead. The MOTHER (Helena, burgundy dress, gold cross necklace) sitting beside the bed holding his hand.
+Timeline:
+0.0–2.5s: Close-up: Lucas slowly opens his eyes, confused, weak.
+2.5–6.0s: Lucas, weak raspy voice, in Brazilian Portuguese: "Mãe... o que aconteceu? Quem me salvou?"
+6.0–8.0s: The mother kisses his hand, tears falling, unable to answer, looking away toward the door.
+Only Lucas speaks. The mother stays silent.
+Camera: slow push-in, then a gentle rack focus from Lucas to the mother. 50mm look, very shallow depth of field, subtle film grain.
+Lighting and grade: soft warm morning light mixed with cool hospital light, gentle hopeful but sad tone.
+Acting: delicate, emotional, realistic weakness, real tears.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: steady slow heart-monitor beep, quiet ICU room tone. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands.
+
+SCENE 6 — THE NEWS
+Ingredients: DR. RAFAEL SURGERY + ROBERTO + CAMILA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: the same bright hospital corridor, in front of the operating room double doors.
+Characters (use ingredients): the DOCTOR (Dr. Rafael in navy scrubs, mask under his chin), the FATHER (Roberto, navy suit, teal tie) and the DAUGHTER (Camila, long wavy brown hair, cream blouse).
+Timeline:
+0.0–1.5s: The doctor walks out through the double doors and slowly pulls off his navy scrub cap, exhausted. The father and daughter stand up immediately.
+1.5–6.0s: The doctor, gentle and heavy, in Brazilian Portuguese: "O Lucas vai ficar bem... Mas o Marcos não resistiu. Eu sinto muito."
+6.0–8.0s: The father's legs give out; he falls to his knees on the corridor floor. The daughter kneels and hugs him, sobbing.
+Only the doctor speaks.
+Camera: medium shot, then a slow-motion tilt down following the father falling to his knees. 35mm anamorphic look, shallow depth of field, subtle film grain.
+Lighting and grade: cool fluorescent light, slightly darker and desaturated grade.
+Acting: devastating grief, realistic and restrained, real tears.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. SFX: the father's knees hitting the floor, the daughter's sob. Ambience: hospital room tone. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands.
+
+SCENE 7 — THE LETTER
+Ingredients: ROBERTO + CAMILA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with Mexican melodrama intensity. Location: hospital waiting area, a row of grey chairs, large window with soft late-afternoon light.
+Characters (use ingredients): the FATHER (Roberto, navy suit, teal tie loosened) sitting on a chair, holding an opened handwritten letter on white paper with blue ink (handwriting not readable on camera). The DAUGHTER (Camila) sitting beside him, her head on his shoulder.
+Timeline:
+0.0–1.5s: Close-up of the father's trembling hands unfolding the letter.
+1.5–7.0s: The father reads aloud, voice breaking, tears falling onto the paper, in Brazilian Portuguese: "Irmão, se eu não voltar... diz pra ele que o pai dele sempre foi você."
+7.0–8.0s: He presses the letter against his chest and closes his eyes.
+Only the father speaks.
+Camera: insert close-up of the hands and letter, then a slow push-in on the father's face. 50mm look, very shallow depth of field, subtle film grain.
+Lighting and grade: warm golden late-afternoon window light on the faces, soft and melancholic.
+Acting: the most emotional moment of the episode, restrained crying, real tears.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. SFX: paper rustling. Ambience: quiet hospital room tone. No music.
+Avoid: subtitles, captions, any on-screen text, readable handwriting, watermark, music, extra people, face morphing, distorted hands.
+
+SCENE 8 — THE CLIFFHANGER
+Ingredients: LUCAS + ROBERTO + HELENA
+Vertical 9:16, 8-second ultra-realistic cinematic shot, Brazilian prime-time telenovela style (Globo 9pm novela look) with classic Mexican telenovela melodrama. Location: the same hospital ICU room, evening light, heart monitor beeping softly.
+Characters (use ingredients): LUCAS in the ICU bed (light blue gown, nasal cannula, forehead bandage), the FATHER (Roberto, navy suit, tie loosened, eyes red) entering the room, the MOTHER (Helena, burgundy dress) standing silently by the window.
+Timeline:
+0.0–1.5s: The father walks slowly to the bed and holds Lucas's hand.
+1.5–5.0s: Lucas, weak, with a small hopeful smile, in Brazilian Portuguese: "Pai... cadê o tio Marcos? Eu quero agradecer ele."
+5.0–6.5s: The father freezes, looks at the mother; the mother turns her face away, crying.
+6.5–8.0s: Classic telenovela triple zoom: three fast successive zoom-ins onto the father's face, holding back tears. Hold.
+Only Lucas speaks. The father and the mother stay silent.
+Camera: medium shot, then close-up reactions, ending in the triple crash zoom. 50mm look, very shallow depth of field, subtle film grain.
+Lighting and grade: warm dim evening light with cool monitor glow, darker contrasty grade on the final close-up.
+Acting: devastating, restrained, real tears.
+Audio: dialogue in Brazilian Portuguese (pt-BR, Brazilian accent), clean close-mic, perfect lip-sync. Ambience: the heart-monitor beep fades almost to silence on the final zoom. No music.
+Avoid: subtitles, captions, any on-screen text, watermark, music, extra people, face morphing, distorted hands.
+
+STEP 4 — QUALITY CHECK (regenerate the scene if any item fails)
+1. Dialogue is in Brazilian Portuguese (not European Portuguese, not Spanish).
+2. Only the scripted character speaks, lips perfectly synced.
+3. Faces and wardrobe match the reference images and Part 1 exactly.
+4. No subtitles, captions, text or watermark on screen. No blood or gore.
+5. Generate 2 variations per scene and keep the most realistic one.
+
+END OF ORDER.
