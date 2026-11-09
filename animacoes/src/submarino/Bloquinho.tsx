@@ -745,7 +745,7 @@ const SEG: Record<string, number[]> = {
   '0': [0, 1, 2, 4, 5, 6], '1': [2, 5], '2': [0, 2, 3, 4, 6], '3': [0, 2, 3, 5, 6], '4': [1, 2, 3, 5],
   '5': [0, 1, 3, 5, 6], '6': [0, 1, 3, 4, 5, 6], '7': [0, 2, 5], '8': [0, 1, 2, 3, 4, 5, 6], '9': [0, 1, 2, 3, 5, 6],
 };
-const NumeroCamisa = ({texto, cor, pos, rot, tam}: {texto: string; cor: string; pos: V3; rot: number; tam: number}) => {
+export const NumeroCamisa = ({texto, cor, pos, rot, tam}: {texto: string; cor: string; pos: V3; rot: number; tam: number}) => {
   const w = tam * 0.55;
   const e = tam * 0.14;
   const seg = (i: number): [V3, V3] => {

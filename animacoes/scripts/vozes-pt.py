@@ -98,6 +98,19 @@ PROJETOS = {
         ("L6", "O perigo é engolir muitos de uma vez, ainda mais com o intestino preso: aí pode entupir, principalmente em criança."),
         ("L7", "Ou seja: sete anos é mito. Já sabia? Comenta chiclete. Não sabia? Comenta mito."),
     ],
+    # ---- Série: Arena do Milhão (competição original) ----
+    "arena1": [
+        ("L0", "[excited] Cem jogadores. Um milhão de reais. Só um vai levar tudo."),
+        ("L1", "Primeira prova: as plataformas que afundam. Quem cair na água, está fora."),
+        ("L2", "[suspenseful] A cada dez segundos, uma plataforma afunda... e ninguém sabe qual."),
+        ("L3", "O jogador catorze não perde tempo: pula direto para o centro."),
+        ("L4", "Já o oitenta e dois [laughs] escolheu justo a plataforma que balança."),
+        ("L5", "[gasps] Ela afunda! O oitenta e dois quase cai... mas se segura na beirada!"),
+        ("L6", "A trinta e sete percebeu um detalhe: as plataformas azuis nunca afundam."),
+        ("L7", "[suspenseful] Últimos segundos. Três, dois, um..."),
+        ("L8", "Restam só doze jogadores. E o milhão continua ali, esperando."),
+        ("L9", "Em quem você aposta? Comenta o número. Na parte dois, a prova fica ainda pior."),
+    ],
 }
 IDIOMAS = {"freio-mx": "es", "fila-mx": "es"}
 VOZES_PROJETO = {"freio-mx": "qRUgOhnxGASxirG4fKjv", "fila-mx": "qRUgOhnxGASxirG4fKjv"}  # David - mexicano

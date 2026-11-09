@@ -83,7 +83,7 @@ export const Etiqueta = ({inicio, dur, texto, x, y, cor = '#ffffff', fundo = '#e
   if (s < 0 || s > dur) return null;
   const k = interpolate(s, [0, 0.2], [0, 1], {...clamp, easing: Easing.out(Easing.back(2))}) * interpolate(s, [dur - 0.12, dur], [1, 0], clamp);
   return (
-    <div style={{position: 'absolute', left: x, top: y, translate: '-50% -50%', scale: k, fontFamily: FONTE, fontSize: 40, color: cor, background: fundo, border: '4px solid #000', borderRadius: 40, padding: '4px 20px', boxShadow: '0 5px 0 rgba(0,0,0,0.4)'}}>
+    <div style={{position: 'absolute', left: x, top: y, translate: '-50% -50%', scale: k, fontFamily: FONTE, fontSize: 58, color: cor, background: fundo, border: '5px solid #000', borderRadius: 40, padding: '4px 20px', boxShadow: '0 5px 0 rgba(0,0,0,0.4)'}}>
       {texto}
     </div>
   );
@@ -98,8 +98,8 @@ export const ComentaFinal = ({inicio, dur, sim, nao}: {inicio: number; dur: numb
   const k2 = interpolate(s, [0.35, 0.6], [0, 1], {...clamp, easing: Easing.out(Easing.back(2))});
   const linha = (a: string, b: string, k: number, rot: number) => (
     <div style={{scale: k, rotate: `${rot}deg`, textAlign: 'center', marginBottom: 18}}>
-      <div style={{fontFamily: FONTE, fontSize: 52, color: '#fff', textShadow: CONTORNO(5)}}>{a}</div>
-      <div style={{fontFamily: FONTE, fontSize: 96, color: '#ffd23f', textShadow: CONTORNO(7), lineHeight: 1}}>“{b}”</div>
+      <div style={{fontFamily: FONTE, fontSize: 66, color: '#fff', textShadow: CONTORNO(6)}}>{a}</div>
+      <div style={{fontFamily: FONTE, fontSize: 124, color: '#ffd23f', textShadow: CONTORNO(8), lineHeight: 1}}>“{b}”</div>
     </div>
   );
   return (

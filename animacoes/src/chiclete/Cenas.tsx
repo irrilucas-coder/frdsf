@@ -217,14 +217,14 @@ export const CenaPerigo = () => {
         <group position={[0, 0, -0.9]}>
           <MesaChicletes sobrando={lerp(s, 0, tInt, 1, 0.35)} />
         </group>
-        <Crianca posicao={[0, 0, 0]} rotacaoY={0} expressao="feliz" falando alvoMaoD={mao ? [0.06, 1.72, 0.45] : [0.2, 0.95, -0.6]} />
+        <Crianca posicao={[0, 0, 0]} rotacaoY={0} expressao="feliz" falando alvoMaoD={mao ? [0.04, 1.85, 0.32] : [0.2, 0.95, -0.6]} />
       </Palco>
     );
   }
   const k = s - tInt;
   const bolo: V3 = posNoCorpo(0.86);
   return (
-    <Palco cinema clima="estudio" pos={[0.5, lerp(k, 0, 1.5, -0.4, -1.0), lerp(k, 0, 1.5, 4.8, 3.6)]} olha={[bolo[0], bolo[1], 0]} fov={42} sombras={false}>
+    <Palco cinema clima="estudio" pos={[0.5, lerp(k, 0, 1.5, -0.4, -1.0), lerp(k, 0, 1.5, 6.0, 4.9)]} olha={[bolo[0], bolo[1], 0]} fov={42} sombras={false}>
       <LuzDia />
       <CorpoCorte entupido={1} />
       {Array.from({length: 14}, (_, i) => (

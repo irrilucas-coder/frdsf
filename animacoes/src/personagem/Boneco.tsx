@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
 import {useCurrentFrame} from 'remotion';
-import {angulosDaPose, EmoteIcone, misturaCor, type Angulos, type Emote, type Expressao, type Pose} from '../submarino/Bloquinho';
+import {angulosDaPose, EmoteIcone, misturaCor, NumeroCamisa, type Angulos, type Emote, type Expressao, type Pose} from '../submarino/Bloquinho';
 
 // Personagem low-poly (cabeça grande facetada, membros finos, ombros bufantes, sem contorno).
 // Altura ~2 unidades com os pés em y=0. Usa as mesmas poses, expressões e ícones do Bloquinho.
@@ -44,6 +44,9 @@ type Props = {
   alvoMaoD?: V3;
   suor?: boolean;
   sombraChao?: boolean; // sombra suave no chão (desligue quando o boneco não estiver em pé no chão)
+  numero?: string; // número no peito e nas costas (macacão de competição)
+  viseira?: string; // viseira colorida sobre os olhos
+  microfone?: boolean; // microfone na mão direita (use com alvoMaoD perto da boca)
 };
 
 // Material facetado (low-poly)
@@ -105,6 +108,9 @@ export const Boneco = ({
   alvoMaoD,
   suor = false,
   sombraChao = true,
+  numero,
+  viseira,
+  microfone = false,
 }: Props) => {
   const frame = useCurrentFrame();
   const t = (frame + fase * 17) * velocidade;
@@ -186,6 +192,12 @@ export const Boneco = ({
             <Esfera r={T.braco * 1.02} cor={pele} seg={5} />
             <Cil rt={T.braco * 0.9} rb={T.braco * 0.8} h={0.28} pos={[0, -0.14, 0]} cor={pele} />
             <Esfera r={0.075} pos={[0, -0.31, 0.01]} esc={[0.85, 1.1, 0.75]} cor={pele} seg={5} />
+            {microfone && !e && (
+              <group position={[0, -0.36, 0.04]}>
+                <Cil rt={0.022} rb={0.028} h={0.2} pos={[0, -0.06, 0]} cor="#1a1a1a" />
+                <Esfera r={0.055} pos={[0, -0.18, 0]} cor="#9aa0a8" seg={6} />
+              </group>
+            )}
           </group>
         </group>
       </group>
@@ -229,6 +241,21 @@ export const Boneco = ({
           <Cil rt={T.rt} rb={T.rb} h={0.58} cor={camisa} lados={8} />
           {T.barriga > 0 && <Esfera r={T.barriga} pos={[0, -0.08, 0.08]} esc={[1, 0.85, 0.9]} cor={camisa} seg={7} />}
           <Esfera r={T.rt} pos={[0, 0.27, 0]} esc={[1.05, 0.38, 0.85]} cor={camisa} seg={7} />
+          {numero && (
+            <>
+              {/* placa branca com número, frente e costas */}
+              <mesh position={[0, 0.06, (T.rt + T.rb) / 2 + 0.005]}>
+                <boxGeometry args={[0.26, 0.2, 0.01]} />
+                <meshStandardMaterial color="#ffffff" />
+              </mesh>
+              <NumeroCamisa texto={numero} cor="#111111" pos={[0, 0.06, (T.rt + T.rb) / 2 + 0.014]} rot={0} tam={0.13} />
+              <mesh position={[0, 0.06, -(T.rt + T.rb) / 2 - 0.005]}>
+                <boxGeometry args={[0.34, 0.28, 0.01]} />
+                <meshStandardMaterial color="#ffffff" />
+              </mesh>
+              <NumeroCamisa texto={numero} cor="#111111" pos={[0, 0.06, -(T.rt + T.rb) / 2 - 0.014]} rot={Math.PI} tam={0.19} />
+            </>
+          )}
         </group>
         <Braco lado={-1} />
         <Braco lado={1} />
@@ -333,6 +360,12 @@ export const Boneco = ({
             {ex === 'emocionado' &&
               [-1, 1].map((l, i) => <Esfera key={l} r={0.03} pos={[l * 0.13, -0.04 - (((frame + i * 13) % 26) / 26) * 0.25, zf + 0.02]} esc={[0.7, 1.1, 0.7]} cor="#8fd3ff" seg={6} />)}
             <CabeloLowPoly estilo={cabelo} cor={corCabelo} R={R} />
+            {viseira && (
+              <mesh position={[0, 0.05, 0.05]} rotation={[-0.05, 0, 0]}>
+                <cylinderGeometry args={[R * 1.02, R * 1.02, 0.14, 16, 1, true, -1.2, 2.4]} />
+                <meshStandardMaterial color={viseira} transparent opacity={0.85} emissive={viseira} emissiveIntensity={0.35} side={2} roughness={0.2} metalness={0.3} />
+              </mesh>
+            )}
             {chapeu !== 'nenhum' && <ChapeuLowPoly tipo={chapeu} cor={corChapeu} R={R} />}
             {(emote || ex === 'furioso') && <EmoteIcone tipo={emote ?? 'raiva'} k={emoteK} y={R + 0.35} frame={frame} />}
           </group>
@@ -412,8 +445,8 @@ const ChapeuLowPoly = ({tipo, cor, R}: {tipo: ChapeuBoneco; cor: string; R: numb
   if (tipo === 'bone')
     return (
       <>
-        <Calota r={R * 1.08} ang={0.45} pos={[0, 0.05, 0]} cor={cor} />
-        <mesh position={[0, R * 0.42, R * 0.85]} rotation={[0.25, 0, 0]}>
+        <Calota r={R * 1.03} ang={0.36} pos={[0, 0.1, -0.02]} cor={cor} />
+        <mesh position={[0, R * 0.55, R * 0.82]} rotation={[0.2, 0, 0]}>
           <boxGeometry args={[R * 1.1, 0.035, R * 0.7]} />
           <meshStandardMaterial color={cor} flatShading />
         </mesh>
