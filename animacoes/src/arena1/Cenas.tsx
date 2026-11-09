@@ -66,7 +66,7 @@ export const CenaHook = () => {
   const frame = useCurrentFrame();
   const bal = lerp(s, 0, D('hook'), 0.7, 1.6);
   return (
-    <Palco cinema clima="espaco" pos={lerp3(s, 0, D('hook'), [p[0] + 1.2, 1.9, p[2] + 4.2], [p[0] + 0.7, 2.0, p[2] + 3.2])} olha={[p[0], 1.65, p[2] - 1]} fov={44} sombras={false}>
+    <Palco cinema cartoon clima="espaco" pos={lerp3(s, 0, D('hook'), [p[0] + 1.2, 1.9, p[2] + 4.2], [p[0] + 0.7, 2.0, p[2] + 3.2])} olha={[p[0], 1.65, p[2] - 1]} fov={44} sombras={false}>
       <Galpao />
       <Piscina />
       <Plataformas balanca={{23: bal}} />
@@ -83,7 +83,7 @@ export const CenaEnquete = () => {
   const s = useSeg();
   const beira = posPlat(24);
   return (
-    <Palco cinema clima="espaco" pos={lerp3(s, 0, D('enquete'), [beira[0] - 4, 3.2, beira[2] + 7.5], [beira[0] - 3, 2.6, beira[2] + 6])} olha={[beira[0] - 1, 0.6, beira[2] - 2]} fov={44} sombras={false}>
+    <Palco cinema cartoon clima="espaco" pos={lerp3(s, 0, D('enquete'), [beira[0] - 4, 3.2, beira[2] + 7.5], [beira[0] - 3, 2.6, beira[2] + 6])} olha={[beira[0] - 1, 0.6, beira[2] - 2]} fov={44} sombras={false}>
       <Galpao />
       <Piscina />
       <Plataformas afunda={{16: 1, 19: 1, 23: 1}} />
@@ -101,7 +101,7 @@ export const CenaGancho = () => {
   const tSo = R('gancho', 'L1', 'Só');
   if (s < tMilhao) {
     return (
-      <Palco cinema clima="espaco" pos={lerp3(s, 0, tMilhao, [-9, 9, 20], [-4, 6, 15])} olha={[0, 0.5, 6]} fov={45} sombras={false}>
+      <Palco cinema cartoon clima="espaco" pos={lerp3(s, 0, tMilhao, [-9, 9, 20], [-4, 6, 15])} olha={[0, 0.5, 6]} fov={45} sombras={false}>
         <Galpao />
         <Piscina />
         <Plataformas />
@@ -115,14 +115,14 @@ export const CenaGancho = () => {
   }
   if (s < tSo) {
     return (
-      <Palco cinema clima="espaco" pos={lerp3(s, tMilhao, tSo, [3.2, 2.6, 4.2], [2.2, 2.3, 3.2])} olha={[0, 1.5, -6]} fov={40} sombras={false}>
+      <Palco cinema cartoon clima="espaco" pos={lerp3(s, tMilhao, tSo, [3.2, 2.6, 4.2], [2.2, 2.3, 3.2])} olha={[0, 1.5, -6]} fov={40} sombras={false}>
         <Galpao piscina={false} />
         <CuboPremio pos={[0, -0.55, -6]} escala={1.3} />
       </Palco>
     );
   }
   return (
-    <Palco cinema clima="espaco" pos={lerp3(s, tSo, D('gancho'), [0.4, 1.9, 3.2], [0.2, 1.9, 2.5])} olha={[0, 1.65, 0]} fov={40} sombras={false}>
+    <Palco cinema cartoon clima="espaco" pos={lerp3(s, tSo, D('gancho'), [0.4, 1.9, 3.2], [0.2, 1.9, 2.5])} olha={[0, 1.65, 0]} fov={40} sombras={false}>
       <Galpao />
       <group position={[0, 0, 4]}>
         <Apresentador pose="apontar" expressao="confiante" falando posicao={[0, 0, -4]} />
@@ -138,7 +138,7 @@ export const CenaProva = () => {
   const queda = lerp(s, tAgua - 0.2, tAgua + 0.35, 0, 1, Easing.in(Easing.quad));
   const pQ = posPlat(16);
   return (
-    <Palco cinema clima="espaco" pos={lerp3(s, 0, tAgua, [-7.5, 2.2, 8.5], [-4, 4.5, 11])} olha={lerp3(s, 0, tAgua, [-5, 1.6, 4], [0, 2.5, -4])} fov={45} sombras={false}>
+    <Palco cinema cartoon clima="espaco" pos={lerp3(s, 0, tAgua, [-7.5, 2.2, 8.5], [-4, 4.5, 11])} olha={lerp3(s, 0, tAgua, [-5, 1.6, 4], [0, 2.5, -4])} fov={45} sombras={false}>
       <Galpao />
       <Piscina />
       <Plataformas afunda={{16: lerp(s, tAgua - 0.6, tAgua, 0, 1)}} />
@@ -158,7 +158,7 @@ export const CenaRegra = () => {
   const af = lerp(s, tAf - 0.1, tAf + 0.5, 0, 1, Easing.in(Easing.quad));
   const queda = (plat: number) => (plat === 19 ? lerp(s, tAf, tAf + 0.5, 0, 1, Easing.in(Easing.quad)) : 0);
   return (
-    <Palco cinema clima="espaco" pos={lerp3(s, 0, D('regra'), [0.5, 15, 7], [0.2, 13, 5.5])} olha={[0, 0, 0]} fov={45} sombras={false}>
+    <Palco cinema cartoon clima="espaco" pos={lerp3(s, 0, D('regra'), [0.5, 15, 7], [0.2, 13, 5.5])} olha={[0, 0, 0]} fov={45} sombras={false}>
       <Galpao />
       <Piscina />
       <Plataformas afunda={{16: 1, 19: af}} />
@@ -179,7 +179,7 @@ export const CenaCatorze = () => {
   const pos: V3 = [de[0] + (para[0] - de[0]) * k, de[1] + salto, de[2] + (para[2] - de[2]) * k];
   const voando = k > 0 && k < 1;
   return (
-    <Palco cinema clima="espaco" pos={[pos[0] + 1.2, 2.6, pos[2] + 6.0]} olha={[pos[0], pos[1] + 1.0, pos[2]]} fov={42} sombras={false}>
+    <Palco cinema cartoon clima="espaco" pos={[pos[0] + 1.2, 2.6, pos[2] + 6.0]} olha={[pos[0], pos[1] + 1.0, pos[2]]} fov={42} sombras={false}>
       <Galpao />
       <Piscina />
       <Plataformas afunda={{16: 1, 19: 1}} />
@@ -205,7 +205,7 @@ export const CenaAzarado = () => {
   const bal = lerp(s, 0.3, tBal, 0.4, 1);
   const frame = useCurrentFrame();
   return (
-    <Palco cinema clima="espaco" pos={lerp3(s, 0, D('azarado'), [p[0] - 2.0, 2.4, p[2] + 4.8], [p[0] - 1.3, 2.2, p[2] + 3.9])} olha={[p[0], 1.4, p[2]]} fov={42} sombras={false}>
+    <Palco cinema cartoon clima="espaco" pos={lerp3(s, 0, D('azarado'), [p[0] - 2.0, 2.4, p[2] + 4.8], [p[0] - 1.3, 2.2, p[2] + 3.9])} olha={[p[0], 1.4, p[2]]} fov={42} sombras={false}>
       <Galpao />
       <Piscina />
       <Plataformas afunda={{16: 1, 19: 1}} balanca={{23: bal}} />
@@ -232,7 +232,7 @@ export const CenaQuase = () => {
   const pendurado = s >= tA + 0.8;
   const posJ: V3 = pendurado ? [beira[0] - 0.95, -1.0, beira[2]] : [p[0] + queda * 0.6, p[1] - queda * 1.2, p[2]];
   return (
-    <Palco cinema clima="espaco" pos={lerp3(s0, 0, D('quase'), [p[0] + 0.4, 2.6, p[2] + 6.4], [p[0] + 0.7, 1.6, p[2] + 5.0])} olha={[p[0] + 0.45, 0.3, p[2]]} fov={44} sombras={false}>
+    <Palco cinema cartoon clima="espaco" pos={lerp3(s0, 0, D('quase'), [p[0] + 0.4, 2.6, p[2] + 6.4], [p[0] + 0.7, 1.6, p[2] + 5.0])} olha={[p[0] + 0.45, 0.3, p[2]]} fov={44} sombras={false}>
       <Galpao />
       <Piscina />
       <Plataformas afunda={{16: 1, 19: 1, 23: af}} />
@@ -258,7 +258,7 @@ export const CenaDetalhe = () => {
   const p = posPlat(9);
   if (s < tAzuis) {
     return (
-      <Palco cinema clima="espaco" pos={lerp3(s, 0, tAzuis, [p[0] + 1.4, 2.0, p[2] + 2.8], [p[0] + 0.8, 1.95, p[2] + 2.1])} olha={[p[0], 1.85, p[2]]} fov={40} sombras={false}>
+      <Palco cinema cartoon clima="espaco" pos={lerp3(s, 0, tAzuis, [p[0] + 1.4, 2.0, p[2] + 2.8], [p[0] + 0.8, 1.95, p[2] + 2.1])} olha={[p[0], 1.85, p[2]]} fov={40} sombras={false}>
         <Galpao />
         <Piscina />
         <Plataformas afunda={{16: 1, 19: 1, 23: 1}} />
@@ -269,7 +269,7 @@ export const CenaDetalhe = () => {
   const k = lerp(s, tAzuis, tAzuis + 0.4, 0, 1, Easing.out(Easing.back(1.5)));
   const azuis = PLATAFORMAS.filter((x) => x.cor === 'azul');
   return (
-    <Palco cinema clima="espaco" pos={[0.2, 14, 5]} olha={[0, 0, 0]} fov={45} sombras={false}>
+    <Palco cinema cartoon clima="espaco" pos={[0.2, 14, 5]} olha={[0, 0, 0]} fov={45} sombras={false}>
       <Galpao />
       <Piscina />
       <Plataformas afunda={{16: 1, 19: 1, 23: 1}} brilhoAzul={k} />
@@ -294,7 +294,7 @@ export const CenaContagem = () => {
   });
   const queda = (plat: number) => (PLATAFORMAS[plat].cor === 'laranja' ? Math.min(1, afunda[plat] * 1.1) : 0);
   return (
-    <Palco cinema clima="espaco" pos={lerp3(s, 0, D('contagem'), [-10, 7, 12], [-7, 6, 10])} olha={[0, 0, 0]} fov={42} sombras={false}>
+    <Palco cinema cartoon clima="espaco" pos={lerp3(s, 0, D('contagem'), [-10, 7, 12], [-7, 6, 10])} olha={[0, 0, 0]} fov={42} sombras={false}>
       <Galpao />
       <Piscina />
       <Plataformas afunda={afunda} />
@@ -321,7 +321,7 @@ export const CenaRestam = () => {
   if (s < tMilhao) {
     const azuis = PLATAFORMAS.filter((x) => x.cor === 'azul');
     return (
-      <Palco cinema clima="espaco" pos={lerp3(s, 0, tMilhao, [0, 3.5, 11], [0, 3, 9])} olha={[0, 0.8, 0]} fov={45} sombras={false}>
+      <Palco cinema cartoon clima="espaco" pos={lerp3(s, 0, tMilhao, [0, 3.5, 11], [0, 3, 9])} olha={[0, 0.8, 0]} fov={45} sombras={false}>
         <Galpao />
         <Piscina />
         <Plataformas afunda={afundaTudo} brilhoAzul={0.4} />
@@ -338,7 +338,7 @@ export const CenaRestam = () => {
     );
   }
   return (
-    <Palco cinema clima="espaco" pos={lerp3(s, tMilhao, D('restam'), [2.6, 2.4, 4.2], [1.6, 2.1, 3.2])} olha={[0, 1.7, -6]} fov={40} sombras={false}>
+    <Palco cinema cartoon clima="espaco" pos={lerp3(s, tMilhao, D('restam'), [2.6, 2.4, 4.2], [1.6, 2.1, 3.2])} olha={[0, 1.7, -6]} fov={40} sombras={false}>
       <Galpao piscina={false} />
       <CuboPremio pos={[0, -0.55, -6]} escala={1.3} />
     </Palco>
@@ -349,7 +349,7 @@ export const CenaRestam = () => {
 export const CenaFinal = () => {
   const s = useSeg();
   return (
-    <Palco cinema clima="espaco" pos={lerp3(s, 0, D('final'), [0, 1.6, 6.2], [0, 1.55, 5.2])} olha={[0, 1.3, 0]} fov={42} sombras={false}>
+    <Palco cinema cartoon clima="espaco" pos={lerp3(s, 0, D('final'), [0, 1.6, 6.2], [0, 1.55, 5.2])} olha={[0, 1.3, 0]} fov={42} sombras={false}>
       <Galpao mostrarTelao={false} piscina={false} />
       <J14 posicao={[-1.5, -0.55, 0]} rotacaoY={0.25} pose="bracosCruzados" expressao="confiante" />
       <J37 posicao={[0, -0.55, 0.3]} pose="maosNaCintura" expressao="confiante" />

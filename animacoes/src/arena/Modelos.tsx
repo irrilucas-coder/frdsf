@@ -12,8 +12,8 @@ const M = ({cor, emi = 0, op = 1, metal = 0, rug = 0.7}: {cor: string; emi?: num
 
 export const LARANJA = '#ff7a1a';
 export const VERDE = '#2fb88a'; // macacão dos jogadores (verde-menta suave)
-export const ROSA_PLAT = '#ff7eb9';
-export const AMARELO_PLAT = '#ffd23f';
+export const ROSA_PLAT = '#ff4f9a';
+export const AMARELO_PLAT = '#ffc400';
 export const AZUL_PLAT = '#3550ff';
 
 // ---------- Personagens ----------
@@ -148,7 +148,7 @@ export const Plataformas = ({afunda = {}, balanca = {}, brilhoAzul = 0}: {afunda
         if (a >= 1) return null;
         const azul = p.cor === 'azul';
         const corBase = azul ? AZUL_PLAT : p.id % 2 ? ROSA_PLAT : AMARELO_PLAT;
-        const corTopo = azul ? '#7d8cff' : p.id % 2 ? '#ffc2de' : '#fff0a8';
+        const corTopo = azul ? '#6f7dff' : p.id % 2 ? '#ff8cc0' : '#ffdc5c';
         return (
           <group key={p.id} position={[p.x, 0.18 - a * 1.2 + Math.sin(frame * 0.08 + p.id) * 0.02, p.z]} rotation={[Math.sin(frame * 0.5) * 0.12 * b + a * 0.4, 0, Math.cos(frame * 0.45) * 0.1 * b - a * 0.3]}>
             <mesh>
@@ -184,7 +184,7 @@ export const Piscina = () => {
       </mesh>
       <mesh position={[0, 0.06, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[15.6, 10.2, 16, 12]} />
-        <meshStandardMaterial color="#19c3d6" emissive="#0aa3c2" emissiveIntensity={0.55} transparent opacity={0.92} flatShading roughness={0.15} metalness={0.1} />
+        <meshStandardMaterial color="#00b4d8" emissive="#0096c7" emissiveIntensity={0.35} transparent opacity={0.95} flatShading roughness={0.15} metalness={0.1} />
       </mesh>
       {/* reflexos ondulando */}
       {Array.from({length: 18}, (_, i) => (
@@ -221,7 +221,7 @@ export const Respingo = ({pos, s}: {pos: V3; s: number}) => {
 };
 
 // ---------- O galpão da arena (colorido, estilo game show) ----------
-const PAREDES = ['#7ec8ff', '#ff9ecf', '#ffd966', '#b79cff', '#ff9e7a', '#8fe3ff', '#ffb3d9', '#ffe28a'];
+const PAREDES = ['#2f9bff', '#ff3d8b', '#ffc400', '#8a4dff', '#ff6a3d', '#00c2ff', '#ff4fa3', '#ffb000'];
 export const Galpao = ({telao = ['R$ 1.000.000', 'ARENA DO MILHÃO'], mostrarTelao = true, piscina = true}: {telao?: string[]; mostrarTelao?: boolean; piscina?: boolean}) => {
   const frame = useCurrentFrame();
   return (
@@ -235,7 +235,7 @@ export const Galpao = ({telao = ['R$ 1.000.000', 'ARENA DO MILHÃO'], mostrarTel
           return (
             <mesh key={`${i}-${j}`} position={[x, -0.6, z]}>
               <boxGeometry args={[1.96, 0.1, 1.96]} />
-              <M cor={['#ffd1e8', '#fff1b8', '#e3d4ff', '#cdeeff'][(i + j * 3) % 4]} />
+              <M cor={['#ff6fb0', '#ffcf33', '#a37bff', '#4cc3ff'][(i + j * 3) % 4]} />
             </mesh>
           );
         }),
@@ -313,12 +313,12 @@ export const Galpao = ({telao = ['R$ 1.000.000', 'ARENA DO MILHÃO'], mostrarTel
       {[[-6, -4, '#ff9ecf'], [6, -4, '#7ec8ff'], [-6, 4, '#ffd966'], [6, 4, '#b79cff'], [0, 0, '#ffffff']].map(([x, z, c], i) => (
         <mesh key={i} position={[x as number, 7, z as number]}>
           <coneGeometry args={[2.2, 14, 20, 1, true]} />
-          <meshBasicMaterial color={c as string} transparent opacity={0.07} side={2} depthWrite={false} />
+          <meshBasicMaterial color={c as string} transparent opacity={0.03} side={2} depthWrite={false} />
         </mesh>
       ))}
-      <hemisphereLight args={['#ffffff', '#ffd6ec', 1.25]} />
-      <directionalLight position={[4, 12, 6]} intensity={1.8} color="#fff6e6" />
-      <directionalLight position={[-6, 6, -6]} intensity={0.8} color="#cfe6ff" />
+      <hemisphereLight args={['#ffffff', '#7a6a9a', 0.9]} />
+      <directionalLight position={[4, 12, 6]} intensity={1.6} color="#fff6e6" />
+      <directionalLight position={[-6, 6, -6]} intensity={0.5} color="#cfe6ff" />
     </group>
   );
 };

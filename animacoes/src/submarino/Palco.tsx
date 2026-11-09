@@ -1,6 +1,6 @@
 import {ThreeCanvas} from '@remotion/three';
 import {useThree} from '@react-three/fiber';
-import type {PerspectiveCamera} from 'three';
+import {NoToneMapping, type PerspectiveCamera} from 'three';
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
 import type {V3} from './camera';
@@ -50,6 +50,7 @@ export const Palco = ({
   children,
   sombras = true,
   cinema = false,
+  cartoon = false,
 }: {
   clima: Clima;
   pos: V3;
@@ -58,17 +59,18 @@ export const Palco = ({
   children: React.ReactNode;
   sombras?: boolean;
   cinema?: boolean; // visual novo: contorno, brilho nas luzes, vinheta e reflexos suaves
+  cartoon?: boolean; // cores puras e vivas (sem tone mapping de cinema), luz equilibrada: visual de desenho
 }) => {
   const {width, height} = useVideoConfig();
   const [topo, base] = CEU[clima];
   const neb = NEBLINA[clima];
   const luzDia = clima === 'dia' || clima === 'estudio';
   // no modo cinema o Environment já ilumina: reduzimos as outras luzes para não estourar
-  const k = cinema ? 0.55 : 1;
+  const k = cartoon ? 0.45 : cinema ? 0.55 : 1;
   return (
     <AbsoluteFill>
       <AbsoluteFill style={{background: `linear-gradient(180deg, ${topo} 0%, ${base} 100%)`}} />
-      <ThreeCanvas width={width} height={height} shadows={sombras} camera={{fov, near: 0.1, far: 300}}>
+      <ThreeCanvas width={width} height={height} shadows={sombras} camera={{fov, near: 0.1, far: 300}} gl={cartoon ? {toneMapping: NoToneMapping} : undefined}>
         <SincronizaCamera pos={pos} olha={olha} fov={fov} />
         {neb && <fog attach="fog" args={neb} />}
         <ambientLight intensity={k * (luzDia ? 0.9 : clima === 'interior' ? 0.35 : clima === 'noite' || clima === 'submersoEscuro' ? 1.1 : 0.6)} color={luzDia ? '#ffffff' : '#9fc4ff'} />
@@ -87,14 +89,14 @@ export const Palco = ({
         <ContornoCtx.Provider value={cinema}>{children}</ContornoCtx.Provider>
         {cinema && (
           <>
-            <Environment resolution={64}>
+            {!cartoon && <Environment resolution={64}>
               <Lightformer intensity={1.2} position={[0, 5, 5]} scale={[10, 5, 1]} />
               <Lightformer intensity={1} position={[-5, 2, 2]} scale={[4, 4, 1]} color="#9fc4ff" />
               <Lightformer intensity={1} position={[5, 2, 2]} scale={[4, 4, 1]} color="#ffd9a8" />
-            </Environment>
+            </Environment>}
             <EffectComposer multisampling={4}>
               <Bloom intensity={0.5} luminanceThreshold={0.95} luminanceSmoothing={0.15} mipmapBlur />
-              <Vignette offset={0.25} darkness={0.55} />
+              <Vignette offset={0.25} darkness={cartoon ? 0.35 : 0.55} />
             </EffectComposer>
           </>
         )}
