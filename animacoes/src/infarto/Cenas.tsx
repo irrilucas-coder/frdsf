@@ -18,6 +18,7 @@ const compressao = (s: number) => Math.max(0, Math.sin(s * Math.PI * 2 * 1.72)) 
 
 // Sofá: assento ~0.75 de altura; sentado de frente para a TV (TV fica em -z)
 const SENTA_Y = 0.15;
+const OX = -3.2; // área livre da sala (perto da janela) para a massagem cardíaca
 const PEITO: V3 = [0.02, 1.12, 0.3];
 
 const Studio = ({children, pos, olha, fov = 40}: {children: React.ReactNode; pos: V3; olha: V3; fov?: number}) => (
@@ -27,7 +28,7 @@ const Studio = ({children, pos, olha, fov = 40}: {children: React.ReactNode; pos
     {children}
   </Palco>
 );
-const NaSala = ({children, pos, olha, fov = 40}: {children: React.ReactNode; pos: V3; olha: V3; fov?: number}) => (
+const NaSala = ({children, pos, olha, fov = 52}: {children: React.ReactNode; pos: V3; olha: V3; fov?: number}) => (
   <Palco cinema cartoon clima="interior" pos={pos} olha={olha} fov={fov} sombras={false}>
     <Sala />
     {children}
@@ -35,13 +36,13 @@ const NaSala = ({children, pos, olha, fov = 40}: {children: React.ReactNode; pos
 );
 
 // Pai deitado de costas no chão (cabeça para -z)
-const PaiDeitado = ({pos = [0, 0, 0] as V3, peito = 0}: {pos?: V3; peito?: number}) => (
+const PaiDeitado = ({pos = [OX, 0, 0] as V3, peito = 0}: {pos?: V3; peito?: number}) => (
   <group position={[pos[0], pos[1] + 0.22 - peito * 0.05, pos[2]]} rotation={[-Math.PI / 2, 0, 0]}>
     <Pai expressao="cansado" sombraChao={false} olhar={[0, -1]} />
   </group>
 );
 // Socorrista ajoelhado ao lado direito do peito, fazendo compressões
-const Massagem = ({Quem = Voce, s, pos = [0, 0, 0] as V3, ativo = true}: {Quem?: typeof Voce; s: number; pos?: V3; ativo?: boolean}) => {
+const Massagem = ({Quem = Voce, s, pos = [OX, 0, 0] as V3, ativo = true}: {Quem?: typeof Voce; s: number; pos?: V3; ativo?: boolean}) => {
   const c = ativo ? compressao(s) : 0;
   return (
     <group position={[pos[0] + 0.48, pos[1] - 0.36 - c * 0.07, pos[2] - 1.12]} rotation={[0, -Math.PI / 2, 0]}>
@@ -84,7 +85,7 @@ export const CenaJogo = () => {
   }
   const k = s - tRep;
   return (
-    <NaSala pos={lerp3(k, 0, 1.5, [0.9, 1.8, 0.0], [0.7, 1.85, 0.5])} olha={[0.55, 1.6, 1.6]} fov={38}>
+    <NaSala pos={lerp3(k, 0, 1.5, [1.3, 2.0, -1.6], [1.0, 1.95, -1.1])} olha={[0.2, 1.45, 1.6]}>
       <Pai posicao={[0.55, SENTA_Y, 1.55]} rotacaoY={Math.PI} pose="sentado" expressao="assustado" suor alvoMaoD={PEITO} emote="gota" estica={-Math.sin(Math.min(1, k / 0.3) * Math.PI) * 0.2} />
       <Voce posicao={[-0.6, SENTA_Y, 1.55]} rotacaoY={Math.PI - 0.6} pose="sentado" expressao="surpreso" emote="exclamacao" emoteK={pop(k, 0.2)} />
     </NaSala>
@@ -120,10 +121,10 @@ export const CenaTosse = () => {
   const tNao = R('tosse', 'L3', 'Não');
   const tosse = Math.max(0, Math.sin(s * 9)) * (s > 0.8 ? 1 : 0);
   return (
-    <NaSala pos={lerp3(s, 0, D('tosse'), [-1.8, 1.8, -0.6], [-1.3, 1.75, -0.1])} olha={[0.2, 1.3, 1.4]} fov={42}>
+    <NaSala pos={lerp3(s, 0, D('tosse'), [-0.6, 2.0, -2.4], [-0.4, 1.95, -1.9])} olha={[-0.2, 1.4, 1.2]}>
       <Pai posicao={[0.55, SENTA_Y, 1.55]} rotacaoY={Math.PI} pose="sentado" expressao="assustado" suor alvoMaoE={[-0.02, 1.7, 0.35]} cabecaGiro={[tosse * 0.25, 0, 0]} />
       <Tio posicao={[-1.2, 0, 0.8]} rotacaoY={Math.PI * 0.75} pose={s < tNao ? 'apontar' : 'susto'} expressao={s < tNao ? 'confiante' : 'surpreso'} falando={s < tNao} />
-      <XVermelho pos={[-0.3, 1.6, 0.9]} k={pop(s, tNao)} escala={1.1} />
+      <XVermelho pos={[0.55, 2.75, 1.55]} k={pop(s, tNao)} escala={0.55} />
     </NaSala>
   );
 };
@@ -133,13 +134,13 @@ export const CenaChave = () => {
   const s = useSeg();
   const tNao = R('chave', 'L4', 'Também');
   return (
-    <NaSala pos={lerp3(s, 0, D('chave'), [1.8, 1.7, -0.4], [1.3, 1.7, 0.1])} olha={[1.0, 1.5, 1.2]} fov={40}>
+    <NaSala pos={lerp3(s, 0, D('chave'), [2.4, 2.1, -1.8], [2.0, 2.0, -1.3])} olha={[0.7, 1.4, 1.2]}>
       <Primo posicao={[1.0, 0, 1.0]} rotacaoY={Math.PI + 0.4} expressao={s < tNao ? 'confiante' : 'surpreso'} alvoMaoD={[0.35, 2.05, 0.3]} falando={s < tNao} />
       <group position={[1.0, 0, 1.0]} rotation={[0, Math.PI + 0.4, 0]}>
         <Chave pos={[0.36, 2.15, 0.32]} rot={[0, 0, Math.sin(s * 10) * 0.4]} />
       </group>
       <Pai posicao={[0.0, SENTA_Y, 1.55]} rotacaoY={Math.PI} pose="sentado" expressao="cansado" suor alvoMaoD={PEITO} />
-      <XVermelho pos={[0.9, 1.7, 0.4]} k={pop(s, tNao)} escala={1.1} />
+      <XVermelho pos={[1.0, 2.9, 1.0]} k={pop(s, tNao)} escala={0.55} />
     </NaSala>
   );
 };
@@ -151,7 +152,7 @@ export const CenaCaminho = () => {
   if (s < tAmb) {
     const x = -8 + s * 4;
     return (
-      <Palco cinema cartoon clima="noite" pos={[x + 3, 2.6, 7]} olha={[x, 0.8, 0]} fov={42} sombras={false}>
+      <Palco cinema cartoon clima="noite" pos={[x + 4.5, 3.2, 10]} olha={[x, 0.9, 0]} fov={42} sombras={false}>
         <RuaNoite />
         <Carro pos={[x, 0, 1.6]} rot={Math.PI / 2} />
         <XVermelho pos={[x, 3.2, 1.6]} k={pop(s, R('caminho', 'L5', 'ninguém'))} escala={0.9} />
@@ -160,7 +161,7 @@ export const CenaCaminho = () => {
   }
   const k = s - tAmb;
   return (
-    <Palco cinema cartoon clima="noite" pos={lerp3(k, 0, 2, [5, 2.2, 6], [3.8, 2.0, 4.8])} olha={[0, 1.4, -1]} fov={42} sombras={false}>
+    <Palco cinema cartoon clima="noite" pos={lerp3(k, 0, 2, [7.5, 3.2, 8.5], [6.5, 2.8, 7.5])} olha={[0, 1.3, -0.5]} fov={42} sombras={false}>
       <RuaNoite />
       <Ambulancia pos={[0, 0, 1.2]} rot={Math.PI / 2} portas={lerp(k, 0.3, 1.0, 0, 1)} />
       <Certo pos={[0.5, 3.6, 1.2]} k={pop(k, 0.6)} escala={0.9} />
@@ -174,10 +175,10 @@ export const CenaLigar = () => {
   const t192 = R('ligar', 'L6', '192');
   const disc = lerp(s, t192 - 0.3, t192 + 0.6, 0, 1, Easing.linear);
   return (
-    <NaSala pos={[-0.55, 1.75, 0.15]} olha={[-0.6, 1.55, 1.4]} fov={40}>
+    <NaSala pos={[-1.9, 1.85, -0.9]} olha={[-0.5, 1.55, 1.0]}>
       <Voce posicao={[-0.6, 0, 1.0]} rotacaoY={Math.PI} expressao="serio" alvoMaoD={[0.1, 1.55, 0.5]} />
       <group position={[-0.6, 0, 1.0]} rotation={[0, Math.PI, 0]}>
-        <Celular pos={[0.12, 1.6, 0.58]} rot={[0.15, Math.PI, 0]} escala={0.65} discando={disc} />
+        <Celular pos={[0.12, 1.6, 0.58]} rot={[-0.15, 0, 0]} escala={0.65} discando={disc} />
       </group>
       <Certo pos={[-0.15, 2.2, 1.0]} k={pop(s, t192 + 0.8)} escala={0.35} />
     </NaSala>
@@ -189,7 +190,7 @@ export const CenaSentado = () => {
   const s = useSeg();
   const tAfr = R('sentado', 'L7', 'afrouxe');
   return (
-    <NaSala pos={lerp3(s, 0, D('sentado'), [0.0, 1.7, -0.3], [0.2, 1.65, 0.3])} olha={[0.3, 1.25, 1.5]} fov={40}>
+    <NaSala pos={lerp3(s, 0, D('sentado'), [-0.8, 2.1, -2.0], [-0.6, 2.0, -1.6])} olha={[0.2, 1.3, 1.4]}>
       <Pai posicao={[0.55, SENTA_Y, 1.55]} rotacaoY={Math.PI} pose="sentado" expressao="cansado" olhar={[0, -0.3]} />
       <Voce posicao={[-0.25, 0, 1.0]} rotacaoY={Math.PI * 0.75} expressao="serio" alvoMaoE={s > tAfr ? [0.55, 1.5, 0.55] : undefined} alvoMaoD={s > tAfr ? [0.75, 1.5, 0.45] : undefined} pose={s > tAfr ? 'parado' : 'segurar'} falando={s < tAfr} />
     </NaSala>
@@ -203,7 +204,7 @@ export const CenaAas = () => {
   const tIsso = R('aas', 'L8', 'Isso');
   if (s < tComp) {
     return (
-      <NaSala pos={lerp3(s, 0, tComp, [0.6, 1.4, 0.4], [0.5, 1.2, 0.9])} olha={[0.0, 0.6, -0.6]} fov={40}>
+      <NaSala pos={lerp3(s, 0, tComp, [0.6, 1.4, 0.4], [0.5, 1.2, 0.9])} olha={[0.0, 0.6, -0.6]}>
         <Celular pos={[0.0, 0.53, -0.6]} rot={[-Math.PI / 2, 0, 0.3]} escala={0.8} discando={1} />
         <Socorrista posicao={[2.4, 0, -2.6]} rotacaoY={-0.6} escala={0.001} />
       </NaSala>
@@ -211,7 +212,7 @@ export const CenaAas = () => {
   }
   if (s < tIsso) {
     return (
-      <Studio pos={[0, 0.25, 1.6]} olha={[0, 0, 0]} fov={36}>
+      <Studio pos={[0, 1.3, 1.0]} olha={[0, 0, 0]} fov={36}>
         {/* palma da mão com o comprimido */}
         <mesh scale={[1.1, 0.25, 1.3]}>
           <sphereGeometry args={[0.45, 12, 8]} />
@@ -236,16 +237,16 @@ export const CenaDesmaio = () => {
   if (s < tDeite) {
     const cai = lerp(s, 0.3, 1.0, 0, 1);
     return (
-      <NaSala pos={lerp3(s, 0, tDeite, [0.9, 1.7, 0.2], [0.8, 1.6, 0.6])} olha={[0.4, 1.2, 1.5]} fov={40}>
+      <NaSala pos={lerp3(s, 0, tDeite, [0.9, 1.7, 0.2], [0.8, 1.6, 0.6])} olha={[0.4, 1.2, 1.5]}>
         <Pai posicao={[0.55, SENTA_Y, 1.55]} rotacaoY={Math.PI} pose="sentado" expressao="cansado" cabecaGiro={[cai * 0.5, 0, cai * 0.4]} />
         <Voce posicao={[-0.6, 0, 1.0]} rotacaoY={Math.PI * 0.7} expressao="assustado" pose="susto" emote="exclamacao" />
       </NaSala>
     );
   }
   return (
-    <NaSala pos={[2.2, 2.4, 1.4]} olha={[0, 0.3, -0.6]} fov={42}>
-      <PaiDeitado pos={[0, 0, 0.4]} />
-      <Voce posicao={[0.9, 0, -0.2]} rotacaoY={-Math.PI / 2} expressao="serio" pose="ajoelhado" alvoMaoE={[0, 0.7, 0.5]} alvoMaoD={[0, 0.7, 0.5]} />
+    <NaSala pos={[OX - 2.6, 1.7, 0.7]} olha={[OX + 0.25, 0.6, -1.1]}>
+      <PaiDeitado />
+      <Voce posicao={[OX + 0.9, 0, -0.6]} rotacaoY={-Math.PI / 2} expressao="serio" pose="ajoelhado" alvoMaoE={[0, 0.7, 0.5]} alvoMaoD={[0, 0.7, 0.5]} />
     </NaSala>
   );
 };
@@ -256,11 +257,11 @@ export const CenaMaos = () => {
   const frame = useCurrentFrame();
   const anel = 1 + Math.sin(frame * 0.3) * 0.1;
   return (
-    <NaSala pos={[0.35, 1.7, -0.75]} olha={[0, 0.4, -0.72]} fov={38}>
+    <NaSala pos={[OX - 1.3, 2.6, -0.3]} olha={[OX + 0.05, 0.45, -1.12]}>
       <PaiDeitado />
       <Massagem s={s} ativo={false} />
       {/* alvo no centro do peito */}
-      <mesh position={[0, 0.5, -1.12]} rotation={[-Math.PI / 2, 0, 0]} scale={anel}>
+      <mesh position={[OX, 0.5, -1.12]} rotation={[-Math.PI / 2, 0, 0]} scale={anel}>
         <ringGeometry args={[0.13, 0.18, 24]} />
         <meshBasicMaterial color="#ffd23f" transparent opacity={lerp(s, 0.2, 0.6, 0, 0.9)} />
       </mesh>
@@ -273,11 +274,11 @@ export const CenaAfundar = () => {
   const s = useSeg();
   const c = compressao(s);
   return (
-    <NaSala pos={lerp3(s, 0, D('afundar'), [-1.6, 1.0, -1.1], [-1.3, 1.1, -1.1])} olha={[0.2, 0.75, -1.12]} fov={40}>
+    <NaSala pos={lerp3(s, 0, D('afundar'), [OX - 2.4, 1.2, -1.1], [OX - 2.1, 1.2, -1.1])} olha={[OX + 0.2, 0.75, -1.12]}>
       <PaiDeitado peito={c} />
       <Massagem s={s} />
-      <Seta3D de={[0, 1.5, -1.12]} para={[0, 1.0, -1.12]} cor="#ff3b30" espessura={0.05} k={lerp(s, 0.4, 0.8, 0, 1) * (0.6 + c * 0.4)} />
-      <Seta3D de={[-0.35, 0.55, -1.12]} para={[-0.35, 0.95, -1.12]} cor="#1fcf5a" espessura={0.04} k={lerp(s, 4.0, 4.4, 0, 1) * (1 - c)} />
+      <Seta3D de={[OX - 0.05, 1.55, -1.12]} para={[OX - 0.05, 1.05, -1.12]} cor="#ff3b30" espessura={0.05} k={lerp(s, 0.4, 0.8, 0, 1) * (0.6 + c * 0.4)} />
+      <Seta3D de={[OX - 0.4, 0.55, -1.12]} para={[OX - 0.4, 0.95, -1.12]} cor="#1fcf5a" espessura={0.04} k={lerp(s, 4.0, 4.4, 0, 1) * (1 - c)} />
     </NaSala>
   );
 };
@@ -286,10 +287,10 @@ export const CenaAfundar = () => {
 export const CenaRitmo = () => {
   const s = useSeg();
   return (
-    <NaSala pos={lerp3(s, 0, D('ritmo'), [1.9, 1.5, 0.6], [1.5, 1.4, 0.2])} olha={[0.3, 0.7, -1.0]} fov={42}>
+    <NaSala pos={lerp3(s, 0, D('ritmo'), [OX - 2.8, 1.9, 0.9], [OX - 2.4, 1.8, 0.6])} olha={[OX + 0.25, 0.6, -1.1]}>
       <PaiDeitado peito={compressao(s)} />
       <Massagem s={s} />
-      <Notas s={s} pos={[0.6, 1.4, -1.4]} />
+      <Notas s={s} pos={[OX + 0.6, 1.4, -1.6]} />
     </NaSala>
   );
 };
@@ -300,15 +301,15 @@ export const CenaRevezar = () => {
   const tRev = R('revezar', 'L13', 'revezar');
   const troca = s > tRev + 0.3;
   return (
-    <NaSala pos={[2.0, 1.9, 0.9]} olha={[0.2, 0.7, -0.9]} fov={42}>
+    <NaSala pos={[OX - 2.6, 1.7, 0.7]} olha={[OX + 0.25, 0.6, -1.1]}>
       <PaiDeitado peito={compressao(s)} />
       <Massagem s={s} Quem={troca ? Tio : Voce} />
       {troca ? (
-        <Voce posicao={[1.4, 0, -0.4]} rotacaoY={-Math.PI / 2 - 0.4} expressao="cansado" suor />
+        <Voce posicao={[OX + 1.4, 0, -0.4]} rotacaoY={-Math.PI / 2 - 0.4} expressao="cansado" suor />
       ) : (
-        <Tio posicao={[1.4, 0, -0.4]} rotacaoY={-Math.PI / 2 - 0.4} expressao="serio" />
+        <Tio posicao={[OX + 1.4, 0, -0.4]} rotacaoY={-Math.PI / 2 - 0.4} expressao="serio" />
       )}
-      <Relogio pos={[-0.9, 1.8, -1.6]} escala={lerp(s, tRev - 0.8, tRev - 0.4, 0, 0.4, Easing.out(Easing.back(2)))} velocidade={8} />
+      <Relogio pos={[OX - 0.9, 1.8, -1.6]} escala={lerp(s, tRev - 0.8, tRev - 0.4, 0, 0.4, Easing.out(Easing.back(2)))} velocidade={8} />
     </NaSala>
   );
 };
@@ -320,17 +321,17 @@ export const CenaSamu = () => {
   const tHosp = R('samu', 'L14', 'hospital');
   if (s < tAmb) {
     return (
-      <NaSala pos={[2.3, 2.0, 1.4]} olha={[0.2, 0.6, -0.9]} fov={42}>
+      <NaSala pos={[OX - 2.6, 1.7, 0.7]} olha={[OX + 0.25, 0.6, -1.1]}>
         <PaiDeitado />
         <Massagem s={s} Quem={Socorrista} />
-        <Socorrista posicao={[-0.8, 0, -0.9]} rotacaoY={Math.PI / 2} pose="ajoelhado" expressao="serio" alvoMaoD={[0.3, 0.9, 0.4]} />
-        <Voce posicao={[1.6, 0, 0.2]} rotacaoY={-Math.PI / 2 - 0.5} expressao="emocionado" />
+        <Socorrista posicao={[OX - 0.8, 0, -0.9]} rotacaoY={Math.PI / 2} pose="ajoelhado" expressao="serio" alvoMaoD={[0.3, 0.9, 0.4]} />
+        <Voce posicao={[OX + 1.6, 0, 0.2]} rotacaoY={-Math.PI / 2 - 0.5} expressao="emocionado" />
       </NaSala>
     );
   }
   if (s < tHosp + 0.4) {
     return (
-      <Palco cinema cartoon clima="noite" pos={[4.2, 2.2, 3.5]} olha={[0, 1.2, -1.5]} fov={42} sombras={false}>
+      <Palco cinema cartoon clima="noite" pos={[6.5, 3.0, 5.0]} olha={[0, 1.1, -1.8]} fov={42} sombras={false}>
         <RuaNoite />
         <Ambulancia pos={[0, 0, 0.8]} rot={Math.PI} portas={1} />
         <Maca pos={[0, 0, -3.4 + lerp(s, tAmb, tHosp, 0, 1.4)]} />
