@@ -1,0 +1,1733 @@
+[
+ {
+  "id": "L0",
+  "quem": "narrador",
+  "duracao": 4.807,
+  "palavras": [
+   {
+    "texto": "Você",
+    "inicio": 0,
+    "fim": 0.3
+   },
+   {
+    "texto": "está",
+    "inicio": 0.3,
+    "fim": 0.48
+   },
+   {
+    "texto": "vendo",
+    "inicio": 0.48,
+    "fim": 0.76
+   },
+   {
+    "texto": "o",
+    "inicio": 0.76,
+    "fim": 0.86
+   },
+   {
+    "texto": "jogo",
+    "inicio": 0.86,
+    "fim": 1.02
+   },
+   {
+    "texto": "com",
+    "inicio": 1.02,
+    "fim": 1.18
+   },
+   {
+    "texto": "o",
+    "inicio": 1.467,
+    "fim": 1.589
+   },
+   {
+    "texto": "seu",
+    "inicio": 1.18,
+    "fim": 1.38
+   },
+   {
+    "texto": "pai",
+    "inicio": 1.38,
+    "fim": 1.74
+   },
+   {
+    "texto": "e,",
+    "inicio": 1.74,
+    "fim": 2.46
+   },
+   {
+    "texto": "de",
+    "inicio": 2.46,
+    "fim": 2.78
+   },
+   {
+    "texto": "repente,",
+    "inicio": 2.78,
+    "fim": 3.7
+   },
+   {
+    "texto": "ele",
+    "inicio": 3.7,
+    "fim": 3.78
+   },
+   {
+    "texto": "leva",
+    "inicio": 3.78,
+    "fim": 3.98
+   },
+   {
+    "texto": "a",
+    "inicio": 3.98,
+    "fim": 4.06
+   },
+   {
+    "texto": "mão",
+    "inicio": 3.98,
+    "fim": 4.06
+   },
+   {
+    "texto": "ao",
+    "inicio": 3.98,
+    "fim": 4.06
+   },
+   {
+    "texto": "peito.",
+    "inicio": 3.98,
+    "fim": 4.06
+   }
+  ]
+ },
+ {
+  "id": "L1",
+  "quem": "narrador",
+  "duracao": 4.65,
+  "palavras": [
+   {
+    "texto": "Isso",
+    "inicio": 0,
+    "fim": 0.24
+   },
+   {
+    "texto": "pode",
+    "inicio": 0.24,
+    "fim": 0.42
+   },
+   {
+    "texto": "ser",
+    "inicio": 0.42,
+    "fim": 0.54
+   },
+   {
+    "texto": "um",
+    "inicio": 0.54,
+    "fim": 0.64
+   },
+   {
+    "texto": "infarto.",
+    "inicio": 0.64,
+    "fim": 1.32
+   },
+   {
+    "texto": "Um",
+    "inicio": 1.32,
+    "fim": 1.66
+   },
+   {
+    "texto": "coágulo",
+    "inicio": 1.66,
+    "fim": 2.08
+   },
+   {
+    "texto": "entupiu",
+    "inicio": 2.08,
+    "fim": 2.4
+   },
+   {
+    "texto": "uma",
+    "inicio": 2.4,
+    "fim": 2.52
+   },
+   {
+    "texto": "das",
+    "inicio": 2.52,
+    "fim": 2.68
+   },
+   {
+    "texto": "artérias",
+    "inicio": 2.68,
+    "fim": 3.14
+   },
+   {
+    "texto": "que",
+    "inicio": 3.14,
+    "fim": 3.24
+   },
+   {
+    "texto": "levam",
+    "inicio": 3.24,
+    "fim": 3.48
+   },
+   {
+    "texto": "sangue",
+    "inicio": 3.48,
+    "fim": 3.86
+   },
+   {
+    "texto": "para",
+    "inicio": 3.86,
+    "fim": 3.98
+   },
+   {
+    "texto": "o",
+    "inicio": 3.98,
+    "fim": 4.06
+   },
+   {
+    "texto": "coração.",
+    "inicio": 3.98,
+    "fim": 4.06
+   }
+  ]
+ },
+ {
+  "id": "L2",
+  "quem": "narrador",
+  "duracao": 4.885,
+  "palavras": [
+   {
+    "texto": "Sem",
+    "inicio": 0.06,
+    "fim": 0.28
+   },
+   {
+    "texto": "oxigênio,",
+    "inicio": 0.28,
+    "fim": 1.34
+   },
+   {
+    "texto": "essa",
+    "inicio": 1.34,
+    "fim": 1.42
+   },
+   {
+    "texto": "parte",
+    "inicio": 1.42,
+    "fim": 1.74
+   },
+   {
+    "texto": "do",
+    "inicio": 1.74,
+    "fim": 1.86
+   },
+   {
+    "texto": "músculo",
+    "inicio": 1.86,
+    "fim": 2.18
+   },
+   {
+    "texto": "começa",
+    "inicio": 2.18,
+    "fim": 2.48
+   },
+   {
+    "texto": "a",
+    "inicio": 2.48,
+    "fim": 2.6
+   },
+   {
+    "texto": "morrer,",
+    "inicio": 2.6,
+    "fim": 3.32
+   },
+   {
+    "texto": "por",
+    "inicio": 3.32,
+    "fim": 3.4
+   },
+   {
+    "texto": "isso",
+    "inicio": 3.4,
+    "fim": 3.62
+   },
+   {
+    "texto": "cada",
+    "inicio": 3.62,
+    "fim": 3.88
+   },
+   {
+    "texto": "minuto",
+    "inicio": 3.88,
+    "fim": 3.98
+   },
+   {
+    "texto": "conta.",
+    "inicio": 3.98,
+    "fim": 4.06
+   }
+  ]
+ },
+ {
+  "id": "L3",
+  "quem": "narrador",
+  "duracao": 7.706,
+  "palavras": [
+   {
+    "texto": "Aí",
+    "inicio": 0.06,
+    "fim": 0.2
+   },
+   {
+    "texto": "alguém",
+    "inicio": 0.2,
+    "fim": 0.38
+   },
+   {
+    "texto": "fala:",
+    "inicio": 0.38,
+    "fim": 0.82
+   },
+   {
+    "texto": "Tosse",
+    "inicio": 0.82,
+    "fim": 1.2
+   },
+   {
+    "texto": "bem",
+    "inicio": 1.2,
+    "fim": 1.34
+   },
+   {
+    "texto": "forte",
+    "inicio": 1.34,
+    "fim": 1.76
+   },
+   {
+    "texto": "que",
+    "inicio": 1.76,
+    "fim": 1.88
+   },
+   {
+    "texto": "o",
+    "inicio": 1.88,
+    "fim": 1.96
+   },
+   {
+    "texto": "coração",
+    "inicio": 1.94,
+    "fim": 2.2
+   },
+   {
+    "texto": "volta",
+    "inicio": 2.2,
+    "fim": 2.56
+   },
+   {
+    "texto": "ao",
+    "inicio": 2.56,
+    "fim": 2.68
+   },
+   {
+    "texto": "normal.",
+    "inicio": 2.68,
+    "fim": 3.24
+   },
+   {
+    "texto": "Não",
+    "inicio": 3.24,
+    "fim": 3.44
+   },
+   {
+    "texto": "faça",
+    "inicio": 3.44,
+    "fim": 3.84
+   },
+   {
+    "texto": "isso!",
+    "inicio": 3.84,
+    "fim": 4.4
+   },
+   {
+    "texto": "A",
+    "inicio": 4.4,
+    "fim": 4.6
+   },
+   {
+    "texto": "tosse",
+    "inicio": 4.6,
+    "fim": 4.92
+   },
+   {
+    "texto": "não",
+    "inicio": 4.92,
+    "fim": 5
+   },
+   {
+    "texto": "desfaz",
+    "inicio": 5,
+    "fim": 5.34
+   },
+   {
+    "texto": "um",
+    "inicio": 5.34,
+    "fim": 5.44
+   },
+   {
+    "texto": "infarto,",
+    "inicio": 5.44,
+    "fim": 6.12
+   },
+   {
+    "texto": "só",
+    "inicio": 6.12,
+    "fim": 6.3
+   },
+   {
+    "texto": "faz",
+    "inicio": 6.3,
+    "fim": 6.5
+   },
+   {
+    "texto": "vocês",
+    "inicio": 6.5,
+    "fim": 6.72
+   },
+   {
+    "texto": "perderem",
+    "inicio": 6.72,
+    "fim": 6.98
+   },
+   {
+    "texto": "tempo.",
+    "inicio": 6.98,
+    "fim": 7.06
+   }
+  ]
+ },
+ {
+  "id": "L4",
+  "quem": "narrador",
+  "duracao": 3.657,
+  "palavras": [
+   {
+    "texto": "Outra",
+    "inicio": 0.02,
+    "fim": 0.28
+   },
+   {
+    "texto": "pessoa",
+    "inicio": 0.28,
+    "fim": 0.5
+   },
+   {
+    "texto": "já",
+    "inicio": 0.5,
+    "fim": 0.64
+   },
+   {
+    "texto": "pega",
+    "inicio": 0.64,
+    "fim": 0.88
+   },
+   {
+    "texto": "a",
+    "inicio": 0.88,
+    "fim": 1.02
+   },
+   {
+    "texto": "chave",
+    "inicio": 1.02,
+    "fim": 1.26
+   },
+   {
+    "texto": "do",
+    "inicio": 1.26,
+    "fim": 1.36
+   },
+   {
+    "texto": "carro:",
+    "inicio": 1.36,
+    "fim": 1.84
+   },
+   {
+    "texto": "Deixa",
+    "inicio": 1.84,
+    "fim": 2.08
+   },
+   {
+    "texto": "que",
+    "inicio": 2.08,
+    "fim": 2.2
+   },
+   {
+    "texto": "eu",
+    "inicio": 2.2,
+    "fim": 2.28
+   },
+   {
+    "texto": "levo",
+    "inicio": 2.26,
+    "fim": 2.46
+   },
+   {
+    "texto": "ele.",
+    "inicio": 2.46,
+    "fim": 2.84
+   },
+   {
+    "texto": "Também",
+    "inicio": 2.84,
+    "fim": 2.98
+   },
+   {
+    "texto": "não!",
+    "inicio": 2.98,
+    "fim": 3.06
+   }
+  ]
+ },
+ {
+  "id": "L5",
+  "quem": "narrador",
+  "duracao": 5.538,
+  "palavras": [
+   {
+    "texto": "Se",
+    "inicio": 0,
+    "fim": 0.18
+   },
+   {
+    "texto": "o",
+    "inicio": 0.18,
+    "fim": 0.26
+   },
+   {
+    "texto": "coração",
+    "inicio": 0.26,
+    "fim": 0.52
+   },
+   {
+    "texto": "dele",
+    "inicio": 0.52,
+    "fim": 0.78
+   },
+   {
+    "texto": "parar",
+    "inicio": 0.78,
+    "fim": 1.02
+   },
+   {
+    "texto": "no",
+    "inicio": 1.02,
+    "fim": 1.16
+   },
+   {
+    "texto": "caminho,",
+    "inicio": 1.16,
+    "fim": 1.86
+   },
+   {
+    "texto": "ninguém",
+    "inicio": 1.86,
+    "fim": 2.12
+   },
+   {
+    "texto": "vai",
+    "inicio": 2.12,
+    "fim": 2.34
+   },
+   {
+    "texto": "conseguir",
+    "inicio": 2.34,
+    "fim": 2.62
+   },
+   {
+    "texto": "ajudar.",
+    "inicio": 2.62,
+    "fim": 3.24
+   },
+   {
+    "texto": "A",
+    "inicio": 3.24,
+    "fim": 3.44
+   },
+   {
+    "texto": "ambulância",
+    "inicio": 3.44,
+    "fim": 3.96
+   },
+   {
+    "texto": "já",
+    "inicio": 3.96,
+    "fim": 4.14
+   },
+   {
+    "texto": "vem",
+    "inicio": 4.14,
+    "fim": 4.36
+   },
+   {
+    "texto": "preparada",
+    "inicio": 4.36,
+    "fim": 4.86
+   },
+   {
+    "texto": "para",
+    "inicio": 4.86,
+    "fim": 4.98
+   },
+   {
+    "texto": "isso.",
+    "inicio": 4.98,
+    "fim": 5.06
+   }
+  ]
+ },
+ {
+  "id": "L6",
+  "quem": "narrador",
+  "duracao": 4.232,
+  "palavras": [
+   {
+    "texto": "O",
+    "inicio": 0.02,
+    "fim": 0.18
+   },
+   {
+    "texto": "certo",
+    "inicio": 0.18,
+    "fim": 0.46
+   },
+   {
+    "texto": "é",
+    "inicio": 0.46,
+    "fim": 0.54
+   },
+   {
+    "texto": "ligar",
+    "inicio": 0.54,
+    "fim": 0.8
+   },
+   {
+    "texto": "na",
+    "inicio": 0.8,
+    "fim": 0.9
+   },
+   {
+    "texto": "hora",
+    "inicio": 0.9,
+    "fim": 1.12
+   },
+   {
+    "texto": "para",
+    "inicio": 1.12,
+    "fim": 1.26
+   },
+   {
+    "texto": "o",
+    "inicio": 1.26,
+    "fim": 1.34
+   },
+   {
+    "texto": "Samu,",
+    "inicio": 1.3,
+    "fim": 1.7
+   },
+   {
+    "texto": "no",
+    "inicio": 1.7,
+    "fim": 2.18
+   },
+   {
+    "texto": "192.",
+    "inicio": 2.941,
+    "fim": 4.036
+   }
+  ]
+ },
+ {
+  "id": "L7",
+  "quem": "narrador",
+  "duracao": 4.232,
+  "palavras": [
+   {
+    "texto": "Deixe",
+    "inicio": 0.04,
+    "fim": 0.3
+   },
+   {
+    "texto": "ele",
+    "inicio": 0.3,
+    "fim": 0.42
+   },
+   {
+    "texto": "sentado,",
+    "inicio": 0.42,
+    "fim": 1.12
+   },
+   {
+    "texto": "calmo,",
+    "inicio": 1.12,
+    "fim": 1.94
+   },
+   {
+    "texto": "sem",
+    "inicio": 1.94,
+    "fim": 2.04
+   },
+   {
+    "texto": "fazer",
+    "inicio": 2.04,
+    "fim": 2.22
+   },
+   {
+    "texto": "esforço,",
+    "inicio": 2.22,
+    "fim": 2.74
+   },
+   {
+    "texto": "e",
+    "inicio": 2.74,
+    "fim": 3.04
+   },
+   {
+    "texto": "afrouxe",
+    "inicio": 3.04,
+    "fim": 3.4
+   },
+   {
+    "texto": "a",
+    "inicio": 3.4,
+    "fim": 3.48
+   },
+   {
+    "texto": "roupa",
+    "inicio": 3.48,
+    "fim": 3.72
+   },
+   {
+    "texto": "dele.",
+    "inicio": 3.72,
+    "fim": 3.98
+   }
+  ]
+ },
+ {
+  "id": "L8",
+  "quem": "narrador",
+  "duracao": 7.576,
+  "palavras": [
+   {
+    "texto": "Se",
+    "inicio": 0,
+    "fim": 0.18
+   },
+   {
+    "texto": "a",
+    "inicio": 0.18,
+    "fim": 0.28
+   },
+   {
+    "texto": "equipe",
+    "inicio": 0.28,
+    "fim": 0.46
+   },
+   {
+    "texto": "do",
+    "inicio": 0.46,
+    "fim": 0.56
+   },
+   {
+    "texto": "Samu",
+    "inicio": 0.56,
+    "fim": 0.88
+   },
+   {
+    "texto": "orientar",
+    "inicio": 0.88,
+    "fim": 1.28
+   },
+   {
+    "texto": "e",
+    "inicio": 1.28,
+    "fim": 1.36
+   },
+   {
+    "texto": "ele",
+    "inicio": 1.36,
+    "fim": 1.46
+   },
+   {
+    "texto": "não",
+    "inicio": 1.46,
+    "fim": 1.58
+   },
+   {
+    "texto": "tiver",
+    "inicio": 1.58,
+    "fim": 1.76
+   },
+   {
+    "texto": "alergia,",
+    "inicio": 1.76,
+    "fim": 2.52
+   },
+   {
+    "texto": "ele",
+    "inicio": 2.52,
+    "fim": 2.74
+   },
+   {
+    "texto": "pode",
+    "inicio": 2.74,
+    "fim": 2.94
+   },
+   {
+    "texto": "mastigar",
+    "inicio": 2.94,
+    "fim": 3.4
+   },
+   {
+    "texto": "um",
+    "inicio": 3.4,
+    "fim": 3.5
+   },
+   {
+    "texto": "comprimido",
+    "inicio": 3.5,
+    "fim": 3.96
+   },
+   {
+    "texto": "de",
+    "inicio": 3.96,
+    "fim": 4.08
+   },
+   {
+    "texto": "AAS.",
+    "inicio": 4.08,
+    "fim": 4.94
+   },
+   {
+    "texto": "Isso",
+    "inicio": 4.94,
+    "fim": 5.46
+   },
+   {
+    "texto": "ajuda",
+    "inicio": 5.46,
+    "fim": 5.74
+   },
+   {
+    "texto": "a",
+    "inicio": 5.74,
+    "fim": 5.86
+   },
+   {
+    "texto": "impedir",
+    "inicio": 5.86,
+    "fim": 6.2
+   },
+   {
+    "texto": "que",
+    "inicio": 6.2,
+    "fim": 6.32
+   },
+   {
+    "texto": "o",
+    "inicio": 6.32,
+    "fim": 6.4
+   },
+   {
+    "texto": "coágulo",
+    "inicio": 6.38,
+    "fim": 6.76
+   },
+   {
+    "texto": "cresça.",
+    "inicio": 6.76,
+    "fim": 6.98
+   }
+  ]
+ },
+ {
+  "id": "L9",
+  "quem": "narrador",
+  "duracao": 5.538,
+  "palavras": [
+   {
+    "texto": "Se",
+    "inicio": 0.04,
+    "fim": 0.26
+   },
+   {
+    "texto": "ele",
+    "inicio": 0.26,
+    "fim": 0.38
+   },
+   {
+    "texto": "desmaiar",
+    "inicio": 0.38,
+    "fim": 0.86
+   },
+   {
+    "texto": "e",
+    "inicio": 0.86,
+    "fim": 0.96
+   },
+   {
+    "texto": "não",
+    "inicio": 0.96,
+    "fim": 1.08
+   },
+   {
+    "texto": "estiver",
+    "inicio": 1.08,
+    "fim": 1.32
+   },
+   {
+    "texto": "respirando,",
+    "inicio": 1.32,
+    "fim": 2.34
+   },
+   {
+    "texto": "comece",
+    "inicio": 2.34,
+    "fim": 2.58
+   },
+   {
+    "texto": "a",
+    "inicio": 2.58,
+    "fim": 2.66
+   },
+   {
+    "texto": "massagem",
+    "inicio": 2.66,
+    "fim": 3
+   },
+   {
+    "texto": "cardíaca:",
+    "inicio": 3,
+    "fim": 3.92
+   },
+   {
+    "texto": "deite",
+    "inicio": 3.92,
+    "fim": 4.28
+   },
+   {
+    "texto": "ele",
+    "inicio": 4.28,
+    "fim": 4.46
+   },
+   {
+    "texto": "de",
+    "inicio": 4.46,
+    "fim": 4.6
+   },
+   {
+    "texto": "costas",
+    "inicio": 4.6,
+    "fim": 4.98
+   },
+   {
+    "texto": "no",
+    "inicio": 4.98,
+    "fim": 5.06
+   },
+   {
+    "texto": "chão.",
+    "inicio": 4.98,
+    "fim": 5.06
+   }
+  ]
+ },
+ {
+  "id": "L10",
+  "quem": "narrador",
+  "duracao": 5.982,
+  "palavras": [
+   {
+    "texto": "Coloque",
+    "inicio": 0.04,
+    "fim": 0.38
+   },
+   {
+    "texto": "a",
+    "inicio": 0.38,
+    "fim": 0.48
+   },
+   {
+    "texto": "base",
+    "inicio": 0.48,
+    "fim": 0.72
+   },
+   {
+    "texto": "de",
+    "inicio": 0.72,
+    "fim": 0.84
+   },
+   {
+    "texto": "uma",
+    "inicio": 0.84,
+    "fim": 0.94
+   },
+   {
+    "texto": "mão",
+    "inicio": 0.94,
+    "fim": 1.16
+   },
+   {
+    "texto": "no",
+    "inicio": 1.16,
+    "fim": 1.28
+   },
+   {
+    "texto": "centro",
+    "inicio": 1.28,
+    "fim": 1.52
+   },
+   {
+    "texto": "do",
+    "inicio": 1.52,
+    "fim": 1.64
+   },
+   {
+    "texto": "peito,",
+    "inicio": 1.64,
+    "fim": 2.14
+   },
+   {
+    "texto": "entre",
+    "inicio": 2.14,
+    "fim": 2.4
+   },
+   {
+    "texto": "os",
+    "inicio": 2.4,
+    "fim": 2.52
+   },
+   {
+    "texto": "mamilos,",
+    "inicio": 2.52,
+    "fim": 3.18
+   },
+   {
+    "texto": "e",
+    "inicio": 3.18,
+    "fim": 3.34
+   },
+   {
+    "texto": "a",
+    "inicio": 3.34,
+    "fim": 3.42
+   },
+   {
+    "texto": "outra",
+    "inicio": 3.42,
+    "fim": 3.6
+   },
+   {
+    "texto": "mão",
+    "inicio": 3.6,
+    "fim": 3.76
+   },
+   {
+    "texto": "por",
+    "inicio": 3.76,
+    "fim": 3.96
+   },
+   {
+    "texto": "cima,",
+    "inicio": 3.96,
+    "fim": 4.5
+   },
+   {
+    "texto": "com",
+    "inicio": 4.5,
+    "fim": 4.66
+   },
+   {
+    "texto": "os",
+    "inicio": 4.66,
+    "fim": 4.74
+   },
+   {
+    "texto": "dedos",
+    "inicio": 4.74,
+    "fim": 4.98
+   },
+   {
+    "texto": "entrelaçados.",
+    "inicio": 4.98,
+    "fim": 5.06
+   }
+  ]
+ },
+ {
+  "id": "L11",
+  "quem": "narrador",
+  "duracao": 7.654,
+  "palavras": [
+   {
+    "texto": "Com",
+    "inicio": 0,
+    "fim": 0.18
+   },
+   {
+    "texto": "os",
+    "inicio": 0.18,
+    "fim": 0.32
+   },
+   {
+    "texto": "braços",
+    "inicio": 0.32,
+    "fim": 0.62
+   },
+   {
+    "texto": "esticados,",
+    "inicio": 0.62,
+    "fim": 1.44
+   },
+   {
+    "texto": "use",
+    "inicio": 1.44,
+    "fim": 1.76
+   },
+   {
+    "texto": "o",
+    "inicio": 1.76,
+    "fim": 1.86
+   },
+   {
+    "texto": "peso",
+    "inicio": 1.86,
+    "fim": 2.1
+   },
+   {
+    "texto": "do",
+    "inicio": 2.1,
+    "fim": 2.22
+   },
+   {
+    "texto": "corpo",
+    "inicio": 2.22,
+    "fim": 2.52
+   },
+   {
+    "texto": "para",
+    "inicio": 2.52,
+    "fim": 2.68
+   },
+   {
+    "texto": "afundar",
+    "inicio": 2.68,
+    "fim": 3.02
+   },
+   {
+    "texto": "o",
+    "inicio": 3.02,
+    "fim": 3.1
+   },
+   {
+    "texto": "peito",
+    "inicio": 3.1,
+    "fim": 3.38
+   },
+   {
+    "texto": "cerca",
+    "inicio": 3.38,
+    "fim": 3.6
+   },
+   {
+    "texto": "de",
+    "inicio": 3.6,
+    "fim": 3.76
+   },
+   {
+    "texto": "cinco",
+    "inicio": 3.76,
+    "fim": 4.02
+   },
+   {
+    "texto": "centímetros",
+    "inicio": 4.02,
+    "fim": 4.66
+   },
+   {
+    "texto": "e",
+    "inicio": 4.66,
+    "fim": 5.04
+   },
+   {
+    "texto": "deixe",
+    "inicio": 5.04,
+    "fim": 5.36
+   },
+   {
+    "texto": "ele",
+    "inicio": 5.36,
+    "fim": 5.46
+   },
+   {
+    "texto": "voltar",
+    "inicio": 5.46,
+    "fim": 5.78
+   },
+   {
+    "texto": "todo",
+    "inicio": 5.78,
+    "fim": 6.26
+   },
+   {
+    "texto": "depois",
+    "inicio": 6.26,
+    "fim": 6.68
+   },
+   {
+    "texto": "de",
+    "inicio": 6.68,
+    "fim": 6.84
+   },
+   {
+    "texto": "cada",
+    "inicio": 6.84,
+    "fim": 6.98
+   },
+   {
+    "texto": "empurrão.",
+    "inicio": 6.98,
+    "fim": 7.06
+   }
+  ]
+ },
+ {
+  "id": "L12",
+  "quem": "narrador",
+  "duracao": 5.12,
+  "palavras": [
+   {
+    "texto": "Faça",
+    "inicio": 0.08,
+    "fim": 0.4
+   },
+   {
+    "texto": "rápido,",
+    "inicio": 0.4,
+    "fim": 0.96
+   },
+   {
+    "texto": "no",
+    "inicio": 0.96,
+    "fim": 1.2
+   },
+   {
+    "texto": "ritmo",
+    "inicio": 1.2,
+    "fim": 1.52
+   },
+   {
+    "texto": "da",
+    "inicio": 1.52,
+    "fim": 1.64
+   },
+   {
+    "texto": "música",
+    "inicio": 1.64,
+    "fim": 1.9
+   },
+   {
+    "texto": "Stayin'",
+    "inicio": 1.804,
+    "fim": 2.121
+   },
+   {
+    "texto": "Alive",
+    "inicio": 2.26,
+    "fim": 2.6
+   },
+   {
+    "texto": "dos",
+    "inicio": 2.6,
+    "fim": 2.7
+   },
+   {
+    "texto": "Bee",
+    "inicio": 2.706,
+    "fim": 2.877
+   },
+   {
+    "texto": "Gees,",
+    "inicio": 2.877,
+    "fim": 3.291
+   },
+   {
+    "texto": "quase",
+    "inicio": 3.36,
+    "fim": 3.78
+   },
+   {
+    "texto": "duas",
+    "inicio": 3.78,
+    "fim": 4.02
+   },
+   {
+    "texto": "vezes",
+    "inicio": 4.02,
+    "fim": 4.36
+   },
+   {
+    "texto": "por",
+    "inicio": 4.36,
+    "fim": 4.52
+   },
+   {
+    "texto": "segundo.",
+    "inicio": 4.52,
+    "fim": 4.98
+   }
+  ]
+ },
+ {
+  "id": "L13",
+  "quem": "narrador",
+  "duracao": 5.433,
+  "palavras": [
+   {
+    "texto": "Não",
+    "inicio": 0.04,
+    "fim": 0.26
+   },
+   {
+    "texto": "pare",
+    "inicio": 0.26,
+    "fim": 0.56
+   },
+   {
+    "texto": "até",
+    "inicio": 0.56,
+    "fim": 0.74
+   },
+   {
+    "texto": "a",
+    "inicio": 0.74,
+    "fim": 0.84
+   },
+   {
+    "texto": "ajuda",
+    "inicio": 0.84,
+    "fim": 1.02
+   },
+   {
+    "texto": "chegar.",
+    "inicio": 1.02,
+    "fim": 1.64
+   },
+   {
+    "texto": "Se",
+    "inicio": 1.64,
+    "fim": 1.9
+   },
+   {
+    "texto": "tiver",
+    "inicio": 1.9,
+    "fim": 2.1
+   },
+   {
+    "texto": "mais",
+    "inicio": 2.1,
+    "fim": 2.4
+   },
+   {
+    "texto": "alguém,",
+    "inicio": 2.4,
+    "fim": 3.12
+   },
+   {
+    "texto": "vocês",
+    "inicio": 3.12,
+    "fim": 3.26
+   },
+   {
+    "texto": "podem",
+    "inicio": 3.26,
+    "fim": 3.5
+   },
+   {
+    "texto": "se",
+    "inicio": 3.5,
+    "fim": 3.66
+   },
+   {
+    "texto": "revezar",
+    "inicio": 3.66,
+    "fim": 4.06
+   },
+   {
+    "texto": "a",
+    "inicio": 4.06,
+    "fim": 4.24
+   },
+   {
+    "texto": "cada",
+    "inicio": 4.24,
+    "fim": 4.38
+   },
+   {
+    "texto": "dois",
+    "inicio": 4.38,
+    "fim": 4.6
+   },
+   {
+    "texto": "minutos.",
+    "inicio": 4.6,
+    "fim": 4.98
+   }
+  ]
+ },
+ {
+  "id": "L14",
+  "quem": "narrador",
+  "duracao": 4.963,
+  "palavras": [
+   {
+    "texto": "Quando",
+    "inicio": 0.02,
+    "fim": 0.24
+   },
+   {
+    "texto": "o",
+    "inicio": 0.24,
+    "fim": 0.36
+   },
+   {
+    "texto": "Samu",
+    "inicio": 0.36,
+    "fim": 0.62
+   },
+   {
+    "texto": "chegar,",
+    "inicio": 0.62,
+    "fim": 1.36
+   },
+   {
+    "texto": "a",
+    "inicio": 1.36,
+    "fim": 1.44
+   },
+   {
+    "texto": "equipe",
+    "inicio": 1.4,
+    "fim": 1.68
+   },
+   {
+    "texto": "assume,",
+    "inicio": 1.68,
+    "fim": 2.58
+   },
+   {
+    "texto": "cuida",
+    "inicio": 2.58,
+    "fim": 2.8
+   },
+   {
+    "texto": "dele",
+    "inicio": 2.8,
+    "fim": 3
+   },
+   {
+    "texto": "na",
+    "inicio": 3,
+    "fim": 3.1
+   },
+   {
+    "texto": "ambulância",
+    "inicio": 3.1,
+    "fim": 3.68
+   },
+   {
+    "texto": "e",
+    "inicio": 3.68,
+    "fim": 3.98
+   },
+   {
+    "texto": "leva",
+    "inicio": 3.98,
+    "fim": 4.06
+   },
+   {
+    "texto": "para",
+    "inicio": 3.98,
+    "fim": 4.06
+   },
+   {
+    "texto": "o",
+    "inicio": 3.98,
+    "fim": 4.06
+   },
+   {
+    "texto": "hospital.",
+    "inicio": 3.98,
+    "fim": 4.06
+   }
+  ]
+ },
+ {
+  "id": "L15",
+  "quem": "narrador",
+  "duracao": 7.941,
+  "palavras": [
+   {
+    "texto": "E",
+    "inicio": 0.06,
+    "fim": 0.18
+   },
+   {
+    "texto": "atenção:",
+    "inicio": 0.18,
+    "fim": 0.92
+   },
+   {
+    "texto": "nas",
+    "inicio": 0.92,
+    "fim": 1.04
+   },
+   {
+    "texto": "mulheres,",
+    "inicio": 1.04,
+    "fim": 1.82
+   },
+   {
+    "texto": "o",
+    "inicio": 1.82,
+    "fim": 1.9
+   },
+   {
+    "texto": "infarto",
+    "inicio": 1.88,
+    "fim": 2.26
+   },
+   {
+    "texto": "pode",
+    "inicio": 2.26,
+    "fim": 2.5
+   },
+   {
+    "texto": "vir",
+    "inicio": 2.5,
+    "fim": 2.7
+   },
+   {
+    "texto": "sem",
+    "inicio": 2.7,
+    "fim": 2.94
+   },
+   {
+    "texto": "aquela",
+    "inicio": 2.94,
+    "fim": 3.18
+   },
+   {
+    "texto": "dor",
+    "inicio": 3.18,
+    "fim": 3.4
+   },
+   {
+    "texto": "forte",
+    "inicio": 3.4,
+    "fim": 3.76
+   },
+   {
+    "texto": "no",
+    "inicio": 3.76,
+    "fim": 3.86
+   },
+   {
+    "texto": "peito.",
+    "inicio": 3.86,
+    "fim": 4.46
+   },
+   {
+    "texto": "Às",
+    "inicio": 4.46,
+    "fim": 4.68
+   },
+   {
+    "texto": "vezes",
+    "inicio": 4.68,
+    "fim": 4.82
+   },
+   {
+    "texto": "é",
+    "inicio": 4.82,
+    "fim": 4.98
+   },
+   {
+    "texto": "só",
+    "inicio": 4.98,
+    "fim": 5.16
+   },
+   {
+    "texto": "cansaço,",
+    "inicio": 5.16,
+    "fim": 6.1
+   },
+   {
+    "texto": "enjoo",
+    "inicio": 6.1,
+    "fim": 6.5
+   },
+   {
+    "texto": "ou",
+    "inicio": 6.5,
+    "fim": 6.84
+   },
+   {
+    "texto": "dor",
+    "inicio": 6.84,
+    "fim": 6.98
+   },
+   {
+    "texto": "nas",
+    "inicio": 6.98,
+    "fim": 7.06
+   },
+   {
+    "texto": "costas.",
+    "inicio": 6.98,
+    "fim": 7.06
+   }
+  ]
+ },
+ {
+  "id": "L16",
+  "quem": "narrador",
+  "duracao": 3.135,
+  "palavras": [
+   {
+    "texto": "No",
+    "inicio": 0.06,
+    "fim": 0.18
+   },
+   {
+    "texto": "infarto,",
+    "inicio": 0.18,
+    "fim": 1.02
+   },
+   {
+    "texto": "cada",
+    "inicio": 1.02,
+    "fim": 1.16
+   },
+   {
+    "texto": "minuto",
+    "inicio": 1.16,
+    "fim": 1.56
+   },
+   {
+    "texto": "salva",
+    "inicio": 1.56,
+    "fim": 1.88
+   },
+   {
+    "texto": "um",
+    "inicio": 1.88,
+    "fim": 1.96
+   },
+   {
+    "texto": "pedaço",
+    "inicio": 1.96,
+    "fim": 2.32
+   },
+   {
+    "texto": "do",
+    "inicio": 2.32,
+    "fim": 2.4
+   },
+   {
+    "texto": "coração.",
+    "inicio": 2.4,
+    "fim": 2.98
+   }
+  ]
+ },
+ {
+  "id": "L17",
+  "quem": "narrador",
+  "duracao": 3.997,
+  "palavras": [
+   {
+    "texto": "Se",
+    "inicio": 0,
+    "fim": 0.18
+   },
+   {
+    "texto": "você",
+    "inicio": 0.18,
+    "fim": 0.36
+   },
+   {
+    "texto": "gostou,",
+    "inicio": 0.36,
+    "fim": 1.12
+   },
+   {
+    "texto": "deixa",
+    "inicio": 1.12,
+    "fim": 1.28
+   },
+   {
+    "texto": "a",
+    "inicio": 1.136,
+    "fim": 1.245
+   },
+   {
+    "texto": "sua",
+    "inicio": 1.28,
+    "fim": 1.46
+   },
+   {
+    "texto": "curtida",
+    "inicio": 1.46,
+    "fim": 1.94
+   },
+   {
+    "texto": "e",
+    "inicio": 1.94,
+    "fim": 2.24
+   },
+   {
+    "texto": "segue",
+    "inicio": 2.24,
+    "fim": 2.52
+   },
+   {
+    "texto": "o",
+    "inicio": 2.52,
+    "fim": 2.6
+   },
+   {
+    "texto": "perfil",
+    "inicio": 2.58,
+    "fim": 2.9
+   },
+   {
+    "texto": "para",
+    "inicio": 2.9,
+    "fim": 2.98
+   },
+   {
+    "texto": "mais",
+    "inicio": 2.98,
+    "fim": 3.06
+   },
+   {
+    "texto": "vídeos",
+    "inicio": 2.98,
+    "fim": 3.06
+   },
+   {
+    "texto": "assim.",
+    "inicio": 2.98,
+    "fim": 3.06
+   }
+  ]
+ }
+]

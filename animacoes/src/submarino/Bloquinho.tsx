@@ -9,7 +9,7 @@ export const ContornoCtx = createContext(false);
 export type Pose =
   | 'parado' | 'andar' | 'remar' | 'manivela' | 'acenar' | 'comemorar' | 'apontar' | 'susto'
   | 'siu' | 'chutar' | 'bracosCruzados' | 'correr' | 'sentado'
-  | 'pensar' | 'maosNaCintura' | 'facepalm' | 'dancar' | 'encolher' | 'segurar' | 'mastigar' | 'pular';
+  | 'pensar' | 'maosNaCintura' | 'facepalm' | 'dancar' | 'encolher' | 'segurar' | 'mastigar' | 'pular' | 'ajoelhado';
 export type Chapeu = 'nenhum' | 'cartola' | 'coco' | 'coroa' | 'tricornio' | 'cabelo';
 export type Expressao =
   | 'feliz' | 'assustado' | 'cansado' | 'serio' | 'bravo' | 'triste' | 'emocionado'
@@ -609,6 +609,13 @@ export const angulosDaPose = (pose: Pose, t: number): Angulos => {
     a.bEy = 0.3;
     a.bDy = -0.3;
     a.cE = a.cD = -1.2;
+  } else if (pose === 'ajoelhado') {
+    // de joelhos (coloque posicao y ≈ -0.36 no Boneco), tronco inclinado para a frente
+    a.pE = a.pD = -0.1;
+    a.jE = a.jD = 1.65;
+    a.inclina = 0.3;
+    a.bE = a.bD = -0.9;
+    a.cE = a.cD = 0;
   } else if (pose === 'mastigar') {
     a.cab = Math.sin(t * 0.6) * 0.04;
   }

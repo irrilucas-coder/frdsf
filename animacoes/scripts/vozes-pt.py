@@ -113,6 +113,27 @@ PROJETOS = {
         ("L10", "Restam só doze jogadores. E o milhão continua ali, esperando."),
         ("L11", "Em quem você aposta? Comenta o número. Na parte dois, a prova fica ainda pior."),
     ],
+    # ---- Roteiro do usuário: infarto, o que fazer (sem legenda, ele legenda no CapCut) ----
+    "infarto": [
+        ("L0", "Você está vendo o jogo com o seu pai e, de repente, ele leva a mão ao peito."),
+        ("L1", "Isso pode ser um infarto. Um coágulo entupiu uma das artérias que levam sangue para o coração."),
+        ("L2", "Sem oxigênio, essa parte do músculo começa a morrer, por isso cada minuto conta."),
+        ("L3", "Aí alguém fala: Tosse bem forte que o coração volta ao normal. Não faça isso! A tosse não desfaz um infarto, só faz vocês perderem tempo."),
+        ("L4", "Outra pessoa já pega a chave do carro: Deixa que eu levo ele. Também não!"),
+        ("L5", "Se o coração dele parar no caminho, ninguém vai conseguir ajudar. A ambulância já vem preparada para isso."),
+        ("L6", "O certo é ligar na hora para o Samu, no 192{um, nove, dois}."),
+        ("L7", "Deixe ele sentado, calmo, sem fazer esforço, e afrouxe a roupa dele."),
+        ("L8", "Se a equipe do Samu orientar e ele não tiver alergia, ele pode mastigar um comprimido de AAS{á á ésse}. Isso ajuda a impedir que o coágulo cresça."),
+        ("L9", "Se ele desmaiar e não estiver respirando, comece a massagem cardíaca: deite ele de costas no chão."),
+        ("L10", "Coloque a base de uma mão no centro do peito, entre os mamilos, e a outra mão por cima, com os dedos entrelaçados."),
+        ("L11", "Com os braços esticados, use o peso do corpo para afundar o peito cerca de cinco centímetros e deixe ele voltar todo depois de cada empurrão."),
+        ("L12", "Faça rápido, no ritmo da música Stayin'{Stêin} Alive{alaive} dos Bee{Bi} Gees{Djiz}, quase duas vezes por segundo."),
+        ("L13", "Não pare até a ajuda chegar. Se tiver mais alguém, vocês podem se revezar a cada dois minutos."),
+        ("L14", "Quando o Samu chegar, a equipe assume, cuida dele na ambulância e leva para o hospital."),
+        ("L15", "E atenção: nas mulheres, o infarto pode vir sem aquela dor forte no peito. Às vezes é só cansaço, enjoo ou dor nas costas."),
+        ("L16", "No infarto, cada minuto salva um pedaço do coração."),
+        ("L17", "Se você gostou, deixa a sua curtida e segue o perfil para mais vídeos assim."),
+    ],
 }
 IDIOMAS = {"freio-mx": "es", "fila-mx": "es"}
 VOZES_PROJETO = {"freio-mx": "qRUgOhnxGASxirG4fKjv", "fila-mx": "qRUgOhnxGASxirG4fKjv"}  # David - mexicano
