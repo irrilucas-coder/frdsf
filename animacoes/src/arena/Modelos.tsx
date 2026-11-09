@@ -334,17 +334,49 @@ export const Multidao = ({n = 70, centro = [0, 0, 8] as V3, largura = 14, prof =
         const pele = ['#f0c49a', '#c98d64', '#8a5a3c', '#e8b48a'][i % 4];
         const bob = Math.abs(Math.sin(frame * 0.1 + i)) * 0.04;
         return (
-          <group key={i} position={[x, bob, z]}>
-            <mesh position={[0, 0.75, 0]}>
-              <cylinderGeometry args={[0.2, 0.18, 1.1, 6]} />
+          <group key={i} position={[x, bob, z]} rotation={[0, ((i * 29) % 10) / 10 - 0.5, 0]}>
+            {/* pernas e tênis */}
+            {[-0.1, 0.1].map((lx) => (
+              <group key={lx}>
+                <mesh position={[lx, 0.35, 0]}>
+                  <cylinderGeometry args={[0.06, 0.055, 0.6, 6]} />
+                  <M cor={VERDE} />
+                </mesh>
+                <mesh position={[lx, 0.05, 0.04]} scale={[0.8, 0.45, 1.3]}>
+                  <sphereGeometry args={[0.09, 6, 5]} />
+                  <M cor="#f7f7f7" />
+                </mesh>
+              </group>
+            ))}
+            {/* tronco */}
+            <mesh position={[0, 0.95, 0]}>
+              <cylinderGeometry args={[0.23, 0.2, 0.6, 7]} />
               <M cor={VERDE} />
             </mesh>
+            {/* ombros bufantes e braços */}
+            {[-1, 1].map((l) => (
+              <group key={l} position={[l * 0.27, 1.2, 0]} rotation={[Math.sin(frame * 0.12 + i + l) * 0.25, 0, l * 0.12]}>
+                <mesh>
+                  <sphereGeometry args={[0.11, 6, 5]} />
+                  <M cor={VERDE} />
+                </mesh>
+                <mesh position={[0, -0.28, 0]}>
+                  <cylinderGeometry args={[0.045, 0.04, 0.5, 6]} />
+                  <M cor={pele} />
+                </mesh>
+                <mesh position={[0, -0.56, 0]}>
+                  <sphereGeometry args={[0.06, 5, 4]} />
+                  <M cor={pele} />
+                </mesh>
+              </group>
+            ))}
+            {/* cabeça e cabelo */}
             <mesh position={[0, 1.55, 0]}>
-              <icosahedronGeometry args={[0.28, 0]} />
+              <icosahedronGeometry args={[0.28, 1]} />
               <M cor={pele} />
             </mesh>
-            <mesh position={[0, 1.72, -0.03]}>
-              <icosahedronGeometry args={[0.24, 0]} />
+            <mesh position={[0, 1.66, -0.04]} scale={[1.05, 0.7, 1.05]}>
+              <icosahedronGeometry args={[0.27, 1]} />
               <M cor={['#2a1d14', '#141414', '#7a3b12', '#d9a441'][i % 4]} />
             </mesh>
           </group>

@@ -122,7 +122,10 @@ const SONS: [CategoriaSfx, number, number, number, number?][] = [
   ['conquista', 0, Q('gancho', 'L1', 'milhão'), 0.5],
   ['impacto', 1, Q('gancho', 'L1', 'Só'), 0.7],
   ['agua', 0, Q('prova', 'L2', 'vigia') + 0.15, 0.7],
-  ['erro', 0, Q('prova', 'L2', 'vigia') + 0.2, 0.6],
+  ['erro', 0, Q('prova', 'L2', 'vigia') + 0.2, 0.5],
+  ['grito', 0, Q('prova', 'L2', 'vigia') - 0.15, 0.75],
+  ['rufar', 0, Q('contagem', 'L9', 'Três') - 0.9, 0.7],
+  ['aplausos', 0, T('restam', 0.05), 0.6, 3.5],
   ['tique', 0, T('regra', 0.2), 0.5],
   ['tique', 1, T('regra', 0.7), 0.5],
   ['tique', 2, T('regra', 1.2), 0.5],
@@ -142,7 +145,7 @@ const SONS: [CategoriaSfx, number, number, number, number?][] = [
   ['conquista', 1, T('restam', 0.2), 0.6],
   ['pop', 0, Q('final', 'L11', 'Comenta'), 0.8],
   ['impacto', 2, Q('final', 'L11', 'parte'), 0.7],
-  ...CENAS.slice(1).map((c, i) => ['whoosh', i, c.inicio - 0.1, 0.4] as [CategoriaSfx, number, number, number]),
+  ...CENAS.slice(1).map((c, i) => ['whoosh', i, c.inicio - 0.1, 0.3] as [CategoriaSfx, number, number, number]),
 ];
 
 const Som = ({cat, n, em, vol, dur}: {cat: CategoriaSfx; n: number; em: number; vol: number; dur?: number}) => (

@@ -330,5 +330,17 @@
    "licenca": "CC0-1.0",
    "titulo": "phaserUp3"
   }
- ]
+ ],
+ "aplausos/1.mp3": {
+  "fonte": "Wikimedia Commons: 277021 sandermotions applause-2 (Freesound, sandermotions)",
+  "licenca": "CC0"
+ },
+ "rufar/1.mp3": {
+  "fonte": "Wikimedia Commons: Drum Roll Intro",
+  "licenca": "CC0"
+ },
+ "grito/1.mp3": {
+  "fonte": "Wikimedia Commons: Wilhelm Scream",
+  "licenca": "CC0"
+ }
 }

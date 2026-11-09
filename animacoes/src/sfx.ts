@@ -20,6 +20,10 @@ export const SFX_VERSOES = {
   tique: 3,
   tensao: 3,
   subida: 3,
+  // gravações reais (CC0, Wikimedia Commons)
+  aplausos: 1,
+  rufar: 1,
+  grito: 1,
 } as const;
 
 export type CategoriaSfx = keyof typeof SFX_VERSOES;
