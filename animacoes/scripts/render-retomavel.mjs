@@ -34,7 +34,7 @@ for (let a = 0; a < total; a += BLOCO) {
   if (fs.existsSync(arq)) continue;
   const tmp = arq.replace('.mp4', '.tmp.mp4');
   console.log(`renderizando frames ${a}-${b} de ${total}…`);
-  await renderMedia({composition, serveUrl, codec: 'h264', crf: 16, muted: true, frameRange: [a, b], outputLocation: tmp, puppeteerInstance: browser, chromiumOptions, concurrency: 4, imageFormat: 'jpeg', jpegQuality: 92, timeoutInMilliseconds: 180000});
+  await renderMedia({composition, serveUrl, codec: 'h264', crf: 12, muted: true, frameRange: [a, b], outputLocation: tmp, puppeteerInstance: browser, chromiumOptions, concurrency: 4, imageFormat: 'jpeg', jpegQuality: 100, timeoutInMilliseconds: 180000});
   fs.renameSync(tmp, arq);
 }
 
