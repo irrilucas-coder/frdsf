@@ -8,9 +8,13 @@ export const ContornoCtx = createContext(false);
 
 export type Pose =
   | 'parado' | 'andar' | 'remar' | 'manivela' | 'acenar' | 'comemorar' | 'apontar' | 'susto'
-  | 'siu' | 'chutar' | 'bracosCruzados' | 'correr' | 'sentado';
+  | 'siu' | 'chutar' | 'bracosCruzados' | 'correr' | 'sentado'
+  | 'pensar' | 'maosNaCintura' | 'facepalm' | 'dancar' | 'encolher' | 'segurar' | 'mastigar' | 'pular';
 export type Chapeu = 'nenhum' | 'cartola' | 'coco' | 'coroa' | 'tricornio' | 'cabelo';
-export type Expressao = 'feliz' | 'assustado' | 'cansado' | 'serio' | 'bravo' | 'triste' | 'emocionado';
+export type Expressao =
+  | 'feliz' | 'assustado' | 'cansado' | 'serio' | 'bravo' | 'triste' | 'emocionado'
+  | 'surpreso' | 'rindo' | 'pensativo' | 'furioso' | 'nojo' | 'confiante';
+export type Emote = 'exclamacao' | 'interrogacao' | 'raiva' | 'gota' | 'brilho' | 'ideia' | 'coracao' | 'zzz';
 // Variações de formato (para os personagens não ficarem todos iguais)
 export type Corpo = 'padrao' | 'magro' | 'forte' | 'gordinho';
 export type Cabeca = 'quadrada' | 'redonda' | 'oval' | 'larga';
@@ -57,6 +61,14 @@ type Props = {
   corNumero?: string;
   manga?: string; // cor diferente na manga (detalhe de uniforme)
   meia?: string; // meião (canela com outra cor: uniforme de futebol)
+  // ---- atuação ----
+  poseDe?: Pose; // pose anterior: com "mistura" (0→1) o corpo passa suavemente de poseDe para pose
+  mistura?: number;
+  olhar?: [number, number]; // para onde as pupilas olham (-1..1, -1..1). Sem isso, o olhar passeia sozinho
+  emote?: Emote; // ícone 3D flutuando sobre a cabeça
+  emoteK?: number; // escala do ícone (0..1) para animar a entrada
+  estica?: number; // squash & stretch (-1 achata, +1 estica)
+  cabecaGiro?: V3; // [aceno, virar, inclinar] em radianos
 };
 
 // Geometrias em cache (arredondar cada peça a cada quadro custaria caro)
@@ -163,6 +175,13 @@ export const Bloquinho = ({
   corNumero = '#ffffff',
   manga,
   meia,
+  poseDe,
+  mistura = 1,
+  olhar,
+  emote,
+  emoteK = 1,
+  estica = 0,
+  cabecaGiro,
 }: Props) => {
   const frame = useCurrentFrame();
   const t = (frame + fase * 17) * velocidade;
@@ -173,80 +192,30 @@ export const Bloquinho = ({
   const corCab = corCabelo ?? (chapeu === 'cabelo' ? corChapeu : '#2a1d14');
   const corBar = corBarba ?? corCab;
 
-  // Ângulos (radianos) de braço/perna em torno do ombro/quadril, eixo X = para frente/trás
-  let bracoE = 0;
-  let bracoD = 0;
-  let bracoEz = 0.08;
-  let bracoDz = -0.08;
-  let pernaE = 0;
-  let pernaD = 0;
-  let pernaEz = 0;
-  let pernaDz = 0;
-  let pulo = 0;
-  let inclina = 0;
-
-  if (pose === 'andar' || pose === 'correr') {
-    const k = pose === 'correr' ? 0.5 : 0.3;
-    const amp = pose === 'correr' ? 1.1 : 0.7;
-    const s = Math.sin(t * k);
-    bracoE = s * amp;
-    bracoD = -s * amp;
-    pernaE = -s * amp * 0.85;
-    pernaD = s * amp * 0.85;
-    pulo = Math.abs(Math.cos(t * k)) * (pose === 'correr' ? 0.14 : 0.06);
-    if (pose === 'correr') inclina = 0.15;
-  } else if (pose === 'remar') {
-    const s = Math.sin(t * 0.18);
-    bracoE = bracoD = -1.2 + s * 0.6;
-    inclina = s * 0.18;
-  } else if (pose === 'manivela') {
-    const a = t * 0.45;
-    bracoE = -1.3 + Math.sin(a) * 0.45;
-    bracoD = -1.3 + Math.sin(a + Math.PI) * 0.45;
-    pernaE = Math.sin(a) * 0.5 - 0.4;
-    pernaD = Math.sin(a + Math.PI) * 0.5 - 0.4;
-  } else if (pose === 'acenar') {
-    bracoD = Math.PI * 0.9;
-    bracoDz = -0.4 + Math.sin(t * 0.4) * 0.35;
-  } else if (pose === 'comemorar') {
-    bracoE = bracoD = Math.PI * 0.95;
-    bracoEz = 0.35 + Math.sin(t * 0.5) * 0.15;
-    bracoDz = -0.35 - Math.sin(t * 0.5) * 0.15;
-    pulo = Math.abs(Math.sin(t * 0.25)) * 0.35;
-  } else if (pose === 'apontar') {
-    bracoD = -Math.PI / 2;
-    bracoE = Math.sin(t * 0.1) * 0.08;
-  } else if (pose === 'susto') {
-    bracoE = bracoD = Math.PI * 0.75;
-    bracoEz = 0.6;
-    bracoDz = -0.6;
-    pulo = Math.abs(Math.sin(t * 0.9)) * 0.05;
-  } else if (pose === 'siu') {
-    // comemoração de braços abertos para baixo, pernas afastadas, peito estufado
-    bracoE = bracoD = 0.35;
-    bracoEz = -0.75;
-    bracoDz = 0.75;
-    pernaEz = -0.22;
-    pernaDz = 0.22;
-    inclina = -0.12;
-  } else if (pose === 'chutar') {
-    // perna direita balança para frente (chute), braços equilibram
-    const ciclo = (t % 40) / 40;
-    const k = ciclo < 0.35 ? -ciclo / 0.35 : ciclo < 0.55 ? -1 + ((ciclo - 0.35) / 0.2) * 2.4 : 1.4 - ((ciclo - 0.55) / 0.45) * 1.4;
-    pernaD = -k * 0.9;
-    bracoE = k * 0.5;
-    bracoEz = 0.5;
-    bracoD = -k * 0.3;
-    inclina = -k * 0.08;
-  } else if (pose === 'sentado') {
-    // coloque o boneco com posicao y ≈ -0.25 para o assento ficar a ~0.55 do chão
-    pernaE = pernaD = -Math.PI / 2;
-    bracoE = bracoD = -0.55;
-  } else if (pose === 'bracosCruzados') {
-    bracoE = bracoD = -1.45;
-    bracoEz = 1.0;
-    bracoDz = -1.0;
-  }
+  // Ângulos de cada pose (ombro, cotovelo, quadril, joelho), com mistura suave entre duas poses
+  const A0 = angulosDaPose(poseDe ?? pose, t);
+  const A1 = angulosDaPose(pose, t);
+  const m = poseDe ? Math.max(0, Math.min(1, mistura)) : 1;
+  const mm = m * m * (3 - 2 * m);
+  const L = (k: keyof Angulos) => A0[k] + (A1[k] - A0[k]) * mm;
+  let bracoE = L('bE');
+  let bracoD = L('bD');
+  let bracoEz = L('bEz');
+  let bracoDz = L('bDz');
+  const torE = L('bEy');
+  const torD = L('bDy');
+  let cotE = L('cE');
+  let cotD = L('cD');
+  const pernaE = L('pE');
+  const pernaD = L('pD');
+  const pernaEz = L('pEz');
+  const pernaDz = L('pDz');
+  const joeE = L('jE');
+  const joeD = L('jD');
+  const pulo = L('pulo');
+  const inclina = L('inclina');
+  const quadrilY = L('qY');
+  const cabPose = L('cab');
   // Braço apontando para um alvo (cinemática simples de 1 junta).
   const mira = (ombroX: number, alvo: V3) => {
     const dx = alvo[0] - ombroX;
@@ -256,54 +225,75 @@ export const Bloquinho = ({
     return {rx: Math.atan2(-dz / n, -dy / n), rz: Math.asin(Math.max(-1, Math.min(1, dx / n)))};
   };
   if (alvoMaoE) {
-    const m = mira(-C.ombro, alvoMaoE);
-    bracoE = m.rx;
-    bracoEz = m.rz;
+    const r = mira(-C.ombro, alvoMaoE);
+    bracoE = r.rx;
+    bracoEz = r.rz;
+    cotE = 0;
   }
   if (alvoMaoD) {
-    const m = mira(C.ombro, alvoMaoD);
-    bracoD = m.rx;
-    bracoDz = m.rz;
+    const r = mira(C.ombro, alvoMaoD);
+    bracoD = r.rx;
+    bracoDz = r.rz;
+    cotD = 0;
   }
   const respira = Math.sin(t * 0.08) * 0.015;
 
   // Rosto
-  const bocaAberta = falando && Math.floor(t / 3) % 3 !== 0;
-  const alturaBoca = bocaAberta ? 0.1 : expressao === 'assustado' ? 0.08 : 0.035;
-  const larguraBoca = expressao === 'assustado' ? 0.12 : bocaAberta ? 0.16 : expressao === 'triste' ? 0.14 : 0.2;
-  const olhoAlt = expressao === 'cansado' ? 0.035 : expressao === 'assustado' ? 0.11 : 0.085;
-  const piscando = (frame + fase * 31 + 45) % 90 < 3;
+  const ex_ = expressao;
+  const ciclo3 = Math.floor(t / 3) % 3 !== 0;
+  const bocaAberta = (falando && ciclo3) || ex_ === 'rindo' || ex_ === 'surpreso';
+  const alturaBoca = ex_ === 'rindo' ? 0.13 + Math.abs(Math.sin(t * 0.7)) * 0.03 : ex_ === 'surpreso' ? 0.13 : falando && ciclo3 ? 0.1 : ex_ === 'assustado' ? 0.08 : ex_ === 'furioso' ? 0.07 : 0.035;
+  const larguraBoca = ex_ === 'rindo' ? 0.24 : ex_ === 'surpreso' ? 0.1 : ex_ === 'assustado' ? 0.12 : ex_ === 'pensativo' ? 0.1 : ex_ === 'furioso' ? 0.24 : bocaAberta ? 0.16 : ex_ === 'triste' ? 0.14 : 0.2;
+  const bocaX = ex_ === 'pensativo' ? 0.05 : ex_ === 'confiante' ? 0.03 : 0;
+  const olhoAlt = ex_ === 'cansado' ? 0.035 : ex_ === 'assustado' || ex_ === 'surpreso' ? 0.11 : ex_ === 'rindo' ? 0.025 : 0.085;
+  const piscando = ex_ !== 'surpreso' && (frame + fase * 31 + 45) % 90 < 3;
   const zf = H.d / 2 + 0.006; // frente do rosto
   const ex = H.w * 0.21; // afastamento dos olhos
   const zBoca = zf + (barba === 'cheia' ? 0.04 : 0);
-  const sobAng = expressao === 'bravo' || expressao === 'serio' ? 0.3 : expressao === 'triste' || expressao === 'emocionado' ? -0.3 : 0;
-  const sobY = expressao === 'assustado' ? 0.21 : 0.16;
+  const sobAng =
+    ex_ === 'furioso' ? 0.5 : ex_ === 'bravo' || ex_ === 'serio' ? 0.3 : ex_ === 'triste' || ex_ === 'emocionado' ? -0.3 : ex_ === 'confiante' ? 0.15 : 0;
+  const sobY = ex_ === 'assustado' || ex_ === 'surpreso' ? 0.22 : ex_ === 'furioso' ? 0.13 : 0.16;
+  // olhar: se não for dado, passeia sozinho (pequenas mudanças a cada ~1,5 s)
+  const passo = Math.floor((frame + fase * 23) / 45);
+  const olharAuto: [number, number] = [Math.sin(passo * 12.9898) * 0.6, Math.sin(passo * 78.233) * 0.3];
+  const ol = olhar ?? (ex_ === 'pensativo' ? [0.5, 0.7] : olharAuto);
+  // pele avermelha de raiva, esverdeia de nojo
+  const corRosto = ex_ === 'furioso' ? misturaCor(pele, '#ff3b30', 0.35) : ex_ === 'nojo' ? misturaCor(pele, '#8bc34a', 0.25) : pele;
+  const tremor = ex_ === 'furioso' ? Math.sin(frame * 2.3) * 0.012 : 0;
+  const riso = ex_ === 'rindo' ? Math.abs(Math.sin(t * 0.7)) * 0.04 : 0;
+  const giroCab: V3 = [
+    (cabecaGiro?.[0] ?? 0) + cabPose + (falando ? Math.sin(t * 0.35) * 0.05 : 0) + (ex_ === 'rindo' ? -0.15 - riso : 0),
+    cabecaGiro?.[1] ?? 0,
+    (cabecaGiro?.[2] ?? 0) + (ex_ === 'pensativo' ? 0.18 : ex_ === 'confiante' ? -0.08 : 0),
+  ];
+  const esY = 1 + estica * 0.22;
+  const esXZ = 1 - estica * 0.12;
 
   const Braco = ({lado}: {lado: 1 | -1}) => (
     <group position={[lado * C.ombro, 1.55, 0]} rotation={[lado < 0 ? bracoE : bracoD, 0, lado < 0 ? bracoEz : bracoDz]}>
+      <group rotation={[0, alvoMaoE && lado < 0 ? 0 : alvoMaoD && lado > 0 ? 0 : lado < 0 ? torE : torD, 0]}>
       <Caixa tam={[C.bw, 0.4, C.bd]} pos={[0, -0.17, 0]} cor={manga ?? camisa} />
-      <Caixa tam={[C.bw * 0.94, 0.42, C.bd * 0.94]} pos={[0, -0.47, 0]} cor={manga ? pele : camisa} />
-      <Caixa tam={[C.bw * 0.92, 0.16, C.bd * 0.92]} pos={[0, -0.74, 0]} cor={pele} />
+      <group position={[0, -0.36, 0]} rotation={[lado < 0 ? cotE : cotD, 0, 0]}>
+        <Caixa tam={[C.bw * 0.94, 0.42, C.bd * 0.94]} pos={[0, -0.11, 0]} cor={manga ? pele : camisa} />
+        <Caixa tam={[C.bw * 0.92, 0.16, C.bd * 0.92]} pos={[0, -0.38, 0]} cor={pele} />
+      </group>
+      </group>
     </group>
   );
   const Perna = ({lado}: {lado: 1 | -1}) => (
     <group position={[lado * C.quadril, 0.8, 0]} rotation={[lado < 0 ? pernaE : pernaD, 0, lado < 0 ? pernaEz : pernaDz]}>
-      {meia ? (
-        <>
-          <Caixa tam={[C.pw, 0.34, C.pd]} pos={[0, -0.17, 0]} cor={calca} />
-          <Caixa tam={[C.pw * 0.9, 0.38, C.pd * 0.9]} pos={[0, -0.52, 0]} cor={meia} />
-        </>
-      ) : (
-        <Caixa tam={[C.pw, 0.7, C.pd]} pos={[0, -0.36, 0]} cor={calca} />
-      )}
-      <Caixa tam={[C.pw + 0.04, 0.13, C.pd + 0.12]} pos={[0, -0.735, 0.05]} cor={sapato} />
+      <Caixa tam={[C.pw, 0.38, C.pd]} pos={[0, -0.18, 0]} cor={calca} />
+      <group position={[0, -0.36, 0]} rotation={[lado < 0 ? joeE : joeD, 0, 0]}>
+        <Caixa tam={[C.pw * (meia ? 0.9 : 0.97), 0.34, C.pd * (meia ? 0.9 : 0.97)]} pos={[0, -0.16, 0]} cor={meia ?? calca} />
+        <Caixa tam={[C.pw + 0.04, 0.13, C.pd + 0.12]} pos={[0, -0.375, 0.05]} cor={sapato} />
+      </group>
     </group>
   );
 
   return (
     <ArredCtx.Provider value={arredondado}>
-      <group position={[posicao[0], posicao[1] + pulo, posicao[2]]} rotation={[0, rotacaoY, 0]} scale={escala}>
-        <group rotation={[inclina, 0, 0]}>
+      <group position={[posicao[0], posicao[1] + pulo, posicao[2]]} rotation={[0, rotacaoY, 0]} scale={[escala * esXZ, escala * esY, escala * esXZ]}>
+        <group rotation={[inclina, quadrilY, 0]}>
           <Perna lado={-1} />
           <Perna lado={1} />
           {/* Tronco */}
@@ -341,24 +331,38 @@ export const Bloquinho = ({
           <Braco lado={1} />
           {/* Pescoço + Cabeça */}
           <Caixa tam={[0.22, 0.12, 0.22]} pos={[0, 1.62 + respira, 0]} cor={pele} sombra={false} />
-          <group position={[0, 1.6 + H.h / 2 + respira, 0]}>
-            <Caixa tam={[H.w, H.h, H.d]} cor={pele} raio={arredondado ? H.r : 0} />
+          <group position={[tremor, 1.6 + respira, 0]} rotation={giroCab}>
+          <group position={[0, H.h / 2, 0]}>
+            <Caixa tam={[H.w, H.h, H.d]} cor={corRosto} raio={arredondado ? H.r : 0} />
             {/* Olhos */}
             {[-ex, ex].map((x) =>
               olhos === 'grandes' ? (
                 <group key={x} position={[x, 0.05, zf]}>
-                  <Caixa tam={[0.13, piscando ? 0.02 : expressao === 'cansado' ? 0.07 : 0.15, 0.015]} cor="#ffffff" emissivo={0.35} sombra={false} />
-                  {!piscando && <Caixa tam={[0.06, expressao === 'cansado' ? 0.045 : 0.075, 0.02]} pos={[0.008, -0.015, 0.006]} cor="#1a1a1a" sombra={false} />}
+                  <Caixa
+                    tam={[ex_ === 'surpreso' ? 0.15 : 0.13, piscando ? 0.02 : ex_ === 'cansado' ? 0.07 : ex_ === 'rindo' ? 0.035 : ex_ === 'surpreso' ? 0.18 : ex_ === 'nojo' && x > 0 ? 0.06 : 0.15, 0.015]}
+                    cor="#ffffff"
+                    emissivo={0.35}
+                    sombra={false}
+                  />
+                  {!piscando && ex_ !== 'rindo' && (
+                    <Caixa
+                      tam={[ex_ === 'surpreso' ? 0.05 : 0.06, ex_ === 'cansado' ? 0.045 : ex_ === 'surpreso' ? 0.06 : 0.075, 0.02]}
+                      pos={[ol[0] * 0.028, ol[1] * 0.035 - 0.01, 0.006]}
+                      cor="#1a1a1a"
+                      sombra={false}
+                    />
+                  )}
+                  {!piscando && ex_ !== 'rindo' && <Caixa tam={[0.02, 0.02, 0.01]} pos={[ol[0] * 0.028 + 0.015, ol[1] * 0.035 + 0.015, 0.018]} cor="#ffffff" emissivo={1} sombra={false} />}
                 </group>
               ) : (
-                <Caixa key={x} tam={[0.08, piscando ? 0.015 : olhoAlt, 0.02]} pos={[x, 0.06, zf]} cor="#1a1a1a" sombra={false} />
+                <Caixa key={x} tam={[0.08, piscando ? 0.015 : olhoAlt, 0.02]} pos={[x + ol[0] * 0.015, 0.06 + ol[1] * 0.012, zf]} cor="#1a1a1a" sombra={false} />
               ),
             )}
             {/* Sobrancelhas */}
             {[-ex, ex].map((x) => (
-              <Caixa key={x} tam={[0.13, 0.03, 0.02]} pos={[x, sobY, zf + 0.002]} rot={[0, 0, x > 0 ? sobAng : -sobAng]} cor={corCabelo ?? corCab} sombra={false} />
+              <Caixa key={x} tam={[0.13, ex_ === 'furioso' ? 0.045 : 0.03, 0.02]} pos={[x, sobY + (ex_ === 'pensativo' && x > 0 ? 0.05 : 0) + riso, zf + 0.002]} rot={[0, 0, x > 0 ? sobAng : -sobAng]} cor={corCabelo ?? corCab} sombra={false} />
             ))}
-            {nariz && <Caixa tam={[0.08, 0.1, 0.06]} pos={[0, -0.02, zf + 0.02]} cor={pele} raio={arredondado ? 0.025 : 0} sombra={false} />}
+            {nariz && <Caixa tam={[0.08, 0.1, 0.06]} pos={[0, -0.02, zf + 0.02]} cor={corRosto} raio={arredondado ? 0.025 : 0} sombra={false} />}
             {/* Barba (atrás da boca) */}
             {barba === 'curta' && (
               <>
@@ -371,7 +375,19 @@ export const Bloquinho = ({
             {barba === 'cavanhaque' && <Caixa tam={[0.16, 0.12, 0.05]} pos={[0, -H.h * 0.36, zf]} cor={corBar} sombra={false} />}
             {barba === 'cheia' && <Caixa tam={[H.w + 0.03, H.h * 0.42, 0.08]} pos={[0, -H.h * 0.3, zf - 0.01]} cor={corBar} />}
             {/* Boca */}
-            <Caixa tam={[larguraBoca, alturaBoca, 0.02]} pos={[0, -0.13, zBoca]} cor="#3a1a1a" sombra={false} />
+            <Caixa tam={[larguraBoca, alturaBoca, 0.02]} pos={[bocaX, -0.13 - (ex_ === 'rindo' ? 0.03 : 0), zBoca]} cor="#3a1a1a" sombra={false} />
+            {ex_ === 'rindo' && (
+              <>
+                <Caixa tam={[larguraBoca * 0.86, 0.03, 0.022]} pos={[0, -0.13 + alturaBoca / 2 - 0.035, zBoca + 0.002]} cor="#ffffff" sombra={false} />
+                <Caixa tam={[larguraBoca * 0.5, 0.04, 0.022]} pos={[0, -0.13 - alturaBoca / 2 - 0.01, zBoca + 0.002]} cor="#e05a6a" sombra={false} />
+              </>
+            )}
+            {ex_ === 'furioso' && <Caixa tam={[larguraBoca * 0.9, 0.035, 0.024]} pos={[0, -0.13, zBoca + 0.002]} cor="#ffffff" sombra={false} />}
+            {ex_ === 'nojo' && <Caixa tam={[0.07, 0.07, 0.022]} pos={[0.04, -0.17, zBoca + 0.002]} cor="#e05a6a" sombra={false} />}
+            {ex_ === 'confiante' && <Caixa tam={[0.05, 0.04, 0.02]} pos={[0.13, -0.105, zBoca]} cor="#3a1a1a" sombra={false} />}
+            {/* bochechas coradas */}
+            {(ex_ === 'feliz' || ex_ === 'rindo' || ex_ === 'confiante') && olhos === 'grandes' &&
+              [-1, 1].map((l) => <Caixa key={l} tam={[0.09, 0.05, 0.01]} pos={[l * (ex + 0.03), -0.06, zf - 0.002]} cor="#ff8a8a" sombra={false} />)}
             {expressao === 'feliz' && !bocaAberta && (
               <>
                 <Caixa tam={[0.04, 0.04, 0.02]} pos={[-0.11, -0.105, zBoca]} cor="#3a1a1a" sombra={false} />
@@ -400,6 +416,7 @@ export const Bloquinho = ({
               ))}
             {/* Cabelos */}
             <CabeloPecas estilo={estiloCabelo} cor={corCab} H={H} />
+            {(emote || ex_ === 'furioso') && <EmoteIcone tipo={emote ?? 'raiva'} k={emoteK} y={H.h / 2 + 0.42} frame={frame} />}
             {capacete && (
               <>
                 <Caixa tam={[H.w + 0.1, 0.24, H.d + 0.1]} pos={[0, H.h / 2 + 0.06, 0]} cor={capacete} />
@@ -440,9 +457,234 @@ export const Bloquinho = ({
               </group>
             )}
           </group>
+          </group>
         </group>
       </group>
     </ArredCtx.Provider>
+  );
+};
+
+// ---------------- Poses ----------------
+export type Angulos = {
+  bE: number; bD: number; bEz: number; bDz: number; bEy: number; bDy: number; cE: number; cD: number;
+  pE: number; pD: number; pEz: number; pDz: number; jE: number; jD: number;
+  pulo: number; inclina: number; qY: number; cab: number;
+};
+export const angulosDaPose = (pose: Pose, t: number): Angulos => {
+  const a: Angulos = {bE: 0, bD: 0, bEz: 0.08, bDz: -0.08, bEy: 0, bDy: 0, cE: -0.12, cD: -0.12, pE: 0, pD: 0, pEz: 0, pDz: 0, jE: 0, jD: 0, pulo: 0, inclina: 0, qY: 0, cab: 0};
+  if (pose === 'andar' || pose === 'correr') {
+    const k = pose === 'correr' ? 0.5 : 0.3;
+    const amp = pose === 'correr' ? 1.1 : 0.7;
+    const s = Math.sin(t * k);
+    a.bE = s * amp;
+    a.bD = -s * amp;
+    a.cE = a.cD = pose === 'correr' ? -1.3 : -0.35;
+    a.pE = -s * amp * 0.85;
+    a.pD = s * amp * 0.85;
+    // joelho dobra quando a perna vai para trás
+    a.jE = Math.max(0, s) * (pose === 'correr' ? 1.3 : 0.6);
+    a.jD = Math.max(0, -s) * (pose === 'correr' ? 1.3 : 0.6);
+    a.pulo = Math.abs(Math.cos(t * k)) * (pose === 'correr' ? 0.14 : 0.05);
+    if (pose === 'correr') a.inclina = 0.15;
+  } else if (pose === 'remar') {
+    const s = Math.sin(t * 0.18);
+    a.bE = a.bD = -1.2 + s * 0.6;
+    a.cE = a.cD = -0.4 - s * 0.3;
+    a.inclina = s * 0.18;
+  } else if (pose === 'manivela') {
+    const g = t * 0.45;
+    a.bE = -1.3 + Math.sin(g) * 0.45;
+    a.bD = -1.3 + Math.sin(g + Math.PI) * 0.45;
+    a.cE = a.cD = 0;
+    a.pE = Math.sin(g) * 0.5 - 0.4;
+    a.pD = Math.sin(g + Math.PI) * 0.5 - 0.4;
+    a.jE = 0.5 + Math.sin(g) * 0.3;
+    a.jD = 0.5 - Math.sin(g) * 0.3;
+  } else if (pose === 'acenar') {
+    a.bD = Math.PI * 0.85;
+    a.bDz = -0.3;
+    a.cD = -0.5 + Math.sin(t * 0.45) * 0.45;
+  } else if (pose === 'comemorar') {
+    a.bE = a.bD = Math.PI * 0.95;
+    a.bEz = 0.35 + Math.sin(t * 0.5) * 0.15;
+    a.bDz = -0.35 - Math.sin(t * 0.5) * 0.15;
+    a.cE = a.cD = -0.2;
+    a.pulo = Math.abs(Math.sin(t * 0.25)) * 0.35;
+    a.jE = a.jD = a.pulo > 0.05 ? 0 : 0.4;
+  } else if (pose === 'pular') {
+    const f = Math.abs(Math.sin(t * 0.2));
+    a.pulo = f * 0.6;
+    a.bE = a.bD = Math.PI * 0.8 * f;
+    a.bEz = 0.3;
+    a.bDz = -0.3;
+    a.jE = a.jD = (1 - f) * 0.8;
+    a.pE = a.pD = -(1 - f) * 0.4;
+  } else if (pose === 'apontar') {
+    a.bD = -Math.PI / 2;
+    a.cD = 0;
+    a.bE = Math.sin(t * 0.1) * 0.08;
+  } else if (pose === 'susto') {
+    a.bE = a.bD = Math.PI * 0.7;
+    a.bEz = 0.7;
+    a.bDz = -0.7;
+    a.cE = a.cD = -0.6;
+    a.pulo = Math.abs(Math.sin(t * 0.9)) * 0.05;
+    a.inclina = -0.12;
+  } else if (pose === 'siu') {
+    a.bE = a.bD = 0.35;
+    a.bEz = -0.75;
+    a.bDz = 0.75;
+    a.cE = a.cD = 0;
+    a.pEz = -0.22;
+    a.pDz = 0.22;
+    a.inclina = -0.12;
+  } else if (pose === 'chutar') {
+    const ciclo = (t % 40) / 40;
+    const k = ciclo < 0.35 ? -ciclo / 0.35 : ciclo < 0.55 ? -1 + ((ciclo - 0.35) / 0.2) * 2.4 : 1.4 - ((ciclo - 0.55) / 0.45) * 1.4;
+    a.pD = -k * 0.9;
+    a.jD = k < 0 ? -k * 1.2 : 0;
+    a.bE = k * 0.5;
+    a.bEz = 0.5;
+    a.bD = -k * 0.3;
+    a.inclina = -k * 0.08;
+  } else if (pose === 'sentado') {
+    a.pE = a.pD = -Math.PI / 2;
+    a.jE = a.jD = 1.1;
+    a.bE = a.bD = -0.6;
+    a.cE = a.cD = -0.5;
+  } else if (pose === 'bracosCruzados') {
+    a.bE = a.bD = -0.5;
+    a.bEz = a.bDz = 0;
+    a.bEy = 1.0;
+    a.bDy = -1.0;
+    a.cE = -1.45;
+    a.cD = -1.7;
+  } else if (pose === 'pensar') {
+    // mão direita no queixo, braço esquerdo apoiando o cotovelo
+    a.bD = -0.45;
+    a.bDz = 0;
+    a.bDy = -1.15;
+    a.cD = -2.5;
+    a.bE = -0.45;
+    a.bEz = 0;
+    a.bEy = 1.15;
+    a.cE = -1.5;
+    a.cab = 0.08;
+  } else if (pose === 'maosNaCintura') {
+    a.bEz = -0.7;
+    a.bDz = 0.7;
+    a.bEy = Math.PI / 2;
+    a.bDy = -Math.PI / 2;
+    a.cE = a.cD = -1.6;
+    a.pEz = -0.1;
+    a.pDz = 0.1;
+  } else if (pose === 'facepalm') {
+    a.bD = -0.9;
+    a.bDz = 0;
+    a.bDy = -0.9;
+    a.cD = -2.45;
+    a.cab = 0.3;
+    a.inclina = 0.08;
+  } else if (pose === 'dancar') {
+    const s = Math.sin(t * 0.35);
+    a.bE = Math.PI * 0.55 + s * 0.6;
+    a.bD = Math.PI * 0.55 - s * 0.6;
+    a.bEz = 0.4;
+    a.bDz = -0.4;
+    a.cE = a.cD = -0.9;
+    a.qY = s * 0.35;
+    a.pulo = Math.abs(Math.cos(t * 0.35)) * 0.12;
+    a.jE = Math.max(0, s) * 0.5;
+    a.jD = Math.max(0, -s) * 0.5;
+  } else if (pose === 'encolher') {
+    a.bEz = -0.3;
+    a.bDz = 0.3;
+    a.bEy = -0.7;
+    a.bDy = 0.7;
+    a.cE = a.cD = -1.4;
+    a.cab = -0.05;
+  } else if (pose === 'segurar') {
+    a.bE = a.bD = -0.4;
+    a.bEz = a.bDz = 0;
+    a.bEy = 0.3;
+    a.bDy = -0.3;
+    a.cE = a.cD = -1.2;
+  } else if (pose === 'mastigar') {
+    a.cab = Math.sin(t * 0.6) * 0.04;
+  }
+  return a;
+};
+
+export const misturaCor = (a: string, b: string, k: number) => {
+  const pa = parseInt(a.slice(1), 16);
+  const pb = parseInt(b.slice(1), 16);
+  const c = (sh: number) => Math.round(((pa >> sh) & 255) * (1 - k) + ((pb >> sh) & 255) * k);
+  return `#${((c(16) << 16) | (c(8) << 8) | c(0)).toString(16).padStart(6, '0')}`;
+};
+
+// ---------------- Ícones de emoção (3D) ----------------
+const Mat = ({cor, emi = 0.5}: {cor: string; emi?: number}) => <meshStandardMaterial color={cor} emissive={cor} emissiveIntensity={emi} roughness={0.4} />;
+export const EmoteIcone = ({tipo, k, y, frame}: {tipo: Emote; k: number; y: number; frame: number}) => {
+  const bob = Math.sin(frame * 0.2) * 0.04;
+  const esc = Math.max(0, k) * (1 + Math.sin(frame * 0.3) * 0.05);
+  if (esc <= 0.001) return null;
+  const pos: V3 = tipo === 'raiva' ? [0.28, y - 0.12 + bob, 0.1] : tipo === 'gota' ? [0.36, y - 0.25 + bob, 0.1] : [0.05, y + bob, 0];
+  return (
+    <group position={pos} scale={esc}>
+      {tipo === 'exclamacao' && (
+        <>
+          <mesh position={[0, 0.12, 0]}><boxGeometry args={[0.09, 0.28, 0.09]} /><Mat cor="#ffd23f" /></mesh>
+          <mesh position={[0, -0.1, 0]}><boxGeometry args={[0.09, 0.09, 0.09]} /><Mat cor="#ffd23f" /></mesh>
+        </>
+      )}
+      {tipo === 'interrogacao' && (
+        <>
+          <mesh position={[0, 0.16, 0]} rotation={[0, 0, -0.3]}><torusGeometry args={[0.09, 0.035, 8, 16, Math.PI * 1.4]} /><Mat cor="#4cc9f0" /></mesh>
+          <mesh position={[0, 0.0, 0]}><boxGeometry args={[0.07, 0.1, 0.07]} /><Mat cor="#4cc9f0" /></mesh>
+          <mesh position={[0, -0.12, 0]}><boxGeometry args={[0.07, 0.07, 0.07]} /><Mat cor="#4cc9f0" /></mesh>
+        </>
+      )}
+      {tipo === 'raiva' &&
+        [0, 1, 2, 3].map((i) => (
+          <mesh key={i} rotation={[0, 0, (i * Math.PI) / 2 + Math.PI / 4]} position={[Math.cos((i * Math.PI) / 2 + Math.PI / 4) * 0.06, Math.sin((i * Math.PI) / 2 + Math.PI / 4) * 0.06, 0]}>
+            <boxGeometry args={[0.04, 0.09, 0.04]} />
+            <Mat cor="#ff2d2d" emi={0.7} />
+          </mesh>
+        ))}
+      {tipo === 'gota' && (
+        <mesh scale={[0.8, 1.2, 0.8]} position={[0, -((frame % 30) / 30) * 0.15, 0]}>
+          <sphereGeometry args={[0.07, 12, 10]} />
+          <meshStandardMaterial color="#8fd3ff" transparent opacity={0.9} emissive="#8fd3ff" emissiveIntensity={0.3} />
+        </mesh>
+      )}
+      {tipo === 'brilho' &&
+        [[-0.15, 0.05, 1], [0.12, 0.15, 0.7], [0.1, -0.08, 0.55]].map(([x, yy, e], i) => (
+          <group key={i} position={[x, yy, 0]} rotation={[0, 0, frame * 0.05 + i]} scale={e * (0.8 + Math.abs(Math.sin(frame * 0.25 + i)) * 0.4)}>
+            <mesh><boxGeometry args={[0.04, 0.2, 0.02]} /><Mat cor="#fff6a8" emi={1.2} /></mesh>
+            <mesh><boxGeometry args={[0.2, 0.04, 0.02]} /><Mat cor="#fff6a8" emi={1.2} /></mesh>
+          </group>
+        ))}
+      {tipo === 'ideia' && (
+        <>
+          <mesh position={[0, 0.08, 0]}><sphereGeometry args={[0.13, 16, 12]} /><Mat cor="#ffe066" emi={1.4} /></mesh>
+          <mesh position={[0, -0.09, 0]}><cylinderGeometry args={[0.06, 0.06, 0.08, 12]} /><Mat cor="#9aa0a8" emi={0.1} /></mesh>
+        </>
+      )}
+      {tipo === 'coracao' && (
+        <group rotation={[0, 0, Math.PI / 4]} scale={1 + Math.abs(Math.sin(frame * 0.3)) * 0.15}>
+          <mesh><boxGeometry args={[0.16, 0.16, 0.08]} /><Mat cor="#ff4d6d" /></mesh>
+          <mesh position={[-0.08, 0, 0]}><cylinderGeometry args={[0.08, 0.08, 0.08, 16]} /><Mat cor="#ff4d6d" /></mesh>
+          <mesh position={[0, 0.08, 0]} rotation={[Math.PI / 2, 0, 0]}><cylinderGeometry args={[0.08, 0.08, 0.08, 16]} /><Mat cor="#ff4d6d" /></mesh>
+        </group>
+      )}
+      {tipo === 'zzz' &&
+        [0, 1, 2].map((i) => (
+          <mesh key={i} position={[i * 0.1, i * 0.12 + ((frame * 0.01) % 0.1), 0]} scale={0.6 + i * 0.2}>
+            <boxGeometry args={[0.12, 0.03, 0.02]} />
+            <Mat cor="#cfe8ff" />
+          </mesh>
+        ))}
+    </group>
   );
 };
 

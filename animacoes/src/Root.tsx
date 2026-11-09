@@ -2,6 +2,7 @@ import {Composition, Still} from 'remotion';
 import {Perfil} from './perfil/Perfil';
 import {CapaCanal} from './capa/CapaCanal';
 import {TestePersonagens} from './teste/TestePersonagens';
+import {TesteBoneco} from './teste/TesteBoneco';
 import {TesteCinema} from './teste/TesteCinema';
 import {ElevadorVideo} from './elevador/Elevador';
 import {FreioVideo} from './freio/Freio';
@@ -86,6 +87,7 @@ export const RemotionRoot = () => {
       <Composition id="Elevador" component={ElevadorVideo} durationInFrames={FRAMES_ELEV} fps={FPS_ELEV} width={1080} height={1920} />
       <Still id="TesteCinema" component={TesteCinema} width={1080} height={1920} defaultProps={{cinema: true}} />
       <Still id="TesteNormal" component={TesteCinema} width={1080} height={1920} defaultProps={{cinema: false}} />
+      <Still id="TesteBoneco" component={TesteBoneco} width={1920} height={1080} />
       <Still id="TestePersonagens" component={TestePersonagens} width={1920} height={1080} />
       <Still id="CapaCanal" component={CapaCanal} width={2560} height={1440} />
       <Still id="PerfilVermelho" component={Perfil} width={1080} height={1080} defaultProps={{fundo1: '#ff5a4f', fundo2: '#7a0f0a', camisa: '#1c2a4a', cabelo: '#2a1d14', boné: '#ffcc00'}} />

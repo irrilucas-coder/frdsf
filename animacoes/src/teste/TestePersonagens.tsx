@@ -2,25 +2,23 @@ import {Bloquinho} from '../submarino/Bloquinho';
 import {Palco} from '../submarino/Palco';
 
 // Vitrine das variações de personagem (só para conferir o visual)
-export const TestePersonagens = ({pos = [0, 1.6, 9.5], olha = [0, 1.1, 0], fov = 40}: {pos?: [number, number, number]; olha?: [number, number, number]; fov?: number}) => (
+export const TestePersonagens = ({pos = [0, 1.7, 12.5], olha = [0, 1.1, 0], fov = 40}: {pos?: [number, number, number]; olha?: [number, number, number]; fov?: number}) => (
   <Palco clima="interior" pos={pos} olha={olha} fov={fov} sombras={false} cinema>
     <mesh position={[0, 2, -1.5]}>
-      <boxGeometry args={[16, 6, 0.1]} />
+      <boxGeometry args={[30, 8, 0.1]} />
       <meshStandardMaterial color="#3a4a6a" />
     </mesh>
     <mesh rotation={[-Math.PI / 2, 0, 0]}>
       <planeGeometry args={[20, 20]} />
       <meshStandardMaterial color="#8a857a" />
     </mesh>
-    {/* jogador: forte, topete, camisa 7 */}
-    <Bloquinho posicao={[-2.6, 0, 0]} corpo="forte" cabeca="oval" cabelo="topete" corCabelo="#1a1410" pele="#d9a27a" camisa="#c8102e" manga="#c8102e" calca="#0b6b3a" numero="7" olhos="grandes" pose="siu" expressao="feliz" />
-    {/* técnico: gordinho, careca com barba grisalha */}
-    <Bloquinho posicao={[-0.9, 0, 0.3]} corpo="gordinho" cabeca="larga" cabelo="nenhum" barba="curta" corBarba="#bdbdbd" corCabelo="#9e9e9e" pele="#e8b48a" camisa="#1c2a4a" pose="bracosCruzados" expressao="serio" />
-    {/* jovem magra com rabo de cavalo */}
-    <Bloquinho posicao={[0.7, 0, 0.2]} corpo="magro" cabeca="redonda" cabelo="rabo" corCabelo="#7a3b12" pele="#f2c9a5" camisa="#ff5a9f" olhos="grandes" pose="acenar" />
-    {/* homem com black e cavanhaque */}
-    <Bloquinho posicao={[2.2, 0, 0]} cabeca="quadrada" cabelo="black" corCabelo="#1a1a1a" barba="cavanhaque" pele="#7a4b2e" camisa="#2a9d8f" pose="parado" expressao="emocionado" />
-    {/* senhor de bigode, cabelo lateral */}
-    <Bloquinho posicao={[3.6, 0, -0.2]} corpo="magro" cabeca="oval" cabelo="lateral" corCabelo="#d9d9d9" bigode pele="#f5c99b" camisa="#6a4c93" escala={0.95} expressao="triste" />
+    <Bloquinho posicao={[-5.6, 0, 0]} olhos="grandes" cabeca="redonda" cabelo="liso" corCabelo="#3a2414" camisa="#e63946" expressao="surpreso" pose="susto" emote="exclamacao" />
+    <Bloquinho posicao={[-4.0, 0, 0]} olhos="grandes" corpo="gordinho" cabeca="larga" cabelo="nenhum" barba="curta" corBarba="#6b4a2b" camisa="#f4a261" expressao="rindo" />
+    <Bloquinho posicao={[-2.4, 0, 0]} olhos="grandes" corpo="magro" cabeca="oval" cabelo="lateral" corCabelo="#1a1a1a" camisa="#457b9d" expressao="pensativo" pose="pensar" emote="interrogacao" />
+    <Bloquinho posicao={[-0.8, 0, 0]} olhos="grandes" corpo="forte" cabeca="quadrada" cabelo="moicano" corCabelo="#2a1d14" camisa="#264653" expressao="furioso" pose="maosNaCintura" />
+    <Bloquinho posicao={[0.8, 0, 0]} olhos="grandes" cabeca="redonda" cabelo="rabo" corCabelo="#7a3b12" camisa="#8ab17d" expressao="nojo" pose="segurar" />
+    <Bloquinho posicao={[2.4, 0, 0]} olhos="grandes" corpo="forte" cabeca="oval" cabelo="topete" corCabelo="#2b1d14" camisa="#6a4c93" expressao="confiante" pose="bracosCruzados" emote="brilho" />
+    <Bloquinho posicao={[4.0, 0, 0]} olhos="grandes" cabeca="quadrada" cabelo="black" corCabelo="#141414" pele="#7a4b2e" camisa="#2a9d8f" expressao="cansado" pose="facepalm" emote="gota" />
+    <Bloquinho posicao={[5.6, 0, 0]} olhos="grandes" corpo="magro" cabeca="redonda" cabelo="comprido" corCabelo="#d9a441" camisa="#ff5a9f" expressao="feliz" pose="dancar" emote="coracao" fase={3} />
   </Palco>
 );
