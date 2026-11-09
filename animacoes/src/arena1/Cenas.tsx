@@ -79,7 +79,7 @@ export const CenaGancho = () => {
   if (s < tSo) {
     return (
       <Palco cinema clima="espaco" pos={lerp3(s, tMilhao, tSo, [3.2, 2.6, 4.2], [2.2, 2.3, 3.2])} olha={[0, 1.5, -6]} fov={40} sombras={false}>
-        <Galpao />
+        <Galpao piscina={false} />
         <CuboPremio pos={[0, -0.55, -6]} escala={1.3} />
       </Palco>
     );
@@ -299,7 +299,7 @@ export const CenaRestam = () => {
   }
   return (
     <Palco cinema clima="espaco" pos={lerp3(s, tMilhao, D('restam'), [2.6, 2.4, 4.2], [1.6, 2.1, 3.2])} olha={[0, 1.7, -6]} fov={40} sombras={false}>
-      <Galpao />
+      <Galpao piscina={false} />
       <CuboPremio pos={[0, -0.55, -6]} escala={1.3} />
     </Palco>
   );
@@ -310,7 +310,7 @@ export const CenaFinal = () => {
   const s = useSeg();
   return (
     <Palco cinema clima="espaco" pos={lerp3(s, 0, D('final'), [0, 1.6, 6.2], [0, 1.55, 5.2])} olha={[0, 1.3, 0]} fov={42} sombras={false}>
-      <Galpao mostrarTelao={false} />
+      <Galpao mostrarTelao={false} piscina={false} />
       <J14 posicao={[-1.5, -0.55, 0]} rotacaoY={0.25} pose="bracosCruzados" expressao="confiante" />
       <J37 posicao={[0, -0.55, 0.3]} pose="maosNaCintura" expressao="confiante" />
       <J82 posicao={[1.5, -0.55, 0]} rotacaoY={-0.25} pose="acenar" expressao="feliz" suor />

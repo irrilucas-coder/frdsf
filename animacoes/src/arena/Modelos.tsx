@@ -11,12 +11,15 @@ const M = ({cor, emi = 0, op = 1, metal = 0, rug = 0.7}: {cor: string; emi?: num
 );
 
 export const LARANJA = '#ff7a1a';
-export const AZUL_PLAT = '#2f80ff';
+export const VERDE = '#2fb88a'; // macacão dos jogadores (verde-menta suave)
+export const ROSA_PLAT = '#ff7eb9';
+export const AMARELO_PLAT = '#ffd23f';
+export const AZUL_PLAT = '#3550ff';
 
 // ---------- Personagens ----------
-// Jogador: macacão laranja numerado
+// Jogador: macacão verde-menta numerado (contrasta com o cenário colorido)
 export const Jogador = ({numero, ...p}: BP & {numero: string}) => (
-  <Boneco camisa={LARANJA} manga={LARANJA} bermuda={LARANJA} pernas={LARANJA} sapato="#f2f2f2" numero={numero} {...p} />
+  <Boneco camisa={VERDE} manga={VERDE} bermuda={VERDE} pernas={VERDE} sapato="#f7f7f7" numero={numero} {...p} />
 );
 // Apresentador: terno preto, viseira amarela e microfone
 export const Apresentador = (p: BP) => (
@@ -144,15 +147,17 @@ export const Plataformas = ({afunda = {}, balanca = {}, brilhoAzul = 0}: {afunda
         const b = balanca[p.id] ?? 0;
         if (a >= 1) return null;
         const azul = p.cor === 'azul';
+        const corBase = azul ? AZUL_PLAT : p.id % 2 ? ROSA_PLAT : AMARELO_PLAT;
+        const corTopo = azul ? '#7d8cff' : p.id % 2 ? '#ffc2de' : '#fff0a8';
         return (
           <group key={p.id} position={[p.x, 0.18 - a * 1.2 + Math.sin(frame * 0.08 + p.id) * 0.02, p.z]} rotation={[Math.sin(frame * 0.5) * 0.12 * b + a * 0.4, 0, Math.cos(frame * 0.45) * 0.1 * b - a * 0.3]}>
             <mesh>
               <cylinderGeometry args={[0.9, 0.85, 0.3, 6]} />
-              <M cor={azul ? AZUL_PLAT : LARANJA} emi={azul ? 0.25 + brilhoAzul * (0.6 + Math.sin(frame * 0.4) * 0.3) : 0.15} />
+              <M cor={corBase} emi={azul ? 0.25 + brilhoAzul * (0.6 + Math.sin(frame * 0.4) * 0.3) : 0.15} />
             </mesh>
             <mesh position={[0, 0.16, 0]}>
               <cylinderGeometry args={[0.78, 0.78, 0.02, 6]} />
-              <M cor={azul ? '#8fc0ff' : '#ffc08a'} />
+              <M cor={corTopo} />
             </mesh>
           </group>
         );
@@ -215,52 +220,105 @@ export const Respingo = ({pos, s}: {pos: V3; s: number}) => {
   );
 };
 
-// ---------- O galpão da arena ----------
-export const Galpao = ({telao = ['R$ 1.000.000', 'ARENA DO MILHÃO'], mostrarTelao = true}: {telao?: string[]; mostrarTelao?: boolean}) => {
+// ---------- O galpão da arena (colorido, estilo game show) ----------
+const PAREDES = ['#7ec8ff', '#ff9ecf', '#ffd966', '#b79cff', '#ff9e7a', '#8fe3ff', '#ffb3d9', '#ffe28a'];
+export const Galpao = ({telao = ['R$ 1.000.000', 'ARENA DO MILHÃO'], mostrarTelao = true, piscina = true}: {telao?: string[]; mostrarTelao?: boolean; piscina?: boolean}) => {
   const frame = useCurrentFrame();
   return (
     <group>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.55, 0]}>
-        <circleGeometry args={[40, 24]} />
-        <M cor="#1b2030" />
-      </mesh>
-      {/* faixas de LED no chão */}
-      {[-9.5, 9.5].map((x) => (
-        <mesh key={x} position={[x, -0.53, 0]}>
-          <boxGeometry args={[0.15, 0.02, 14]} />
-          <M cor={LARANJA} emi={2} />
-        </mesh>
-      ))}
-      {/* paredes octogonais escuras com faixas de luz */}
+      {/* piso em ladrilhos pastel */}
+      {Array.from({length: 22}, (_, i) =>
+        Array.from({length: 22}, (_, j) => {
+          const x = -22 + i * 2 + 1;
+          const z = -22 + j * 2 + 1;
+          if (piscina && Math.abs(x) < 8.6 && Math.abs(z) < 5.9) return null; // piscina
+          return (
+            <mesh key={`${i}-${j}`} position={[x, -0.6, z]}>
+              <boxGeometry args={[1.96, 0.1, 1.96]} />
+              <M cor={['#ffd1e8', '#fff1b8', '#e3d4ff', '#cdeeff'][(i + j * 3) % 4]} />
+            </mesh>
+          );
+        }),
+      )}
+      {/* paredes pintadas com formas geométricas */}
       {Array.from({length: 8}, (_, i) => {
         const a = (i / 8) * Math.PI * 2;
+        const cor = PAREDES[i];
         return (
           <group key={i} position={[Math.sin(a) * 22, 6, Math.cos(a) * 22]} rotation={[0, a + Math.PI, 0]}>
             <mesh>
               <boxGeometry args={[18.5, 14, 0.4]} />
-              <M cor="#11162a" />
+              <M cor={cor} />
             </mesh>
-            {[-3, 0, 3].map((y, k) => (
-              <mesh key={k} position={[0, y, 0.25]}>
-                <boxGeometry args={[17, 0.12, 0.05]} />
-                <M cor={k === 1 ? LARANJA : '#2f80ff'} emi={1.6 + Math.sin(frame * 0.1 + i) * 0.4} />
+            {/* círculos, triângulos e faixas em cor contrastante */}
+            <mesh position={[-5, 1.5, 0.25]} rotation={[Math.PI / 2, 0, 0]}>
+              <cylinderGeometry args={[1.8, 1.8, 0.1, 20]} />
+              <M cor="#ffffff" emi={0.1} />
+            </mesh>
+            <mesh position={[4.5, 2, 0.25]} rotation={[Math.PI / 2, 0, 0.3]}>
+              <cylinderGeometry args={[2.2, 2.2, 0.1, 3]} />
+              <M cor={PAREDES[(i + 3) % 8]} emi={0.1} />
+            </mesh>
+            <mesh position={[0, -4.5, 0.25]}>
+              <boxGeometry args={[18.5, 1.2, 0.1]} />
+              <M cor={PAREDES[(i + 5) % 8]} />
+            </mesh>
+            {/* lâmpadas tipo camarim */}
+            {Array.from({length: 9}, (_, k) => (
+              <mesh key={k} position={[-8 + k * 2, 5.8, 0.3]}>
+                <sphereGeometry args={[0.18, 8, 6]} />
+                <meshStandardMaterial color="#fff6d0" emissive="#ffe08a" emissiveIntensity={(frame + k * 5 + i * 3) % 30 < 15 ? 2 : 0.6} />
               </mesh>
             ))}
           </group>
         );
       })}
+      {/* bandeirinhas cruzando a arena */}
+      {[-6, 0, 6].map((z, f) => (
+        <group key={f}>
+          {Array.from({length: 16}, (_, k) => {
+            const x = -15 + k * 2;
+            const y = 9 - Math.cos((k / 15 - 0.5) * Math.PI) * 1.2;
+            return (
+              <mesh key={k} position={[x, y, z]} rotation={[0, 0, Math.PI]}>
+                <coneGeometry args={[0.45, 0.9, 3]} />
+                <meshStandardMaterial color={PAREDES[(k + f) % 8]} flatShading emissive={PAREDES[(k + f) % 8]} emissiveIntensity={0.25} side={2} />
+              </mesh>
+            );
+          })}
+        </group>
+      ))}
+      {/* balões nos cantos */}
+      {[[-10, -7], [10, -7], [-10, 7], [10, 7]].map(([x, z], i) => (
+        <group key={i} position={[x, 0, z]}>
+          {[0, 1, 2].map((k) => (
+            <group key={k} position={[(k - 1) * 0.6, 2.2 + k * 0.3 + Math.sin(frame * 0.06 + k + i) * 0.1, (k % 2) * 0.4]}>
+              <mesh>
+                <sphereGeometry args={[0.45, 10, 8]} />
+                <meshStandardMaterial color={['#ff4f8b', '#ffd23f', '#4fa8ff'][(k + i) % 3]} roughness={0.25} emissive={['#ff4f8b', '#ffd23f', '#4fa8ff'][(k + i) % 3]} emissiveIntensity={0.15} />
+              </mesh>
+              <mesh position={[0, -1.1, 0]}>
+                <cylinderGeometry args={[0.01, 0.01, 1.6, 4]} />
+                <meshBasicMaterial color="#ffffff" />
+              </mesh>
+            </group>
+          ))}
+        </group>
+      ))}
       {/* telão */}
-      {mostrarTelao && <Telao pos={[0, 7.5, -14]} largura={10} linhas={[{t: telao[0], cor: '#ffd23f', tam: 150}, {t: telao[1], cor: '#ffffff', tam: 70}]} />}
-      {/* cones de luz do teto */}
-      {[[-6, -4], [6, -4], [-6, 4], [6, 4], [0, 0]].map(([x, z], i) => (
-        <mesh key={i} position={[x, 7, z]}>
+      {mostrarTelao && (
+        <Telao pos={[0, 7.5, -14]} largura={10} linhas={[{t: telao[0], cor: '#ffd23f', tam: 150}, {t: telao[1], cor: '#ffffff', tam: 70}]} />
+      )}
+      {/* cones de luz coloridos */}
+      {[[-6, -4, '#ff9ecf'], [6, -4, '#7ec8ff'], [-6, 4, '#ffd966'], [6, 4, '#b79cff'], [0, 0, '#ffffff']].map(([x, z, c], i) => (
+        <mesh key={i} position={[x as number, 7, z as number]}>
           <coneGeometry args={[2.2, 14, 20, 1, true]} />
-          <meshBasicMaterial color={i % 2 ? '#ffe6b0' : '#cfe3ff'} transparent opacity={0.05} side={2} depthWrite={false} />
+          <meshBasicMaterial color={c as string} transparent opacity={0.07} side={2} depthWrite={false} />
         </mesh>
       ))}
-      <hemisphereLight args={['#bcd4ff', '#2a2030', 0.9]} />
-      <directionalLight position={[4, 12, 6]} intensity={1.6} color="#fff2dc" />
-      <directionalLight position={[-6, 6, -6]} intensity={0.7} color="#7fb2ff" />
+      <hemisphereLight args={['#ffffff', '#ffd6ec', 1.25]} />
+      <directionalLight position={[4, 12, 6]} intensity={1.8} color="#fff6e6" />
+      <directionalLight position={[-6, 6, -6]} intensity={0.8} color="#cfe6ff" />
     </group>
   );
 };
@@ -279,7 +337,7 @@ export const Multidao = ({n = 70, centro = [0, 0, 8] as V3, largura = 14, prof =
           <group key={i} position={[x, bob, z]}>
             <mesh position={[0, 0.75, 0]}>
               <cylinderGeometry args={[0.2, 0.18, 1.1, 6]} />
-              <M cor={LARANJA} />
+              <M cor={VERDE} />
             </mesh>
             <mesh position={[0, 1.55, 0]}>
               <icosahedronGeometry args={[0.28, 0]} />
