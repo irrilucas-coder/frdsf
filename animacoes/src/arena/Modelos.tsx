@@ -323,68 +323,177 @@ export const Galpao = ({telao = ['R$ 1.000.000', 'ARENA DO MILHÃO'], mostrarTel
   );
 };
 
-// Multidão simples (jogadores ao fundo, baratos de desenhar)
-export const Multidao = ({n = 70, centro = [0, 0, 8] as V3, largura = 14, prof = 4}: {n?: number; centro?: V3; largura?: number; prof?: number}) => {
+// Multidão (jogadores ao fundo): cada um com rosto, corpo, cabelo, pele e acessórios diferentes
+const PELES = ['#f6d0b0', '#f0c49a', '#e8b48a', '#c98d64', '#a86b45', '#8a5a3c', '#6b4128'];
+const CABELOS = ['#141414', '#2a1d14', '#4a2e1a', '#7a3b12', '#a0522d', '#d9a441', '#d9d9d9'];
+const rndI = (i: number, k: number) => {
+  const x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453;
+  return x - Math.floor(x);
+};
+const PessoaMultidao = ({i, pos}: {i: number; pos: V3}) => {
   const frame = useCurrentFrame();
+  const pele = PELES[Math.floor(rndI(i, 1) * PELES.length)];
+  const corCab = CABELOS[Math.floor(rndI(i, 2) * CABELOS.length)];
+  const tipoCab = Math.floor(rndI(i, 3) * 6); // 0 careca, 1 curto, 2 tigela, 3 coque, 4 cacheado, 5 comprido
+  const largura = 0.75 + rndI(i, 4) * 0.6; // magro → gordinho
+  const altura = 0.85 + rndI(i, 5) * 0.3;
+  const oculos = rndI(i, 6) > 0.8;
+  const barba = rndI(i, 7) > 0.78;
+  const expr = Math.floor(rndI(i, 8) * 4); // 0 sério, 1 sorriso, 2 boca aberta (surpreso), 3 preocupado
+  const bob = Math.abs(Math.sin(frame * 0.1 + i)) * 0.04;
+  const pisca = (frame + i * 13) % 100 < 3;
+  const R = 0.28;
   return (
-    <group position={centro}>
-      {Array.from({length: n}, (_, i) => {
-        const x = (((i * 61) % 100) / 100 - 0.5) * largura;
-        const z = (((i * 37) % 100) / 100 - 0.5) * prof;
-        const pele = ['#f0c49a', '#c98d64', '#8a5a3c', '#e8b48a'][i % 4];
-        const bob = Math.abs(Math.sin(frame * 0.1 + i)) * 0.04;
-        return (
-          <group key={i} position={[x, bob, z]} rotation={[0, ((i * 29) % 10) / 10 - 0.5, 0]}>
-            {/* pernas e tênis */}
-            {[-0.1, 0.1].map((lx) => (
-              <group key={lx}>
-                <mesh position={[lx, 0.35, 0]}>
-                  <cylinderGeometry args={[0.06, 0.055, 0.6, 6]} />
-                  <M cor={VERDE} />
-                </mesh>
-                <mesh position={[lx, 0.05, 0.04]} scale={[0.8, 0.45, 1.3]}>
-                  <sphereGeometry args={[0.09, 6, 5]} />
-                  <M cor="#f7f7f7" />
-                </mesh>
-              </group>
-            ))}
-            {/* tronco */}
-            <mesh position={[0, 0.95, 0]}>
-              <cylinderGeometry args={[0.23, 0.2, 0.6, 7]} />
-              <M cor={VERDE} />
+    <group position={[pos[0], pos[1] + bob, pos[2]]} rotation={[0, (rndI(i, 9) - 0.5) * 0.9, 0]} scale={[1, altura, 1]}>
+      {[-0.1, 0.1].map((lx) => (
+        <group key={lx}>
+          <mesh position={[lx * largura, 0.35, 0]}>
+            <cylinderGeometry args={[0.06, 0.055, 0.6, 6]} />
+            <M cor={VERDE} />
+          </mesh>
+          <mesh position={[lx * largura, 0.05, 0.04]} scale={[0.8, 0.45, 1.3]}>
+            <sphereGeometry args={[0.09, 6, 5]} />
+            <M cor="#f7f7f7" />
+          </mesh>
+        </group>
+      ))}
+      <mesh position={[0, 0.95, 0]} scale={[largura, 1, largura]}>
+        <cylinderGeometry args={[0.23, 0.21 + (largura - 0.75) * 0.1, 0.6, 7]} />
+        <M cor={VERDE} />
+      </mesh>
+      {/* placa do número */}
+      <mesh position={[0, 1.0, 0.2 * largura + 0.02]}>
+        <boxGeometry args={[0.16, 0.12, 0.01]} />
+        <meshStandardMaterial color="#ffffff" />
+      </mesh>
+      {[-1, 1].map((l) => (
+        <group key={l} position={[l * 0.27 * largura, 1.2, 0]} rotation={[Math.sin(frame * 0.12 + i + l) * 0.25, 0, l * 0.12]}>
+          <mesh>
+            <sphereGeometry args={[0.11, 6, 5]} />
+            <M cor={VERDE} />
+          </mesh>
+          <mesh position={[0, -0.28, 0]}>
+            <cylinderGeometry args={[0.045, 0.04, 0.5, 6]} />
+            <M cor={pele} />
+          </mesh>
+          <mesh position={[0, -0.56, 0]}>
+            <sphereGeometry args={[0.06, 5, 4]} />
+            <M cor={pele} />
+          </mesh>
+        </group>
+      ))}
+      {/* cabeça com rosto */}
+      <group position={[0, 1.55, 0]} scale={[1, 1 / altura, 1]}>
+        <mesh>
+          <icosahedronGeometry args={[R, 1]} />
+          <M cor={pele} />
+        </mesh>
+        {[-1, 1].map((l) => (
+          <group key={l}>
+            <mesh position={[l * 0.09, 0.03, R * 0.9]} scale={[0.04, pisca ? 0.008 : expr === 2 ? 0.07 : 0.055, 0.02]}>
+              <sphereGeometry args={[1, 8, 6]} />
+              <meshStandardMaterial color="#141414" />
             </mesh>
-            {/* ombros bufantes e braços */}
-            {[-1, 1].map((l) => (
-              <group key={l} position={[l * 0.27, 1.2, 0]} rotation={[Math.sin(frame * 0.12 + i + l) * 0.25, 0, l * 0.12]}>
-                <mesh>
-                  <sphereGeometry args={[0.11, 6, 5]} />
-                  <M cor={VERDE} />
-                </mesh>
-                <mesh position={[0, -0.28, 0]}>
-                  <cylinderGeometry args={[0.045, 0.04, 0.5, 6]} />
-                  <M cor={pele} />
-                </mesh>
-                <mesh position={[0, -0.56, 0]}>
-                  <sphereGeometry args={[0.06, 5, 4]} />
-                  <M cor={pele} />
-                </mesh>
-              </group>
-            ))}
-            {/* cabeça e cabelo */}
-            <mesh position={[0, 1.55, 0]}>
-              <icosahedronGeometry args={[0.28, 1]} />
-              <M cor={pele} />
+            {!pisca && (
+              <mesh position={[l * 0.09 + 0.012, 0.05, R * 0.95]}>
+                <sphereGeometry args={[0.011, 5, 4]} />
+                <meshBasicMaterial color="#ffffff" />
+              </mesh>
+            )}
+            <mesh position={[l * 0.09, 0.12, R * 0.86]} rotation={[0, 0, expr === 3 ? -l * 0.35 : 0]}>
+              <boxGeometry args={[0.07, 0.016, 0.02]} />
+              <meshStandardMaterial color={corCab === '#d9d9d9' ? '#8a8a8a' : corCab} />
             </mesh>
-            <mesh position={[0, 1.66, -0.04]} scale={[1.05, 0.7, 1.05]}>
-              <icosahedronGeometry args={[0.27, 1]} />
-              <M cor={['#2a1d14', '#141414', '#7a3b12', '#d9a441'][i % 4]} />
-            </mesh>
+            {oculos && (
+              <mesh position={[l * 0.09, 0.03, R * 0.98]}>
+                <torusGeometry args={[0.05, 0.009, 5, 12]} />
+                <meshStandardMaterial color="#222" />
+              </mesh>
+            )}
           </group>
-        );
-      })}
+        ))}
+        {/* boca */}
+        {expr === 1 ? (
+          <mesh position={[0, -0.07, R * 0.9]} rotation={[0, 0, Math.PI]}>
+            <torusGeometry args={[0.045, 0.01, 5, 10, Math.PI]} />
+            <meshStandardMaterial color="#5a1f1f" />
+          </mesh>
+        ) : expr === 2 ? (
+          <mesh position={[0, -0.09, R * 0.9]} scale={[0.035, 0.045, 0.02]}>
+            <sphereGeometry args={[1, 8, 6]} />
+            <meshStandardMaterial color="#4a1515" />
+          </mesh>
+        ) : (
+          <mesh position={[0, -0.09, R * 0.9]}>
+            <boxGeometry args={[0.07, 0.013, 0.02]} />
+            <meshStandardMaterial color="#5a1f1f" />
+          </mesh>
+        )}
+        {barba && (
+          <mesh position={[0, -0.14, 0.08]} scale={[1, 0.55, 0.85]}>
+            <icosahedronGeometry args={[R * 0.78, 1]} />
+            <M cor={corCab} />
+          </mesh>
+        )}
+        {/* cabelo */}
+        {tipoCab === 1 && (
+          <mesh position={[0, 0.1, -0.03]} scale={[1.06, 0.62, 1.06]}>
+            <icosahedronGeometry args={[R, 1]} />
+            <M cor={corCab} />
+          </mesh>
+        )}
+        {tipoCab === 2 && (
+          <mesh position={[0, 0.07, -0.02]} scale={[1.1, 0.8, 1.1]}>
+            <sphereGeometry args={[R, 9, 6, 0, Math.PI * 2, 0, Math.PI * 0.5]} />
+            <M cor={corCab} />
+          </mesh>
+        )}
+        {tipoCab === 3 && (
+          <>
+            <mesh position={[0, 0.08, -0.03]} scale={[1.05, 0.6, 1.05]}>
+              <icosahedronGeometry args={[R, 1]} />
+              <M cor={corCab} />
+            </mesh>
+            <mesh position={[0, R + 0.06, -0.06]}>
+              <icosahedronGeometry args={[0.11, 0]} />
+              <M cor={corCab} />
+            </mesh>
+          </>
+        )}
+        {tipoCab === 4 &&
+          Array.from({length: 7}, (_, k) => {
+            const a2 = (k / 7) * Math.PI * 2;
+            return (
+              <mesh key={k} position={[Math.cos(a2) * R * 0.75, R * 0.55, Math.sin(a2) * R * 0.65 - 0.05]}>
+                <icosahedronGeometry args={[0.11, 0]} />
+                <M cor={corCab} />
+              </mesh>
+            );
+          })}
+        {tipoCab === 5 && (
+          <>
+            <mesh position={[0, 0.09, -0.03]} scale={[1.07, 0.62, 1.07]}>
+              <icosahedronGeometry args={[R, 1]} />
+              <M cor={corCab} />
+            </mesh>
+            <mesh position={[0, -0.12, -0.12]}>
+              <cylinderGeometry args={[R * 0.95, R * 1.0, 0.45, 8]} />
+              <M cor={corCab} />
+            </mesh>
+          </>
+        )}
+      </group>
     </group>
   );
 };
+
+export const Multidao = ({n = 70, centro = [0, 0, 8] as V3, largura = 14, prof = 4}: {n?: number; centro?: V3; largura?: number; prof?: number}) => (
+  <group position={centro}>
+    {Array.from({length: n}, (_, i) => (
+      <PessoaMultidao key={i} i={i} pos={[(rndI(i, 10) - 0.5) * largura, 0, (rndI(i, 11) - 0.5) * prof]} />
+    ))}
+  </group>
+);
 
 // ---------- Robô juiz gigante (vigia a arena; olhos ficam vermelhos ao eliminar) ----------
 export const Robo = ({pos = [0, -0.55, -11] as V3, escala = 1, giro, alerta = 0}: {pos?: V3; escala?: number; giro?: number; alerta?: number}) => {
