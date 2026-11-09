@@ -141,7 +141,7 @@ export const CenaCatorze = () => {
   const pos: V3 = [de[0] + (para[0] - de[0]) * k, de[1] + salto, de[2] + (para[2] - de[2]) * k];
   const voando = k > 0 && k < 1;
   return (
-    <Palco cinema clima="espaco" pos={[pos[0] + 0.6, 2.2, pos[2] + 4.2]} olha={[pos[0], pos[1] + 1.1, pos[2]]} fov={42} sombras={false}>
+    <Palco cinema clima="espaco" pos={[pos[0] + 1.2, 2.6, pos[2] + 6.0]} olha={[pos[0], pos[1] + 1.0, pos[2]]} fov={42} sombras={false}>
       <Galpao />
       <Piscina />
       <Plataformas afunda={{16: 1, 19: 1}} />
@@ -167,7 +167,7 @@ export const CenaAzarado = () => {
   const bal = lerp(s, 0.3, tBal, 0.4, 1);
   const frame = useCurrentFrame();
   return (
-    <Palco cinema clima="espaco" pos={lerp3(s, 0, D('azarado'), [p[0] - 1.6, 2.0, p[2] + 3.4], [p[0] - 1.0, 1.8, p[2] + 2.6])} olha={[p[0], 1.2, p[2]]} fov={42} sombras={false}>
+    <Palco cinema clima="espaco" pos={lerp3(s, 0, D('azarado'), [p[0] - 2.0, 2.4, p[2] + 4.8], [p[0] - 1.3, 2.2, p[2] + 3.9])} olha={[p[0], 1.4, p[2]]} fov={42} sombras={false}>
       <Galpao />
       <Piscina />
       <Plataformas afunda={{16: 1, 19: 1}} balanca={{23: bal}} />
@@ -192,9 +192,9 @@ export const CenaQuase = () => {
   const queda = lerp(s, tA + 0.2, tA + 0.8, 0, 1, Easing.in(Easing.quad));
   // pendurado na beirada da plataforma 24
   const pendurado = s >= tA + 0.8;
-  const posJ: V3 = pendurado ? [beira[0] - 0.95, -1.35, beira[2]] : [p[0] + queda * 0.6, p[1] - queda * 1.2, p[2]];
+  const posJ: V3 = pendurado ? [beira[0] - 0.95, -1.0, beira[2]] : [p[0] + queda * 0.6, p[1] - queda * 1.2, p[2]];
   return (
-    <Palco cinema clima="espaco" pos={lerp3(s0, 0, D('quase'), [p[0] + 0.5, 1.4, p[2] + 4.2], [p[0] + 0.9, 0.9, p[2] + 3.3])} olha={[p[0] + 0.5, 0.2, p[2]]} fov={44} sombras={false}>
+    <Palco cinema clima="espaco" pos={lerp3(s0, 0, D('quase'), [p[0] + 0.4, 2.6, p[2] + 6.4], [p[0] + 0.7, 1.6, p[2] + 5.0])} olha={[p[0] + 0.45, 0.3, p[2]]} fov={44} sombras={false}>
       <Galpao />
       <Piscina />
       <Plataformas afunda={{16: 1, 19: 1, 23: af}} />
@@ -263,7 +263,7 @@ export const CenaContagem = () => {
       <Extras queda={queda} />
       <J14 posicao={posPlat(17)} expressao="confiante" pose="bracosCruzados" />
       <J37 posicao={posPlat(9)} expressao="serio" />
-      <J82 posicao={[posPlat(24)[0] - 0.95, -1.35, posPlat(24)[2]]} rotacaoY={Math.PI / 2} alvoMaoE={[-0.25, 3.2, 0.6]} alvoMaoD={[0.25, 3.2, 0.6]} expressao="assustado" sombraChao={false} />
+      <J82 posicao={[posPlat(24)[0] - 0.95, -1.0, posPlat(24)[2]]} rotacaoY={Math.PI / 2} alvoMaoE={[-0.25, 3.2, 0.6]} alvoMaoD={[0.25, 3.2, 0.6]} expressao="assustado" sombraChao={false} />
       {laranjas.slice(0, 9).map((x, i) => (
         <Respingo key={x.id} pos={[x.x, 0, x.z]} s={(s - t3 - i * ((tUm - t3) / 9) - 0.45) / 0.8} />
       ))}
@@ -310,7 +310,7 @@ export const CenaFinal = () => {
   const s = useSeg();
   return (
     <Palco cinema clima="espaco" pos={lerp3(s, 0, D('final'), [0, 1.6, 6.2], [0, 1.55, 5.2])} olha={[0, 1.3, 0]} fov={42} sombras={false}>
-      <Galpao />
+      <Galpao mostrarTelao={false} />
       <J14 posicao={[-1.5, -0.55, 0]} rotacaoY={0.25} pose="bracosCruzados" expressao="confiante" />
       <J37 posicao={[0, -0.55, 0.3]} pose="maosNaCintura" expressao="confiante" />
       <J82 posicao={[1.5, -0.55, 0]} rotacaoY={-0.25} pose="acenar" expressao="feliz" suor />

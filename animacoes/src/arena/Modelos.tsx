@@ -167,17 +167,23 @@ export const Piscina = () => {
   return (
     <group>
       {/* borda */}
-      <mesh position={[0, -0.25, 0]}>
-        <boxGeometry args={[16.5, 0.6, 11]} />
-        <M cor="#e9eef5" />
+      {[[0, 5.3, 16.6, 0.5], [0, -5.3, 16.6, 0.5], [8.05, 0, 0.5, 11.1], [-8.05, 0, 0.5, 11.1]].map(([x, z, w, d], i) => (
+        <mesh key={i} position={[x, -0.2, z]}>
+          <boxGeometry args={[w, 0.7, d]} />
+          <M cor="#e9eef5" />
+        </mesh>
+      ))}
+      <mesh position={[0, -0.6, 0]}>
+        <boxGeometry args={[15.6, 0.1, 10.1]} />
+        <M cor="#0c5f8a" />
       </mesh>
-      <mesh position={[0, -0.02, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+      <mesh position={[0, 0.06, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[15.6, 10.2, 16, 12]} />
         <meshStandardMaterial color="#19c3d6" emissive="#0aa3c2" emissiveIntensity={0.55} transparent opacity={0.92} flatShading roughness={0.15} metalness={0.1} />
       </mesh>
       {/* reflexos ondulando */}
       {Array.from({length: 18}, (_, i) => (
-        <mesh key={i} position={[((i * 53) % 150) / 10 - 7.5, 0.0, ((i * 37) % 100) / 10 - 5]} rotation={[-Math.PI / 2, 0, 0]} scale={1 + Math.sin(frame * 0.07 + i) * 0.3}>
+        <mesh key={i} position={[((i * 53) % 150) / 10 - 7.5, 0.075, ((i * 37) % 100) / 10 - 5]} rotation={[-Math.PI / 2, 0, 0]} scale={1 + Math.sin(frame * 0.07 + i) * 0.3}>
           <ringGeometry args={[0.2, 0.26, 12]} />
           <meshBasicMaterial color="#bff6ff" transparent opacity={0.35} />
         </mesh>
@@ -210,7 +216,7 @@ export const Respingo = ({pos, s}: {pos: V3; s: number}) => {
 };
 
 // ---------- O galpão da arena ----------
-export const Galpao = ({telao = ['R$ 1.000.000', 'ARENA DO MILHÃO']}: {telao?: string[]}) => {
+export const Galpao = ({telao = ['R$ 1.000.000', 'ARENA DO MILHÃO'], mostrarTelao = true}: {telao?: string[]; mostrarTelao?: boolean}) => {
   const frame = useCurrentFrame();
   return (
     <group>
@@ -244,7 +250,7 @@ export const Galpao = ({telao = ['R$ 1.000.000', 'ARENA DO MILHÃO']}: {telao?: 
         );
       })}
       {/* telão */}
-      <Telao pos={[0, 7.5, -14]} largura={10} linhas={[{t: telao[0], cor: '#ffd23f', tam: 150}, {t: telao[1], cor: '#ffffff', tam: 70}]} />
+      {mostrarTelao && <Telao pos={[0, 7.5, -14]} largura={10} linhas={[{t: telao[0], cor: '#ffd23f', tam: 150}, {t: telao[1], cor: '#ffffff', tam: 70}]} />}
       {/* cones de luz do teto */}
       {[[-6, -4], [6, -4], [-6, 4], [6, 4], [0, 0]].map(([x, z], i) => (
         <mesh key={i} position={[x, 7, z]}>
