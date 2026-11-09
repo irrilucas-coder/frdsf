@@ -1,0 +1,648 @@
+[
+ {
+  "id": "L0",
+  "quem": "narrador",
+  "duracao": 4.101,
+  "palavras": [
+   {
+    "texto": "Se",
+    "inicio": 0,
+    "fim": 0.18
+   },
+   {
+    "texto": "você",
+    "inicio": 0.18,
+    "fim": 0.34
+   },
+   {
+    "texto": "engolir",
+    "inicio": 0.34,
+    "fim": 0.64
+   },
+   {
+    "texto": "um",
+    "inicio": 0.64,
+    "fim": 0.72
+   },
+   {
+    "texto": "chiclete,",
+    "inicio": 0.72,
+    "fim": 1.48
+   },
+   {
+    "texto": "ele",
+    "inicio": 1.48,
+    "fim": 1.72
+   },
+   {
+    "texto": "fica",
+    "inicio": 1.72,
+    "fim": 1.9
+   },
+   {
+    "texto": "sete",
+    "inicio": 1.9,
+    "fim": 2.28
+   },
+   {
+    "texto": "anos",
+    "inicio": 2.28,
+    "fim": 2.62
+   },
+   {
+    "texto": "grudado",
+    "inicio": 2.62,
+    "fim": 3.16
+   },
+   {
+    "texto": "na",
+    "inicio": 3.16,
+    "fim": 3.26
+   },
+   {
+    "texto": "sua",
+    "inicio": 3.26,
+    "fim": 3.4
+   },
+   {
+    "texto": "barriga?",
+    "inicio": 3.4,
+    "fim": 3.98
+   }
+  ]
+ },
+ {
+  "id": "L1",
+  "quem": "narrador",
+  "duracao": 3.422,
+  "palavras": [
+   {
+    "texto": "Todo",
+    "inicio": 0.02,
+    "fim": 0.24
+   },
+   {
+    "texto": "mundo",
+    "inicio": 0.24,
+    "fim": 0.46
+   },
+   {
+    "texto": "já",
+    "inicio": 0.46,
+    "fim": 0.6
+   },
+   {
+    "texto": "ouviu",
+    "inicio": 0.6,
+    "fim": 0.92
+   },
+   {
+    "texto": "isso.",
+    "inicio": 0.92,
+    "fim": 1.44
+   },
+   {
+    "texto": "Mas",
+    "inicio": 1.44,
+    "fim": 2.02
+   },
+   {
+    "texto": "olha",
+    "inicio": 2.02,
+    "fim": 2.18
+   },
+   {
+    "texto": "o",
+    "inicio": 2.18,
+    "fim": 2.26
+   },
+   {
+    "texto": "que",
+    "inicio": 2.24,
+    "fim": 2.32
+   },
+   {
+    "texto": "acontece",
+    "inicio": 2.3,
+    "fim": 2.64
+   },
+   {
+    "texto": "de",
+    "inicio": 2.64,
+    "fim": 2.78
+   },
+   {
+    "texto": "verdade.",
+    "inicio": 2.78,
+    "fim": 2.98
+   }
+  ]
+ },
+ {
+  "id": "L2",
+  "quem": "narrador",
+  "duracao": 2.769,
+  "palavras": [
+   {
+    "texto": "O",
+    "inicio": 0,
+    "fim": 0.14
+   },
+   {
+    "texto": "chiclete",
+    "inicio": 0.14,
+    "fim": 0.56
+   },
+   {
+    "texto": "desce",
+    "inicio": 0.56,
+    "fim": 0.86
+   },
+   {
+    "texto": "pelo",
+    "inicio": 0.86,
+    "fim": 1
+   },
+   {
+    "texto": "esôfago",
+    "inicio": 1,
+    "fim": 1.48
+   },
+   {
+    "texto": "e",
+    "inicio": 1.48,
+    "fim": 1.66
+   },
+   {
+    "texto": "cai",
+    "inicio": 1.66,
+    "fim": 1.86
+   },
+   {
+    "texto": "no",
+    "inicio": 1.86,
+    "fim": 1.98
+   },
+   {
+    "texto": "estômago.",
+    "inicio": 1.98,
+    "fim": 2.06
+   }
+  ]
+ },
+ {
+  "id": "L3",
+  "quem": "narrador",
+  "duracao": 5.956,
+  "palavras": [
+   {
+    "texto": "Lá",
+    "inicio": 0.06,
+    "fim": 0.28
+   },
+   {
+    "texto": "dentro,",
+    "inicio": 0.28,
+    "fim": 0.96
+   },
+   {
+    "texto": "o",
+    "inicio": 0.96,
+    "fim": 1.04
+   },
+   {
+    "texto": "ácido",
+    "inicio": 0.98,
+    "fim": 1.24
+   },
+   {
+    "texto": "desmancha",
+    "inicio": 1.24,
+    "fim": 1.68
+   },
+   {
+    "texto": "o",
+    "inicio": 1.68,
+    "fim": 1.8
+   },
+   {
+    "texto": "pão,",
+    "inicio": 1.8,
+    "fim": 2.4
+   },
+   {
+    "texto": "a",
+    "inicio": 2.4,
+    "fim": 2.48
+   },
+   {
+    "texto": "carne,",
+    "inicio": 2.46,
+    "fim": 3.12
+   },
+   {
+    "texto": "a",
+    "inicio": 3.12,
+    "fim": 3.26
+   },
+   {
+    "texto": "fruta...",
+    "inicio": 3.26,
+    "fim": 3.96
+   },
+   {
+    "texto": "mas",
+    "inicio": 3.96,
+    "fim": 4.2
+   },
+   {
+    "texto": "a",
+    "inicio": 4.2,
+    "fim": 4.3
+   },
+   {
+    "texto": "goma",
+    "inicio": 4.3,
+    "fim": 4.5
+   },
+   {
+    "texto": "do",
+    "inicio": 4.5,
+    "fim": 4.6
+   },
+   {
+    "texto": "chiclete",
+    "inicio": 4.6,
+    "fim": 4.98
+   },
+   {
+    "texto": "não",
+    "inicio": 4.98,
+    "fim": 5.06
+   },
+   {
+    "texto": "dissolve.",
+    "inicio": 4.98,
+    "fim": 5.06
+   }
+  ]
+ },
+ {
+  "id": "L4",
+  "quem": "narrador",
+  "duracao": 5.407,
+  "palavras": [
+   {
+    "texto": "Só",
+    "inicio": 0.04,
+    "fim": 0.2
+   },
+   {
+    "texto": "que",
+    "inicio": 0.2,
+    "fim": 0.3
+   },
+   {
+    "texto": "o",
+    "inicio": 0.3,
+    "fim": 0.38
+   },
+   {
+    "texto": "estômago",
+    "inicio": 0.36,
+    "fim": 0.68
+   },
+   {
+    "texto": "não",
+    "inicio": 0.68,
+    "fim": 0.78
+   },
+   {
+    "texto": "guarda",
+    "inicio": 0.78,
+    "fim": 1.1
+   },
+   {
+    "texto": "nada:",
+    "inicio": 1.1,
+    "fim": 1.72
+   },
+   {
+    "texto": "ele",
+    "inicio": 1.72,
+    "fim": 1.82
+   },
+   {
+    "texto": "espreme",
+    "inicio": 1.82,
+    "fim": 2.32
+   },
+   {
+    "texto": "e",
+    "inicio": 2.32,
+    "fim": 2.56
+   },
+   {
+    "texto": "empurra",
+    "inicio": 2.56,
+    "fim": 2.94
+   },
+   {
+    "texto": "tudo",
+    "inicio": 2.94,
+    "fim": 3.26
+   },
+   {
+    "texto": "pro",
+    "inicio": 3.26,
+    "fim": 3.42
+   },
+   {
+    "texto": "intestino,",
+    "inicio": 3.42,
+    "fim": 4.18
+   },
+   {
+    "texto": "chiclete",
+    "inicio": 4.18,
+    "fim": 4.74
+   },
+   {
+    "texto": "junto.",
+    "inicio": 4.74,
+    "fim": 4.98
+   }
+  ]
+ },
+ {
+  "id": "L5",
+  "quem": "narrador",
+  "duracao": 4.519,
+  "palavras": [
+   {
+    "texto": "E",
+    "inicio": 0,
+    "fim": 0.16
+   },
+   {
+    "texto": "de",
+    "inicio": 0.16,
+    "fim": 0.34
+   },
+   {
+    "texto": "dois",
+    "inicio": 0.34,
+    "fim": 0.52
+   },
+   {
+    "texto": "a",
+    "inicio": 0.52,
+    "fim": 0.68
+   },
+   {
+    "texto": "cinco",
+    "inicio": 0.68,
+    "fim": 0.94
+   },
+   {
+    "texto": "dias",
+    "inicio": 0.94,
+    "fim": 1.16
+   },
+   {
+    "texto": "depois,",
+    "inicio": 1.16,
+    "fim": 2.04
+   },
+   {
+    "texto": "ele",
+    "inicio": 2.04,
+    "fim": 2.12
+   },
+   {
+    "texto": "sai",
+    "inicio": 2.1,
+    "fim": 2.38
+   },
+   {
+    "texto": "do",
+    "inicio": 2.38,
+    "fim": 2.5
+   },
+   {
+    "texto": "corpo,",
+    "inicio": 2.5,
+    "fim": 2.88
+   },
+   {
+    "texto": "do",
+    "inicio": 2.88,
+    "fim": 3.24
+   },
+   {
+    "texto": "mesmo",
+    "inicio": 3.24,
+    "fim": 3.56
+   },
+   {
+    "texto": "jeito",
+    "inicio": 3.56,
+    "fim": 3.86
+   },
+   {
+    "texto": "que",
+    "inicio": 3.86,
+    "fim": 3.98
+   },
+   {
+    "texto": "entrou.",
+    "inicio": 3.98,
+    "fim": 4.06
+   }
+  ]
+ },
+ {
+  "id": "L6",
+  "quem": "narrador",
+  "duracao": 6.269,
+  "palavras": [
+   {
+    "texto": "O",
+    "inicio": 0,
+    "fim": 0.16
+   },
+   {
+    "texto": "perigo",
+    "inicio": 0.16,
+    "fim": 0.48
+   },
+   {
+    "texto": "é",
+    "inicio": 0.48,
+    "fim": 0.58
+   },
+   {
+    "texto": "engolir",
+    "inicio": 0.58,
+    "fim": 0.88
+   },
+   {
+    "texto": "muitos",
+    "inicio": 0.88,
+    "fim": 1.18
+   },
+   {
+    "texto": "de",
+    "inicio": 1.18,
+    "fim": 1.32
+   },
+   {
+    "texto": "uma",
+    "inicio": 1.32,
+    "fim": 1.44
+   },
+   {
+    "texto": "vez,",
+    "inicio": 1.44,
+    "fim": 1.94
+   },
+   {
+    "texto": "ainda",
+    "inicio": 1.94,
+    "fim": 2.18
+   },
+   {
+    "texto": "mais",
+    "inicio": 2.18,
+    "fim": 2.44
+   },
+   {
+    "texto": "com",
+    "inicio": 2.44,
+    "fim": 2.58
+   },
+   {
+    "texto": "o",
+    "inicio": 2.58,
+    "fim": 2.66
+   },
+   {
+    "texto": "intestino",
+    "inicio": 2.62,
+    "fim": 2.98
+   },
+   {
+    "texto": "preso:",
+    "inicio": 2.98,
+    "fim": 3.64
+   },
+   {
+    "texto": "aí",
+    "inicio": 3.64,
+    "fim": 3.86
+   },
+   {
+    "texto": "pode",
+    "inicio": 3.86,
+    "fim": 4.1
+   },
+   {
+    "texto": "entupir,",
+    "inicio": 4.1,
+    "fim": 4.74
+   },
+   {
+    "texto": "principalmente",
+    "inicio": 4.74,
+    "fim": 5.2
+   },
+   {
+    "texto": "em",
+    "inicio": 5.2,
+    "fim": 5.42
+   },
+   {
+    "texto": "criança.",
+    "inicio": 5.42,
+    "fim": 5.98
+   }
+  ]
+ },
+ {
+  "id": "L7",
+  "quem": "narrador",
+  "duracao": 5.251,
+  "palavras": [
+   {
+    "texto": "Ou",
+    "inicio": 0.04,
+    "fim": 0.22
+   },
+   {
+    "texto": "seja:",
+    "inicio": 0.22,
+    "fim": 0.9
+   },
+   {
+    "texto": "sete",
+    "inicio": 0.9,
+    "fim": 1.24
+   },
+   {
+    "texto": "anos",
+    "inicio": 1.24,
+    "fim": 1.42
+   },
+   {
+    "texto": "é",
+    "inicio": 1.42,
+    "fim": 1.6
+   },
+   {
+    "texto": "mito.",
+    "inicio": 1.6,
+    "fim": 2.06
+   },
+   {
+    "texto": "Já",
+    "inicio": 2.06,
+    "fim": 2.22
+   },
+   {
+    "texto": "sabia?",
+    "inicio": 2.22,
+    "fim": 2.66
+   },
+   {
+    "texto": "Comenta",
+    "inicio": 2.66,
+    "fim": 2.84
+   },
+   {
+    "texto": "chiclete.",
+    "inicio": 2.84,
+    "fim": 3.52
+   },
+   {
+    "texto": "Não",
+    "inicio": 3.52,
+    "fim": 3.64
+   },
+   {
+    "texto": "sabia?",
+    "inicio": 3.64,
+    "fim": 4.24
+   },
+   {
+    "texto": "Comenta",
+    "inicio": 4.24,
+    "fim": 4.7
+   },
+   {
+    "texto": "mito.",
+    "inicio": 4.7,
+    "fim": 4.98
+   }
+  ]
+ }
+]

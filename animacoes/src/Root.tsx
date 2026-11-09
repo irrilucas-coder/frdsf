@@ -14,6 +14,8 @@ import {FPS as FPS_FILA_MX, TOTAL_FRAMES as FRAMES_FILA_MX} from './fila-mx/rote
 import {FPS as FPS_FILA, TOTAL_FRAMES as FRAMES_FILA} from './fila/roteiro';
 import {FPS as FPS_CR7, TOTAL_FRAMES as FRAMES_CR7} from './cr7/roteiro';
 import {CR7Doc} from './cr7/CR7';
+import {FPS as FPS_CHI, TOTAL_FRAMES as FRAMES_CHI} from './chiclete/roteiro';
+import {ChicleteVideo} from './chiclete/Chiclete';
 import {FPS as FPS_FREIO, TOTAL_FRAMES as FRAMES_FREIO} from './freio/roteiro';
 import {FPS as FPS_ELEV, TOTAL_FRAMES as FRAMES_ELEV} from './elevador/roteiro';
 import {BipEAEstrela} from './BipEAEstrela';
@@ -80,6 +82,7 @@ export const RemotionRoot = () => {
         height={1920}
       />
       <Composition id="FreioMX" component={FreioMxVideo} durationInFrames={FRAMES_FREIO_MX} fps={FPS_FREIO_MX} width={1080} height={1920} />
+      <Composition id="Chiclete" component={ChicleteVideo} durationInFrames={FRAMES_CHI} fps={FPS_CHI} width={1080} height={1920} />
       <Composition id="CR7" component={CR7Doc} durationInFrames={FRAMES_CR7} fps={FPS_CR7} width={1080} height={1920} />
       <Composition id="FilaMX" component={FilaMxVideo} durationInFrames={FRAMES_FILA_MX} fps={FPS_FILA_MX} width={1080} height={1920} />
       <Composition id="Fila" component={FilaVideo} durationInFrames={FRAMES_FILA} fps={FPS_FILA} width={1080} height={1920} />

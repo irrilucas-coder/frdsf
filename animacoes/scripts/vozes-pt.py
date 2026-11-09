@@ -87,6 +87,17 @@ PROJETOS = {
         ("L10", "Ronaldo segue jogando pelo Al Nassr, na Arábia Saudita. Mas a camisa sete de Portugal agora está livre."),
         ("L11", "[curious] E pra você, quem merece herdar a camisa sete? Comenta aqui."),
     ],
+    # ---- Formato viral (pergunta → mito → MAS → revelação), estilo low-poly ----
+    "chiclete": [
+        ("L0", "[curious] Se você engolir um chiclete, ele fica sete anos grudado na sua barriga?"),
+        ("L1", "Todo mundo já ouviu isso. Mas olha o que acontece de verdade."),
+        ("L2", "O chiclete desce pelo esôfago e cai no estômago."),
+        ("L3", "Lá dentro, o ácido desmancha o pão, a carne, a fruta... [gasps] mas a goma do chiclete não dissolve."),
+        ("L4", "Só que o estômago não guarda nada: ele espreme e empurra tudo pro intestino, chiclete junto."),
+        ("L5", "E de dois a cinco dias depois, ele sai do corpo, [laughs] do mesmo jeito que entrou."),
+        ("L6", "O perigo é engolir muitos de uma vez, ainda mais com o intestino preso: aí pode entupir, principalmente em criança."),
+        ("L7", "Ou seja: sete anos é mito. Já sabia? Comenta chiclete. Não sabia? Comenta mito."),
+    ],
 }
 IDIOMAS = {"freio-mx": "es", "fila-mx": "es"}
 VOZES_PROJETO = {"freio-mx": "qRUgOhnxGASxirG4fKjv", "fila-mx": "qRUgOhnxGASxirG4fKjv"}  # David - mexicano
