@@ -257,7 +257,7 @@ export const CenaMaos = () => {
   const frame = useCurrentFrame();
   const anel = 1 + Math.sin(frame * 0.3) * 0.1;
   return (
-    <NaSala pos={[OX - 1.3, 2.6, -0.3]} olha={[OX + 0.05, 0.45, -1.12]}>
+    <NaSala pos={[OX - 0.7, 3.0, -3.7]} olha={[OX + 0.1, 0.5, -1.0]}>
       <PaiDeitado />
       <Massagem s={s} ativo={false} />
       {/* alvo no centro do peito */}
