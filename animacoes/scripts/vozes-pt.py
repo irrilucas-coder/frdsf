@@ -100,16 +100,18 @@ PROJETOS = {
     ],
     # ---- Série: Arena do Milhão (competição original) ----
     "arena1": [
-        ("L0", "[excited] Cem jogadores. Um milhão de reais. Só um vai levar tudo."),
-        ("L1", "Primeira prova: as plataformas que afundam. Quem cair na água, está fora."),
-        ("L2", "[suspenseful] A cada dez segundos, uma plataforma afunda... e ninguém sabe qual."),
-        ("L3", "O jogador catorze não perde tempo: pula direto para o centro."),
-        ("L4", "Já o oitenta e dois [laughs] escolheu justo a plataforma que balança."),
-        ("L5", "[gasps] Ela afunda! O oitenta e dois quase cai... mas se segura na beirada!"),
-        ("L6", "A trinta e sete percebeu um detalhe: as plataformas azuis nunca afundam."),
-        ("L7", "[suspenseful] Últimos segundos. Três, dois, um..."),
-        ("L8", "Restam só doze jogadores. E o milhão continua ali, esperando."),
-        ("L9", "Em quem você aposta? Comenta o número. Na parte dois, a prova fica ainda pior."),
+        ("L0", "[suspenseful] Se ele cair na água, perde um milhão de reais."),
+        ("L1", "[excited] Cem jogadores. Um prêmio de um milhão. Só um vai levar tudo."),
+        ("L2", "Primeira prova: as plataformas que afundam. E o robô gigante vigia cada movimento."),
+        ("L3", "[suspenseful] A cada dez segundos, uma plataforma afunda... e ninguém sabe qual."),
+        ("L4", "O jogador catorze não perde tempo: pula direto para o centro."),
+        ("L5", "Já o oitenta e dois [laughs] escolheu justo a plataforma que balança."),
+        ("L6", "[gasps] Ela afunda! O oitenta e dois quase cai... mas se segura na beirada!"),
+        ("L7", "Comenta agora: o oitenta e dois passa dessa prova ou não?"),
+        ("L8", "A trinta e sete percebeu um detalhe: as plataformas azuis nunca afundam."),
+        ("L9", "[suspenseful] Últimos segundos. Três, dois, um..."),
+        ("L10", "Restam só doze jogadores. E o milhão continua ali, esperando."),
+        ("L11", "Em quem você aposta? Comenta o número. Na parte dois, a prova fica ainda pior."),
     ],
 }
 IDIOMAS = {"freio-mx": "es", "fila-mx": "es"}

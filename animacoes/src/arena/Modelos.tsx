@@ -353,3 +353,89 @@ export const Multidao = ({n = 70, centro = [0, 0, 8] as V3, largura = 14, prof =
     </group>
   );
 };
+
+// ---------- Robô juiz gigante (vigia a arena; olhos ficam vermelhos ao eliminar) ----------
+export const Robo = ({pos = [0, -0.55, -11] as V3, escala = 1, giro, alerta = 0}: {pos?: V3; escala?: number; giro?: number; alerta?: number}) => {
+  const frame = useCurrentFrame();
+  const yaw = giro ?? Math.sin(frame * 0.035) * 0.6;
+  const corOlho = alerta > 0.5 ? '#ff2d2d' : '#3df2ff';
+  const pisca = alerta > 0.5 ? (Math.floor(frame / 4) % 2 ? 3 : 1) : 1.6;
+  return (
+    <group position={pos} scale={escala}>
+      {/* base e pernas */}
+      <mesh position={[0, 0.6, 0]}>
+        <cylinderGeometry args={[2.2, 2.6, 1.2, 8]} />
+        <M cor="#e9ecf5" metal={0.3} />
+      </mesh>
+      {[-1, 1].map((l) => (
+        <mesh key={l} position={[l * 0.9, 2.2, 0]}>
+          <cylinderGeometry args={[0.45, 0.55, 2.2, 8]} />
+          <M cor="#c7ccdb" metal={0.4} />
+        </mesh>
+      ))}
+      {/* corpo */}
+      <mesh position={[0, 4.6, 0]}>
+        <boxGeometry args={[3.6, 3.0, 2.2]} />
+        <M cor="#f4f5fa" metal={0.2} />
+      </mesh>
+      <mesh position={[0, 4.6, 1.12]}>
+        <boxGeometry args={[2.4, 1.6, 0.05]} />
+        <M cor="#1b2236" />
+      </mesh>
+      {/* luzes do peito */}
+      {[-0.7, 0, 0.7].map((x, i) => (
+        <mesh key={i} position={[x, 4.6, 1.16]}>
+          <sphereGeometry args={[0.2, 10, 8]} />
+          <meshStandardMaterial color={['#ff4f8b', '#ffd23f', '#3df2ff'][i]} emissive={['#ff4f8b', '#ffd23f', '#3df2ff'][i]} emissiveIntensity={(frame + i * 10) % 30 < 15 ? 2 : 0.5} />
+        </mesh>
+      ))}
+      {/* braços */}
+      {[-1, 1].map((l) => (
+        <group key={l} position={[l * 2.1, 5.6, 0]} rotation={[0, 0, l * (0.25 + Math.sin(frame * 0.05) * 0.05)]}>
+          <mesh position={[0, -1.2, 0]}>
+            <cylinderGeometry args={[0.38, 0.42, 2.4, 8]} />
+            <M cor="#c7ccdb" metal={0.4} />
+          </mesh>
+          <mesh position={[0, -2.6, 0]}>
+            <sphereGeometry args={[0.6, 10, 8]} />
+            <M cor="#ffd23f" />
+          </mesh>
+        </group>
+      ))}
+      {/* cabeça que gira vigiando */}
+      <group position={[0, 6.6, 0]} rotation={[0, yaw, 0]}>
+        <mesh position={[0, 1.1, 0]}>
+          <boxGeometry args={[3.0, 2.2, 2.4]} />
+          <M cor="#ffffff" metal={0.2} />
+        </mesh>
+        <mesh position={[0, 1.1, 1.21]}>
+          <boxGeometry args={[2.5, 1.2, 0.05]} />
+          <M cor="#0d1222" />
+        </mesh>
+        {[-0.6, 0.6].map((x) => (
+          <mesh key={x} position={[x, 1.15, 1.26]}>
+            <boxGeometry args={[0.6, 0.45, 0.05]} />
+            <meshStandardMaterial color={corOlho} emissive={corOlho} emissiveIntensity={pisca} toneMapped={false} />
+          </mesh>
+        ))}
+        {/* antena */}
+        <mesh position={[0, 2.6, 0]}>
+          <cylinderGeometry args={[0.06, 0.06, 0.8, 6]} />
+          <M cor="#9aa0b4" />
+        </mesh>
+        <mesh position={[0, 3.05, 0]}>
+          <sphereGeometry args={[0.22, 10, 8]} />
+          <meshStandardMaterial color={corOlho} emissive={corOlho} emissiveIntensity={pisca} toneMapped={false} />
+        </mesh>
+        {/* orelhas */}
+        {[-1, 1].map((l) => (
+          <mesh key={l} position={[l * 1.6, 1.1, 0]} rotation={[0, 0, Math.PI / 2]}>
+            <cylinderGeometry args={[0.45, 0.45, 0.3, 10]} />
+            <M cor="#ff4f8b" />
+          </mesh>
+        ))}
+      </group>
+      <pointLight position={[0, 7.8, 3]} intensity={alerta > 0.5 ? 40 : 15} color={corOlho} distance={20} />
+    </group>
+  );
+};

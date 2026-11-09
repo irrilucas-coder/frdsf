@@ -3,7 +3,7 @@ import type {V3} from '../submarino/camera';
 import {Palco} from '../submarino/Palco';
 import {Seta3D} from '../edicao/Seta3D';
 import {rampa} from '../edicao/Edicao';
-import {Apresentador, CuboPremio, Galpao, Jogador, Multidao, Piscina, PLATAFORMAS, Plataformas, posPlat, Respingo} from '../arena/Modelos';
+import {Apresentador, CuboPremio, Galpao, Jogador, Multidao, Piscina, PLATAFORMAS, Plataformas, posPlat, Respingo, Robo} from '../arena/Modelos';
 import {FPS, duracaoCena, quandoDiz, type CenaId} from './roteiro';
 
 const lerp = (s: number, a: number, b: number, de: number, para: number, easing = Easing.inOut(Easing.quad)) =>
@@ -58,11 +58,47 @@ const Extras = ({filtro, pose = 'parado', expressao = 'serio', queda}: {filtro?:
   </>
 );
 
+
+// ===== GANCHO 0–3 s: ele balança na plataforma, o robô de olho vermelho =====
+export const CenaHook = () => {
+  const s = useSeg();
+  const p = posPlat(23);
+  const frame = useCurrentFrame();
+  const bal = lerp(s, 0, D('hook'), 0.7, 1.6);
+  return (
+    <Palco cinema clima="espaco" pos={lerp3(s, 0, D('hook'), [p[0] + 1.2, 1.9, p[2] + 4.2], [p[0] + 0.7, 2.0, p[2] + 3.2])} olha={[p[0], 1.65, p[2] - 1]} fov={44} sombras={false}>
+      <Galpao />
+      <Piscina />
+      <Plataformas balanca={{23: bal}} />
+      <Robo pos={[p[0] - 1, -0.55, -11]} giro={0.15} alerta={1} />
+      <group position={p} rotation={[Math.sin(frame * 0.5) * 0.12 * bal, 0, Math.cos(frame * 0.45) * 0.1 * bal]}>
+        <J82 posicao={[0, 0.02, 0]} pose="susto" expressao="assustado" suor emote="exclamacao" />
+      </group>
+    </Palco>
+  );
+};
+
+// ===== ENQUETE (meio do vídeo): ele pendurado, o robô olhando =====
+export const CenaEnquete = () => {
+  const s = useSeg();
+  const beira = posPlat(24);
+  return (
+    <Palco cinema clima="espaco" pos={lerp3(s, 0, D('enquete'), [beira[0] - 4, 3.2, beira[2] + 7.5], [beira[0] - 3, 2.6, beira[2] + 6])} olha={[beira[0] - 1, 0.6, beira[2] - 2]} fov={44} sombras={false}>
+      <Galpao />
+      <Piscina />
+      <Plataformas afunda={{16: 1, 19: 1, 23: 1}} />
+      <Robo pos={[beira[0] - 1, -0.55, -11]} giro={0.1} />
+      <J82 posicao={[beira[0] - 0.95, -1.0, beira[2]]} rotacaoY={Math.PI / 2} alvoMaoE={[-0.25, 3.2, 0.6]} alvoMaoD={[0.25, 3.2, 0.6]} expressao="assustado" suor sombraChao={false} />
+      <Extras filtro={(x) => ![16, 19, 23].includes(x)} expressao="surpreso" />
+    </Palco>
+  );
+};
+
 // ===== 0. GANCHO: 100 jogadores, 1 milhão, o apresentador =====
 export const CenaGancho = () => {
   const s = useSeg();
-  const tMilhao = R('gancho', 'L0', 'milhão');
-  const tSo = R('gancho', 'L0', 'Só');
+  const tMilhao = R('gancho', 'L1', 'milhão');
+  const tSo = R('gancho', 'L1', 'Só');
   if (s < tMilhao) {
     return (
       <Palco cinema clima="espaco" pos={lerp3(s, 0, tMilhao, [-9, 9, 20], [-4, 6, 15])} olha={[0, 0.5, 6]} fov={45} sombras={false}>
@@ -70,6 +106,7 @@ export const CenaGancho = () => {
         <Piscina />
         <Plataformas />
         <Multidao n={80} centro={[0, -0.55, 9]} largura={15} prof={4} />
+        <Robo />
         <J14 posicao={[-2, -0.55, 6.5]} expressao="confiante" />
         <J37 posicao={[0.2, -0.55, 6.7]} expressao="pensativo" />
         <J82 posicao={[2.2, -0.55, 6.5]} expressao="assustado" suor />
@@ -97,14 +134,15 @@ export const CenaGancho = () => {
 // ===== 1. A PROVA: plataformas, quem cair está fora =====
 export const CenaProva = () => {
   const s = useSeg();
-  const tAgua = R('prova', 'L1', 'água');
+  const tAgua = R('prova', 'L2', 'vigia');
   const queda = lerp(s, tAgua - 0.2, tAgua + 0.35, 0, 1, Easing.in(Easing.quad));
   const pQ = posPlat(16);
   return (
-    <Palco cinema clima="espaco" pos={lerp3(s, 0, tAgua, [-7.5, 2.2, 8.5], [-5, 5, 10])} olha={lerp3(s, 0, tAgua, [-5, 1.6, 4], [0, 0, 0])} fov={45} sombras={false}>
+    <Palco cinema clima="espaco" pos={lerp3(s, 0, tAgua, [-7.5, 2.2, 8.5], [-4, 4.5, 11])} olha={lerp3(s, 0, tAgua, [-5, 1.6, 4], [0, 2.5, -4])} fov={45} sombras={false}>
       <Galpao />
       <Piscina />
       <Plataformas afunda={{16: lerp(s, tAgua - 0.6, tAgua, 0, 1)}} />
+      <Robo giro={lerp(s, 0, tAgua, -0.5, 0.35)} alerta={s > tAgua - 0.3 ? 1 : 0} />
       <Apresentador posicao={[-5.5, -0.55, 5.2]} rotacaoY={0.5} pose="apontar" expressao="feliz" falando={s < tAgua} />
       <Extras filtro={(p) => p !== 16} />
       {queda < 1 && <Jogador numero="3" posicao={[pQ[0], pQ[1] - queda * 1.7, pQ[2]]} pose="susto" expressao="assustado" cabelo="franja" corCabelo="#7a3b12" sombraChao={false} />}
@@ -116,7 +154,7 @@ export const CenaProva = () => {
 // ===== 2. A REGRA: a cada 10 s uma plataforma afunda =====
 export const CenaRegra = () => {
   const s = useSeg();
-  const tAf = R('regra', 'L2', 'afunda');
+  const tAf = R('regra', 'L3', 'afunda');
   const af = lerp(s, tAf - 0.1, tAf + 0.5, 0, 1, Easing.in(Easing.quad));
   const queda = (plat: number) => (plat === 19 ? lerp(s, tAf, tAf + 0.5, 0, 1, Easing.in(Easing.quad)) : 0);
   return (
@@ -133,7 +171,7 @@ export const CenaRegra = () => {
 // ===== 3. O 14 PULA PARA O CENTRO =====
 export const CenaCatorze = () => {
   const s = useSeg();
-  const tPula = R('catorze', 'L3', 'pula');
+  const tPula = R('catorze', 'L4', 'pula');
   const de = posPlat(14);
   const para = posPlat(17);
   const k = lerp(s, tPula, tPula + 0.7, 0, 1, Easing.inOut(Easing.cubic));
@@ -162,7 +200,7 @@ export const CenaCatorze = () => {
 // ===== 4. O 82 NA PLATAFORMA QUE BALANÇA =====
 export const CenaAzarado = () => {
   const s = useSeg();
-  const tBal = R('azarado', 'L4', 'balança');
+  const tBal = R('azarado', 'L5', 'balança');
   const p = posPlat(23);
   const bal = lerp(s, 0.3, tBal, 0.4, 1);
   const frame = useCurrentFrame();
@@ -181,11 +219,11 @@ export const CenaAzarado = () => {
 // ===== 5. AFUNDA! E ELE SE SEGURA NA BEIRADA (câmera lenta) =====
 export const CenaQuase = () => {
   const s0 = useSeg();
-  const tCai = R('quase', 'L5', 'cai');
-  const tMas = R('quase', 'L5', 'mas');
+  const tCai = R('quase', 'L6', 'cai');
+  const tMas = R('quase', 'L6', 'mas');
   // câmera lenta durante a queda
   const s = rampa(s0, [[tCai - 0.6, tMas, 0.45]]);
-  const tA = R('quase', 'L5', 'afunda');
+  const tA = R('quase', 'L6', 'afunda');
   const af = lerp(s, tA, tA + 0.6, 0, 1, Easing.in(Easing.quad));
   const p = posPlat(23);
   const beira = posPlat(24);
@@ -216,7 +254,7 @@ export const CenaQuase = () => {
 // ===== 6. A 37 PERCEBE: AS AZUIS NUNCA AFUNDAM =====
 export const CenaDetalhe = () => {
   const s = useSeg();
-  const tAzuis = R('detalhe', 'L6', 'plataformas');
+  const tAzuis = R('detalhe', 'L8', 'plataformas');
   const p = posPlat(9);
   if (s < tAzuis) {
     return (
@@ -247,8 +285,8 @@ export const CenaDetalhe = () => {
 // ===== 7. CONTAGEM: 3, 2, 1 — as laranjas afundam =====
 export const CenaContagem = () => {
   const s = useSeg();
-  const t3 = R('contagem', 'L7', 'Três');
-  const tUm = R('contagem', 'L7', 'um');
+  const t3 = R('contagem', 'L9', 'Três');
+  const tUm = R('contagem', 'L9', 'um');
   const laranjas = PLATAFORMAS.filter((x) => x.cor === 'laranja');
   const afunda: Record<number, number> = {16: 1, 19: 1, 23: 1};
   laranjas.forEach((x, i) => {
@@ -261,6 +299,7 @@ export const CenaContagem = () => {
       <Piscina />
       <Plataformas afunda={afunda} />
       <Extras queda={queda} />
+      <Robo alerta={s > t3 ? 1 : 0} />
       <J14 posicao={posPlat(17)} expressao="confiante" pose="bracosCruzados" />
       <J37 posicao={posPlat(9)} expressao="serio" />
       <J82 posicao={[posPlat(24)[0] - 0.95, -1.0, posPlat(24)[2]]} rotacaoY={Math.PI / 2} alvoMaoE={[-0.25, 3.2, 0.6]} alvoMaoD={[0.25, 3.2, 0.6]} expressao="assustado" sombraChao={false} />
@@ -274,7 +313,7 @@ export const CenaContagem = () => {
 // ===== 8. RESTAM 12 — e o prêmio esperando =====
 export const CenaRestam = () => {
   const s = useSeg();
-  const tMilhao = R('restam', 'L8', 'milhão');
+  const tMilhao = R('restam', 'L10', 'milhão');
   const afundaTudo: Record<number, number> = {};
   PLATAFORMAS.forEach((x) => {
     if (x.cor === 'laranja') afundaTudo[x.id] = 1;
@@ -286,6 +325,7 @@ export const CenaRestam = () => {
         <Galpao />
         <Piscina />
         <Plataformas afunda={afundaTudo} brilhoAzul={0.4} />
+        <Robo pos={[0, -0.55, -12]} />
         <J14 posicao={posPlat(17)} pose="comemorar" expressao="rindo" />
         <J37 posicao={posPlat(9)} pose="dancar" expressao="feliz" />
         <J82 posicao={posPlat(24)} pose="comemorar" expressao="emocionado" fase={2} />

@@ -7,19 +7,21 @@ export type Fala = {id: string; quem: string; duracao: number; palavras: Palavra
 export const FALAS = falasJson as Fala[];
 const fala = (id: string) => FALAS.find((f) => f.id === id)!;
 
-export type CenaId = 'gancho' | 'prova' | 'regra' | 'catorze' | 'azarado' | 'quase' | 'detalhe' | 'contagem' | 'restam' | 'final';
+export type CenaId = 'hook' | 'gancho' | 'prova' | 'regra' | 'catorze' | 'azarado' | 'quase' | 'enquete' | 'detalhe' | 'contagem' | 'restam' | 'final';
 
 const ORDEM: {id: CenaId; falas: string[]; antes?: number; depois?: number}[] = [
-  {id: 'gancho', falas: ['L0'], antes: 0.4, depois: 0.25},
-  {id: 'prova', falas: ['L1'], depois: 0.2},
-  {id: 'regra', falas: ['L2'], depois: 0.2},
-  {id: 'catorze', falas: ['L3']},
-  {id: 'azarado', falas: ['L4']},
-  {id: 'quase', falas: ['L5'], depois: 0.3},
-  {id: 'detalhe', falas: ['L6'], depois: 0.2},
-  {id: 'contagem', falas: ['L7'], depois: 0.5},
-  {id: 'restam', falas: ['L8'], depois: 0.2},
-  {id: 'final', falas: ['L9'], depois: 1.8},
+  {id: 'hook', falas: ['L0'], antes: 0.0, depois: 0.2},
+  {id: 'gancho', falas: ['L1'], depois: 0.2},
+  {id: 'prova', falas: ['L2'], depois: 0.2},
+  {id: 'regra', falas: ['L3'], depois: 0.2},
+  {id: 'catorze', falas: ['L4']},
+  {id: 'azarado', falas: ['L5']},
+  {id: 'quase', falas: ['L6'], depois: 0.2},
+  {id: 'enquete', falas: ['L7'], depois: 0.6},
+  {id: 'detalhe', falas: ['L8'], depois: 0.2},
+  {id: 'contagem', falas: ['L9'], depois: 0.5},
+  {id: 'restam', falas: ['L10'], depois: 0.2},
+  {id: 'final', falas: ['L11'], depois: 1.8},
 ];
 
 const PAUSA_ENTRE_FALAS = 0.2;

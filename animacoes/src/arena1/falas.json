@@ -2,52 +2,114 @@
  {
   "id": "L0",
   "quem": "narrador",
-  "duracao": 3.997,
+  "duracao": 2.847,
   "palavras": [
    {
-    "texto": "Cem",
-    "inicio": 0.1,
+    "texto": "Se",
+    "inicio": 0,
     "fim": 0.28
    },
    {
-    "texto": "jogadores.",
+    "texto": "ele",
     "inicio": 0.28,
-    "fim": 1.14
+    "fim": 0.38
    },
    {
-    "texto": "Um",
-    "inicio": 1.14,
-    "fim": 1.58
+    "texto": "cair",
+    "inicio": 0.38,
+    "fim": 0.58
+   },
+   {
+    "texto": "na",
+    "inicio": 0.58,
+    "fim": 0.7
+   },
+   {
+    "texto": "água,",
+    "inicio": 0.7,
+    "fim": 1.26
+   },
+   {
+    "texto": "perde",
+    "inicio": 1.26,
+    "fim": 1.5
+   },
+   {
+    "texto": "um",
+    "inicio": 1.5,
+    "fim": 1.62
    },
    {
     "texto": "milhão",
-    "inicio": 1.58,
+    "inicio": 1.62,
+    "fim": 1.88
+   },
+   {
+    "texto": "de",
+    "inicio": 1.88,
+    "fim": 1.98
+   },
+   {
+    "texto": "reais.",
+    "inicio": 1.98,
+    "fim": 2.06
+   }
+  ]
+ },
+ {
+  "id": "L1",
+  "quem": "narrador",
+  "duracao": 3.866,
+  "palavras": [
+   {
+    "texto": "Cem",
+    "inicio": 0.14,
+    "fim": 0.36
+   },
+   {
+    "texto": "jogadores.",
+    "inicio": 0.36,
+    "fim": 1.28
+   },
+   {
+    "texto": "Um",
+    "inicio": 1.28,
+    "fim": 1.48
+   },
+   {
+    "texto": "prêmio",
+    "inicio": 1.48,
     "fim": 1.8
    },
    {
     "texto": "de",
     "inicio": 1.8,
-    "fim": 1.88
-   },
-   {
-    "texto": "reais.",
-    "inicio": 1.88,
-    "fim": 2.78
-   },
-   {
-    "texto": "Só",
-    "inicio": 2.78,
-    "fim": 2.86
+    "fim": 1.9
    },
    {
     "texto": "um",
-    "inicio": 2.86,
-    "fim": 2.98
+    "inicio": 1.9,
+    "fim": 2.02
+   },
+   {
+    "texto": "milhão.",
+    "inicio": 2.02,
+    "fim": 2.62
+   },
+   {
+    "texto": "Só",
+    "inicio": 2.62,
+    "fim": 2.78
+   },
+   {
+    "texto": "um",
+    "inicio": 2.78,
+    "fim": 2.9
    },
    {
     "texto": "vai",
-    "inicio": 2.98,
-    "fim": 3.06
+    "inicio": 2.9,
+    "fim": 2.98
    },
    {
     "texto": "levar",
@@ -62,200 +124,205 @@
   ]
  },
  {
-  "id": "L1",
+  "id": "L2",
   "quem": "narrador",
-  "duracao": 4.284,
+  "duracao": 4.702,
   "palavras": [
    {
     "texto": "Primeira",
-    "inicio": 0.04,
-    "fim": 0.36
+    "inicio": 0.02,
+    "fim": 0.34
    },
    {
     "texto": "prova:",
-    "inicio": 0.36,
-    "fim": 1
+    "inicio": 0.34,
+    "fim": 1.04
    },
    {
     "texto": "as",
-    "inicio": 1,
-    "fim": 1.1
+    "inicio": 1.04,
+    "fim": 1.14
    },
    {
     "texto": "plataformas",
-    "inicio": 1.1,
-    "fim": 1.56
+    "inicio": 1.14,
+    "fim": 1.68
    },
    {
     "texto": "que",
-    "inicio": 1.56,
-    "fim": 1.66
+    "inicio": 1.68,
+    "fim": 1.78
    },
    {
     "texto": "afundam.",
-    "inicio": 1.66,
-    "fim": 2.32
+    "inicio": 1.78,
+    "fim": 2.42
    },
    {
-    "texto": "Quem",
-    "inicio": 2.32,
-    "fim": 2.72
+    "texto": "E",
+    "inicio": 2.42,
+    "fim": 2.68
    },
    {
-    "texto": "cair",
-    "inicio": 2.72,
-    "fim": 2.9
+    "texto": "o",
+    "inicio": 2.68,
+    "fim": 2.76
    },
    {
-    "texto": "na",
-    "inicio": 2.9,
-    "fim": 3.02
-   },
-   {
-    "texto": "água,",
-    "inicio": 3.02,
-    "fim": 3.3
-   },
-   {
-    "texto": "está",
-    "inicio": 3.3,
-    "fim": 3.66
-   },
-   {
-    "texto": "fora.",
-    "inicio": 3.66,
-    "fim": 3.98
-   }
-  ]
- },
- {
-  "id": "L2",
-  "quem": "narrador",
-  "duracao": 4.023,
-  "palavras": [
-   {
-    "texto": "A",
-    "inicio": 0.04,
-    "fim": 0.18
-   },
-   {
-    "texto": "cada",
-    "inicio": 0.18,
-    "fim": 0.38
-   },
-   {
-    "texto": "dez",
-    "inicio": 0.38,
-    "fim": 0.6
-   },
-   {
-    "texto": "segundos,",
-    "inicio": 0.6,
-    "fim": 1.46
-   },
-   {
-    "texto": "uma",
-    "inicio": 1.46,
-    "fim": 1.54
-   },
-   {
-    "texto": "plataforma",
-    "inicio": 1.54,
-    "fim": 1.98
-   },
-   {
-    "texto": "afunda...",
-    "inicio": 1.98,
-    "fim": 2.66
-   },
-   {
-    "texto": "e",
-    "inicio": 2.66,
+    "texto": "robô",
+    "inicio": 2.74,
     "fim": 2.94
    },
    {
-    "texto": "ninguém",
+    "texto": "gigante",
     "inicio": 2.94,
-    "fim": 3.02
+    "fim": 3.36
    },
    {
-    "texto": "sabe",
-    "inicio": 2.98,
-    "fim": 3.06
+    "texto": "vigia",
+    "inicio": 3.36,
+    "fim": 3.72
    },
    {
-    "texto": "qual.",
-    "inicio": 2.98,
-    "fim": 3.06
+    "texto": "cada",
+    "inicio": 3.72,
+    "fim": 3.98
+   },
+   {
+    "texto": "movimento.",
+    "inicio": 3.98,
+    "fim": 4.06
    }
   ]
  },
  {
   "id": "L3",
   "quem": "narrador",
-  "duracao": 3.422,
+  "duracao": 4.232,
   "palavras": [
    {
-    "texto": "O",
-    "inicio": 0,
-    "fim": 0.18
+    "texto": "A",
+    "inicio": 0.12,
+    "fim": 0.32
    },
    {
-    "texto": "jogador",
-    "inicio": 0.18,
-    "fim": 0.46
+    "texto": "cada",
+    "inicio": 0.32,
+    "fim": 0.5
    },
    {
-    "texto": "catorze",
-    "inicio": 0.46,
-    "fim": 0.82
+    "texto": "dez",
+    "inicio": 0.5,
+    "fim": 0.76
    },
    {
-    "texto": "não",
-    "inicio": 0.82,
-    "fim": 1.02
+    "texto": "segundos,",
+    "inicio": 0.76,
+    "fim": 1.6
    },
    {
-    "texto": "perde",
-    "inicio": 1.02,
-    "fim": 1.24
+    "texto": "uma",
+    "inicio": 1.6,
+    "fim": 1.68
    },
    {
-    "texto": "tempo:",
-    "inicio": 1.24,
-    "fim": 1.86
+    "texto": "plataforma",
+    "inicio": 1.66,
+    "fim": 2.08
    },
    {
-    "texto": "pula",
-    "inicio": 1.86,
-    "fim": 2.24
+    "texto": "afunda...",
+    "inicio": 2.08,
+    "fim": 2.66
    },
    {
-    "texto": "direto",
-    "inicio": 2.24,
-    "fim": 2.64
+    "texto": "e",
+    "inicio": 2.66,
+    "fim": 3.14
    },
    {
-    "texto": "para",
-    "inicio": 2.64,
-    "fim": 2.8
+    "texto": "ninguém",
+    "inicio": 3.14,
+    "fim": 3.34
    },
    {
-    "texto": "o",
-    "inicio": 2.8,
-    "fim": 2.96
+    "texto": "sabe",
+    "inicio": 3.34,
+    "fim": 3.64
    },
    {
-    "texto": "centro.",
-    "inicio": 2.96,
-    "fim": 3.04
+    "texto": "qual.",
+    "inicio": 3.64,
+    "fim": 3.98
    }
   ]
  },
  {
   "id": "L4",
   "quem": "narrador",
-  "duracao": 3.344,
+  "duracao": 3.291,
+  "palavras": [
+   {
+    "texto": "O",
+    "inicio": 0,
+    "fim": 0.16
+   },
+   {
+    "texto": "jogador",
+    "inicio": 0.16,
+    "fim": 0.46
+   },
+   {
+    "texto": "catorze",
+    "inicio": 0.46,
+    "fim": 0.86
+   },
+   {
+    "texto": "não",
+    "inicio": 0.86,
+    "fim": 1.06
+   },
+   {
+    "texto": "perde",
+    "inicio": 1.06,
+    "fim": 1.32
+   },
+   {
+    "texto": "tempo:",
+    "inicio": 1.32,
+    "fim": 1.96
+   },
+   {
+    "texto": "pula",
+    "inicio": 1.96,
+    "fim": 2.1
+   },
+   {
+    "texto": "direto",
+    "inicio": 2.1,
+    "fim": 2.46
+   },
+   {
+    "texto": "para",
+    "inicio": 2.46,
+    "fim": 2.62
+   },
+   {
+    "texto": "o",
+    "inicio": 2.62,
+    "fim": 2.7
+   },
+   {
+    "texto": "centro.",
+    "inicio": 2.7,
+    "fim": 2.98
+   }
+  ]
+ },
+ {
+  "id": "L5",
+  "quem": "narrador",
+  "duracao": 3.056,
   "palavras": [
    {
     "texto": "Já",
@@ -269,114 +336,114 @@
    },
    {
     "texto": "oitenta",
-    "inicio": 0.259,
-    "fim": 0.627
+    "inicio": 0.256,
+    "fim": 0.62
    },
    {
     "texto": "e",
-    "inicio": 0.627,
-    "fim": 0.735
+    "inicio": 0.62,
+    "fim": 0.727
    },
    {
     "texto": "dois",
-    "inicio": 0.735,
-    "fim": 0.972
+    "inicio": 0.727,
+    "fim": 0.962
    },
    {
     "texto": "escolheu",
-    "inicio": 0.8,
-    "fim": 1.48
+    "inicio": 0.64,
+    "fim": 1.36
    },
    {
     "texto": "justo",
-    "inicio": 1.48,
-    "fim": 1.76
+    "inicio": 1.36,
+    "fim": 1.68
    },
    {
     "texto": "a",
-    "inicio": 1.76,
-    "fim": 1.88
+    "inicio": 1.68,
+    "fim": 1.8
    },
    {
     "texto": "plataforma",
-    "inicio": 1.88,
-    "fim": 2.32
+    "inicio": 1.8,
+    "fim": 2.22
    },
    {
     "texto": "que",
-    "inicio": 2.32,
-    "fim": 2.5
+    "inicio": 2.22,
+    "fim": 2.38
    },
    {
     "texto": "balança.",
-    "inicio": 2.5,
+    "inicio": 2.38,
     "fim": 2.98
    }
   ]
  },
  {
-  "id": "L5",
+  "id": "L6",
   "quem": "narrador",
-  "duracao": 4.075,
+  "duracao": 4.101,
   "palavras": [
    {
     "texto": "Ela",
-    "inicio": 0.02,
+    "inicio": 0.04,
     "fim": 0.26
    },
    {
     "texto": "afunda!",
     "inicio": 0.26,
-    "fim": 0.98
+    "fim": 0.96
    },
    {
     "texto": "O",
-    "inicio": 0.98,
-    "fim": 1.16
+    "inicio": 0.96,
+    "fim": 1.1
    },
    {
     "texto": "oitenta",
-    "inicio": 0.955,
-    "fim": 1.351
+    "inicio": 0.961,
+    "fim": 1.359
    },
    {
     "texto": "e",
-    "inicio": 1.351,
-    "fim": 1.467
+    "inicio": 1.359,
+    "fim": 1.476
    },
    {
     "texto": "dois",
-    "inicio": 1.467,
-    "fim": 1.723
+    "inicio": 1.476,
+    "fim": 1.734
    },
    {
     "texto": "quase",
-    "inicio": 1.54,
-    "fim": 2.1
+    "inicio": 1.4,
+    "fim": 2.04
    },
    {
     "texto": "cai...",
-    "inicio": 2.1,
-    "fim": 2.76
+    "inicio": 2.04,
+    "fim": 2.64
    },
    {
     "texto": "mas",
-    "inicio": 2.76,
+    "inicio": 2.64,
     "fim": 2.94
    },
    {
     "texto": "se",
     "inicio": 2.94,
-    "fim": 3.04
+    "fim": 3.06
    },
    {
     "texto": "segura",
-    "inicio": 3.04,
-    "fim": 3.32
+    "inicio": 3.06,
+    "fim": 3.34
    },
    {
     "texto": "na",
-    "inicio": 3.32,
+    "inicio": 3.34,
     "fim": 3.42
    },
    {
@@ -387,14 +454,76 @@
   ]
  },
  {
-  "id": "L6",
+  "id": "L7",
+  "quem": "narrador",
+  "duracao": 3.422,
+  "palavras": [
+   {
+    "texto": "Comenta",
+    "inicio": 0.04,
+    "fim": 0.44
+   },
+   {
+    "texto": "agora:",
+    "inicio": 0.44,
+    "fim": 1.16
+   },
+   {
+    "texto": "o",
+    "inicio": 1.16,
+    "fim": 1.28
+   },
+   {
+    "texto": "oitenta",
+    "inicio": 0.995,
+    "fim": 1.408
+   },
+   {
+    "texto": "e",
+    "inicio": 1.408,
+    "fim": 1.529
+   },
+   {
+    "texto": "dois",
+    "inicio": 1.529,
+    "fim": 1.796
+   },
+   {
+    "texto": "passa",
+    "inicio": 1.6,
+    "fim": 2.26
+   },
+   {
+    "texto": "dessa",
+    "inicio": 2.26,
+    "fim": 2.44
+   },
+   {
+    "texto": "prova",
+    "inicio": 2.44,
+    "fim": 2.82
+   },
+   {
+    "texto": "ou",
+    "inicio": 2.82,
+    "fim": 2.98
+   },
+   {
+    "texto": "não?",
+    "inicio": 2.98,
+    "fim": 3.06
+   }
+  ]
+ },
+ {
+  "id": "L8",
   "quem": "narrador",
   "duracao": 4.075,
   "palavras": [
    {
     "texto": "A",
-    "inicio": 0.04,
-    "fim": 0.2
+    "inicio": 0.06,
+    "fim": 0.18
    },
    {
     "texto": "trinta",
@@ -413,131 +542,42 @@
    },
    {
     "texto": "percebeu",
-    "inicio": 0.56,
-    "fim": 1.16
+    "inicio": 0.58,
+    "fim": 1.2
    },
    {
     "texto": "um",
-    "inicio": 1.16,
-    "fim": 1.24
+    "inicio": 1.2,
+    "fim": 1.28
    },
    {
     "texto": "detalhe:",
-    "inicio": 1.2,
-    "fim": 1.82
+    "inicio": 1.26,
+    "fim": 1.92
    },
    {
     "texto": "as",
-    "inicio": 1.82,
-    "fim": 2.24
+    "inicio": 1.92,
+    "fim": 2.16
    },
    {
     "texto": "plataformas",
-    "inicio": 2.24,
-    "fim": 2.8
+    "inicio": 2.16,
+    "fim": 2.74
    },
    {
     "texto": "azuis",
-    "inicio": 2.8,
-    "fim": 3.12
+    "inicio": 2.74,
+    "fim": 3.06
    },
    {
     "texto": "nunca",
-    "inicio": 3.12,
-    "fim": 3.4
+    "inicio": 3.06,
+    "fim": 3.34
    },
    {
     "texto": "afundam.",
-    "inicio": 3.4,
-    "fim": 3.98
-   }
-  ]
- },
- {
-  "id": "L7",
-  "quem": "narrador",
-  "duracao": 3.004,
-  "palavras": [
-   {
-    "texto": "Últimos",
-    "inicio": 0.02,
-    "fim": 0.36
-   },
-   {
-    "texto": "segundos.",
-    "inicio": 0.36,
-    "fim": 1.18
-   },
-   {
-    "texto": "Três,",
-    "inicio": 1.18,
-    "fim": 1.7
-   },
-   {
-    "texto": "dois,",
-    "inicio": 1.7,
-    "fim": 1.98
-   },
-   {
-    "texto": "um...",
-    "inicio": 1.98,
-    "fim": 2.06
-   }
-  ]
- },
- {
-  "id": "L8",
-  "quem": "narrador",
-  "duracao": 4.075,
-  "palavras": [
-   {
-    "texto": "Restam",
-    "inicio": 0.08,
-    "fim": 0.4
-   },
-   {
-    "texto": "só",
-    "inicio": 0.4,
-    "fim": 0.6
-   },
-   {
-    "texto": "doze",
-    "inicio": 0.6,
-    "fim": 0.92
-   },
-   {
-    "texto": "jogadores.",
-    "inicio": 0.92,
-    "fim": 1.74
-   },
-   {
-    "texto": "E",
-    "inicio": 1.74,
-    "fim": 1.96
-   },
-   {
-    "texto": "o",
-    "inicio": 1.96,
-    "fim": 2.04
-   },
-   {
-    "texto": "milhão",
-    "inicio": 2.02,
-    "fim": 2.32
-   },
-   {
-    "texto": "continua",
-    "inicio": 2.32,
-    "fim": 2.76
-   },
-   {
-    "texto": "ali,",
-    "inicio": 2.76,
-    "fim": 3.2
-   },
-   {
-    "texto": "esperando.",
-    "inicio": 3.2,
+    "inicio": 3.34,
     "fim": 3.98
    }
   ]
@@ -545,72 +585,161 @@
  {
   "id": "L9",
   "quem": "narrador",
+  "duracao": 3.135,
+  "palavras": [
+   {
+    "texto": "Últimos",
+    "inicio": 0.04,
+    "fim": 0.38
+   },
+   {
+    "texto": "segundos.",
+    "inicio": 0.38,
+    "fim": 1.24
+   },
+   {
+    "texto": "Três,",
+    "inicio": 1.24,
+    "fim": 1.72
+   },
+   {
+    "texto": "dois,",
+    "inicio": 1.72,
+    "fim": 2.48
+   },
+   {
+    "texto": "um...",
+    "inicio": 2.48,
+    "fim": 2.98
+   }
+  ]
+ },
+ {
+  "id": "L10",
+  "quem": "narrador",
+  "duracao": 4.023,
+  "palavras": [
+   {
+    "texto": "Restam",
+    "inicio": 0.06,
+    "fim": 0.38
+   },
+   {
+    "texto": "só",
+    "inicio": 0.38,
+    "fim": 0.54
+   },
+   {
+    "texto": "doze",
+    "inicio": 0.54,
+    "fim": 0.86
+   },
+   {
+    "texto": "jogadores.",
+    "inicio": 0.86,
+    "fim": 1.66
+   },
+   {
+    "texto": "E",
+    "inicio": 1.66,
+    "fim": 2.04
+   },
+   {
+    "texto": "o",
+    "inicio": 2.04,
+    "fim": 2.12
+   },
+   {
+    "texto": "milhão",
+    "inicio": 2.1,
+    "fim": 2.3
+   },
+   {
+    "texto": "continua",
+    "inicio": 2.3,
+    "fim": 2.7
+   },
+   {
+    "texto": "ali,",
+    "inicio": 2.7,
+    "fim": 2.98
+   },
+   {
+    "texto": "esperando.",
+    "inicio": 2.98,
+    "fim": 3.06
+   }
+  ]
+ },
+ {
+  "id": "L11",
+  "quem": "narrador",
   "duracao": 4.963,
   "palavras": [
    {
     "texto": "Em",
-    "inicio": 0.06,
-    "fim": 0.22
+    "inicio": 0.04,
+    "fim": 0.18
    },
    {
     "texto": "quem",
-    "inicio": 0.22,
-    "fim": 0.34
+    "inicio": 0.18,
+    "fim": 0.32
    },
    {
     "texto": "você",
-    "inicio": 0.34,
+    "inicio": 0.32,
     "fim": 0.54
    },
    {
     "texto": "aposta?",
     "inicio": 0.54,
-    "fim": 1.24
+    "fim": 1.3
    },
    {
     "texto": "Comenta",
-    "inicio": 1.24,
-    "fim": 1.58
+    "inicio": 1.3,
+    "fim": 1.72
    },
    {
     "texto": "o",
-    "inicio": 1.58,
-    "fim": 1.66
+    "inicio": 1.72,
+    "fim": 1.8
    },
    {
     "texto": "número.",
-    "inicio": 1.66,
-    "fim": 2.26
+    "inicio": 1.8,
+    "fim": 2.44
    },
    {
     "texto": "Na",
-    "inicio": 2.26,
-    "fim": 2.74
+    "inicio": 2.44,
+    "fim": 2.6
    },
    {
     "texto": "parte",
-    "inicio": 2.74,
-    "fim": 3
+    "inicio": 2.6,
+    "fim": 2.86
    },
    {
     "texto": "dois,",
-    "inicio": 3,
-    "fim": 3.58
+    "inicio": 2.86,
+    "fim": 3.54
    },
    {
     "texto": "a",
-    "inicio": 3.58,
-    "fim": 3.76
+    "inicio": 3.54,
+    "fim": 3.72
    },
    {
     "texto": "prova",
-    "inicio": 3.76,
-    "fim": 3.98
+    "inicio": 3.72,
+    "fim": 3.9
    },
    {
     "texto": "fica",
-    "inicio": 3.98,
-    "fim": 4.06
+    "inicio": 3.9,
+    "fim": 3.98
    },
    {
     "texto": "ainda",

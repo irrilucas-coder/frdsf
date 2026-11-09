@@ -4,7 +4,7 @@ import {AbsoluteFill, Easing, Sequence, interpolate, staticFile, useCurrentFrame
 import {sfx, type CategoriaSfx, VOLUME_SFX} from '../sfx';
 import {Clarao, FONTE} from '../submarino/Overlay';
 import {Cortes, Etiqueta, Hud, PalavraChave} from '../edicao/Edicao';
-import {CenaAzarado, CenaCatorze, CenaContagem, CenaDetalhe, CenaFinal, CenaGancho, CenaProva, CenaQuase, CenaRegra, CenaRestam} from './Cenas';
+import {CenaAzarado, CenaCatorze, CenaContagem, CenaDetalhe, CenaEnquete, CenaFinal, CenaGancho, CenaHook, CenaProva, CenaQuase, CenaRegra, CenaRestam} from './Cenas';
 import {CENAS, FPS, TODAS_FALAS, TOTAL_FRAMES, cena, type CenaId, duracaoCena, quandoDiz, segFrame} from './roteiro';
 
 const T = (id: CenaId, rel: number) => cena(id).inicio + rel;
@@ -14,6 +14,8 @@ const ATE = (id: CenaId) => cena(id).fim;
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
 const COMPONENTE: Record<CenaId, React.FC> = {
+  hook: CenaHook,
+  enquete: CenaEnquete,
   gancho: CenaGancho,
   prova: CenaProva,
   regra: CenaRegra,
@@ -35,11 +37,11 @@ const CONT = (px: number) =>
 // Painel: jogadores restantes + prêmio
 const PainelArena = () => {
   const s = useCurrentFrame() / FPS;
-  const t3 = Q('contagem', 'L7', 'Três');
-  const tUm = Q('contagem', 'L7', 'um');
+  const t3 = Q('contagem', 'L9', 'Três');
+  const tUm = Q('contagem', 'L9', 'um');
   let n = 100;
-  if (s > Q('prova', 'L1', 'água') + 0.2) n = 99;
-  if (s > Q('regra', 'L2', 'afunda') + 0.5) n = 98;
+  if (s > Q('prova', 'L2', 'vigia') + 0.2) n = 99;
+  if (s > Q('regra', 'L3', 'afunda') + 0.5) n = 98;
   if (s > t3) n = Math.round(interpolate(s, [t3, tUm + 0.6], [98, 12], clamp));
   if (s < 0.3 || s > ATE('restam')) return null;
   return <Hud itens={[{rotulo: 'JOGADORES', valor: String(n), perigo: s > t3 && s < tUm + 0.6}, {rotulo: 'PRÊMIO', valor: 'R$ 1 MI'}]} topo={60} />;
@@ -73,6 +75,28 @@ const Numero321 = ({inicio, dur, n}: {inicio: number; dur: number; n: string}) =
   );
 };
 
+// Enquete no meio do vídeo: comenta ✅ ou ❌
+const Enquete = ({inicio, dur}: {inicio: number; dur: number}) => {
+  const s = useCurrentFrame() / FPS - inicio;
+  if (s < 0 || s > dur) return null;
+  const a = interpolate(s, [0, 0.25], [0, 1], {...clamp, easing: Easing.out(Easing.back(2))});
+  const b = interpolate(s, [0.35, 0.6], [0, 1], {...clamp, easing: Easing.out(Easing.back(2))});
+  const sai = interpolate(s, [dur - 0.2, dur], [1, 0], clamp);
+  const opc = (txt: string, cor: string, k: number, rot: number) => (
+    <div style={{scale: k * sai, rotate: `${rot}deg`, fontFamily: FONTE, fontSize: 70, color: '#fff', background: cor, border: '6px solid #000', borderRadius: 26, padding: '8px 30px', boxShadow: '0 8px 0 rgba(0,0,0,0.45)'}}>{txt}</div>
+  );
+  return (
+    <AbsoluteFill style={{alignItems: 'center', paddingTop: 300, gap: 26}}>
+      <div style={{scale: a * sai, fontFamily: FONTE, fontSize: 74, color: '#fff', textShadow: CONT(7), textAlign: 'center', lineHeight: 1.05}}>O #82 PASSA<br />DESSA PROVA?</div>
+      <div style={{display: 'flex', gap: 30}}>
+        {opc('✅ PASSA', '#1faa59', b, -3)}
+        {opc('❌ NÃO', '#e10600', b, 3)}
+      </div>
+      <div style={{scale: b * sai, fontFamily: FONTE, fontSize: 46, color: '#111', background: '#ffd23f', border: '5px solid #000', borderRadius: 40, padding: '4px 24px'}}>💬 RESPONDE NOS COMENTÁRIOS</div>
+    </AbsoluteFill>
+  );
+};
+
 // Final: "EM QUEM VOCÊ APOSTA?" + "COMENTA O NÚMERO" + "PARTE 2"
 const Aposta = ({inicio, dur}: {inicio: number; dur: number}) => {
   const s = useCurrentFrame() / FPS - inicio;
@@ -90,30 +114,34 @@ const Aposta = ({inicio, dur}: {inicio: number; dur: number}) => {
 };
 
 const SONS: [CategoriaSfx, number, number, number, number?][] = [
-  ['impacto', 0, 0.4, 0.9],
-  ['conquista', 0, Q('gancho', 'L0', 'milhão'), 0.5],
-  ['impacto', 1, Q('gancho', 'L0', 'Só'), 0.7],
-  ['agua', 0, Q('prova', 'L1', 'água') + 0.15, 0.7],
-  ['erro', 0, Q('prova', 'L1', 'água') + 0.2, 0.6],
+  ['alarme', 0, 0.0, 0.35, 2.6],
+  ['impacto', 0, Q('hook', 'L0', 'perde'), 0.9],
+  ['impacto', 2, T('gancho', 0.0), 0.8],
+  ['pop', 1, T('enquete', 0.1), 0.8],
+  ['pop', 2, T('enquete', 0.45), 0.8],
+  ['conquista', 0, Q('gancho', 'L1', 'milhão'), 0.5],
+  ['impacto', 1, Q('gancho', 'L1', 'Só'), 0.7],
+  ['agua', 0, Q('prova', 'L2', 'vigia') + 0.15, 0.7],
+  ['erro', 0, Q('prova', 'L2', 'vigia') + 0.2, 0.6],
   ['tique', 0, T('regra', 0.2), 0.5],
   ['tique', 1, T('regra', 0.7), 0.5],
   ['tique', 2, T('regra', 1.2), 0.5],
-  ['agua', 1, Q('regra', 'L2', 'afunda') + 0.45, 0.6],
-  ['whoosh', 2, Q('catorze', 'L3', 'pula'), 0.8],
-  ['impacto', 2, Q('catorze', 'L3', 'pula') + 0.7, 0.6],
-  ['mecanico', 0, Q('azarado', 'L4', 'balança') - 0.3, 0.5],
-  ['impacto', 0, Q('quase', 'L5', 'afunda'), 0.8],
-  ['agua', 0, Q('quase', 'L5', 'afunda') + 0.5, 0.7],
-  ['subida', 0, Q('quase', 'L5', 'mas') - 0.2, 0.5],
-  ['acerto', 0, Q('detalhe', 'L6', 'azuis'), 0.6],
+  ['agua', 1, Q('regra', 'L3', 'afunda') + 0.45, 0.6],
+  ['whoosh', 2, Q('catorze', 'L4', 'pula'), 0.8],
+  ['impacto', 2, Q('catorze', 'L4', 'pula') + 0.7, 0.6],
+  ['mecanico', 0, Q('azarado', 'L5', 'balança') - 0.3, 0.5],
+  ['impacto', 0, Q('quase', 'L6', 'afunda'), 0.8],
+  ['agua', 0, Q('quase', 'L6', 'afunda') + 0.5, 0.7],
+  ['subida', 0, Q('quase', 'L6', 'mas') - 0.2, 0.5],
+  ['acerto', 0, Q('detalhe', 'L8', 'azuis'), 0.6],
   ['tensao', 0, T('contagem', 0.0), 0.45, 3],
-  ['tique', 0, Q('contagem', 'L7', 'Três'), 0.9],
-  ['tique', 1, Q('contagem', 'L7', 'dois'), 0.9],
-  ['impacto', 1, Q('contagem', 'L7', 'um'), 1],
-  ['agua', 1, Q('contagem', 'L7', 'um') + 0.3, 0.8],
+  ['tique', 0, Q('contagem', 'L9', 'Três'), 0.9],
+  ['tique', 1, Q('contagem', 'L9', 'dois'), 0.9],
+  ['impacto', 1, Q('contagem', 'L9', 'um'), 1],
+  ['agua', 1, Q('contagem', 'L9', 'um') + 0.3, 0.8],
   ['conquista', 1, T('restam', 0.2), 0.6],
-  ['pop', 0, Q('final', 'L9', 'Comenta'), 0.8],
-  ['impacto', 2, Q('final', 'L9', 'parte'), 0.7],
+  ['pop', 0, Q('final', 'L11', 'Comenta'), 0.8],
+  ['impacto', 2, Q('final', 'L11', 'parte'), 0.7],
   ...CENAS.slice(1).map((c, i) => ['whoosh', i, c.inicio - 0.1, 0.4] as [CategoriaSfx, number, number, number]),
 ];
 
@@ -123,7 +151,7 @@ const Som = ({cat, n, em, vol, dur}: {cat: CategoriaSfx; n: number; em: number; 
   </Sequence>
 );
 
-const CORTES = [...CENAS.slice(1).map((c) => c.inicio), Q('gancho', 'L0', 'milhão'), Q('gancho', 'L0', 'Só'), Q('detalhe', 'L6', 'plataformas'), Q('restam', 'L8', 'milhão')].sort((a, b) => a - b);
+const CORTES = [...CENAS.slice(1).map((c) => c.inicio), Q('prova', 'L2', 'robô'), Q('gancho', 'L1', 'milhão'), Q('gancho', 'L1', 'Só'), Q('detalhe', 'L8', 'plataformas'), Q('restam', 'L10', 'milhão')].sort((a, b) => a - b);
 
 export const Arena1Video = ({semVideo = false}: {semVideo?: boolean}) => {
   const volumeTrilha = (f: number) => 0.18 * interpolate(f, [TOTAL_FRAMES - 40, TOTAL_FRAMES], [1, 0], clamp);
@@ -144,23 +172,25 @@ export const Arena1Video = ({semVideo = false}: {semVideo?: boolean}) => {
           </Cortes>
           <PainelArena />
 
-          <PalavraChave {...pal('gancho', 'L0', 'Cem', 1.2)} texto="100 JOGADORES" />
-          <PalavraChave {...pal('gancho', 'L0', 'milhão', 1.2)} texto="R$ 1.000.000" cor="#ffd23f" tamanho={130} />
-          <PalavraChave {...pal('gancho', 'L0', 'Só', 1.4)} texto="SÓ 1 VENCE" cor="#ff2d2d" />
-          <PalavraChave {...pal('prova', 'L1', 'plataformas', 1.4)} texto="PROVA 1" cor="#ffd23f" topo="30%" tamanho={100} />
-          <Eliminado inicio={Q('prova', 'L1', 'água') + 0.25} numero="3" />
-          <PalavraChave {...pal('regra', 'L2', 'dez', 1.6)} texto="A CADA 10s" />
-          <Etiqueta inicio={Q('catorze', 'L3', 'catorze')} dur={ATE('catorze') - Q('catorze', 'L3', 'catorze')} texto="#14" x="50%" y="24%" fundo="#ff7a1a" />
-          <Etiqueta inicio={Q('azarado', 'L4', 'oitenta')} dur={ATE('azarado') - Q('azarado', 'L4', 'oitenta')} texto="#82" x="50%" y="24%" fundo="#ff7a1a" />
-          <PalavraChave {...pal('quase', 'L5', 'mas', 1.4)} texto="QUASE!" cor="#ffd23f" tamanho={150} />
-          <Etiqueta inicio={Q('detalhe', 'L6', 'trinta')} dur={Q('detalhe', 'L6', 'plataformas') - Q('detalhe', 'L6', 'trinta')} texto="#37" x="50%" y="24%" fundo="#ff7a1a" />
-          <PalavraChave {...pal('detalhe', 'L6', 'azuis', 1.4)} texto="AZUIS = SALVAS" cor="#7fb8ff" tamanho={100} />
-          <Numero321 inicio={Q('contagem', 'L7', 'Três')} dur={0.6} n="3" />
-          <Numero321 inicio={Q('contagem', 'L7', 'dois')} dur={0.25} n="2" />
-          <Numero321 inicio={Q('contagem', 'L7', 'um')} dur={0.7} n="1" />
-          <PalavraChave {...pal('restam', 'L8', 'Restam', 1.6)} texto="RESTAM 12" cor="#ffd23f" tamanho={140} />
+          <PalavraChave {...pal('hook', 'L0', 'perde', 1.8)} texto="PERDE R$ 1 MILHÃO" cor="#ffd23f" tamanho={96} />
+          <Enquete inicio={T('enquete', 0.05)} dur={D('enquete') - 0.05} />
+          <PalavraChave {...pal('gancho', 'L1', 'Cem', 1.2)} texto="100 JOGADORES" />
+          <PalavraChave {...pal('gancho', 'L1', 'milhão', 1.2)} texto="R$ 1.000.000" cor="#ffd23f" tamanho={130} />
+          <PalavraChave {...pal('gancho', 'L1', 'Só', 1.4)} texto="SÓ 1 VENCE" cor="#ff2d2d" />
+          <PalavraChave {...pal('prova', 'L2', 'plataformas', 1.4)} texto="PROVA 1" cor="#ffd23f" topo="30%" tamanho={100} />
+          <Eliminado inicio={Q('prova', 'L2', 'vigia') + 0.25} numero="3" />
+          <PalavraChave {...pal('regra', 'L3', 'dez', 1.6)} texto="A CADA 10s" />
+          <Etiqueta inicio={Q('catorze', 'L4', 'catorze')} dur={ATE('catorze') - Q('catorze', 'L4', 'catorze')} texto="#14" x="50%" y="24%" fundo="#ff7a1a" />
+          <Etiqueta inicio={Q('azarado', 'L5', 'oitenta')} dur={ATE('azarado') - Q('azarado', 'L5', 'oitenta')} texto="#82" x="50%" y="24%" fundo="#ff7a1a" />
+          <PalavraChave {...pal('quase', 'L6', 'mas', 1.4)} texto="QUASE!" cor="#ffd23f" tamanho={150} />
+          <Etiqueta inicio={Q('detalhe', 'L8', 'trinta')} dur={Q('detalhe', 'L8', 'plataformas') - Q('detalhe', 'L8', 'trinta')} texto="#37" x="50%" y="24%" fundo="#ff7a1a" />
+          <PalavraChave {...pal('detalhe', 'L8', 'azuis', 1.4)} texto="AZUIS = SALVAS" cor="#7fb8ff" tamanho={100} />
+          <Numero321 inicio={Q('contagem', 'L9', 'Três')} dur={0.6} n="3" />
+          <Numero321 inicio={Q('contagem', 'L9', 'dois')} dur={0.25} n="2" />
+          <Numero321 inicio={Q('contagem', 'L9', 'um')} dur={0.7} n="1" />
+          <PalavraChave {...pal('restam', 'L10', 'Restam', 1.6)} texto="RESTAM 12" cor="#ffd23f" tamanho={140} />
           <Aposta inicio={T('final', 0.05)} dur={D('final') - 0.05} />
-          <Clarao momentos={[Q('contagem', 'L7', 'um'), T('restam', 0)]} />
+          <Clarao momentos={[Q('contagem', 'L9', 'um'), T('restam', 0)]} />
         </>
       )}
       <Audio src={staticFile('arena1/trilha.mp3')} volume={volumeTrilha} />

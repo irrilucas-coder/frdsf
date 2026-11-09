@@ -11,7 +11,7 @@ import wave
 import numpy as np
 
 SR = 44100
-DUR = 46
+DUR = 52
 BPM = 122
 rng = np.random.default_rng(11)
 saida = os.path.join(os.path.dirname(__file__), "..", "public", "arena1")
@@ -49,8 +49,8 @@ ACORDE = [(220, 261.6, 329.6), (174.6, 220, 261.6), (146.8, 174.6, 220), (164.8,
 s = 0.0
 k = 0
 while s < DUR:
-    vitoria = 32.8 <= s < 37.5
-    final = s >= 37.5
+    vitoria = 39.7 <= s < 44.0
+    final = s >= 44.0
     idx = (k // 8) % 4
     # baixo em colcheias
     poe(serra(RAIZ[idx] * (2 if k % 2 else 1), b / 2 * 0.95, 9), s, 0.32)
@@ -77,9 +77,9 @@ m = int(SR * 3.2)
 tt = np.arange(m) / SR
 f = np.geomspace(200, 1600, m)
 riser = np.sin(2 * np.pi * np.cumsum(f) / SR) * (tt / 3.2) ** 2 + rng.standard_normal(m) * 0.15 * (tt / 3.2) ** 3
-poe(riser, 29.4, 0.12)
+poe(riser, 36.1, 0.12)
 
-curva = np.interp(t, [0, 1.5, 9, 13, 20, 25, 29.3, 32.7, 33.0, 37.5, DUR - 3, DUR], [0, 0.8, 0.8, 0.85, 0.85, 0.8, 0.9, 1.0, 0.95, 0.8, 0.75, 0])
+curva = np.interp(t, [0, 0.3, 12, 16, 23, 27.7, 31.8, 36.0, 39.6, 39.9, 44.0, DUR - 3, DUR], [0.6, 0.9, 0.8, 0.85, 0.9, 0.6, 0.8, 0.9, 1.0, 0.95, 0.8, 0.75, 0])
 mix *= curva
 mix = mix / (np.abs(mix).max() + 1e-9) * 0.85
 wav = os.path.join(saida, "trilha.wav")
