@@ -20,6 +20,7 @@ import {FPS as FPS_AR1, TOTAL_FRAMES as FRAMES_AR1} from './arena1/roteiro';
 import {Arena1Video} from './arena1/Arena1';
 import {FPS as FPS_INF, TOTAL_FRAMES as FRAMES_INF} from './infarto/roteiro';
 import {InfartoVideo} from './infarto/Infarto';
+import {FPS_LOOP, FRAMES_LOOP, LoopCubos} from './loop/Loop';
 import {FPS as FPS_FREIO, TOTAL_FRAMES as FRAMES_FREIO} from './freio/roteiro';
 import {FPS as FPS_ELEV, TOTAL_FRAMES as FRAMES_ELEV} from './elevador/roteiro';
 import {BipEAEstrela} from './BipEAEstrela';
@@ -86,6 +87,7 @@ export const RemotionRoot = () => {
         height={1920}
       />
       <Composition id="FreioMX" component={FreioMxVideo} durationInFrames={FRAMES_FREIO_MX} fps={FPS_FREIO_MX} width={1080} height={1920} />
+      <Composition id="LoopCubos" component={LoopCubos} durationInFrames={FRAMES_LOOP} fps={FPS_LOOP} width={1080} height={1920} />
       <Composition id="Infarto" component={InfartoVideo} durationInFrames={FRAMES_INF} fps={FPS_INF} width={1080} height={1920} />
       <Composition id="Arena1" component={Arena1Video} durationInFrames={FRAMES_AR1} fps={FPS_AR1} width={1080} height={1920} />
       <Composition id="Chiclete" component={ChicleteVideo} durationInFrames={FRAMES_CHI} fps={FPS_CHI} width={1080} height={1920} />
