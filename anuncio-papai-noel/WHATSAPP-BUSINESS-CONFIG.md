@@ -1,7 +1,7 @@
 # WhatsApp Business — configuração rápida
 ### Vídeos do Papai Noel IA · 15 minutos · copie e cole
 
-> **Antes de tudo:** troque o que está em **[COLCHETES]**: preço, chave Pix, seu nome, prazo e bônus. Todos os caminhos começam em **⋮ (três pontinhos, no canto superior direito) → Ferramentas comerciais**.
+> **Antes de tudo:** troque o que está em **[COLCHETES]**: chave Pix, seu nome, prazo e bônus. Todos os caminhos começam em **⋮ (três pontinhos, no canto superior direito) → Ferramentas comerciais**.
 
 ---
 
@@ -66,7 +66,7 @@ Funciona assim:
 💌 Ele elogia o que ela fez de bom e fala do presente que ela pediu
 📲 Você recebe o vídeo aqui no WhatsApp, pronto para mostrar
 
-💰 Valor: [R$ XX]
+💰 Valor: R$ 30,00
 ⏰ Prévia pronta em até [X] horas
 
 ✨ Você só paga depois de ver! Primeiro te envio uma prévia, e se gostar, faz o Pix e recebe o vídeo final sem marca d'água.
@@ -101,7 +101,7 @@ Gostou? É só fazer o Pix que eu já te mando o vídeo final! 😍
 ```
 🔑 Chave Pix: [SUA CHAVE]
 👤 Nome: [SEU NOME]
-💰 Valor: [R$ XX]
+💰 Valor: R$ 30,00
 
 Me manda o comprovante aqui que eu envio o vídeo final na hora! 🎄
 ```
@@ -145,7 +145,7 @@ Se indicar e a pessoa fechar, você ganha [BÔNUS].
 ## 6. Catálogo (opcional) ☐
 **⋮ → Ferramentas comerciais → Catálogo → Adicionar novo item**
 - **Nome:** `Vídeo Personalizado do Papai Noel`
-- **Preço:** `[R$ XX]`
+- **Preço:** `R$ 30,00`
 - **Descrição:** `Vídeo feito com IA, com o Papai Noel falando o nome da criança, elogiando e falando do presente. Você vê a prévia antes de pagar.`
 - **Imagem:** um frame do vídeo
 
