@@ -23,11 +23,11 @@
 Abra o **WhatsApp Business** → **⋮ (ou Configurações)** → **Ferramentas comerciais**.
 
 ### 1.1 Perfil comercial
-- **Nome:** Vídeos do Papai Noel – Jonathan
+- **Nome:** Vídeos do Papai Noel IA
 - **Categoria:** Entretenimento (ou Serviços)
 - **Foto:** um frame bonito do Papai Noel do seu vídeo
 - **Descrição:**
-  > 🎅 Vídeos personalizados do Papai Noel falando o NOME do seu filho! Mensagem exclusiva e emocionante. Vagas limitadas para o Natal. ✨
+  > 🎅 Vídeos do Papai Noel feitos com IA, falando o NOME do seu filho! Você vê a prévia antes de pagar. Vagas limitadas para o Natal. ✨
 - **Horário:** o horário em que você consegue responder
 
 ### 1.2 Mensagem de saudação (automática)
@@ -60,22 +60,22 @@ Já pode me mandar o nome e a idade da criança que eu reservo seu lugar na fila
 |---|---|
 | `/oferta` | Explica o produto e o preço |
 | `/dados` | Pede as informações da criança |
+| `/previa` | Envia a prévia com marca d'água |
 | `/pix` | Envia a forma de pagamento |
-| `/confirmado` | Confirma o pedido pago |
-| `/entrega` | Envia o vídeo pronto |
-| `/lembrete` | Retoma quem parou de responder |
+| `/final` | Confirma o pagamento e envia o vídeo sem marca |
+| `/lembrete` | Retoma quem viu a prévia e não pagou |
 | `/indica` | Pede indicação |
 
 ### 1.5 Etiquetas (organizar clientes)
 **Ferramentas comerciais → Etiquetas** e crie:
 
-🟡 **Novo contato** · 🔵 **Aguardando pagamento** · 🟢 **Pago – produzir** · 🟣 **Entregue** · 🔴 **Sumiu (retomar)**
+🟡 **Novo contato** · 🟠 **Produzindo prévia** · 🔵 **Prévia enviada (aguardando Pix)** · 🟣 **Entregue** · 🔴 **Sumiu (retomar)**
 
 ### 1.6 Catálogo (opcional, mas recomendado)
 **Ferramentas comerciais → Catálogo → Adicionar item**
 - **Nome:** Vídeo Personalizado do Papai Noel
 - **Preço:** [R$ XX]
-- **Descrição:** Vídeo exclusivo com o Papai Noel falando o nome da criança e uma mensagem especial. Entrega em até [X] dias.
+- **Descrição:** Vídeo exclusivo feito com IA, com o Papai Noel falando o nome da criança e uma mensagem especial. Você vê a prévia antes de pagar.
 - **Imagem:** frame do vídeo
 
 ---
@@ -88,6 +88,19 @@ Já pode me mandar o nome e a idade da criança que eu reservo seu lugar na fila
 4. Confira se a Página está no seu **Portfólio empresarial** (business.facebook.com → Configurações → Contas → Páginas), junto com a conta de anúncios.
 
 ✅ Pronto quando aparecer "WhatsApp conectado" na Página.
+
+### Dados da Página
+- **Nome:** Vídeos do Papai Noel IA · **@:** `@videosdopapainoelia`
+- **Categoria:** Serviço de vídeo + Entretenimento
+- **Botão de ação:** Enviar mensagem no WhatsApp
+- **Descrição:**
+```
+🎄 Vídeo do Papai Noel feito com IA, falando o NOME do seu filho e com uma mensagem especial só para ele! ❤️
+✅ 100% personalizado
+✅ Entrega no WhatsApp
+⚠️ Vagas limitadas até o Natal
+📲 Fale com o Jonathan no WhatsApp!
+```
 
 ---
 
@@ -136,12 +149,12 @@ Acesse **adsmanager.facebook.com** → botão verde **+ Criar**.
 
 **Versão A**
 ```
-🎅 Seu filho vai receber um vídeo do PAPAI NOEL falando o NOME dele!
+🎅 Seu filho vai receber um vídeo do PAPAI NOEL, feito com Inteligência Artificial, falando o NOME dele!
 
 Uma mensagem personalizada, emocionante, que ele vai guardar para sempre. ❤️
 
 ✅ O Papai Noel fala o nome da criança
-✅ Mensagem exclusiva e especial
+✅ Você vê a prévia antes de pagar
 ✅ Entrega pelo WhatsApp antes do Natal
 
 ⚠️ Vagas limitadas! Clique em "Enviar mensagem" e fale com o Jonathan agora. 👇
@@ -151,11 +164,11 @@ Uma mensagem personalizada, emocionante, que ele vai guardar para sempre. ❤️
 ```
 Imagina a carinha do seu filho ouvindo o Papai Noel chamar ele pelo nome... 🎅✨
 
-Vídeo personalizado, entregue no seu WhatsApp antes do Natal.
+Vídeo personalizado feito com IA, entregue no seu WhatsApp antes do Natal. Você só paga depois de ver a prévia!
 As vagas são limitadas — garanta a sua agora! 👇
 ```
 
-**Título:** `Vídeo do Papai Noel com o nome do seu filho 🎅`
+**Título:** `Vídeo do Papai Noel com o nome do seu filho 🎅`\
 **Descrição:** `Vagas limitadas para o Natal`
 
 ### 3.4 Modelo de mensagem (o que o cliente vê ao clicar)
@@ -191,22 +204,23 @@ Na seção **Modelo de mensagem → Criar novo**:
 
 ## ETAPA 5 — Atendimento no WhatsApp (roteiro de venda)
 
-**Fluxo:** Saudação automática → `/oferta` → `/dados` → `/pix` → `/confirmado` → produzir → `/entrega` → `/indica`
+**Fluxo:** Saudação automática → `/oferta` → `/dados` → você produz → `/previa` (com marca d'água) → `/pix` → comprovante → `/final` (sem marca) → `/indica`
 
 ### `/oferta` — explicar e dar o preço
 ```
 Que bom ter você aqui! 😊🎄
 
 Funciona assim:
-🎅 O Papai Noel grava um vídeo exclusivo falando o NOME da criança
+🎅 Criamos com Inteligência Artificial um vídeo exclusivo do Papai Noel falando o NOME da criança
 💌 Ele conta que ela se comportou bem e deixa uma mensagem especial
 📲 Você recebe o vídeo aqui no WhatsApp, pronto para mostrar
 
 💰 Valor: [R$ XX]
-⏰ Entrega em até [X] dias
+⏰ Prévia pronta em até [X] dias
 
-⚠️ As vagas para antes do Natal são limitadas e estão acabando.
-Posso garantir a vaga da sua criança?
+✨ Você só paga depois de ver o vídeo! Primeiro te envio uma prévia, e se gostar, faz o Pix e recebe o vídeo final sem marca d'água.
+
+⚠️ As vagas para antes do Natal são limitadas. Posso garantir a vaga da sua criança?
 ```
 
 ### `/dados` — informações para o vídeo
@@ -219,45 +233,50 @@ Perfeito! Para o Papai Noel deixar a mensagem bem especial, me manda:
 4️⃣ O presente que ela pediu (opcional)
 5️⃣ Nome de irmãos ou do pet (opcional)
 
-Assim que você me passar, já envio a forma de pagamento para reservar a vaga! 🎁
+Assim que você me passar, o Papai Noel começa a gravar e eu te envio a prévia! 🎁
+```
+
+### `/previa` — prévia com marca d'água
+```
+Ho, ho, ho! 🎅 A prévia do vídeo da [NOME DA CRIANÇA] ficou pronta!
+
+Dá uma olhadinha 👇
+(A marca d'água é só na prévia. O vídeo final vai limpinho, em alta qualidade.)
+
+Gostou? É só fazer o Pix que eu já te mando o vídeo final! 😍
 ```
 
 ### `/pix` — pagamento
 ```
-Prontinho, anotei tudo! 📝
+Que bom que você gostou! ❤️
 
-Para garantir a vaga é só fazer o Pix:
 🔑 Chave Pix: [SUA CHAVE]
 👤 Nome: [SEU NOME]
 💰 Valor: [R$ XX]
 
-Assim que pagar, me manda o comprovante aqui que eu já coloco o pedido na produção do Papai Noel! 🎅✨
+Me manda o comprovante aqui que eu envio o vídeo final na hora! 🎄
 ```
 
-### `/confirmado` — pedido pago
+### `/final` — pagamento confirmado + vídeo sem marca
 ```
 Pagamento confirmado! ✅🎉
-O pedido da [NOME DA CRIANÇA] já está na oficina do Papai Noel.
+Aqui está o vídeo final da [NOME DA CRIANÇA], sem marca d'água e em alta qualidade 👇
 
-📅 Você recebe o vídeo até [DATA].
-Qualquer dúvida, estou por aqui! Muito obrigado pela confiança. ❤️🎄
+Prepare o celular para filmar a reação dela. Vai ser emocionante! 😍
+Se puder, me manda depois o vídeo da reação. O Papai Noel adora ver! 🎅
 ```
 
-### `/entrega` — vídeo pronto
+### `/lembrete` — para quem viu a prévia e não pagou (mande 1 dia depois)
 ```
-Ho, ho, ho! 🎅 O vídeo da [NOME DA CRIANÇA] ficou pronto!
-
-Aqui está 👇 Prepare o celular para filmar a reação dela. Vai ser emocionante! 😍
-
-Se puder, me manda depois o vídeo da reação. O Papai Noel adora ver! 🎁
+Oi! 😊 O vídeo da [NOME DA CRIANÇA] está prontinho aqui esperando por vocês! 🎅
+É só fazer o Pix que eu te envio a versão final sem marca d'água. Quer a chave de novo?
 ```
 
-### `/lembrete` — para quem parou de responder (mande 1 dia depois)
-```
-Oi! 😊 Passando para avisar que ainda consigo segurar a vaga da sua criança, mas as vagas para antes do Natal estão quase no fim. 🎅⏰
-
-Quer que eu reserve para você?
-```
+### Marca d'água — para ninguém usar a prévia sem pagar
+- Coloque a marca **no centro do vídeo**, semitransparente (uns 40%), com o nome ou a logo. No canto, é fácil cortar.
+- Exporte a prévia em **resolução menor** (480p ou 720p). O vídeo final vai em 1080p.
+- Outra opção: na prévia, mande só **até o meio da fala**, cortando antes do "Ho, ho, ho" final.
+- Cada prévia gasta créditos do Flow. Se aparecerem muitos curiosos que não pagam, peça um sinal pequeno antes de produzir.
 
 ### `/indica` — pedir indicação (logo após a entrega)
 ```
@@ -273,8 +292,9 @@ Se indicar e a pessoa fechar, você ganha [BÔNUS: ex. R$ 10 de volta / vídeo p
 | Cliente diz | Você responde |
 |---|---|
 | "Tá caro" | "Entendo! Pensa que é um presente que ele vai rever todo Natal, e a reação não tem preço 😍. Para irmãos faço [R$ XX] no segundo vídeo." |
-| "Vou pensar" | "Claro! Só aviso que as vagas para antes do Natal estão acabando. Quer que eu segure a sua até amanhã?" |
-| "É de verdade / é seguro?" | Mande um vídeo de exemplo + "Você só paga depois de me passar os dados, e o vídeo chega aqui mesmo no WhatsApp." |
+| "Vou pensar" | "Claro! E você nem precisa decidir agora: eu faço a prévia e você só paga se gostar. Me passa o nome da criança?" |
+| "É de verdade / é seguro?" | Mande um vídeo de exemplo + "Você vê a prévia antes e só paga se gostar. O vídeo chega aqui mesmo no WhatsApp." |
+| "É feito com IA?" | "Sim! O vídeo é criado com Inteligência Artificial, bem realista, e personalizado com o nome e a história da criança. 🎅" |
 | "Dá para ser mais de uma criança?" | "Dá sim! Cada criança tem seu vídeo com o próprio nome. Para 2 ou mais faço [CONDIÇÃO]." |
 
 ---
@@ -283,10 +303,10 @@ Se indicar e a pessoa fechar, você ganha [BÔNUS: ex. R$ 10 de volta / vídeo p
 
 **Checklist da primeira venda**
 - [ ] Cliente respondeu → etiqueta 🟡 **Novo contato**
-- [ ] Enviou `/oferta` e `/dados`
-- [ ] Mandou `/pix` → etiqueta 🔵 **Aguardando pagamento**
-- [ ] Recebeu o comprovante → `/confirmado` → etiqueta 🟢 **Pago – produzir**
-- [ ] Gerou o vídeo e enviou com `/entrega` → etiqueta 🟣 **Entregue**
+- [ ] Enviou `/oferta` e `/dados` → recebeu os dados → etiqueta 🟠 **Produzindo prévia**
+- [ ] Gerou o vídeo, colocou a marca d'água e mandou `/previa` + `/pix` → etiqueta 🔵 **Prévia enviada**
+- [ ] Recebeu o comprovante → `/final` com o vídeo sem marca → etiqueta 🟣 **Entregue**
+- [ ] Não pagou em 1 dia → `/lembrete` → etiqueta 🔴 **Sumiu**
 - [ ] Mandou `/indica`
 - [ ] Pediu autorização para usar a reação como depoimento (ótimo para novos anúncios)
 
