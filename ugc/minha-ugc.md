@@ -13,6 +13,9 @@ Personagem principal para todos os vídeos. Gere a imagem uma vez no Nano Banana
 **Âncora fiel à imagem aprovada (`luana-folha-referencia.jpg`):**
 > 28-year-old Brazilian woman, light olive-tan skin, slim oval face, straight nose, thick dark straight eyebrows, dark brown eyes, small mole on her right cheek near the nose, long wavy hair with a middle part, nearly black at the roots fading into caramel-brown ombré lengths, tiny gold stud earrings, thin gold chain necklace, cream cotton crew-neck t-shirt with a faded vintage print of three white daisies and two lemons on the chest
 
+**Âncora OFICIAL — versão final (`luana-rosto-final.jpg` + `luana-folha-final.jpg`):**
+> 28-year-old Brazilian woman, light olive skin with slight natural redness and faint freckles, slim oval face, long straight nose with a slight bump, natural pinkish lips, thick dark straight eyebrows set close together, hazel light-brown eyes with a green-amber tint, a small mole on her right cheek below the eye, long voluminous wavy hair with a middle part, dark brown at the roots with a few fine gray strands at the part, fading into lighter caramel-brown frizzy ends, tiny gold stud earrings, very thin gold chain necklace, cream cotton crew-neck t-shirt with a vintage print of white daisies with yellow centers, green leaves and two yellow lemons on the chest, light-wash blue jeans, white sneakers
+
 ## Trocar roupa/local mantendo o rosto — Nano Banana (anexe a imagem dela)
 
 > Keep the exact same person from the reference image: same face, same skin texture and tone, same freckles, same hair color, highlights, roots and waves, same features. Change only: [O QUE MUDA]. Same candid smartphone selfie style, natural daylight, unretouched, vertical 9:16.
