@@ -26,11 +26,11 @@ Entrega: link do PDF na área de membros da plataforma (Kiwify, Hotmart, Cakto..
 | Desenhos para colorir de Natal | 30 | 3–10 | Gerador de imagem (prompts abaixo) |
 | Cartinha pro Papai Noel (3 modelos) | 3 | 4–10 | Canva + 1 ilustração IA |
 | Calendário do Advento pra recortar | 4 | 4–10 | Ilustração IA + montagem no Canva |
-| Caça-palavras, cruzadinha, labirinto | 15 | 6–10 | **Gerado por código ou Canva** (IA de imagem erra letras) |
+| Caça-palavras, labirintos, palavras embaralhadas | 12 | 6–10 | **Pronto: `saida/atividades-natal.pdf`** (gerado por código) |
 | Ligue os pontos e sequência numérica | 10 | 4–7 | Canva / código |
 | Recorte e monte (enfeites, presépio, árvore 3D) | 12 | 5–10 | Ilustração IA em linha + linhas de corte |
 | Cartões de Natal pra colorir e dar | 8 | 4–10 | IA + Canva |
-| Matemática natalina (adição, contagem) | 12 | 5–8 | Canva com ícones IA |
+| Matemática natalina (contagem, somar, diminuir) | 5 | 5–8 | **Pronto: no mesmo PDF** |
 | Alfabetização: letras de Natal (A de Anjo...) | 16 | 4–6 | IA + Canva |
 | Certificado "Criança do Bem 2026" + diploma de férias | 4 | todas | Canva |
 | Bônus: 6 receitas fáceis pra fazer com as crianças | 6 | — | Texto IA + foto IA |
@@ -44,7 +44,15 @@ Entrega: link do PDF na área de membros da plataforma (Kiwify, Hotmart, Cakto..
 
 ## 3. Prompts para gerar as imagens
 
-Use no gerador de imagem de sua preferência. Formato **retrato 3:4** (folha A4).
+### Usando o Nano Banana (grátis, no app Gemini ou no Google AI Studio)
+- **Gemini (gemini.google.com):** escolha a opção de criar imagem e cole o prompt. A conta grátis tem limite diário de imagens, então gere uns 10–15 por dia; em 3 dias você tem os 30 desenhos.
+- **Google AI Studio (aistudio.google.com):** costuma ter limite maior no grátis. Escolha o modelo de imagem (Nano Banana / "gemini … image") e cole o prompt.
+- Peça **"formato retrato 3:4"** no fim do prompt. Se vier colorido ou com sombra, responda na mesma conversa: *"refaça só com contorno preto, fundo branco, sem cinza"*. O Nano Banana é ótimo em editar a imagem anterior.
+- **Truque pra manter o mesmo estilo nas 30 páginas:** gere a primeira, e nas próximas mande junto a imagem aprovada com *"mesmo estilo de traço desta imagem, agora: [TEMA]"*.
+- **Não peça texto dentro da imagem** (título, nome). A IA erra letra. Os títulos você põe no Canva grátis.
+- Baixe em PNG e monte as páginas no **Canva grátis** (modelo A4), junto com o PDF de jogos que eu gerei.
+
+Formato **retrato 3:4** (folha A4). Pode colar em inglês mesmo (o resultado é melhor) ou em português.
 
 **Prompt base para colorir (troque só o [TEMA]):**
 ```
