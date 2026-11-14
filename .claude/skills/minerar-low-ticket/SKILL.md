@@ -30,6 +30,7 @@ O robô fica em `minerador/minerar.js` e as palavras-chave em `minerador/config.
 
 ## Ajustes
 - Destinos ignorados (apps, Instagram, WhatsApp): `ignorar_destinos` no config.
+- Refazer o ranking sem buscar de novo (depois de mexer no config): `node minerador/minerar.js --reprocessar`.
 - Trocar nichos fixos: edite `palavras_chave` em `minerador/config.json`.
 - Mais resultados por palavra: aumente `rolagens_por_palavra`.
 - O robô precisa acessar `www.facebook.com`. Em sessão na nuvem, o host precisa estar liberado na rede do ambiente.

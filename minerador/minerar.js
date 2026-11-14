@@ -159,6 +159,11 @@ async function extrairDaTela(page) {
 
 // ---------- coleta ----------
 async function main() {
+  if (args.includes('--reprocessar')) {
+    const brutos = JSON.parse(fs.readFileSync(path.join(DIR, 'relatorios', `${iso(hoje)}-brutos.json`), 'utf8'));
+    const m = new Map(brutos.map((a) => [a.id, { ...a, inicio: a.inicio ? new Date(a.inicio) : null, palavras: new Set(a.palavras) }]));
+    return ranquear(m);
+  }
   console.log(`\n🔎 Minerando ${palavras.length} palavras-chave | país ${pais} | anúncios iniciados desde ${iso(dataMin)}\n`);
   const browser = await chromium.launch({ headless: !mostrar });
   const context = await browser.newContext({
@@ -259,10 +264,19 @@ async function main() {
     JSON.stringify([...anuncios.values()].map((a) => ({ ...a, palavras: [...a.palavras] })), null, 2),
   );
 
+  ranquear(anuncios);
+}
+
+// parece português? (descarta anúncio gringo que aparece no Brasil)
+const PT = /\b(você|voce|para|seu|sua|agora|aprenda|como|não|hoje|grátis|gratuit)\b/i;
+
+function ranquear(anuncios) {
   // ---------- agrupar por oferta ----------
   const ofertas = new Map();
   for (const a of anuncios.values()) {
-    if (ignorar.some((d) => (a.link || '').toLowerCase().includes(d))) continue; // app, Instagram, WhatsApp...
+    if (ignorar.some((d) => (a.link || '').toLowerCase().includes(d))) continue; // app, Instagram, loja...
+    if ((a.texto || '').includes('{{product.')) continue; // anúncio de catálogo = e-commerce, não infoproduto
+    if (!PT.test(a.texto || '')) continue;
     const k = chaveOferta(a.link, a.pagina_id || a.pagina);
     if (!ofertas.has(k)) ofertas.set(k, { chave: k, link: a.link, anuncios: [], paginas: new Set(), palavras: new Set(), variacoes: 0 });
     const o = ofertas.get(k);
@@ -300,12 +314,14 @@ async function main() {
         anuncios_novos: novos,
         palavras: [...o.palavras],
         score: Math.round(score * 10) / 10,
+        sinais: sinaisAchados,
         exemplo_texto: (exemplo.texto || '').replace(/\s+/g, ' ').slice(0, 280),
         anuncio_biblioteca: `https://www.facebook.com/ads/library/?id=${exemplo.id}`,
         ids: o.anuncios.map((a) => a.id),
       };
     })
     .filter((r) => r.anuncios_ativos >= minimoAnuncios || r.variacoes_total >= minimoAnuncios)
+    .filter((r) => r.checkout || r.sinais > 0)
     .sort((a, b) => b.score - a.score);
 
   salvar(ranking, anuncios.size);
