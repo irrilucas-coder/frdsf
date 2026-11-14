@@ -208,9 +208,12 @@ async function main() {
       await page.goto(urlBusca(q), { waitUntil: 'domcontentloaded', timeout: 60000 });
       await page.waitForTimeout(4000);
       // os primeiros resultados vêm embutidos no HTML, dentro de <script type="application/json">
-      const jsons = await page.$$eval('script[type="application/json"]', (els) =>
-        els.map((e) => e.textContent).filter((t) => t && t.includes('ad_archive_id')),
-      );
+      await page.waitForLoadState('load', { timeout: 15000 }).catch(() => {});
+      const jsons = await page
+        .$$eval('script[type="application/json"]', (els) =>
+          els.map((e) => e.textContent).filter((t) => t && t.includes('ad_archive_id')),
+        )
+        .catch(() => []); // a página às vezes se redireciona sozinha no meio da leitura
       for (const t of jsons) {
         try {
           const lista = [];
