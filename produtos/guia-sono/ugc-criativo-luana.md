@@ -12,7 +12,7 @@
 |---|---|---|
 | 1 — Gancho | "Mãe, se seu bebê acorda toda hora e só dorme no colo, não é manha. Pode ser cansaço demais." | 19 |
 | 2 — Revelação | "Quanto mais tarde ele dorme, pior ele dorme. Cada idade tem um tempo certo acordado, e quase ninguém te conta isso." | 21 |
-| 3 — O guia (capa impressa na mão) | "Aqui tem a tabela de cada idade, a rotina pronta e um plano de sete noites sem deixar ele chorando sozinho." | 21 |
+| 3 — O guia (capa impressa na mão) | "Tem a rotina de cada idade e um plano de sete noites sem choro. Lê no celular e imprime só os quadros." | 22 |
 | 4 — CTA | "Clica aqui embaixo. Custa menos que um pacote de fralda, e hoje à noite já pode ser diferente." | 18 |
 
 ---
@@ -64,9 +64,9 @@ PRODUCT: in both hands she holds a printed A4 booklet whose front cover is exact
 
 SET (same place as the reference photos, real and simple): a plain real apartment room — warm beige painted wall behind her, a white wooden window frame on the left with soft daylight coming in, nothing staged. The background stays exactly the same the whole time.
 
-PERFORMANCE (one smooth, continuous flow — she talks the whole time while moving): confident, warm and expressive, never shy. From the first frame she is already talking and brings the booklet up close to the camera lens so the cover fills the lower half of the frame in sharp focus, her smiling face visible above it. While still talking, she pulls it back to chest height, taps the cover with one finger on tabela de cada idade, taps again on rotina pronta, holds it next to her face on plano de sete noites with an affectionate look, and finishes with a reassuring smile and a gentle nod on sem deixar ele chorando sozinho. Head, shoulders and eyebrows move naturally with the rhythm of her words.
+PERFORMANCE (one smooth, continuous flow — she talks the whole time while moving): confident, warm and expressive, never shy. From the first frame she is already talking and brings the booklet up close to the camera lens so the cover fills the lower half of the frame in sharp focus, her smiling face visible above it. While still talking, she pulls it back to chest height, taps the cover with one finger on rotina de cada idade, holds it next to her face on plano de sete noites with an affectionate look and a reassuring nod on sem choro, then lowers the booklet and finishes with a relaxed, practical smile and a small shrug on imprime só os quadros, as if saying "easy". Head, shoulders and eyebrows move naturally with the rhythm of her words.
 
-SPEECH (most important): one continuous, fluid flow in Brazilian Portuguese with a natural São Paulo accent, like a charismatic creator recommending something she trusts — warm, confident, NO pauses, NO hesitation, a softer caring tone on sem deixar ele chorando sozinho, not an announcer, not robotic. She says in Brazilian Portuguese, from 0.2 s to 9.5 s: Aqui tem a tabela de cada idade, a rotina pronta e um plano de sete noites sem deixar ele chorando sozinho. (no subtitles). Accurate lip sync on every syllable, natural blinking, real micro-expressions.
+SPEECH (most important): one continuous, fluid flow in Brazilian Portuguese with a natural São Paulo accent, like a charismatic creator recommending something she trusts — warm, confident, NO pauses, NO hesitation, a softer reassuring tone on sem choro, light and practical on the last sentence, not an announcer, not robotic. She says in Brazilian Portuguese, from 0.2 s to 9.5 s: Tem a rotina de cada idade e um plano de sete noites sem choro. Lê no celular e imprime só os quadros. (no subtitles). Accurate lip sync on every syllable, natural blinking, real micro-expressions.
 
 AUDIO: clean natural close voice, soft paper rustle when she moves the booklet, quiet room tone. No music.
 
