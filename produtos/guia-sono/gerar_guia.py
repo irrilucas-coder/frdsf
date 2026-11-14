@@ -190,14 +190,30 @@ def tabela(cabecalho, linhas, larguras, cor=NOITE_2, alturas=None):
 
 
 # ---------- ilustrações ----------
+def _otimizar(caminho, n):
+    """Reduz pra ~1100 px e salva em JPEG: o PDF fica leve sem perder qualidade visível."""
+    try:
+        from PIL import Image as PILImage
+    except ImportError:
+        return caminho
+    import tempfile
+    destino = os.path.join(tempfile.gettempdir(), "noites-tranquilas-ilustracoes")
+    os.makedirs(destino, exist_ok=True)
+    saida = os.path.join(destino, f"{n:02d}.jpg")
+    img = PILImage.open(caminho).convert("RGB")
+    img.thumbnail((1100, 1100))
+    img.save(saida, "JPEG", quality=85, optimize=True)
+    return saida
+
+
 def _achar_ilustracoes():
     pasta = os.path.join(AQUI, "ilustracoes")
     achadas = {}
     if os.path.isdir(pasta):
         for arq in sorted(os.listdir(pasta)):
             m = re.search(r"(\d+)", arq)
-            if m and arq.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
-                achadas.setdefault(int(m.group(1)), os.path.join(pasta, arq))
+            if m and arq.lower().endswith((".png", ".jpg", ".jpeg", ".webp")) and int(m.group(1)) not in achadas:
+                achadas[int(m.group(1))] = _otimizar(os.path.join(pasta, arq), int(m.group(1)))
     return achadas
 
 
@@ -219,22 +235,38 @@ def ilustracao(n, largura=250, altura=170):
 # ---------- páginas ----------
 def desenha_capa(c, doc):
     c.saveState()
-    c.setFillColor(NOITE)
+    fundo = NOITE
+    if ILUSTRACOES.get(1):  # usa o mesmo azul do fundo da ilustração da capa
+        try:
+            from PIL import Image as PILImage
+            px = PILImage.open(ILUSTRACOES[1]).convert("RGB").getpixel((4, 4))
+            fundo = HexColor("#%02X%02X%02X" % px)
+        except ImportError:
+            pass
+    c.setFillColor(fundo)
     c.rect(0, 0, W, H, stroke=0, fill=1)
     rnd = random.Random(3)
-    for _ in range(70):
-        estrela(c, rnd.uniform(15, W - 15), rnd.uniform(200, H - 15), rnd.uniform(1.2, 3.8), rnd.choice([LUA, LAVANDA, white]))
-    if ILUSTRACOES.get(1):
+    for _ in range(90):
+        x, y = rnd.uniform(15, W - 15), rnd.uniform(200, H - 15)
+        r, cor = rnd.uniform(1.2, 3.8), rnd.choice([LUA, LAVANDA, white])
+        if x < 400 and H - 340 < y < H - 90:
+            continue  # não cobre o título nem o subtítulo
+        estrela(c, x, y, r, cor)
+    tem_ilu = bool(ILUSTRACOES.get(1))
+    if tem_ilu:
+        # ilustração grande no centro, faixa lavanda fina embaixo
+        lado = 300
         iw, ih = ImageReader(ILUSTRACOES[1]).getSize()
-        lado = 250
         esc = min(lado / iw, lado / ih)
-        c.drawImage(ILUSTRACOES[1], W - MARGEM - iw * esc + 20, H - 140 - ih * esc, iw * esc, ih * esc, mask="auto")
+        c.drawImage(ILUSTRACOES[1], (W - iw * esc) / 2, 100, iw * esc, ih * esc)
+        c.setFillColor(HexColor("#E9E8FA"))
+        c.rect(0, 0, W, 92, stroke=0, fill=1)
     else:
         lua(c, W - 150, H - 190, 80)
-    nuvem(c, 60, 260, 150, HexColor("#E9E8FA"))
-    nuvem(c, W - 230, 215, 190, HexColor("#E9E8FA"))
-    c.setFillColor(HexColor("#E9E8FA"))
-    c.rect(0, 0, W, 225, stroke=0, fill=1)
+        nuvem(c, 60, 260, 150, HexColor("#E9E8FA"))
+        nuvem(c, W - 230, 215, 190, HexColor("#E9E8FA"))
+        c.setFillColor(HexColor("#E9E8FA"))
+        c.rect(0, 0, W, 225, stroke=0, fill=1)
     # títulos
     c.setFillColor(LUA)
     c.setFont("Sub", 16)
@@ -245,27 +277,25 @@ def desenha_capa(c, doc):
     c.drawString(MARGEM, H - 258, "Tranquilas")
     c.setFillColor(LAVANDA)
     c.setFont("Texto", 15)
-    if ILUSTRACOES.get(1):
-        c.setFont("Texto", 14)
     c.drawString(MARGEM, H - 300, "Rotina por idade, ritual do sono e um plano")
     c.drawString(MARGEM, H - 320, "de 7 noites para o bebê (e você) dormirem melhor.")
     # selos
     for i, (t1, t2) in enumerate((("0 a 2", "anos"), ("Plano", "7 noites"), ("Com", "imprimíveis"))):
         x = MARGEM + 52 + i * 120
         c.setFillColor(LUA if i == 0 else LAVANDA)
-        c.circle(x, H - 430, 46, stroke=0, fill=1)
+        c.circle(x, H - (380 if tem_ilu else 430), 46, stroke=0, fill=1)
         c.setFillColor(NOITE)
         c.setFont("Titulo", 16)
-        c.drawCentredString(x, H - 426, t1)
+        c.drawCentredString(x, H - (376 if tem_ilu else 426), t1)
         c.setFont("Sub", 11)
-        c.drawCentredString(x, H - 443, t2)
+        c.drawCentredString(x, H - (393 if tem_ilu else 443), t2)
     # rodapé da capa
     c.setFillColor(NOITE)
     c.setFont("Titulo", 15)
-    c.drawCentredString(W / 2, 120, "Rotina por idade • Ritual do sono • Sonecas • Despertares")
+    c.drawCentredString(W / 2, 56 if tem_ilu else 120, "Rotina por idade • Ritual do sono • Sonecas • Despertares")
     c.setFont("Texto", 11.5)
     c.setFillColor(NOITE_2)
-    c.drawCentredString(W / 2, 98, "Inclui quadro de rotina, diário do sono e checklist para imprimir")
+    c.drawCentredString(W / 2, 36 if tem_ilu else 98, "Inclui quadro de rotina, diário do sono e checklist para imprimir")
     c.restoreState()
 
 
