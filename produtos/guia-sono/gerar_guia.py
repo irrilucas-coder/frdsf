@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Gera o e-book "Noites Tranquilas — Guia Prático do Sono do Bebê" em PDF (A4).
 
+Ilustrações (opcionais): coloque em produtos/guia-sono/ilustracoes/ com o número do
+prompt no nome (1.png, 02.jpg, "ilustração 4.png"...). Veja prompts-ilustracoes.md.
+
 Uso: python3 produtos/guia-sono/gerar_guia.py
 Saída: produtos/guia-sono/saida/noites-tranquilas.pdf
 
@@ -21,6 +24,9 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (BaseDocTemplate, CondPageBreak, Flowable, Frame, KeepTogether, NextPageTemplate,
                                 PageBreak, PageTemplate, Paragraph, Spacer, Table, TableStyle)
 from reportlab.platypus.tableofcontents import TableOfContents
+from reportlab.platypus import Image as ImagemPDF
+from reportlab.lib.utils import ImageReader
+import re
 
 W, H = A4
 AQUI = os.path.dirname(os.path.abspath(__file__))
@@ -183,6 +189,33 @@ def tabela(cabecalho, linhas, larguras, cor=NOITE_2, alturas=None):
     return KeepTogether([t, Spacer(1, 10)])
 
 
+# ---------- ilustrações ----------
+def _achar_ilustracoes():
+    pasta = os.path.join(AQUI, "ilustracoes")
+    achadas = {}
+    if os.path.isdir(pasta):
+        for arq in sorted(os.listdir(pasta)):
+            m = re.search(r"(\d+)", arq)
+            if m and arq.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
+                achadas.setdefault(int(m.group(1)), os.path.join(pasta, arq))
+    return achadas
+
+
+ILUSTRACOES = _achar_ilustracoes()
+
+
+def ilustracao(n, largura=250, altura=170):
+    """Imagem centralizada; se o arquivo nº n não existir, não ocupa espaço."""
+    caminho = ILUSTRACOES.get(n)
+    if not caminho:
+        return Spacer(1, 0)
+    iw, ih = ImageReader(caminho).getSize()
+    esc = min(largura / iw, altura / ih)
+    img = ImagemPDF(caminho, iw * esc, ih * esc)
+    img.hAlign = "CENTER"
+    return KeepTogether([Spacer(1, 4), img, Spacer(1, 10)])
+
+
 # ---------- páginas ----------
 def desenha_capa(c, doc):
     c.saveState()
@@ -191,7 +224,13 @@ def desenha_capa(c, doc):
     rnd = random.Random(3)
     for _ in range(70):
         estrela(c, rnd.uniform(15, W - 15), rnd.uniform(200, H - 15), rnd.uniform(1.2, 3.8), rnd.choice([LUA, LAVANDA, white]))
-    lua(c, W - 150, H - 190, 80)
+    if ILUSTRACOES.get(1):
+        iw, ih = ImageReader(ILUSTRACOES[1]).getSize()
+        lado = 250
+        esc = min(lado / iw, lado / ih)
+        c.drawImage(ILUSTRACOES[1], W - MARGEM - iw * esc + 20, H - 140 - ih * esc, iw * esc, ih * esc, mask="auto")
+    else:
+        lua(c, W - 150, H - 190, 80)
     nuvem(c, 60, 260, 150, HexColor("#E9E8FA"))
     nuvem(c, W - 230, 215, 190, HexColor("#E9E8FA"))
     c.setFillColor(HexColor("#E9E8FA"))
@@ -206,18 +245,20 @@ def desenha_capa(c, doc):
     c.drawString(MARGEM, H - 258, "Tranquilas")
     c.setFillColor(LAVANDA)
     c.setFont("Texto", 15)
+    if ILUSTRACOES.get(1):
+        c.setFont("Texto", 14)
     c.drawString(MARGEM, H - 300, "Rotina por idade, ritual do sono e um plano")
     c.drawString(MARGEM, H - 320, "de 7 noites para o bebê (e você) dormirem melhor.")
     # selos
     for i, (t1, t2) in enumerate((("0 a 2", "anos"), ("Plano", "7 noites"), ("Com", "imprimíveis"))):
         x = MARGEM + 52 + i * 120
         c.setFillColor(LUA if i == 0 else LAVANDA)
-        c.circle(x, H - 400, 46, stroke=0, fill=1)
+        c.circle(x, H - 430, 46, stroke=0, fill=1)
         c.setFillColor(NOITE)
         c.setFont("Titulo", 16)
-        c.drawCentredString(x, H - 396, t1)
+        c.drawCentredString(x, H - 426, t1)
         c.setFont("Sub", 11)
-        c.drawCentredString(x, H - 413, t2)
+        c.drawCentredString(x, H - 443, t2)
     # rodapé da capa
     c.setFillColor(NOITE)
     c.setFont("Titulo", 15)
@@ -267,7 +308,7 @@ def conteudo():
 
     # Boas-vindas
     s += [Capitulo(None, "Boas-vindas", "Antes de começar, leia esta página"),
-          Spacer(1, 14),
+          Spacer(1, 10), ilustracao(2, 240, 150),
           P("Se você está lendo este guia, provavelmente está cansada. Talvez o bebê acorde várias vezes por noite, "
             "só durma no colo ou lute contra o sono como se fosse um inimigo. <b>Respire: isso é muito comum</b> "
             "e, na maioria das vezes, melhora com informação certa, rotina e constância."),
@@ -292,7 +333,8 @@ def conteudo():
     s += [Capitulo(None, "Sumário"), Spacer(1, 16), toc, PageBreak()]
 
     # 1
-    s += [Capitulo(1, "Como o sono do bebê funciona", "Entender acaba com metade da angústia"), Spacer(1, 14),
+    s += [Capitulo(1, "Como o sono do bebê funciona", "Entender acaba com metade da angústia"), Spacer(1, 10),
+          ilustracao(3, 170, 95),
           P("O sono do bebê é diferente do nosso. Os <b>ciclos de sono</b> dele são curtos: cerca de 40 a 50 minutos "
             "nos primeiros meses (o adulto tem ciclos de 90 minutos). No fim de cada ciclo, todo mundo desperta "
             "rapidinho. O adulto vira de lado e volta a dormir sem perceber. O bebê, muitas vezes, ainda não sabe "
@@ -320,7 +362,8 @@ def conteudo():
           PageBreak()]
 
     # 2
-    s += [Capitulo(2, "Sono seguro em primeiro lugar", "Regras que valem para todos os bebês"), Spacer(1, 14),
+    s += [Capitulo(2, "Sono seguro em primeiro lugar", "Regras que valem para todos os bebês"), Spacer(1, 10),
+          ilustracao(4, 230, 140),
           P("Antes de qualquer rotina, o mais importante: o sono precisa ser <b>seguro</b>. Estas orientações seguem "
             "as recomendações das sociedades de pediatria para reduzir o risco de morte súbita do lactente."),
           caixa("O ABC do sono seguro", [
@@ -340,7 +383,8 @@ def conteudo():
           PageBreak()]
 
     # 3
-    s += [Capitulo(3, "Quanto o bebê precisa dormir", "A tabela que vai guiar a sua rotina"), Spacer(1, 14),
+    s += [Capitulo(3, "Quanto o bebê precisa dormir", "A tabela que vai guiar a sua rotina"), Spacer(1, 10),
+          ilustracao(5, 140, 110),
           P("Os números abaixo são <b>médias de referência</b>. Alguns bebês dormem um pouco mais, outros um pouco "
             "menos. Se o bebê está bem-humorado, se desenvolvendo e ganhando peso, está tudo bem."),
           tabela(["Idade", "Sono total em 24h", "Sonecas por dia", "Janela acordado*", "Hora de dormir"],
@@ -438,7 +482,8 @@ def conteudo():
     s += [PageBreak()]
 
     # 6
-    s += [Capitulo(6, "O ritual do sono passo a passo", "30 a 40 minutos que mudam a noite"), Spacer(1, 14),
+    s += [Capitulo(6, "O ritual do sono passo a passo", "30 a 40 minutos que mudam a noite"), Spacer(1, 10),
+          ilustracao(6, 160, 90),
           P("O ritual é uma sequência de passos sempre igual, que avisa o corpo do bebê: <b>\"está chegando a hora de "
             "dormir\"</b>. Com alguns dias de repetição, o bebê começa a relaxar logo nos primeiros passos."),
           tabela(["Passo", "O que fazer", "Tempo"],
@@ -459,7 +504,8 @@ def conteudo():
           PageBreak()]
 
     # 7
-    s += [Capitulo(7, "O quarto ideal para dormir", "Ambiente que convida ao sono"), Spacer(1, 14),
+    s += [Capitulo(7, "O quarto ideal para dormir", "Ambiente que convida ao sono"), Spacer(1, 10),
+          ilustracao(7, 280, 180),
           tabela(["Item", "Como deixar"],
                  [["Luz", "Bem escuro para dormir, inclusive nas sonecas. Use cortina blackout se puder. Para trocas à noite, luz fraca e amarelada."],
                   ["Temperatura", "Agradável, em torno de 20 °C a 24 °C. Toque na nuca ou nas costas: deve estar morna, não suada."],
@@ -475,7 +521,8 @@ def conteudo():
           PageBreak()]
 
     # 8
-    s += [Capitulo(8, "Plano gentil de 7 noites", "Para bebês a partir de 6 meses"), Spacer(1, 14),
+    s += [Capitulo(8, "Plano gentil de 7 noites", "Para bebês a partir de 6 meses"), Spacer(1, 10),
+          ilustracao(8, 220, 130),
           P("Este plano ajuda o bebê a adormecer com menos ajuda, sem deixá-lo chorando sozinho. É o chamado "
             "<b>método da cadeira</b>: você fica presente e vai se afastando aos pouquinhos."),
           atencao("Comece só depois dos 6 meses, com o bebê saudável (sem febre, vacina recente ou dentes nascendo) e "
@@ -516,7 +563,8 @@ def conteudo():
           PageBreak()]
 
     # 10
-    s += [Capitulo(10, "Sonecas sem drama", "O dia bem dormido ajuda a noite"), Spacer(1, 14),
+    s += [Capitulo(10, "Sonecas sem drama", "O dia bem dormido ajuda a noite"), Spacer(1, 10),
+          ilustracao(9, 170, 140),
           *lista(["Faça um <b>mini-ritual</b> de 5 minutos antes da soneca: fralda, quarto escuro, ruído branco e a frase de sempre.",
                   "Sonecas curtas (de 30 a 45 minutos) são comuns até uns 5 a 6 meses. Tente \"emendar\": ao primeiro resmungo, acalme no berço para ver se ele volta a dormir.",
                   "Sempre que der, a soneca é no berço. No carrinho ou no colo de vez em quando, tudo bem.",
@@ -586,7 +634,7 @@ def conteudo():
           PageBreak()]
 
     # Fechamento
-    s += [Spacer(1, 120),
+    s += [Spacer(1, 40 if ILUSTRACOES.get(10) else 120), ilustracao(10, 260, 230),
           Paragraph('<font name="Titulo" size="30" color="#2B2D5B">Boa noite!</font>', st["centro"]), Spacer(1, 18),
           P("Lembre-se: não existe mãe perfeita nem bebê perfeito. Existe constância, carinho e paciência. "
             "Alguns dias vão ser melhores que outros, e tudo bem.", "centro"),
