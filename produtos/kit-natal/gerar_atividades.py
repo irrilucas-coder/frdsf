@@ -8,6 +8,10 @@ Capa, sumário, página "como usar" pros pais, caça-palavras, labirintos, palav
 matemática, caligrafia e gabaritos. Cada página tem passo a passo, nível de dificuldade,
 "Dica do Noel" e as habilidades que a criança treina.
 
+Desenhos de colorir: coloque as imagens em produtos/kit-natal/desenhos/ com o número do
+prompt no nome (01.png, 02.jpg, ... ou "desenho 3.png"). Eles entram no começo do kit,
+limpos (só preto e branco) e com o tema do arquivo prompts-colorir.md como título.
+
 Uso: python3 produtos/kit-natal/gerar_atividades.py
 """
 import math
@@ -20,6 +24,12 @@ from reportlab.lib.pagesizes import A4
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
+from reportlab.lib.utils import ImageReader
+
+try:
+    from PIL import Image, ImageOps
+except ImportError:  # sem Pillow, o kit sai sem os desenhos de colorir
+    Image = None
 
 W, H = A4
 M = 36
@@ -710,6 +720,22 @@ class Kit:
         self.rodape("Segure o lápis com calma. Letra bonita vem com prática, não com pressa!",
                     ["coordenação motora", "escrita", "foco"])
 
+    # ---------- desenho de colorir ----------
+    def colorir(self, titulo, img):
+        c, T = self.c, self.T
+        topo = self.cabecalho(titulo, None, ["Escolha suas cores", "Pinte devagar, por dentro", "Capriche nos detalhes!"])
+        caixa = (M + 10, self.AREA_BAIXO + 6, W - 2 * M - 20, topo - self.AREA_BAIXO - 12)
+        c.setFillColor(white)
+        c.setStrokeColor(T["verde"])
+        c.setLineWidth(2)
+        c.roundRect(*caixa, 14, stroke=1, fill=1)
+        iw, ih = img.size
+        esc = min((caixa[2] - 24) / iw, (caixa[3] - 24) / ih)
+        w, h = iw * esc, ih * esc
+        c.drawImage(ImageReader(img), caixa[0] + (caixa[2] - w) / 2, caixa[1] + (caixa[3] - h) / 2, w, h)
+        self.rodape("Use cores diferentes pra cada parte. Não existe cor errada: a arte é sua!",
+                    ["criatividade", "coordenação motora", "cores"])
+
     def separador(self):
         c, T = self.c, self.T
         self.borda()
@@ -802,6 +828,49 @@ def resolver(paredes, cols, rows):
     return cam[::-1]
 
 
+# ---------- desenhos de colorir ----------
+def temas_colorir():
+    """Lê os títulos ('**3. Árvore de Natal**') do prompts-colorir.md."""
+    temas = {}
+    try:
+        import re
+        for m in re.finditer(r"^\*\*(\d+)\. (.+?)\*\*", open(os.path.join(AQUI, "prompts-colorir.md")).read(), re.M):
+            temas[int(m.group(1))] = m.group(2)
+    except OSError:
+        pass
+    return temas
+
+
+def limpar_desenho(caminho):
+    """Deixa o desenho só em preto e branco (tira cinza, sombra e cor) e recorta as bordas brancas."""
+    img = Image.open(caminho).convert("L")
+    img = ImageOps.autocontrast(img)
+    img = img.point(lambda v: 255 if v > 150 else 0).convert("L")
+    inv = ImageOps.invert(img)
+    caixa = inv.getbbox()
+    if caixa:
+        x0, y0, x1, y1 = caixa
+        pad = 20
+        img = img.crop((max(0, x0 - pad), max(0, y0 - pad), min(img.width, x1 + pad), min(img.height, y1 + pad)))
+    return img
+
+
+def desenhos_colorir():
+    pasta = os.path.join(AQUI, "desenhos")
+    if Image is None or not os.path.isdir(pasta):
+        return []
+    import re
+    temas = temas_colorir()
+    lista = []
+    for arq in os.listdir(pasta):
+        m = re.search(r"(\d+)", arq)
+        if not m or not arq.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
+            continue
+        n = int(m.group(1))
+        lista.append((n, os.path.join(pasta, arq), temas.get(n, f"Desenho {n}")))
+    return sorted(lista)
+
+
 # ---------- conteúdo do kit ----------
 ATIVIDADES = [
     ("Caça-Palavras de Natal", "estrela", lambda k: k.caca_palavras("Caça-Palavras de Natal", ["Natal", "Noel", "Rena", "Neve", "Sino", "Estrela", "Presente", "Árvore", "Anjo"], 10, DIRS_FACIL, "fácil")),
@@ -828,14 +897,21 @@ ATIVIDADES = [
 ]
 
 
-def gerar(caminho, T):
+def gerar(caminho, T, desenhos):
     k = Kit(caminho, T)
     k.capa()
     k.como_usar()
-    inicio = 4  # capa(1), como usar(2), sumário(3)
-    itens = [(nome, inicio + i, icone) for i, (nome, icone, _) in enumerate(ATIVIDADES)]
-    itens.append(("Gabaritos", inicio + len(ATIVIDADES), "estrela"))
+    pag = 4  # capa(1), como usar(2), sumário(3)
+    itens = []
+    if desenhos:
+        itens.append((f"Desenhos para Colorir ({len(desenhos)})", pag, "pinheiro"))
+        pag += len(desenhos)
+    for i, (nome, icone, _) in enumerate(ATIVIDADES):
+        itens.append((nome, pag + i, icone))
+    itens.append(("Gabaritos", pag + len(ATIVIDADES), "estrela"))
     k.sumario(itens)
+    for _, img, tema in desenhos:
+        k.colorir(tema, img)
     for _, _, f in ATIVIDADES:
         f(k)
     k.separador()
@@ -847,5 +923,7 @@ def gerar(caminho, T):
 
 if __name__ == "__main__":
     os.makedirs(os.path.join(AQUI, "saida"), exist_ok=True)
-    gerar(os.path.join(AQUI, "saida", "kit-natal-colorido.pdf"), COLORIDO)
-    gerar(os.path.join(AQUI, "saida", "kit-natal-economico.pdf"), ECONOMICO)
+    desenhos = [(n, limpar_desenho(arq), tema) for n, arq, tema in desenhos_colorir()]
+    print(f"{len(desenhos)} desenhos de colorir encontrados em produtos/kit-natal/desenhos/")
+    gerar(os.path.join(AQUI, "saida", "kit-natal-colorido.pdf"), COLORIDO, desenhos)
+    gerar(os.path.join(AQUI, "saida", "kit-natal-economico.pdf"), ECONOMICO, desenhos)
