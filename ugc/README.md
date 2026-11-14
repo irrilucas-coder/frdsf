@@ -12,6 +12,8 @@ produto na mão, serviço local, depoimento etc.
   - `04-padaria-cliente.md` — vídeo entregue para um cliente local (26 s)
   - `05-app-novelinhas-luana.md` — trecho de novelinha + Luana apresentando o app (38 s)
   - `06-luana-oferta-video-jonathan.md` — Luana prova que parece real e oferece o serviço de vídeo (40 s)
+  - `07-luana-servico-video-final.md` — testes aprovados (flagra Monster + lanche)
+  - `08-criativo-luana-v3.md` — **criativo oficial atual da Luana v3** (gancho, lanche + Monster, dor, CTA)
 
 ---
 
