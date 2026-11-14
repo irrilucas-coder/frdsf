@@ -33,6 +33,8 @@ const pais = arg('--pais') ?? config.pais ?? 'BR';
 const palavras = (arg('--palavras') ? arg('--palavras').split(',') : config.palavras_chave).map((p) => p.trim()).filter(Boolean);
 const rolagens = Number(arg('--rolagens') ?? config.rolagens_por_palavra ?? 8);
 const mostrar = args.includes('--mostrar');
+const ordenarSeguidores = args.includes('--por-seguidores');
+const fmt = (n) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}mil` : String(n || '-'));
 const minimoAnuncios = Number(arg('--minimo') ?? config.minimo_anuncios_por_oferta ?? 2);
 const plataformas = (config.plataformas_checkout || []).map((p) => p.toLowerCase());
 const sinais = (config.sinais_low_ticket || []).map((s) => new RegExp(s, 'i'));
@@ -106,6 +108,7 @@ function extrairAnuncios(obj, saida) {
       variacoes: Number(obj.collation_count) || 1,
       pagina: obj.page_name || s.page_name || '',
       pagina_id: String(obj.page_id || s.page_id || ''),
+      seguidores: Number(s.page_like_count || obj.page_like_count) || 0,
       inicio: obj.start_date ? new Date(obj.start_date * 1000) : null,
       ativo: obj.is_active !== false,
       link,
@@ -278,12 +281,13 @@ function ranquear(anuncios) {
     if ((a.texto || '').includes('{{product.')) continue; // anúncio de catálogo = e-commerce, não infoproduto
     if (!PT.test(a.texto || '')) continue;
     const k = chaveOferta(a.link, a.pagina_id || a.pagina);
-    if (!ofertas.has(k)) ofertas.set(k, { chave: k, link: a.link, anuncios: [], paginas: new Set(), palavras: new Set(), variacoes: 0 });
+    if (!ofertas.has(k)) ofertas.set(k, { chave: k, link: a.link, anuncios: [], paginas: new Set(), palavras: new Set(), variacoes: 0, seguidores: 0 });
     const o = ofertas.get(k);
     o.anuncios.push(a);
     o.paginas.add(a.pagina);
     a.palavras.forEach((p) => o.palavras.add(p));
     o.variacoes += a.variacoes;
+    o.seguidores = Math.max(o.seguidores, a.seguidores || 0);
     if (!o.link && a.link) o.link = a.link;
   }
 
@@ -307,6 +311,7 @@ function ranquear(anuncios) {
         paginas: [...o.paginas].filter(Boolean),
         anuncios_ativos: totalAnuncios,
         variacoes_total: o.variacoes,
+        seguidores_pagina: o.seguidores,
         checkout,
         precos: precos(texto),
         primeiro_anuncio: primeiro ? iso(primeiro) : exemplo.inicioTexto || '',
@@ -322,7 +327,7 @@ function ranquear(anuncios) {
     })
     .filter((r) => r.anuncios_ativos >= minimoAnuncios || r.variacoes_total >= minimoAnuncios)
     .filter((r) => r.checkout || r.sinais > 0)
-    .sort((a, b) => b.score - a.score);
+    .sort((a, b) => (ordenarSeguidores ? b.seguidores_pagina - a.seguidores_pagina : 0) || b.score - a.score);
 
   salvar(ranking, anuncios.size);
 }
@@ -337,9 +342,9 @@ function salvar(ranking, totalBruto) {
   const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
   let md = `# Ofertas low ticket escalando — ${iso(hoje)}\n\n`;
   md += `País: ${pais} · Janela: últimos ${dias} dia(s) · ${totalBruto} anúncios lidos · ${ranking.length} ofertas com ${minimoAnuncios}+ anúncios\n\n`;
-  md += `| # | Oferta | Anúncios | Novos | Variações | Dias no ar | Checkout | Preço | Página | Links |\n|---|---|---|---|---|---|---|---|---|---|\n`;
+  md += `| # | Oferta | Anúncios | Novos | Variações | Seguidores | Dias no ar | Checkout | Preço | Página | Links |\n|---|---|---|---|---|---|---|---|---|---|---|\n`;
   ranking.slice(0, 50).forEach((r, i) => {
-    md += `| ${i + 1} | ${r.oferta.replace(/\|/g, '/')} | ${r.anuncios_ativos} | ${r.anuncios_novos} | ${r.variacoes_total} | ${r.dias_no_ar ?? '-'} | ${r.checkout || '-'} | ${r.precos.slice(0, 2).join(' ') || '-'} | ${r.paginas.slice(0, 2).join(', ').replace(/\|/g, '/')} | [produto](${r.link || '#'}) · [anúncio](${r.anuncio_biblioteca}) |\n`;
+    md += `| ${i + 1} | ${r.oferta.replace(/\|/g, '/')} | ${r.anuncios_ativos} | ${r.anuncios_novos} | ${r.variacoes_total} | ${fmt(r.seguidores_pagina)} | ${r.dias_no_ar ?? '-'} | ${r.checkout || '-'} | ${r.precos.slice(0, 2).join(' ') || '-'} | ${r.paginas.slice(0, 2).join(', ').replace(/\|/g, '/')} | [produto](${r.link || '#'}) · [anúncio](${r.anuncio_biblioteca}) |\n`;
   });
   fs.writeFileSync(`${base}.md`, md);
 
@@ -347,7 +352,7 @@ function salvar(ranking, totalBruto) {
     <tr>
       <td>${i + 1}</td>
       <td><b>${esc(r.paginas[0] || '—')}</b><br><small>${esc(r.exemplo_texto)}</small></td>
-      <td class="n">${r.anuncios_ativos}</td><td class="n">${r.anuncios_novos}</td><td class="n">${r.variacoes_total}</td>
+      <td class="n">${r.anuncios_ativos}</td><td class="n">${r.anuncios_novos}</td><td class="n">${r.variacoes_total}</td><td class="n">${fmt(r.seguidores_pagina)}</td>
       <td>${esc(r.checkout || '—')}</td><td>${esc(r.precos.slice(0, 3).join(' ') || '—')}</td>
       <td>${esc(r.primeiro_anuncio)}${r.dias_no_ar != null ? `<br><small>${r.dias_no_ar} dias</small>` : ''}</td>
       <td>${r.link ? `<a href="${esc(r.link)}" target="_blank">Ver produto</a><br>` : ''}<a href="${esc(r.anuncio_biblioteca)}" target="_blank">Ver anúncio</a></td>
@@ -359,7 +364,7 @@ td,th{border-bottom:1px solid #e5e5e5;padding:8px;text-align:left;vertical-align
 small{color:#555}a{color:#0a58ca}@media (prefers-color-scheme:dark){body{background:#111;color:#eee}table{background:#1a1a1a}th{background:#222}td,th{border-color:#333}small{color:#aaa}a{color:#6ea8fe}}
 </style></head><body><h1>Ofertas low ticket escalando — ${iso(hoje)}</h1>
 <p>País ${pais} · últimos ${dias} dia(s) · ${totalBruto} anúncios lidos · ${ranking.length} ofertas. Ordenado por força: anúncios ativos, anúncios novos na janela, variações do mesmo criativo, tempo no ar, checkout e sinais de low ticket.</p>
-<div style="overflow-x:auto"><table><tr><th>#</th><th>Página / copy</th><th>Anúncios</th><th>Novos hoje</th><th>Variações</th><th>Checkout</th><th>Preço</th><th>Início</th><th>Links</th></tr>${linhas}</table></div></body></html>`);
+<div style="overflow-x:auto"><table><tr><th>#</th><th>Página / copy</th><th>Anúncios</th><th>Novos hoje</th><th>Variações</th><th>Seguidores da página</th><th>Checkout</th><th>Preço</th><th>Início</th><th>Links</th></tr>${linhas}</table></div></body></html>`);
 
   console.log(`\n✅ ${ranking.length} ofertas ranqueadas. Relatórios:\n   ${base}.html\n   ${base}.md\n   ${base}.json\n`);
   ranking.slice(0, 10).forEach((r, i) =>

@@ -20,6 +20,9 @@ O robô fica em `minerador/minerar.js` e as palavras-chave em `minerador/config.
 3. Leia `minerador/relatorios/<data>.json` e faça a ANÁLISE, não só copie a tabela:
    - **Top 10** com: nome da página, o que é o produto (deduza da copy), preço, checkout,
      nº de anúncios ativos e variações, link do produto e link do anúncio.
+   - A Biblioteca de Anúncios NÃO mostra curtidas/comentários por anúncio. O dado de engajamento disponível é
+     `seguidores_pagina` (seguidores da página do anunciante). Se o usuário pedir "os com mais engajamento",
+     rode com `--por-seguidores` e destaque as páginas com mais seguidores, deixando claro que é da página, não do anúncio.
    - Como ler os números: muitos anúncios ativos + muitas variações do mesmo criativo = o anunciante está
      duplicando campanha porque está lucrando. Oferta com 1 anúncio só é teste.
    - Ofertas que aparecem em várias páginas diferentes = provável produto com afiliados ou já modelado (nicho quente).
