@@ -15,9 +15,6 @@
 | 3 — O guia (capa impressa na mão) | "Nesse guia tem a rotina certa pra cada idade e um plano gentil de sete noites, sem deixar o bebê chorando." | 20 |
 | 4 — CTA | "É um PDF, chega na hora no seu celular e custa menos de vinte reais. Clica no botão e começa hoje!" | 21 |
 
-**Texto do anúncio (legenda):**
-> Seu bebê acorda várias vezes por noite? 😴 O Noites Tranquilas tem rotina por idade (0 a 2 anos), ritual do sono e um plano gentil de 7 noites, sem choro sozinho. PDF com acesso imediato + imprimíveis. Garantia de 7 dias. 👇
-
 ---
 
 ## Cena 1 — Gancho
@@ -98,6 +95,5 @@ AVOID: no shy expression, no pauses, no hesitation, no stiff or frozen body, no 
 
 ## Montagem (CapCut)
 1. Cenas na ordem 1 → 2 → 3 → 4, cortando o respiro do começo e do fim de cada uma.
-2. Legendas automáticas em português, fonte grande e branca com contorno.
-3. Nos 2 últimos segundos: a capa do guia + "R$ 19,90 · Garantia de 7 dias".
-4. Exporte em 9:16, 1080×1920.
+2. Sem texto de anúncio. Legenda só da fala da Luana, se quiser, colocada na edição final.
+3. Exporte em 9:16, 1080×1920.
