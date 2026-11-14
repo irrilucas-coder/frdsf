@@ -42,6 +42,12 @@ const ignorar = (config.ignorar_destinos || []).map((d) => d.toLowerCase());
 
 const hoje = new Date();
 const dataMin = new Date(hoje.getTime() - dias * 86400000);
+// só fica anúncio que COMEÇOU nos últimos N dias (oferta nova); 0 = sem filtro
+const recentesDias = Number(arg('--recentes') ?? config.recentes_dias ?? 0);
+const corteRecentes = recentesDias ? new Date(hoje.getTime() - recentesDias * 86400000) : null;
+const precoMaximo = Number(arg('--preco-max') ?? config.preco_maximo ?? 0);
+const sinaisPdf = (config.sinais_pdf || []).map((s) => new RegExp(s, 'i'));
+const valor = (p) => Number(p.replace(/R\$/i, '').replace(/\.(?=\d{3})/g, '').replace(',', '.'));
 const iso = (d) => d.toISOString().slice(0, 10);
 
 // ---------- helpers ----------
@@ -74,7 +80,7 @@ function desembrulhar(u) {
 }
 
 function chaveOferta(link, pageId) {
-  if (!link) return `pagina:${pageId || 'desconhecida'}`;
+  if (!link || /wa\.me|whatsapp\.com/i.test(link)) return `whatsapp/pagina:${pageId || 'desconhecida'}`;
   try {
     const u = new URL(link);
     const caminho = u.pathname.replace(/\/+$/, '');
@@ -167,7 +173,7 @@ async function main() {
     const m = new Map(brutos.map((a) => [a.id, { ...a, inicio: a.inicio ? new Date(a.inicio) : null, palavras: new Set(a.palavras) }]));
     return ranquear(m);
   }
-  console.log(`\n🔎 Minerando ${palavras.length} palavras-chave | país ${pais} | anúncios iniciados desde ${iso(dataMin)}\n`);
+  console.log(`\n🔎 Minerando ${palavras.length} palavras-chave | país ${pais} | anúncios iniciados desde ${iso(dataMin)}${corteRecentes ? ` | só ofertas lançadas desde ${iso(corteRecentes)}` : ''}${precoMaximo ? ` | até R$${precoMaximo}` : ''}\n`);
   const browser = await chromium.launch({ headless: !mostrar });
   const context = await browser.newContext({
     locale: 'pt-BR',
@@ -186,6 +192,12 @@ async function main() {
       else anuncios.get(a.id).palavras.add(palavraAtual);
     }
   };
+  const ordens = new Set();
+  page.on('request', (req) => {
+    if (!req.url().includes('/api/graphql')) return;
+    const m = decodeURIComponent(req.postData() || '').match(/"sortData":\{"mode":"([A-Z_]+)"/);
+    if (m) ordens.add(m[1]);
+  });
   page.on('response', async (resp) => {
     if (!resp.url().includes('/api/graphql')) return;
     try {
@@ -226,6 +238,17 @@ async function main() {
       await page.keyboard.press('Escape').catch(() => {}); // fecha aviso de "bloqueador de anúncios"
       const okBtn = page.getByRole('button', { name: 'OK', exact: true });
       if (await okBtn.count().catch(() => 0)) await okBtn.first().click().catch(() => {});
+      if (config.ordenar_mais_recentes !== false) {
+        try {
+          await page.getByText('Classificar por').first().click({ timeout: 5000 });
+          await page.getByText('Mais recentes', { exact: true }).last().click({ timeout: 5000 });
+          const aplicar = page.getByRole('button', { name: /Aplicar|Mostrar resultados|Apply/ });
+          if (await aplicar.count()) await aplicar.first().click().catch(() => {});
+          await page.waitForTimeout(3500);
+        } catch {
+          /* menu não apareceu; segue com a ordem padrão */
+        }
+      }
       // fecha banner de cookies se aparecer
       for (const txt of ['Permitir todos os cookies', 'Allow all cookies', 'Recusar cookies opcionais', 'Decline optional cookies']) {
         const b = page.getByRole('button', { name: txt });
@@ -262,6 +285,7 @@ async function main() {
     await page.screenshot({ path: shot, fullPage: false }).catch(() => {});
     console.log(`\n⚠️  Nenhum anúncio coletado. O Facebook pode ter pedido login ou bloqueado. Print salvo em ${shot}`);
   }
+  if (ordens.size) console.log(`  (ordenação usada pela Meta: ${[...ordens].join(', ')})`);
   await browser.close();
 
   fs.mkdirSync(path.join(DIR, 'relatorios'), { recursive: true });
@@ -283,6 +307,7 @@ function ranquear(anuncios) {
     if (ignorar.some((d) => (a.link || '').toLowerCase().includes(d))) continue; // app, Instagram, loja...
     if ((a.texto || '').includes('{{product.')) continue; // anúncio de catálogo = e-commerce, não infoproduto
     if (!PT.test(a.texto || '')) continue;
+    if (corteRecentes && a.inicio && a.inicio < corteRecentes) continue; // anúncio antigo
     const k = chaveOferta(a.link, a.pagina_id || a.pagina);
     if (!ofertas.has(k)) ofertas.set(k, { chave: k, link: a.link, anuncios: [], paginas: new Set(), palavras: new Set(), variacoes: 0, seguidores: 0 });
     const o = ofertas.get(k);
@@ -305,8 +330,12 @@ function ranquear(anuncios) {
       const diasNoAr = primeiro ? Math.max(0, Math.round((hoje - primeiro) / 86400000)) : null;
       // anúncios que começaram dentro da janela = o anunciante está subindo campanha nova agora
       const novos = o.anuncios.filter((a) => a.inicio && a.inicio >= new Date(dataMin.getTime() - 86400000)).length;
+      const ehPdf = !sinaisPdf.length || sinaisPdf.some((r) => r.test(texto) || r.test(o.link || ''));
+      const valores = precos(texto).map(valor).filter((v) => v > 0);
+      const menorPreco = valores.length ? Math.min(...valores) : null;
       const score =
-        o.variacoes + totalAnuncios * 2 + novos * 3 + (checkout ? 5 : 0) + sinaisAchados * 1.5 + Math.min(diasNoAr || 0, 30) / 6;
+        o.variacoes + totalAnuncios * 2 + novos * 3 + (checkout ? 5 : 0) + sinaisAchados * 1.5 +
+        (corteRecentes ? 0 : Math.min(diasNoAr || 0, 30) / 6);
       const exemplo = o.anuncios.slice().sort((x, y) => y.variacoes - x.variacoes)[0];
       return {
         oferta: o.chave,
@@ -323,6 +352,8 @@ function ranquear(anuncios) {
         palavras: [...o.palavras],
         score: Math.round(score * 10) / 10,
         sinais: sinaisAchados,
+        eh_pdf: ehPdf,
+        menor_preco: menorPreco,
         exemplo_texto: (exemplo.texto || '').replace(/\s+/g, ' ').slice(0, 280),
         anuncio_biblioteca: `https://www.facebook.com/ads/library/?id=${exemplo.id}`,
         ids: o.anuncios.map((a) => a.id),
@@ -330,6 +361,8 @@ function ranquear(anuncios) {
     })
     .filter((r) => r.anuncios_ativos >= minimoAnuncios || r.variacoes_total >= minimoAnuncios)
     .filter((r) => r.checkout || r.sinais > 0)
+    .filter((r) => r.eh_pdf)
+    .filter((r) => !precoMaximo || r.menor_preco == null || r.menor_preco <= precoMaximo)
     .sort((a, b) => (ordenarSeguidores ? b.seguidores_pagina - a.seguidores_pagina : 0) || b.score - a.score);
 
   salvar(ranking, anuncios.size);
@@ -343,7 +376,7 @@ function salvar(ranking, totalBruto) {
   fs.writeFileSync(`${base}.json`, JSON.stringify({ gerado_em: hoje.toISOString(), pais, dias, palavras, totalBruto, ranking }, null, 2));
 
   const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
-  let md = `# Ofertas low ticket escalando — ${iso(hoje)}\n\n`;
+  let md = `# PDFs low ticket recentes — ${iso(hoje)}\n\nLançados nos últimos ${recentesDias || '∞'} dias · até R$${precoMaximo || '∞'}\n\n`;
   md += `País: ${pais} · Janela: últimos ${dias} dia(s) · ${totalBruto} anúncios lidos · ${ranking.length} ofertas com ${minimoAnuncios}+ anúncios\n\n`;
   md += `| # | Oferta | Anúncios | Novos | Variações | Seguidores | Dias no ar | Checkout | Preço | Página | Links |\n|---|---|---|---|---|---|---|---|---|---|---|\n`;
   ranking.slice(0, 50).forEach((r, i) => {
@@ -361,12 +394,12 @@ function salvar(ranking, totalBruto) {
       <td>${r.link ? `<a href="${esc(r.link)}" target="_blank">Ver produto</a><br>` : ''}<a href="${esc(r.anuncio_biblioteca)}" target="_blank">Ver anúncio</a></td>
     </tr>`).join('');
   fs.writeFileSync(`${base}.html`, `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ofertas ${iso(hoje)}</title><style>
+<title>PDFs low ticket ${iso(hoje)}</title><style>
 body{font-family:system-ui,sans-serif;margin:16px;background:#fafafa;color:#111}table{border-collapse:collapse;width:100%;background:#fff}
 td,th{border-bottom:1px solid #e5e5e5;padding:8px;text-align:left;vertical-align:top;font-size:14px}th{background:#f0f0f0}.n{text-align:right;font-weight:600}
 small{color:#555}a{color:#0a58ca}@media (prefers-color-scheme:dark){body{background:#111;color:#eee}table{background:#1a1a1a}th{background:#222}td,th{border-color:#333}small{color:#aaa}a{color:#6ea8fe}}
-</style></head><body><h1>Ofertas low ticket escalando — ${iso(hoje)}</h1>
-<p>País ${pais} · últimos ${dias} dia(s) · ${totalBruto} anúncios lidos · ${ranking.length} ofertas. Ordenado por força: anúncios ativos, anúncios novos na janela, variações do mesmo criativo, tempo no ar, checkout e sinais de low ticket.</p>
+</style></head><body><h1>PDFs low ticket recentes — ${iso(hoje)}</h1>
+<p>PDF low ticket · lançados nos últimos ${recentesDias || '∞'} dias · até R$${precoMaximo || '∞'} · País ${pais} · ${totalBruto} anúncios lidos · ${ranking.length} ofertas. Ordenado por força: anúncios ativos, anúncios novos na janela, variações do mesmo criativo, tempo no ar, checkout e sinais de low ticket.</p>
 <div style="overflow-x:auto"><table><tr><th>#</th><th>Página / copy</th><th>Anúncios</th><th>Novos hoje</th><th>Variações</th><th>Seguidores da página</th><th>Checkout</th><th>Preço</th><th>Início</th><th>Links</th></tr>${linhas}</table></div></body></html>`);
 
   console.log(`\n✅ ${ranking.length} ofertas ranqueadas. Relatórios:\n   ${base}.html\n   ${base}.md\n   ${base}.json\n`);

@@ -3,18 +3,18 @@
   "dias": 1,
   "rolagens_por_palavra": 8,
   "palavras_chave": [
-    "ebook",
-    "e-book",
-    "guia completo",
-    "método",
-    "apostila",
-    "receitas",
-    "pack",
-    "planner",
-    "acesso imediato",
-    "por apenas R$",
-    "material digital",
-    "livro digital"
+    "pdf",
+    "em pdf",
+    "ebook pdf",
+    "apostila pdf",
+    "guia em pdf",
+    "receitas pdf",
+    "planner pdf",
+    "baixe o pdf",
+    "material em pdf",
+    "pdf por apenas",
+    "pdf acesso imediato",
+    "livro digital pdf"
   ],
   "plataformas_checkout": [
     "hotmart",
@@ -46,13 +46,11 @@
     "receitas",
     "método"
   ],
-  "minimo_anuncios_por_oferta": 2,
+  "minimo_anuncios_por_oferta": 1,
   "ignorar_destinos": [
     "play.google.com",
     "apps.apple.com",
     "instagram.com",
-    "wa.me",
-    "whatsapp.com",
     "facebook.com",
     "fb.me",
     "youtube.com",
@@ -67,5 +65,23 @@
     "made-in-china",
     "shopee",
     "mercadolivre"
-  ]
+  ],
+  "recentes_dias": 7,
+  "preco_maximo": 47,
+  "sinais_pdf": [
+    "pdf",
+    "e-?book",
+    "apostila",
+    "livro digital",
+    "material digital",
+    "planner",
+    "guia",
+    "pack",
+    "receitas",
+    "caderno",
+    "atividades",
+    "download",
+    "acesso imediato"
+  ],
+  "ordenar_mais_recentes": true
 }

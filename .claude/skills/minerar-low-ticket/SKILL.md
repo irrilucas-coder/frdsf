@@ -7,6 +7,12 @@ description: Minera a Biblioteca de Anúncios da Meta atrás de ofertas low tick
 
 O robô fica em `minerador/minerar.js` e as palavras-chave em `minerador/config.json`.
 
+## Foco padrão: PDF low ticket recente
+O config já vem com palavras de PDF, `recentes_dias: 7` (só ofertas cujo anúncio COMEÇOU nos últimos 7 dias),
+`preco_maximo: 47` e ordenação "Mais recentes" na Biblioteca. Ajuste por linha de comando:
+`--recentes 3`, `--preco-max 27`, `--recentes 0` (sem filtro de data). Anúncios que levam pro WhatsApp
+("pague só quando receber") são agrupados pela página.
+
 ## Passo a passo
 
 1. Se o usuário citou um nicho ou palavras (ex.: "receitas", "renda extra"), passe com `--palavras "a,b,c"`.
