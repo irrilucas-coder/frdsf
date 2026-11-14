@@ -59,19 +59,19 @@ LARGURA = W - MI - ME
 
 # ---------- estilos ----------
 st = {
-    "corpo": ParagraphStyle("corpo", fontName="Sans", fontSize=10.5, leading=16.2, textColor=TINTA, spaceAfter=7),
-    "lede": ParagraphStyle("lede", fontName="SerifIt", fontSize=13, leading=19.5, textColor=NOITE, spaceAfter=12),
-    "lista": ParagraphStyle("lista", fontName="Sans", fontSize=10.6, leading=16.5, textColor=TINTA, leftIndent=16,
+    "corpo": ParagraphStyle("corpo", fontName="Sans", fontSize=11.6, leading=18, textColor=TINTA, spaceAfter=8),
+    "lede": ParagraphStyle("lede", fontName="SerifIt", fontSize=14.5, leading=21.5, textColor=NOITE, spaceAfter=12),
+    "lista": ParagraphStyle("lista", fontName="Sans", fontSize=11.6, leading=17.6, textColor=TINTA, leftIndent=16,
                             bulletIndent=3, bulletFontName="SansBlack", bulletFontSize=10, bulletColor=OURO, spaceAfter=3),
-    "h2": ParagraphStyle("h2", fontName="SerifSemi", fontSize=17, leading=22, textColor=NOITE, spaceBefore=16, spaceAfter=7, keepWithNext=1),
-    "h3": ParagraphStyle("h3", fontName="SansBlack", fontSize=8.6, leading=12, textColor=OURO, spaceBefore=9, spaceAfter=4, keepWithNext=1),
-    "caixa": ParagraphStyle("caixa", fontName="Sans", fontSize=10, leading=15, textColor=TINTA, spaceAfter=3),
-    "caixa_tit": ParagraphStyle("caixa_tit", fontName="SansBlack", fontSize=8.4, leading=11, spaceAfter=5),
-    "cel": ParagraphStyle("cel", fontName="Sans", fontSize=9.6, leading=13.5, textColor=TINTA),
-    "cel_tit": ParagraphStyle("cel_tit", fontName="SansBlack", fontSize=8, leading=11, textColor=NOITE),
-    "centro": ParagraphStyle("centro", fontName="Sans", fontSize=10.6, leading=17, textColor=TINTA, alignment=TA_CENTER),
-    "citacao": ParagraphStyle("citacao", fontName="SerifIt", fontSize=15.5, leading=23, textColor=NOITE, alignment=TA_CENTER),
-    "toc": ParagraphStyle("toc", fontName="Serif", fontSize=12.5, leading=27, textColor=TINTA),
+    "h2": ParagraphStyle("h2", fontName="SerifSemi", fontSize=19, leading=24, textColor=NOITE, spaceBefore=16, spaceAfter=7, keepWithNext=1),
+    "h3": ParagraphStyle("h3", fontName="SansBlack", fontSize=9.4, leading=13, textColor=OURO, spaceBefore=9, spaceAfter=4, keepWithNext=1),
+    "caixa": ParagraphStyle("caixa", fontName="Sans", fontSize=11, leading=16.5, textColor=TINTA, spaceAfter=3),
+    "caixa_tit": ParagraphStyle("caixa_tit", fontName="SansBlack", fontSize=9.2, leading=12, spaceAfter=5),
+    "cel": ParagraphStyle("cel", fontName="Sans", fontSize=10.6, leading=14.8, textColor=TINTA),
+    "cel_tit": ParagraphStyle("cel_tit", fontName="SansBlack", fontSize=8.8, leading=12, textColor=NOITE),
+    "centro": ParagraphStyle("centro", fontName="Sans", fontSize=11.6, leading=18, textColor=TINTA, alignment=TA_CENTER),
+    "citacao": ParagraphStyle("citacao", fontName="SerifIt", fontSize=17, leading=25, textColor=NOITE, alignment=TA_CENTER),
+    "toc": ParagraphStyle("toc", fontName="Serif", fontSize=14, leading=30, textColor=TINTA),
     "pequeno": ParagraphStyle("pequeno", fontName="SansIt", fontSize=8.8, leading=13, textColor=CINZA, alignment=TA_CENTER),
 }
 
@@ -284,8 +284,8 @@ def duas_colunas(esquerda, direita, vao=20):
 
 
 MEIA = (LARGURA - 20) / 2
-st["h2c"] = ParagraphStyle("h2c", parent=st["h2"], fontSize=14, leading=18, spaceBefore=12, keepWithNext=0)
-st["nota"] = ParagraphStyle("nota", parent=st["corpo"], fontSize=9.6, leading=14.5, spaceBefore=8)
+st["h2c"] = ParagraphStyle("h2c", parent=st["h2"], fontSize=15.5, leading=20, spaceBefore=12, keepWithNext=0)
+st["nota"] = ParagraphStyle("nota", parent=st["corpo"], fontSize=10.6, leading=16, spaceBefore=8)
 
 
 # ---------- páginas ----------
@@ -386,10 +386,9 @@ def conteudo():
     s = [NextPageTemplate("conteudo"), PageBreak()]
 
     s += [Abertura(None, "Boas-vindas", "Antes de começar, leia esta página", "INTRODUÇÃO"),
-          ilustracao(2, 220, 125),
-          P("Se você está lendo este guia, provavelmente está cansada. Talvez o bebê acorde várias vezes por noite, "
-            "só durma no colo ou lute contra o sono. Respire: isso é muito comum e, na maioria das vezes, melhora "
-            "com informação certa, rotina e constância.", "lede"),
+          *lado_a_lado(2, [P("Se você está lendo este guia, provavelmente está cansada. Talvez o bebê acorde várias vezes por noite, "
+                             "só durma no colo ou lute contra o sono. Respire: isso é muito comum e, na maioria das vezes, melhora "
+                             "com informação certa, rotina e constância.", "lede")], 190, 140),
           P("Aqui você vai encontrar, de forma direta e prática:"),
           *lista(["como o sono do bebê funciona (e por que ele acorda tanto);",
                   "quanto ele precisa dormir em cada idade;",
@@ -500,21 +499,19 @@ def conteudo():
                   ["12h00", "Soneca 2 (até ~13h30)"], ["15h30", "Soneca 3 (até ~16h15)"],
                   ["18h15", "Soneca curta de 30 min, se precisar"], ["19h00", "Início do ritual: banho, massagem, pijama"],
                   ["19h30", "Mamada no quarto com luz baixa e berço"]], [0.18, 0.82]),
-          atencao("Por volta dos 4 meses muitos bebês passam pela <b>regressão dos 4 meses</b>: o sono amadurece e ele passa "
-                  "a acordar mais. É uma fase. Manter a rotina ajuda a passar mais rápido."),
           duas_colunas(
               [P("7 a 12 meses: duas sonecas", "h2c"),
                tabela(["Horário", "Atividade"],
                       [["7h00", "Acordar, café da manhã ou mamada"], ["9h30", "Soneca 1 (1h a 1h30)"], ["11h30", "Almoço"],
                        ["14h00", "Soneca 2 (1h a 1h30)"], ["17h00", "Jantar, brincadeira calma"], ["18h30", "Ritual do sono"],
-                       ["19h00", "Mamada e berço"]], [0.26, 0.74], total=MEIA),
+                       ["19h00", "Mamada e berço"]], [0.32, 0.68], total=MEIA),
                P("Entre 7 e 9 meses a maioria passa de 3 para 2 sonecas: o bebê começa a recusar a terceira ou a "
                  "dormir cada vez mais tarde à noite.", "nota")],
               [P("1 a 2 anos: uma soneca só", "h2c"),
                tabela(["Horário", "Atividade"],
                       [["7h00", "Acordar, café da manhã"], ["12h00", "Almoço"], ["12h30", "Soneca única (1h30 a 2h30)"],
                        ["15h30", "Lanche e brincadeira ao ar livre"], ["18h00", "Jantar"],
-                       ["19h00", "Banho, pijama, dentes, história"], ["19h30", "Cama"]], [0.26, 0.74], total=MEIA),
+                       ["19h00", "Banho, pijama, dentes, história"], ["19h30", "Cama"]], [0.32, 0.68], total=MEIA),
                P("A transição de 2 para 1 soneca costuma acontecer entre 13 e 18 meses. Faça aos poucos, adiantando "
                  "o jantar e a hora de dormir por alguns dias.", "nota")]),
           *fim_capitulo()]
@@ -530,15 +527,15 @@ def conteudo():
         ("Telas e agitação antes de dormir", "Desligue TV e celular pelo menos 1 hora antes. Prefira brincadeiras calmas e luz baixa."),
         ("Responder a cada resmungo na hora", "Bebês resmungam e se mexem dormindo. Espere alguns instantes: às vezes ele volta a dormir sozinho."),
     ]
-    num = ParagraphStyle("num", fontName="Serif", fontSize=30, leading=32, textColor=OURO)
-    tit = ParagraphStyle("tit", fontName="SerifSemi", fontSize=13, leading=17, textColor=NOITE, spaceAfter=3)
+    num = ParagraphStyle("num", fontName="Serif", fontSize=32, leading=34, textColor=OURO)
+    tit = ParagraphStyle("tit", fontName="SerifSemi", fontSize=14.5, leading=19, textColor=NOITE, spaceAfter=3)
     linhas = []
     for i, (erro, solucao) in enumerate(erros, 1):
         linhas.append([Paragraph(str(i), num),
                        [Paragraph(erro, tit), Paragraph(f'<font name="SansBold" color="#3B8F7A">Faça assim:</font> {solucao}', st["corpo"])]])
     t = Table(linhas, colWidths=[44, LARGURA - 44])
     t.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("LINEBELOW", (0, 0), (-1, -2), 0.5, FIO),
-                           ("TOPPADDING", (0, 0), (-1, -1), 10), ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
+                           ("TOPPADDING", (0, 0), (-1, -1), 7), ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
                            ("LEFTPADDING", (0, 0), (-1, -1), 0)]))
     s += [t, *fim_capitulo()]
 
@@ -648,7 +645,7 @@ def conteudo():
               "puder e descanse nas sonecas do bebê de vez em quando. Se a tristeza, o choro ou a ansiedade estiverem "
               "constantes, fale com um médico: você merece cuidado."], ROSA_TINTA, ROSA),
           P("Perguntas frequentes", "h2")]
-    pq = ParagraphStyle("pq", fontName="SerifSemi", fontSize=11.5, leading=16, textColor=NOITE, spaceBefore=6, spaceAfter=3, keepWithNext=1)
+    pq = ParagraphStyle("pq", fontName="SerifSemi", fontSize=12.8, leading=17.5, textColor=NOITE, spaceBefore=6, spaceAfter=3, keepWithNext=1)
     for q, r in [
         ("Posso começar a rotina com qualquer idade?", "Sim. Para menores de 4 meses, foque em diferenciar dia e noite e em respeitar as janelas. O plano de 7 noites é a partir dos 6 meses."),
         ("Em quanto tempo vejo resultado?", "Muitas famílias notam melhora em 1 a 2 semanas de rotina constante. Cada bebê tem seu tempo."),
@@ -672,7 +669,7 @@ def conteudo():
           P("Anote por uma semana. Depois de alguns dias, você vai enxergar o padrão do seu bebê e saber o que ajustar."),
           tabela(["Dia", "Acordou", "Sonecas", "Dormiu", "Despertares", "Como foi?"],
                  [[d, "", "", "", "", ""] for d in ("Dia 1", "Dia 2", "Dia 3", "Dia 4", "Dia 5", "Dia 6", "Dia 7")],
-                 [0.11, 0.13, 0.28, 0.13, 0.16, 0.19], alturas=[26] + [62] * 7),
+                 [0.1, 0.15, 0.24, 0.13, 0.19, 0.19], alturas=[26] + [62] * 7),
           PageBreak(),
           P("Checklist do ritual do sono", "h2"),
           P("Marque todas as noites. Constância é o que faz funcionar."),
