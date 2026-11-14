@@ -1,0 +1,62 @@
+{
+  "pais": "BR",
+  "dias": 1,
+  "rolagens_por_palavra": 8,
+  "palavras_chave": [
+    "ebook",
+    "e-book",
+    "guia completo",
+    "método",
+    "apostila",
+    "receitas",
+    "pack",
+    "planner",
+    "acesso imediato",
+    "por apenas R$",
+    "material digital",
+    "livro digital"
+  ],
+  "plataformas_checkout": [
+    "hotmart",
+    "kiwify",
+    "eduzz",
+    "monetizze",
+    "perfectpay",
+    "ticto",
+    "greenn",
+    "braip",
+    "cakto",
+    "lastlink",
+    "kirvano",
+    "pay.",
+    "checkout"
+  ],
+  "sinais_low_ticket": [
+    "r\\$ ?\\d{1,2}[,.]\\d{2}",
+    "por apenas",
+    "só hoje",
+    "acesso imediato",
+    "ebook",
+    "e-book",
+    "pdf",
+    "guia",
+    "apostila",
+    "pack",
+    "planner",
+    "receitas",
+    "método"
+  ],
+  "minimo_anuncios_por_oferta": 2,
+  "ignorar_destinos": [
+    "play.google.com",
+    "apps.apple.com",
+    "instagram.com",
+    "wa.me",
+    "whatsapp.com",
+    "facebook.com",
+    "fb.me",
+    "youtube.com",
+    "tiktok.com",
+    "linktr.ee"
+  ]
+}
