@@ -10,10 +10,10 @@
 ## Roteiro
 | Cena | Fala | Palavras |
 |---|---|---|
-| 1 — Gancho | "Se o seu bebê acorda várias vezes por noite, para tudo e presta atenção, porque o problema pode ser outro." | 19 |
-| 2 — O erro | "O erro que quase toda mãe comete é deixar o bebê acordado tempo demais. Bebê cansado demais dorme pior!" | 19 |
-| 3 — O guia (capa impressa na mão) | "Nesse guia tem a rotina certa pra cada idade e um plano gentil de sete noites, sem deixar o bebê chorando." | 20 |
-| 4 — CTA | "É um PDF, chega na hora no seu celular e custa menos de vinte reais. Clica no botão e começa hoje!" | 21 |
+| 1 — Gancho | "Mãe, se seu bebê acorda toda hora e só dorme no colo, não é manha. Pode ser cansaço demais." | 19 |
+| 2 — Revelação | "Quanto mais tarde ele dorme, pior ele dorme. Cada idade tem um tempo certo acordado, e quase ninguém te conta isso." | 21 |
+| 3 — O guia (capa impressa na mão) | "Aqui tem a tabela de cada idade, a rotina pronta e um plano de sete noites sem deixar ele chorando sozinho." | 21 |
+| 4 — CTA | "Clica aqui embaixo. Custa menos que um pacote de fralda, e hoje à noite já pode ser diferente." | 18 |
 
 ---
 
@@ -26,9 +26,9 @@ CHARACTER (must match the reference images exactly in every frame): 28-year-old 
 
 SET (same place as the reference photos, real and simple): a plain real apartment room — warm beige painted wall behind her, a white wooden window frame on the left with soft daylight coming in, a little natural shadow in the corner, nothing staged. The background stays exactly the same the whole time.
 
-PERFORMANCE (confident, warm, expressive — never shy): from the first frame she is already talking, leaning slightly toward the camera with a caring, knowing expression, like she is about to share an important secret with a tired friend. On "várias vezes por noite" she raises her eyebrows and makes a small circular gesture with one hand; on "para tudo" she opens her palm toward the camera like a gentle stop sign; on "presta atenção" she taps two fingers near her temple; she ends with a slight head tilt and a confident half smile on "pode ser outro", looking straight into the lens. Head, shoulders and eyebrows move naturally with her words, visible breathing, hair moving slightly.
+PERFORMANCE (confident, warm, expressive — never shy): from the first frame she is already talking, leaning slightly toward the camera with a caring, knowing expression, like a friend who understands exactly what the viewer is living. On "Mãe" she points gently at the lens; on "acorda toda hora" she makes a quick circular gesture with one hand; on "só dorme no colo" she mimes cradling a baby with both arms for a second; on "não é manha" she shakes her head firmly with raised eyebrows; she ends leaning in with a serious, knowing look on "cansaço demais", eyes locked on the lens. Head, shoulders and eyebrows move naturally with her words, visible breathing, hair moving slightly.
 
-SPEECH (most important): fluid, warm and persuasive Brazilian Portuguese with a natural São Paulo accent, like a charismatic real person giving advice to a friend — continuous, confident, NO pauses and NO hesitation, natural conversational rhythm, a touch of intrigue on "o problema pode ser outro", genuine warmth in the voice, not an announcer, not robotic. Speech from 0.2 s to 9.5 s: "Se o seu bebê acorda várias vezes por noite, para tudo e presta atenção, porque o problema pode ser outro." Accurate lip sync on every syllable, natural blinking, real micro-expressions.
+SPEECH (most important): fluid, warm and persuasive Brazilian Portuguese with a natural São Paulo accent, like a charismatic real person giving advice to a friend — continuous, confident, NO pauses and NO hesitation, natural conversational rhythm, strong emphasis on "não é manha" and a lower, intriguing tone on "cansaço demais", genuine warmth in the voice, not an announcer, not robotic. Speech from 0.2 s to 9.5 s: "Mãe, se seu bebê acorda toda hora e só dorme no colo, não é manha. Pode ser cansaço demais." Accurate lip sync on every syllable, natural blinking, real micro-expressions.
 
 AUDIO: clean natural close voice, quiet room tone, very faint street sound from the window. No music.
 
@@ -44,9 +44,9 @@ CHARACTER (must match the reference images exactly in every frame): 28-year-old 
 
 SET (same place as the reference photos, real and simple): a plain real apartment room — warm beige painted wall behind her, a white wooden window frame on the left with soft daylight coming in, a little natural shadow in the corner, nothing staged. The background stays exactly the same the whole time.
 
-PERFORMANCE (confident, expressive, a little dramatic in a fun way — never shy): she is already talking from the first frame. On "quase toda mãe" she points softly at the camera with a sympathetic smile, as if saying "you too"; on "tempo demais" she widens her eyes and spreads both hands apart to show "too much"; then she shakes her head lightly and says "dorme pior" with emphatic conviction, finishing with raised eyebrows and a short knowing nod into the lens. Natural head and shoulder movement with every phrase, visible breathing, hair moving slightly.
+PERFORMANCE (confident, expressive, revealing a surprising fact — never shy): she is already talking from the first frame. On "quanto mais tarde" she taps her wrist as if pointing to a watch; on "pior ele dorme" she raises her eyebrows with a surprised "can you believe it" face; on "cada idade tem um tempo certo" she counts on her fingers; on "quase ninguém te conta isso" she leans closer to the lens and lowers her voice slightly, like telling a secret, finishing with a knowing nod. Natural head and shoulder movement with every phrase, visible breathing, hair moving slightly.
 
-SPEECH (most important): fluid, confident Brazilian Portuguese with a natural São Paulo accent, like a charismatic friend revealing a surprising fact — continuous, NO pauses, NO hesitation, words flowing naturally, strong emphasis on "tempo demais" and "dorme pior", warm and convincing, not an announcer, not robotic. Speech from 0.2 s to 9.5 s: "O erro que quase toda mãe comete é deixar o bebê acordado tempo demais. Bebê cansado demais dorme pior!" Accurate lip sync on every syllable, natural blinking, real micro-expressions.
+SPEECH (most important): fluid, confident Brazilian Portuguese with a natural São Paulo accent, like a charismatic friend revealing a surprising fact — continuous, NO pauses, NO hesitation, words flowing naturally, strong emphasis on "pior ele dorme" and a slightly lower, secret-sharing tone on "quase ninguém te conta isso", warm and convincing, not an announcer, not robotic. Speech from 0.2 s to 9.5 s: "Quanto mais tarde ele dorme, pior ele dorme. Cada idade tem um tempo certo acordado, e quase ninguém te conta isso." Accurate lip sync on every syllable, natural blinking, real micro-expressions.
 
 AUDIO: clean natural close voice, quiet room tone, very faint street sound from the window. No music.
 
@@ -64,9 +64,9 @@ PRODUCT: in both hands she holds a printed A4 booklet whose front cover is exact
 
 SET (same place as the reference photos, real and simple): a plain real apartment room — warm beige painted wall behind her, a white wooden window frame on the left with soft daylight coming in, nothing staged. The background stays exactly the same the whole time.
 
-PERFORMANCE (one smooth, continuous flow — she talks the whole time while moving): confident, warm and expressive, never shy. From the first frame she is already talking and brings the booklet up close to the camera lens so the cover fills the lower half of the frame in sharp focus, her smiling face visible above it. While still talking, she pulls it back to chest height, taps the cover twice with one finger on "rotina certa pra cada idade", then holds it next to her face on "plano gentil de sete noites" with an affectionate look, and finishes with a reassuring smile and a gentle nod on "sem deixar o bebê chorando". Head, shoulders and eyebrows move naturally with the rhythm of her words.
+PERFORMANCE (one smooth, continuous flow — she talks the whole time while moving): confident, warm and expressive, never shy. From the first frame she is already talking and brings the booklet up close to the camera lens so the cover fills the lower half of the frame in sharp focus, her smiling face visible above it. While still talking, she pulls it back to chest height, taps the cover with one finger on "tabela de cada idade", taps again on "rotina pronta", holds it next to her face on "plano de sete noites" with an affectionate look, and finishes with a reassuring smile and a gentle nod on "sem deixar ele chorando sozinho". Head, shoulders and eyebrows move naturally with the rhythm of her words.
 
-SPEECH (most important): one continuous, fluid flow in Brazilian Portuguese with a natural São Paulo accent, like a charismatic creator recommending something she trusts — warm, confident, NO pauses, NO hesitation, a softer caring tone on "sem deixar o bebê chorando", not an announcer, not robotic. Speech from 0.2 s to 9.5 s: "Nesse guia tem a rotina certa pra cada idade e um plano gentil de sete noites, sem deixar o bebê chorando." Accurate lip sync on every syllable, natural blinking, real micro-expressions.
+SPEECH (most important): one continuous, fluid flow in Brazilian Portuguese with a natural São Paulo accent, like a charismatic creator recommending something she trusts — warm, confident, NO pauses, NO hesitation, a softer caring tone on "sem deixar ele chorando sozinho", not an announcer, not robotic. Speech from 0.2 s to 9.5 s: "Aqui tem a tabela de cada idade, a rotina pronta e um plano de sete noites sem deixar ele chorando sozinho." Accurate lip sync on every syllable, natural blinking, real micro-expressions.
 
 AUDIO: clean natural close voice, soft paper rustle when she moves the booklet, quiet room tone. No music.
 
@@ -82,11 +82,11 @@ CHARACTER (must match the reference images exactly in every frame): 28-year-old 
 
 SET (same place as the reference photos, real and simple): a plain real apartment room — warm beige painted wall behind her, a white wooden window frame on the left with soft daylight coming in, a little natural shadow in the corner, nothing staged. The background stays exactly the same the whole time.
 
-PERFORMANCE (confident, upbeat, expressive — never shy): already talking from the first frame with a bright smile. On "chega na hora" she snaps her fingers once; on "menos de vinte reais" she raises her eyebrows with a playful "can you believe it" look; on "clica no botão" she points down toward the bottom of the frame with her index finger; she ends with a big warm smile and a confident nod on "começa hoje", looking straight into the lens. Natural head and shoulder movement, visible breathing, hair moving slightly.
+PERFORMANCE (confident, upbeat, expressive — never shy): already talking from the first frame with a bright smile, pointing down toward the bottom of the frame with her index finger on "clica aqui embaixo". On "menos que um pacote de fralda" she raises her eyebrows with a playful "can you believe it" look and a small laugh; on "hoje à noite" her expression softens into a warm, hopeful smile; she ends with a confident nod on "pode ser diferente", looking straight into the lens. Natural head and shoulder movement, visible breathing, hair moving slightly.
 
-SPEECH (most important): fluid, energetic Brazilian Portuguese with a natural São Paulo accent, like a charismatic friend sharing a great deal — continuous, NO pauses, NO hesitation, rising energy to the end, strong emphasis on "menos de vinte reais" and "começa hoje", genuine smile in the voice, not an announcer, not robotic. Speech from 0.2 s to 9.5 s: "É um PDF, chega na hora no seu celular e custa menos de vinte reais. Clica no botão e começa hoje!" Accurate lip sync on every syllable, natural blinking, real micro-expressions.
+SPEECH (most important): fluid, energetic Brazilian Portuguese with a natural São Paulo accent, like a charismatic friend sharing a great deal — continuous, NO pauses, NO hesitation, rising energy to the end, strong emphasis on "clica aqui embaixo" and "menos que um pacote de fralda", a warm hopeful tone on "hoje à noite já pode ser diferente", genuine smile in the voice, not an announcer, not robotic. Speech from 0.2 s to 9.5 s: "Clica aqui embaixo. Custa menos que um pacote de fralda, e hoje à noite já pode ser diferente." Accurate lip sync on every syllable, natural blinking, real micro-expressions.
 
-AUDIO: clean natural close voice, a crisp finger snap, quiet room tone. No music.
+AUDIO: clean natural close voice, quiet room tone. No music.
 
 AVOID: no shy expression, no pauses, no hesitation, no stiff or frozen body, no cuts, no zoom, no angle changes, no background changes, no phones, no objects in her hands, no baby in the scene, no face distortion, no face change, no hair change, no eye color change, no changes to the t-shirt print or necklace, no subtitles, no on-screen text added, no lip-sync delay, no robotic voice.
 ```
