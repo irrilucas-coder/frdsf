@@ -7,7 +7,7 @@ Vídeo realista cinematográfico de campanha publicitária premium, 4K, formato 
 
 Personagens: mulher brasileira, pele morena clara, cabelo castanho, roupa casual elegante em tom claro; homem brasileiro, pele morena clara, cabelo castanho curto, barba curta, camiseta lisa. Os dois sentados lado a lado no sofá, conversando de forma descontraída.
 
-Ação: ela fala animada, pega o celular, procura algo e vira a tela na direção dele. A câmera mostra por cima do ombro dela a tela do celular com a foto do produto da referência, nítida e iluminada. Ele se inclina, olha com curiosidade, levanta as sobrancelhas, sorri e acena com a cabeça, interessado. Ela sorri, satisfeita. Reações naturais e sutis.
+Ação: ela se vira para ele empolgada, contando que descobriu um produto novo: fala gesticulando com as mãos, com expressão de quem compartilha uma novidade boa, enquanto ele escuta atento e curioso. No meio da conversa, ela pega o celular, abre a imagem e vira a tela na direção dele, apontando com o dedo para o produto enquanto continua explicando. A câmera mostra por cima do ombro dela a tela do celular com a foto do produto da referência, nítida e iluminada. Ele se inclina, olha com interesse, levanta as sobrancelhas e acena com a cabeça, convencido. Reações naturais e sutis, clima leve de casal conversando.
 
 Câmera: plano médio dos dois, estável, com dolly in lento até o enquadramento por cima do ombro dela mostrando a tela do celular e o rosto dele ao fundo. Foco raso, bokeh cremoso. Qualquer texto deve estar em português do Brasil.
 ```
