@@ -227,3 +227,11 @@ Use estes blocos como base e adapte a cena. Cada estilo tem o "tom" e as palavra
 
 ### 12.11 Imagem de referência
 > Anexar no Flow como primeiro quadro/referência (pote, moedas de R$ 1, embalagens). Escrever no prompt: "reprodução EXATA da referência, sem redesenhar, sem trocar palavras, o objeto não gira". Se o rótulo distorcer, gerar o objeto liso e trocar pela foto real na edição.
+
+---
+
+## 13. PEDIDOS AVULSOS (1 PROMPT ESPECÍFICO)
+
+- Quando o usuário pedir só uma cena (ex.: "animação da digestão liberando mau odor"), entregar **direto no chat, 1 prompt**, no formato da seção 7, sem criar pasta de roteiro e sem perguntar o trecho da fala (omitir a linha *Fala*).
+- Salvar em `/avulsos/AAAA-MM-DD_nome-da-cena.md`.
+- Usar o bloco-base do tipo (CATALOGO.md, seção 0) e, se já existir cena parecida no catálogo, partir dela.
