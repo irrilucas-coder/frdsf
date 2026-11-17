@@ -33,7 +33,7 @@ def region(ts):
     if ts < 51.0: return (560, 760), 1.0
     if ts < 57.5: return (540, 900), 1.0
     return (540, 1000), 1.0
-PUNCH = [1.0, 1.16, 1.06, 1.24, 1.0, 1.12, 1.2, 1.04]
+PUNCH = [1.0, 1.12, 1.04, 1.18, 1.0, 1.1, 1.15, 1.05]
 IMPACT_SRC = [25.29, 36.67, 45.33, 55.70, 59.62]  # revelacao, mistura, bebe, resultado, final
 
 # timeline: list of (src_start, src_end, seg_kind, zoom, idx)
@@ -59,7 +59,7 @@ x = np.arange(256) / 255.0
 curve = np.clip(0.5 + (x - 0.5) * 1.22, 0, 1) ** 1.12               # contraste + sombras mais densas
 LUT = (curve * 255).astype(np.uint8)
 RNG = np.random.default_rng(5)
-GRAIN = [RNG.normal(0, 7, (H // 2, W // 2, 1)).astype(np.float32).repeat(2, 0).repeat(2, 1) for _ in range(6)]
+GRAIN = [RNG.normal(0, 4, (H // 2, W // 2, 1)).astype(np.float32).repeat(2, 0).repeat(2, 1) for _ in range(6)]
 
 def grade(img, fi):
     a = np.asarray(img.convert("RGB"))
@@ -67,7 +67,7 @@ def grade(img, fi):
     g = a.mean(axis=2, keepdims=True)
     a = g + (a - g) * 0.86                                          # menos saturacao
     a[..., 0] *= 0.97; a[..., 2] *= 1.02                            # leve frio nas sombras
-    a = a * VIG + GRAIN[fi % 6]
+    a = a + GRAIN[fi % 6]
     return Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
 
 def zoom(img, s, cx, cy, dx=0, dy=0):
@@ -94,9 +94,31 @@ def fx(img, seg, lt, ot, fi):
     for it in impacts_out:
         d = ot - it
         if 0 <= d < 0.35:
-            s *= 1 + 0.14 * (1 - ease(d / 0.35))
-            amp = 22 * (1 - d / 0.35); dx = amp * math.sin(ot * 95); dy = amp * math.cos(ot * 77)
+            s *= 1 + 0.12 * (1 - ease(d / 0.35))
+            amp = 10 * (1 - d / 0.35) ** 2; dx = amp * math.sin(ot * 95); dy = amp * math.cos(ot * 77)
+    # enfase (picos de voz): punch curto
+    for et in EMPH:
+        d = ot - et
+        if 0 <= d < 0.25:
+            s *= 1 + 0.06 * (1 - ease(d / 0.25))
+    # transicao em todo jump cut: zoom-in rapido + smear alternando direcao
+    cut_p = 0.0
+    if seg["kind"] == "main" and seg["i"] > 0 and lt < 0.1:
+        cut_p = (1 - lt / 0.1) ** 2; s *= 1 + 0.06 * cut_p
+    if seg["kind"] == "hook":
+        img = img.rotate(-5 * (1 - ease(lt / dur)), Image.BILINEAR, center=(540, 1000))
     img = zoom(img, s, cx, cy, dx, dy)
+    if cut_p > 0:
+        sgn = 1 if seg["i"] % 2 else -1; sm = img
+        for k in (1, 2):
+            sm = Image.blend(sm, ImageChops.offset(img, int(sgn * 30 * cut_p * k), 0), 0.35)
+        img = rgb_split(sm, 6 * cut_p)
+    # brilho (bloom) nos trechos de produto
+    ts = seg["a"] + lt
+    if 25.3 <= ts < 34.5 or ts >= 57.5 or seg["kind"] == "hook":
+        small = img.resize((270, 480), Image.BILINEAR).filter(ImageFilter.GaussianBlur(8))
+        small = small.point(lambda v: int(max(0, v - 130) * 1.6))
+        img = ImageChops.screen(img, small.resize((W, H), Image.BILINEAR))
     # whip / smear nos primeiros frames de trechos com impacto
     for it in impacts_out:
         d = ot - it
@@ -104,8 +126,8 @@ def fx(img, seg, lt, ot, fi):
             p = 1 - d / 0.12
             sm = img
             for k in (1, 2, 3):
-                sm = Image.blend(sm, ImageChops.offset(img, int(-90 * p * k / 3), 0), 0.33)
-            img = rgb_split(sm, 26 * p)
+                sm = Image.blend(sm, ImageChops.offset(img, int(-70 * p * k / 3), 0), 0.33)
+            img = rgb_split(sm, 16 * p)
     img = grade(img, fi)
     for it in impacts_out[:2] + [impacts_out[1 + 0]]:  # flash: abertura e revelacao
         d = ot - it
@@ -126,6 +148,17 @@ for seg in timeline:
     x_ = src[int(seg["a"] * SR):int(seg["b"] * SR)].copy()
     x_[:fade] *= np.linspace(0, 1, fade); x_[-fade:] *= np.linspace(1, 0, fade)
     s0 = int(seg["o"] * SR); aud[s0:s0 + len(x_)] += x_[:n - s0]
+# picos de voz -> momentos de enfase
+win = int(0.1 * SR); nw = len(aud) // win
+rms = np.sqrt((aud[:nw * win].reshape(nw, win) ** 2).mean(1))
+thr = np.percentile(rms[rms > 0.01], 88)
+EMPH = []
+for k in np.argsort(-rms):
+    if rms[k] < thr: break
+    tk = k * 0.1
+    if tk < timeline[1]["o"] + 0.5 or any(abs(tk - e) < 2.2 for e in EMPH) or any(abs(tk - e) < 0.8 for e in impacts_out): continue
+    EMPH.append(tk)
+EMPH.sort(); print("enfases:", len(EMPH))
 def add(sig, t, g=1.0):
     s0 = int(t * SR)
     if 0 <= s0 < n: e = min(n, s0 + len(sig)); sfx[s0:e] += sig[:e - s0] * g
@@ -135,6 +168,26 @@ bl = int(0.6 * SR); bt = np.arange(bl) / SR
 boom = (np.sin(2 * np.pi * (42 + 70 * np.exp(-bt * 9)) * bt) * np.exp(-bt * 6)).astype(np.float32)
 add(boom, 0.0, 0.5); add(whoosh, timeline[1]["o"] - 0.15, 0.25)
 for it in impacts_out[1:-1]: add(whoosh, it - 0.15, 0.22); add(boom, it, 0.3)
+# swish curto em todo jump cut (pitch alternado)
+sl = int(0.14 * SR); st_ = np.arange(sl) / SR
+for seg in timeline[2:]:
+    hp = RNG.standard_normal(sl); hp = hp - np.convolve(hp, np.ones(4 if seg["i"] % 2 else 9) / (4 if seg["i"] % 2 else 9), "same")
+    add((hp * np.sin(np.pi * st_ / 0.14) ** 2).astype(np.float32), seg["o"] - 0.06, 0.11)
+# pop nas enfases
+pl = int(0.09 * SR); pt = np.arange(pl) / SR
+pop = (np.sin(2 * np.pi * (180 + 500 * np.exp(-pt * 40)) * pt) * np.exp(-pt * 35)).astype(np.float32)
+for et in EMPH: add(pop, et, 0.25)
+# riser antes da revelacao
+rl = int(1.3 * SR); rt = np.arange(rl) / SR
+riser = (RNG.standard_normal(rl) * (rt / 1.3) ** 2.5 * 0.5 + np.sin(2 * np.pi * (200 + 700 * (rt / 1.3) ** 2) * rt) * (rt / 1.3) ** 2 * 0.25).astype(np.float32)
+add(riser, impacts_out[1] - 1.3, 0.35)
+# brilho (sparkle) nos momentos de produto
+kl = int(0.5 * SR); kt = np.arange(kl) / SR
+sparkle = sum(np.sin(2 * np.pi * f * kt) * np.exp(-(kt - d0).clip(0) * 9) * (kt >= d0)
+              for f, d0 in [(2093, 0), (2637, 0.06), (3136, 0.12), (4186, 0.18)]).astype(np.float32) * 0.12
+for t_ in [0.05, impacts_out[1] + 0.05, impacts_out[-2] + 0.05]: add(sparkle, t_, 0.8)
+# whoosh grande + shutter no final
+add(whoosh, TOTAL - 0.35, 0.3)
 mix = aud + sfx
 mix /= max(1e-6, np.abs(mix).max()) / 0.95
 with wave.open(f"{WD}/out.wav", "wb") as w:
