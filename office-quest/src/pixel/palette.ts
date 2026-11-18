@@ -1,0 +1,62 @@
+// Limited 16-bit style palette. Every colour drawn in the scene comes from here.
+export const C = {
+  black: "#0d0b14",
+  ink: "#1e1a2e",
+  navy: "#2b2d52",
+  slate: "#4a4f7a",
+  steel: "#7d86ad",
+  mist: "#c2c8e0",
+  white: "#f4f1e8",
+  paper: "#fffdf2",
+  paperShade: "#d9d2b8",
+
+  skin: "#f2b38b",
+  skinShade: "#c9805e",
+  hair: "#5a3420",
+  hairDark: "#3a2014",
+
+  shirt: "#a9d3ee",
+  shirtShade: "#6f9fc4",
+  tie: "#d83a3a",
+  tieShade: "#9c2232",
+  trousers: "#3b3f63",
+  trousersShade: "#272a45",
+  shoe: "#2a1a14",
+  shoeShine: "#6b4a38",
+
+  wall: "#e8d9b8",
+  wallShade: "#cdbb94",
+  wainscot: "#9a7a5a",
+  wainscotDark: "#6e5240",
+  floorA: "#5c6b8a",
+  floorB: "#4f5d7a",
+  floorLine: "#3c4864",
+
+  wood: "#a0663c",
+  woodDark: "#6e4226",
+  woodLight: "#c98a52",
+  green: "#4fb05a",
+  greenDark: "#2f7a3e",
+  greenLight: "#8fdc6a",
+  pot: "#c4623a",
+  potDark: "#8c3e24",
+
+  screen: "#4fd2e0",
+  screenDark: "#1f7f9c",
+  gold: "#ffcf40",
+  goldDark: "#c08a1c",
+  red: "#e83b3b",
+  redDark: "#8f1d2c",
+  water: "#5cb8f0",
+  waterLight: "#b8e6ff",
+
+  skyTop: "#3b2a6b",
+  skyMid: "#b6457a",
+  skyLow: "#f0703c",
+  skyHorizon: "#ffc35a",
+  sun: "#fff07a",
+  city: "#2a1f45",
+  cityLight: "#ffd76a",
+} as const;
+
+export type Colour = (typeof C)[keyof typeof C];
