@@ -37,7 +37,7 @@ export const roundedBox = (w: number, h: number, d: number, r = 0.018) =>
 
 // ---------------------------------------------------------------- environment + lights
 /** Bright daylight studio: room-environment reflections, warm key with soft shadows, cool fill. */
-export const Studio: React.FC<{ shadowSize?: number; key?: [number, number, number] }> = ({ shadowSize = 6, key = [4, 7, 5] }) => {
+export const Studio: React.FC<{ shadowSize?: number; key?: [number, number, number]; noShadows?: boolean }> = ({ shadowSize = 6, key = [4, 7, 5], noShadows }) => {
   const { gl, scene } = useThree();
   // set synchronously so the very first rendered frame already has reflections
   useMemo(() => {
@@ -51,8 +51,8 @@ export const Studio: React.FC<{ shadowSize?: number; key?: [number, number, numb
     <>
       <hemisphereLight args={["#fff6ee", "#a9b8cc", 0.55]} />
       <directionalLight
-        position={key} intensity={2.4} color="#fff4e2" castShadow
-        shadow-mapSize={[2048, 2048]} shadow-radius={6} shadow-bias={-0.0004}
+        position={key} intensity={2.4} color="#fff4e2" castShadow={!noShadows}
+        shadow-mapSize={[1024, 1024]} shadow-radius={5} shadow-bias={-0.0004}
         shadow-camera-left={-shadowSize} shadow-camera-right={shadowSize}
         shadow-camera-top={shadowSize} shadow-camera-bottom={-shadowSize}
         shadow-camera-near={0.5} shadow-camera-far={30}
@@ -106,7 +106,7 @@ export const Floor: React.FC<{ color?: string; size?: number; y?: number }> = ({
     const tex = new THREE.CanvasTexture(cv);
     tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(size / 0.8, size / 0.8);
     tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8;
-    return new THREE.MeshPhysicalMaterial({ map: tex, roughness: 0.22, clearcoat: 1, clearcoatRoughness: 0.05 });
+    return new THREE.MeshStandardMaterial({ map: tex, roughness: 0.18, metalness: 0.05, envMapIntensity: 1.2 });
   });
   return (
     <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, y, 0]} receiveShadow material={m}
