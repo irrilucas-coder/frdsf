@@ -1,0 +1,54 @@
+{
+  "fps": 30,
+  "duration": 62.5,
+  "narrationOffset": 1.2,
+  "scenes": [
+    { "id": "hook", "from": 0, "to": 5.35 },
+    { "id": "doctor", "from": 5.35, "to": 13.6 },
+    { "id": "band", "from": 13.6, "to": 25.5 },
+    { "id": "clinic", "from": 25.5, "to": 32.0 },
+    { "id": "relief", "from": 32.0, "to": 39.6 },
+    { "id": "prevent", "from": 39.6, "to": 50.3 },
+    { "id": "final", "from": 50.3, "to": 62.5 }
+  ],
+  "labels": [
+    { "t": 0.15, "until": 3.4, "text": "¿SABÍAS QUE...?", "style": "hook" },
+    { "t": 3.5, "until": 5.3, "text": "¿SIN CIRUGÍA?", "style": "alert" },
+    { "t": 4.05, "until": 5.3, "text": "¿NI CORTES?", "style": "alert2" },
+    { "t": 5.6, "until": 13.5, "text": "LIGADURA CON BANDAS ELÁSTICAS", "style": "title" },
+    { "t": 9.1, "until": 13.5, "text": "REALIZADO POR UN MÉDICO", "style": "chip" },
+    { "t": 12.0, "until": 13.5, "text": "HEMORROIDES INTERNAS", "style": "chip2" },
+    { "t": 15.5, "until": 21.2, "text": "BANDA DE GOMA", "style": "tag" },
+    { "t": 16.5, "until": 21.2, "text": "EN LA BASE DEL TEJIDO", "style": "tag2" },
+    { "t": 18.6, "until": 21.2, "text": "SE CORTA EL FLUJO DE SANGRE", "style": "alert" },
+    { "t": 21.4, "until": 25.4, "text": "CON EL TIEMPO...", "style": "chip" },
+    { "t": 23.7, "until": 25.4, "text": "SE DESPRENDE SOLA", "style": "good" },
+    { "t": 25.8, "until": 31.9, "text": "EN CONSULTORIO", "style": "chip" },
+    { "t": 28.2, "until": 31.9, "text": "SOLO MINUTOS", "style": "chip2" },
+    { "t": 30.66, "until": 31.9, "text": "POR LO GENERAL, SIN ANESTESIA", "style": "good" },
+    { "t": 34.9, "until": 37.1, "text": "LIGERA PRESIÓN", "style": "good" },
+    { "t": 36.13, "until": 37.1, "text": "EN LUGAR DE DOLOR", "style": "alert2" },
+    { "t": 37.3, "until": 39.5, "text": "VUELVE A TU RUTINA", "style": "title" },
+    { "t": 39.8, "until": 50.2, "text": "MISIÓN: PREVENCIÓN", "style": "title" },
+    { "t": 53.4, "until": 62.4, "text": "MÍNIMAMENTE INVASIVA", "style": "chip" },
+    { "t": 54.5, "until": 62.4, "text": "EFICAZ", "style": "chip2" },
+    { "t": 55.3, "until": 62.4, "text": "ALIVIA LOS SÍNTOMAS", "style": "good" },
+    { "t": 57.9, "until": 62.4, "text": "SIEMPRE CON UN ESPECIALISTA", "style": "title" }
+  ],
+  "checklist": [
+    { "t": 42.4, "text": "FIBRA" },
+    { "t": 43.24, "text": "AGUA" },
+    { "t": 45.26, "text": "HÁBITOS SALUDABLES" },
+    { "t": 47.32, "text": "EVITA QUE VUELVAN" }
+  ],
+  "events": {
+    "scalpelX": 3.5,
+    "bandSlide": 15.6,
+    "bandSnap": 16.6,
+    "flowStop": 18.6,
+    "shrinkStart": 21.4,
+    "detach": 23.66,
+    "walkStart": 37.2,
+    "endCard": 60.0
+  }
+}
