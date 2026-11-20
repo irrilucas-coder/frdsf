@@ -1,15 +1,15 @@
-# 🌙 Exemplo 10 — Noites Tranquilas com ruído branco (ajuste do criativo)
+# 🌙 Exemplo 10 — Noites Tranquilas: oferta com o som primeiro
 
-Base: `produtos/guia-sono/ugc-criativo-luana.md` (branch `ccr-a75b2a7c-enr1b6`). Oferta: PDF + bônus de ruído branco/música para dormir.
-Mudam só as cenas 1 e 4; as cenas 2, 3 e 5 continuam iguais às do arquivo base.
-Regra herdada do outro chat: fala depois de dois-pontos, sem aspas, com "(no subtitles)", para não sair legenda queimada.
+Base visual e regras: `produtos/guia-sono/ugc-criativo-luana.md` (branch `ccr-a75b2a7c-enr1b6`).
+Oferta: **ruído branco primeiro** (mais de 2 h sem parar, toca com o celular bloqueado) + **guia** de sono 0–2 anos, por menos de R$ 20.
+Fala depois de dois-pontos, sem aspas, com "(no subtitles)". Ruído branco é colocado na edição (a IA não gera som).
 
 | Cena | Fala |
 |---|---|
-| 1 — Gancho com ruído branco | Tá ouvindo esse chiadinho? É ruído branco. Acalma o bebê porque lembra o barulhinho da barriga da mãe. |
-| 2 — Ensinamento (igual) | Todo bebê tem o horário certo de dormir. Se passa desse horário, ele fica agitado, briga com o sono e acorda a noite toda. |
-| 3 — O guia (igual) | E se eu te contar que tem um guia completo pro sono do seu bebê, de zero a dois anos, com a rotina certinha? |
-| 4 — Bônus + preço | De bônus, ruído branco com mais de duas horas sem parar, tocando até com o celular bloqueado. E custa menos de vinte! |
-| 5 — Chamada final (igual) | Não perde tempo, mulher! Clica no link abaixo e garante o seu. Chega no e-mail, pra ler no celular ou imprimir. |
+| 1 — Gancho (celular apagado na cômoda) | Tá ouvindo esse chiadinho? É ruído branco. Pra fazer o bebê dormir, melhor som não existe. |
+| 2 — O som | São mais de duas horas de ruído branco sem parar, tocando até com o celular bloqueado. Você dá o play e descansa. |
+| 3 — O guia | E ainda vem um guia completo pro sono do seu bebê, de zero a dois anos, com a rotina certinha. |
+| 4 — Preço | O som e o guia, tudo junto, por menos de vinte reais. Sério, é menos que uma pizza. |
+| 5 — Chamada | Não perde tempo, mulher! Clica no link abaixo e garante o seu. Chega tudo no seu e-mail. |
 
-Edição: abrir o vídeo com 2 s de ruído branco real em volume alto, com a imagem da cena 1, e depois baixar o ruído para ficar de fundo durante a fala.
+Edição: 2 s de ruído branco real alto no começo da cena 1, depois baixo de fundo durante o vídeo todo.
